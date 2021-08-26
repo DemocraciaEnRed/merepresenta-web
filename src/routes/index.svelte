@@ -1,59 +1,22 @@
 <script context="module">
 	export const prerender = true;
 </script>
-
 <script>
-	import Counter from '$lib/Counter.svelte';
+	import Hero from '$lib/header/Hero.svelte'
 </script>
-
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
-
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+<Hero 
+	title="ME REPRESENTA"
+	subtitle="Te ayudamos a votar de manera informada. Conocé candidaturas, partidos, plataformas electorales y MUCHO MÁS."
+/>
+<section class="container p-4">
+	<h2 class="has-text-centered title is-4">A vos, ¿quién te representa?</h2>
+	<button class="button is-medium is-fullwidth is-primary is-uppercase mb-4">ver partidos y candidatxs</button>
+	<button class="button is-medium is-fullwidth is-uppercase">ver propuestas</button>
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+<section class="container p-4">
+	<h2 class="has-text-centered title is-4">¿No sabés qué se vota?</h2>
+	<button class="button is-medium is-fullwidth is-uppercase">ver ABC sobre las elecciones 2021</button>
+</section>
