@@ -4,8 +4,8 @@
   let provincia;
   page.subscribe((page)=>{
     let currentSlug = page.params.provincia
-    // this is a fetch
     provincia = provincias.find((prov)=>{return prov.slug===currentSlug})
+    // this is a fetch to partidos
   })
   
   // get partidos by provincia
