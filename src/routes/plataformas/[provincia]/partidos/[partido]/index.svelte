@@ -1,18 +1,23 @@
 <script>
   import { page } from "$app/stores";
   import { onMount } from "svelte";
-  import partidos from '$lib/partidos.json'
-  
+  import part from '$lib/partido.json'
+  import '$lib/typedef';
+  import Policies from './_policies.svelte'
+  import Proposals from "./_proposals.svelte";
 
   let urlPartido;
-  let partido = {};
   let provincia;
-
+  /**
+    @type PartyDetail
+    @const
+  */
+  let partido = part
   onMount(async ()=>{
     urlPartido = $page.params.partido
     provincia = $page.params.provincia
     //await get partido
-    partido = partidos.find((party)=>{return party.slug === urlPartido});
+    //partido = await fetch('api') 
   })
 
 </script>
@@ -20,22 +25,16 @@
   <div class="hero-body" style="background-image: url('{partido.logo}')">
   </div>
 </section>
-<section class="">
+<section>
   <h1 class="title">{partido.name}</h1>
   <p class="description">
-    Introducción: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie vestibulum duis a quisque odio vulputate. Sit maecenas sit sed morbi viverra sed dui. Imperdiet ullamcorper malesuada vitae volutpat quam. Id magna sed in in dictum proin proin. Tincidunt magnis adipiscing gravida turpis suscipit et. A justo convallis morbi lectus aliquet ultricies in maecenas.
-    Amet urna maecenas sit tempus massa.
+    {partido.description}
   </p>
+  <Policies proposals={partido.proposals}/>
+  <Proposals proposals={partido.proposals}/>
 </section>
-<div class="buttons">
-  <button class="button is-primary">Primary</button>
-  <button class="button is-primary">
-    <span class="icon">
-      <i class="fas fa-home"></i>
-    </span>
-</button>
-</div>
-<style>
+
+<style>  
   .hero-body{
     background-repeat: no-repeat;
     background-size: 100% auto;

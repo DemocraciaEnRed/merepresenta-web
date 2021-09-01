@@ -1,0 +1,53 @@
+{
+  "id": "",
+  "name": "Frente tu vieja",
+  "description": "Introducción: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie vestibulum duis a quisque odio vulputate. Sit maecenas sit sed morbi viverra sed dui. Imperdiet ullamcorper malesuada vitae volutpat quam. Id magna sed in in dictum proin proin. Tincidunt magnis adipiscing gravida turpis suscipit et. A justo convallis morbi lectus aliquet ultricies in maecenas.Amet urna maecenas sit tempus massa.",
+  "logo": "https://cdn.britannica.com/57/198157-050-503D66E9/artist-rendition-Flying-Spaghetti-Monster.jpg",
+  "proposals":[
+    {
+        "category": "ambiente",
+        "items":[
+          {
+            "id": "1",
+            "description": "propuesta numero 1"
+          },
+          {
+            "id": "2",
+            "description": "propuesta numero 2"
+          }
+        ]
+        
+    },{
+      "category": "salud",
+      "items":[
+        {
+          "id": "3",
+          "description": "propuesta numero 1"
+        },
+        {
+          "id": "4",
+          "description": "propuesta numero 2"
+        }
+      ]
+      
+    },
+    {
+      "category": "justicia",
+      "items":[
+        {
+          "id": "5",
+          "description": "propuesta numero 1"
+        },
+        {
+          "id": "6",
+          "description": "propuesta numero 2"
+        }
+      ]
+      
+  }
+  ],
+  "social_networks":[
+    {"name":"facebook", "url":""}
+  ]
+
+}
