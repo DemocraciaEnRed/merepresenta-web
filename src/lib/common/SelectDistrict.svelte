@@ -12,7 +12,7 @@
   }
 
 </script>
-<div class="select">
+<div class="select is-small">
   <select bind:value={selected} on:change={go}>
     {#each provincias as provincia}
       <option value={provincia.slug}>{provincia.name}</option>

@@ -1,26 +1,34 @@
 <script>
-  export let partido;
-</script>
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src={partido.logo} alt={`${partido.name} logo`}>
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">{partido.name}</p>
-        <p class="subtitle is-6">@johnsmith</p>
-      </div>
-    </div>
+  import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
 
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris.
-      
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
-  </div>
+  /* @type Partido*/
+  /**
+    * @type {Party}
+    * @const
+  */
+  export let partido;
+  
+  function partylink(){
+    const currentRoute = $page.path
+    goto(`${currentRoute}/${partido.slug}`);
+  }
+</script>
+<div on:click={partylink} class="box has-text-centered" >
+  <figure class="image is-128x128">
+    <img class="is-rounded" src={partido.logo} alt={`${partido.name} logo`}>
+  </figure>
+  <p>{partido.name}</p>
 </div>
+<style>
+  figure{
+    margin: 0 auto
+  }
+  .box{
+    cursor: pointer;
+  }
+  p{
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+</style>
