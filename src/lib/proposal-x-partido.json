@@ -1,0 +1,21 @@
+[
+  {
+    "party": {
+      "name": "Partido de la falopa",
+      "logo": "https://jxc.com.ar/wp-content/themes/juntos2019/resources/images/favicon.ico"
+    },
+    "items":[
+      {
+        "slug": "un-chongo-pa-guille",
+        "title": "Te pido un chongo, un chongo para guille 🎵",
+        "intro": "Breve intro de la propuesta integral del partido."
+      },
+      {
+        "slug": "un-chongo-pa-guille2",
+        "title": "Te pido un chongo, un chongo para guille 🎵",
+        "intro": "Breve intro de la propuesta integral del partido."
+      }
+    ]
+  }
+]
+
