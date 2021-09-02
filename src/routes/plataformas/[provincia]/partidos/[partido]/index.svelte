@@ -5,7 +5,8 @@
   import '$lib/typedef';
   import Policies from './_policies.svelte'
   import Proposals from "./_proposals.svelte";
-
+  import Icon from "$lib/common/Icon.svelte";
+  
   let urlPartido;
   let provincia;
   /**
@@ -13,12 +14,13 @@
     @const
   */
   let partido = part
-  onMount(async ()=>{
+  onMount(async ()=>{    
     urlPartido = $page.params.partido
     provincia = $page.params.provincia
     //await get partido
     //partido = await fetch('api') 
   })
+  console.log(partido.social_networks)
 
 </script>
 <section class="hero is-large">
@@ -32,6 +34,27 @@
   </p>
   <Policies proposals={partido.proposals}/>
   <Proposals proposals={partido.proposals}/>
+  <!--Social networks-->
+  <div class="social">
+    {#each partido.social_networks as network}
+      <a href={network.url}>
+        <Icon brand size="large" icon={network.icon}/>
+      </a>
+    {/each}
+  </div>
+  <!---->
+  {#if partido.plataform_url}
+  <p>
+    ¿Querés la información oficial?
+    <a href={partido.plataform_url}>
+      IR A PLATAFORMA OFICIAL
+    </a>
+  </p>
+  {/if}
+  <p>¿Querés conocer a sus candidatxs?</p>
+  <a href="/candidatos/{provincia}/{urlPartido}">
+    VER CANDIDATXs
+  </a>
 </section>
 
 <style>  

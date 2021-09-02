@@ -1,0 +1,26 @@
+[
+  {
+    "name": "economia",
+    "slug": "economia",
+    "id": 1,
+    "icon": "fa-money-bill-alt"
+  },
+  {
+    "name": "ambiente",
+    "slug": "ambiente",
+    "id": 2,
+    "icon": "fa-globe-americas"
+  },
+  {
+    "name": "salud",
+    "slug": "salud",
+    "id": 1,
+    "icon": "fa-stethoscope"
+  },
+  {
+    "name": "educacion",
+    "slug": "educacion",
+    "id": 1,
+    "icon": "fa-graduation-cap"
+  }
+]

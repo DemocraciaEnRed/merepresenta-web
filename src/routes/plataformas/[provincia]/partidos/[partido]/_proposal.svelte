@@ -9,6 +9,6 @@
     </div>
   </div>
   <footer class="card-footer">
-    <a href="{$page.path}/propuestas/{proposal.id}" class="card-footer-item">Leer más</a>
+    <a href="{$page.path}/propuestas/{proposal.slug}" class="card-footer-item">Leer más</a>
   </footer>
 </div>
