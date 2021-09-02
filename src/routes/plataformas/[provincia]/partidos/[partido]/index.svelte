@@ -45,16 +45,20 @@
   <!---->
   {#if partido.plataform_url}
   <p>
-    ¿Querés la información oficial?
-    <a href={partido.plataform_url}>
+    ¿Querés la información oficial? 
+  </p>
+  <p>
+    <a class="button" href={partido.plataform_url}>
       IR A PLATAFORMA OFICIAL
     </a>
   </p>
   {/if}
   <p>¿Querés conocer a sus candidatxs?</p>
-  <a href="/candidatos/{provincia}/{urlPartido}">
+  <p>
+    <a href="/candidatos/{provincia}/{urlPartido}">
     VER CANDIDATXs
-  </a>
+   </a>
+  </p>
 </section>
 
 <style>  
