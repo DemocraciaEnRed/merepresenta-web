@@ -1,0 +1,26 @@
+{
+  "fullname": "Juan carlos Falopa",
+  "position": "Diputeta Nacional",
+  "position_full": "Diputeta Nacional por la Ciudad de buenos aires",
+  "img": "https://e7.pngegg.com/pngimages/401/55/png-clipart-count-von-count-elmo-robin-sherlock-hemlock-the-muppets-sesame-purple-textile.png",
+  "party":{
+    "name": "Juntos por la falopa",
+    "slug": "jxf"
+  },
+  "about": {
+    "had_state_jobs": true,
+    "multiparty": false,
+    "profession": ""
+  },
+  "twitter": "",
+  "political_history":[
+    {
+      "year": "2015",
+      "title": "Gobernador de la provincia de Buenos Aires"
+    },
+    {
+      "year": "2016",
+      "title": "Gobernador de la provincia de Buenos Aires"
+    }
+  ]
+}

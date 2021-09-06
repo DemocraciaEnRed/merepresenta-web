@@ -1,7 +1,7 @@
 <script>
   import partidos from '$lib/partidos.json';
   import { page } from "$app/stores";
-	let nextUrl = `/partidos-y-candiatos/${$page.params.provincia}`
+	let nextUrl = `${$page.path}`
 </script>
 <section>
   {#each partidos as partido}
