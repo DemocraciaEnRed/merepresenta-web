@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@lukeed/uuid": "^2.0.0",
     "bulma": "^0.9.3",
+    "bulma-carousel": "^4.0.24",
     "cookie": "^0.4.1"
   }
 }

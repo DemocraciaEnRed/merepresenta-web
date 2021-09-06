@@ -53,10 +53,10 @@
     </a>
   </p>
   {/if}
-  <p>¿Querés conocer a sus candidatxs?</p>
+  <p>¿Querés conocer a sus candidates?</p>
   <p>
     <a href="/candidatos/{provincia}/{urlPartido}">
-    VER CANDIDATXs
+    VER CANDIDATes
    </a>
   </p>
 </section>
