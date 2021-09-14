@@ -1,2 +1,11 @@
 @import 'bulma/css/bulma.css';
 @import '@fortawesome/fontawesome-free/css/all.css';
+#svelte{
+  background-color: black;
+  font-family: 'Nippo', Helvetica, Arial ,sans-serif; 
+}
+.button.transparent{
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}

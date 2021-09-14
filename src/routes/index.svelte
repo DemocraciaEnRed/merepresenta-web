@@ -8,15 +8,28 @@
 	<title>Home</title>
 </svelte:head>
 <Hero 
-	title="ME REPRESENTA"
-	subtitle="Te ayudamos a votar de manera informada. Conocé candidaturas, partidos, plataformas electorales y MUCHO MÁS."
+	title="Te ayudamos a votar de manera informada."
+	image="/static/logo-merepresenta.svg"
+	imgAlt="logo me representa"
+	subtitle="Conocé candidaturas, partidos, plataformas electorales y mucho más."
 />
-<section class="container p-4">
-	<h2 class="has-text-centered title is-4">A vos, ¿quién te representa?</h2>
-	<a href="/partidos-y-candidates/donde-votas" class="button is-medium is-fullwidth is-primary is-uppercase mb-4">ver partidos y candidates</a>
-	<a href="/plataformas/donde-votas" class="button is-medium is-fullwidth is-uppercase">ver propuestas</a>
-</section>
-<section class="container p-4">
-	<h2 class="has-text-centered title is-4">¿No sabés qué se vota?</h2>
-	<button class="button is-medium is-fullwidth is-uppercase">ver ABC sobre las elecciones 2021</button>
-</section>
+<div class="has-text-centered">
+	<section class="container p-4">
+		<h2 class="title is-4">A vos, ¿quién te representa?</h2>
+		<a href="/partidos-y-candidates/donde-votas" class="button is-medium is-fullwidth is-uppercase mb-4">ver partidos y candidates</a>
+		<a href="/plataformas/donde-votas" class="button transparent is-medium is-fullwidth is-uppercase ">ver propuestas</a>
+	</section>
+	<section class="container p-4 ">
+		<h2 class="title light is-4">¿No sabés qué se vota?</h2>
+		<a class="has-text-white is-underlined  is-uppercase transparent" href="/abc">ver ABC sobre las elecciones 2021</a>
+	</section>
+</div>
+<style>
+	.title{
+		color: white;
+		font-weight: 500;
+	}
+	a{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+</style>
