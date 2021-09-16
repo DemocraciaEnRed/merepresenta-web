@@ -21,9 +21,15 @@
 <style>
   .drop{
     text-align: center;
-    border: 1px solid #000;
-    padding: 10px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 30px 0;
     cursor: pointer;
+    margin-top: -1px;
+  }
+  h2{
+    font-weight: 500;
+    color: black;
   }
   .content{
     padding: 10px

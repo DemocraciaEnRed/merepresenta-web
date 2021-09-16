@@ -16,7 +16,7 @@
 	<title>Home</title>
 </svelte:head>
 <main class="container p-2 has-background-white has-text-centered ">
-  <h1 class="title is-4 is-uppercase mt-6">
+  <h1 class="title is-4 is-uppercase mt-4">
     Candidatos de <br>{partido.name}
   </h1>
   <a 
