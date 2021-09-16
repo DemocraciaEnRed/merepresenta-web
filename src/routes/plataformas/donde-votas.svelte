@@ -1,12 +1,13 @@
 <script>
   import provincias from '$lib/provincias.json';
 </script>
-<h1 class="has-text-centered title is-3">Plataformas electorales</h1>
-<h2 class="has-text-centered title is-4">¿Donde votas?</h2>
-{#each provincias as provincia}
-  <div class="columns">
-    <div class="column has-text-centered">
-    <a href="/plataformas/{provincia.slug}" class="button">{provincia.name}</a>
+<main class="container p-2 has-background-black">
+<h1 class="has-text-centered title-white is-3">¿Donde votas?</h1>
+  {#each provincias as provincia}
+    <div class="columns">
+      <div class="column has-text-centered">
+      <a href="/plataformas/{provincia.slug}" class="button is-fullwidth">{provincia.name}</a>
+      </div>
     </div>
-  </div>
-{/each}
+  {/each}
+</main>

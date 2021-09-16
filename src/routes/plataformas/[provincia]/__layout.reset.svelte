@@ -6,7 +6,5 @@
 <div class="is-flex is-justify-content-flex-end">
   <SelectDistrict/>
 </div>
-<main class="container p-2">
-	<slot></slot>
-</main>
+<slot/>
 <footer></footer>

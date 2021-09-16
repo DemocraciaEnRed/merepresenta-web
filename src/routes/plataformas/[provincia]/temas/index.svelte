@@ -12,12 +12,12 @@
   })
   
 </script>
-<h1 class="has-text-center">Plataformas electorales por tema en {district.name}</h1>
-<h2>Conocé los temas que abordan las distintas propuestas</h2>
+<h1>TEMAS</h1>
+<p>Conoce los temas que abordan las distintas propuestas</p>
 <div class="container">
   <section class="columns mt-6">
     {#each temas as tema}
-      <a class="column tema" href="{path}/{tema.slug}" >
+      <a class="column tema {(tema.id)}" href="{path}/{tema.slug}" >
         <Icon size="large" icon={tema.icon} />
         <br/>
         {tema.name}

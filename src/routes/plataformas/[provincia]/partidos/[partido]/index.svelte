@@ -28,7 +28,7 @@
   </div>
 </section>
 <section>
-  <h1 class="title">{partido.name}</h1>
+  <h1 class="title-white">{partido.name}</h1>
   <p class="description">
     {partido.description}
   </p>

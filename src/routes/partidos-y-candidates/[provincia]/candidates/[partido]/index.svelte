@@ -15,13 +15,40 @@
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
-<svelte:component this={Carousel} bind:this={carouselRef}>
-  {#each partido.candidates as candidato, i}
-    <div class="box item-{i+1} has-text-centered">
-      <img src={candidato.img} class="is-rounded candidate-img" alt="Foto retrato de {candidato.fullname}"/>
-      <p>{candidato.fullname}</p>
-      <p>{candidato.position}</p>
-      <a href="{$page.path}/candidate/{candidato.id}">VER CANDIDATE</a>
-    </div>
-  {/each}
-</svelte:component>
+<main class="container p-2 has-background-white has-text-centered ">
+  <h1 class="title is-4 is-uppercase mt-6">
+    Candidatos de <br>{partido.name}
+  </h1>
+  <a 
+    href="/partidos-y-candidatos/{$page.params.provincia}/partidos/{partido.slug}"
+    class="button is-uppercase is-black">
+    Ver partido
+  </a>
+  <p class="my-4">Se postulan:</p>
+  <svelte:component this={Carousel} bind:this={carouselRef}>
+    {#each partido.candidates as candidato, i}
+      <div class="candidate has-text-centered">
+        <div 
+          style="background-image: url({candidato.img})"
+          class="candidate-img" alt="Foto retrato de {candidato.fullname}"/>
+        <h1 class="title has-text-black">{candidato.fullname}</h1>
+        <p class="has-text-black">Candidate a <br>
+        {candidato.position}</p>
+        <a href="{$page.path}/candidate/{candidato.id}" class="button is-outlined is-active my-4">VER CANDIDATE</a>
+      </div>
+    {/each}
+  </svelte:component>
+</main>
+<style>
+  .candidate-img{
+    height: 380px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .candidate{
+    border: 1px solid black;
+  }
+  h1{
+    font-weight: 400;
+  }
+</style>

@@ -24,7 +24,7 @@
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">{proposal.party.name}</p>
+            <p class="title-white is-4">{proposal.party.name}</p>
           </div>
         </div>
       </div>

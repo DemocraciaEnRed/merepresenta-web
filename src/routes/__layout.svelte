@@ -2,7 +2,5 @@
 	import Header from '$lib/header/Header.svelte';
 </script>
 <Header logoVisible={false}/>
-<main class="container p-2">
-	<slot />
-</main>
+<slot />
 <footer></footer>
