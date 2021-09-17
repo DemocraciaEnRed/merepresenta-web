@@ -3,6 +3,7 @@
   "position": "Diputeta Nacional",
   "position_full": "Diputeta Nacional por la Ciudad de buenos aires",
   "img": "https://e7.pngegg.com/pngimages/401/55/png-clipart-count-von-count-elmo-robin-sherlock-hemlock-the-muppets-sesame-purple-textile.png",
+  
   "party":{
     "name": "Juntos por la falopa",
     "slug": "jxf"
@@ -10,9 +11,28 @@
   "about": {
     "had_state_jobs": true,
     "multiparty": false,
-    "profession": ""
+    "profession": "Panadero",
+    "age": "40",
+    "children": 3
   },
-  "twitter": "",
+  "twitter": {
+    "bio": "Mamá orgullosa de Cami, Majo y Pedrito. Precandidata a diputada nacional por la Ciudad de Buenos Aires. En twitter desde Enero 2010",
+    "most_shared_tweets":[
+      "hola",
+      "hola",
+      "chau"
+    ],
+    "most_interactions":[
+      {
+        "name": "@tuvieja",
+        "profile_img": "https://i1.wp.com/noticieros.televisa.com/wp-content/uploads/2017/03/corren-a-elmo-de-plaza-sesamo-ap.jpg?fit=1401%2C1080&ssl=1"
+      },
+      {
+        "name": "@tuviejardo",
+        "profile_img": "https://newsweekespanol.com/wp-content/uploads/2020/07/Rana-Rene%CC%81_01.jpg"
+      }
+    ]
+  },
   "political_history":[
     {
       "year": "2015",
@@ -22,5 +42,9 @@
       "year": "2016",
       "title": "Gobernador de la provincia de Buenos Aires"
     }
-  ]
+  ],
+  "private_sector_history":{
+    "has_companies": true,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor non pharetra tristique sed a. Risus, montes, morbi in dolor, sagittis, congue dui dignissim. Eget habitasse adipiscing rhoncus senectus viverra cras. Euismod donec egestas semper at commodo turpis. Aliquam amet donec eget nibh sit."
+  }
 }

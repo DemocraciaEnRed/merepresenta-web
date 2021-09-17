@@ -1,31 +1,44 @@
 <script>
-  export let data;
-  export let image;
-  export let position;
+  export let candidate
 </script>
 <div>
-  <div>
-    <img src={image} alt="">
-  </div>
-  <div class="description has-text-left">
-    2021 <br/>
-    Se postula para {position}
-  </div>
-  <table>
-    {#each data as pos}
+  <table class="bord">
+    <td class="candidate-image" style="background-image: url({candidate.img});">
+    </td>
+    <td class="has-text-left">
+      <strong>2021</strong><br/>
+      Se postula para {candidate.position_full}
+    </td>
+  </table>
+  <table class="history">
+    {#each candidate.political_history as pos}
       <tr>
-        <td>{pos.year}</td>
-        <td>{pos.title}</td>
+        <td class="empty"></td>
+        <td class="year">{pos.year}</td>
+        <td class="has-text-left">{pos.title}</td>
       </tr>
     {/each}
   </table>
 </div>
 <style>
-  img{
+  .year{
+    border-left: 2px solid black;
+  }
+  .empty{
+    border: 0
+  }
+  .history tr{
+    padding-left: 20px;
+  }
+  .bord{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  .candidate-image{
     width: 50%;
-    border-radius: 50%;
-    float: left;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>

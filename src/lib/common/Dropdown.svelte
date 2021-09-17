@@ -3,7 +3,7 @@
   $: isOpen = false;
   $: iconClass =  isOpen ? "fa-chevron-down" : "fa-chevron-up"
   export let name;
-
+  import { slide } from 'svelte/transition';
 </script>
 <div class="drop" on:click={()=>isOpen = !isOpen}>
   <h2>
@@ -13,7 +13,7 @@
     </span>
   </h2>
   {#if isOpen}
-    <div class="content">
+    <div class="content" transition:slide >
       <slot/>
     </div>
   {/if}
