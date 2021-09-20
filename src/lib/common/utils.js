@@ -1,16 +1,14 @@
 
+const imgRoute = "/static/themes/";
+
 export const PoliciesIcons = {
-  "economia"          : "fa-money-bill-alt",
-  "ambiente"          : "fa-globe-americas",
-  "salud"             : "fa-stethoscope",
-  "educacion"         : "fa-graduation-cap",
-  "genero"            : "fa-transgender-alt",
-  "pobreza"           : "fa-hands-helping",
-  "seguridad"         : "fa-shield-alt",
-  "tecnologia"        : "fa-microchip",
-  "empleo"            : "fa-briefcase",
-  "vivienda"          : "fa-home",
-  "justicia"          : "fa-balance-scale",
-  "post-pandemia"     : "fa-virus",
-  "corrupcion"        : "fa-bell"
+  "economia"          : `${imgRoute}money.svg`,
+  "ambiente"          : `${imgRoute}nature.svg`,
+  "salud"             : `${imgRoute}health.svg`,
+  "educacion"         : `${imgRoute}book.svg`,
+  "genero"            : `${imgRoute}gender.svg`,
+  "seguridad"         : `${imgRoute}security.svg`,
+  "empleo"            : `${imgRoute}house.svg`,
+  "justicia"          : `${imgRoute}justice.svg`,
+  "corrupcion"        : `${imgRoute}search.svg`,
 }

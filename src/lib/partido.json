@@ -1,12 +1,14 @@
 {
-  "id": "",
+  "id": "123",
   "name": "Frente tu vieja",
   "description": "Introducción: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie vestibulum duis a quisque odio vulputate. Sit maecenas sit sed morbi viverra sed dui. Imperdiet ullamcorper malesuada vitae volutpat quam. Id magna sed in in dictum proin proin. Tincidunt magnis adipiscing gravida turpis suscipit et. A justo convallis morbi lectus aliquet ultricies in maecenas.Amet urna maecenas sit tempus massa.",
   "logo": "https://cdn.britannica.com/57/198157-050-503D66E9/artist-rendition-Flying-Spaghetti-Monster.jpg",
-  "plataform_url": "frentetuvieja.com/plataforma",
+  "plataform_url": "http://frentetuvieja.com/plataforma",
+  "slug":"ftv",
   "proposals":[
     {
         "category": "ambiente",
+        "category_slug": "hola",
         "items":[
           {
             "id": "1",
@@ -22,6 +24,7 @@
         
     },{
       "category": "salud",
+      "category_slug": "hola",
       "items":[
         {
           "id": "3",
@@ -38,6 +41,7 @@
     },
     {
       "category": "justicia",
+      "category_slug": "hola",
       "items":[
         {
           "id": "5",

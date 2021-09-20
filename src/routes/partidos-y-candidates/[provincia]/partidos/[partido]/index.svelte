@@ -1,42 +1,85 @@
 <script>
   import { page } from '$app/stores';
-  import Icon from '$lib/common/Icon.svelte';
+  import { PoliciesIcons } from '$lib/common/utils';
   import partido from '$lib/partido.json';
+  import { onMount } from 'svelte';
+  import Proposal from './_proposal.svelte';
+  let load;
+  onMount(()=>{
+    load = true
+  })
   
-  const path = $page.path
 </script>
-<section class="has-text-centered">
-  <h1>{partido.name}</h1>
-  <p>¿Querés saber que proponen para las <br/> distintas temáticas?</p>
-  <a href="{path}/propuestas" class="button mt-4">Ver propuestas</a>
-  <h2 class="has-text-left">Les interesa</h2>
-  {#each partido.proposals as proposal}
-    {proposal.category}
-  {/each}
-  <h2 class="has-text-left">Composición por género</h2>
-  <a href="{path}/como-votan" class="como-votan">
-    <strong>¿Cómo votan?</strong>
-    <span>
-      <Icon icon="fa-chevron-right"/>
-    </span>
-  </a>
-  <p class="my-6">Si querés conocer las propuestas del resto <br/>de los partidos, te invitamos a visitar plataformas electorales</p>
-  <a href class="button is-uppercase mt-4">Ver plataformas electorales</a>
-</section>
+<svelte:head>
+	<script src="https://unpkg.com/external-svg-loader@1.3.1/svg-loader.min.js"></script>
+</svelte:head>
+<main>
+  <section>
+    <div class="partido-img mt-4" style="background-image: url({partido.logo})">
+      <span hidden>{partido.name}</span>
+    </div>
+
+    <p class="description p-4 mt-4">
+      {partido.description}
+    </p>
+    
+    <div class="container p-4">
+      <h2 class="has-text-left title is-5 has-text-black">Les interesa</h2>
+      <div class="columns is-mobile p-2">
+        {#each partido.proposals as proposal}
+          <!--ESTA PELOTUDEZ ME COSTO UN HUEVO-->
+          <div class="column has-text-centered">
+            <div class="px-6 py-2 has-background-black">
+              {#if load}
+                <svg 
+                  width="50"
+                  height="50"
+                  class="{proposal.category}-path"
+                  title="propuestas de {proposal.category}"
+                  data-src="{PoliciesIcons[proposal.category]}">
+                </svg>
+              {/if}  
+          </div>
+          </div>
+        {/each}
+      </div>
+
+      <h2 class="has-text-left title is-5 has-text-black">¿Qué proponen?</h2>
+      {#each partido.proposals as proposal}
+        <Proposal {proposal} party={partido.slug}/>
+      {/each}
+      <div class="has-text-centered">
+        <p class="mb-4">
+          <strong>¿Querés la información oficial?</strong>
+        </p>
+        <a href={partido.plataform_url} target="_blank" class="is-uppercase is-underlined mt-4">ir a la plataforma oficial</a>
+        <p class="mt-4">
+          <strong>¿Querés conocer a sus candidates?</strong> 
+        </p>
+        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.slug}"
+          class="button is-uppercase mt-4 is-fullwidth  is-outline is-active">ver candidates</a>
+      </div>
+      
+    </div>
+    
+  </section>
+</main>
 <style>
-  .como-votan{
-    padding: 20px;
-    border: 1px solid black;
-    display: block;
-    margin: 20px 0;
+  .partido-img{
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
-  .como-votan{
-    display: flex;
+  .description{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 4px solid black;
   }
-  .como-votan strong{
-    align-content: flex-start;
+  svg{
+    width: 25px;
+    height: 25px;
+    background-color: black;
   }
-  .como-votan span{
-    align-content: flex-end;
-  }
+
 </style>

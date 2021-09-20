@@ -22,3 +22,45 @@ a{
 body, html{
   height: 100%;
 }
+
+/**COLORS**/
+
+:root{
+  --economia: #F4374E;
+  --ambiente: #BAF734;
+  --salud: #4BD6F7;
+  --educacion: #32F991;
+  --genero: #9F47FC;
+  --seguridad: #F7A334;
+  --empleo: #F4DB47;
+  --justicia: #367FFF;
+  --corrupcion: #C4C4C2;
+}
+/*For icons*/
+.economia-path path{
+  fill: var(--economia)!important;
+}
+.ambiente-path path{
+  fill: var(--ambiente)!important;
+}
+.salud-path path{
+  fill: var(--salud)!important;
+}
+.educacion-path path{
+  fill: var(--educacion)!important;
+}
+.genero-path path{
+  fill: var(--genero)!important;
+}
+.seguridad-path path{
+  fill: var(--seguridad)!important;
+}
+.empleo-path path{
+  fill: var(--empleo)!important;
+}
+.justicia-path path{
+  fill: var(--justicia)!important;
+}
+.corrupcion-path path{
+  fill: var(--corrupcion)!important;
+}
