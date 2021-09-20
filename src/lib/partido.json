@@ -57,8 +57,11 @@
       
   }
   ],
-  "social_networks":[
-    {"name":"facebook", "url":"", "icon": "fa-facebook-square"}
-  ]
+  "social_networks":{
+    "facebook": "http://facebook.com/cadorna",
+    "instagram": "http://instagram.com/cadorna",
+    "twitter": "http://twitter.com/cadorna"
+
+  }
 
 }

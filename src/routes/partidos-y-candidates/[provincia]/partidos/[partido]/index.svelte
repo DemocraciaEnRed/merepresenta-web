@@ -1,5 +1,6 @@
 <script>
   import { page } from '$app/stores';
+import Icon from '$lib/common/Icon.svelte';
   import { PoliciesIcons } from '$lib/common/utils';
   import partido from '$lib/partido.json';
   import { onMount } from 'svelte';
@@ -48,12 +49,23 @@
       {#each partido.proposals as proposal}
         <Proposal {proposal} party={partido.slug}/>
       {/each}
+      <div class="social-networks py-6">
+        <a href={partido.social_networks.instagram}>
+          <Icon brand size="large" icon="fa-instagram"/>
+        </a>
+        <a href={partido.social_networks.facebook}>
+          <Icon brand size="large" icon="fa-facebook-square"/>  
+        </a>
+        <a href={partido.social_networks.twitter}>
+          <Icon brand size="large" icon="fa-twitter-square"/>  
+        </a>
+      </div>
       <div class="has-text-centered">
         <p class="mb-4">
           <strong>¿Querés la información oficial?</strong>
         </p>
         <a href={partido.plataform_url} target="_blank" class="is-uppercase is-underlined mt-4">ir a la plataforma oficial</a>
-        <p class="mt-4">
+        <p class="mt-6">
           <strong>¿Querés conocer a sus candidates?</strong> 
         </p>
         <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.slug}"
@@ -81,5 +93,11 @@
     height: 25px;
     background-color: black;
   }
-
+  .social-networks{
+    display: flex;
+    justify-content: center;
+  }
+  .social-networks a{
+    color: black
+  }
 </style>
