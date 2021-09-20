@@ -4,6 +4,14 @@
 	let nextUrl = `${$page.path}`
 </script>
 <main class="container p-2 has-background-white">
+  <nav class="breadcrumb is-small" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="#">Bulma</a></li>
+      <li><a href="#">Documentation</a></li>
+      <li><a href="#">Components</a></li>
+      <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+    </ul>
+  </nav>
   <h1 class="mt-4 title is-4">Partidos y candidatos</h1>
   <p class="is-family-sans-serif ">Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</p>
   <p class="has-text-centered mt-6">

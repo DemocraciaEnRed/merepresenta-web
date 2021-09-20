@@ -16,12 +16,12 @@
 	/>
 	<div class="has-text-centered">
 		<section class="container p-4">
-			<h2 class="title is-4">A vos, ¿quién te representa?</h2>
+			<h2 class="title is-4 has-text-white has-text-weight-normal">A vos, ¿quién te representa?</h2>
 			<a href="/partidos-y-candidates/donde-votas" class="button is-medium is-fullwidth is-uppercase mb-4">ver partidos y candidates</a>
 			<a href="/plataformas/donde-votas" class="button transparent is-medium is-fullwidth is-uppercase ">ver propuestas</a>
 		</section>
 		<section class="container p-4 ">
-			<h2 class="title light is-4">¿No sabés qué se vota?</h2>
+			<h2 class="title light is-4 has-text-weight-normal has-text-white">¿No sabés qué se vota?</h2>
 			<a class="has-text-white is-underlined  is-uppercase transparent" href="/abc">ver ABC sobre las elecciones 2021</a>
 		</section>
 	</div>
