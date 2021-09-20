@@ -1,40 +1,26 @@
 <script>
   import { page } from "$app/stores";
-  import Icon from "$lib/common/Icon.svelte";
-  import provincias from '$lib/provincias.json';
-  // get temas
+  import { PoliciesIcons, } from "$lib/common/utils";
   import temas from '$lib/temas.json';
-  let path;
-  let district;
-  page.subscribe((currentValue)=>{
-    path = currentValue.path
-    district = provincias.find((p)=>{return p.slug === currentValue.params.provincia})
-  })
-  
 </script>
-<h1>TEMAS</h1>
-<p>Conoce los temas que abordan las distintas propuestas</p>
-<div class="container">
-  <section class="columns mt-6">
-    {#each temas as tema}
-      <a class="column tema {(tema.id)}" href="{path}/{tema.slug}" >
-        <Icon size="large" icon={tema.icon} />
-        <br/>
-        {tema.name}
-      </a>
-    {/each}
-  </section>
-  
-</div>
+<main class="container p-2">
+  <h1 class="mt-4 title is-3 has-text-weight-normal" >TEMAS</h1>
+  <p>Conoce los temas que abordan las distintas propuestas</p>
+  <div class="container">
+    <section class="columns is-mobile mt-6">
+      {#each temas as tema}
+        <a class="column is-half has-text-centered" href="{$page.path}/{tema.slug}">
+          <div style="background-color: var(--{tema.name});">
+            <img src={PoliciesIcons[tema.slug]} alt="icono de {tema.name}" class="py-5">
+            <h1 class="has-background-black has-text-weight-medium is-uppercase p-2" style="color:var(--{tema.name})">
+              {tema.name}
+            </h1>
+          </div>
+        </a>
+      {/each}
+    </section>
+  </div>
+</main>
 <style>
-  .tema{
-    width: 50%;
-    float: left;
-    text-align: center;
-    padding: 10px;
-    align-content: center;
-    height: 100px;
-    border: 4px solid white;
-    background: #ccc;
-  }
+  
 </style>

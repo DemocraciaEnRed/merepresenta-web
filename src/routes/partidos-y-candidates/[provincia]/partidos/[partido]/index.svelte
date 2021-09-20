@@ -1,6 +1,6 @@
 <script>
   import { page } from '$app/stores';
-import Icon from '$lib/common/Icon.svelte';
+  import Icon from '$lib/common/Icon.svelte';
   import { PoliciesIcons } from '$lib/common/utils';
   import partido from '$lib/partido.json';
   import { onMount } from 'svelte';

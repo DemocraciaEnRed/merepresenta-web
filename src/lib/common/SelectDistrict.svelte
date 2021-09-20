@@ -5,9 +5,9 @@
   let selected = $page.params.provincia
 
   function go(){
-    const slug = $page.params.provincia
+    const provincia = $page.params.provincia
     const route = $page.path
-    const newRoute = route.replace(slug, selected);
+    const newRoute = route.replace(provincia, selected);
     goto(newRoute,{replaceState:true});
   }
 

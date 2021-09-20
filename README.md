@@ -19,3 +19,9 @@ npm run build
 ```
 
 > You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+
+
+# Styles and icons
+
+You have FontAwesome 5 available for usege. Call `PoliciesIcons` in `$lib/common/utils` for the custom political themes icons.
+Call themes colors with css variables `var(--${theme})`. try to reuse this logic to avoid hardcoded info and repeated code. 

@@ -1,42 +1,44 @@
-<script context="module">
-  export function load({fetch, page}){
-    return {
-      props: {}
-    }
-  }
-</script>
 <script>
   import { page } from '$app/stores';
-  import propuestas from '$lib/proposal-x-partido.json';
+  import ProposalsByParty from './_party-pp.svelte'
+  import HeaderPP from './_header.svelte';
+  import SelectDistrict from '$lib/common/SelectDistrict.svelte';
+
+  import partidos from '$lib/proposal-x-partido.json';
+  
+  
+
   let routePath;
-  page.subscribe(({path})=>{
-    routePath = path
+  let tema;
+  page.subscribe(({path, params})=>{
+    routePath = path;
+    tema = params.tema;
   })
 </script>
-<section>
-  {#each propuestas as proposal}
-    <div class="card">
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src={proposal.party.logo} class="is-rounded" alt="{proposal.party.name} logo">
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title-white is-4">{proposal.party.name}</p>
-          </div>
-        </div>
-      </div>
-      {#each proposal.items as item}
-        <div class="propuesta">
-          <h2>{item.title}</h2>
-          <p>{item.intro}</p>
-          <p class="has-text-right">
-            <a class="button" href="{routePath}/propuestas/{item.slug}">Leer más</a>
-          </p>
-        </div>
+<main>
+  <section>
+    <HeaderPP {tema}/>
+    <div class="info p-4">
+      Leé las distintas propuestas sobre 
+      <span style="color: var(--{tema});text-transform: capitalize">{tema}</span> 
+      de cada partido según tu distrito
+    </div>
+    <div class="has-text-right mt-2">
+      <SelectDistrict/>
+    </div>
+    <div class="p-2">
+      {#each partidos as partido}
+        <ProposalsByParty {partido}/>
       {/each}
     </div>
-  {/each}
-</section>
+    
+  </section>
+</main>
+
+<style>
+
+  .info{
+    border-left: 3px solid black;
+    border-bottom: 1px solid black;
+  }
+</style>
