@@ -9,7 +9,9 @@
 <table class="my-5 p-2">
   <thead>
     <tr>
-      <td class="p-4 border is-uppercase"><span>{proposal.category}</span></td>
+      <td class="p-4 border is-uppercase">
+        <span class="p-2" style="background-color: var(--{proposal.category});">{proposal.category}</span>
+      </td>
       <td class="category-icon has-text-centered">
         <img src={PoliciesIcons[proposal.category]} alt="icono de {proposal.category}" width="25">
       </td>

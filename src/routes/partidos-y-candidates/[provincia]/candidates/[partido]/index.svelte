@@ -20,7 +20,7 @@
     Candidatos de <br>{partido.name}
   </h1>
   <a 
-    href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.slug}"
+    href="{partyUrl}"
     class="button is-uppercase is-black">
     Ver partido
   </a>
