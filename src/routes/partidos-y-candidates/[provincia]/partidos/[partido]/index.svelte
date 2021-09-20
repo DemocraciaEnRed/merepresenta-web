@@ -15,6 +15,13 @@
 	<script src="https://unpkg.com/external-svg-loader@1.3.1/svg-loader.min.js"></script>
 </svelte:head>
 <main>
+  <nav class="breadcrumb is-small pl-2 mt-2" aria-label="breadcrumbs">
+    <ul>
+      <li ><a href="/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
+      <li ><a href="/partidos-y-candidates/{$page.params.provincia}">{$page.params.provincia}</a></li>
+      <li class="is-active"><a href aria-current="page">{partido.name}</a></li>
+    </ul>
+  </nav>
   <section>
     <div class="partido-img mt-4" style="background-image: url({partido.logo})">
       <span hidden>{partido.name}</span>

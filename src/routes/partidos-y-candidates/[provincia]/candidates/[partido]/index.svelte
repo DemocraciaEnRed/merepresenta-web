@@ -19,7 +19,7 @@
   <h1 class="title is-4 is-uppercase mt-4">
     Candidatos de <br>{partido.name}
   </h1>
-  <a 
+  <a
     href="{partyUrl}"
     class="button is-uppercase is-black">
     Ver partido

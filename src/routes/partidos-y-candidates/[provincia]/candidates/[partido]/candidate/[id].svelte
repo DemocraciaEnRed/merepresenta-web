@@ -12,6 +12,14 @@
 
 </script>
 <main class="container has-background-white mt-4">
+  <nav class="breadcrumb is-small pl-2" aria-label="breadcrumbs">
+    <ul>
+      <li ><a href="/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
+      <li ><a href="/partidos-y-candidates/{$page.params.provincia}">{$page.params.provincia}</a></li>
+      <li ><a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{$page.params.partido}">{$page.params.partido}</a></li>
+      <li class="is-active"><a href aria-current="page">{candidate.fullname}</a></li>
+    </ul>
+  </nav>
   <section class="has-text-black">
     <table class="candidate-header">
       <td id="candidato-img" style="background-image: url({candidate.img});">
