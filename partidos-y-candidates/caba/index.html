@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+		<link rel="stylesheet" href="/app.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-aa16f4b5.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-84bd5ead.js">
+		<link rel="modulepreload" href="/./_app/chunks/preload-helper-08cc8e69.js">
+		<link rel="modulepreload" href="/./_app/chunks/singletons-12a22614.js">
+		<link rel="modulepreload" href="/./_app/pages/partidos-y-candidates/__layout.reset.svelte-b970df6c.js">
+		<link rel="modulepreload" href="/./_app/chunks/Header-57c8e502.js">
+		<link rel="modulepreload" href="/./_app/chunks/stores-28788c6b.js">
+		<link rel="modulepreload" href="/./_app/pages/partidos-y-candidates/[provincia]/index.svelte-091e1fd9.js">
+		<link rel="modulepreload" href="/./_app/chunks/partidos-d9978fed.js">
+		<link rel="modulepreload" href="/./_app/chunks/SelectDistrict-bf2f9a3c.js">
+		<link rel="modulepreload" href="/./_app/chunks/provincias-0d2da71f.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/Header-3296ff04.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/partidos-y-candidates/[provincia]/index.svelte-1650dd1e.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-aa16f4b5.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/partidos-y-candidates/__layout.reset.svelte-b970df6c.js"),
+						import("/./_app/pages/partidos-y-candidates/[provincia]/index.svelte-091e1fd9.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/partidos-y-candidates/caba",
+						query: new URLSearchParams(""),
+						params: {"provincia":"caba"}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<header><nav class="navbar is-dark svelte-1cjbm7e" role="navigation" aria-label="main navigation"><div class="navbar-brand left-burger svelte-1cjbm7e"><button class="navbar-burger svelte-1cjbm7e" aria-label="menu" aria-expanded="false"><span aria-hidden="true" class="svelte-1cjbm7e"></span>
+		<span aria-hidden="true" class="svelte-1cjbm7e"></span>
+		<span aria-hidden="true" class="svelte-1cjbm7e"></span></button>
+	<a class="navbar-item" href="/"><img src="/logo-merepresenta.svg" id="logo" alt="logo" class="svelte-1cjbm7e"></a></div>
+</nav>
+</header>
+<main class="container p-2 has-background-white"><div class="has-text-right"><div class="select is-small"><select><option value="caba">Ciudad de buenos aires</option><option value="buenos-aires">Buenos aires</option><option value="la-pampa">La pampa</option><option value="corrientes">Corrientes</option></select></div></div>
+  <h1 class="mt-4 title is-4 svelte-26mheq">Partidos y candidatos</h1>
+  <p class="is-family-sans-serif ">Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</p>
+  <p class="has-text-centered mt-6"><strong>¿Querés saber cómo votó cada partido <br> en las últimas leyes?</strong><br>
+    <a href="/como-votaron" class="button is-medium is-outlined is-active is-uppercase mt-4">Ver votaciones</a></p>
+  <section class="columns is-mobile svelte-26mheq"><div class="column is-half has-text-centered party"><div src="https://jxc.com.ar/wp-content/themes/juntos2019/resources/images/favicon.ico" alt="logo de Juntos por el cambio" style="background-image: url(https://jxc.com.ar/wp-content/themes/juntos2019/resources/images/favicon.ico)" class="party-logo svelte-26mheq"></div>
+        <div class="buttons mt-2"><a href="/partidos-y-candidates/caba/partidos/jxc" class="button is-black is-uppercase is-fullwidth">Ver partido</a>
+          <a href="/partidos-y-candidates/caba/candidates/jxc" class="button is-active is-outlined is-fullwidth is-uppercase">Ver candidates</a></div>
+      </div><div class="column is-half has-text-centered party"><div src="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/06/12190741/todos-3.jpg" alt="logo de Frente de todos" style="background-image: url(https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/06/12190741/todos-3.jpg)" class="party-logo svelte-26mheq"></div>
+        <div class="buttons mt-2"><a href="/partidos-y-candidates/caba/partidos/fdt" class="button is-black is-uppercase is-fullwidth">Ver partido</a>
+          <a href="/partidos-y-candidates/caba/candidates/fdt" class="button is-active is-outlined is-fullwidth is-uppercase">Ver candidates</a></div>
+      </div><div class="column is-half has-text-centered party"><div src="https://cdn.britannica.com/57/198157-050-503D66E9/artist-rendition-Flying-Spaghetti-Monster.jpg" alt="logo de Partido fumeta del oeste" style="background-image: url(https://cdn.britannica.com/57/198157-050-503D66E9/artist-rendition-Flying-Spaghetti-Monster.jpg)" class="party-logo svelte-26mheq"></div>
+        <div class="buttons mt-2"><a href="/partidos-y-candidates/caba/partidos/PFO" class="button is-black is-uppercase is-fullwidth">Ver partido</a>
+          <a href="/partidos-y-candidates/caba/candidates/PFO" class="button is-active is-outlined is-fullwidth is-uppercase">Ver candidates</a></div>
+      </div></section>
+</main>
+<footer></footer>
+
+
+
+	
+</div>
+	</body>
+</html>

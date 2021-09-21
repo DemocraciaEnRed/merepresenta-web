@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+		<link rel="stylesheet" href="/app.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Home</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-aa16f4b5.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-84bd5ead.js">
+		<link rel="modulepreload" href="/./_app/chunks/preload-helper-08cc8e69.js">
+		<link rel="modulepreload" href="/./_app/chunks/singletons-12a22614.js">
+		<link rel="modulepreload" href="/./_app/pages/partidos-y-candidates/__layout.reset.svelte-b970df6c.js">
+		<link rel="modulepreload" href="/./_app/chunks/Header-57c8e502.js">
+		<link rel="modulepreload" href="/./_app/chunks/stores-28788c6b.js">
+		<link rel="modulepreload" href="/./_app/pages/partidos-y-candidates/[provincia]/candidates/[partido]/index.svelte-06671d16.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/Header-3296ff04.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/partidos-y-candidates/[provincia]/candidates/[partido]/index.svelte-5910d017.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-aa16f4b5.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/partidos-y-candidates/__layout.reset.svelte-b970df6c.js"),
+						import("/./_app/pages/partidos-y-candidates/[provincia]/candidates/[partido]/index.svelte-06671d16.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/partidos-y-candidates/la-pampa/candidates/PFO",
+						query: new URLSearchParams(""),
+						params: {"provincia":"la-pampa","partido":"PFO"}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<header><nav class="navbar is-dark svelte-1cjbm7e" role="navigation" aria-label="main navigation"><div class="navbar-brand left-burger svelte-1cjbm7e"><button class="navbar-burger svelte-1cjbm7e" aria-label="menu" aria-expanded="false"><span aria-hidden="true" class="svelte-1cjbm7e"></span>
+		<span aria-hidden="true" class="svelte-1cjbm7e"></span>
+		<span aria-hidden="true" class="svelte-1cjbm7e"></span></button>
+	<a class="navbar-item" href="/"><img src="/logo-merepresenta.svg" id="logo" alt="logo" class="svelte-1cjbm7e"></a></div>
+</nav>
+</header>
+
+<main class="container p-2 has-background-white has-text-centered "><h1 class="title is-4 is-uppercase mt-4 svelte-1apjrym">Candidatos de <br>Juntos por la falopa</h1>
+  <a href="/partidos-y-candidates/la-pampa/partidos/jxf" class="button is-uppercase is-black">Ver partido
+  </a>
+  <p class="my-4">Se postulan:</p>
+  
+</main>
+<footer></footer>
+
+
+
+	
+</div>
+	</body>
+</html>

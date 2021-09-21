@@ -1,0 +1,1 @@
+const e={economia:"/themes/money.svg",ambiente:"/themes/nature.svg",salud:"/themes/health.svg",educacion:"/themes/book.svg",genero:"/themes/gender.svg",seguridad:"/themes/security.svg",empleo:"/themes/house.svg",justicia:"/themes/justice.svg",corrupcion:"/themes/search.svg"};export{e as P};
