@@ -1,5 +1,7 @@
 @import "bulma/css/bulma.min.css";
 @import '@fortawesome/fontawesome-free/css/all.css';
+@import '/fonts/nippo/css/nippo.css';
+
 #svelte{
   font-family: 'Nippo', Helvetica, Arial ,sans-serif; 
   //height: 100%;

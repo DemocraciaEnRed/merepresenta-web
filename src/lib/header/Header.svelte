@@ -13,7 +13,7 @@
 				<span aria-hidden="true"></span>
 			</button>
 			<a class="navbar-item" href="/" class:is-hidden={!logoVisible}>
-				<img src="/static/logo-merepresenta.svg" id="logo" alt="logo">
+				<img src="/logo-merepresenta.svg" id="logo" alt="logo">
 			</a>	
 		</div>
 		{#if openNav}

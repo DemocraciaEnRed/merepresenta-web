@@ -1,5 +1,5 @@
 
-const imgRoute = "/static/themes/";
+const imgRoute = "/themes/";
 
 export const PoliciesIcons = {
   "economia"          : `${imgRoute}money.svg`,
