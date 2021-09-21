@@ -22,7 +22,7 @@
 		</section>
 		<section class="container p-4 ">
 			<h2 class="title light is-4 has-text-weight-normal has-text-white">¿No sabés qué se vota?</h2>
-			<a class="has-text-white is-underlined  is-uppercase transparent" href="/abc">ver ABC sobre las elecciones 2021</a>
+			<a class="has-text-white is-underlined  is-uppercase transparent" href="/abc-electoral">ver ABC sobre las elecciones 2021</a>
 		</section>
 	</div>
 </main>

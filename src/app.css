@@ -2,7 +2,7 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
 #svelte{
   font-family: 'Nippo', Helvetica, Arial ,sans-serif; 
-  height: 100%;
+  //height: 100%;
 }
 main{
   height: 100%

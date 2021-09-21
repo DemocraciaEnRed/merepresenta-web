@@ -4,14 +4,13 @@
   $: iconClass =  isOpen ? "fa-chevron-down" : "fa-chevron-up"
   export let name;
   import { slide } from 'svelte/transition';
+  export let darkMode;
+  let color = darkMode ? 'white' : 'black'
+
 </script>
-<div class="drop" on:click={()=>isOpen = !isOpen}>
-  <h2>
-    {name}
-    <span>
-      <Icon icon={iconClass} />
-    </span>
-  </h2>
+<div class="drop" style="border-color: {color};" on:click={()=>isOpen = !isOpen}>
+  <h2 style="color: {color}">{@html name}</h2>
+  <span style="color:{color}"><Icon icon={iconClass} /></span>
   {#if isOpen}
     <div class="content" transition:slide >
       <slot/>
@@ -20,10 +19,10 @@
 </div>
 <style>
   .drop{
-    text-align: center;
+    text-align: left;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
-    padding: 30px 0;
+    padding: 30px 10px;
     cursor: pointer;
     margin-top: -1px;
   }
@@ -31,7 +30,10 @@
     font-weight: 500;
     color: black;
   }
-  .content{
-    padding: 10px
+  span{
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+    float: right;
   }
 </style>

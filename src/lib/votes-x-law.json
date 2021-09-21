@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Matrimonio igualitario",
+    "votes": [
+      { 
+        "party_name" : "juntos por la falopi",
+        "percentage": 20
+      },
+      { 
+        "party_name" : "frente tu vieja",
+        "percentage": 40
+      }
+    ]
+  }
+]
