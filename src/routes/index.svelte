@@ -7,7 +7,7 @@
 <main class="container p-2 has-background-black">
 	<Hero 
 		title="Te ayudamos a votar de manera informada."
-		image="/static/logo-merepresenta.svg"
+		image="/logo-merepresenta.svg"
 		imgAlt="logo me representa"
 		subtitle="Conocé candidaturas, partidos, plataformas electorales y mucho más."
 	/>
