@@ -1,6 +1,6 @@
 <script context="module">
   import API from '$lib/apiHandler';
-  import getCandidates from '$lib/graph-ql/candidates';
+  import {getCandidates} from '$lib/graph-ql/candidates';
   export async function load({page}){
     const res = await API(getCandidates(page.params.id));
     if(res.statusText === 'OK'){
@@ -63,7 +63,7 @@
         <Twitter {candidate}/>
       </Dropdown>
     </div>
-    <!--
+    <!-- NOS VEMOS EN 4 AÑOS
     <div>
       <Dropdown name="Recorrido político">
         <Timeline {candidate}/>

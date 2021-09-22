@@ -1,0 +1,47 @@
+export function getPartysByDistrict (district){
+  return(`
+  {
+    partido(filter:{district:{slug:{_eq:"${district}"}}}){
+      id
+      name
+      district{
+        id
+      }
+      logo{
+        id
+      }
+    }
+  }`)
+}
+export function getPartyById (id){
+  return(`
+  {
+    partido(filter:{id:{_eq:${Number(id)}}}){
+      id
+      name
+      url_facebook
+      url_instagram
+      url_twitter
+      url_youtube
+      summary
+      url_web
+      district{
+        id
+      }
+      logo{
+        id
+      }
+    	ejes{
+        ejes_id{
+          name
+          slug
+        }
+        summary
+        propuestas{
+          id
+          summary
+        }
+      }
+    }
+  }`)
+}

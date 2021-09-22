@@ -1,10 +1,29 @@
+<script context="module">
+  import API from '$lib/apiHandler';
+  import {getCandidatesByParty} from '$lib/graph-ql/candidates';
+  export async function load({page}){
+    const res = await API(getCandidatesByParty(page.params.partido));
+    if(res.statusText === 'OK'){
+      return {
+        props: { candidates: res.data.data.candidato }
+      }
+    }
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${res.response.error}`)
+    }
+  }
+</script>
 <script>
-  import partido from '$lib/candidatos-jxc.json';
   import { onMount } from 'svelte';
   import { page } from "$app/stores";
+  import { directusImg } from '$lib/common/utils';
   let Carousel; // for saving Carousel component class
   let carouselRef; // for calling methods of carousel instance
-  const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${partido.slug}`;
+  export let candidates;
+  const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
+  
+  //Initialize carousel
   onMount(async () => {
     const module = await import('svelte-carousel');
     Carousel = module.default;
@@ -16,7 +35,7 @@
 </svelte:head>
 <main class="container p-2 has-background-white has-text-centered ">
   <h1 class="title is-4 is-uppercase mt-4">
-    Candidatos de <br>{partido.name}
+    Candidates de <br>{candidates[0].partido.name}
   </h1>
   <a
     href="{partyUrl}"
@@ -25,15 +44,15 @@
   </a>
   <p class="my-4">Se postulan:</p>
   <svelte:component this={Carousel} bind:this={carouselRef}>
-    {#each partido.candidates as candidato, i}
+    {#each candidates as candidate}
       <div class="candidate has-text-centered">
         <div 
-          style="background-image: url({candidato.img})"
-          class="candidate-img" alt="Foto retrato de {candidato.fullname}"/>
-        <h1 class="title has-text-black">{candidato.fullname}</h1>
-        <p class="has-text-black">Candidate a <br>
-        {candidato.position}</p>
-        <a href="{$page.path}/candidate/{candidato.id}" class="button is-outlined is-active my-4">VER CANDIDATE</a>
+          style="background-image: url({directusImg}{candidate.avatar.id})"
+          class="candidate-img" alt="Foto retrato de {candidate.name}"/>
+        <h1 class="title has-text-black">{candidate.name}</h1>
+        <p class="has-text-black">Candidat{candidate.genre === 'm' ? 'o': 'a' } a <br>
+        {candidate.cargo}</p>
+        <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-active my-4">VER CANDIDATE</a>
       </div>
     {/each}
   </svelte:component>

@@ -1,6 +1,6 @@
 import {filterById} from './utils';
 
-export default function getCandidates (id){
+export function getCandidates (id){
   return(`
     {
     candidato${filterById(id)} {
@@ -45,4 +45,21 @@ export default function getCandidates (id){
     }
   }
 `)
+}
+export function getCandidatesByParty (partyId){
+  return(`
+  {
+    candidato(filter:{partido:{id:{_eq:${Number(partyId)}}}}){
+      name
+      cargo
+      genre
+      avatar {
+        id
+      }
+      partido {
+        id
+        name
+      }
+    }
+  }`)
 }

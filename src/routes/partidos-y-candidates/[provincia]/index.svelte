@@ -1,8 +1,24 @@
+<script context="module">
+  import API from '$lib/apiHandler';
+  import {getPartysByDistrict} from '$lib/graph-ql/partidos.js';
+  export async function load({page}){
+    const res = await API(getPartysByDistrict(page.params.provincia));
+    if(res.statusText === 'OK'){
+      return {
+        props: {partidos: res.data.data.partido}
+      }
+    }
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${res.response.error}`)
+    }
+  }
+</script>
 <script>
-  import partidos from '$lib/partidos.json';
   import { page } from "$app/stores";
   import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-	
+  import { directusImg } from '$lib/common/utils';
+  export let partidos;
 </script>
 <main class="container p-2 has-background-white">
   <div class="has-text-right">
@@ -18,14 +34,13 @@
     {#each partidos as partido}
       <div class="column is-half has-text-centered party">
         <div
-          src={partido.logo}
           alt={`logo de ${partido.name}`}
-          style="background-image: url({partido.logo})"
+          style="background-image: url({directusImg}{partido.logo.id})"
           class="party-logo">
         </div>
         <div class="buttons mt-2">
-          <a href="{$page.path}/partidos/{partido.slug}" class="button is-black is-uppercase is-fullwidth">Ver partido</a>
-          <a href="{$page.path}/candidates/{partido.slug}" class="button is-active is-outlined is-fullwidth is-uppercase">Ver candidates</a>
+          <a href="{$page.path}/partidos/{partido.id}" class="button is-black is-uppercase is-fullwidth">Ver partido</a>
+          <a href="{$page.path}/candidates/{partido.id}" class="button is-active is-outlined is-fullwidth is-uppercase">Ver candidates</a>
         </div>
       </div>
     {/each}
@@ -42,6 +57,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 section{
   margin-top: 50px;
 }

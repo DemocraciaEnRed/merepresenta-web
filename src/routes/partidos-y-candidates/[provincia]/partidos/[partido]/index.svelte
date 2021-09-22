@@ -1,10 +1,28 @@
+<script context="module">
+  import { getPartyById } from '$lib/graph-ql/partidos.js';
+  import API from '$lib/apiHandler';
+  export async function load ({page}){
+    const res = await API(getPartyById(page.params.partido))
+    if(res.statusText === 'OK'){
+      return {
+        props:{
+          partido: res.data.data.partido[0]
+        }
+      } 
+    }
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${res.response.error}`)
+    }
+  }
+</script>
 <script>
   import { page } from '$app/stores';
   import Icon from '$lib/common/Icon.svelte';
-  import { PoliciesIcons } from '$lib/common/utils';
-  import partido from '$lib/partido.json';
+  import { directusImg, PoliciesIcons } from '$lib/common/utils';
   import { onMount } from 'svelte';
   import Proposal from './_proposal.svelte';
+  export let partido;
   let load;
   onMount(()=>{
     load = true
@@ -14,6 +32,7 @@
 <svelte:head>
 	<script src="https://unpkg.com/external-svg-loader@1.3.1/svg-loader.min.js"></script>
 </svelte:head>
+
 <main>
   <nav class="breadcrumb is-small pl-2 mt-2" aria-label="breadcrumbs">
     <ul>
@@ -23,28 +42,27 @@
     </ul>
   </nav>
   <section>
-    <div class="partido-img mt-4" style="background-image: url({partido.logo})">
+    <div class="partido-img mt-4" style="background-image: url({directusImg}{partido.logo.id})">
       <span hidden>{partido.name}</span>
     </div>
-
+    
     <p class="description p-4 mt-4">
-      {partido.description}
+      {partido.summary}
     </p>
     
     <div class="container p-4">
       <h2 class="has-text-left title is-5 has-text-black">Les interesa</h2>
       <div class="columns is-mobile p-2">
-        {#each partido.proposals as proposal}
-          <!--ESTA PELOTUDEZ ME COSTO UN HUEVO-->
+        {#each partido.ejes as proposal}
           <div class="column has-text-centered">
             <div class="px-6 py-2 has-background-black">
               {#if load}
                 <svg 
                   width="50"
                   height="50"
-                  class="{proposal.category}-path"
-                  title="propuestas de {proposal.category}"
-                  data-src="{PoliciesIcons[proposal.category]}">
+                  class="{proposal.ejes_id.slug}-path"
+                  title="propuestas de {proposal.ejes_id.slug}"
+                  data-src="{PoliciesIcons[proposal.ejes_id.slug]}">
                 </svg>
               {/if}  
           </div>
@@ -53,29 +71,30 @@
       </div>
 
       <h2 class="has-text-left title is-5 has-text-black">¿Qué proponen?</h2>
-      {#each partido.proposals as proposal}
-        <Proposal {proposal} party={partido.slug}/>
+      {#each partido.ejes as proposal}
+        <Proposal {proposal} party={partido.id}/>
       {/each}
       <div class="social-networks py-6">
-        <a href={partido.social_networks.instagram}>
+        <a href={partido.url_instagram}>
           <Icon brand size="large" icon="fa-instagram"/>
         </a>
-        <a href={partido.social_networks.facebook}>
+        <a href={partido.url_facebook}>
           <Icon brand size="large" icon="fa-facebook-square"/>  
         </a>
-        <a href={partido.social_networks.twitter}>
+        <a href={partido.url_twitter}>
           <Icon brand size="large" icon="fa-twitter-square"/>  
         </a>
       </div>
+
       <div class="has-text-centered">
         <p class="mb-4">
           <strong>¿Querés la información oficial?</strong>
         </p>
-        <a href={partido.plataform_url} target="_blank" class="is-uppercase is-underlined mt-4">ir a la plataforma oficial</a>
+        <a href={partido.url_web} target="_blank" class="is-uppercase is-underlined mt-4">ir a la plataforma oficial</a>
         <p class="mt-6">
           <strong>¿Querés conocer a sus candidates?</strong> 
         </p>
-        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.slug}"
+        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.id}"
           class="button is-uppercase mt-4 is-fullwidth  is-outline is-active">ver candidates</a>
       </div>
       
@@ -83,6 +102,7 @@
     
   </section>
 </main>
+
 <style>
   .partido-img{
     height: 200px;
