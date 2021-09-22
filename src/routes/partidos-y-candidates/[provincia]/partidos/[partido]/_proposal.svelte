@@ -6,17 +6,17 @@
   
 </script>
 <table class="my-5 p-2">
-  <thead>
+  <table>
     <tr>
       <td class="p-4 border is-uppercase">
-        <span class="p-2" style="background-color: var(--{proposal.ejes_id.slug});">{proposal.ejes_id.name}</span>
+        <span class="p-2 has-text-black" style="background-color: var(--{proposal.ejes_id.slug});">{proposal.ejes_id.name}</span>
       </td>
       <td class="category-icon has-text-centered">
         <img src={PoliciesIcons[proposal.ejes_id.slug]} alt="icono de {proposal.ejes_id.name}" >
       </td>
     </tr>
-  </thead>
-  <tbody>
+  </table>
+  <table>
     <tr>
       <td>
         <ul class="px-5 mt-4 ml-4">
@@ -29,16 +29,13 @@
     <tr class="has-text-centered">
       <a href="{policyUrl}{proposal.ejes_id.slug}" class="button is-black is-uppercase my-4">leer más</a>  
     </tr>
-  </tbody>
+  </table>
 </table>
 
 <style>
   table{
     width: 100%;
-    border: 2px solid black
-  }
-  thead{
-    border: 2px solid;
+    border: 1px solid black
   }
   .category-icon{
     vertical-align: middle;
