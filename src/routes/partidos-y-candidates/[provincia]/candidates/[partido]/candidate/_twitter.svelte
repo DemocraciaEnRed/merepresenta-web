@@ -1,13 +1,14 @@
 <script>
-  export let twitter;
+  export let candidate;
 </script>
 <div class="mt-6 has-text-left p-4">
   <h2 class="has-text-black title is-5">Biografia</h2>
   <p class="has-text-left">
-    {twitter.bio}
+    {candidate.twitter_profile}
   </p>
+  <!--
   <h2 class="has-text-black title is-5">tweets más retwitteados</h2>
-  {#each twitter.most_shared_tweets as tweet}
+  {#each most_shared_tweets as tweet}
     <blockquote>
       <i>{tweet}</i>
     </blockquote>
@@ -23,11 +24,13 @@
       </div>
     {/each}
   </div>
+-->
 </div>
 <style>
+/**
 .tweeter-profile{
   height: 45px;
   width: 45px;
   border-radius: 50%;
-}
+}*/
 </style>

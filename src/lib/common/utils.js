@@ -1,4 +1,3 @@
-
 const imgRoute = "/themes/";
 
 export const PoliciesIcons = {
@@ -12,3 +11,5 @@ export const PoliciesIcons = {
   "justicia"          : `${imgRoute}justice.svg`,
   "corrupcion"        : `${imgRoute}search.svg`,
 }
+
+export const directusImg = 'https://content.merepresenta.info/assets/'

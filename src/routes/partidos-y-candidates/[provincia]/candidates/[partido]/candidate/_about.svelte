@@ -6,23 +6,23 @@
   <table>
     <tr>
       <td class="has-text-left">edad</td>
-      <td><strong>{candidate.about.age} años</strong></td>
+      <td><strong>{candidate.age} años</strong></td>
     </tr>
     <tr>
       <td class="has-text-left">profesion</td>
-      <td><strong>{candidate.about.profession}</strong></td>
+      <td><strong>{candidate.profession.name}</strong></td>
     </tr>
-    <tr hidden={candidate.about.children && candidate.about.children !== 0}>
+    <tr hidden={candidate.childrens === 0}>
       <td class="has-text-left">hijes</td>
       <td>
-        <strong>{candidate.about.children} hije{candidate.about.children > 1 ? 's' : ''}</strong>
+        <strong>{candidate.childrens} hije{candidate.childrens > 1 ? 's' : ''}</strong>
       </td>
     </tr>
   </table>
   <strong class="mb-6">¿Tuvo cargos?</strong>
-  <Binary value={candidate.about.had_state_jobs}/>
+  <Binary value={candidate.cargos_publicos}/>
   <strong class="mb-6">¿Estuvo en varios partidos?</strong>
-  <Binary value={candidate.about.multiparty}/>
+  <Binary value={candidate.otros_partidos}/>
 </div>
 <style> 
 

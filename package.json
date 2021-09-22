@@ -1,6 +1,7 @@
 {
   "name": "me-representa",
   "version": "0.0.1",
+  "apiUrl": "https://content.merepresenta.info/",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -26,6 +27,7 @@
     "@fontsource/fira-mono": "^4.2.2",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@lukeed/uuid": "^2.0.0",
+    "axios": "^0.21.4",
     "bulma": "^0.9.3",
     "bulma-carousel": "^4.0.24",
     "cookie": "^0.4.1"
