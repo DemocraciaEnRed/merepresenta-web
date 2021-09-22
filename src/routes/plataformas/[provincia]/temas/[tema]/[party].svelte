@@ -26,7 +26,7 @@
     </p>
   {/each}
   <p class="has-text-centered">
-    <a href={partido.url_plataforma} class="button is-black is-uppercase">
+    <a href={partido.url_plataforma} target="_blank" class="button is-black is-uppercase">
       ir a la plataforma oficial
     </a> 
   </p>
