@@ -14,7 +14,7 @@
   <p class="is-family-sans-serif ">Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</p>
   <p class="has-text-centered mt-6">
     <strong>¿Querés saber cómo votó cada partido <br> en las últimas leyes?</strong><br>
-    <a href="{base}/como-votaron" class="button is-medium is-outlined is-active is-uppercase mt-4">Ver votaciones</a>
+    <a href="//como-votaron" class="button is-medium is-outlined is-active is-uppercase mt-4">Ver votaciones</a>
   </p>
   <section class="columns is-mobile">
     {#each partidos as partido}

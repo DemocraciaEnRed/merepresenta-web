@@ -5,7 +5,7 @@
   import { PoliciesIcons } from "$lib/common/utils";
   export let proposal;
   
-  let policyUrl  = `${base}/plataformas/${$page.params.provincia}/temas/`;    
+  let policyUrl  = `//plataformas/${$page.params.provincia}/temas/`;    
   
   
 </script>

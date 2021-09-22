@@ -8,7 +8,7 @@
   {#each provincias as provincia}
     <div class="columns">
       <div class="column has-text-centered">
-      <a href="{base}/partidos-y-candidates/{provincia.slug}" class="button is-fullwidth">{provincia.name}</a>
+      <a href="//partidos-y-candidates/{provincia.slug}" class="button is-fullwidth">{provincia.name}</a>
       </div>
     </div>
   {/each}  

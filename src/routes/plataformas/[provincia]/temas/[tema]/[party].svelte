@@ -44,7 +44,7 @@
   {/each}
   <p class="has-text-centered mt-4">
     Conocé el resto de los partidos y sus propuestas
-    <a href="{base}" class="button is-black is-uppercase mt-4">ver propuestas</a>  
+    <a href="/" class="button is-black is-uppercase mt-4">ver propuestas</a>  
   </p>
 </main>
 <style>

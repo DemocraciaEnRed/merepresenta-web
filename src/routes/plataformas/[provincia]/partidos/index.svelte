@@ -30,7 +30,7 @@
   <section class="columns is-mobile py-6">
     {#each partidos as partido}
       <div class="column is-half has-text-centered party">
-        <a href="{base}/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.slug}">
+        <a href="//partidos-y-candidates/{$page.params.provincia}/partidos/{partido.slug}">
           <div
             src={partido.logo}
             alt={`logo de ${partido.name}`}

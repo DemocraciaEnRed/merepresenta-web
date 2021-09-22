@@ -14,17 +14,17 @@
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 			</button>
-			<a class="navbar-item" href="{base}" class:is-hidden={!logoVisible}>
+			<a class="navbar-item" href="/" class:is-hidden={!logoVisible}>
 				<img src="/logo-merepresenta.svg" id="logo" alt="logo">
 			</a>	
 		</div>
 		{#if openNav}
 		<div class="navbar-menu is-active"  transition:slide>
 			<div class="navbar-start">
-				<a class="navbar-item" sveltekit:prefetch class:is-active={$page.path === base} href="{base}">
+				<a class="navbar-item" sveltekit:prefetch class:is-active={$page.path === base} href="/">
 					Home
 				</a>
-				<a class="navbar-item" class:is-active={$page.path === `${base}/sobre-nosotros`} href="{base}/sobre-nosotros">
+				<a class="navbar-item" class:is-active={$page.path === `//sobre-nosotros`} href="//sobre-nosotros">
 					Sobre nosotros
 				</a>
 			</div>
