@@ -5,9 +5,6 @@
   import SelectDistrict from '$lib/common/SelectDistrict.svelte';
 
   import partidos from '$lib/proposal-x-partido.json';
-  
-  
-
   let routePath;
   let tema;
   page.subscribe(({path, params})=>{
