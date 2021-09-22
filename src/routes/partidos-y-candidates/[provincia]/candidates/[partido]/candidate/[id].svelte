@@ -1,5 +1,4 @@
 <script>
-  import { base } from '$app/paths';
   import { page } from "$app/stores";
   import candidate from '$lib/candidate.json'
   import Dropdown from "$lib/common/Dropdown.svelte";
@@ -9,15 +8,15 @@
   import Twitter from "./_twitter.svelte";
   import Corporate from './_corporate.svelte';
 
-  const partyUrl = `//partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
+  const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
 
 </script>
 <main class="container has-background-white mt-4">
   <nav class="breadcrumb is-small pl-2" aria-label="breadcrumbs">
     <ul>
-      <li ><a href="//partidos-y-candidates/donde-votas">partidos y candidates</a></li>
-      <li ><a href="//partidos-y-candidates/{$page.params.provincia}">{$page.params.provincia}</a></li>
-      <li ><a href="//partidos-y-candidates/{$page.params.provincia}/candidates/{$page.params.partido}">{$page.params.partido}</a></li>
+      <li ><a href="/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
+      <li ><a href="/partidos-y-candidates/{$page.params.provincia}">{$page.params.provincia}</a></li>
+      <li ><a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{$page.params.partido}">{$page.params.partido}</a></li>
       <li class="is-active"><a href aria-current="page">{candidate.fullname}</a></li>
     </ul>
   </nav>

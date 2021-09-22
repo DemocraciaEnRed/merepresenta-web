@@ -2,7 +2,6 @@
   import { page } from '$app/stores';
   import HeaderPP from './_header.svelte';
   import party from '$lib/proposal-x-partido.json';
-  import { base } from '$app/paths';
   let partido = party[0];
   //la vaca
   let tema = $page.params.tema;

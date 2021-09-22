@@ -1,5 +1,4 @@
 <script>
-	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	let openNav = false;
 	import { slide } from 'svelte/transition';
@@ -21,10 +20,10 @@
 		{#if openNav}
 		<div class="navbar-menu is-active"  transition:slide>
 			<div class="navbar-start">
-				<a class="navbar-item" sveltekit:prefetch class:is-active={$page.path === base} href="/">
+				<a class="navbar-item" sveltekit:prefetch class:is-active={$page.path === '/'} href="/">
 					Home
 				</a>
-				<a class="navbar-item" class:is-active={$page.path === `//sobre-nosotros`} href="//sobre-nosotros">
+				<a class="navbar-item" class:is-active={$page.path === `/sobre-nosotros`} href="/sobre-nosotros">
 					Sobre nosotros
 				</a>
 			</div>

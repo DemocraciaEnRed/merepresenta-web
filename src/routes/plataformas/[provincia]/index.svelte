@@ -1,7 +1,6 @@
 <script>
 	import { page } from "$app/stores";
-	import { base } from '$app/paths';
-	let nextUrl = `//plataformas/${$page.params.provincia}`
+	let nextUrl = `/plataformas/${$page.params.provincia}`
 </script>
 <main class="container p-2 has-background-black">
 <section class="has-text-centered propuestas">
