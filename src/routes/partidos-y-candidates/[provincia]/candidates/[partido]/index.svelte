@@ -2,10 +2,10 @@
   import partido from '$lib/candidatos-jxc.json';
   import { onMount } from 'svelte';
   import { page } from "$app/stores";
-
+  import { base } from '$app/paths';
   let Carousel; // for saving Carousel component class
   let carouselRef; // for calling methods of carousel instance
-  const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${partido.slug}`;
+  const partyUrl = `${base}/partidos-y-candidates/${$page.params.provincia}/partidos/${partido.slug}`;
   onMount(async () => {
     const module = await import('svelte-carousel');
     Carousel = module.default;

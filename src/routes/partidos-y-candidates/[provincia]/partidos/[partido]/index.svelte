@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import { page } from '$app/stores';
   import Icon from '$lib/common/Icon.svelte';
   import { PoliciesIcons } from '$lib/common/utils';
@@ -17,8 +18,8 @@
 <main>
   <nav class="breadcrumb is-small pl-2 mt-2" aria-label="breadcrumbs">
     <ul>
-      <li ><a href="/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
-      <li ><a href="/partidos-y-candidates/{$page.params.provincia}">{$page.params.provincia}</a></li>
+      <li ><a href="{base}/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
+      <li ><a href="{base}/partidos-y-candidates/{$page.params.provincia}">{$page.params.provincia}</a></li>
       <li class="is-active"><a href aria-current="page">{partido.name}</a></li>
     </ul>
   </nav>
@@ -75,7 +76,7 @@
         <p class="mt-6">
           <strong>¿Querés conocer a sus candidates?</strong> 
         </p>
-        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.slug}"
+        <a href="{base}/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.slug}"
           class="button is-uppercase mt-4 is-fullwidth  is-outline is-active">ver candidates</a>
       </div>
       

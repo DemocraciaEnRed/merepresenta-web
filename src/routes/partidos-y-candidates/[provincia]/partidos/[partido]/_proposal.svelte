@@ -1,8 +1,11 @@
 <script>
+  import { base } from "$app/paths";
+
   import { page } from "$app/stores";
   import { PoliciesIcons } from "$lib/common/utils";
   export let proposal;
-  let policyUrl  = `/plataformas/${$page.params.provincia}/temas/`;    
+  
+  let policyUrl  = `${base}/plataformas/${$page.params.provincia}/temas/`;    
   
   
 </script>

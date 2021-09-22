@@ -4,7 +4,7 @@
 <main class="container has-background-black">
   <section class=" p-2">
     <div class="has-text-centered mt-6 has-text-white">
-      <img src="/static/abc.svg" alt="imagen de una mano deslizando un voto en una urna">
+      <img src="/abc.svg" alt="imagen de una mano deslizando un voto en una urna">
       <h1 class="title has-text-white mt-3">Elecciones 2021</h1>
       <h2 class="title is-5 p-4 has-text-white has-text-weight-normal">
         Conocé qué candidatxs y partidos participan en estas elecciones
