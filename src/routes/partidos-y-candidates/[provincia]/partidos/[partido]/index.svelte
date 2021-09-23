@@ -23,11 +23,11 @@
   import { onMount } from 'svelte';
   import Proposal from './_proposal.svelte';
   export let partido;
-  let load;
+  let svgLoad;
   
   //this is for svg loading, necesary to paint them from here
   onMount(()=>{
-    load = true
+    svgLoad = true
   })
   
 </script>
@@ -58,7 +58,7 @@
         {#each partido.ejes as proposal}
           <div class="column has-text-centered">
             <div class="px-6 py-2 has-background-black">
-              {#if load}
+              {#if svgLoad}
                 <svg 
                   width="50"
                   height="50"
