@@ -1,9 +1,29 @@
+<script context="module">
+  import API from '$lib/apiHandler';
+  import {getThemeProposalsByParty} from '$lib/graph-ql/partidos.js';
+  export async function load({page}){
+    const { tema, provincia} = page.params;
+    const res = await API(getThemeProposalsByParty(tema, provincia))
+    if(res.statusText === 'OK'){
+      return{
+        props:{
+          partidios : res.data.data.partido
+        }
+      }
+    }
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${res.response.error}`)
+    }
+  }
+</script>
 <script>
   import { page } from '$app/stores';
   import ProposalsByParty from './_party-pp.svelte'
   import HeaderPP from './_header.svelte';
   import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-
+  export let partidios;
+  console.log(partidios)
   import partidos from '$lib/proposal-x-partido.json';
   let routePath;
   let tema;
@@ -24,7 +44,7 @@
       <SelectDistrict/>
     </div>
     <div class="p-2">
-      {#each partidos as partido}
+      {#each partidios as partido}
         <ProposalsByParty {partido}/>
       {/each}
     </div>

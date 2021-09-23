@@ -24,6 +24,8 @@
   import Proposal from './_proposal.svelte';
   export let partido;
   let load;
+  
+  //this is for svg loading, necesary to paint them from here
   onMount(()=>{
     load = true
   })

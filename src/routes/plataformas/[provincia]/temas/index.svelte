@@ -1,6 +1,6 @@
 <script>
   import { page } from "$app/stores";
-  import { PoliciesIcons, } from "$lib/common/utils";
+  import { PoliciesIcons } from "$lib/common/utils";
   import temas from '$lib/temas.json';
 </script>
 <main class="container p-2">

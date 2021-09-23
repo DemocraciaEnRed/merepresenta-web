@@ -1,7 +1,17 @@
+<script context="module">
+  import {getThemeProposalsByPartyId} from '$lib/graph-ql/partidos.js';
+  import API, { handleResponse } from '$lib/apiHandler';
+  export async function load({page}){
+    const {party, tema} = page.params;
+    const res = await API(getThemeProposalsByPartyId(tema, party))
+    return handleResponse(res, "party", "partido");
+  }
+</script>
 <script>
   import { page } from '$app/stores';
   import HeaderPP from './_header.svelte';
-  import party from '$lib/proposal-x-partido.json';
+  export let party
+
   let partido = party[0];
   //la vaca
   let tema = $page.params.tema;
@@ -15,18 +25,19 @@
 </div>
 <main class="container p-2">
   <ul class="ml-5 mt-4">
-    {#each partido.items as propuesta}
-      <li>{propuesta.intro}</li>
+    
+    {#each partido.ejes[0].propuestas as propuesta}
+      <li>{propuesta.title}</li>
     {/each}
   </ul>
-  {#each partido.items as propuesta}
+  {#each partido.ejes[0].propuestas as propuesta}
     <h2 class="py-2 title is-6 mt-4">{propuesta.title}</h2>  
     <p>
-      {propuesta.complete_description}
+      {propuesta.summary}
     </p>
   {/each}
   <p class="has-text-centered">
-    <a href={partido.url_plataforma} target="_blank" class="button is-black is-uppercase">
+    <a href={partido.url_web} target="_blank" class="button is-black is-uppercase">
       ir a la plataforma oficial
     </a> 
   </p>
@@ -36,11 +47,13 @@
       te invitamos a que visites <br> las siguientes páginas
     </strong>
   </p>
+  <!--
   {#each partido.related_links as related}
     <p class="has-text-centered mt-4">
       <a href={related.url} class="button is-outlined is-active px-4">{related.link}</a>  
     </p>
   {/each}
+  -->
   <p class="has-text-centered mt-4">
     Conocé el resto de los partidos y sus propuestas
     <a href="/" class="button is-black is-uppercase mt-4">ver propuestas</a>  

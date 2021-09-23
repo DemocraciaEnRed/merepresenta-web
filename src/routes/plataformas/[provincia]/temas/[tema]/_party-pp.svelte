@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores";
+  import { directusImg } from "$lib/common/utils";
   export let partido;
-  
 </script>
 <div class="mb-4">
   <table class="head">
@@ -9,23 +9,23 @@
       <td class="party-name">
         <h1 class="has-background-black has-text-white has-text-centered p-2 is-uppercase">{partido.name}</h1>
       </td>  
-      <td class="party-logo" style="background-image: url({partido.logo});">
+      <td class="party-logo" style="background-image: url({directusImg}{partido.logo.id});">
       </td>
     </tr>
   </table>
   <table>
-    {#each partido.items as propuesta}
+    
+    {#each partido.ejes[0].propuestas as propuesta}
+    
       <tr class="has-text-centered bb">
         <td class="py-4">
-          <strong>{propuesta.title}</strong>
-          <br>
-          {propuesta.intro}
+          <strong>{propuesta.summary}</strong>
         </td>    
       </tr>
     {/each}
       <tr>
         <td class="py-4 has-text-centered">
-          <a href="{$page.path}/{partido.slug}" class="button is-black is-uppercase px-6"> Leer más </a>
+          <a href="{$page.path}/{partido.id}" class="button is-black is-uppercase px-6"> Leer más </a>
         </td>
       </tr>
   </table>

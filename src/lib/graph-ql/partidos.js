@@ -45,3 +45,64 @@ export function getPartyById (id){
     }
   }`)
 }
+export function getThemeProposalsByParty(tema, provincia){
+  return(`
+  {
+    partido(filter:{district:{slug:{_eq:"${provincia}"}}}){
+      id
+      name
+      summary
+      url_web
+      district{
+        id
+      }
+      logo{
+        id
+      }
+      ejes(filter:{ejes_id:{slug:{_eq:"${tema}"}}}){
+        ejes_id{
+          name
+          slug
+        }
+        summary
+        propuestas{
+          id
+          summary
+        }
+      }
+    }
+  }
+  `)
+}
+export function getThemeProposalsByPartyId(tema, partido){
+  return(
+  ` {
+      partido(filter:{id:{_eq:${Number(partido)}}}){
+      id
+      name
+    	summary
+    	url_web
+      district{
+        id
+      }
+      logo{
+        id
+      }
+    	ejes(filter:{ejes_id:{slug:{_eq:"${tema}"}}}){
+        ejes_id{
+          name
+          slug
+        }
+        summary
+        propuestas{
+          id
+          summary
+        }
+      }
+    }
+  
+  
+
+}`
+  )
+}
