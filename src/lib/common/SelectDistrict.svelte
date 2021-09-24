@@ -20,7 +20,6 @@
     const newRoute = route.replace(provincia, selected);
     goto(newRoute,{replaceState:true});
   }
-
 </script>
 {#if !loading}
 <div class="select is-small">
