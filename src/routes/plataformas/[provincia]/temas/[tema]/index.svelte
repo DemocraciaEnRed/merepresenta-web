@@ -6,7 +6,6 @@
     const res = await API(fetch, getThemeProposalsByParty(tema, provincia))
     return await handleResponse(res,'partidos','partido');
   }
-  
 </script>
 <script>
   import { page } from '$app/stores';
