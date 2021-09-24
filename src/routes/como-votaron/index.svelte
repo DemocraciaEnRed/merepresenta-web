@@ -1,6 +1,6 @@
 <script>
   import Dropdown from "$lib/common/Dropdown.svelte";
-  import laws from '$lib/votes-x-law.json'
+  let laws = []
   import Votes from './_votes.svelte';
 </script>
 <main class="container p-2 has-background-black has-text-centered">

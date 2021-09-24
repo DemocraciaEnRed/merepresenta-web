@@ -1,9 +1,7 @@
 <script>
   import { page } from "$app/stores";
-  import partys from '$lib/partidos.json'
   import SelectDistrict from "$lib/common/SelectDistrict.svelte";
   import '$lib/typedef'
-
   let provincia;
   /**
     * @type {Party[]}
