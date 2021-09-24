@@ -4,7 +4,7 @@
   export async function load({page}){
     const { tema, provincia} = page.params;
     const res = await API(getThemeProposalsByParty(tema, provincia))
-    handleResponse(res,'partidos','partido');
+    return handleResponse(res,'partidos','partido');
   }
   
 </script>
