@@ -14,15 +14,15 @@
     </tr>
   </table>
   <table>
-    
-    {#each partido.ejes[0].propuestas as propuesta}
-    
-      <tr class="has-text-centered bb">
-        <td class="py-4">
-          <strong>{propuesta.summary}</strong>
-        </td>    
-      </tr>
-    {/each}
+    {#if partido.ejes > 0}
+      {#each partido.ejes[0].propuestas as propuesta}
+        <tr class="has-text-centered bb">
+          <td class="py-4">
+            <strong>{propuesta.summary}</strong>
+          </td>    
+        </tr>
+      {/each}
+    {/if}
       <tr>
         <td class="py-4 has-text-centered">
           <a href="{$page.path}/{partido.id}" class="button is-black is-uppercase px-6"> Leer más </a>

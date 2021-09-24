@@ -63,6 +63,9 @@ export function getThemeProposalsByParty(tema, provincia){
         ejes_id{
           name
           slug
+          icon_file{
+            id
+          }
         }
         summary
         propuestas{
