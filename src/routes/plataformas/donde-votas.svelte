@@ -9,7 +9,7 @@
   } 
   </script>
   <script>
-    export let provincias
+    export let provincias;
   </script>
   <main class="container p-2 has-background-black">
     <h1 class="has-text-centered title-white is-3 my-4">¿Donde votas?</h1>
