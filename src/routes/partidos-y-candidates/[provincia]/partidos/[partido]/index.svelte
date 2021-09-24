@@ -1,9 +1,9 @@
 <script context="module">
   import { getPartyById } from '$lib/graph-ql/partidos.js';
   import API, { handleResponse } from '$lib/apiHandler';
-  export async function load ({page}){
-    const res = await API(getPartyById(page.params.partido))
-    return handleResponse(res, "partidos", "partido");
+  export async function load ({fetch ,page}){
+    const res = await API(fetch, getPartyById(page.params.partido))
+    return await handleResponse(res, "partidos", "partido");
   }
 </script>
 <script>

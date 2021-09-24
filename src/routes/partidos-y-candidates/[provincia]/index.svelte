@@ -1,10 +1,10 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
   import {getPartysByDistrict} from '$lib/graph-ql/partidos.js';
-  export async function load({page}){
-    const res = await API(getPartysByDistrict(page.params.provincia));
-    return handleResponse(res, "partidos", "partido");
-  }
+  export async function load({page, fetch}){
+    const res = await API(fetch, getPartysByDistrict(page.params.provincia));
+    return await handleResponse(res, "partidos", "partido");
+}
 </script>
 <script>
   import { page } from "$app/stores";

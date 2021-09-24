@@ -1,32 +1,41 @@
-import axios from 'axios'
+export const baseURL = 'https://content.merepresenta.info'
 
-const instance = axios.create({
-  baseURL: 'https://content.merepresenta.info'
-})
-
-const API = (query) => {
-  return instance.post('/graphql',{query});
+//native svelte fetch cause svelte doesnt like axios aparently
+const API = (fetch, query) => {
+  const body = JSON.stringify({query});
+  return fetch(
+    `${baseURL}/graphql`,
+    {
+      method: "POST",
+      body,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 }
 
 export default API;
 
 /**
  * 
- * @param {AxiosResponse} res 
+ * @param {Response} res 
  * @param {string} prop the name of the prop as we wanted in the component
  * @param {string} original the name of the key comming from the api
  * @returns 
  */
 
-export function handleResponse(res, prop, original){
-  if(res.statusText === 'OK'){
+export async function handleResponse(res, prop, original){
+  const jsonResponse = await res.json()
+  
+  if(res.ok){
     return {
       props:{
-        [`${prop}`]: res.data.data[`${original}`]
+        [`${prop}`]: jsonResponse.data[`${original}`]
       }
     }
   }
   return {
     status: res.status,
+    error: jsonResponse.errors
   }
 }

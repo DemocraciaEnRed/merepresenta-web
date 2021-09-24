@@ -1,10 +1,10 @@
 <script context="module">
   import {getThemeProposalsByPartyId} from '$lib/graph-ql/partidos.js';
   import API, { handleResponse } from '$lib/apiHandler';
-  export async function load({page}){
+  export async function load({page, fetch}){
     const {party, tema} = page.params;
-    const res = await API(getThemeProposalsByPartyId(tema, party))
-    return handleResponse(res, "party", "partido");
+    const res = await API(fetch ,getThemeProposalsByPartyId(tema, party))
+    return await handleResponse(res, "party", "partido");
   }
 </script>
 <script>

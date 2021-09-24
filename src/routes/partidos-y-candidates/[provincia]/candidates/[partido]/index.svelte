@@ -1,9 +1,9 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
-  import {getCandidatesByParty} from '$lib/graph-ql/candidates';
-  export async function load({page}){
-    const res = await API(getCandidatesByParty(page.params.partido));
-    return handleResponse(res, "candidates", "candidato");
+  import { getCandidatesByParty } from '$lib/graph-ql/candidates';
+  export async function load({page, fetch}){
+    const res = await API(fetch, getCandidatesByParty(page.params.partido));
+    return await handleResponse(res, "candidates", "candidato");
   }
 </script>
 <script>

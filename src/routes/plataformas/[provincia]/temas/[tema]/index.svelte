@@ -3,8 +3,8 @@
   import {getThemeProposalsByParty} from '$lib/graph-ql/partidos.js';
   export async function load({page}){
     const { tema, provincia} = page.params;
-    const res = await API(getThemeProposalsByParty(tema, provincia))
-    return handleResponse(res,'partidos','partido');
+    const res = await API(fetch, getThemeProposalsByParty(tema, provincia))
+    return await handleResponse(res,'partidos','partido');
   }
   
 </script>

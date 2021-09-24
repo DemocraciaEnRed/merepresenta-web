@@ -1,10 +1,9 @@
 <script context="module">
   import API, { handleResponse } from "$lib/apiHandler";
   import { getThemes } from "$lib/graph-ql/themes.js";
-  export async function load(){
-    console.log(getThemes())
-    const res = await API(getThemes());
-    return handleResponse(res, "temas", "ejes")
+  export async function load({fetch}){
+    const res = await API(fetch, getThemes());
+    return await handleResponse(res, "temas", "ejes")
   }
 </script>
 <script>

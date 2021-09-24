@@ -1,9 +1,9 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
   import {getCandidates} from '$lib/graph-ql/candidates';
-  export async function load({page}){
-    const res = await API(getCandidates(page.params.id));
-    return handleResponse(res, "candidate", "candidato_by_id")
+  export async function load({fetch, page}){
+    const res = await API(fetch, getCandidates(page.params.id));
+    return await handleResponse(res, "candidate", "candidato_by_id")
   }
 </script>
 <script>

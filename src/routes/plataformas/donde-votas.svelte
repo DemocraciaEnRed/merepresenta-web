@@ -3,9 +3,9 @@
   //tried to share this code, didnt work TODO: 1 reusable component
   import API, { handleResponse } from "$lib/apiHandler";
   import { getDistricts } from "$lib/graph-ql/distritos.js";
-  export async function load(){
-    const res = await API(getDistricts());
-    return handleResponse(res, "provincias", "distritos");
+  export async function load({fetch}){
+    const res = await API(fetch, getDistricts());
+    return await handleResponse(res, "prov", "distritos");
   } 
   </script>
   <script>
