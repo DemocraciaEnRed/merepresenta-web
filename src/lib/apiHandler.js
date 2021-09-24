@@ -28,6 +28,5 @@ export function handleResponse(res, prop, original){
   }
   return {
     status: res.status,
-    error: new Error(`Could not load ${res.response.error}`)
   }
 }
