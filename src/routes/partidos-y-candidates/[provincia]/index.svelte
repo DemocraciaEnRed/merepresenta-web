@@ -1,17 +1,9 @@
 <script context="module">
-  import API from '$lib/apiHandler';
+  import API, { handleResponse } from '$lib/apiHandler';
   import {getPartysByDistrict} from '$lib/graph-ql/partidos.js';
   export async function load({page}){
     const res = await API(getPartysByDistrict(page.params.provincia));
-    if(res.statusText === 'OK'){
-      return {
-        props: {partidos: res.data.data.partido}
-      }
-    }
-    return {
-      status: res.status,
-      error: new Error(`Could not load ${res.response.error}`)
-    }
+    return handleResponse(res, "partidos", "partido");
   }
 </script>
 <script>

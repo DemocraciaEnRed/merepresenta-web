@@ -1,21 +1,11 @@
 
 <script context="module">
   //tried to share this code, didnt work TODO: 1 reusable component
-  import API from "$lib/apiHandler";
+  import API, { handleResponse } from "$lib/apiHandler";
   import { getDistricts } from "$lib/graph-ql/distritos.js";
   export async function load(){
     const res = await API(getDistricts());
-    if(res.statusText === 'OK'){
-      return{
-        props: {
-          provincias: res.data.data.distritos
-        }
-      }
-    }
-    return {
-      status: res.status,
-      error: new Error(`Could not load ${res.response.error}`)
-    }
+    return handleResponse(res, "provincias", "distritos");
   } 
   </script>
   <script>

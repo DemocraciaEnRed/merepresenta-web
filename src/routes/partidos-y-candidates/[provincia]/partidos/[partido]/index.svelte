@@ -1,19 +1,9 @@
 <script context="module">
   import { getPartyById } from '$lib/graph-ql/partidos.js';
-  import API from '$lib/apiHandler';
+  import API, { handleResponse } from '$lib/apiHandler';
   export async function load ({page}){
     const res = await API(getPartyById(page.params.partido))
-    if(res.statusText === 'OK'){
-      return {
-        props:{
-          partido: res.data.data.partido[0]
-        }
-      } 
-    }
-    return {
-      status: res.status,
-      error: new Error(`Could not load ${res.response.error}`)
-    }
+    return handleResponse(res, "partidos", "partido");
   }
 </script>
 <script>
@@ -22,7 +12,8 @@
   import { directusImg, PoliciesIcons } from '$lib/common/utils';
   import { onMount } from 'svelte';
   import Proposal from './_proposal.svelte';
-  export let partido;
+  export let partidos;
+  let partido = partidos[0]
   let svgLoad;
   
   //this is for svg loading, necesary to paint them from here

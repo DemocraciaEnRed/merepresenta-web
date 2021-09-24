@@ -1,17 +1,9 @@
 <script context="module">
-  import API from '$lib/apiHandler';
+  import API, { handleResponse } from '$lib/apiHandler';
   import {getCandidatesByParty} from '$lib/graph-ql/candidates';
   export async function load({page}){
     const res = await API(getCandidatesByParty(page.params.partido));
-    if(res.statusText === 'OK'){
-      return {
-        props: { candidates: res.data.data.candidato }
-      }
-    }
-    return {
-      status: res.status,
-      error: new Error(`Could not load ${res.response.error}`)
-    }
+    return handleResponse(res, "candidates", "candidato");
   }
 </script>
 <script>

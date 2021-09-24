@@ -1,17 +1,9 @@
 <script context="module">
-  import API from '$lib/apiHandler';
+  import API, { handleResponse } from '$lib/apiHandler';
   import {getCandidates} from '$lib/graph-ql/candidates';
   export async function load({page}){
     const res = await API(getCandidates(page.params.id));
-    if(res.statusText === 'OK'){
-      return {
-        props: { candidate: res.data.data.candidato_by_id }
-      }
-    }
-    return {
-      status: res.status,
-      error: new Error(`Could not load ${res.response.error}`)
-    }
+    return handleResponse(res, "candidate", "candidato_by_id")
   }
 </script>
 <script>
