@@ -8,7 +8,7 @@
 </script>
 <script>
   import { page } from "$app/stores";
-  import { PoliciesIcons } from "$lib/common/utils";
+import { directusImg } from "$lib/common/utils";
   export let temas;
 </script>
 <main class="container p-2">
@@ -18,7 +18,7 @@
     {#each temas as tema}
       <a class="column is-half has-text-centered" href="{$page.path}/{tema.slug}">
         <div style="background-color: var(--{tema.slug});">
-          <img src={PoliciesIcons[tema.slug]} alt="icono de {tema.name}"  class="py-5">
+          <img src="{directusImg}{tema.id}" alt="icono de {tema.name}"  class="py-5">
           <h1 class="has-background-black has-text-weight-medium is-uppercase p-2" style="color:var(--{tema.slug})">
             {tema.name}
           </h1>

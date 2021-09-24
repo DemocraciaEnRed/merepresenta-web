@@ -5,6 +5,7 @@ export function getThemes(){
         id
         name
         slug
+        color
       }
     }
   `)

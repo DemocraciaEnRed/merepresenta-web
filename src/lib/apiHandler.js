@@ -17,7 +17,7 @@ const API = (fetch, query) => {
 export default API;
 
 /**
- * 
+ * Handle response for API calls
  * @param {Response} res 
  * @param {string} prop the name of the prop as we wanted in the component
  * @param {string} original the name of the key comming from the api

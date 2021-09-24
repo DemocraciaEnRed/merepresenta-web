@@ -53,6 +53,7 @@ export function getCandidatesByParty (partyId){
       name
       cargo
       genre
+      id
       avatar {
         id
       }
