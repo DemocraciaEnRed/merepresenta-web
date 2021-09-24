@@ -8,7 +8,7 @@
 </script>
 <script>
   import { page } from "$app/stores";
-import { directusImg } from "$lib/common/utils";
+  import { directusImg } from "$lib/common/utils";
   export let temas;
 </script>
 <main class="container p-2">
@@ -17,9 +17,9 @@ import { directusImg } from "$lib/common/utils";
   <div class="columns is-multiline is-mobile mt-4">
     {#each temas as tema}
       <a class="column is-half has-text-centered" href="{$page.path}/{tema.slug}">
-        <div style="background-color: var(--{tema.slug});">
-          <img src="{directusImg}{tema.id}" alt="icono de {tema.name}"  class="py-5">
-          <h1 class="has-background-black has-text-weight-medium is-uppercase p-2" style="color:var(--{tema.slug})">
+        <div style="background-color: {tema.color});">
+          <img src="{directusImg}{tema.icon_file.id}" alt="icono de {tema.name}"  class="py-5">
+          <h1 class="has-background-black has-text-weight-medium is-uppercase p-2" style="color:{tema.color}">
             {tema.name}
           </h1>
         </div>

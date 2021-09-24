@@ -6,6 +6,9 @@ export function getThemes(){
         name
         slug
         color
+        icon_file{
+          id
+        }
       }
     }
   `)

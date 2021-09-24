@@ -1,15 +1,13 @@
-
 <script context="module">
-  //tried to share this code, didnt work TODO: 1 reusable component
   import API, { handleResponse } from "$lib/apiHandler";
   import { getDistricts } from "$lib/graph-ql/distritos.js";
   export async function load({fetch}){
     const res = await API(fetch, getDistricts());
-    return await handleResponse(res, "prov", "distritos");
+    return await handleResponse(res, "provincias", "distritos")
   } 
   </script>
   <script>
-    export let provincias;
+    export let provincias
   </script>
   <main class="container p-2 has-background-black">
     <h1 class="has-text-centered title-white is-3 my-4">¿Donde votas?</h1>
