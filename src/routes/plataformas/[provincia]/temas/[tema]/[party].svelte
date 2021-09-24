@@ -16,7 +16,7 @@
   //la vaca
   let tema = partido.ejes[0].ejes_id;
 </script>
-<HeaderPP {tema}/>
+<HeaderPP tema={tema.slug}/>
 <div class="info p-4">
   <h1 class="title is-uppercase is-4">
     Propuestas de <span style="color: {tema.color})">{tema.name}</span><br>
