@@ -95,6 +95,11 @@ export function getThemeProposalsByPartyId(tema, partido){
         ejes_id{
           name
           slug
+          color
+          resources
+          icon_file{
+            id
+          }
         }
         summary
         propuestas{

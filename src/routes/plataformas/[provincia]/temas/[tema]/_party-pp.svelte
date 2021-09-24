@@ -2,6 +2,7 @@
   import { page } from "$app/stores";
   import { directusImg } from "$lib/common/utils";
   export let partido;
+  console.log(partido)
 </script>
 <div class="mb-4">
   <table class="head">
@@ -14,20 +15,18 @@
     </tr>
   </table>
   <table>
-    {#if partido.ejes > 0}
-      {#each partido.ejes[0].propuestas as propuesta}
-        <tr class="has-text-centered bb">
-          <td class="py-4">
-            <strong>{propuesta.summary}</strong>
-          </td>    
-        </tr>
-      {/each}
-    {/if}
-      <tr>
-        <td class="py-4 has-text-centered">
-          <a href="{$page.path}/{partido.id}" class="button is-black is-uppercase px-6"> Leer más </a>
-        </td>
+    {#each partido.ejes[0].propuestas as propuesta}
+      <tr class="has-text-centered bb">
+        <td class="py-4">
+          <strong>{propuesta.summary}</strong>
+        </td>    
       </tr>
+    {/each}
+    <tr>
+      <td class="py-4 has-text-centered">
+        <a href="{$page.path}/{partido.id}" class="button is-black is-uppercase px-6"> Leer más </a>
+      </td>
+    </tr>
   </table>
 </div>
 <style>
