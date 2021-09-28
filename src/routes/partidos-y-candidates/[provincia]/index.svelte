@@ -4,7 +4,7 @@
   export async function load({page, fetch}){
     const res = await API(fetch, getPartysByDistrict(page.params.provincia));
     return await handleResponse(res, "partidos", "partido");
-}
+  }
 </script>
 <script>
   import { page } from "$app/stores";

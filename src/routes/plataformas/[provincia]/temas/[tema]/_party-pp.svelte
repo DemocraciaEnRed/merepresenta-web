@@ -2,7 +2,6 @@
   import { page } from "$app/stores";
   import { directusImg } from "$lib/common/utils";
   export let partido;
-  console.log(partido)
 </script>
 <div class="mb-4">
   <table class="head">
