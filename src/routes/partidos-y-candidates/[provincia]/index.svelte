@@ -27,7 +27,7 @@
       <div class="column is-half has-text-centered party">
         <div
           alt={`logo de ${partido.name}`}
-          style="background-image: url({directusImg}{partido.logo.id})"
+          style="background-image: url({directusImg}{partido.logo?.id})"
           class="party-logo">
         </div>
         <div class="buttons mt-2">
