@@ -45,10 +45,16 @@
         de cada partido según tu distrito
       </p>
       <p class="mt-2">
-        <em class="mt-6">Si querés saber sobre el estado actual de {tema.name}  en la Argentina  descargá nuestra sheet.</em>
+        <em class="mt-6">Si querés saber sobre el estado actual de {tema.name.toLowerCase()}  en la Argentina  descargá nuestra sheet.</em>
+      </p>
+      <p class="has-text-centered mt-4">
+        <a href={tema.sheet_url} target="_blank" class="download-sheet">
+          <img src="/download.png" alt="icono de descarga">
+          descargar sheet
+        </a>
       </p>
     </div>
-    <div class="p-2">
+    <div class="p-4">
       {#each partidos as partido}
         <ProposalsByParty {partido}/>
       {/each}
@@ -60,7 +66,14 @@
 <style>
 
   .info{
-    border-left: 3px solid black;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
     border-bottom: 1px solid black;
+  }
+  .download-sheet{
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: black;
   }
 </style>

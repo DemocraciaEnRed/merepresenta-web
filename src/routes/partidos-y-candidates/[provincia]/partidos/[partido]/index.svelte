@@ -53,9 +53,9 @@
                 <svg 
                   width="50"
                   height="50"
-                  class="{proposal.ejes_id.slug}-path"
+                  style="fill:{proposal.ejes_id.color}"
                   title="propuestas de {proposal.ejes_id.slug}"
-                  data-src="{PoliciesIcons[proposal.ejes_id.slug]}">
+                  data-src="{directusImg}{proposal.ejes_id.icon_file.id}">
                 </svg>
               {/if}  
           </div>

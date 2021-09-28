@@ -35,6 +35,10 @@ export function getPartyById (id){
         ejes_id{
           name
           slug
+          color
+          icon_file{
+            id
+          }
         }
         summary
         propuestas{
@@ -52,6 +56,7 @@ export function getThemeProposalsByParty(tema, provincia){
 			name
     	slug
       color
+      sheet_url
     	icon_file{
         id
       }	
