@@ -38,10 +38,15 @@
       <SelectDistrict/>
     </div>
     <HeaderPP {tema}/>
-    <div class="info p-4">
-      Leé las distintas propuestas sobre 
-      <span style="color: {tema.color});text-transform: capitalize">{tema.name}</span> 
-      de cada partido según tu distrito
+    <div class="info p-4 general-sans">
+      <p class="has-text-weight-medium is-size-5">
+        Leé las distintas propuestas sobre 
+        <strong style="color: {tema.color};text-transform: capitalize">{tema.name}</strong> 
+        de cada partido según tu distrito
+      </p>
+      <p class="mt-2">
+        <em class="mt-6">Si querés saber sobre el estado actual de {tema.name}  en la Argentina  descargá nuestra sheet.</em>
+      </p>
     </div>
     <div class="p-2">
       {#each partidos as partido}
