@@ -48,6 +48,14 @@ export function getPartyById (id){
 export function getThemeProposalsByParty(tema, provincia){
   return(`
   {
+    ejes(filter:{slug:{_eq:"${tema}"}}){
+			name
+    	slug
+      color
+    	icon_file{
+        id
+      }	
+  	}
     partido(filter:{district:{slug:{_eq:"${provincia}"}}}){
       id
       name

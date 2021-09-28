@@ -17,7 +17,7 @@
   <div class="columns is-multiline is-mobile mt-4">
     {#each temas as tema}
       <a class="column is-half has-text-centered" href="{$page.path}/{tema.slug}">
-        <div style="background-color: {tema.color});">
+        <div style="background-color: {tema.color};">
           <img src="{directusImg}{tema.icon_file.id}" alt="icono de {tema.name}"  class="py-5">
           <h1 class="has-background-black has-text-weight-medium is-uppercase p-2" style="color:{tema.color}">
             {tema.name}
