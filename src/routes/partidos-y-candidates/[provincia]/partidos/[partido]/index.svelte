@@ -40,7 +40,7 @@
     </div>
     
     <p class="description p-4 mt-4">
-      {partido.summary}
+      {partido.summary || 'No hay descripcion de este partido'}
     </p>
     
     <div class="container p-4">

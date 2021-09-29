@@ -1,6 +1,7 @@
 <script>
   import { page } from "$app/stores";
   import SelectDistrict from "$lib/common/SelectDistrict.svelte";
+import { PartyImg } from "$lib/common/utils";
   import '$lib/typedef'
   let provincia;
   /**
@@ -28,9 +29,8 @@
       <div class="column is-half has-text-centered party">
         <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.slug}">
           <div
-            src={partido.logo}
             alt={`logo de ${partido.name}`}
-            style="background-image: url({partido.logo})"
+            style="background-image: url({PartyImg(partido)})"
             class="party-logo">
           </div>
           <div class="has-background-black has-text-white py-4">

@@ -9,7 +9,7 @@
 <script>
   import { page } from "$app/stores";
   import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-  import { directusImg } from '$lib/common/utils';
+  import { directusImg, PartyImg } from '$lib/common/utils';
   export let partidos;
 </script>
 <main class="container p-2 has-background-white">
@@ -27,7 +27,7 @@
       <div class="column is-half ">
         <div
           alt={`logo de ${partido.name}`}
-          style="background-image: url({directusImg}{partido.logo?.id})"
+          style="background-image: url({PartyImg(partido)})"
           class="party-logo">
         </div>
         <div class="buttons mt-2">

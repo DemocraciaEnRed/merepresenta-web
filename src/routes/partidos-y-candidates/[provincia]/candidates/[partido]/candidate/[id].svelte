@@ -15,7 +15,7 @@
   import Timeline from './_timeline.svelte';
   import Twitter from "./_twitter.svelte";
   import Corporate from './_corporate.svelte';
-  import { directusImg } from "$lib/common/utils";
+  import { CandidateImg, directusImg } from "$lib/common/utils";
   
   export let candidate;
   const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
@@ -32,7 +32,7 @@
   </nav>
   <section class="has-text-black">
     <table class="candidate-header">
-      <td id="candidato-img" style="background-image: url({directusImg}{candidate.avatar.id});">
+      <td id="candidato-img" style="background-image: url({CandidateImg(candidate)});">
       </td>
       <td id="politican-info">
         <h3 class="has-text-centered is-uppercase has-text-white has-background-black p-2 ">{candidate.partido.name}</h3>
