@@ -56,7 +56,7 @@ export function getThemeProposalsByParty(tema, provincia){
 			name
     	slug
       color
-      sheet_url
+      #sheet_url
     	icon_file{
         id
       }	

@@ -2,7 +2,7 @@
   import API, { handleResponse } from '$lib/apiHandler';
   import {getThemeProposalsByParty} from '$lib/graph-ql/partidos.js';
   export async function load({page}){
-    const { tema, provincia} = page.params;
+    const { tema, provincia } = page.params;
     const res = await API(fetch, getThemeProposalsByParty(tema, provincia))
     const response = await res.json();
     if(res.ok){
@@ -56,7 +56,7 @@
     </div>
     <div class="p-4">
       {#each partidos as partido}
-        <ProposalsByParty {partido}/>
+        <ProposalsByParty {tema} {partido}/>
       {/each}
     </div>
     
