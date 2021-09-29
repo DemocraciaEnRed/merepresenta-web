@@ -35,7 +35,7 @@
     </ul>
   </nav>
   <section>
-    <div class="partido-img mt-4" style="background-image: url({directusImg}{partido.logo.id})">
+    <div class="partido-img mt-4" style="background-image: url({directusImg}{partido.logo?.id})">
       <span hidden>{partido.name}</span>
     </div>
     
