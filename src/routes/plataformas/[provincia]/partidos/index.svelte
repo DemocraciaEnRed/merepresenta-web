@@ -23,7 +23,7 @@
     <SelectDistrict/>
   </div>
   
-  <section class="columns is-mobile py-6">
+  <section class="columns is-mobile py-6 is-multiline">
     {#each partidos as partido}
       <div class="column is-half has-text-centered party">
         <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.slug}">

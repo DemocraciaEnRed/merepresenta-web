@@ -22,9 +22,9 @@
     <strong>¿Querés saber cómo votó cada partido <br> en las últimas leyes?</strong><br>
     <a href="/como-votaron" class="button is-medium is-outlined is-active is-uppercase mt-4">Ver votaciones</a>
   </p>
-  <section class="columns is-mobile">
+  <section class="columns is-mobile is-multiline">
     {#each partidos as partido}
-      <div class="column is-half has-text-centered party">
+      <div class="column is-half ">
         <div
           alt={`logo de ${partido.name}`}
           style="background-image: url({directusImg}{partido.logo?.id})"
