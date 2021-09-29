@@ -9,7 +9,7 @@
 <script>
   import { page } from "$app/stores";
   import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-  import { directusImg, PartyImg } from '$lib/common/utils';
+  import { PartyImg } from '$lib/common/utils';
   export let partidos;
 </script>
 <main class="container p-2 has-background-white">
