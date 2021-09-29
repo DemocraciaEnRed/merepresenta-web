@@ -9,7 +9,7 @@
 <script>
   import { page } from '$app/stores';
   import Icon from '$lib/common/Icon.svelte';
-  import { directusImg, PoliciesIcons } from '$lib/common/utils';
+  import { directusImg, PartyImg, PoliciesIcons } from '$lib/common/utils';
   import { onMount } from 'svelte';
   import Proposal from './_proposal.svelte';
   export let partidos;
@@ -35,7 +35,7 @@
     </ul>
   </nav>
   <section>
-    <div class="partido-img mt-4" style="background-image: url({directusImg}{partido.logo?.id})">
+    <div class="partido-img mt-4" style="background-image: url({PartyImg(partido)})">
       <span hidden>{partido.name}</span>
     </div>
     
