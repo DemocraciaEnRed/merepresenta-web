@@ -1,21 +1,22 @@
+<script context="module">
+   import API, { handleResponse } from '$lib/apiHandler';
+  import {getPartysByDistrict} from '$lib/graph-ql/partidos.js';
+  export async function load({page, fetch}){
+    const res = await API(fetch, getPartysByDistrict(page.params.provincia));
+    return await handleResponse(res, "partidos", "partido");
+  }
+</script>
 <script>
   import { page } from "$app/stores";
   import SelectDistrict from "$lib/common/SelectDistrict.svelte";
-import { PartyImg } from "$lib/common/utils";
-  import '$lib/typedef'
-  let provincia;
+  import { PartyImg } from "$lib/common/utils";
   /**
     * @type {Party[]}
     * @const
   */
-  let partidos = [];
-  // we suscribe to route changes in case the district selector change 
-  page.subscribe((page)=>{
-    let currentSlug = page.params.provincia
-    provincia = provincias.find((prov)=>{return prov.slug===currentSlug})
-    // TODO fetch to partidos by provincia
-    partidos = partys;
-  })
+  
+  export let partidos;
+  
 </script>
 <main class="container p-2">
   <h1 class="has-text-center title is-3 has-text-weight-normal has-text-black mt-4">Partidos y propuestas</h1>
@@ -27,7 +28,7 @@ import { PartyImg } from "$lib/common/utils";
   <section class="columns is-mobile py-6 is-multiline">
     {#each partidos as partido}
       <div class="column is-half has-text-centered party">
-        <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.slug}">
+        <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}">
           <div
             alt={`logo de ${partido.name}`}
             style="background-image: url({PartyImg(partido)})"

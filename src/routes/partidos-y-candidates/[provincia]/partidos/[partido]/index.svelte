@@ -9,7 +9,7 @@
 <script>
   import { page } from '$app/stores';
   import Icon from '$lib/common/Icon.svelte';
-  import { directusImg, PartyImg, PoliciesIcons } from '$lib/common/utils';
+  import { directusImg, PartyImg } from '$lib/common/utils';
   import { onMount } from 'svelte';
   import Proposal from './_proposal.svelte';
   export let partidos;
