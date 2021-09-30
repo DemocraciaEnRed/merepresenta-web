@@ -67,6 +67,7 @@
       {#each partido.ejes as proposal}
         <Proposal {proposal} party={partido.id}/>
       {/each}
+      <!--
       <div class="social-networks py-6">
         <a href={partido.url_instagram}>
           <Icon brand size="large" icon="fa-instagram"/>
@@ -78,6 +79,7 @@
           <Icon brand size="large" icon="fa-twitter-square"/>  
         </a>
       </div>
+      -->
 
       <div class="has-text-centered">
         <p class="mb-4">
@@ -113,6 +115,7 @@
     height: 25px;
     background-color: black;
   }
+  /*
   .social-networks{
     display: flex;
     justify-content: center;
@@ -120,4 +123,5 @@
   .social-networks a{
     color: black
   }
+  */
 </style>
