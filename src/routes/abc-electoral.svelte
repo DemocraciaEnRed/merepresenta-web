@@ -14,32 +14,42 @@
       </p>
     </div>
   </section>
-  <Dropdown darkMode name="¿QUÉ SE VOTA EN LAS ELECCIONES <br>  DE 2021?">
+  <Dropdown darkMode name="¿QUIÉNES VOTAN?">
     <div></div>
   </Dropdown>
-  <Dropdown darkMode name="¿CUÁNTAS BANCAS EN EL <br> CONGRESO ESTÁN EN JUEGO?">
+  <Dropdown darkMode name="¿QUÉ PASA SI NO VOTO?">
     <div></div>
   </Dropdown>
-  <Dropdown darkMode name="¿QUE PASA SI NO VOY A VOTAR?">
+  <Dropdown darkMode name="¿QUÉ HACER SI VEO IRREGULARIDADES?">
     <div></div>
   </Dropdown>
-  <Dropdown darkMode name="¿POR QUE SON IMPORTANTES?">
+  <Dropdown darkMode name="¿QUIÉNES SON LAS AUTORIDADES DE MESA?">
     <div></div>
   </Dropdown>
+  <!--
   <h1 class="title px-2 is-5 has-text-black mt-4 has-text-centered special">
     <span class="has-background-white">
       LO QUE TENÉS QUE SABER SI ES LA PRIMERA VEZ QUE VOTÁS
     </span>
   </h1>
-  <Dropdown darkMode name="¿QUÉ ES EL VOTO EN BLANCO?">
+  -->
+  <Dropdown darkMode name="¿CÓMO SE CLASIFICAN LOS VOTOS?">
     <div></div>
   </Dropdown>
-  <Dropdown darkMode name="¿QUÉ ES IMPUGNAR EL VOTO?">
+  <Dropdown darkMode name="¿CÓMO ES EL CAMINO DEL VOTO?">
     <div></div>
   </Dropdown>
-  <Dropdown darkMode name="¿QUÉ PASA SI NO ENCUENTRO LA BOLETA <br> QUE QUIERO VOTAR?">
+  <Dropdown darkMode name="¿QUÉ ES EL VOTO ACCESIBLE?">
     <div></div>
   </Dropdown>
+  <Dropdown darkMode name="¿CÓMO SE FINANCIAN LAS CAMPAÑAS ELECTORALES?">
+    <div></div>
+  </Dropdown>
+  <Dropdown darkMode name="¿QUÉ CAMBIA CON EL COVID?">
+    <div></div>
+  </Dropdown>
+
+
 </main>
 <style>
   .special{
