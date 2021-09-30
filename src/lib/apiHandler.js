@@ -39,3 +39,15 @@ export async function handleResponse(res, prop, original){
     error: jsonResponse.errors
   }
 }
+
+export function TwitterApi(user){
+  //TODO : Juli, cambia el url de esta api por la que te de guille
+  const apiUrl = 'http://guille.twitter.com/'
+  return fetch(apiUrl,{
+    method: 'GET',
+    body: JSON.stringify({user}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}

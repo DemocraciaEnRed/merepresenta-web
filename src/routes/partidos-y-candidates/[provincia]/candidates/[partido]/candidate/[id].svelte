@@ -45,11 +45,13 @@
         <About {candidate}/>
       </Dropdown>
     </div>
+    <!--
     <div>
       <Dropdown name="Ideología y opiniones">
         <Ideology {candidate}/>
       </Dropdown>
     </div>
+    -->
     <div>
       <Dropdown name="Twitter">
         <Twitter {candidate}/>

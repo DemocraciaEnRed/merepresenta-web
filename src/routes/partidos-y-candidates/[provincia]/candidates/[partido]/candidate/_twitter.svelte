@@ -1,5 +1,22 @@
 <script>
+  import { onMount } from "svelte";
+  import { TwitterApi } from '$lib/apiHandler';
   export let candidate;
+  let twitter;
+  let error;
+  
+  onMount( async ()=>{
+    //Juli: descomenta esto cuando este la api de twitter
+    /*
+    res = await TwitterApi(candidate.twitter_profile)
+    const apires = res.json();
+    if(res.ok){
+      twitter = apires.data;
+    }{
+      error = true
+    }
+    */
+  })
 </script>
 <div class="mt-6 has-text-left p-4">
   <h2 class="has-text-black title is-5">Biografia</h2>
