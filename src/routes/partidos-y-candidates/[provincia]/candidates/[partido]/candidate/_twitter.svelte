@@ -16,12 +16,15 @@
   onMount( async ()=>{
     const res = await TwitterApi(candidate.twitter_user)
     const response = await res.json();
+    loading = false
     if(res.ok){
-      twitter = response.data;
+      console.log(response.data.data)
+      twitter = response.data.data;
+
     }{
       error = true
     }
-    loading = false
+    
   })
 </script>
 {#if loading}

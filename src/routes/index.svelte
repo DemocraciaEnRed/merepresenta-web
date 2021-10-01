@@ -17,7 +17,6 @@
 			<div class="has-text-centered mt-6 mb-2">
 				<img src="/candidates-link.svg" alt="">
 			</div>
-			
 			<a href="/partidos-y-candidates/donde-votas" class="button py-5 is-fullwidth is-uppercase mb-4">
 				Conocé todo sobre los <br> <strong>partidos y lxs candidatxs</strong>
 			</a>
