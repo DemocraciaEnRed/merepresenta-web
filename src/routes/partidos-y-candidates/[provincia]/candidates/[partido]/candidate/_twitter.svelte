@@ -2,26 +2,36 @@
   import { onMount } from "svelte";
   import { TwitterApi } from '$lib/apiHandler';
   export let candidate;
+  /**
+    @constant
+    * @property {string} screen_name
+    * @property {string} name
+    * @property {string} profile_image_url
+    * @property {string} followers_count
+    * @property {string} description
+   */
   let twitter;
   let error;
-  
+  let loading = true;
   onMount( async ()=>{
-    //Juli: descomenta esto cuando este la api de twitter
-    /*
-    res = await TwitterApi(candidate.twitter_profile)
-    const apires = res.json();
+    const res = await TwitterApi(candidate.twitter_user)
+    const response = await res.json();
     if(res.ok){
-      twitter = apires.data;
+      twitter = response.data;
     }{
       error = true
     }
-    */
+    loading = false
   })
 </script>
+{#if loading}
+   <em>cargando...</em>
+{/if}
+{#if !loading && !error}
 <div class="mt-6 has-text-left p-4">
   <h2 class="has-text-black title is-5">Biografia</h2>
   <p class="has-text-left">
-    {candidate.twitter_profile}
+    {twitter.description}
   </p>
   <!--
   <h2 class="has-text-black title is-5">tweets más retwitteados</h2>
@@ -41,8 +51,12 @@
       </div>
     {/each}
   </div>
--->
-</div>
+  -->
+  </div>
+{/if}
+{#if error}
+  <span> No se pudieron cargar los datos </span>
+{/if}
 <style>
 /**
 .tweeter-profile{

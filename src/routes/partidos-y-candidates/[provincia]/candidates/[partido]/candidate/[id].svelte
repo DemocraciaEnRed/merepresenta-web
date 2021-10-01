@@ -52,11 +52,13 @@
       </Dropdown>
     </div>
     -->
+    {#if candidate.twitter_user}
     <div>
       <Dropdown name="Twitter">
         <Twitter {candidate}/>
       </Dropdown>
     </div>
+    {/if}
     <!-- NOS VEMOS EN 4 AÑOS
     <div>
       <Dropdown name="Recorrido político">

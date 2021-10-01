@@ -42,10 +42,9 @@ export async function handleResponse(res, prop, original){
 
 export function TwitterApi(user){
   //TODO : Juli, cambia el url de esta api por la que te de guille
-  const apiUrl = 'http://guille.twitter.com/'
-  return fetch(apiUrl,{
+  const apiUrl = 'https://service.merepresenta.info/twitter/'
+  return fetch(`${apiUrl}${user}`,{
     method: 'GET',
-    body: JSON.stringify({user}),
     headers: {
       'Content-Type': 'application/json'
     }
