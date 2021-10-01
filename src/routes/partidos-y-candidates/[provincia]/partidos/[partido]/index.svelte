@@ -89,7 +89,7 @@
         <p class="mt-6">
           <strong>¿Querés conocer a sus candidates?</strong> 
         </p>
-        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido}"
+        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.id}"
           class="button is-uppercase mt-4 is-fullwidth  is-outline is-active">ver candidates</a>
       </div>
       
