@@ -26,7 +26,7 @@
 	<script src="https://unpkg.com/external-svg-loader@1.3.1/svg-loader.min.js"></script>
 </svelte:head>
 
-<main>
+<main class="white-background-desktop">
   <nav class="breadcrumb is-small pl-2 mt-2" aria-label="breadcrumbs">
     <ul>
       <li ><a href="/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
@@ -35,20 +35,22 @@
     </ul>
   </nav>
   <section>
-    <div class="partido-img mt-4" style="background-image: url({directusImg}{partido.logo.id})">
-      <span hidden>{partido.name}</span>
+    <div class="columns container px-4">
+      <div class="column is-4 has-background-white partido-img mt-4" style="background-image: url({directusImg}{partido.logo.id})">
+        <span hidden>{partido.name}</span>
+      </div>
+      
+      <p class="column description has-background-white p-4 mt-4">
+        {partido.summary}
+      </p>
     </div>
     
-    <p class="description p-4 mt-4">
-      {partido.summary}
-    </p>
-    
     <div class="container p-4">
-      <h2 class="has-text-left title is-5 has-text-black">Les interesa</h2>
-      <div class="columns is-mobile p-2">
+      <h2 class="has-text-left has-text-centered-tablet title is-5 has-text-black">Les interesa</h2>
+      <div class="columns is-mobile is-justify-content-center is-flex is-flex-wrap-wrap p-2">
         {#each partido.ejes as proposal}
-          <div class="column has-text-centered">
-            <div class="px-6 py-2 has-background-black">
+          <div class="column is-flex-grow-0 has-text-centered">
+            <div class="px-3 py-2 has-background-black">
               {#if svgLoad}
                 <svg 
                   width="50"
@@ -63,7 +65,7 @@
         {/each}
       </div>
 
-      <h2 class="has-text-left title is-5 has-text-black">¿Qué proponen?</h2>
+      <h2 class="has-text-left title is-5 has-text-centered-tablet has-text-black">¿Qué proponen?</h2>
       {#each partido.ejes as proposal}
         <Proposal {proposal} party={partido.id}/>
       {/each}
@@ -107,6 +109,8 @@
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     border-left: 4px solid black;
+    border-right: 2px solid black;
+
   }
   svg{
     width: 25px;
@@ -120,4 +124,12 @@
   .social-networks a{
     color: black
   }
+  @media only screen and (min-width: 769px) {
+    svg{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+  }
+  }
+
 </style>

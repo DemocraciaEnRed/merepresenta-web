@@ -12,23 +12,30 @@
   import { directusImg } from '$lib/common/utils';
   export let partidos;
 </script>
-<main class="container p-2 has-background-white">
+<main class="container p-2 has-background-white white-background-desktop">
   <div class="has-text-right">
     <SelectDistrict/>
   </div>
-  <h1 class="mt-4 title is-4">Partidos y candidatos</h1>
-  <p class="is-family-sans-serif ">Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</p>
-  <p class="has-text-centered mt-6">
+  <h1 class="has-text-centered-tablet mt-4 title is-4">Partidos y candidatos</h1>
+  <p class="has-text-centered-tablet is-family-sans-serif ">Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</p>
+  <p class=" is-hidden-tablet has-text-centered mt-6">
     <strong>¿Querés saber cómo votó cada partido <br> en las últimas leyes?</strong><br>
     <a href="/como-votaron" class="button is-medium is-outlined is-active is-uppercase mt-4">Ver votaciones</a>
   </p>
-  <section class="columns is-mobile">
+  <div class="is-hidden-mobile  columns">
+    <p class="column is-three-fifths is-offset-one-fifth has-background-black has-text-centered mt-6 p-5 ">
+      <strong class="has-text-white">¿Querés saber cómo votó cada partido <br> en las últimas leyes?</strong><br>
+      <a href="/como-votaron" class="button is-medium is-outlined is-active is-uppercase mt-4">Ver votaciones</a>
+    </p>
+  </div>
+  
+  <section class="columns is-mobile is-flex is-flex-wrap-wrap is-justify-content-center">
     {#each partidos as partido}
-      <div class="column is-half has-text-centered party">
+      <div class="column is-half-mobile is-one-quarter-tablet has-text-centered party ">
         <div
           alt={`logo de ${partido.name}`}
           style="background-image: url({directusImg}{partido.logo.id})"
-          class="party-logo">
+          class="has-background-white party-logo">
         </div>
         <div class="buttons mt-2">
           <a href="{$page.path}/partidos/{partido.id}" class="button is-black is-uppercase is-fullwidth">Ver partido</a>

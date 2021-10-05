@@ -16,7 +16,7 @@
     partidos = partys;
   })
 </script>
-<main class="container p-2">
+<main class="container p-2 ">
   <h1 class="has-text-center title is-3 has-text-weight-normal has-text-black mt-4">Partidos y propuestas</h1>
   <p>Conocé los propuestas de los distintos partidos según tu distrito.</p>
   <div class="has-text-right">

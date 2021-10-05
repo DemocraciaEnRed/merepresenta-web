@@ -26,6 +26,9 @@
 				<a class="navbar-item" class:is-active={$page.path === `/sobre-nosotros`} href="/sobre-nosotros">
 					Sobre nosotros
 				</a>
+				<a class="navbar-item" class:is-active={$page.path === `/sobre-nosotros`} href="/juegos">
+					Juegos
+				</a>
 			</div>
 		</div>
 		{/if}
