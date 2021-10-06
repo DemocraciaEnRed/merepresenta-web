@@ -2,33 +2,61 @@
   import API, { handleResponse } from '$lib/apiHandler';
   import {getThemeProposalsByParty} from '$lib/graph-ql/partidos.js';
   export async function load({page}){
-    const { tema, provincia} = page.params;
+    const { tema, provincia } = page.params;
     const res = await API(fetch, getThemeProposalsByParty(tema, provincia))
-    return await handleResponse(res,'partidos','partido');
+    const response = await res.json();
+    if(res.ok){
+      return{
+        props:{
+          partidos: response.data.partido,
+          tema: response.data.ejes[0]
+        }
+      }
+    }
+    return{
+      status : res.status
+    }
   }
 </script>
 <script>
-  import { page } from '$app/stores';
   import ProposalsByParty from './_party-pp.svelte'
   import HeaderPP from './_header.svelte';
   import SelectDistrict from '$lib/common/SelectDistrict.svelte';
   export let partidos;
-  let tema = partidos[0].ejes[0].ejes_id;
+  export let tema;
 </script>
 <main>
   <section>
-    <HeaderPP tema={tema.slug}/>
-    <div class="info p-4">
-      Leé las distintas propuestas sobre 
-      <span style="color: {tema.color});text-transform: capitalize">{tema.name}</span> 
-      de cada partido según tu distrito
-    </div>
-    <div class="has-text-right mt-2">
+    <nav class="breadcrumb is-small pl-2 my-2" aria-label="breadcrumbs">
+      <ul>
+        <li ><a href="/plataformas/donde-votas">Plataformas</a></li>
+        <li ><a href="/plataformas/temas">Temas</a></li>
+        <li class="is-active"><a href aria-current="page" style="color:{tema.color}">{tema.name}</a></li>
+      </ul>
+    </nav>
+    <div class="has-text-right my-2">
       <SelectDistrict/>
     </div>
-    <div class="p-2">
+    <HeaderPP {tema}/>
+    <div class="info p-4 general-sans">
+      <p class="has-text-weight-medium is-size-5">
+        Leé las distintas propuestas sobre 
+        <strong style="color: {tema.color};text-transform: capitalize">{tema.name}</strong> 
+        de cada partido según tu distrito
+      </p>
+      <p class="mt-2">
+        <em class="mt-6">Si querés saber sobre el estado actual de {tema.name.toLowerCase()} en la Argentina descargá nuestra hoja de diagnóstico </em>
+      </p>
+      <p class="has-text-centered mt-4">
+        <a href={tema.sheet_url} target="_blank" class="download-sheet">
+          <img src="/download.png" alt="icono de descarga">
+          descargar hoja de diagnóstico
+        </a>
+      </p>
+    </div>
+    <div class="p-4">
       {#each partidos as partido}
-        <ProposalsByParty {partido}/>
+        <ProposalsByParty {tema} {partido}/>
       {/each}
     </div>
     
@@ -38,7 +66,14 @@
 <style>
 
   .info{
-    border-left: 3px solid black;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
     border-bottom: 1px solid black;
+  }
+  .download-sheet{
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: black;
   }
 </style>

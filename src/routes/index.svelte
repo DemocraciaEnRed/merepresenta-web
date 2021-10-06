@@ -16,8 +16,19 @@ import { space } from 'svelte/internal';
 	<div class="has-text-centered">
 		<section class="container p-4">
 			<h2 class="title is-4 has-text-white has-text-weight-normal">A vos, ¿quién te representa?</h2>
-			<a href="/partidos-y-candidates/donde-votas" class=" button is-medium is-fullwidth is-uppercase mb-4">ver partidos y candidates</a>
-			<a href="/plataformas/donde-votas" class=" is-hidden-tablet  button transparent is-medium is-fullwidth is-uppercase ">ver propuestas</a>
+			<div class="has-text-centered mt-6 mb-2">
+				<img src="/candidates-link.svg" alt="">
+			</div>
+			<a href="/partidos-y-candidates/donde-votas" class="button py-5 is-fullwidth is-uppercase mb-4">
+				Conocé todo sobre los <br> <strong>partidos y lxs candidatxs</strong>
+			</a>
+			<div class="has-text-centered mt-6 mb-2">
+				<img src="/proposals-link.svg" alt="">
+			</div>
+			<a href="/plataformas/donde-votas" class="button py-5 transparent is-fullwidth is-uppercase">
+				enterate de todas sus  <br>
+				<strong>propuestas</strong>
+			</a>
 		</section>
 
 		<section class="has-background-white is-hidden-mobile py-6 ">
@@ -69,12 +80,11 @@ import { space } from 'svelte/internal';
 	</div>
 </main>
 <style>
-	.vote-logo{
-		width: 250px;
+	.button{
+		display: flex;
+		border: 1px solid white;
+		flex-direction: column;
+		border-radius: 10px;
 	}
-	.border-top-bottom {
-		border-top:2px solid #000;
-		border-bottom:2px solid #000
-	}
-	
+
 </style>

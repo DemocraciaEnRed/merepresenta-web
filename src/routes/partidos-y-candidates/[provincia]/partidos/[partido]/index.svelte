@@ -9,7 +9,7 @@
 <script>
   import { page } from '$app/stores';
   import Icon from '$lib/common/Icon.svelte';
-  import { directusImg, PoliciesIcons } from '$lib/common/utils';
+  import { directusImg, PartyImg } from '$lib/common/utils';
   import { onMount } from 'svelte';
   import Proposal from './_proposal.svelte';
   export let partidos;
@@ -35,15 +35,13 @@
     </ul>
   </nav>
   <section>
-    <div class="columns container px-4">
-      <div class="column is-4 has-background-white partido-img mt-4" style="background-image: url({directusImg}{partido.logo.id})">
-        <span hidden>{partido.name}</span>
-      </div>
-      
-      <p class="column description has-background-white p-4 mt-4">
-        {partido.summary}
-      </p>
+    <div class="partido-img mt-4" style="background-image: url({PartyImg(partido)})">
+      <span hidden>{partido.name}</span>
     </div>
+    
+    <p class="description p-4 mt-4">
+      {partido.summary || 'No hay descripcion de este partido'}
+    </p>
     
     <div class="container p-4">
       <h2 class="has-text-left has-text-centered-tablet title is-5 has-text-black">Les interesa</h2>
@@ -55,9 +53,9 @@
                 <svg 
                   width="50"
                   height="50"
-                  class="{proposal.ejes_id.slug}-path"
+                  style="fill:{proposal.ejes_id.color}"
                   title="propuestas de {proposal.ejes_id.slug}"
-                  data-src="{PoliciesIcons[proposal.ejes_id.slug]}">
+                  data-src="{directusImg}{proposal.ejes_id.icon_file.id}">
                 </svg>
               {/if}  
           </div>
@@ -69,6 +67,7 @@
       {#each partido.ejes as proposal}
         <Proposal {proposal} party={partido.id}/>
       {/each}
+      <!--
       <div class="social-networks py-6">
         <a href={partido.url_instagram}>
           <Icon brand size="large" icon="fa-instagram"/>
@@ -80,6 +79,7 @@
           <Icon brand size="large" icon="fa-twitter-square"/>  
         </a>
       </div>
+      -->
 
       <div class="has-text-centered">
         <p class="mb-4">
@@ -89,7 +89,7 @@
         <p class="mt-6">
           <strong>¿Querés conocer a sus candidates?</strong> 
         </p>
-        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido}"
+        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.id}"
           class="button is-uppercase mt-4 is-fullwidth  is-outline is-active">ver candidates</a>
       </div>
       
@@ -117,6 +117,7 @@
     height: 25px;
     background-color: black;
   }
+  /*
   .social-networks{
     display: flex;
     justify-content: center;
@@ -124,6 +125,7 @@
   .social-networks a{
     color: black
   }
+  */
   @media only screen and (min-width: 769px) {
     svg{
     width: 50px;

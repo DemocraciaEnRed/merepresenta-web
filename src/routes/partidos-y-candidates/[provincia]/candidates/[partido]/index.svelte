@@ -9,7 +9,7 @@
 <script>
   import { onMount } from 'svelte';
   import { page } from "$app/stores";
-  import { directusImg } from '$lib/common/utils';
+  import { CandidateImg, directusImg } from '$lib/common/utils';
   let Carousel; // for saving Carousel component class
   let carouselRef; // for calling methods of carousel instance
   export let candidates;
@@ -40,7 +40,7 @@
     {#each candidates as candidate}
       <div class="candidate has-text-centered">
         <div 
-          style="background-image: url({directusImg}{candidate.avatar.id})"
+          style="background-image: url({CandidateImg(candidate)})"
           class="candidate-img" alt="Foto retrato de {candidate.name}"/>
         <h1 class="title has-text-black">{candidate.name}</h1>
         <p class="has-text-black">Candidat{candidate.genre === 'm' ? 'o': 'a' } a <br>

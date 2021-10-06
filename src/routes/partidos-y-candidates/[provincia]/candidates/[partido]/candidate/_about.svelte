@@ -4,10 +4,12 @@
 </script>
 <div class="mt-6">
   <table>
-    <tr>
-      <td class="has-text-left">edad</td>
-      <td><strong>{candidate.age} años</strong></td>
-    </tr>
+    {#if candidate.age}
+      <tr>
+        <td class="has-text-left">edad</td>
+        <td><strong>{candidate.age} años</strong></td>
+      </tr>
+    {/if}
     <tr>
       <td class="has-text-left">profesion</td>
       <td><strong>{candidate.profession.name}</strong></td>

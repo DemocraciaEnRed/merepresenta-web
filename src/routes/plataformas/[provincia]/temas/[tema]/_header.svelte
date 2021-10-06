@@ -1,18 +1,17 @@
 <script>
-  import { PoliciesIcons } from "$lib/common/utils";
+  import { directusImg } from "$lib/common/utils";
   export let tema;
 </script>
 <table class="header">
   <thead>
-    <tr>
-      <td class="py-4 pl-4">
-        <span class="is-uppercase p-1 has-text-black" 
-          style="background-color:var(--{tema})">
-          {tema}
-        </span>
+    <tr style="background-color:{tema.color}">
+      <td class="py-4 pl-4" >
+        <h1 class="is-uppercase title is-3 has-text-weight-normal p-1 has-text-black">
+          {tema.name}
+        </h1>
       </td>
       <td id="icon-topic" class="py-4">
-        <img src={PoliciesIcons[tema]} alt="icono de {tema}" width="25">
+        <img src="{directusImg}{tema.icon_file.id}" alt="icono de {tema.name}" width="40">
       </td>
     </tr>
   </thead>

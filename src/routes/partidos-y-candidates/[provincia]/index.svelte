@@ -4,12 +4,12 @@
   export async function load({page, fetch}){
     const res = await API(fetch, getPartysByDistrict(page.params.provincia));
     return await handleResponse(res, "partidos", "partido");
-}
+  }
 </script>
 <script>
   import { page } from "$app/stores";
   import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-  import { directusImg } from '$lib/common/utils';
+  import { PartyImg } from '$lib/common/utils';
   export let partidos;
 </script>
 <main class="container p-2 has-background-white white-background-desktop">
@@ -33,10 +33,10 @@
     {#each partidos as partido}
       <div class="column is-half-mobile is-one-quarter-tablet has-text-centered party ">
         <div
-          alt={`logo de ${partido.name}`}
-          style="background-image: url({directusImg}{partido.logo.id})"
-          class="has-background-white party-logo">
+          style="background-image: url({PartyImg(partido)})"
+          class="party-logo">
         </div>
+        <h2>{partido.name}</h2>
         <div class="buttons mt-2">
           <a href="{$page.path}/partidos/{partido.id}" class="button is-black is-uppercase is-fullwidth">Ver partido</a>
           <a href="{$page.path}/candidates/{partido.id}" class="button is-active is-outlined is-fullwidth is-uppercase">Ver candidates</a>
@@ -56,7 +56,11 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-
+h2{
+  text-align: center;
+  background-color: black;
+  color: white
+}
 section{
   margin-top: 50px;
 }
