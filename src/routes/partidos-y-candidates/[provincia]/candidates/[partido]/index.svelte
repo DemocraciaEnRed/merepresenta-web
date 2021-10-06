@@ -12,6 +12,7 @@
   import { CandidateImg, directusImg } from '$lib/common/utils';
   let Carousel; // for saving Carousel component class
   let carouselRef; // for calling methods of carousel instance
+  
   export let candidates;
   
   const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;

@@ -25,7 +25,7 @@
   export let partidos;
   export let tema;
 </script>
-<main>
+<main class="container ">
   <section>
     <nav class="breadcrumb is-small pl-2 my-2" aria-label="breadcrumbs">
       <ul>
@@ -37,24 +37,27 @@
     <div class="has-text-right my-2">
       <SelectDistrict/>
     </div>
-    <HeaderPP {tema}/>
-    <div class="info p-4 general-sans">
-      <p class="has-text-weight-medium is-size-5">
-        Leé las distintas propuestas sobre 
-        <strong style="color: {tema.color};text-transform: capitalize">{tema.name}</strong> 
-        de cada partido según tu distrito
-      </p>
-      <p class="mt-2">
-        <em class="mt-6">Si querés saber sobre el estado actual de {tema.name.toLowerCase()} en la Argentina descargá nuestra hoja de diagnóstico </em>
-      </p>
-      <p class="has-text-centered mt-4">
-        <a href={tema.sheet_url} target="_blank" class="download-sheet">
-          <img src="/download.png" alt="icono de descarga">
-          descargar hoja de diagnóstico
-        </a>
-      </p>
+    <div class="columns header-container mt-6 is-tablet">
+       <HeaderPP {tema}/>
+      <div class="info column  is-three-quarters-tablet p-4 general-sans">
+        <p class="has-text-weight-medium is-size-5">
+          Leé las distintas propuestas sobre 
+          <strong style="color: {tema.color};text-transform: capitalize">{tema.name}</strong> 
+          de cada partido según tu distrito
+        </p>
+        <p class="mt-2">
+          <em class="mt-6">Si querés saber sobre el estado actual de {tema.name.toLowerCase()} en la Argentina descargá nuestra hoja de diagnóstico </em>
+        </p>
+        <p class="has-text-centered mt-4">
+          <a href={tema.sheet_url} target="_blank" class="download-sheet">
+            <img src="/download.png" alt="icono de descarga">
+            descargar hoja de diagnóstico
+          </a>
+        </p>
+      </div>
     </div>
-    <div class="p-4">
+   
+    <div class="p-4 is-flex-tablet is-flex-wrap-wrap  is-columns">
       {#each partidos as partido}
         <ProposalsByParty {tema} {partido}/>
       {/each}
@@ -64,7 +67,9 @@
 </main>
 
 <style>
-
+  .header-container{
+    border-top:1px solid
+  }
   .info{
     border-left: 4px solid black;
     border-right: 4px solid black;

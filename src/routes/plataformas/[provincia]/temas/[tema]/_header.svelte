@@ -2,7 +2,7 @@
   import { directusImg } from "$lib/common/utils";
   export let tema;
 </script>
-<table class="header">
+<table class="header is-hidden-tablet ">
   <thead>
     <tr style="background-color:{tema.color}">
       <td class="py-4 pl-4" >
@@ -16,6 +16,12 @@
     </tr>
   </thead>
 </table>
+<div class="is-hidden-mobile column is-flex is-justify-content-center is-align-items-center is-flex-direction-column" style="background-color:{tema.color}">
+  <h1 class="is-uppercase title is-3 has-text-weight-normal p-1 has-text-black">
+    {tema.name}
+  </h1>
+  <img src="{directusImg}{tema.icon_file.id}" alt="icono de {tema.name}" width="40">
+</div>
 <style>
   .header{
     border-top: 1px solid black;

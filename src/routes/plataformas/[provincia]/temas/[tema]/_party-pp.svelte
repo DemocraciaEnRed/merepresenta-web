@@ -6,7 +6,7 @@
   let rgb = hexToRgb(tema.color);
   let bgAlpha = `rgba(${rgb.r},${rgb.g},${rgb.b}, 0.3)`
 </script>
-<div class="mb-4">
+<div class="mb-4 column  is-half-tablet is-one-third-desktop">
   <table class="head">
     <tr>
       <td class="party-name" style="background-color: {bgAlpha};">
@@ -32,7 +32,7 @@
         <a href="{$page.path}/{partido.id}" class="button is-black is-uppercase px-6"> Leer más </a>
         {/if}
         {#if !partido.ejes[0]?.propuestas}
-          El partido no tiene propuestas sobre el tema
+        No se encontraron propuestas sobre este tema en las fuentes consultadas
         {/if}
       </td>
     </tr>

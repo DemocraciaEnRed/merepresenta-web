@@ -18,21 +18,21 @@
   export let partidos;
   
 </script>
-<main class="container p-2 ">
-  <h1 class="has-text-center title is-3 has-text-weight-normal has-text-black mt-4">Partidos y propuestas</h1>
-  <p>Conocé los propuestas de los distintos partidos según tu distrito.</p>
-  <div class="has-text-right">
+<main class="container p-2 white-background-desktop">
+  <h1 class="has-text-centered-tablet title is-3 has-text-weight-normal has-text-black mt-4">Partidos y propuestas</h1>
+  <p class="has-text-centered-tablet">Conocé los propuestas de los distintos partidos según tu distrito.</p>
+  <div class="has-text-right mt-6">
     <SelectDistrict/>
   </div>
   
   <section class="columns is-mobile py-6 is-multiline">
     {#each partidos as partido}
-      <div class="column is-half has-text-centered party">
+      <div class="column is-half-mobile is-one-quarter-desktop is-one-third-tablet has-text-centered party">
         <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}">
           <div
             alt={`logo de ${partido.name}`}
             style="background-image: url({PartyImg(partido)})"
-            class="party-logo">
+            class="party-logo has-background-white">
           </div>
           <div class="has-background-black has-text-white py-4">
             {partido.name}
