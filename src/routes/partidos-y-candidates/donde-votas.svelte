@@ -9,13 +9,17 @@
   <script>
     export let provincias
   </script>
-  <main class="container black-background p-2 has-background-black">
-    <h1 class="has-text-centered title-white is-3 my-4">¿Donde votás?</h1>
-    {#each provincias as provincia}
-      <div class="columns is-mobile">
-        <div class="column is-half is-offset-one-quarter has-text-centered">
-        <a href="/partidos-y-candidates/{provincia.slug}" class="button is-fullwidth">{provincia.name}</a>
-        </div>
+  <main class="black-background p-2 has-background-black">
+    <section class="container" >
+      <h1 class="py-6 has-text-centered title-white is-3 my-4">¿Donde votás?</h1>
+      <div class="columns is-flex-wrap-wrap is-justify-content-center">
+        {#each provincias as provincia}
+      
+            <div class="column is-mobile is-one-quarter is-offset-one-quarter-mobile is-half-mobile has-text-centered">
+            <a href="/partidos-y-candidates/{provincia.slug}" class="button is-fullwidth">{provincia.name}</a>
+            </div>
+    
+        {/each}
       </div>
-    {/each}  
+    </section> 
   </main>

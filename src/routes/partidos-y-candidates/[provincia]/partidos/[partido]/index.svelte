@@ -34,7 +34,7 @@
       <li class="is-active"><a href aria-current="page">{partido.name}</a></li>
     </ul>
   </nav>
-  <section>
+  <section class="container">
     <div class="partido-img mt-4" style="background-image: url({PartyImg(partido)})">
       <span hidden>{partido.name}</span>
     </div>
@@ -49,7 +49,7 @@
         {#each partido.ejes as proposal}
           <div class="column is-flex-grow-0 has-text-centered">
             <div class="px-3 py-2 has-background-black">
-              {#if false}
+              {#if !false}
                 <svg 
                   width="50"
                   height="50"

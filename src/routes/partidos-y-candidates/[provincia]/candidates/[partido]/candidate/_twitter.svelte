@@ -58,7 +58,7 @@
   </div>
 {/if}
 {#if error}
-  <span> No se pudieron cargar los datos </span>
+  <span> No se obtuvieron datos </span>
 {/if}
 <style>
 /**

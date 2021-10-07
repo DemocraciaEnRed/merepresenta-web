@@ -14,13 +14,16 @@
   //la vaca
   let tema = partido.ejes[0].ejes_id;
 </script>
-<HeaderPP {tema}/>
-<div class="info p-4">
-  <h1 class="title is-uppercase is-4">
-    Propuestas de <span style="color: {tema.color})">{tema.name}</span><br>
-    <span class="has-text-weight-normal">{partido.name}</span>
-  </h1>
+<div class="columns">
+  <HeaderPP {tema}/>
+  <div class="info p-6 is-8 column ">
+    <h1 class="title is-uppercase is-4">
+      Propuestas de <span style="color: {tema.color})">{tema.name}</span><br>
+      <span class="has-text-weight-normal">{partido.name}</span>
+    </h1>
+  </div>
 </div>
+
 <main class="container p-2">
   <ul class="ml-5 mt-4">
     {#each partido.ejes[0].propuestas as propuesta}

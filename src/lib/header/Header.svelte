@@ -65,10 +65,10 @@
 
 		<div class="navbar-menu">
 			<div class="navbar-end">
-				<a class="navbar-item" href="/" on:click={() => openNav = !openNav}>Inicio</a>
-				<a class="navbar-item" href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidates</a>
-				<a class="navbar-item" href="/plataformas/{provincia}" on:click={() => openNav = !openNav}>Propuestas</a>
-				<a class="navbar-item" href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>
+				<a class="navbar-item" href="/">Inicio</a>
+				<a class="navbar-item" href="/partidos-y-candidates/{provincia}">Partidos y candidates</a>
+				<a class="navbar-item" href="/plataformas/{provincia}">Propuestas</a>
+				<a class="navbar-item" href="/abc-electoral">Abc Electoral</a>
 			</div>
 		</div>
 

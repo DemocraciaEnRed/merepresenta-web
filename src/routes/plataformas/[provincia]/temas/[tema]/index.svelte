@@ -25,8 +25,8 @@
   export let partidos;
   export let tema;
 </script>
-<main class="container ">
-  <section>
+<main class="white-background-desktop">
+  <section class="container ">
     <nav class="breadcrumb is-small pl-2 my-2" aria-label="breadcrumbs">
       <ul>
         <li ><a href="/plataformas/donde-votas">Plataformas</a></li>
@@ -57,7 +57,7 @@
       </div>
     </div>
    
-    <div class="p-4 is-flex-tablet is-flex-wrap-wrap  is-columns">
+    <div class="py-4 is-flex-tablet is-flex-wrap-wrap columns">
       {#each partidos as partido}
         <ProposalsByParty {tema} {partido}/>
       {/each}

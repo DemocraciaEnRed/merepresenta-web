@@ -12,7 +12,7 @@
   import { PartyImg } from '$lib/common/utils';
   export let partidos;
 </script>
-<main class="container p-2 has-background-white white-background-desktop">
+<main class=" p-2 has-background-white white-background-desktop">
   <div class="has-text-right">
     <SelectDistrict/>
   </div>
@@ -29,7 +29,7 @@
     </p>
   </div>
   
-  <section class="columns is-mobile is-flex is-flex-wrap-wrap is-justify-content-center">
+  <section class="container mx-auto columns is-mobile is-flex is-flex-wrap-wrap is-justify-content-center">
     {#each partidos as partido}
       <div class="column is-half-mobile is-one-quarter-tablet has-text-centered party ">
         <div
@@ -55,6 +55,7 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  background-color: #fff;
 }
 h2{
   text-align: center;

@@ -29,7 +29,7 @@
     <tr>
       <td class="py-4 has-text-centered">
         {#if partido.ejes[0]?.propuestas}
-        <a href="{$page.path}/{partido.id}" class="button is-black is-uppercase px-6"> Leer más </a>
+        <a href="{$page.path}/{partido.id}" class="button is-black is-uppercase px-6"> Leer propuestas </a>
         {/if}
         {#if !partido.ejes[0]?.propuestas}
         No se encontraron propuestas sobre este tema en las fuentes consultadas

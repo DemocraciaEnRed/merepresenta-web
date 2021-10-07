@@ -26,7 +26,7 @@
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
-<main class="container p-2 has-background-white has-text-centered ">
+<main class="white-background-desktop p-2 has-background-white has-text-centered ">
   <h1 class="title is-4 is-uppercase mt-4">
     Candidates de <br>{candidates[0].partido.name}
   </h1>
@@ -36,25 +36,47 @@
     Ver partido
   </a>
   <p class="my-4">Se postulan:</p>
-  <svelte:component this={Carousel} bind:this={carouselRef}>
+  <section class="is-hidden-tablet"> 
+    <svelte:component this={Carousel} bind:this={carouselRef}>
+      {#each candidates as candidate}
+        <div class="candidate has-text-centered">
+          <div 
+            style="background-image: url({CandidateImg(candidate)})"
+            class="candidate-img" alt="Foto retrato de {candidate.name}"/>
+          <h1 class="title has-text-black">{candidate.name}</h1>
+          <p class="has-text-black">Candidat{candidate.genre === 'm' ? 'o': 'a' } a <br>
+          {candidate.cargo}</p>
+          <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-active my-4">VER CANDIDATE</a>
+        </div>
+      {/each}
+    </svelte:component>
+  </section>
+  <section class=" mt-6 mx-auto container is-hidden-mobile columns is-3 is-flex-wrap-wrap">
     {#each candidates as candidate}
-      <div class="candidate has-text-centered">
-        <div 
+      <div class="column has-background-white is-one-third-tablet is-one-quarter-desktop has-text-centered">
+        <div class="candidate">
+          <div 
           style="background-image: url({CandidateImg(candidate)})"
-          class="candidate-img" alt="Foto retrato de {candidate.name}"/>
+          class="candidate-img tablet" alt="Foto retrato de {candidate.name}"/>
         <h1 class="title has-text-black">{candidate.name}</h1>
         <p class="has-text-black">Candidat{candidate.genre === 'm' ? 'o': 'a' } a <br>
         {candidate.cargo}</p>
         <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-active my-4">VER CANDIDATE</a>
+        </div>
+        
       </div>
     {/each}
-  </svelte:component>
+  </section>
 </main>
 <style>
   .candidate-img{
     height: 380px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
+  }
+  .candidate-img.tablet{
+    height: 200px;
   }
   .candidate{
     border: 1px solid black;

@@ -21,7 +21,7 @@
   const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
 
 </script>
-<main class="container has-background-white mt-4">
+<main class="container is-max-widescreen has-background-white mt-4">
   <nav class="breadcrumb is-small pl-2" aria-label="breadcrumbs">
     <ul>
       <li ><a href="/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
@@ -40,6 +40,7 @@
         <p class=" p-4">Candidate a {candidate.cargo}</p>
       </td>
     </table>
+    <section>
     <div class="mt-4">
       <Dropdown name="¿Quién es y a qué se dedica?">
         <About {candidate}/>
@@ -81,9 +82,10 @@
   .candidate-header{
     border-top: 2px black solid;
     border-bottom: 2px black solid;
+    width: 100%;
   }
   #candidato-img{
-    width: 50%;
+    width: 25%;
     height: 250px;
     background-size: cover;
     background-position: center;
@@ -95,5 +97,10 @@
   strong{
     font-weight: 500;
     color: black
+  }
+  @media only screen and (max-width: 768px) {
+    #candidato-img{
+      width: 50%;
+    }
   }
 </style>
