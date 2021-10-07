@@ -38,31 +38,31 @@ import { space } from 'svelte/internal';
 			</a>
 		</section>
 
-		<section class="has-background-white is-hidden-mobile py-6 ">
-			<div class="columns mb-6 mx-2">
+		<section class="has-background-white is-hidden-mobile py-5 ">
+			<div class="columns is-vcentered icons mb-6 mx-2">
 				<div class="column">
 					<img src="themes/gender.svg"  alt="Ícono de género" class="py-5">
 				</div>
-				<div class="column">
-					<img src="themes/health.svg"  alt="Ícono de salud" class="py-5">
+				<div class="column ">
+					<img src="themes/health.svg"  alt="Ícono de salud" >
 				</div>
 				<div class="column">
-					<img src="themes/house.svg"  alt="Ícono de vivienda" class="py-5">
+					<img src="themes/house.svg"  alt="Ícono de vivienda">
 				</div>
 				<div class="column">
-					<img src="themes/justice.svg"  alt="Ícono de justicia" class="py-5">
+					<img src="themes/justice.svg"  alt="Ícono de justicia">
 				</div>
 				<div class="column">
-					<img src="themes/money.svg"  alt="Ícono de dinero" class="py-5">
+					<img src="themes/money.svg"  alt="Ícono de dinero">
 				</div>
 				<div class="column">
-					<img src="themes/nature.svg"  alt="Ícono de naturaleza" class="py-5">
+					<img src="themes/nature.svg"  alt="Ícono de naturaleza">
 				</div>
 				<div class="column">
-					<img src="themes/search.svg"  alt="Ícono de búsqueda" class="py-5">
+					<img src="themes/search.svg"  alt="Ícono de búsqueda">
 				</div>
 				<div class="column">
-					<img src="themes/security.svg"  alt="Ícono de seguruidad" class="py-5">
+					<img src="themes/security.svg"  alt="Ícono de seguruidad">
 				</div>
 			</div>
 			<div>
@@ -96,6 +96,9 @@ import { space } from 'svelte/internal';
 		width: 80%;
 		margin: auto;
 		border:1px solid #000;
+	}
+	.icons img{
+		max-width: 50px;
 	}
 
 </style>

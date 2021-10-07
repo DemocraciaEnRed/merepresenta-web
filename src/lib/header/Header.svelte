@@ -13,50 +13,66 @@
 </script>
 <header>
 	<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand left-burger">
-			<button class="navbar-burger" on:click={() => openNav = !openNav} aria-label="menu" aria-expanded="false" class:is-active="{openNav}">
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-			</button>
-			<a class="navbar-item" href="/" class:is-hidden={!logoVisible}>
+		<div class="navbar-brand is-justify-content-space-between">
+			<a class="navbar-item" href="/" class:is-hidden={logoVisible}>
 				<img src="/logo-merepresenta.svg" id="logo" alt="logo">
-			</a>	
-		</div>
-		{#if openNav}
-		<aside class="menu" transition:slide>
-			<ul class="menu-list">
-				<li class:active={path==="/"} >
-					<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
-				</li>
-				<li class:active={path===`/partidos-y-candidates/${provincia}`}>
-					<a href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidates</a>
-				</li>
-				<li class:active={path===`/plataformas/${provincia}`}>
-					<a href="/plataformas/{provincia}" on:click={() => openNav = !openNav}>propuestas</a>
-				</li>
-				<li class:active={path==='/abc-electoral'}>
-					<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>
-				</li>
-				<!--
-					JUAN CARLOS FALOPA
-					<li>
-						<a href>Juegos</a>
+			</a>
+			<div class="navbar-end right-burger">
+				<button class="navbar-burger" on:click={() => openNav = !openNav} aria-label="menu" aria-expanded="false" class:is-active="{openNav}">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</button>
+				<a class="navbar-item" href="/" class:is-hidden={!logoVisible}>
+					<img src="/logo-merepresenta.svg" id="logo" alt="logo">
+				</a>	
+			</div>
+			{#if openNav}
+			<aside class="menu" transition:slide>
+				<ul class="menu-list">
+					<li class:active={path==="/"} >
+						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
+					</li>
+					<li class:active={path===`/partidos-y-candidates/${provincia}`}>
+						<a href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidates</a>
+					</li>
+					<li class:active={path===`/plataformas/${provincia}`}>
+						<a href="/plataformas/{provincia}" on:click={() => openNav = !openNav}>Propuestas</a>
+					</li>
+					<li class:active={path==='/abc-electoral'}>
+						<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>
+					</li>
+					<!--
+						JUAN CARLOS FALOPA
+						<li>
+							<a href>Juegos</a>
+						</li>
+						<li>
+						<a href>Quienes somos</a>
 					</li>
 					<li>
-					<a href>Quienes somos</a>
-				</li>
-				<li>
-					<a href>Por que lo hacemos</a>
-				</li>
-				<li>
-					<a href>Metodología</a>
-				</li>
-				-->
-			</ul>
-		</aside>
-		<div class="rest"></div>
-		{/if}
+						<a href>Por que lo hacemos</a>
+					</li>
+					<li>
+						<a href>Metodología</a>
+					</li>
+					-->
+				</ul>
+			</aside>
+			<div class="rest"></div>
+			{/if}
+		</div>
+
+		<div class="navbar-menu">
+			<div class="navbar-end">
+				<a class="navbar-item" href="/" on:click={() => openNav = !openNav}>Inicio</a>
+				<a class="navbar-item" href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidates</a>
+				<a class="navbar-item" href="/plataformas/{provincia}" on:click={() => openNav = !openNav}>Propuestas</a>
+				<a class="navbar-item" href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>
+			</div>
+		</div>
+
+		
 	</nav>
 </header>
 
@@ -68,13 +84,13 @@
 #logo{
 	max-width: 140px;
 }
-.navbar-brand.left-burger {
+.right-burger {
 	align-items: flex-start;
 	align-items: center;
 	font-weight: 700;
 }
 
-.navbar-brand.left-burger .navbar-burger {
+.navbar-burger {
 	margin-left: 0;
 	margin-right: 0;
 }

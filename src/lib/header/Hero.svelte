@@ -7,13 +7,13 @@
 </script>
 <section class="hero">
   <div class="hero-body" class:has-text-centered={textCenter}>
-    <figure class="image py-4">
-      <img src={image} alt={imgAlt} class="is-fullwidth" />
+    <figure class="image py-4 mb-3">
+      <img src={image} alt={imgAlt} class="main-logo mx-auto is-fullwidth" />
     </figure>
-    <p >
+    <p class="has-text-centered-tablet">
       <strong>{title}</strong>
     </p>
-    <p >
+    <p class="has-text-centered-tablet">
       {subtitle}
     </p>
   </div>
@@ -27,5 +27,8 @@
     font-size: 1.3rem;
     color: white;
     font-weight: 400;
+  }
+  .main-logo{
+    max-width: 500px;
   }
 </style>
