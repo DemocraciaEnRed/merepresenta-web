@@ -1,6 +1,16 @@
+<script context="module">
+  import API, {handleResponse} from "$lib/apiHandler";
+  import { getLaws } from '$lib/graph-ql/laws';
+  //load es un hook de svelte cuando carga la ruta
+  export async function load({fetch}){
+    const res = API(fetch, getLaws);
+    // handle response devuelve o error o props
+    return handleResponse(res, "laws", "leyes");
+  }
+</script>
 <script>
   import Dropdown from "$lib/common/Dropdown.svelte";
-  let laws = [];
+  export let laws;
   import Votes from './_votes.svelte';
 </script>
 <main class="container p-2 has-background-black has-text-centered">

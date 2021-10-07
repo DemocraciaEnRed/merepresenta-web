@@ -22,7 +22,6 @@
     const module = await import('svelte-carousel');
     Carousel = module.default;
   });
-
 </script>
 <svelte:head>
 	<title>Home</title>

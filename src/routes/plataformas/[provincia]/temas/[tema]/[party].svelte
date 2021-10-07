@@ -33,7 +33,7 @@
       {propuesta.summary}
     </p>
   {/each}
-  <p class="has-text-centered">
+  <p class="has-text-centered mt-4">
     <a href={partido.url_web} target="_blank" class="button is-black is-uppercase">
       ir a la plataforma oficial
     </a> 
