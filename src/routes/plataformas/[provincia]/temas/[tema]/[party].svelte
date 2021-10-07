@@ -8,15 +8,13 @@
   }
 </script>
 <script>
-  import { page } from '$app/stores';
   import HeaderPP from './_header.svelte';
   export let party
   let partido = party[0];
-  
   //la vaca
   let tema = partido.ejes[0].ejes_id;
 </script>
-<HeaderPP tema={tema.slug}/>
+<HeaderPP {tema}/>
 <div class="info p-4">
   <h1 class="title is-uppercase is-4">
     Propuestas de <span style="color: {tema.color})">{tema.name}</span><br>
@@ -46,13 +44,13 @@
       te invitamos a que visites <br> las siguientes páginas
     </strong>
   </p>
-  
-  {#each partido.ejes[0].resources as related}
-    <p class="has-text-centered mt-4">
-      <a href={related.url} class="button is-outlined is-active px-4">{related.url_label}</a>  
-    </p>
-  {/each}
-  
+  {#if partido.ejes[0].resources}
+    {#each partido.ejes[0].resources as related}
+      <p class="has-text-centered mt-4">
+        <a href={related.url} class="button is-outlined is-active px-4">{related.url_label}</a>  
+      </p>
+    {/each}
+  {/if}
   <p class="has-text-centered mt-4">
     Conocé el resto de los partidos y sus propuestas
     <a href="/" class="button is-black is-uppercase mt-4">ver propuestas</a>  

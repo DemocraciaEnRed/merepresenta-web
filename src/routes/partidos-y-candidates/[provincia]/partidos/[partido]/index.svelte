@@ -49,7 +49,7 @@
         {#each partido.ejes as proposal}
           <div class="column is-flex-grow-0 has-text-centered">
             <div class="px-3 py-2 has-background-black">
-              {#if svgLoad}
+              {#if false}
                 <svg 
                   width="50"
                   height="50"
