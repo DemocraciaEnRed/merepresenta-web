@@ -1,8 +1,10 @@
+//URL de la api
 export const baseURL = 'https://content.merepresenta.info'
 
 //native svelte fetch cause svelte doesnt like axios aparently
 const API = (fetch, query) => {
   const body = JSON.stringify({query});
+  //devuelve una promesa de fetch
   return fetch(
     `${baseURL}/graphql`,
     {
@@ -19,8 +21,8 @@ export default API;
 /**
  * Handle response for API calls
  * @param {Response} res 
- * @param {string} prop the name of the props as we wanted in the component separated by ','
- * @param {string} original the name of the key comming from the api separated by ','
+ * @param {string} prop the name of the props as we wanted in the component
+ * @param {string} original the name of the key comming from the api 
  * @returns 
  */
 
