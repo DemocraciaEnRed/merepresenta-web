@@ -1,7 +1,7 @@
 export function getDistricts(){
   return(`
   {
-    distritos{
+    distritos(filter: {slug: {_neq: "extranjero"}}){
       id
       name
       slug
