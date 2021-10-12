@@ -85,7 +85,7 @@
         <p class="mb-4">
           <strong>¿Querés la información oficial?</strong>
         </p>
-        <a href={partido.url_web} target="_blank" class="is-uppercase is-underlined mt-4">ir a la plataforma oficial</a>
+        <a href={partido.url_fuente} target="_blank" class="is-uppercase is-underlined mt-4">ir a la plataforma oficial</a>        
         <p class="mt-6">
           <strong>¿Querés conocer a sus candidates?</strong> 
         </p>

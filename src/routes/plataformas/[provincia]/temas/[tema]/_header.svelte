@@ -16,11 +16,11 @@
     </tr>
   </thead>
 </table>
-<div class="is-hidden-mobile column is-flex is-justify-content-space-evenly is-align-items-center" style="background-color:{tema.color}">
-  <h1 class="is-uppercase title is-3 has-text-weight-normal p-1 mb-0 has-text-black">
-    {tema.name}
-  </h1>
-  <img src="{directusImg}{tema.icon_file.id}" alt="icono de {tema.name}" width="40">
+<div class="is-hidden-mobile column is-flex is-justify-content-space-evenly is-align-items-center " style="background-color:{tema.color}">
+  <figure class="image is-64x64">
+     <img src="{directusImg}{tema.icon_file.id}" alt="icono de {tema.name}" width="40">
+  </figure>
+ 
 </div>
 <style>
   .header{

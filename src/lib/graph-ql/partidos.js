@@ -25,6 +25,7 @@ export function getPartyById (id){
       url_youtube
       summary
       url_web
+      url_fuente
       district{
         id
       }
@@ -98,6 +99,7 @@ export function getThemeProposalsByPartyId(tema, partido){
       name
     	summary
     	url_web
+      url_fuente
       district{
         id
       }

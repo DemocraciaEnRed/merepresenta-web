@@ -62,6 +62,17 @@ import { space } from 'svelte/internal';
 			</div>
 		</div>
 		<div class="divider my-6"></div>
+		<div  class="border-top-bottom is-flex is-justify-content-center is-flex-direction-column is-align-items-center m-6">
+			<figure class="mb-5 image is-128x128">
+				<img class="games-logo" src="juegos.svg" alt="Ícono de juegos">
+			</figure>
+			<div class="my-6">
+				<h2 class="title light is-4 has-text-weight-normal has-text-white"><span class="has-background-black is-uppercase p-3 mb-3"> ¡informate jugando!</span></h2>
+				<h3 class="my-5">Mirá nuestros juegos online para descubrir más sobre la política argentina</h3>
+				<a class="has-text-white is-underlined has-background-black p-2  is-uppercase transparent" href="/juegos">Conoce nuestros juegos</a>
+			</div>
+		</div>
+		<div class="divider my-6"></div>
 	</section>
 
 	<!-- Home on mobile -->
@@ -80,6 +91,14 @@ import { space } from 'svelte/internal';
 			enterate de todas sus  <br>
 			<strong>propuestas</strong>
 		</a>
+		<div class="has-text-centered mt-6 mb-2">
+			<img src="/juegos.svg" alt="Ícono de juegos">
+		</div>
+		<a href="/juegos" class="button py-5 transparent is-fullwidth is-uppercase">
+			<strong>¡Informate jugando!</strong>
+			<br>
+			<span class="is-size-7">con Nuestros juegos sobre politica argentina</span>
+		</a>
 	</section>
 
 </main>
@@ -97,6 +116,9 @@ import { space } from 'svelte/internal';
 	}
 	.icons img{
 		max-width: 50px;
+	}
+	.games-logo{
+		filter:invert(0%) sepia(97%) saturate(13%) hue-rotate(210deg) brightness(5%) contrast(103%);
 	}
 
 </style>

@@ -2,8 +2,12 @@
   export let value;
 </script>
 <table class="my-4 binary">
-  <td class:active={value}>SI</td>
-  <td class:active={!value}>NO</td>
+  {#if value}
+  <td class:active={value}><img src="/positive.png" alt="Ícono de check"></td>
+  {/if}
+  {#if !value}
+  <td class:active={!value}><img src="/negative.png" alt="Ícono de cruz"></td>
+  {/if}
 </table>
 <style>
   .binary .active{
@@ -12,9 +16,10 @@
 }
 .binary {
   border: 2px #000 solid;
-  max-width: 100px;
+  max-width: 50px;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 table td{
     width: 50%;

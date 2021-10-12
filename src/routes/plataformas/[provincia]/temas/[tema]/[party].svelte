@@ -25,28 +25,31 @@
 </div>
 
 <main class="container p-2">
-  <ul class="ml-5 mt-4">
+  <!-- <ul class="ml-5 mt-4">
     {#each partido.ejes[0].propuestas as propuesta}
       <li>{propuesta.title}</li>
     {/each}
-  </ul>
+  </ul> -->
   {#each partido.ejes[0].propuestas as propuesta}
     <h2 class="py-2 title is-6 mt-4">{propuesta.title}</h2>  
     <p>
       {propuesta.summary}
     </p>
   {/each}
-  <p class="has-text-centered mt-4">
-    <a href={partido.url_web} target="_blank" class="button is-black is-uppercase">
+  <p class="has-text-centered mt-6">
+    <a href={partido.url_fuente} target="_blank" class="button is-black is-uppercase">
       ir a la plataforma oficial
     </a> 
   </p>
-  <p class="has-text-centered mt-5">
+  {#if tema.slug==='genero'}
+  <p class="has-text-centered mt-5">   
     <strong>
       Si te interesa el tema de <span style="color: {tema.color})">{tema.name}</span>, <br>
       te invitamos a que visites <br> las siguientes páginas
     </strong>
   </p>
+  {/if}
+  {console.log (partido.ejes[0].resources)}
   {#if partido.ejes[0].resources}
     {#each partido.ejes[0].resources as related}
       <p class="has-text-centered mt-4">
@@ -54,10 +57,13 @@
       </p>
     {/each}
   {/if}
-  <p class="has-text-centered mt-4">
+  <div class="has-text-centered">
+     <p class="has-text-centered mt-4">
     Conocé el resto de los partidos y sus propuestas
-    <a href="/" class="button is-black is-uppercase mt-4">ver propuestas</a>  
   </p>
+  <a href="/" class="button is-black is-uppercase mt-4">ver propuestas</a>
+  </div>
+ 
 </main>
 <style>
   .info{

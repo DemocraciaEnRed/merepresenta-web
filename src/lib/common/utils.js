@@ -7,9 +7,10 @@ export const PoliciesIcons = {
   "educacion"         : `${imgRoute}book.svg`,
   "genero"            : `${imgRoute}gender.svg`,
   "seguridad"         : `${imgRoute}security.svg`,
-  "empleo"            : `${imgRoute}house.svg`,
+  "empleo"            : `${imgRoute}money.svg`,
   "justicia"          : `${imgRoute}justice.svg`,
   "corrupcion"        : `${imgRoute}search.svg`,
+  "vivienda"          : `${imgRoute}house.svg`,
 }
 
 export const directusImg = 'https://content.merepresenta.info/assets/'
