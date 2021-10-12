@@ -2,7 +2,7 @@
   export let candidate;
   import Binary from "./_binary.svelte";
 </script>
-<div class="mt-6">
+<div class="">
   <table>
     {#if candidate.age}
       <tr>

@@ -8,11 +8,13 @@
   let color = darkMode ? 'white' : 'black'
 
 </script>
-<div class="drop" style="border-color: {color};" on:click={()=>isOpen = !isOpen}>
-  <h2 style="color: {color}">{@html name}</h2>
-  <span style="color:{color}"><Icon icon={iconClass} /></span>
+<div class="drop" style="border-color: {color};">
+  <div class="the-drop-header" on:click={()=>isOpen = !isOpen}>
+    <h2 style="color: {color}" >{@html name}</h2>
+    <span style="color:{color}"><Icon icon={iconClass} /></span>
+  </div>
   {#if isOpen}
-    <div class="content" transition:slide >
+    <div class="content pb-5" transition:slide>
       <slot/>
     </div>
   {/if}
@@ -20,11 +22,13 @@
 <style>
   .drop{
     text-align: left;
-    border-top: 1px solid #000;
+    /* border-top: 1px solid #000; */
     border-bottom: 1px solid #000;
+    margin-top: -1px;
+  }
+  .the-drop-header{
     padding: 30px 10px;
     cursor: pointer;
-    margin-top: -1px;
   }
   h2{
     font-weight: 500;
