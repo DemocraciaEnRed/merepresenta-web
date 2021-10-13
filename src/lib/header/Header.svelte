@@ -23,9 +23,6 @@
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 				</button>
-				<a class="navbar-item" href="/" class:is-hidden={!logoVisible}>
-					<img src="/logo-merepresenta.svg" id="logo" alt="logo">
-				</a>	
 			</div>
 			{#if openNav}
 			<aside class="menu" transition:slide>
@@ -41,6 +38,9 @@
 					</li>
 					<li class:active={path==='/abc-electoral'}>
 						<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>
+					</li>
+					<li class:active={path==='/abc-electoral'}>
+						<a href="/juegos" on:click={() => openNav = !openNav}>Juegos</a>
 					</li>
 					<!--
 						JUAN CARLOS FALOPA
@@ -69,9 +69,9 @@
 				<a class="navbar-item" href="/partidos-y-candidates/{provincia}">Partidos y candidates</a>
 				<a class="navbar-item" href="/plataformas/{provincia}">Propuestas</a>
 				<a class="navbar-item" href="/abc-electoral">Abc Electoral</a>
+				<a class="navbar-item" href="/juegos">Juegos</a>
 			</div>
 		</div>
-
 		
 	</nav>
 </header>

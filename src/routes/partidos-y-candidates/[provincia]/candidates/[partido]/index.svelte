@@ -62,6 +62,7 @@
         <h1 class="title is-3 has-text-weight-bold is-size-4-touch has-text-black">{candidate.name}</h1>
         <p class="has-text-black">Candidat{candidate.genre === 'm' ? 'o': 'a' } a <br>
         {candidate.cargo}</p>
+        <p class="has-text-black">Posición en la lista: {candidate.position}</p>
         <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-active my-4">VER CANDIDATE</a>
         </div>
         

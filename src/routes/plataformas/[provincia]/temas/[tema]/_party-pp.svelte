@@ -18,13 +18,11 @@
   </table>
   <table style="background-color: {bgAlpha};">
     {#if partido.ejes[0]?.propuestas}
-      {#each partido.ejes[0].propuestas as propuesta}
-        <tr class="has-text-centered bb">
-          <td class="py-4">
-            <strong>{propuesta.summary}</strong>
-          </td>    
-        </tr>
-      {/each}
+      <tr class="has-text-centered bb">
+        <td class="py-4">
+          <strong>{partido.ejes[0].summary}</strong>
+        </td>    
+      </tr>
     {/if}
     <tr>
       <td class="py-4 has-text-centered">

@@ -14,6 +14,10 @@
       <td class="py-5 has-text-left">profesión</td>
       <td class="py-5"><strong>{candidate.profession.name}</strong></td>
     </tr>
+    <tr>
+      <td class="py-5 has-text-left">provincia de nacimiento</td>
+      <td class="py-5"><strong>{candidate.distrito_nacional.name}</strong></td>
+    </tr>
     <tr hidden={candidate.childrens === 0}>
       <td class="py-5 has-text-left">hijes</td>
       <td class="py-5">

@@ -48,12 +48,12 @@
       <div class="columns is-mobile is-justify-content-center is-flex is-flex-wrap-wrap p-2">
         {#each partido.ejes as proposal}
           <div class="column is-flex-grow-0 has-text-centered">
-            <div class="px-3 py-2 has-background-black">
+            <div class="px-3 py-2 has-background-black ">
               {#if !false}
                 <svg 
                   width="50"
                   height="50"
-                  style="fill:{proposal.ejes_id.color}"
+                  style="stroke:{proposal.ejes_id.color}"
                   title="propuestas de {proposal.ejes_id.slug}"
                   data-src="{directusImg}{proposal.ejes_id.icon_file.id}">
                 </svg>

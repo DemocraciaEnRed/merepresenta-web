@@ -81,24 +81,27 @@ import { space } from 'svelte/internal';
 		<div class="has-text-centered mt-6 mb-2">
 			<img src="/candidates-link.svg" alt="">
 		</div>
-		<a href="/partidos-y-candidates/donde-votas" class="butto py-5 is-fullwidth is-uppercase mb-4">
+		<a href="/partidos-y-candidates/donde-votas" class="button  is-fullwidth is-uppercase mb-4">
 			Conocé todo sobre los <br> <strong>partidos y lxs candidatxs</strong>
 		</a>
 		<div class="has-text-centered mt-6 mb-2">
 			<img src="/proposals-link.svg" alt="">
 		</div>
-		<a href="/plataformas/donde-votas" class="button py-5 transparent is-fullwidth is-uppercase">
+		<a href="/plataformas/donde-votas" class="button transparent is-fullwidth is-uppercase">
 			enterate de todas sus  <br>
 			<strong>propuestas</strong>
 		</a>
 		<div class="has-text-centered mt-6 mb-2">
 			<img src="/juegos.svg" alt="Ícono de juegos">
 		</div>
-		<a href="/juegos" class="button py-5 transparent is-fullwidth is-uppercase">
+		<a href="/juegos" class="button games transparent is-fullwidth is-uppercase ">
 			<strong>¡Informate jugando!</strong>
-			<br>
 			<span class="is-size-7">con Nuestros juegos sobre politica argentina</span>
 		</a>
+		<div class="my-6">
+			<h3 class="pb-5 light is-4 has-text-weight-normal has-text-white"><span class="has-background-black p-3 mb-3"> ¿No sabés qué se vota?</span></h3>
+			<a class="has-text-white is-underlined has-background-black p-2  is-uppercase transparent" href="/abc-electoral">ver ABC sobre las elecciones 2021</a>
+		</div>
 	</section>
 
 </main>
@@ -108,6 +111,10 @@ import { space } from 'svelte/internal';
 		border: 1px solid white;
 		flex-direction: column;
 		border-radius: 10px;
+		height: auto;
+	}
+	.button.games{
+		white-space: break-spaces;
 	}
 	.divider{
 		width: 70%;

@@ -37,7 +37,8 @@
       <td id="politican-info">
         <h3 class="has-text-centered is-uppercase has-text-white has-background-black p-2 ">{candidate.partido.name}</h3>
         <h2 class="title is-3 has-text-black is-uppercase mt-4 px-4">{candidate.name}</h2>
-        <p class=" p-4">Candidate a {candidate.cargo}</p>
+        <p class=" p-4">Candidat{candidate.genre === 'm' ? 'o': 'a' } a {candidate.cargo}</p>
+        <p class="p-4">Posición en la lista: {candidate.position}</p>
       </td>
     </table>
     <section>

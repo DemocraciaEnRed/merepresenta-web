@@ -111,7 +111,10 @@ export function getThemeProposalsByPartyId(tema, partido){
           name
           slug
           color
-          resources
+          resources{
+            url_label
+            url
+          }
           icon_file{
             id
           }

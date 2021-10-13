@@ -1,6 +1,7 @@
 <script>
 	import Header from '$lib/header/Header.svelte';
+	import Footer from '$lib/footer/index.svelte'
 </script>
-<Header logoVisible={true}/>
+<Header logoVisible={!true}/>
 <slot />
-<footer></footer>
+<Footer backgroundColor={'black'}/>

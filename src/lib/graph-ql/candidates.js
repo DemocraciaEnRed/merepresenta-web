@@ -6,6 +6,7 @@ export function getCandidates (id){
     candidato${filterById(id)} {
       id
       name
+      position
       genre
       age
       partido {
