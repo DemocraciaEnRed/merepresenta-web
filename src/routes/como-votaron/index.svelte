@@ -15,7 +15,7 @@
   import Dropdown from "$lib/common/Dropdown.svelte";
   import { directusImg } from "$lib/common/utils";
   export let laws;
-  import Votes from './_votes.svelte.delete';
+  // import Votes from './_votes.svelte.delete';
 </script>
 <div class="section has-background-black has-text-centered">
   <div class="container">
