@@ -16,7 +16,7 @@
     left: -10px;
     padding: 10px;
   }
-  .vote{
+  .vote{votes
     padding: 5px;
     background-image: linear-gradient(116deg, #000000 7.14%, #ffffff 7.14%, #ffffff 50%, #000000 50%, #000000 57.14%, #ffffff 57.14%, #ffffff 100%);
     background-size: 7.79px 15.97px;
