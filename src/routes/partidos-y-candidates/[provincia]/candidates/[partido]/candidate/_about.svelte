@@ -12,16 +12,31 @@
     {/if}
     <tr>
       <td class="py-5 has-text-left">profesión</td>
-      <td class="py-5"><strong>{candidate.profession.name}</strong></td>
+      <td class="py-5"><strong>
+        {#if candidate.profession}
+        {candidate.profession.name}
+        {:else}NO HAY DATOS
+        {/if }
+      </strong></td>
     </tr>
     <tr>
       <td class="py-5 has-text-left">provincia de nacimiento</td>
-      <td class="py-5"><strong>{candidate.distrito_nacional.name}</strong></td>
+      <td class="py-5"><strong>
+        {#if candidate.distrito_nacional}
+          {candidate.distrito_nacional.name}
+          {:else}NO HAY DATOS
+        {/if}
+      </strong></td>
     </tr>
     <tr hidden={candidate.childrens === 0}>
       <td class="py-5 has-text-left">hijes</td>
       <td class="py-5">
-        <strong>{candidate.childrens} hije{candidate.childrens > 1 ? 's' : ''}</strong>
+        <strong>
+          {#if candidate.childrens}
+          {candidate.childrens} hije{candidate.childrens > 1 ? 's' : ''}
+          {:else}NO HAY DATOS
+          {/if}
+        </strong>
       </td>
     </tr>
   </table>
