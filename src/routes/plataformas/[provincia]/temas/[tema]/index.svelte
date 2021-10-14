@@ -45,15 +45,17 @@
           <strong style="color: {tema.color};text-transform: capitalize">{tema.name}</strong> 
           de cada partido según tu distrito
         </p>
-        <p class="mt-2">
-          <em class="mt-6">Si querés saber sobre el estado actual de {tema.name.toLowerCase()} en la Argentina descargá nuestra hoja de diagnóstico </em>
-        </p>
-        <p class="has-text-centered mt-4">
-          <a href={tema.sheet_url} target="_blank" class="download-sheet">
-            <img src="/download.png" alt="icono de descarga">
-            descargar hoja de diagnóstico
-          </a>
-        </p>
+        {#if tema.slug==='economia'|| tema.slug==='ambiente'|| tema.slug==='genero' || tema.slug==='justicia' || tema.slug==='vivienda' || tema.slug==='transparencia'}
+          <p class="mt-2">
+            <em class="mt-6">Si querés saber sobre el estado actual de {tema.name.toLowerCase()} en la Argentina descargá nuestra hoja de diagnóstico </em>
+          </p>
+          <p class="has-text-centered mt-4">
+            <a href={tema.sheet_url} target="_blank" class="download-sheet">
+              <img src="/download.png" alt="icono de descarga">
+              descargar hoja de diagnóstico
+            </a>
+          </p>
+          {/if}
       </div>
     </div>
    
