@@ -43,7 +43,7 @@
     </table>
     <section>
     <div class="mt-4">
-      <Dropdown name="¿Quién es y a qué se dedica?">
+      <Dropdown name="¿Quién es y a qué se dedica?">        
         <About {candidate}/>
       </Dropdown>
     </div>

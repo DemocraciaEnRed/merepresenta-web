@@ -18,8 +18,8 @@
                 podés contactarnos en: <a class="{backgroundColor === 'black' ? 'has-text-white' : 'has-text-black'}" href="mailto:contacto@democracyos.io">contacto@democracyos.io</a>
             </h3>
         </div>
-        <figure class="ml-0 image is-3by1 is-hidden-tablet">
-            <img src="/logo-der.svg" alt="Logo de Democracia en Red">
+        <figure class="ml-0 image is-hidden-tablet">
+            <img class="logo-der-mobile" src="{backgroundColor === 'black' ? '/logo-der-white.svg' : '/logo-der-negro.svg'}" alt="Logo de Democracia en Red">
           </figure>
 
     </div>
@@ -31,5 +31,8 @@
     }
     a{
         font-family: 'Nippo', Helvetica, Arial ,sans-serif;
+    }
+    .logo-der-mobile{
+        width: 60%;
     }
 </style>

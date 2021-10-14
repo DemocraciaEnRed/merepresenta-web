@@ -41,6 +41,9 @@
     width: 100%;
     border: 1px solid black;
   }
+  td{
+    white-space: pre-line;
+  }
   .party-name{
     vertical-align:middle
   }

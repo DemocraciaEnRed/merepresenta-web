@@ -14,9 +14,9 @@
       </p>
     </div>
   </section>
-  <section class="container">  
+  <section class="container p-2">  
     <Dropdown darkMode name=" ¿QUÉ SE VOTA?">
-      <div>
+      <div >
         <h2>¿Qué se vota en las elecciones de 2021?</h2>
         <img class="is-hidden-tablet" src="/abc/que-se-vota.png" alt="Respuesta de la pregunta">
         <h2>¿Cuántas bancas están en juego en el Congreso?</h2>
@@ -255,5 +255,9 @@
   h2{
     font-size: 1rem;
     margin-top: 1rem;
+  }
+  img{
+    display: block;
+    margin: auto;
   }
 </style>
