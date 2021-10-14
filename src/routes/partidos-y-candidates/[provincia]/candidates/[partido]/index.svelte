@@ -51,10 +51,10 @@
       {/each}
     </svelte:component>
   </section> -->
-  <section class=" mt-6 mx-auto container columns is-mobile is-3 is-flex-wrap-wrap">
+  <section class=" my-6 mx-auto container columns is-mobile is-3 is-flex-wrap-wrap">
   <!-- <section class=" mt-6 mx-auto container is-hidden-mobile columns is-3 is-flex-wrap-wrap"> -->
     {#each candidates as candidate}
-      <div class="column has-background-white is-one-third-tablet is-one-quarter-desktop has-text-centered">
+      <div class="column is-half has-background-white is-one-third-tablet is-one-quarter-desktop has-text-centered">
         <div class="candidate">
           <div 
           style="background-image: url({CandidateImg(candidate)})"

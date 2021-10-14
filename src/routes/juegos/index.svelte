@@ -1,6 +1,6 @@
-<main class="container black-background
+<main class="r black-background
 	p-2 has-background-black">
-    <section class="has-text-left container p-4 my-6">
+    <section class="containe has-text-left container p-4 my-6">
         <p class="mb-3 has-text-white has-text-weight-normal">¿Querés informarte de una manera lúdica?</p>
         <h2 class="title light is-4 has-text-weight-normal has-text-white">¡Te invitamos a divertirte y aprender con nuestros juegos!</h2>
         

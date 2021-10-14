@@ -13,7 +13,7 @@
             </figure>
         </div>
         
-        <div class="is-uppercase has-text-centered-tablet is-size-5 mt-5">
+        <div class="is-uppercase has-text-centered-tablet is-size-6 mt-5">
             <h3 class="{backgroundColor === 'black' ? 'has-text-white is-size-5 has-text-weight-normal' : 'has-text-weight-normal has-text-black  is-size-5'}" >Si encontrás algún dato incorrecto o querés sumar tu aporte, <br>
                 podés contactarnos en: <a class="{backgroundColor === 'black' ? 'has-text-white' : 'has-text-black'}" href="mailto:contacto@democracyos.io">contacto@democracyos.io</a>
             </h3>

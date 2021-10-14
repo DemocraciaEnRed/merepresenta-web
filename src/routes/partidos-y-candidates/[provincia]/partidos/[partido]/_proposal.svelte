@@ -2,8 +2,8 @@
   import { page } from "$app/stores";
   import { PoliciesIcons } from "$lib/common/utils";
   export let proposal;
-  let policyUrl  = `/plataformas/${$page.params.provincia}/temas/`;    
-  
+  export let party;
+  let policyUrl  = `/plataformas/${$page.params.provincia}/temas/`;  
 </script>
 <table class="my-5 p-2">
   <table>
@@ -19,15 +19,20 @@
   <table>
     <tr>
       <td>
-        <ul class="px-5 mt-4 ml-4">
+        <p class="px-5 mt-4  summary">
+          {proposal.summary}
+        </p>
+        <!-- <ul class="px-5 mt-4 ml-4">
+
+          <li></li> 
           {#each proposal.propuestas as item}
             <li>{item.summary}</li>
           {/each}
-        </ul>
+        </ul> -->
       </td>
     </tr>
     <tr class="has-text-centered">
-      <a href="{policyUrl}{proposal.ejes_id.slug}" class="button is-black is-uppercase my-4">leer más</a>  
+      <a href="{policyUrl}{proposal.ejes_id.slug}/{party}" class="button is-black is-uppercase my-4">leer más</a>  
     </tr>
   </table>
 </table>
@@ -45,10 +50,9 @@
     width: 25px!important;
     height: 25px!important;
   }
-  ul{
-    font-family: Arial, Helvetica, sans-serif;
-    list-style-type:disc;
-    margin: 0;
-    padding: 0;
+
+  .summary{
+    white-space: pre-line;
+
   }
 </style>

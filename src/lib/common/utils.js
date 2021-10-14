@@ -7,7 +7,7 @@ export const PoliciesIcons = {
   "educacion"         : `${imgRoute}book.svg`,
   "genero"            : `${imgRoute}gender.svg`,
   "seguridad"         : `${imgRoute}security.svg`,
-  "empleo"            : `${imgRoute}money.svg`,
+  "empleo"            : `${imgRoute}job.svg`,
   "justicia"          : `${imgRoute}justice.svg`,
   "corrupcion"        : `${imgRoute}search.svg`,
   "vivienda"          : `${imgRoute}house.svg`,
@@ -33,7 +33,9 @@ export function PartyImg (party){
 }
 
 export function CandidateImg (candidate){
-  return candidate.avatar?.id ? `${directusImg}${candidate.avatar.id}` : getDefaultCandidateImgByGender(candidate.genre)
+  return candidate.avatar?.id ? `${directusImg}${candidate.avatar.id}` : 
+  '/candidate.svg'
+  //getDefaultCandidateImgByGender(candidate.genre)
 }
 export function getDefaultCandidateImgByGender (gender){
   return gender === 'm' ? '/candidato.png' : '/candidata.png';
