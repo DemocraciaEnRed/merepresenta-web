@@ -14,7 +14,7 @@
 <main class="container p-2 is-flex white-background-desktop is-flex-direction-column is-justify-content-space-evenly">
   <div class="has-text-left-mobile has-text-centered">
   <h1 class="mt-4 title is-4 has-text-weight-normal mb-1" >TEMAS</h1>
-  <p class="mt-1">Conoce los temas que abordan las distintas propuestas</p>
+  <p class="mt-1">Conocé las propuestas para cada tema en tu distrito </p>
 </div>
   <div class="columns is-3 is-multiline is-mobile mt-4">
     {#each temas as tema}

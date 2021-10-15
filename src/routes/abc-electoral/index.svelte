@@ -1,17 +1,16 @@
 <script>
   import Dropdown from '$lib/common/Dropdown.svelte';
 </script>
-<main class=" has-background-black">
+<main class=" has-background-black black-background">
   <section class="container p-2">
     <div class="has-text-centered mt-6 has-text-white">
       <img src="/abc.svg" alt="imagen de una mano deslizando un voto en una urna">
-      <h1 class="title has-text-white mt-3">Elecciones 2021</h1>
-      <h2 class="title is-5 p-4 has-text-white has-text-weight-normal">
-        Conocé qué candidatxs y partidos participan en estas elecciones
+      <h1 class="title has-text-white mt-3 is-uppercase">Elecciones 2021</h1>
+      <h2 class="title subtitle is-5 p-4 has-text-black  has-text-weight-normal ">
+        <span class=" has-background-white p-2 mb-5">
+        Todo lo que siempre quisiste saber sobre elecciones </span><br>
+        <span class="has-background-white p-2">y no te animaste a preguntar.</span>
       </h2>
-      <p class="has-text-left p-4">
-        En las elecciones PASO (Primarias, Abiertas, Secretas y Obligatorias) se definen las listas de cada espacio político para las elecciones generales. En este 2021, tanto en las PASO como en las Elecciones generales lo que la ciudadanía definirá es la renovación de 127 del total de 257 bancas de la Cámara de Diputados mientras que en el Senado ocurrirá lo mismo con 24 de los 54 escaños que posee.
-      </p>
     </div>
   </section>
   <section class="container p-2">  
@@ -19,6 +18,7 @@
       <div >
         <h2>¿Qué se vota en las elecciones de 2021?</h2>
         <img class="is-hidden-tablet" src="/abc/que-se-vota.png" alt="Respuesta de la pregunta">
+        <img class="is-hidden-mobile" src="/abc/que-se-vota_desktop.png" alt="Respuesta de la pregunta">
         <h2>¿Cuántas bancas están en juego en el Congreso?</h2>
         <p>En el Senado se renuevan <strong>24 bancas</strong> (un tercio del total). Este año se eligen 3 bancas en 8 provincias: Catamarca, Chubut, Córdoba, Corrientes, La Pampa, Mendoza, Santa Fe y Tucumán. En cada provincia, 2 bancas le corresponden al partido que gane y 1 de ellas al que salga 2do.
         </p>
@@ -76,12 +76,15 @@
       <div>
         <h2>¿Quiénes votan en las elecciones del 14 de noviembre?</h2>
         <img class="is-hidden-tablet" src="/abc/quien-vota.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/quien-vota_desktop.png" alt="Respuesta a la pregunta">
         <h2>¿Cómo fue la participación electoral desde 1983?</h2>
         <img class="is-hidden-tablet" src="/abc/participacion-1983.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/participacion-1983_desktop.png" alt="Respuesta a la pregunta">
         <p><strong>Si no voté en las elecciones primarias de septiembre 2021, </strong>¿puedo votar en las elecciones generales de noviembre?</p>
         <p>Sí, <strong>podés votar</strong> en las elecciones generales de noviembre.</p>
         <h2>¿Cómo averiguo dónde voto?</h2>
         <img class="is-hidden-tablet" src="/abc/donde-voto.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/donde-voto_desktop.png" alt="Respuesta a la pregunta">
         <h2>¿Qué debo hacer si no figuro en el padrón?</h2>
         <p>Tenés que hacer un <strong>reclamo</strong> por cualquiera de estas vías:</p>
         <ul>
@@ -104,11 +107,13 @@
     <Dropdown darkMode name="¿QUÉ PASA SI NO VOTO?">
       <div>
         <img class="is-hidden-tablet" src="/abc/si-no-voto.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/si-no-voto_desktop.png" alt="Respuesta a la pregunta">
         <h2>Además de la multa, ¿existen otras sanciones?</h2>
         <p>Sí. No podrás ser designada-o para desempeñar funciones o empleos públicos durante tres años a partir de la fecha de la elección.</p>
         <p>Además, no podrás realizar gestiones o trámites durante un año ante los organismos estatales, provinciales o municipales. Este plazo empieza a correr a partir del vencimiento de los sesenta (60) días establecidos para la presentación de la justificación por no votar. <strong>El castigo se anula con el pago de la multa.</strong></p>
         <h2>¿Quiénes no tienen la obligación de votar?</h2>
         <img class="is-hidden-tablet" src="/abc/no-obligacion-de-votar.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/no-obligacion-de-votar_desktop.png" alt="Respuesta a la pregunta">
         <h2>¿Cómo me justifico si no voto?</h2>
         <p>Si no emitiste tu voto debés <strong>dirigirte a la Cámara Nacional Electoral</strong> o asistir a la Secretaría Electoral correspondiente para justificarte, con toda la documentación que acredite el motivo de su ausencia, o ingresar a https://infractores.padron.gov.ar/ </p>
         <p>La justificación deberá realizarse <strong>dentro de los sesenta (60) días posteriores</strong> al día de la elección. Las y los electores de 16 y 17 años y las personas mayores de 70 años no necesitan justificar su ausencia.</p>
@@ -120,6 +125,7 @@
       <div>
         <h2>¿Dónde puedo denunciar irregularidades?</h2>
         <img class="is-hidden-tablet" src="/abc/irregularidades.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/irregularidades_desktop.png" alt="Respuesta a la pregunta">
         <p>Las denuncias más frecuentes son:</p>
         <ul>
           <li>Infrinigir la veda electoral, que inicia el viernes previo a la elección a las 8 de la mañana y concluye a las 18 horas, con el cierre del comicio.</li>
@@ -142,10 +148,12 @@
     <Dropdown darkMode name="¿QUIÉNES SON LAS AUTORIDADES DE MESA?">
       <div>
         <img class="is-hidden-tablet" src="/abc/autoridades-de-mesa.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/autoridades-de-mesa_desktop.png" alt="Respuesta a la pregunta">
         <h2>¿Qué hace el “Presidente de mesa”?</h2>
         <p>Es la <strong>máxima autoridad en la mesa electoral</strong> y tiene la responsabilidad por el desarrollo correcto del acto electoral: administra la mesa de votación y realiza el recuento de votos de su mesa. Tiene que actuar con <strong>independencia e imparcialidad.</strong></p>
         <h2>¿Qué hace la/el Fiscal?</h2>
-        <img class="is-hidden-mobile" src="/abc/fiscal-de-mesa.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-tablet" src="/abc/fiscal-de-mesa.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/fiscal-de-mesa_desktop.png" alt="Respuesta a la pregunta">
         <h2>¿Qué sucede si siendo autoridad de mesa no me presento?</h2>
         <p>Es un <strong>delito electoral</strong> no presentarse, porque es una obligación cívica.  Tiene una pena de <strong>prisión de seis meses a dos años.</strong></p>
         <h2>¿Cuáles son los justificativos para no presentarse como autoridad de mesa?</h2>
@@ -157,7 +165,8 @@
     </Dropdown>
     <Dropdown darkMode name="¿CÓMO SE CLASIFICAN LOS VOTOS?">
       <div>
-        <img class="is-hidden-mobile" src="/abc/clasifican-los-votos.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-tablet" src="/abc/clasifican-los-votos.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/clasifican-los-votos_desktop.png" alt="Respuesta a la pregunta">
       </div>
     </Dropdown>
     <Dropdown darkMode name=" ¿CÓMO ES EL CAMINO DEL VOTO?">
@@ -169,7 +178,8 @@
     </Dropdown>
     <Dropdown darkMode name=" ¿QUÉ ES EL VOTO ACCESIBLE?">
       <div>
-        <img class="is-hidden-mobile" src="/abc/voto-accesible.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-tablet" src="/abc/voto-accesible.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/voto-accesible_desktop.png" alt="Respuesta a la pregunta">
         <h2>¿Qué es el voto accesible?</h2>
         <p>Si tenés alguna <strong>condición física que te dificulte la emisión del voto</strong> podés solicitar el voto asistido por la-el Presidente de mesa o una persona de tu confianza.</p>
         <p>También, si tenés movilidad limitada, podés pedirle a la-el Presidente de la mesa donde tengas que votar, el traslado de la urna al Cuarto Oscuro Accesible (COA), que es un espacio de fácil acceso y cercano al ingreso del establecimiento.</p>
@@ -183,7 +193,8 @@
         <p>Esta circunstancia se deja asentada en el Padrón de la mesa y en el Acta de cierre de la misma, consignando los datos del elector y de la persona que le asistió. </p>
         <p>Las personas acompañadas por su perro de asistencia pueden ingresar al establecimiento y al cuarto oscuro con el mismo.</p>
         <h2>¿Con qué documentos tenés que ir a votar?</h2>
-        <img class="is-hidden-mobile" src="/abc/con-que-documentos.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-tablet" src="/abc/con-que-documentos.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/con-que-documentos_desktop.png" alt="Respuesta a la pregunta">
         <p>Para votar te tenés que presentar en la mesa electoral con el último ejemplar de tu documento de identidad. Tiene que ser <strong>el que figura en el Padrón o una versión posterior, es decir, uno más nuevo.</strong></p>
         <p>Los documentos habilitantes para votar son:</p>
         <img src="" alt="">
@@ -194,6 +205,7 @@
     <Dropdown darkMode name="¿CÓMO SE FINANCIAN LAS CAMPAÑAS ELECTORALES?">
       <div>
         <img class="is-hidden-tablet" src="/abc/financiamiento.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/financiamiento_desktop.png" alt="Respuesta a la pregunta">
         <h2>¿Cómo se financian las campañas electorales?</h2>
         <p>En Argentina, las campañas electorales de los partidos políticos se financian con un <strong>modelo mixto</strong> por el cual los partidos obtienen <strong>financiamiento público y del sector privado.</strong></p>
         <h2>¿Todos los partidos reciben el mismo dinero por parte del Estado?</h2>
@@ -221,7 +233,8 @@
     </Dropdown>
     <Dropdown darkMode name="¿QUÉ CAMBIA CON EL COVID? ">
       <div>
-        <img class="is-hidden-mobile" src="/abc/covid.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-tablet" src="/abc/covid.png" alt="Respuesta a la pregunta">
+        <img class="is-hidden-mobile" src="/abc/covid_desktop.png" alt="Respuesta a la pregunta">
         <h2>¿Qué cambia con los protocolos impuestos por la pandemia?</h2>
         <p>En principio, se <strong>ampliaron los puntos de votación disponibles</strong>, se pasó de 14.800 espacios habilitados para la votación en el 2019 a más de 17.000. Por eso, es importante revisar el padrón electoral definitivo para confirmar tu centro de votación designado.</p>
         <h2>¿Cuál es el horario de votación para las personas con riesgo?</h2>
@@ -233,24 +246,25 @@
         <p>No, es <strong>falso</strong>. Pero dada la situación sanitaria las autoridades electorales recomiendan no lamer el sobre y simplemente meter la solapa hacia adentro de forma que contenga las boletas en su interior.</p>
       </div>
     </Dropdown>
-    <h3 class="mt-6 mb-3">Fuentes</h3>
-    <ul class="ml-3">
-      <li>Cámara Nacional Electoral - electoral.gob.ar</li>
-      <li>Dirección Nacional Electoral - argentina.gob.ar/dine</li>
-      <li>Congreso de la Nación Argentina - congreso.gob.ar</li>
-      <li>Senado de la Nación Argentina - www.senado.gob.ar</li>
-      <li>Cámara de Diputados de la Nación Argentina - www.hcdn.gob.ar</li>
-      <li>Constitución Nacional Argentina - Art. 39, 40, 52, 53, 59, 61, 75 y 99</li>
-      <li>La participación electoral histórica se calculó con datos obtenidos de la Cámara Nacional Electoral, compilados por Carolina Ramos https://twitter.com/Carito_Ramos</li>
-      <li>Ley de Financiamiento de Partidos Políticos - Ley 26.215</li>
-    </ul>
+    <section class="my-6">
+      <h3 class="mt-6 mb-3 has-text-white">Fuentes</h3>
+      <ul class="ml-3  has-text-white">
+        <li class="has-text-white">Cámara Nacional Electoral - electoral.gob.ar</li>
+        <li class="has-text-white">Dirección Nacional Electoral - argentina.gob.ar/dine</li>
+        <li class="has-text-white">Congreso de la Nación Argentina - congreso.gob.ar</li>
+        <li class="has-text-white">Senado de la Nación Argentina - www.senado.gob.ar</li>
+        <li class="has-text-white">Cámara de Diputados de la Nación Argentina - www.hcdn.gob.ar</li>
+        <li class="has-text-white">Constitución Nacional Argentina - Art. 39, 40, 52, 53, 59, 61, 75 y 99</li>
+        <li class="has-text-white">La participación electoral histórica se calculó con datos obtenidos de la Cámara Nacional Electoral, compilados por Carolina Ramos https://twitter.com/Carito_Ramos</li>
+        <li class="has-text-white">Ley de Financiamiento de Partidos Políticos - Ley 26.215</li>
+      </ul>
+    </section>
   </section>
-
-
+ 
 </main>
 <style>
   h2, h3,p,li,strong{
-    color:#fff
+    color:#000
   }
   h2{
     font-size: 1rem;
@@ -259,5 +273,11 @@
   img{
     display: block;
     margin: auto;
+  }
+  ul{
+    list-style: disc;
+  }
+  .subtitle{
+    line-height: 3rem;
   }
 </style>

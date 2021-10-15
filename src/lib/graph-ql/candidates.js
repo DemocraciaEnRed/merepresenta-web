@@ -55,6 +55,7 @@ export function getCandidatesByParty (partyId){
       cargo
       genre
       id
+      position
       avatar {
         id
       }

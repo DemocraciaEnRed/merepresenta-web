@@ -4,7 +4,7 @@
 </script>
 <main class=" is-flex is-align-items-center is-justify-content-center black-background p-2 has-background-black">
 <section class="container has-text-centered propuestas">
-	<h1 class="title-white is-4 is-size-3-tablet ">¿Como preferís conocer las propuestas?</h1>
+	<h1 class="title-white is-4 is-size-3-tablet ">¿CÓMO QUERÉS CONOCER LAS PROPUESTAS?</h1>
 	<div class="is-hidden-tablet buttons is-justify-content-center mt-4">
 		<a href={`${nextUrl}/temas`} class="has-background-white is-uppercase button has-text-black ">
 			Por tema

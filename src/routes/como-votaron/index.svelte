@@ -23,7 +23,7 @@
     <h1 class="title is-5 has-text-weight-normal has-text-white">Conocé cómo votó cada uno de los partidos en las siguientes leyes</h1>
   </div>
 </div>
-<div class="section">
+<div class="section white-background-desktop">
   <div class="container">
     {#each laws as law}
       <Dropdown  name={`(${law.year}) ${law.title.toUpperCase()}`}>

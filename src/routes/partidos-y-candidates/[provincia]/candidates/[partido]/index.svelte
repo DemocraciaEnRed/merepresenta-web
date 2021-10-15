@@ -28,7 +28,7 @@
 </svelte:head>
 <main class="white-background-desktop p-2 has-background-white has-text-centered ">
   <h1 class="title is-4 is-uppercase mt-4">
-    Candidates de <br>{candidates[0].partido.name}
+    Candidaturas de <br>{candidates[0].partido.name}
   </h1>
   <a
     href="{partyUrl}"
@@ -54,16 +54,18 @@
   <section class=" my-6 mx-auto container columns is-mobile is-3 is-flex-wrap-wrap">
   <!-- <section class=" mt-6 mx-auto container is-hidden-mobile columns is-3 is-flex-wrap-wrap"> -->
     {#each candidates as candidate}
-      <div class="column is-half has-background-white is-one-third-tablet is-one-quarter-desktop has-text-centered">
+      <div class="column is-half-mobile has-background-white is-one-third-tablet is-one-quarter-desktop has-text-centered">
         <div class="candidate">
-          <div 
-          style="background-image: url({CandidateImg(candidate)})"
-          class="candidate-img tablet mb-3" alt="Foto retrato de {candidate.name}"/>
+          <figure class="image is-square">
+            <div 
+            style="background-image: url({CandidateImg(candidate)})"
+            class="candidate-img tablet mb-3" alt="Foto retrato de {candidate.name}"/>
+          </figure>
         <h1 class="title is-3 has-text-weight-bold is-size-4-touch has-text-black">{candidate.name}</h1>
         <p class="has-text-black">Candidat{candidate.genre === 'm' ? 'o': 'a' } a <br>
         {candidate.cargo}</p>
         <p class="has-text-black">Posición en la lista: {candidate.position}</p>
-        <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-active my-4">VER CANDIDATE</a>
+        <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-active my-4">VER MÁS</a>
         </div>
         
       </div>
@@ -72,13 +74,15 @@
 </main>
 <style>
   .candidate-img{
-    height: 380px;
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-  }
-  .candidate-img.tablet{
-    height: 200px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   .candidate{
     border: 1px solid black;

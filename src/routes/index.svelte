@@ -7,16 +7,16 @@ import { space } from 'svelte/internal';
 </svelte:head>
 <main class="is-fullhd black-background has-background-black">
 	<Hero 
-		title="Te ayudamos a votar de manera informada."
+		title="una herramienta para pensar tu voto"
 		image="/logo-merepresenta.svg"
 		imgAlt="logo me representa"
-		subtitle="Conocé candidaturas, partidos, plataformas electorales y mucho más."
+		subtitle="Conocé candidaturas, partidos, propuestas y mucho más."
 	/>
 	
 	<section class="has-text-centered container p-4 is-hidden-mobile mb-6">
-		<h2 class="title is-4 has-text-black has-text-weight-normal mb-6"><span class="has-background-white p-2 is-uppercase"> A vos, ¿quién te representa?</span></h2>
+		<h2 class="title is-4 has-text-black has-text-weight-normal mb-6"><span class="has-background-white p-2 is-uppercase"> ¿SABÉS QUIÉN TE REPRESENTA?</span></h2>
 		<a href="/partidos-y-candidates/donde-votas" class="button is-medium is-inline is-uppercase mb-4">
-			Ver partidos y candidates
+			Ver partidos y candidaturas
 		</a>
 	</section>
 
@@ -48,16 +48,16 @@ import { space } from 'svelte/internal';
 			</div>
 		</div>
 		<div>
-			<h2 class="title is-4 has-text-white has-text-weight-normal mb-6"><span class="has-background-black p-3  is-uppercase"> ¿Querés conocer
-				las propuestas? </span></h2>
+			<h2 class="title is-4 has-text-white has-text-weight-normal mb-6"><span class="has-background-black p-3  is-uppercase"> ¿SABÉS QUÉ QUIEREN HACER? </span></h2>
 			<a href="/plataformas/donde-votas" class="has-background-black button transparent is-medium is-uppercase  is-inline">ver propuestas</a>
 		</div>
 		<div class="divider my-6"></div>
 		<div  class="border-top-bottom is-flex is-justify-content-center is-flex-direction-column is-align-items-center m-6">
 			<figure class="mb-5 image is-128x128">
-				<img class=" vote-logo" src="vote.png" alt="">			</figure>
+				<img class=" vote-logo" src="vote.png" alt="">	
+			</figure>
 			<div class="my-6">
-				<h2 class="title light is-4 has-text-weight-normal has-text-white"><span class="has-background-black is-uppercase p-3 mb-3"> ¿No sabés qué se vota?</span></h2>
+				<h2 class="title light is-4 has-text-weight-normal has-text-white"><span class="has-background-black is-uppercase p-3 mb-3"> ¿SABÉS QUÉ SE VOTA?</span></h2>
 				<a class="has-text-white is-underlined has-background-black p-2  is-uppercase transparent" href="/abc-electoral">ver ABC sobre las elecciones 2021</a>
 			</div>
 		</div>
@@ -67,41 +67,43 @@ import { space } from 'svelte/internal';
 				<img class="games-logo" src="juegos.svg" alt="Ícono de juegos">
 			</figure>
 			<div class="my-6">
-				<h2 class="title light is-4 has-text-weight-normal has-text-white"><span class="has-background-black is-uppercase p-3 mb-3"> ¡informate jugando!</span></h2>
-				<h3 class="my-5">Mirá nuestros juegos online para descubrir más sobre la política argentina</h3>
-				<a class="has-text-white is-underlined has-background-black p-2  is-uppercase transparent" href="/juegos">Conoce nuestros juegos</a>
+				<h2 class="title light is-4 has-text-weight-normal has-text-white"><span class="has-background-black is-uppercase p-3 mb-3"> ¿SABÉS DE POLÍTICA ARGENTINA? </span></h2>
+				<a class="has-text-white is-underlined has-background-black p-2  is-uppercase transparent" href="/juegos">DESAFIATE CON ESTOS JUEGOS</a>
 			</div>
 		</div>
 		<div class="divider my-6"></div>
 	</section>
 
 	<!-- Home on mobile -->
-	<section class="has-text-centered container p-4 is-hidden-tablet">
-		<h2 class="title is-4 has-text-white has-text-weight-normal">A vos, ¿quién te representa?</h2>
+	<section class="has-text-centered container p-4 is-hidden-tablet pb-6">
+		<h2 class="title is-4 has-text-white has-text-weight-normal">¿SABÉS QUIÉN TE REPRESENTA?</h2>
 		<div class="has-text-centered mt-6 mb-2">
 			<img src="/candidates-link.svg" alt="">
 		</div>
 		<a href="/partidos-y-candidates/donde-votas" class="button  is-fullwidth is-uppercase mb-4">
-			Conocé todo sobre los <br> <strong>partidos y lxs candidatxs</strong>
+			CONOCÉ TODO SOBRE<br> <strong>CANDIDATURAS Y PARTIDOS</strong>
 		</a>
 		<div class="has-text-centered mt-6 mb-2">
 			<img src="/proposals-link.svg" alt="">
 		</div>
 		<a href="/plataformas/donde-votas" class="button transparent is-fullwidth is-uppercase">
-			enterate de todas sus  <br>
+			CONOCÉ TODAS SUS <br>
 			<strong>propuestas</strong>
 		</a>
 		<div class="has-text-centered mt-6 mb-2">
-			<img src="/juegos.svg" alt="Ícono de juegos">
+			<img src="/vote.svg" alt="Ícono de votación">
+		</div>
+		<a href="/abc-electoral" class="button games transparent is-fullwidth is-uppercase ">
+			CONOCÉ QUÉ Y CÓMO SE VOTA<br><strong> ver ABC sobre las elecciones 2021</strong>
+			
+		</a>
+		<div class="has-text-centered mt-6 mb-2">
+			<img src="juegos.svg" alt="Ícono de juegos">
 		</div>
 		<a href="/juegos" class="button games transparent is-fullwidth is-uppercase ">
-			<strong>¡Informate jugando!</strong>
-			<span class="is-size-7">con Nuestros juegos sobre politica argentina</span>
+			JUGÁ CON LA<br><strong> POLÍTICA ARGENTINA</strong>
+			
 		</a>
-		<div class="my-6">
-			<h3 class="pb-5 light is-4 has-text-weight-normal has-text-white"><span class="has-background-black p-3 mb-3"> ¿No sabés qué se vota?</span></h3>
-			<a class="has-text-white is-underlined has-background-black p-2  is-uppercase transparent" href="/abc-electoral">ver ABC sobre las elecciones 2021</a>
-		</div>
 	</section>
 
 </main>

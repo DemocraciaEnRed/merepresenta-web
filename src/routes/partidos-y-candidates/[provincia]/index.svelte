@@ -17,14 +17,14 @@
     <SelectDistrict/>
   </div>
   <h1 class="has-text-centered-tablet mt-4 title is-4">Partidos y candidatos</h1>
-  <p class="has-text-centered-tablet is-family-sans-serif ">Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</p>
+  <p class="has-text-centered-tablet is-family-sans-serif ">Explorá las candidaturas, quiénes son, qué hacen, cuál es su trayectoria política y mucho más!</p>
   <p class=" is-hidden-tablet has-text-centered mt-6">
-    <strong>¿Querés saber cómo votó cada partido <br> en las últimas leyes?</strong><br>
+    <strong>¿Querés saber cómo votaron en el Congreso?<br>
     <a href="/como-votaron" class="button is-medium is-outlined is-active is-uppercase mt-4">Ver votaciones</a>
   </p>
   <div class="is-hidden-mobile  columns">
     <p class="column is-three-fifths is-offset-one-fifth has-background-black has-text-centered mt-6 p-5 ">
-      <strong class="has-text-white">¿Querés saber cómo votó cada partido <br> en las últimas leyes?</strong><br>
+      <strong class="has-text-white">¿Querés saber cómo votaron en el Congreso?  </strong><br>
       <a href="/como-votaron" class="button is-medium is-outlined is-active is-uppercase mt-4">Ver votaciones</a>
     </p>
   </div>
@@ -39,7 +39,7 @@
         <h2>{partido.name}</h2>
         <div class="buttons mt-2">
           <a href="{$page.path}/partidos/{partido.id}" class="button is-black is-uppercase is-fullwidth">Ver partido</a>
-          <a href="{$page.path}/candidates/{partido.id}" class="button is-active is-outlined is-fullwidth is-uppercase">Ver candidates</a>
+          <a href="{$page.path}/candidates/{partido.id}" class="button is-active is-outlined is-fullwidth is-uppercase">VER CANDIDATURAS</a>
         </div>
       </div>
     {/each}

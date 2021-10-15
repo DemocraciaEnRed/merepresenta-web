@@ -41,18 +41,18 @@
        <HeaderPP {tema}/>
       <div class="info column  is-three-quarters-tablet p-4 general-sans">
         <p class="has-text-weight-medium is-size-5">
-          Leé las distintas propuestas sobre 
+          Consultá las distintas propuestas sobre
           <strong style="color: {tema.color};text-transform: capitalize">{tema.name}</strong> 
-          de cada partido según tu distrito
+          de cada partido según tu distrito.
         </p>
-        {#if tema.slug==='economia'|| tema.slug==='ambiente'|| tema.slug==='genero' || tema.slug==='justicia' || tema.slug==='vivienda' || tema.slug==='transparencia'}
-          <p class="mt-2">
+        {#if tema.slug==='economia'|| tema.slug==='ambiente'|| tema.slug==='genero' || tema.slug==='justicia' || tema.slug==='vivienda' || tema.slug==='institucionalidad'}
+          <!-- <p class="mt-2">
             <em class="mt-6">Si querés saber sobre el estado actual de {tema.name.toLowerCase()} en la Argentina descargá nuestra hoja de diagnóstico </em>
-          </p>
+          </p> -->
           <p class="has-text-centered mt-4">
             <a href={tema.sheet_url} target="_blank" class="download-sheet">
               <img src="/download.png" alt="icono de descarga">
-              descargar hoja de diagnóstico
+              Descargá nuestra hoja de diagnóstico
             </a>
           </p>
           {/if}

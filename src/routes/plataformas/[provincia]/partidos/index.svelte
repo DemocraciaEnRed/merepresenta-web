@@ -20,7 +20,7 @@
 </script>
 <main class="container p-2 white-background-desktop">
   <h1 class="has-text-centered-tablet title is-3 has-text-weight-normal has-text-black mt-4">Partidos y propuestas</h1>
-  <p class="has-text-centered-tablet">Conocé los propuestas de los distintos partidos según tu distrito.</p>
+  <p class="has-text-centered-tablet">Conocé las propuestas de cada partido en tu distrito </p>
   <div class="has-text-right mt-6">
     <SelectDistrict/>
   </div>

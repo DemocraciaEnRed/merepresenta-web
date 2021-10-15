@@ -31,7 +31,7 @@
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
 					</li>
 					<li class:active={path===`/partidos-y-candidates/${provincia}`}>
-						<a href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidates</a>
+						<a href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
 					</li>
 					<li class:active={path===`/plataformas/${provincia}`}>
 						<a href="/plataformas/{provincia}" on:click={() => openNav = !openNav}>Propuestas</a>
@@ -41,6 +41,9 @@
 					</li>
 					<li class:active={path==='/abc-electoral'}>
 						<a href="/juegos" on:click={() => openNav = !openNav}>Juegos</a>
+					</li>
+					<li class:active={path==="/"} >
+						<a href="/metodologias" on:click={() => openNav = !openNav}>Metodologías</a>
 					</li>
 					<!--
 						JUAN CARLOS FALOPA
@@ -66,10 +69,12 @@
 		<div class="navbar-menu">
 			<div class="navbar-end">
 				<a class="navbar-item" href="/">Inicio</a>
-				<a class="navbar-item" href="/partidos-y-candidates/{provincia}">Partidos y candidates</a>
+				<a class="navbar-item" href="/partidos-y-candidates/{provincia}">Partidos y candidaturas</a>
 				<a class="navbar-item" href="/plataformas/{provincia}">Propuestas</a>
 				<a class="navbar-item" href="/abc-electoral">Abc Electoral</a>
 				<a class="navbar-item" href="/juegos">Juegos</a>
+				<a class="navbar-item" href="/metodologias">Metodologías</a>
+
 			</div>
 		</div>
 		

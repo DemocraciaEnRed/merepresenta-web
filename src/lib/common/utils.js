@@ -9,7 +9,7 @@ export const PoliciesIcons = {
   "seguridad"         : `${imgRoute}security.svg`,
   "empleo"            : `${imgRoute}job.svg`,
   "justicia"          : `${imgRoute}justice.svg`,
-  "corrupcion"        : `${imgRoute}search.svg`,
+  "institucionalidad"        : `${imgRoute}search.svg`,
   "vivienda"          : `${imgRoute}house.svg`,
 }
 

@@ -1,25 +1,26 @@
 <script>
 	export let backgroundColor;  
 </script>
-<footer class="pb-6 footer has-background-white has-background-{backgroundColor}">
+<footer class="pb-6 footer has-background-{backgroundColor}">
 
     <div class="content">
-        <div class="is-flex is-justify-content-space-evenly is-align-items-center">
-            <figure class="image  mb-0 ml-0-mobile">
+        <div class="is-flex-tablet is-justify-content-space-evenly is-align-items-center">
+            <figure class="image  mb-0 ml-0">
                 <img src="/logo-merepresenta.svg" class="{backgroundColor === 'black' ? '' : 'logo-mere'}" alt="Logo de Me representa">
             </figure>
-            <figure class="image mt-0 is-hidden-mobile">
+            <figure class="image mt-0 is-hidden-mobile logo-der">
                 <img src="{backgroundColor === 'black' ? '/logo-der-white.svg' : '/logo-der-negro.svg'}" alt="Logo de Democracia en Red">
             </figure>
         </div>
         
         <div class="is-uppercase has-text-centered-tablet is-size-6 mt-5">
-            <h3 class="{backgroundColor === 'black' ? 'has-text-white is-size-5 has-text-weight-normal' : 'has-text-weight-normal has-text-black  is-size-5'}" >Si encontrás algún dato incorrecto o querés sumar tu aporte, <br>
+            <h3 class="{backgroundColor === 'black' ? 'has-text-white is-size-6 has-text-weight-normal' : 'has-text-weight-normal has-text-black  is-size-6'}" >Si encontrás algún dato incorrecto o querés sumar tu aporte, <br>
                 podés contactarnos en: <a class="{backgroundColor === 'black' ? 'has-text-white' : 'has-text-black'}" href="mailto:contacto@democracyos.io">contacto@democracyos.io</a>
             </h3>
         </div>
-        <figure class="ml-0 image is-hidden-tablet">
-            <img class="logo-der-mobile" src="{backgroundColor === 'black' ? '/logo-der-white.svg' : '/logo-der-negro.svg'}" alt="Logo de Democracia en Red">
+
+        <figure class=" ml-0 image is-hidden-tablet logo-der">
+            <img class="" src="{backgroundColor === 'black' ? '/logo-der-white.svg' : '/logo-der-negro.svg'}" alt="Logo de Democracia en Red">
           </figure>
 
     </div>
@@ -32,7 +33,8 @@
     a{
         font-family: 'Nippo', Helvetica, Arial ,sans-serif;
     }
-    .logo-der-mobile{
-        width: 60%;
+    .logo-der{
+        width: 200px;
+        
     }
 </style>
