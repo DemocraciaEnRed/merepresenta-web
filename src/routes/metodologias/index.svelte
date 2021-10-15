@@ -308,7 +308,7 @@
                 </Dropdown>
             </div>
         </Dropdown>
-        <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE CANDIDATURAS"></Dropdown>
+       
 
     </section>
 </main>
