@@ -3,9 +3,9 @@
 import { space } from 'svelte/internal';
 </script>
 <svelte:head>
-	<title>Home</title>
+	<!-- <title>Home</title> -->
 </svelte:head>
-<main class="is-fullhd black-background has-background-black">
+<main class="black-background has-background-black">
 	<Hero 
 		title="una herramienta para pensar tu voto"
 		image="/logo-merepresenta.svg"
