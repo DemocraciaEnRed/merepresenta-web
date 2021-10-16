@@ -6,5 +6,7 @@ export const getLaws =
       infografia{
         id
       }
+      infografia_large
+      url
     }
   }`
