@@ -50,7 +50,7 @@ export function getCandidates (id){
 export function getCandidatesByParty (partyId){
   return(`
   {
-    candidato(filter:{partido:{id:{_eq:${Number(partyId)}}}},sort: ["position"]){
+    candidato(filter:{partido:{id:{_eq:${Number(partyId)}}}},sort: ["-cargo","position"]){
       name
       cargo
       genre
