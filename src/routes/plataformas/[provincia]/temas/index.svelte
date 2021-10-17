@@ -72,13 +72,6 @@
     .hero.tetris-background .hero-body{
       background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 100%); 
     }
-    .buttons-container{
-      flex-direction: column;
-    }
-    .button-container {
-      flex-grow: 1;
-      width: auto!important;
-    }
   }
   .icon-topic{
     width: 125px;
@@ -86,10 +79,4 @@
     /* margin-bottom: 10px; */
     margin: 30px
   }
-  .button-container {
-      border:2px solid #fff;
-      width: 230px;
-      padding: 1rem;
-      margin: 15px;
-    }
   </style>

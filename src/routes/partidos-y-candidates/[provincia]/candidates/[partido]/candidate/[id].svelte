@@ -84,7 +84,7 @@
     width: 300px;
   }
 @media screen and (max-width: 1023px) {
-    .party-logo{
+    .candidate-logo{
       width: auto;
       max-height: 200px;
     }
@@ -107,28 +107,5 @@
       width: 100%;
     }
   }
-  .candidate-header{
-    border-top: 2px black solid;
-    border-bottom: 2px black solid;
-    width: 100%;
-  }
-  #candidato-img{
-    width: 25%;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    border-right: 1px black;
-  }
-  #politican-info p{
-    border-top: 1px solid;
-  }
-  strong{
-    font-weight: 500;
-    color: black
-  }
-  @media only screen and (max-width: 768px) {
-    #candidato-img{
-      width: 50%;
-    }
-  }
+
 </style>

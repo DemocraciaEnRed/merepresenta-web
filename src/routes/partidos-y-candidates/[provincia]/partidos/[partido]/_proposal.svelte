@@ -63,18 +63,6 @@
     border-right: 2px solid #000;
     padding: 0 20px;
   }
-  table{
-    width: 100%;
-    border: 1px solid black
-  }
-  .category-icon{
-    vertical-align: middle;
-    border-left: 2px solid black
-  }
-  .category-icon img{
-    width: 25px!important;
-    height: 25px!important;
-  }
 
   .summary{
     white-space: pre-line;
