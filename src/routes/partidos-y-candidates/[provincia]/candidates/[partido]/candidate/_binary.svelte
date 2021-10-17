@@ -1,15 +1,27 @@
 <script>
   export let value;
 </script>
-<table class="my-4 binary">
+  <div class="">
+    <div class="is-inline-block item {value ? 'has-background-black' : null}">
+      <p class="{value ? 'has-text-white' : 'has-text-black'}">SI</p>
+    </div><div class="is-inline-block item {value ? null : 'has-background-black'}">
+      <p class="{value ? 'has-text-black' : 'has-text-white'}">NO</p>
+    </div>
+  </div>
+<!-- <table class="my-4 binary">
   {#if value}
   <td class:active={value}><img src="/positive.png" alt="Ícono de check"></td>
   {/if}
   {#if !value}
   <td class:active={!value}><img src="/negative.png" alt="Ícono de cruz"></td>
   {/if}
-</table>
+</table> -->
 <style>
+  .item{
+    border: 1px solid #000;
+    padding: 3px 15px;
+    font-weight: 500;
+  }
   .binary .active{
   background-color: #000;
   color: white;

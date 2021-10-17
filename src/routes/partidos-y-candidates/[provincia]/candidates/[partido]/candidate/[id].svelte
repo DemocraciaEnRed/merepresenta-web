@@ -11,75 +11,102 @@
   
   import Dropdown from "$lib/common/Dropdown.svelte";
   import About from "./_about.svelte";
+  import Party from "./_party.svelte";
   import Ideology from "./_ideology.svelte";
   import Timeline from './_timeline.svelte';
   import Twitter from "./_twitter.svelte";
   import Corporate from './_corporate.svelte';
-  import { CandidateImg, directusImg } from "$lib/common/utils";
+  import { CandidateImg, directusImg, ProvinciasSlugs } from "$lib/common/utils";
   
   export let candidate;
   const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
 
 </script>
-<main class="container is-max-widescreen has-background-white mt-4">
-  <nav class="breadcrumb is-small pl-2" aria-label="breadcrumbs">
-    <ul>
-      <li ><a href="/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
-      <li ><a href="/partidos-y-candidates/{$page.params.provincia}">{$page.params.provincia}</a></li>
-      <li ><a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{$page.params.partido}">{candidate.partido.name}</a></li>
-      <li class="is-active"><a href aria-current="page">{candidate.name}</a></li>
-    </ul>
-  </nav>
-  <section class="has-text-black">
-    <table class="candidate-header">
-      <td id="candidato-img" style="background-image: url({CandidateImg(candidate)});">
-      </td>
-      <td id="politican-info">
-        <h3 class="has-text-centered is-uppercase has-text-white has-background-black p-2 ">{candidate.partido.name}</h3>
-        <h2 class="title is-3 has-text-black is-uppercase mt-4 px-4">{candidate.name}</h2>
-        <p class=" p-4">Candidat{candidate.genre === 'm' ? 'o': 'a' } a {candidate.cargo}</p>
-        <p class="p-4">Posición en la lista: {candidate.position}</p>
-      </td>
-    </table>
-    <section>
-    <div class="mt-4">
-      <Dropdown name="¿Quién es y a qué se dedica?">        
-        <About {candidate}/>
-      </Dropdown>
+<div class="section py-5">
+  <div class="container">
+    <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+      <ul>
+        <li ><a class="has-text-black" href="/partidos-y-candidates/donde-votas">Partidos y candidatxs</a></li>
+        <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>
+        <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}/partidos/{candidate.partido.id}">{candidate.partido.name}</a></li>
+        <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}/candidates/{$page.params.partido}">Candidatxs</a></li>
+        <li class="is-active"><a href aria-current="page">{candidate.name}</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="candidate-container">
+    <div class="container">
+      <div class="columns is-mobile is-multiline is-vcentered">
+        <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
+          <img src={CandidateImg(candidate)} class="image mx-auto candidate-logo" alt="">
+        </div>
+        <div class="column is-12-touch is-normal-desktop has-text-centered-touch">
+          <div class="has-background-black party-text-container is-inline-block animate__animated animate__backInRight">
+            <h1 class="general-sans is-size-4 has-text-white px-5 has-text-weight-bold is-uppercase" >{candidate.partido.name}</h1>
+          </div>
+          <div class="candidate-content">
+            <h1 class="general-sans is-size-2 is-size-4-touch has-text-black has-text-weight-bold is-uppercase my-1 animate__animated animate__backInRight animate__delay-1s" >{candidate.name}</h1>
+            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" >Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {candidate.cargo.toLowerCase()} por {ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</h1>
+          </div>
+        </div>
+      </div>
     </div>
-    <!--
-    <div>
-      <Dropdown name="Ideología y opiniones">
-        <Ideology {candidate}/>
-      </Dropdown>
-    </div>
-    -->
-    {#if candidate.twitter_user}
-    <div>
-      <Dropdown name="Twitter">
-        <Twitter {candidate}/>
-      </Dropdown>
-    </div>
-    {/if}
-    <!-- NOS VEMOS EN 4 AÑOS
-    <div>
-      <Dropdown name="Recorrido político">
-        <Timeline {candidate}/>
-      </Dropdown>
-    </div>
-    -->
-    <div>
-      <Dropdown name="Vida empresarial">
-        <Corporate {candidate}/>
-    </Dropdown>
-    </div>
-  </section>
-  <p class="has-text-centered mt-6">
-    <strong>¿Querés conocer las propuestas <br> del partido?</strong><br>
-    <a href={partyUrl} class="button is-black is-active my-4 is-uppercase"> Ver Partido</a>
-  </p>
-</main>
+  </div>
+<div class="section tetris-background">
+  <div class="container">
+    <About {candidate} open={false}/>
+    <br>
+    <Party partido={candidate.partido} open={true}/>
+    <br>
+    <Twitter candidate={candidate} open={false}/>
+    <br>
+    <Corporate candidate={candidate} open={false}/>
+
+  </div>
+</div>
+
 <style>
+  nav.breadcrumb .is-active{
+    font-weight: 600;
+  }
+  .tetris-background{
+    background-image: url('/white-background-desktop.png');
+    background-size: auto;
+    background-attachment: fixed;
+  }
+  .candidate-container{
+    border:1px solid #000;
+    border-left: 10px solid #000;
+    border-right: 10px solid #000;
+  }
+  .candidate-logo{
+    width: 300px;
+  }
+@media screen and (max-width: 1023px) {
+    .party-logo{
+      width: auto;
+      max-height: 200px;
+    }
+    .candidate-container{
+      border:1px solid #000;
+      border-top: 0px solid #000;
+      border-left: 0px solid #000;
+      border-right: 0px solid #000;
+    }
+    .candidate-logo-container{
+      border-top: 1px solid #000;
+      padding-bottom: 0;
+    }
+    .candidate-content{
+      border-top: 1px solid #000;
+      /* border-left: 10px solid #000; */
+      padding: 1rem;
+    }
+    .party-text-container {
+      width: 100%;
+    }
+  }
   .candidate-header{
     border-top: 2px black solid;
     border-bottom: 2px black solid;

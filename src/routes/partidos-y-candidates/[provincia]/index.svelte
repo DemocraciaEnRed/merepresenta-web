@@ -9,10 +9,47 @@
 <script>
   import { page } from "$app/stores";
   import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-  import { PartyImg } from '$lib/common/utils';
+  import { PartyImg, ProvinciasSlugs } from '$lib/common/utils';
   export let partidos;
 </script>
-<main class=" p-2 pb-6 has-background-white white-background-desktop">
+<div class="section tetris-background">
+  <div class="container my-6">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-1 is-size-3-touch has-text-centered has-text-black is-uppercase is-spaced" >Partidos y candidatxs</h1>
+        <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-black" style="font-weight: 400!important;" >Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</h1>
+      </div>
+    </div>
+    <div class="box has-background-black my-6 py-6">
+      <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-white" style="font-weight: 500!important;" >¿Querés saber cómo votó cada partido en las últimas leyes?</h1>
+      <div class="buttons is-centered">
+          <a href="/como-votaron" class="button is-white is-medium is-uppercase is-outlined has-text-weight-semibold animate__animated animate__pulse animate__slow animate__infinite">Ver votaciones</a>
+      </div>
+    </div>
+    <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between pt-3 px-3">
+      <a href="/partidos-y-candidates/donde-votas" class="button is-black is-outlined is-small has-text-black has-text-weight-medium is-uppercase is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
+      <p class="general-sans has-background-black has-text-weight-semibold is-uppercase is-pulled-right is-size-4 is-size-6-touch has-text-white px-5 py-1 has-text-right">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</p>
+    </div>
+    <div class="columns is-multiline is-centered is-mobile my-6">
+      {#each partidos as partido}
+      <div class="column is-half-mobile is-one-quarter-tablet is-3-desktop is-2-widescreen has-text-centered party ">
+        <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}">
+          <figure class="image is-square party-logo" style="background-image: url({PartyImg(partido)})"></figure>
+          <div class="name-partido has-background-black is-flex is-align-items-center is-justify-content-center has-text-white py-4">
+            <p>{partido.name}</p>
+          </div>
+        </a>
+        
+        <div class="buttons mt-2">
+          <a href="{$page.path}/partidos/{partido.id}" class="button is-small is-black is-radiusless has-text-weight-medium is-fullwidth is-uppercase">Ver partido</a>
+          <a href="{$page.path}/candidates/{partido.id}" class="button is-small is-black is-outlined is-radiusless has-text-weight-medium is-fullwidth is-uppercase">VER CANDIDATURAS</a>
+        </div>
+      </div>
+    {/each}
+    </div>
+  </div>
+</div>
+<!-- <main class=" p-2 pb-6 has-background-white white-background-desktop">
   <div class="has-text-right">
     <SelectDistrict/>
   </div>
@@ -44,10 +81,31 @@
       </div>
     {/each}
   </section>
-</main>
+</main> -->
 <style>
-
+.tetris-background{
+  background-image: url('/white-background-desktop.png');
+  background-size: auto;
+  background-attachment: fixed;
+}
 .party-logo{
+    /* height: 150px; */
+    width: 100%;
+    /* margin: 0 auto; */
+    border: 1px solid black;
+    border-bottom: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.name-partido{
+  text-transform: uppercase;
+  padding: 2px 10px;
+  height: 100px;
+  line-height: normal;
+  font-weight: 500;
+}
+/* .party-logo{
   height: 150px;
   width: 100%;
   margin: 0 auto;
@@ -67,5 +125,5 @@ section{
 }
 h1{
   font-weight: 300;
-}
+} */
 </style>

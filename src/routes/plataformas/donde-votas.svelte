@@ -9,17 +9,41 @@
   <script>
     export let provincias
   </script>
-  <main class=" black-background p-2 has-background-black">
-    <section class="container">
-      <h1 class="py-6 has-text-centered title-white is-3 my-4">¿Donde votás?</h1>
-      <div class="columns is-flex-wrap-wrap is-justify-content-center ">
-        {#each provincias as provincia}
-          
-            <div class="column is-mobile is-one-quarter is-offset-one-quarter-mobile is-half-mobile has-text-centered">
-            <a href="/plataformas/{provincia.slug}" class="button is-fullwidth">{provincia.name}</a>
-            </div>
-        
-        {/each}  
+
+  <div class="hero is-black  is-medium tetris-background">
+		<div class="hero-body is-align-items-flex-start">
+			<div class="container">
+        <h1 class="has-text-centered title is-1 mb-6 animate__animated animate__flipInX">¿Donde votás?</h1>
+        <div class="buttons is-centered my-6 ">
+          {#each provincias as provincia}
+							<a href="/plataformas/{provincia.slug}" class="button is-white is-large is-uppercase has-text-weight-semibold px-6 is-outlined is-hidden-touch animate__animated animate__flipInY animate__delay-1s">{provincia.name}</a>
+          {/each}
+          {#each provincias as provincia}
+							<a href="/plataformas/{provincia.slug}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined is-hidden-desktop mobile-width animate__animated animate__flipInY animate__delay-1s">{provincia.name}</a>
+          {/each}
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+
+
+  <style>
+    .tetris-background {
+      background-image: url("/black-background-desktop.png");
+      background-attachment: fixed;
+      /* background-size: cover; */
+      background-repeat: repeat;
+    }
+    .hero.tetris-background .hero-body{
+      background: linear-gradient(0deg, rgba(0,0,0,1) 00%, rgba(0,0,0,0.4) 100%); 
+      background-attachment: fixed;
+    }
+    @media screen and (max-width: 1024px){
+      .hero.tetris-background .hero-body{
+        background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 100%); 
+      }
+      .mobile-width{
+        flex-grow: 1 
+      }
+    }
+    </style>

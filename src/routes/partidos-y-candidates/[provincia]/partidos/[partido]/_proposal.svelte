@@ -5,39 +5,64 @@
   export let party;
   let policyUrl  = `/plataformas/${$page.params.provincia}/temas/`;  
 </script>
-<table class="my-5 p-2">
-  <table>
-    <tr>
-      <td class="p-4 border is-uppercase">
-        <span class="p-2 has-text-black" style="background-color: var(--{proposal.ejes_id.slug});">{proposal.ejes_id.name}</span>
-      </td>
-      <td class="category-icon has-text-centered">
-        <img src={PoliciesIcons[proposal.ejes_id.slug]} alt="icono de {proposal.ejes_id.name}" >
-      </td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td>
-        <p class="px-5 mt-4  summary">
-          {proposal.summary}
-        </p>
-        <!-- <ul class="px-5 mt-4 ml-4">
 
-          <li></li> 
-          {#each proposal.propuestas as item}
-            <li>{item.summary}</li>
-          {/each}
-        </ul> -->
-      </td>
-    </tr>
-    <tr class="has-text-centered">
-      <a href="{policyUrl}{proposal.ejes_id.slug}/{party}" class="button is-black is-uppercase my-4">leer más</a>  
-    </tr>
-  </table>
-</table>
+  <div id="partido-{proposal.ejes_id.slug}" class="proposal-header has-background-white is-flex is-flex-direction-row is-align-items-center">
+    <div class="icon-container">
+      <img src={PoliciesIcons[proposal.ejes_id.slug]} class="image m-3 icon-proposal" alt="icono de {proposal.ejes_id.name}" >
+    </div>
+    <div class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered" style="width:100%; height: 100%;">
+      <div class="is-flex is-flex-direction-row is-align-items-center" style="background-color: {proposal.ejes_id.color}; height: 100%;" >
+        <p class=" has-text-black is-inline mx-5 is-uppercase is-size-5 has-text-weight-medium" >{proposal.ejes_id.name}</p>
+      </div>
+    </div>
+  </div>
+  <div class="proposal-body summary general-sans p-3">
+    <div class="columns">
+      <div class="column is-4">
+        <div class="my-4 has-text-centered-touch has-text-left-desktop">
+          
+          <h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">Resumen</h1>
+          <p>{proposal.summary}</p>
+          <hr style="background-color: #000;">
+          <p>Podés leer las propuestas completas en su <a href="{policyUrl}{proposal.ejes_id.slug}/{party}" class="is-uppercase has-text-black has-text-weight-semibold"><u>website</u></a></p>
+          <hr class="is-hidden-desktop" style="background-color: #000;">
+        </div>
+      </div>
+      <div class="column">
+        {#each proposal.propuestas as item, i}
+        <div class="my-4 has-text-centered-touch has-text-left-desktop">
+          
+          <h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">Propuesta {i+1}</h1>
+          <p>{item.summary}</p>
+        </div>
+        {/each}
+      </div>
+    </div>
+  </div>
 
 <style>
+  .proposal-header{
+    border: 2px solid black;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .proposal-body{
+    width: 100%;
+    background-color: #FFF;
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+    margin-bottom: 1rem;
+
+  }
+  .icon-proposal{
+    width: 40px;
+    height: 40px;
+  }
+  .icon-container{
+    border-right: 2px solid #000;
+    padding: 0 20px;
+  }
   table{
     width: 100%;
     border: 1px solid black

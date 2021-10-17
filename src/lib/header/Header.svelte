@@ -1,8 +1,8 @@
 <script>
 	import { page } from '$app/stores';
+	import { fade } from 'svelte/transition';
 	let openNav = false;
-	import { slide } from 'svelte/transition';
-	export let logoVisible = true;
+	// export let logoVisible = true;
 	let path
 	let provincia
 	page.subscribe((newval)=>{
@@ -11,136 +11,135 @@
 	})
 	
 </script>
-<header>
-	<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand is-justify-content-space-between">
-			<a class="navbar-item" href="/" class:is-hidden={logoVisible}>
-				<img src="/logo-merepresenta.svg" id="logo" alt="logo">
-			</a>
-			<div class="navbar-end right-burger">
-				<button class="navbar-burger" on:click={() => openNav = !openNav} aria-label="menu" aria-expanded="false" class:is-active="{openNav}">
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-				</button>
+<header id="the-header" class="has-background-black m-0 is-hidden-touch">
+	<div class="container py-5">
+		<img src="/logo-merepresenta.svg" class="image mx-auto p-4 mb-5" alt="">
+		<nav class="level">
+			<p class="level-item has-text-centered" class:active={path==="/"}>
+				<a class="has-text-white" href="/">Inicio</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidates')}>
+				<a class="has-text-white" href="/partidos-y-candidates/{provincia}">Partidos y candidaturas</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/plataformas')}>
+				<a class="has-text-white" href="/plataformas/{provincia}">Propuestas</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/abc-electoral')}>
+				<a class="has-text-white" href="/abc-electoral">Abc Electoral</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/juegos')}>
+				<a class="has-text-white" href="/juegos">Juegos</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/metodologias')}>
+				<a class="has-text-white" href="/metodologias">Metodologías</a>
+			</p>
+		</nav>
+	</div>
+</header>
+<header id="mobile-header" class="has-background-black p-4 is-hidden-desktop">
+	<div class="is-flex is-flex-direction-row is-align-items-center">
+		<a href="#" on:click={() => openNav = !openNav}><i class="fas fa-bars fa-lg fa-fw has-text-white"></i></a>
+		<img src="/logo-merepresenta.svg" class="image mx-4" width="180" alt="">
+	</div>
+		
+</header>
+{#if openNav}
+	<aside class="sidebar-menu" transition:fade="{{duration: 100}}">
+		<div class="sidebar-container">
+			<div class="exit-button">
+				<i class="fas fa-times fa-2x my-4 mr-5 has-text-white is-clickable" on:click={() => openNav = !openNav}></i>
 			</div>
-			{#if openNav}
-			<aside class="menu" transition:slide>
-				<ul class="menu-list">
+			<div class="sidebar-menu-list is-flex is-flex-direction-column is-justify-content-start pt-6">
+				
+				<img src="/logo-merepresenta.svg" class="image mx-auto mb-5 mt-6 px-6" width="400"alt="">
+				<ul class="">
 					<li class:active={path==="/"} >
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
 					</li>
-					<li class:active={path===`/partidos-y-candidates/${provincia}`}>
+					<li class:active={path.includes('/partidos-y-candidates')}>
 						<a href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
 					</li>
-					<li class:active={path===`/plataformas/${provincia}`}>
+					<li class:active={path.includes('/plataformas')}>
 						<a href="/plataformas/{provincia}" on:click={() => openNav = !openNav}>Propuestas</a>
 					</li>
-					<li class:active={path==='/abc-electoral'}>
+					<li class:active={path.includes('/abc-electoral')}>
 						<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>
 					</li>
-					<li class:active={path==='/abc-electoral'}>
+					<li class:active={path.includes('/juegos')}>
 						<a href="/juegos" on:click={() => openNav = !openNav}>Juegos</a>
 					</li>
-					<li class:active={path==="/"} >
+					<li class:active={path.includes('/metodologias')} >
 						<a href="/metodologias" on:click={() => openNav = !openNav}>Metodologías</a>
 					</li>
-					<!--
-						JUAN CARLOS FALOPA
-						<li>
-							<a href>Juegos</a>
-						</li>
-						<li>
-						<a href>Quienes somos</a>
-					</li>
-					<li>
-						<a href>Por que lo hacemos</a>
-					</li>
-					<li>
-						<a href>Metodología</a>
-					</li>
-					-->
 				</ul>
-			</aside>
-			<div class="rest"></div>
-			{/if}
-		</div>
-
-		<div class="navbar-menu">
-			<div class="navbar-end">
-				<a class="navbar-item" href="/">Inicio</a>
-				<a class="navbar-item" href="/partidos-y-candidates/{provincia}">Partidos y candidaturas</a>
-				<a class="navbar-item" href="/plataformas/{provincia}">Propuestas</a>
-				<a class="navbar-item" href="/abc-electoral">Abc Electoral</a>
-				<a class="navbar-item" href="/juegos">Juegos</a>
-				<a class="navbar-item" href="/metodologias">Metodologías</a>
-
 			</div>
 		</div>
 		
-	</nav>
-</header>
-
+	</aside>
+{/if}
 <style>
-.navbar{
-	border-bottom: 1px solid white;
-	background-color: black;
+#the-header, #mobile-header{
+	border-bottom: 2px solid #FFF;
 }
-#logo{
-	max-width: 140px;
+#the-header .level-item a {
+	text-transform: uppercase;
 }
-.right-burger {
-	align-items: flex-start;
-	align-items: center;
-	font-weight: 700;
+#mobile-header{
+	position:sticky;
+	z-index: 100;
+	top: 0;
+}
+.sidebar-menu{
+	position:fixed;
+	top:0;
+	width: 100vw;
+	background-color: #000;
+	z-index: 100;
+	height: 100vh
+}
+.sidebar-menu .sidebar-container{
+	position: relative;
+}
+.sidebar-container .exit-button{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.sidebar-container .sidebar-menu-list{
+	height: 100vh;
 }
 
-.navbar-burger {
-	margin-left: 0;
-	margin-right: 0;
-}
-.navbar-burger span{
-	transition-duration: 0.4s!important;
-}
-.menu{
-	display: inline-block;
-	width: 90%;
-	height: 100%;
-	position: fixed;
-	background-color: black;
-}
-.menu-list li{
+
+.sidebar-menu-list li{
 	border-bottom: 1px solid white;
 	padding: 10px;
 }
-.menu-list .active{
+.sidebar-menu-list .active{
 	background-color: rgba(255,255,255, 0.19);
 	text-shadow: 0px 0px 11px #fff;
 	font-weight: bold;
 }
 .active a{
+	font-weight: 500;
 	text-shadow:
-    /* White glow */
     0 0 7px #fff,
     0 0 10px #fff,
-    0 0 21px #fff,
+    0 0 21px #fff;
 }
-.menu-list{
-	border-top: 1px solid white;
-}
-.menu-list li a{
+.sidebar-menu-list li a{
 	text-transform: uppercase;
 	color: white;
 }
-.menu-list li a::before{
+.sidebar-menu-list li a::before{
 	content: url('/inactive-link.png');
 	padding-right: 10px;
 }
-.menu-list .active a::before{
+.sidebar-menu-list .active a::before{
 	content: url('/active-link.png');
 	padding-right: 10px;
 }
-.menu-list li a:hover{
+.sidebar-menu-list li a:hover{
 	background-color:transparent
 }
+
 </style>

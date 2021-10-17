@@ -3,7 +3,7 @@
 
 #svelte{
   font-family: 'Nippo', Helvetica, Arial ,sans-serif; 
-  //height: 100%;
+  /* height: 100%; */
 }
 main{
   min-height: 100vh
@@ -16,6 +16,12 @@ main{
 .title-white{
   color: white!important;
   font-weight: 500!important;
+}
+.title{
+  font-weight: 500!important;
+}
+.subtitle{
+  font-weight: 300!important;
 }
 body, html{
   height: 100%;
@@ -74,7 +80,7 @@ a, .general-sans{
   position: relative;
 }
 
-.black-background::before{
+/* .black-background::before{
   content:'';
   position: absolute;
   width: 100%;
@@ -83,7 +89,7 @@ a, .general-sans{
   left: 0;
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4546860980720413) 100%); 
 
-}
+} */
 
 .white-background-desktop{
 background-image: url(white-background-desktop.png);

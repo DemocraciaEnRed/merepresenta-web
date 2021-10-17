@@ -1,12 +1,80 @@
-<svg width="85" height="65" viewBox="0 0 85 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1435:2784)">
-<path d="M5.83268 1.5127C2.86908 1.5127 0.416016 3.96576 0.416016 6.92936V39.4294C0.416016 42.393 2.86908 44.846 5.83268 44.846H49.166C52.1296 44.846 54.5827 42.393 54.5827 39.4294V12.346C54.5827 9.38242 52.1296 6.92936 49.166 6.92936H27.4994L22.0827 1.5127H5.83268ZM5.83268 6.92936H19.8398L25.2565 12.346H49.166V39.4294H5.83268V6.92936Z" fill="white"/>
-</g>
-<path d="M33 22.8223H50.5L60 29.3223H81L82 61.8223H33V22.8223Z" fill="black"/>
-<path d="M35.8327 20.5127C32.8691 20.5127 30.416 22.9658 30.416 25.9294V58.4294C30.416 61.393 32.8691 63.846 35.8327 63.846H79.166C82.1296 63.846 84.5827 61.393 84.5827 58.4294V31.346C84.5827 28.3824 82.1296 25.9294 79.166 25.9294H57.4994L52.0827 20.5127H35.8327ZM35.8327 25.9294H49.8398L55.2565 31.346H79.166V58.4294H35.8327V25.9294Z" fill="white"/>
-<defs>
-<clipPath id="clip0_1435:2784">
-<rect width="55" height="44" fill="white" transform="translate(0 0.893555)"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="85"
+   height="65"
+   viewBox="0 0 85 65"
+   fill="none"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="por-tema.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2042"
+     id="namedview17"
+     showgrid="false"
+     inkscape:zoom="20.538732"
+     inkscape:cx="45.899744"
+     inkscape:cy="14.919009"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15" />
+  <g
+     clip-path="url(#clip0_1435:2784)"
+     id="g4"
+     style="fill:#ffffff">
+    <path
+       style="fill:#ffffff"
+       d="M 5.8320312 1.5136719 C 2.8684312 1.5136719 0.41601562 3.9660875 0.41601562 6.9296875 L 0.41601562 39.429688 C 0.41601562 42.393287 2.8684312 44.845703 5.8320312 44.845703 L 30.416016 44.845703 L 30.416016 39.429688 L 5.8320312 39.429688 L 5.8320312 6.9296875 L 19.839844 6.9296875 L 25.255859 12.345703 L 49.166016 12.345703 L 49.166016 20.513672 L 52.082031 20.513672 L 54.582031 23.013672 L 54.582031 12.345703 C 54.582031 9.3821231 52.129616 6.9296875 49.166016 6.9296875 L 27.5 6.9296875 L 22.082031 1.5136719 L 5.8320312 1.5136719 z "
+       id="path2" />
+  </g>
+  <path
+     d="M33 22.8223H50.5L60 29.3223H81L82 61.8223H33V22.8223Z"
+     fill="black"
+     id="path6"
+     style="fill:#000000;fill-opacity:0" />
+  <defs
+     id="defs13">
+    <clipPath
+       id="clip0_1435:2784">
+      <rect
+         width="55"
+         height="44"
+         fill="white"
+         transform="translate(0 0.893555)"
+         id="rect10" />
+    </clipPath>
+  </defs>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 35.832031,20.513672 c -2.9636,0 -5.4167,2.4531 -5.4167,5.4167 v 32.5 c 0,2.9636 2.4531,5.4166 5.4167,5.4166 h 43.3333 c 2.9636,0 5.4167,-2.453 5.4167,-5.4166 v -27.0834 c 0,-2.9636 -2.4531,-5.4166 -5.4167,-5.4166 h -21.6666 l -5.4167,-5.4167 z m 0,5.4167 h 14.0071 l 5.4167,5.4166 h 23.9095 v 27.0834 h -43.3333 z"
+     id="path8"
+     style="fill:#ffffff" />
 </svg>

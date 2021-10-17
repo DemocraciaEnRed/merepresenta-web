@@ -1,4 +1,6 @@
 <script context="module">
+  import { page } from '$app/stores';
+  import { directusImg, ProvinciasSlugs } from "$lib/common/utils";
   import {getThemeProposalsByPartyId} from '$lib/graph-ql/partidos.js';
   import API, { handleResponse } from '$lib/apiHandler';
   export async function load({page, fetch}){
@@ -14,54 +16,106 @@
   //la vaca
   let tema = partido.ejes[0].ejes_id;
 </script>
-<div class="columns ">
-  <HeaderPP {tema}/>
-  <div class="info p-6 is-8 column ">
-    <h1 class="title is-uppercase is-4">
-      Propuestas de <span style="color: {tema.color})">{tema.name}</span><br>
-      <span class="has-text-weight-normal">{partido.name}</span>
-    </h1>
+<div class="section py-5">
+  <div class="container">
+    <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+      <ul>
+        <li ><a href="/plataformas/donde-votas" class="has-text-black">Propuestas</a></li>
+        <li ><a href="/plataformas/{$page.params.provincia}" class="has-text-black">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>
+        <li ><a href="/plataformas/{$page.params.provincia}/temas" class="has-text-black">Por temas</a></li>
+        <li ><a href="/plataformas/{$page.params.provincia}/temas/{tema.slug}" style="color:{tema.color}" aria-current="page">{tema.name}</a></li>
+        <li class="is-active"><a href class="has-text-black" aria-current="page">{partido.name}</a></li>
+      </ul>
+    </nav>
   </div>
 </div>
-<main class=" white-background-desktop ">
-  <section class="container p-2">
-    <ul class="mt-6 mx-3">
-    {#each partido.ejes[0].propuestas as propuesta}
-      <li class="mt-3">{propuesta.summary}</li>
-    {/each}
-    </ul>
-    <p class="has-text-centered mt-6">
-      <a href={partido.url_fuente} target="_blank" class="button is-black is-uppercase">
-        ir a la plataforma oficial
-      </a> 
-    </p>
-    {#if partido.ejes[0].ejes_id.resources.length >0}
-      <p class="has-text-centered mt-6">   
-        <strong>
-          Si te interesa el tema de <span style="color: {tema.color})">{tema.name}</span>, <br>
-          te invitamos a que visites <br> las siguientes páginas
-        </strong>
-      </p>
-      {#each partido.ejes[0].ejes_id.resources as related}
-        <p class="has-text-centered mt-4">
-          <a href={related.url} target="_blank" class="button is-outlined is-active px-4">{related.url_label}</a>  
-        </p>
-      {/each}
-    {/if}
-    <div class="has-text-centered">
-      <p class="has-text-centered mt-6">
-      Conocé el resto de los partidos y sus propuestas
-    </p>
-    <a href="/" class="button is-black is-uppercase mt-4">ver propuestas</a>
+<div class="topic-container">
+  <div class="container">
+    <div class="columns is-mobile is-multiline is-vcentered">
+      <div class="column is-4-desktop is-full-touch">
+        <div class="p-5" style="background-color: {tema.color}">
+          <p class="has-text-black has-text-centered mb-5 is-size-3 is-size-4-touch has-text-weight-medium is-uppercase">{tema.name}</p>
+          <img src="{directusImg}{tema.icon_file.id}" class="image mx-auto topic-logo animate__animated animate__bounceIn" alt/>
+        </div>
+      </div>
+      <div class="column has-text-centered-touch">
+        <div class="topic-content p-4">
+          <h1 class="m-0 is-size-3 is-size-5-touch has-text-black has-text-weight-medium is-uppercase" > Propuestas de <span style="color:{tema.color}">{tema.name}</span> de {partido.name}</h1>
+          <div class="header-propuestas-resumen general-sans">
+            <p class="has-text-black mt-3">{partido.ejes[0].summary}</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
-</main>
+  </div>
+</div>
+<div class="section tetris-background">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+
+        <div class="box is-radiusless">
+          {#each partido.ejes[0].propuestas as propuesta, i}
+          <div class="general-sans my-4">
+            <h1 class="is-size-6 has-text-weight-semibold has-text-black ">Propuesta #{i+1}</h1>
+            <p class="ml-5 mt-3">{propuesta.summary}</p>
+          </div>
+          {/each}
+        </div>
+        {#if partido.ejes[0].ejes_id.resources.length >0}
+        <div class="box is-radiusless">
+            <p class="has-text-centered has-text-black">
+                Si te interesa el tema de <span class="has-text-weight-medium" style="color: {tema.color}">{tema.name}</span>
+                te invitamos a que visites las siguientes páginas
+            </p>
+            <p class="buttons is-centered mt-5">
+              {#each partido.ejes[0].ejes_id.resources as related}
+              <a href={related.url} target="_blank" class="button is-black has-text-weight-medium is-uppercase is-outlined px-4">{related.url_label}</a>   
+              {/each}
+            </p>
+          </div>
+        {/if}
+      </div>
+    </div>
+  </div>
+</div>
 <style>
-  .info{
-    border-left: 3px solid black;
-    border-bottom: 1px solid black;
+    nav.breadcrumb .is-active{
+    font-weight: 600;
   }
-  ul{
-    list-style-type: disc;
+  .tetris-background{
+    background-image: url('/white-background-desktop.png');
+    background-size: auto;
+    background-attachment: fixed;
+  }
+  .topic-container{
+    border:1px solid #000;
+    border-left: 10px solid #000;
+    border-right: 10px solid #000;
+  }
+  .topic-logo{
+    width: 200px;
+  }
+  .header-propuestas-resumen{
+    white-space: pre-wrap;
+  }
+  .box{
+    border: 1px solid black;
+  }
+@media screen and (max-width: 1023px) {
+    .topic-logo{
+      width: auto;
+      max-height: 200px;
+    }
+    .topic-container{
+      border:1px solid #000;
+      border-top: 0px solid #000;
+      border-left: 0px solid #000;
+      border-right: 0px solid #000;
+    }
+    .topic-content{
+      border-top: 1px solid #000;
+      border-left: 10px solid #000;
+    }
   }
 </style>

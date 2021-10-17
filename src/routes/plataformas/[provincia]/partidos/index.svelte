@@ -9,7 +9,7 @@
 <script>
   import { page } from "$app/stores";
   import SelectDistrict from "$lib/common/SelectDistrict.svelte";
-  import { PartyImg } from "$lib/common/utils";
+  import { PartyImg, ProvinciasSlugs } from "$lib/common/utils";
   /**
     * @type {Party[]}
     * @const
@@ -18,39 +18,77 @@
   export let partidos;
   
 </script>
-<main class="container p-2 white-background-desktop">
-  <h1 class="has-text-centered-tablet title is-3 has-text-weight-normal has-text-black mt-4">Partidos y propuestas</h1>
-  <p class="has-text-centered-tablet">Conocé las propuestas de cada partido en tu distrito </p>
-  <div class="has-text-right mt-6">
-    <SelectDistrict/>
+<div class="hero is-black tetris-background">
+  <div class="back-provincias has-text-right">
+    <div class="is-clearfix pt-3 px-3">
+      <a href="/plataformas/donde-votas" class="is-white is-uppercase is-outlined is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
+      <p class="general-sans has-text-weight-bold is-uppercase is-pulled-right">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</p>
+    </div>
   </div>
-  
-  <section class="columns is-mobile py-6 is-multiline">
-    {#each partidos as partido}
-      <div class="column is-half-mobile is-one-quarter-desktop is-one-third-tablet has-text-centered party">
-        <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}">
-          <div
-            alt={`logo de ${partido.name}`}
-            style="background-image: url({PartyImg(partido)})"
-            class="party-logo has-background-white">
+  <div class="hero-body is-align-items-flex-start">
+    <div class="container py-5">
+			<h1 class="has-text-centered title is-2 is-size-4-touch mb-6">¿CÓMO QUERÉS CONOCER LAS PROPUESTAS?</h1>
+          <div class="buttons is-centered">
+							<a href="{$page.path.replace('/partidos','/temas')}" class="button is-white is-medium is-uppercase has-text-weight-semibold {$page.path.includes('/temas') ? null : 'is-outlined'}">Por tema</a>
+							<a href="{$page.path}" class="button is-white is-medium is-uppercase has-text-weight-semibold {$page.path.includes('/partidos') ? null : 'is-outlined'}">Por partido</a>
           </div>
-          <div class="has-background-black has-text-white py-4">
-            {partido.name}
-          </div>
-        </a>
+          <div class="buttons is-centered">
+        </div>
+		</div>
+	</div>
+</div>
+<div class="section">
+  <div class="container my-6">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-2 is-size-4-touch has-text-centered has-text-black" >¡Conocé las propuestas de los distintos partidos en <b>{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</b>!</h1>
       </div>
-    {/each}
-  </section>
-
-</main>
+    </div>
+    <div class="columns is-centered is-multiline is-mobile mt-6">
+      {#each partidos as partido}
+        <div class="column is-half-mobile is-one-quarter-tablet is-2-desktop has-text-centered">
+          <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}">
+            <figure class="image is-square party-logo" style="background-image: url({PartyImg(partido)})"></figure>
+            <div class="name-partido has-background-black is-flex is-align-items-center is-justify-content-center has-text-white py-4">
+              <p>{partido.name}</p>
+            </div>
+          </a>
+        </div>
+      {/each}
+    </div>
+  </div>
+</div>
 <style>
-  .party-logo{
-    height: 150px;
+  .tetris-background {
+    background-image: url("/black-background-desktop.png");
+    background-attachment: fixed;
+    /* background-size: cover; */
+    position:relative;
+    background-repeat: repeat;
+  }
+  .hero.tetris-background .hero-body{
+    background: linear-gradient(0deg, rgba(0,0,0,1) 00%, rgba(0,0,0,0.4) 100%); 
+    background-attachment: fixed;
+  }
+  .back-provincias{
+    position:absolute;
     width: 100%;
-    margin: 0 auto;
+  }
+  .party-logo{
+    /* height: 150px; */
+    width: 100%;
+    /* margin: 0 auto; */
     border: 1px solid black;
+    border-bottom: 0;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+.name-partido{
+  text-transform: uppercase;
+  padding: 2px 10px;
+  height: 100px;
+  line-height: normal;
+  font-weight: 500;
 }
 </style>
