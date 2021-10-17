@@ -62,9 +62,19 @@
     <Twitter candidate={candidate} open={false}/>
     <br>
     <Corporate candidate={candidate} open={false}/>
-
   </div>
 </div>
+<div class="hero is-black is-medium black-tetris-background">
+  <div class="hero-body is-align-items-flex-start">
+    <div class="container">
+      <h1 class="has-text-centered title is-3 mb-6 animate__animated animate__flipInX">¿Querés conocer las propuestas del partido?</h1>
+      <div class="buttons is-centered">
+        <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{candidate.partido.id}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver partido</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <style>
   nav.breadcrumb .is-active{
@@ -83,6 +93,16 @@
   .candidate-logo{
     width: 300px;
   }
+  .black-tetris-background {
+      background-image: url("/black-background-desktop.png");
+      background-attachment: fixed;
+      /* background-size: cover; */
+      background-repeat: repeat;
+    }
+    .hero.black-tetris-background .hero-body{
+      background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 100%); 
+      /* background-attachment: fixed; */
+    }
 @media screen and (max-width: 1023px) {
     .candidate-logo{
       width: auto;

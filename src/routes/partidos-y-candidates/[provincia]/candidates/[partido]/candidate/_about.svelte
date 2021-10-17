@@ -8,7 +8,7 @@
 <div class="box">
   <div class="group-header is-flex is-flex-direction-row is-align-items-center is-clickable" on:click={()=>open = !open}>
     <div class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered">
-        <p class=" has-text-black is-inline has-text-weight-medium" >Sobre el partido</p>
+        <p class=" has-text-black is-inline has-text-weight-medium" >¿Quién es y a qué se dedica?</p>
     </div>
     <div class="icon-container">
       <i class="fas {open ? 'fa-angle-double-up' : 'fa-angle-double-down'} has-text-black fa-lg fa-fw"></i>
