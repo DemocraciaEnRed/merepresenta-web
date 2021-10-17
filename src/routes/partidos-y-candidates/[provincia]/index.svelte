@@ -34,7 +34,7 @@
       {#each partidos as partido}
       <div class="column is-half-mobile is-one-quarter-tablet is-3-desktop is-2-widescreen has-text-centered party ">
         <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}">
-          <figure class="image is-square party-logo" style="background-image: url({PartyImg(partido)})"></figure>
+          <figure class="image is-square party-logo has-background-white" style="background-image: url({PartyImg(partido)})"></figure>
           <div class="name-partido has-background-black is-flex is-align-items-center is-justify-content-center has-text-white py-4">
             <p>{partido.name}</p>
           </div>
