@@ -124,7 +124,9 @@ Cargando... <i class="fas fa-spin fa-sync"></i>
   </div>
 {/if}
 {#if error}
-  <span> No se obtuvieron datos </span>
+<p class="has-text-centered has-text-centered has-text-black">
+  <i class="fas fa-times"></i>&nbsp;Hubo un error al obtener los datos... Intente más tarde
+  </p>
 {/if}
   </div>
   {/if}
