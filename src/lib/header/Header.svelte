@@ -42,7 +42,10 @@
 <header id="mobile-header" class="has-background-black p-4 is-hidden-desktop">
 	<div class="is-flex is-flex-direction-row is-align-items-center">
 		<a href on:click={() => openNav = !openNav}><i class="fas fa-bars fa-lg fa-fw has-text-white"></i></a>
-		<img src="/logo-merepresenta.svg" class="image mx-4" width="180" alt="">
+		<a href="/">
+			<img src="/logo-merepresenta.svg" class="image mx-4" width="180" alt="">
+		</a>
+		
 	</div>
 		
 </header>
