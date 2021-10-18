@@ -79,6 +79,17 @@
     </div>
   </div>
 </div>
+<div class="hero is-black is-medium black-tetris-background">
+  <div class="hero-body is-align-items-flex-start">
+    <div class="container">
+      <h1 class="has-text-centered title is-3 mb-6 animate__animated animate__flipInX">Conocé el resto de los partidos y sus propuestas</h1>
+      <div class="buttons is-centered">
+        <a href="/plataformas/{$page.params.provincia}/temas/{$page.params.tema}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver propuestas</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
 <style>
     nav.breadcrumb .is-active{
     font-weight: 600;
@@ -87,6 +98,16 @@
     background-image: url('/white-background-desktop.png');
     background-size: auto;
     background-attachment: fixed;
+  }
+  .black-tetris-background {
+    background-image: url("/black-background-desktop.png");
+    background-attachment: fixed;
+    /* background-size: cover; */
+    background-repeat: repeat;
+  }
+  .hero.black-tetris-background .hero-body{
+    background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 100%); 
+    /* background-attachment: fixed; */
   }
   .topic-container{
     border:1px solid #000;
