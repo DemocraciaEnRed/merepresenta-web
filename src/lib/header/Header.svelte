@@ -31,7 +31,10 @@
 				<a class="has-text-white" href="/juegos">Juegos</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/metodologias')}>
-				<a class="has-text-white" href="/metodologias">Metodologías</a>
+				<a class="has-text-white" href="/metodologias">Metodología</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/acerca-de')}>
+				<a class="has-text-white" href="/acerca-de">Acerca de</a>
 			</p>
 		</nav>
 	</div>
@@ -69,7 +72,10 @@
 						<a href="/juegos" on:click={() => openNav = !openNav}>Juegos</a>
 					</li>
 					<li class:active={path.includes('/metodologias')} >
-						<a href="/metodologias" on:click={() => openNav = !openNav}>Metodologías</a>
+						<a href="/metodologias" on:click={() => openNav = !openNav}>Metodología</a>
+					</li>
+					<li class:active={path.includes('/acerca-de')} >
+						<a href="/acerca-de" on:click={() => openNav = !openNav}>Aceca de</a>
 					</li>
 				</ul>
 			</div>
