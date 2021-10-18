@@ -54,7 +54,7 @@
             </p>
             <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6">
                 <img width=150 src="/logo-poder-ciudadano.png" alt="Logo de Poder Ciudadano">
-                <img width=150 src="" alt="Logo de CIPPEC">
+                <img class="my-auto" width=150 src="/logo-cippec.png" alt="Logo de CIPPEC">
                 <img width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
             </div>
             <p class="mb-3"><strong>CANDIDATURAS y PARTIDOS</strong>
@@ -93,14 +93,14 @@
             <p class="mb-3">
                 <strong>VERDADERO - FALSO ELECTORAL (próximamente)</strong>
             </p>
-            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-3">
+            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
                 <img class="mx-2 my-auto"width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
                 <img class="my-auto mx-2" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
             </div>
             <p class="mb-3">
                 <strong>JUEGO DE LA OCA en CAMPAÑA (próximamente)</strong>
             </p>
-            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-3">
+            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
                 <img class="mx-2 my-auto" width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
                 <img class="mx-2 my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
             </div>
