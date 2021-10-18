@@ -34,7 +34,7 @@
             <li>Córdoba y Santa Fe -<strong>9 bancas</strong></li>
             <li>Entre Ríos y Mendoza - <strong>5 bancas</strong></li>
             <li>Chaco y Tucumán - <strong></strong>4 bancas</li>
-            <li>Catamarca, Corrientes, Jujuy, La Pampa, Misiones, Neuquén, Salta, San Juan:, San Luis, Santa Cruz y Santiago del Estero - 3 <strong>3 bancas</strong></li>
+            <li>Catamarca, Corrientes, Jujuy, La Pampa, Misiones, Neuquén, Salta, San Juan:, San Luis, Santa Cruz y Santiago del Estero - 3 <strong>bancas</strong></li>
             <li>Chubut, Formosa, La Rioja, Río Negro y Tierra del Fuego - <strong>2 bancas</strong></li>
           </ul>
           <p>Las bancas se distribuyen en función de los resultados por provincia, con un <a href="https://es.wikipedia.org/wiki/Sistema_D%27Hondt" target="_blank">criterio proporcional.</a></p>
@@ -45,7 +45,7 @@
             <li>La oposición (Juntos por el Cambio - JxC) renueva <strong>9 de sus 25 bancas</strong>.</li>
           </ul>
           <p>
-              <strong>111 de las 127 bancas</strong> que se renuevan en Diputados pertenecen a los partidos mayoritarios
+              <strong>112 de las 127 bancas</strong> que se renuevan en Diputados pertenecen a los partidos mayoritarios
           </p>
           <ul>
             <li>El oficialismo (FdT) renueva <strong>52 de sus 120 bancas</strong>.</li>
@@ -101,7 +101,7 @@
           <p>En caso de que hubieses efectuado la actualización de tu documento, podés <strong>reclamar</strong> a la Justicia Nacional Electoral tu inclusión en el Padrón ​​a través de www.padron.gov.ar/cne_reclamos o enviando un mail a reclamos.padron@pjn.gov.ar</p>
           <p>Sin embargo, esa eventual modificación no se verá reflejado en el Padrón de 2021.</p>
           <h2>¿Cómo y dónde votan las-os argentinas-os que residen en el exterior?</h2>
-          <p>Quienes residan en el exterior pueden votar siempre y cuando se hayan inscrito en el <strong>Registro correspondiente</strong> hasta 6 meses antes de la fecha de la elección y queden incluidos en el incluido/as en el padrón. Votan sólo en la Elección General y no en las Primarias (P.A.S.O)</p>
+          <p>Quienes residan en el exterior pueden votar siempre y cuando se hayan inscrito en el <strong><a href="https://www.padron.gob.ar/cne_care/" target="_blank">Registro correspondiente</a></strong> hasta 6 meses antes de la fecha de la elección y queden incluidos en el incluido/as en el padrón. Votan sólo en la Elección General y no en las Primarias (P.A.S.O)</p>
           <p><strong>Votan personalmente</strong> en la Embajada o Representación Consular que les corresponda.</p>
           <h2>¿Pueden votar los extranjeros en las elecciones nacionales?</h2>
           <p>No, <strong>no pueden votar</strong> en las elecciones para cargos nacionales. En algunos distritos, los residentes pueden elegir autoridades provinciales y/o locales. Para ver los detalles por provincia: <a href="https://www.argentina.gob.ar/interior/extranjeros-residentes-en-argentina/buenos-aires" target="_blank">acá</a>.</p>
