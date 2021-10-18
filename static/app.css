@@ -101,3 +101,18 @@ background-image: url(white-background-desktop.png);
   margin-left: auto;
   margin-right: auto;
 }
+
+.tetris-background {
+  background-image: url("/black-background-desktop.png");
+  background-attachment: fixed;
+  background-repeat: repeat;
+}
+.hero.tetris-background .hero-body{
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 90%); 
+  background-attachment: fixed;
+}
+@media screen and (max-width: 1024px){
+  .hero.tetris-background .hero-body{
+    background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 100%); 
+  }
+}

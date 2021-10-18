@@ -72,7 +72,7 @@ import { space } from 'svelte/internal';
 			</div>
 		</div>
 	</div>
-		<!-- Home on mobile -->
+		<!-- Home on Tablet -->
 		<div class="section is-hidden-touch">
 			<div class="container desktop-topics has-text-centered">
 				<div class="columns is-vcentered icons mb-6">

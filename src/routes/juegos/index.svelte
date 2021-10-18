@@ -8,7 +8,7 @@
     </section>
     <section class="container p-4 has-text-centered">
         <div class="">
-            <Game background='games/juego1.png' title="TRIVIA" subtitle="Juego de preguntas y respuestas" url={"#"} textColor="white"/>
+            <Game background='games/juego1.png' title="TRIVIA" subtitle="Juego de preguntas y respuestas" url={"https://trivia.merepresenta.info/"} textColor="white"/>
             <Game background='games/juego2.png' title="PRÓXIMAMENTE" subtitle="Comás político" url={"#"} textColor="black"/>
         </div>
     </section>
