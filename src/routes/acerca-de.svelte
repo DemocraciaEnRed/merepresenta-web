@@ -66,7 +66,6 @@
             </div>
             <p class="mb-3">
                 <strong>PROPUESTAS</strong>
-                <br>ACIJ + Nuestra Córdoba + EcoFeminita + Conocimiento Abierto + Democracia en Red
             </p>
             <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6">
                 <img class="my-auto" width=200 src="/logo-accion-colectiva.png" alt="Logo de Acción Colectiva">
@@ -74,6 +73,7 @@
                 <img class="my-auto" width=200 src="/logo-nuestra-cordoba.png" alt="Logo de Nuestra Córdoba">
                 <img class="my-auto" width=150 src="/logo-eco-feminita.png" alt="Logo de Economía Feminita">
                 <img class="my-auto" width=150 src="/logo-conocimiento-abierto.png" alt="Logo de Conocimiento Abierto">
+                <img class="my-auto" width=150 src="/logo-eco-house.png" alt="Logo de Eco House">
                 <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
                 
             </div>
