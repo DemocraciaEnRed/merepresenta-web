@@ -51,39 +51,65 @@
                 Las secciones de #MeRepresenta fueron desarrolladas, en conjunto, entre diferentes organizaciones
             </p>
             <p class="mb-3"><strong>ABC ELECTORAL </strong>
-                 <br>
-                Poder Ciudadano + CIPPEC + Democracia en Red
             </p>
-            <p class="mb-3">
-                <strong>CANDIDATURAS y PARTIDOS</strong>
-                <br>
-                Observatorio de Redes + Democracia en Red
+            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-4">
+                <img width=150 src="/logo-poder-ciudadano.png" alt="Logo de Poder Ciudadano">
+                <img width=150 src="" alt="Logo de CIPPEC">
+                <img width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
+            </div>
+            <p class="mb-3"><strong>CANDIDATURAS y PARTIDOS</strong>
             </p>
+            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-4">
+                <img class="mx-2 my-auto"width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
+                <img class="mx-2 my-auto"width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
+
+            </div>
             <p class="mb-3">
                 <strong>PROPUESTAS</strong>
                 <br>ACIJ + Nuestra Córdoba + EcoFeminita + Conocimiento Abierto + Democracia en Red
-
             </p>
+            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-4">
+                <img class="my-auto" width=200 src="/logo-accion-colectiva.png" alt="Logo de Acción Colectiva">
+                <img class="my-auto" width=200 src="/logo-acij.png" alt="Logo de ACIJ">
+                <img class="my-auto" width=200 src="/logo-nuestra-cordoba.png" alt="Logo de Nuestra Córdoba">
+                <img class="my-auto" width=150 src="/logo-eco-feminita.png" alt="Logo de Economía Feminita">
+                <img class="my-auto" width=150 src="/logo-conocimiento-abierto.png" alt="Logo de Conocimiento Abierto">
+                <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
+                
+            </div>
             <p class="mb-3">
-                <strong>TRIVIA</strong>
-                <br>Directorio Legislativo + Democracia en Red
-            </p>
+                <strong>TRIVIA</strong></p>
+            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-4">
+                <img class="my-auto mx-2" width=150 src="/logo-directorio-leslativo.png" alt="Logo de Directorio Legislativo">
+                <img class="my-auto mx-2" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
+            </div>
             <p class="mb-3">
                 <strong>COMPÁS POLÍTICO</strong>
-                <br>Democracia en Red <br>
-                Idea: Antonio Milanese + Agustin Frizzera
             </p>
+            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-3">
+                <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
+            </div>
+            <p class="mb-4">Idea: Antonio Milanese + Agustin Frizzera</p>
             <p class="mb-3">
                 <strong>VERDADERO - FALSO ELECTORAL (próximamente)</strong>
-                <br>Poder Ciudadano + Democracia en Red
             </p>
+            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-3">
+                <img class="mx-2 my-auto"width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
+                <img class="my-auto mx-2" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
+            </div>
             <p class="mb-3">
                 <strong>JUEGO DE LA OCA en CAMPAÑA (próximamente)</strong>
-                <br>Poder Ciudadano + Democracia en Red
             </p>
+            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-3">
+                <img class="mx-2 my-auto" width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
+                <img class="mx-2 my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
+            </div>
             <p class="mb-3">
-                <strong>Coordinación general del proyecto:</strong> Democracia en Red
+                <strong>Coordinación general del proyecto:</strong> 
             </p>
+            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-3">
+                <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
+            </div>
         </div>
         <div  class="container py-6 has-text-centered has-text-left-touch is-size-4 px-2">
             <h1 class="title is-3 has-text-centered has-text-left-touch has-text-white mb-6 has-text-black is-size-3">
