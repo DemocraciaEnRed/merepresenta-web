@@ -28,7 +28,7 @@
                 <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
             </p>
             <div class="is-flex is-justify-content-space-evenly py-3 is-flex-wrap-wrap">
-                <img src="/logo-merepresenta.svg" alt="Logo de Me representa" width=250 class=" mb-4 logo-mere">
+                <img src="/logo-merepresenta.svg" alt="Logo de Me representa" width=250 class=" mb-6 logo-mere">
                 <img src="/logo-der-negro.svg" alt="Logo de Democracia en Red" width=200>
 
             </div>
@@ -52,14 +52,14 @@
             </p>
             <p class="mb-3"><strong>ABC ELECTORAL </strong>
             </p>
-            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-4">
+            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6">
                 <img width=150 src="/logo-poder-ciudadano.png" alt="Logo de Poder Ciudadano">
                 <img width=150 src="" alt="Logo de CIPPEC">
                 <img width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
             </div>
             <p class="mb-3"><strong>CANDIDATURAS y PARTIDOS</strong>
             </p>
-            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-4">
+            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
                 <img class="mx-2 my-auto"width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
                 <img class="mx-2 my-auto"width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
 
@@ -68,7 +68,7 @@
                 <strong>PROPUESTAS</strong>
                 <br>ACIJ + Nuestra Córdoba + EcoFeminita + Conocimiento Abierto + Democracia en Red
             </p>
-            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-4">
+            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6">
                 <img class="my-auto" width=200 src="/logo-accion-colectiva.png" alt="Logo de Acción Colectiva">
                 <img class="my-auto" width=200 src="/logo-acij.png" alt="Logo de ACIJ">
                 <img class="my-auto" width=200 src="/logo-nuestra-cordoba.png" alt="Logo de Nuestra Córdoba">
@@ -79,7 +79,7 @@
             </div>
             <p class="mb-3">
                 <strong>TRIVIA</strong></p>
-            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-4">
+            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
                 <img class="my-auto mx-2" width=150 src="/logo-directorio-leslativo.png" alt="Logo de Directorio Legislativo">
                 <img class="my-auto mx-2" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
             </div>
@@ -89,7 +89,7 @@
             <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-3">
                 <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
             </div>
-            <p class="mb-4">Idea: Antonio Milanese + Agustin Frizzera</p>
+            <p class="mb-6">Idea: Antonio Milanese + Agustin Frizzera</p>
             <p class="mb-3">
                 <strong>VERDADERO - FALSO ELECTORAL (próximamente)</strong>
             </p>
