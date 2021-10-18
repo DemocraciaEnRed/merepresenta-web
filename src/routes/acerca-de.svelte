@@ -27,8 +27,8 @@
                 Somos organizaciones de la sociedad civil que nos unimos para crear <strong>#MeRepresenta</strong>, una plataforma simple, atractiva e interactiva donde la ciudadanía pueda informarse sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. <br>
                 <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
             </p>
-            <div class="is-flex is-justify-content-space-evenly py-3">
-                <img src="/logo-merepresenta.svg" alt="Logo de Me representa" width=250 class="logo-mere">
+            <div class="is-flex is-justify-content-space-evenly py-3 is-flex-wrap-wrap">
+                <img src="/logo-merepresenta.svg" alt="Logo de Me representa" width=250 class=" mb-4 logo-mere">
                 <img src="/logo-der-negro.svg" alt="Logo de Democracia en Red" width=200>
 
             </div>
@@ -37,9 +37,9 @@
             <h1 class="title is-3 is-size-4-touch has-text-centered has-text-left-touch has-text-white mb-6 has-text-black is-size-3">
                 Nos apoyan:
             </h1>
-            <div class="is-flex is-justify-content-space-evenly py-3">
-                <img src="/logo-avina.svg" alt="Logo de Me representa" width=250 >
-                <img src="/twitter.svg" alt="Logo de Democracia en Red" width=100>
+            <div class="is-flex is-justify-content-space-evenly py-3 is-flex-wrap-wrap">
+                <img class="m-3" src="/logo-avina.svg" alt="Logo de Me representa" width=250 >
+                <img class="m-3" src="/twitter.svg" alt="Logo de Democracia en Red" width=100>
 
             </div>
         </div>
