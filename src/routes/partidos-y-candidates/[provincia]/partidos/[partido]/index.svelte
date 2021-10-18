@@ -67,7 +67,8 @@
     </div>
   </div>
 </div>
-<div class="section tetris-background">
+<!-- <div class="section tetris-background"> -->
+  <div class="section has-white-background">
   <div class="container">
     {#if partido.ejes.length}
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Les interesa</h1>

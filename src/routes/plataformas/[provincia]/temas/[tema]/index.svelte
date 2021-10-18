@@ -65,7 +65,8 @@
     </div>
   </div>
 </div>
-<div class="section tetris-background">
+<!-- <div class="section tetris-background"> -->
+  <div class="section has-white-background">
   <div class="container">
     <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between pt-3 px-3">
       <a href="/partidos-y-candidates/donde-votas" class="button is-black is-outlined is-small has-text-black has-text-weight-medium is-uppercase is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
