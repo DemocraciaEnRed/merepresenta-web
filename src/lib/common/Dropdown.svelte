@@ -9,11 +9,12 @@
   export let backgroundHeader;
   let backgroundHeaderColor = backgroundHeader ? 'black' : '';
   let borderSolid= backgroundHeader ? 'border-solid p-2' : '';
+  export let fontSizeTitle;
 
 </script>
 <div class="drop my-2" style="border-color: {color};">
   <div class="the-drop-header has-background-{backgroundHeaderColor}" on:click={()=>isOpen = !isOpen}>
-    <h2 style="color: {color}" >{@html name}</h2>
+    <h2 class="{fontSizeTitle}" style="color: {color}" >{@html name}</h2>
     <span style="color:{color}"><Icon icon={iconClass} /></span>
   </div>
   {#if isOpen}

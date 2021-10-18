@@ -21,9 +21,9 @@
                 <p><strong>Toda la información de #MeRepresenta es pública</strong></p>
                 <p><strong>Creemos en el conocimiento compartido. Es por eso que todos los datos compilados por #MeRepresenta son públicos y cualquier persona puede verlos, auditarlos y/o usarlos. </strong></p>
                 <p><strong>Nos ilusiona que diferentes personas puedan trabajar sobre nuestros datos para producir más información valiosa para las y los votantes.</strong></p>
-                <Button name="Datos" iconType="fa-file-pdf"/>
+                <Button name="Datos" iconType="fa-file-pdf" url="https://drive.google.com/drive/u/0/folders/1nLV1ux6IkRmdHJTK1_uvqHVeBapvWPQI"/>
                 <p>Además, el código de esta misma página también es público y accesible, de forma tal que cualquier otra organización con intenciones de replicarla en otros contextos pueda hacerlo.</p>
-                <Button name="Nuestro código" brand iconType="fa-github"/>     
+                <Button name="Nuestro código" brand iconType="fa-github" url="https://github.com/DemocraciaEnRed/merepresenta-web"/>     
             </div>
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE CANDIDATURAS
@@ -131,8 +131,8 @@
                 <p>En algunos casos, muy poco frecuentes, como por ejemplo el del “Frente de Todos” en Misiones, la plataforma electoral presentada ante la Cámara Nacional Electoral era la correspondiente a una de las listas que  compitieron en las PASO, dentro del mismo Frente. No encontramos información oficial del frente en fuentes que cumplieran los criterios anteriores. Así, decidimos continuar con la propuesta presentada ante la CNE por la lista de pre-candidaturas que quedó confirmada en las PASO para las Elecciones Generales.</p>
                 <p>Por lo demás, las propuestas no son el fuerte de los frentes electorales que compiten en las Elecciones Generales de 2021 . Es lo que hay.</p>
                 <h2 class="is-size-5">Desarrollo:</h2>
-                <p> Acción Colectiva, ACIJ, EcoFeminita, EcoHouse, Nuestra Córdoba,  Democracia en Red
-                </p>
+                <h3 class="is-size-6"> Acción Colectiva + ACIJ + Nuestra Córdoba + EcoFeminita + Conocimiento Abierto + Democracia en Red
+                </h3>
             </div>
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE ABC ELECTORAL">
@@ -152,11 +152,14 @@
                     <li>La participación electoral histórica se calculó con datos obtenidos de la Cámara Nacional Electoral, compilados por Carolina Ramos https://twitter.com/Carito_Ramos</li>
                     <li>Ley de Financiamiento de Partidos Políticos - <a href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/120000-124999/124231/texact.htm" target="_blank">Ley 26.215</a></li>
                 </ul>
+                <h2 class="is-size-5">Desarrollo:</h2>
+                <h3 class="is-size-6"> Poder Ciudadano + CIPPEC + Democracia en Red
+                </h3>
             </div>
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="JUEGOS" >
             <div>
-                <Dropdown class="has-text-black" name="Compás Político">
+                <Dropdown class="has-text-black" fontSizeTitle="is-size-4" name="Compás Político">
                     <div>
                         <p>El compás político es un juego basado en el <a href="https://www.politicalcompass.org/" target="_blank">Political Compass</a>, un test que te “encuadra” ideológicamente en base a pocas preguntas. Entre otra de nuestras referencias, principales se encuentra el <a href="https://www.theguardian.com/world/ng-interactive/2018/nov/21/how-populist-are-you-quiz?s=08" target="_blank">How Populist Are You?</a> (¿Cuán Populista Sos?) publicado por The Guardian en 2018. También, consultamos el <a href="https://www.idrlabs.com/es/coordenadas-politicas/prueba.php" target="_blank">Test de Coordenadas Políticas desarrollado por IDRLabs. </a>
                         </p>
@@ -269,11 +272,11 @@
                         </p>
                         <Button name="ir a jugar" icon="fa-arrow-up"/>
                         <h2 class="is-size-5">Desarrollado por:</h2>
-                        <p>DEMOCRACIA EN RED Y ANTONIO MILANESE</p>
+                        <h3 class="is-size-6">DEMOCRACIA EN RED Y ANTONIO MILANESE</h3>
                         
                     </div>
                 </Dropdown>
-                <Dropdown class="has-text-black" name="Trivia">
+                <Dropdown class="has-text-black" fontSizeTitle="is-size-4" name="Trivia">
                     <div>
                        
                         <p>Reutilizamos una trivia que hicimos junto al Directorio Legislativo en 2019 para sus 20 años. La actualizamos, le agregamos preguntas. 
@@ -284,9 +287,7 @@
                         </p>
                         <Button name="ir a jugar" icon="fa-arrow-up"/>
                         <h2 class="is-size-5">Desarrollo:</h2>
-                        <p>Democracia en Red y Directorio Legislativo
-                        </p>
-                        
+                        <h3 class="is-size-6">Democracia en Red y Directorio Legislativo</h3>
                     </div>
                 </Dropdown>
             </div>
