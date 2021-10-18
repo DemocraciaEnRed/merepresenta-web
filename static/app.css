@@ -93,8 +93,9 @@ a, .general-sans{
 
 .white-background-desktop{
 background-image: url(white-background-desktop.png);
-  background-repeat: repeat;
-  background-size: contain
+  background-repeat: no-repeat;
+  background-size: ver;
+  background-attachment: fixed;
 }
 
 .tweets-container .twitter-tweet-rendered{
