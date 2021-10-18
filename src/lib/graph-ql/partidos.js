@@ -57,7 +57,7 @@ export function getThemeProposalsByParty(tema, provincia){
 			name
     	slug
       color
-      #sheet_url
+      diagnostico
     	icon_file{
         id
       }	

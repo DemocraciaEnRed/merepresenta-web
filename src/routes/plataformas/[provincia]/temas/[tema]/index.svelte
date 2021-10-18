@@ -53,8 +53,13 @@
           <div class="is-inline-block px-5 mb-3" style="background-color: {tema.color}">
             <h1 class="general-sans m-0 is-size-2 is-size-4-touch has-text-black has-text-weight-bold is-uppercase" > Propuestas de {tema.name}</h1>
           </div>
-          <h1 class="general-sans is-size-3 is-size-5-touch has-text-black" >Leé las distintas propuestas sobre <span class="has-text-weight-bold" style="color: {tema.color}">{tema.name}</span> de cada partido según tu distrito </h1>
-
+          <h1 class="general-sans is-size-4 is-size-5-touch has-text-black" >Leé las distintas propuestas sobre <span class="has-text-weight-bold" style="color: {tema.color}">{tema.name}</span> de cada partido según tu distrito </h1>
+          {#if tema.diagnostico}
+          <div class="content general-sans mt-2">
+            <p>Si querés saber sobre el estado actual de Salud en la Argentina descargá nuestra sheet:</p>
+            <p><a href="{directusImg}{tema.diagnostico}?download" class="has-text-black has-text-weight-semibold is-uppercase"><i class="fas fa-download"></i>&nbsp;Descargar sheet</a></p>
+          </div>
+          {/if}
         </div>
       </div>
     </div>
@@ -113,6 +118,7 @@
   }
   .topic-logo{
     width: 200px;
+    height: 200px;
   }
   .party-logo{
     background-position: center;
@@ -144,6 +150,8 @@
     .topic-logo{
       width: auto;
       max-height: 200px;
+      height: auto;
+
     }
     .topic-container{
       border:1px solid #000;
