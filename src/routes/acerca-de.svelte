@@ -38,8 +38,8 @@
                 Nos apoyan:
             </h1>
             <div class="is-flex is-justify-content-space-evenly py-3 is-flex-wrap-wrap">
-                <img class="m-3" src="/logo-avina.svg" alt="Logo de Me representa" width=250 >
-                <img class="m-3" src="/twitter.svg" alt="Logo de Democracia en Red" width=100>
+                <object type="image/svg+xml" data="/logo-avina.svg" title="Logo de Me representa" width=200/>
+                <img class="my-3" src="/twitter.svg" alt="Logo de Democracia en Red" width=100>
 
             </div>
         </div>
@@ -60,7 +60,7 @@
             <p class="mb-3"><strong>CANDIDATURAS y PARTIDOS</strong>
             </p>
             <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
-                <img class="mx-2 my-auto"width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
+                <object type="image/svg+xml" data="/logo-observatorio-de-redes.svg" title="Logo de Observatorio de Redes"/>
                 <img class="mx-2 my-auto"width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
 
             </div>
@@ -74,8 +74,7 @@
                 <img class="my-auto" width=150 src="/logo-eco-feminita.png" alt="Logo de Economía Feminita">
                 <img class="my-auto" width=150 src="/logo-conocimiento-abierto.png" alt="Logo de Conocimiento Abierto">
                 <img class="my-auto" width=150 src="/logo-eco-house.png" alt="Logo de Eco House">
-                <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-                
+                <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">                
             </div>
             <p class="mb-3">
                 <strong>TRIVIA</strong></p>
@@ -94,14 +93,14 @@
                 <strong>VERDADERO - FALSO ELECTORAL (próximamente)</strong>
             </p>
             <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
-                <img class="mx-2 my-auto"width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
+                <img class="mx-2 my-auto" width=200 src="/logo-poder-ciudadano.png" alt="Logo de Poder Ciudadano">
                 <img class="my-auto mx-2" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
             </div>
             <p class="mb-3">
                 <strong>JUEGO DE LA OCA en CAMPAÑA (próximamente)</strong>
             </p>
             <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
-                <img class="mx-2 my-auto" width=150 src="/logo-observatorio-de-redes.svg" alt="Logo de Poder Ciudadano">
+                <img class="mx-2 my-auto" width=200 src="/logo-poder-ciudadano.png" alt="Logo de Poder Ciudadano">
                 <img class="mx-2 my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
             </div>
             <p class="mb-3">
