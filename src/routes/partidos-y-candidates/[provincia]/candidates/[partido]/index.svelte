@@ -56,7 +56,7 @@
           <h1 class="general-sans is-size-3 is-size-4-touch has-text-black has-text-weight-bold is-uppercase mb-4" >Candidatxs de {partido.name}</h1>
           <h1 class=" is-size-4 is-size-5-touch has-text-black mb-4" >¿Querés leer todo sobre el partido?</h1>
           <div class="buttons is-centered is-hidden-desktop">
-            <a href="/partidos-y-candidates/{$page.params.provincia}/partido/{partido.id}"
+            <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}"
         class="button is-uppercase has-text-weight-semibold is-black is-active">ver partido</a> 
           </div>
           <div class="buttons is-right is-hidden-touch">
