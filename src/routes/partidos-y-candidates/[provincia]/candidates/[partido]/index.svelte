@@ -87,7 +87,7 @@
           <p class="candidate-name is-size-6 has-text-weight-bold has-text-black is-uppercase general-sans has-text-weight-semibold">{candidate.name}</p>
           <p class="has-text-black is-size-7">Candidat{candidate.genre === 'm' ? 'o': 'a' } a <br>
             <span class="general-sans is-size-6 has-text-weight-semibold">{candidate.cargo}</span></p>
-            <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-fullwidth is-active has-text-black has-text-weight-semibold">VER CANDIDATX</a>
+            <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-fullwidth is-active has-text-black has-text-weight-semibold">VER MÁS</a>
           </div>
         </div>
         
