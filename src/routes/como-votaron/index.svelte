@@ -32,7 +32,7 @@
         <div class="section has-text-centered">
           <p class="">Para mas información, podes ver la fuente de los datos</p>
           <div class="buttons is-centered">
-            <a href={law.url} class="button is-black has-text-weight-semibold is-uppercase">Link a fuente</a>
+            <a href={law.url} target="_blank" class="button is-black has-text-weight-semibold is-uppercase">Link a fuente</a>
           </div>
         </div>
       </Dropdown>
