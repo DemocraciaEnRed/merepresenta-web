@@ -103,7 +103,7 @@
     </div> -->
     <div class="columns is-multiline is-mobile my-6">
       {#each partido.ejes as proposal}
-      <Proposal {proposal} party={partido.id}/>
+      <Proposal {proposal} partido={partido}/>
       {/each}
     </div>
     {:else}
@@ -111,6 +111,7 @@
     <h1 class="subtitle is-6 is-size-6-touch has-text-centered has-text-black my-6" style="font-weight: 400!important;">No hay propuestas cargadas</h1>
     <br>
     {/if}
+    {#if partido.url_fuente}
     <div class="columns is-centered">
       <div class="column is-8">
         <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-black my-5" style="font-weight: 500!important;">Podés acceder a la información oficial ingresando a la plataforma oficial de {partido.name}.</h1>
@@ -120,6 +121,7 @@
         </div>
       </div>
     </div>
+    {/if}
     <div class="columns is-centered">
       <div class="column is-8">
         <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-5" style="font-weight: 500!important;">¿Querés conocer a sus candidatxs?</h1>

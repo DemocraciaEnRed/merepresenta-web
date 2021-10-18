@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
   import { PoliciesIcons } from "$lib/common/utils";
   export let proposal;
-  export let party;
+  export let partido;
   let policyUrl  = `/plataformas/${$page.params.provincia}/temas/`;  
 </script>
 
@@ -23,8 +23,11 @@
           
           <h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">Resumen</h1>
           <p>{proposal.summary}</p>
+          {#if partido.url_fuente}
           <hr style="background-color: #000;">
-          <p>Podés leer las propuestas completas en su <a href="{policyUrl}{proposal.ejes_id.slug}/{party}" class="is-uppercase has-text-black has-text-weight-semibold"><u>website</u></a></p>
+          <!-- <p>Podés leer las propuestas completas en la <a href="{policyUrl}{proposal.ejes_id.slug}/{partido.id}" class="is-uppercase has-text-black has-text-weight-semibold"><u>fuente oficial</u></a></p> -->
+          <p>Podés leer las propuestas completas en la <a href="{partido.url_fuente}" target="_blank" class="is-uppercase has-text-black has-text-weight-semibold"><u>fuente oficial</u></a></p>
+          {/if}
           <hr class="is-hidden-desktop" style="background-color: #000;">
         </div>
       </div>
