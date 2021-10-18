@@ -110,73 +110,28 @@
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >¿Qué proponen?</h1>
     <h1 class="subtitle is-6 is-size-6-touch has-text-centered has-text-black my-6" style="font-weight: 400!important;">No hay propuestas cargadas</h1>
     <br>
-    {/if} 
-    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-5" style="font-weight: 500!important;">¿Querés conocer a sus candidatxs?</h1>
-    <div class="buttons is-centered mb-6">
-      <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.id}"
-        class="button is-uppercase has-text-weight-semibold is-black is-outlined is-active is-medium">ver candidatxs</a> 
+    {/if}
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-black my-5" style="font-weight: 500!important;">Podés acceder a la información oficial ingresando a la plataforma oficial de {partido.name}.</h1>
+        <div class="buttons is-centered mb-6">
+          <a href="{partido.url_fuente}" target="_blank"
+          class="button is-uppercase has-text-weight-semibold is-black is-active is-medium">Ir a la plataforma oficial</a> 
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-5" style="font-weight: 500!important;">¿Querés conocer a sus candidatxs?</h1>
+        <div class="buttons is-centered mb-6">
+          <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.id}"
+          class="button is-uppercase has-text-weight-semibold is-black is-outlined is-active is-medium">ver candidatxs</a> 
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- <main class="white-background-desktop">
-  <nav class="breadcrumb is-small pl-2 mt-2" aria-label="breadcrumbs">
-    <ul>
-      <li ><a href="/partidos-y-candidates/donde-votas">partidos y candidates</a></li>
-      <li ><a href="/partidos-y-candidates/{$page.params.provincia}">{$page.params.provincia}</a></li>
-      <li class="is-active"><a href aria-current="page">{partido.name}</a></li>
-    </ul>
-  </nav>
-  <section class="container">
-    <div class="partido-img mt-4" style="background-image: url({PartyImg(partido)})">
-      <span hidden>{partido.name}</span>
-    </div>
-    
-    <p class="description p-4 mt-4">
-      {partido.summary || 'No hay descripcion de este partido'}
-    </p>
-    
-    <div class="container p-4">
-      <h2 class="has-text-left has-text-centered-tablet title is-5 has-text-black">Les interesa</h2>
-      <div class="columns is-mobile is-justify-content-center is-flex is-flex-wrap-wrap p-2">
-        {#each partido.ejes as proposal}
-          <div class="column is-flex-grow-0 has-text-centered">
-            <div class="px-3 py-2 has-background-black ">
-              {#if !false}
-                <svg 
-                  width="50"
-                  height="50"
-                  style="stroke:{proposal.ejes_id.color}"
-                  title="propuestas de {proposal.ejes_id.slug}"
-                  data-src="{directusImg}{proposal.ejes_id.icon_file.id}">
-                </svg>
-              {/if}  
-          </div>
-          </div>
-        {/each}
-      </div>
-
-      <h2 class="has-text-left title is-5 has-text-centered-tablet has-text-black">¿Qué proponen?</h2>
-      {#each partido.ejes as proposal}
-        <Proposal {proposal} party={partido.id}/>
-      {/each}
-
-      <div class="has-text-centered">
-        <p class="mb-4">
-          <strong>¿Querés la información oficial?</strong>
-        </p>
-        <a href={partido.url_fuente} target="_blank" class="is-uppercase is-underlined mt-4">ir a la plataforma oficial</a>        
-        <p class="mt-6">
-          <strong>¿Querés conocer a sus candidates?</strong> 
-        </p>
-        <a href="/partidos-y-candidates/{$page.params.provincia}/candidates/{partido.id}"
-          class="button is-uppercase mt-4 is-fullwidth  is-outline is-active">ver candidates</a>
-      </div>
-      
-    </div>
-    
-  </section>
-</main> -->
 
 <style>
   nav.breadcrumb .is-active{
