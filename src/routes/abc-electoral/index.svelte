@@ -1,8 +1,9 @@
 <script>
   import Dropdown from '$lib/common/Dropdown.svelte';
 </script>
-<main class=" has-background-black black-background">
-  <section class="container p-2">
+<main class="hero is-black is-halfheight tetris-background has-background-black black-background ">
+  <div class="hero-body is-flex-direction-column">
+      <section class="container p-2">
     <div class="has-text-centered mt-6 has-text-white">
       <img src="/abc.svg" alt="imagen de una mano deslizando un voto en una urna">
       <h1 class="title has-text-white mt-3 is-uppercase">Elecciones 2021</h1>
@@ -260,6 +261,8 @@
       </ul>
     </section>
   </section>
+  </div>
+
  
 </main>
 <style>

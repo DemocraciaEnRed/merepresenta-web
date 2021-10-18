@@ -40,12 +40,8 @@
                 <p>Una vez vinculadas las 4 capas de información, y definidos los resultados de las PASO, comenzamos a trabajar sobre las listas definitivas, información que obtuvimos gracias a la aplicación Elecciones Legislativas, del Ministerio del Interior Argentina (ver <a href="https://www.argentina.gob.ar/elecciones/resultados-del-recuento-provisional-de-las-elecciones-paso" target="_blank">aquí</a>). Y, apenas la Justicia Nacional Electoral confirmó las candidaturas (<a href="https://www.electoral.gob.ar/nuevo/paginas/datos/candidaturasdatos2021.php" target="_blacnk">aquí</a>), terminamos de configurar la matriz. En las Elecciones Generales de 2021, hay 845 candidaturas. 
                 </p>
                 <p>Con las listas finales en mano, eliminamos aquellas que quedaron fuera en las Primarias y auditamos la carga previa. Lo hicimos distrito por distrito, provincia por provincia, completando las listas hasta alcanzar al 100% de las candidaturas titulares, en todo el territorio nacional.</p>
-                <h2>Desarrollo:</h2>
-                <h3>Democracia en Red y Observatorio de Redes</h3>
-                <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
-                    <img class="mb-3" width="200" src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-                    <img class="mb-3" width="200" src="/logo-observatorio-de-redes.svg" alt="Logo del Observatorio de Redes">
-                </div>
+                <h2 class="is-size-5">Desarrollo:</h2>
+                <h3 class="is-size-6">Democracia en Red y Observatorio de Redes</h3>
             </div>
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE PARTIDOS
@@ -68,9 +64,8 @@
                 <p>Sabemos que la traslación del pasado al presente es metodológicamente forzada. Sabemos que fueron muchos los cambios de nuestro sistema de partidos en estos 12 años. Creemos, también, que los resultados que arroja son sugerentes y pueden ser analizados. </p>
                 <p>Tenemos frentes electorales que, hoy, encontraron motivos para unirse que, antes, no tenían. Tenemos frentes electorales, hoy, integrados por personas que, en el pasado, han tenido posiciones disímiles. Tenemos partidos políticos que, de acuerdo a si están en el oficialismo o en la oposición, asumen estrategias parlamentarias distintas, acordes a esa ubicación. </p>
                 <p>Tenemos alianzas electorales cambiantes pero los votos en la Cámara de Diputados, sus testimonios políticos, permanecen para la posteridad. Ese ejercicio de combinar el pasado con el presente, en torno a 10 leyes votadas en la Cámara de Diputados, es el que propone esta sección.  </p>
-                <h2>Desarrollo:</h2>
-                <h3>Democracia en Red</h3>
-                <img src="/logo-der-negro.svg" alt="Logo de Democracia en Red" width="200">
+                <h2 class="is-size-5">Desarrollo:</h2>
+                <h3 class="is-size-6">Democracia en Red</h3>
             </div>
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE PROPUESTAS">
@@ -135,14 +130,9 @@
                 </ul>
                 <p>En algunos casos, muy poco frecuentes, como por ejemplo el del “Frente de Todos” en Misiones, la plataforma electoral presentada ante la Cámara Nacional Electoral era la correspondiente a una de las listas que  compitieron en las PASO, dentro del mismo Frente. No encontramos información oficial del frente en fuentes que cumplieran los criterios anteriores. Así, decidimos continuar con la propuesta presentada ante la CNE por la lista de pre-candidaturas que quedó confirmada en las PASO para las Elecciones Generales.</p>
                 <p>Por lo demás, las propuestas no son el fuerte de los frentes electorales que compiten en las Elecciones Generales de 2021 . Es lo que hay.</p>
-                <h2>Desarrollo:</h2>
+                <h2 class="is-size-5">Desarrollo:</h2>
                 <p> Acción Colectiva, ACIJ, EcoFeminita, EcoHouse, Nuestra Córdoba,  Democracia en Red
                 </p>
-                <div class="is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
-                    <img width="200" src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-                    <img width="100" src="/logo-ref.svg" alt="Logo de REF">
-                    <img width="200" src="/logo-nuestra-cordoba.svg" alt="Logo de Nuestra Córdoba">
-                </div>
             </div>
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE ABC ELECTORAL">
@@ -178,7 +168,7 @@
                             <li>EJE X - IZQUIERDA - DERECHA</li>
                         </ul>
                         <p>Los cálculos realizados para la ubicación en cuadrantes se basan en los siguientes criterios.</p>
-                        <h2>Niveles y puntuaciones</h2>
+                        <h2 class="is-size-5">Niveles y puntuaciones</h2>
                         <p>Cada pregunta podría responderse en 7 niveles que van de -3 a 3. Los niveles de respuesta son:</p>
                         <ul>
                             <li>Muy de acuerdo (+3)</li>
@@ -194,17 +184,17 @@
                         </ul>
                         <p>En este esquema cada pregunta promedia el puntaje en un solo eje. Todas las preguntas tienen el mismo peso y no están ponderadas. 
                         </p>
-                        <h2>Cuestionario
+                        <h2 class="is-size-5">Cuestionario
                         </h2>
                         <p>El juego tiene 20 preguntas en total. 
                         </p>
                         <p>10 corresponden al “Eje Y” y 10 corresponden al “Eje X”.  
                         </p>
-                        <h2>Eje Y - Liberalismo // Populismo
+                        <h2 class="is-size-5">Eje Y - Liberalismo // Populismo
                         </h2>
                         <p>En este test, el eje “liberalismo-populismo” se usa como medida de la posición de quien realiza el test en materia política, donde el “liberalismo” se asocia a la defensa de las libertades individuales y al respeto por los procedimientos institucionales, mientras que el “populismo” se asocia a la defensa del colectivo social (un asunto distinto a la suma de los deseos individuales) y a la confianza en un liderazgo político fuerte para lograrlo.    
                         </p>
-                        <h2>10 preguntas.
+                        <h2 class="is-size-5">10 preguntas.
                         </h2>
                         <ol>
                             <li>Los políticos deben estar cerca de la gente, escuchar y entender sus necesidades para darle lo que necesita. +1
@@ -227,10 +217,10 @@
                             <li>En Democracia, hay libertad de expresión y yo puedo decir lo que quiera, siempre. -1
                             </li>
                         </ol>
-                        <h2>Eje X -  Izquierda // Derecha </h2>
+                        <h2 class="is-size-5">Eje X -  Izquierda // Derecha </h2>
                         <p>En este test, el eje “izquierda-derecha” se usa como medida de la posición de quien realiza el test, sobre todo, en materia económica, donde la “izquierda” favorece la intervención del Estado y la regulación económica sobre el mercado, mientras que la “derecha” favorece la libertad económica y el "dejar hacer". 
                         </p>
-                        <h2>10 preguntas </h2>
+                        <h2 class="is-size-5">10 preguntas </h2>
                         <ol>
                             <li>Si tuviera que elegir, diría que la igualdad es más importante que la libertad. -1
                             </li>
@@ -250,7 +240,7 @@
                             <li>Industrias estratégicas como la nuclear o la militar no deberían estar en manos del sector privado. -1
                             </li>
                         </ol>
-                        <h2>Procesamiento</h2>
+                        <h2 class="is-size-5">Procesamiento</h2>
                         <p>Multiplicamos el valor obtenido en las opciones de cada pregunta por el valor de la pregunta. 
                         </p>
                         <p>Por ejemplo:
@@ -278,12 +268,9 @@
                         <p>¡No vamos a publicar el gráfico final porque lo que queremos es que juegues!
                         </p>
                         <Button name="ir a jugar" icon="fa-arrow-up"/>
-                        <h2>Desarrollado por:</h2>
+                        <h2 class="is-size-5">Desarrollado por:</h2>
                         <p>DEMOCRACIA EN RED Y ANTONIO MILANESE</p>
-                        <div class="is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
-                            <img width="200" src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-                            <h3>ANTONIO MILANESE</h3>
-                        </div>
+                        
                     </div>
                 </Dropdown>
                 <Dropdown class="has-text-black" name="Trivia">
@@ -296,14 +283,10 @@
                         <p>¡No vamos a publicar las respuestas porque lo que queremos es que juegues!
                         </p>
                         <Button name="ir a jugar" icon="fa-arrow-up"/>
-                        <h2>Desarrollo:</h2>
+                        <h2 class="is-size-5">Desarrollo:</h2>
                         <p>Democracia en Red y Directorio Legislativo
                         </p>
-                        <div class="is-flex is-flex-wrap-wrap is-justify-content-space-evenly">
-                            <img width="200" src="/logo-der-negro.svg" alt="Logo de 
-                            Democracia en Red">
-                            <img width="200" src="/logo-observatorio-legislativo.svg" alt="Logo de Democracia en Red">
-                        </div>
+                        
                     </div>
                 </Dropdown>
             </div>

@@ -1,7 +1,7 @@
 <script>
 	export let backgroundColor;  
 </script>
-<footer class="footer has-background-black">
+<footer class="footer has-background-{backgroundColor}">
     <div class="container">
         <div class="columns invert-mobile">
             <div class="column is-narrow has-text-centered-touch">
@@ -11,8 +11,8 @@
             
             </div>
             <div class="column is-offset-1 has-text-centered-touch">
-                <h3 class="general-sans is-uppercase  is-size-5 {backgroundColor === 'black' ? 'has-text-white has-text-weight-normal' : 'has-text-weight-normal has-text-black'}" >Si encontrás algún dato incorrecto o querés sumar tu aporte,
-                    podés contactarnos en: <a class="general-sans has-text-weight-semibold {backgroundColor === 'black' ? 'has-text-white' : 'has-text-black'}" href="mailto:contacto@democracyos.io">contacto@democracyos.io</a>
+                <h3 class="general-sans  is-size-7 {backgroundColor === 'black' ? 'has-text-white has-text-weight-normal' : 'has-text-weight-normal has-text-black'}" >Si encontrás algún dato incorrecto o querés sumar tu aporte,
+                    podés contactarnos en: <a class="general-sans has-text-weight-semibold {backgroundColor === 'black' ? 'has-text-white' : 'has-text-black'}" href="mailto:contacto@democracyos.io">contacto@democraciaenred.org</a>
                 </h3>
             </div>
         </div>
