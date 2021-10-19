@@ -9,8 +9,8 @@
 							Acerca de
 						</h1>
 						<h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal ">
-							<strong>REPRESENTAR</strong> es <strong>personificar</strong>, es “actuar en nombre de”. En política, REPRESENTAR tiene que ver con exponer <strong>deseos, solidaridades, intereses</strong> y necesidades de una sociedad. En este 2021, vamos a votar <strong>representantes para el Congreso Nacional.</strong> <br>
-                            <strong>Las elecciones no son concursos de popularidad, se tratan de dar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero también es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. <br>
+							<strong>REPRESENTAR</strong> es <strong>personificar</strong>, es “actuar en nombre de”. En política, REPRESENTAR tiene que ver con exponer <strong>deseos, solidaridades, intereses</strong> y necesidades de una sociedad. En este 2021, vamos a votar <strong>representantes para el Congreso Nacional.</strong> <br class="mb-4">
+                            <strong>Las elecciones no son concursos de popularidad, se tratan de dar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero también es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. <br class="mb-4">
                             Porque si <strong>tus representantes van a representarte</strong>, te tienen que explicar <strong>quiénes son y qué han hecho</strong>. Si van a actuar en tu nombre, te tienen que explicar <strong>qué quieren hacer y cómo.</strong> 
 						</h2>
 					</div>
@@ -24,7 +24,7 @@
                 ¿Quiénes somos?
             </h1>
             <p class=" is-3  has-text-left  has-text-black">
-                Somos organizaciones de la sociedad civil que nos unimos para crear <strong>#MeRepresenta</strong>, una plataforma simple, atractiva e interactiva donde la ciudadanía pueda informarse sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. <br>
+                Somos organizaciones de la sociedad civil que nos unimos para crear <strong>#MeRepresenta</strong>, una plataforma simple, atractiva e interactiva donde la ciudadanía pueda informarse sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. <br class="mb-3">
                 <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
             </p>
             <div class="is-flex is-align-items-center py-3 is-flex-wrap-wrap is-justify-content-space-between">
@@ -45,9 +45,10 @@
             <h2 class="title is-3 mb-3 has-text-black">
                 Nos apoyan:
             </h2>
-            <p>
-                Avina + Democracia en Red
-            </p>
+            <div class="is-flex is-align-items-center py-3 is-flex-wrap-wrap ">
+                <object width=150 class="mx-3" type="image/svg+xml" data="/logo-avina.svg" title="Logo de Avina"/>
+                <object width=90 class="mx-3" type="image/svg+xml" data="/twitter.svg" title="Logo de Twitter"/>
+            </div>
         </div>
         <div class="container py-5 has-text-left px-2">
             <h2 class="title is-3 has-text-white mb-5 has-text-black">
