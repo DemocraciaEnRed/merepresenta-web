@@ -12,20 +12,23 @@
           </div>
     </section>
     <section class="container px-2 py-6 has-text-black">
-        <Dropdown class="has-text-black" darkMode backgroundHeader name="METODOLOGIA">
+        <div class="has-text-black intro-metodologia">
             <div>
+                <h2 class="has-text-weight-semibold	 px-2 py-4 is-uppercase has-background-black has-text-white">Metodología</h2>
+            </div>
+            <div class="has-background-white pb-5 pt-2 px-2">
                 <p>#MeRepresenta se propone como un sitio único que sistematiza y compila información útil para quien vote en las Elecciones Generales de 2021.</p> 
                 <p>La plataforma permite acceder a datos de las candidaturas, de los partidos y de sus propuestas electorales. A ello sumamos, como complemento, una sección con información general sobre las Elecciones en Argentina y otra sección, con juegos, para proponer un acercamiento distinto a los datos. </p>
                 <p>Para el desarrollo de cada una de las secciones, seguimos una metodología de trabajo orientada hacia un resultado que fuera riguroso y, a la vez, que ofreciera la información de forma sencilla y atractiva.</p>
                 <p>Trabajar con información de distinta índole, de distintas fuentes y que, aún así, mantenga su coherencia fue un desafío. En esta sección, contamos cómo lo hicimos. </p>
-                <p><strong>Toda la información de #MeRepresenta es pública</strong></p>
-                <p><strong>Creemos en el conocimiento compartido. Es por eso que todos los datos compilados por #MeRepresenta son públicos y cualquier persona puede verlos, auditarlos y/o usarlos. </strong></p>
-                <p><strong>Nos ilusiona que diferentes personas puedan trabajar sobre nuestros datos para producir más información valiosa para las y los votantes.</strong></p>
+                <p class="my-3"><strong class="has-text-weight-normal p-2 has-background-black has-text-white">Toda la información de #MeRepresenta es pública</strong></p> 
+                <p>Creemos en el conocimiento compartido. Es por eso que todos los datos compilados por #MeRepresenta son públicos y cualquier persona puede verlos, auditarlos y/o usarlos.</p>
+                <p class="mb-2">Nos ilusiona que diferentes personas puedan trabajar sobre nuestros datos para producir más información valiosa para las y los votantes.</p>
                 <Button name="Datos" iconType="fa-file-pdf" url="https://drive.google.com/drive/u/0/folders/1nLV1ux6IkRmdHJTK1_uvqHVeBapvWPQI"/>
-                <p>Además, el código de esta misma página también es público y accesible, de forma tal que cualquier otra organización con intenciones de replicarla en otros contextos pueda hacerlo.</p>
+                <p class="mb-2">Además, el código de esta misma página también es público y accesible, de forma tal que cualquier otra organización con intenciones de replicarla en otros contextos pueda hacerlo.</p>
                 <Button name="Nuestro código" brand iconType="fa-github" url="https://github.com/DemocraciaEnRed/merepresenta-web"/>     
             </div>
-        </Dropdown>
+        </div>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE CANDIDATURAS
         ">
             <div>
@@ -296,3 +299,8 @@
 
     </section>
 </main>
+<style>
+    .intro-metodologia{
+        border: 2px solid #000
+    }
+</style>
