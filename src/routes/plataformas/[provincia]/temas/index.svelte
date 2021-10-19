@@ -34,7 +34,7 @@
   <div class="container mb-6">
     <div class="columns is-centered">
       <div class="column is-8">
-        <h1 class="title is-2 is-size-4-touch has-text-centered has-text-black" >Ingresá a cada uno de los temas y enterate qué propone cada partido para cada uno</h1>
+        <h1 class="title is-2 is-size-4-touch has-text-centered has-text-black" >Ingresá por tema y enterate que proponen los partidos para cada uno</h1>
       </div>
     </div>
     <div class="columns is-centered is-multiline is-mobile mt-6">
