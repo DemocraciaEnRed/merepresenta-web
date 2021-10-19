@@ -12,7 +12,7 @@
   <div class="hero is-black  is-medium tetris-background">
 		<div class="hero-body is-align-items-flex-start">
 			<div class="container">
-        <h1 class="has-text-centered title is-1 mb-6 animate__animated animate__bounceInLeft">¿Donde votás?</h1>
+        <h1 class="has-text-centered title is-1 mb-6 animate__animated animate__bounceInLeft">¿Dónde votás?</h1>
         <div class="buttons is-centered my-6">
           {#each provincias as provincia}
 							<a href="/partidos-y-candidates/{provincia.slug}" class="button is-white is-large is-uppercase has-text-weight-semibold px-6 is-outlined is-hidden-touch animate__animated animate__flipInY animate__delay-1s">{provincia.name}</a>
