@@ -10,7 +10,7 @@
         <section class="container p-4 has-text-centered">
             <div class="">
                 <Game background='games/juego1.png' title="TRIVIA" subtitle="Juego de preguntas y respuestas" url={"https://trivia.merepresenta.info/"} textColor="white"/>
-                <Game background='games/juego2.png' title="COMPÁS POLÍTICO" subtitle="¿Cuál es tu ideología?" url={"#"} textColor="black"/>
+                <Game background='games/juego2.png' title="COMPÁS POLÍTICO" subtitle="PRÓXIMAMENTE" url={"#"} textColor="black"/>
             </div>
         </section>
     </div>
