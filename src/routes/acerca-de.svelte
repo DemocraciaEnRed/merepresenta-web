@@ -8,11 +8,11 @@
 						<h1 class="title is-3 is-size-4-touch has-text-centered has-text-left-touch has-text-white mb-6">
 							Acerca de
 						</h1>
-						<p class="subtitle is-3 is-size-4-touch has-text-centered has-text-left-touch has-text-white is-size-4"><strong></strong>
+						<h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal ">
 							<strong>REPRESENTAR</strong> es <strong>personificar</strong>, es “actuar en nombre de”. En política, REPRESENTAR tiene que ver con exponer <strong>deseos, solidaridades, intereses</strong> y necesidades de una sociedad. En este 2021, vamos a votar <strong>representantes para el Congreso Nacional.</strong> <br>
                             <strong>Las elecciones no son concursos de popularidad, se tratan de dar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero también es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. <br>
                             Porque si <strong>tus representantes van a representarte</strong>, te tienen que explicar <strong>quiénes son y qué han hecho</strong>. Si van a actuar en tu nombre, te tienen que explicar <strong>qué quieren hacer y cómo.</strong> 
-						</p>
+						</h2>
 					</div>
 				</div>
 			</div>
@@ -20,100 +20,91 @@
     </div>
     <section calss="has-background-white" >
         <div class="container py-6 px-2">
-            <h1 class="title is-3 is-size-4-touch has-text-centered has-text-left-touch has-text-white mb-6 has-text-black">
+            <h1 class="title is-3 is-size-4-touch  mb-6 has-text-black">
                 ¿Quiénes somos?
             </h1>
-            <p class="subtitle is-3 is-size-4-touch has-text-centered has-text-left-touch has-text-white is-size-4 has-text-black">
+            <p class=" is-3  has-text-left  has-text-black">
                 Somos organizaciones de la sociedad civil que nos unimos para crear <strong>#MeRepresenta</strong>, una plataforma simple, atractiva e interactiva donde la ciudadanía pueda informarse sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. <br>
                 <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
             </p>
-            <div class="is-flex is-justify-content-space-evenly py-3 is-flex-wrap-wrap">
-                <img src="/logo-merepresenta.svg" alt="Logo de Me representa" width=250 class=" mb-6 logo-mere">
-                <img src="/logo-der-negro.svg" alt="Logo de Democracia en Red" width=200>
-
+            <div class="is-flex is-align-items-center py-3 is-flex-wrap-wrap is-justify-content-space-between">
+                <img width=150 src="/logo-poder-ciudadano.png" class="mx-3" alt="Logo de Poder Ciudadano">
+                <img class="my-auto mx-3" width=150 src="/logo-cippec.png" alt="Logo de CIPPEC">
+                <object class="mx-3" type="image/svg+xml" data="/logo-observatorio-de-redes.svg" title="Logo de Observatorio de Redes"/>
+                <img class="mx-3 my-auto" width=200 src="/logo-accion-colectiva.png" alt="Logo de Acción Colectiva">
+                <img class="mx-3 my-auto" width=200 src="/logo-acij.png" alt="Logo de ACIJ">
+                <img class="mx-3 my-auto" width=200 src="/logo-nuestra-cordoba.png" alt="Logo de Nuestra Córdoba">
+                <img class="mx-3 my-auto" width=150 src="/logo-eco-feminita.png" alt="Logo de Economía Feminita">
+                <img class="mx-3 my-auto" width=150 src="/logo-conocimiento-abierto.png" alt="Logo de Conocimiento Abierto">
+                <img class="mx-3 my-auto" width=150 src="/logo-eco-house.png" alt="Logo de Eco House">
+                <img class="mx-3 my-auto mx-2" width=150 src="/logo-directorio-leslativo.png" alt="Logo de Directorio Legislativo">
+                <img class="mx-3" src="/logo-der-negro.svg" alt="Logo de Democracia en Red" width=200>
             </div>
         </div>
-        <div class="container py-6 px-2">
-            <h1 class="title is-3 is-size-4-touch has-text-centered has-text-left-touch has-text-white mb-6 has-text-black is-size-3">
+        <div class="container py-4 px-2">
+            <h2 class="title is-3 mb-3 has-text-black">
                 Nos apoyan:
-            </h1>
-            <div class="is-flex is-justify-content-space-evenly py-3 is-flex-wrap-wrap">
-                <object type="image/svg+xml" data="/logo-avina.svg" title="Logo de Me representa" width=200/>
-                <img class="my-3" src="/twitter.svg" alt="Logo de Democracia en Red" width=100>
-
-            </div>
+            </h2>
+            <p>
+                Avina + Democracia en Red
+            </p>
         </div>
-        <div class="container py-6 has-text-centered has-text-left-touch is-size-4 px-2">
-            <h1 class="title is-3 is-size-3 has-text-centered has-text-left-touch has-text-white mb-6 has-text-black">
+        <div class="container py-5 has-text-left px-2">
+            <h2 class="title is-3 has-text-white mb-5 has-text-black">
                 Créditos
-            </h1>
-            <p class="subtitle is-3 is-size-4-touch has-text-centered has-text-left-touch has-text-white is-size-4 has-text-black">
+            </h2>
+            <p class="is-3 has-text-left has-text-black">
                 Las secciones de #MeRepresenta fueron desarrolladas, en conjunto, entre diferentes organizaciones
             </p>
-            <p class="mb-3"><strong>ABC ELECTORAL </strong>
+            <p class="my-3"><strong>ABC ELECTORAL </strong>
             </p>
-            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6">
-                <img width=150 src="/logo-poder-ciudadano.png" alt="Logo de Poder Ciudadano">
-                <img class="my-auto" width=150 src="/logo-cippec.png" alt="Logo de CIPPEC">
-                <img width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-            </div>
+            <p class="mb-5">
+                Poder Ciudadano + CIPPEC + Democracia en Red
+            </p>
             <p class="mb-3"><strong>CANDIDATURAS y PARTIDOS</strong>
             </p>
-            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
-                <object type="image/svg+xml" data="/logo-observatorio-de-redes.svg" title="Logo de Observatorio de Redes"/>
-                <img class="mx-2 my-auto"width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-
-            </div>
+            <p class="mb-5">
+                Observatorio de Redes + Democracia en Red
+            </p>
             <p class="mb-3">
                 <strong>PROPUESTAS</strong>
             </p>
-            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6">
-                <img class="my-auto" width=200 src="/logo-accion-colectiva.png" alt="Logo de Acción Colectiva">
-                <img class="my-auto" width=200 src="/logo-acij.png" alt="Logo de ACIJ">
-                <img class="my-auto" width=200 src="/logo-nuestra-cordoba.png" alt="Logo de Nuestra Córdoba">
-                <img class="my-auto" width=150 src="/logo-eco-feminita.png" alt="Logo de Economía Feminita">
-                <img class="my-auto" width=150 src="/logo-conocimiento-abierto.png" alt="Logo de Conocimiento Abierto">
-                <img class="my-auto" width=150 src="/logo-eco-house.png" alt="Logo de Eco House">
-                <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">                
-            </div>
+            <p class="mb-5">
+                Acción Colectiva + ACIJ + Nuestra Córdoba + EcoFeminita + Conocimiento Abierto + Eco House + Democracia en Red
+            </p>
             <p class="mb-3">
                 <strong>TRIVIA</strong></p>
-            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
-                <img class="my-auto mx-2" width=150 src="/logo-directorio-leslativo.png" alt="Logo de Directorio Legislativo">
-                <img class="my-auto mx-2" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-            </div>
+                <p class="mb-5">Directorio Legislativo + Democracia en Red</p>
             <p class="mb-3">
                 <strong>COMPÁS POLÍTICO</strong>
             </p>
-            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-3">
-                <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-            </div>
-            <p class="mb-6">Idea: Antonio Milanese + Agustin Frizzera</p>
+            <p class="mb-1">
+                Democracia en Red
+            </p>
+            <p class="mb-5">Idea: Antonio Milanese + Agustin Frizzera</p>
             <p class="mb-3">
                 <strong>VERDADERO - FALSO ELECTORAL (próximamente)</strong>
             </p>
-            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
-                <img class="mx-2 my-auto" width=200 src="/logo-poder-ciudadano.png" alt="Logo de Poder Ciudadano">
-                <img class="my-auto mx-2" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-            </div>
+            <p class="mb-5">
+                Poder Ciudadano + Democracia en Red
+            </p>
             <p class="mb-3">
                 <strong>JUEGO DE LA OCA en CAMPAÑA (próximamente)</strong>
             </p>
-            <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
-                <img class="mx-2 my-auto" width=200 src="/logo-poder-ciudadano.png" alt="Logo de Poder Ciudadano">
-                <img class="mx-2 my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-            </div>
+            <p class="mb-5">
+                Poder Ciudadano + Democracia en Red
+            </p>
             <p class="mb-3">
                 <strong>Coordinación general del proyecto:</strong> 
             </p>
-            <div class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-3">
-                <img class="my-auto" width=150 src="/logo-der-negro.svg" alt="Logo de Democracia en Red">
-            </div>
+            <p class="mb-5">
+                Democracia en Red
+            </p>
         </div>
-        <div  class="container py-6 has-text-centered has-text-left-touch is-size-4 px-2">
-            <h1 class="title is-3 has-text-centered has-text-left-touch has-text-white mb-6 has-text-black is-size-3">
+        <div  class="container py-6 has-text-left px-2">
+            <h2 class="title is-3 mb-6 has-text-black">
                 Agradecimientos
-            </h1>
+            </h2>
             <p class="mb-4">
                 Este  sitio fue hecho por mucha gente. La gran mayoría, personas que pusieron su compromiso, profesionalismo y esfuerzo sólo a cambio de este “gracias”. 
             </p>
@@ -159,5 +150,8 @@
 <style>
     .logo-mere{
         filter: invert(42%) sepia(93%) saturate(0%) hue-rotate(87deg) brightness(0%) contrast(119%);
+    }
+    strong{
+        font-weight: 500;
     }
 </style>
