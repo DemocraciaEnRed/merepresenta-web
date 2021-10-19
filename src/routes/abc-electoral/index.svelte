@@ -250,17 +250,17 @@
         </div>
       </Dropdown>
       <section class="my-6">
-        <h3 class="mt-6 mb-3 has-text-white">Fuentes</h3>
-        <ul class="ml-3  has-text-white">
-          <li class="has-text-white">Cámara Nacional Electoral - <a href=" electoral.gob.ar" target="_blank">electoral.gob.ar</a> </li>
-          <li class="has-text-white">Dirección Nacional Electoral - <a href="argentina.gob.ar/dine" target="_blank">argentina.gob.ar/dine</a> </li> 
-          <li class="has-text-white">Congreso de la Nación Argentina - <a href="congreso.gob.ar" target="_blank">congreso.gob.ar</a></li>
-          <li class="has-text-white">Senado de la Nación Argentina - www.senado.gob.ar</li>
-          <li class="has-text-white">Cámara de Diputados de la Nación Argentina - <a href="www.hcdn.gob.ar" target="_blank">www.hcdn.gob.ar</a></li>
-          <li class="has-text-white">Constitución Nacional Argentina - Art. 39, 40, 52, 53, 59, 61, 75 y 99</li>
-          <li class="has-text-white"><a href="https://www.cippec.org/especial/votoinformado-oficialcne/" target="_blank">Plataforma Voto Informado</a>, elaborada por CIPPEC en base a información provista por la Cámara Nacional Electoral.</li>
-          <li class="has-text-white">La participación electoral histórica se calculó con datos obtenidos de la Cámara Nacional Electoral, compilados por Carolina Ramos <a href="https://twitter.com/Carito_Ramos" target="_blank">https://twitter.com/Carito_Ramos</a></li>
-          <li class="has-text-white">Ley de Financiamiento de Partidos Políticos - <a href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/120000-124999/124231/texact.htm" target="_blank">Ley 26.215</a></li>
+        <h3 class="mt-6 mb-3 has-text-black">Fuentes</h3>
+        <ul class="ml-3  has-text-black">
+          <li class="has-text-black">Cámara Nacional Electoral - <a href=" electoral.gob.ar" target="_blank">electoral.gob.ar</a> </li>
+          <li class="has-text-black">Dirección Nacional Electoral - <a href="argentina.gob.ar/dine" target="_blank">argentina.gob.ar/dine</a> </li> 
+          <li class="has-text-black">Congreso de la Nación Argentina - <a href="congreso.gob.ar" target="_blank">congreso.gob.ar</a></li>
+          <li class="has-text-black">Senado de la Nación Argentina - www.senado.gob.ar</li>
+          <li class="has-text-black">Cámara de Diputados de la Nación Argentina - <a href="www.hcdn.gob.ar" target="_blank">www.hcdn.gob.ar</a></li>
+          <li class="has-text-black">Constitución Nacional Argentina - Art. 39, 40, 52, 53, 59, 61, 75 y 99</li>
+          <li class="has-text-black"><a href="https://www.cippec.org/especial/votoinformado-oficialcne/" target="_blank">Plataforma Voto Informado</a>, elaborada por CIPPEC en base a información provista por la Cámara Nacional Electoral.</li>
+          <li class="has-text-black">La participación electoral histórica se calculó con datos obtenidos de la Cámara Nacional Electoral, compilados por Carolina Ramos <a href="https://twitter.com/Carito_Ramos" target="_blank">https://twitter.com/Carito_Ramos</a></li>
+          <li class="has-text-black">Ley de Financiamiento de Partidos Políticos - <a href="http://servicios.infoleg.gob.ar/infolegInternet/anexos/120000-124999/124231/texact.htm" target="_blank">Ley 26.215</a></li>
         </ul>
       </section>
     </section>
