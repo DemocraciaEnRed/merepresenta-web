@@ -78,7 +78,7 @@
 						<a href="/metodologias" on:click={() => openNav = !openNav}>Metodología</a>
 					</li>
 					<li class:active={path.includes('/acerca-de')} >
-						<a href="/acerca-de" on:click={() => openNav = !openNav}>Aceca de</a>
+						<a href="/acerca-de" on:click={() => openNav = !openNav}>Acerca de</a>
 					</li>
 				</ul>
 			</div>
