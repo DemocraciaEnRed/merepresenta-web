@@ -162,7 +162,7 @@
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="JUEGOS" >
             <div>
-                <Dropdown class="has-text-black" fontSizeTitle="is-size-4" name="Compás Político">
+                <Dropdown class="has-text-black" fontSizeTitle="is-size-5" name="Compás Político">
                     <div>
                         <p>El compás político es un juego basado en el <a href="https://www.politicalcompass.org/" target="_blank">Political Compass</a>, un test que te “encuadra” ideológicamente en base a pocas preguntas. Entre otra de nuestras referencias, principales se encuentra el <a href="https://www.theguardian.com/world/ng-interactive/2018/nov/21/how-populist-are-you-quiz?s=08" target="_blank">How Populist Are You?</a> (¿Cuán Populista Sos?) publicado por The Guardian en 2018. También, consultamos el <a href="https://www.idrlabs.com/es/coordenadas-politicas/prueba.php" target="_blank">Test de Coordenadas Políticas desarrollado por IDRLabs. </a>
                         </p>
@@ -279,7 +279,7 @@
                         
                     </div>
                 </Dropdown>
-                <Dropdown class="has-text-black" fontSizeTitle="is-size-4" name="Trivia">
+                <Dropdown class="has-text-black" fontSizeTitle="is-size-5" name="Trivia">
                     <div>
                        
                         <p>Reutilizamos una trivia que hicimos junto al Directorio Legislativo en 2019 para sus 20 años. La actualizamos, le agregamos preguntas. 
