@@ -56,8 +56,7 @@
           <h1 class="general-sans is-size-4 is-size-5-touch has-text-black" >Leé las distintas propuestas sobre <span class="has-text-weight-bold" style="color: {tema.color}">{tema.name}</span> de cada partido según tu distrito </h1>
           {#if tema.diagnostico}
           <div class="content general-sans mt-2">
-            <p>Si querés saber sobre el estado actual de Salud en la Argentina descargá nuestra sheet:</p>
-            <p><a href="{directusImg}{tema.diagnostico}?download" class="has-text-black has-text-weight-semibold is-uppercase"><i class="fas fa-download"></i>&nbsp;Descargar sheet</a></p>
+            <p><a href="{directusImg}{tema.diagnostico}?download" class="has-text-black has-text-weight-semibold is-uppercase"><i class="fas fa-download"></i>&nbsp Descargá nuestra hoja de diagnóstico</a></p>
           </div>
           {/if}
         </div>
