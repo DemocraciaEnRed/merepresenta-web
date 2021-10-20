@@ -252,11 +252,11 @@
       <section class="my-6">
         <h3 class="mt-6 mb-3 has-text-black">Fuentes</h3>
         <ul class="ml-3  has-text-black">
-          <li class="has-text-black">Cámara Nacional Electoral - <a href=" electoral.gob.ar" target="_blank">electoral.gob.ar</a> </li>
-          <li class="has-text-black">Dirección Nacional Electoral - <a href="argentina.gob.ar/dine" target="_blank">argentina.gob.ar/dine</a> </li> 
-          <li class="has-text-black">Congreso de la Nación Argentina - <a href="congreso.gob.ar" target="_blank">congreso.gob.ar</a></li>
-          <li class="has-text-black">Senado de la Nación Argentina - www.senado.gob.ar</li>
-          <li class="has-text-black">Cámara de Diputados de la Nación Argentina - <a href="www.hcdn.gob.ar" target="_blank">www.hcdn.gob.ar</a></li>
+          <li class="has-text-black">Cámara Nacional Electoral - <a href="https://www.electoral.gob.ar/nuevo/index.php" target="_blank">electoral.gob.ar</a> </li>
+          <li class="has-text-black">Dirección Nacional Electoral - <a href="https://www.argentina.gob.ar/interior/dine" target="_blank">argentina.gob.ar/dine</a> </li> 
+          <li class="has-text-black">Congreso de la Nación Argentina - <a href="https://www.congreso.gob.ar/" target="_blank">congreso.gob.ar</a></li>
+          <li class="has-text-black">Senado de la Nación Argentina - <a href="https://www.senado.gob.ar/" target="_blank">www.senado.gob.ar</a></li>
+          <li class="has-text-black">Cámara de Diputados de la Nación Argentina - <a href="https://www.hcdn.gob.ar/" target="_blank">www.hcdn.gob.ar</a></li>
           <li class="has-text-black">Constitución Nacional Argentina - Art. 39, 40, 52, 53, 59, 61, 75 y 99</li>
           <li class="has-text-black"><a href="https://www.cippec.org/especial/votoinformado-oficialcne/" target="_blank">Plataforma Voto Informado</a>, elaborada por CIPPEC en base a información provista por la Cámara Nacional Electoral.</li>
           <li class="has-text-black">La participación electoral histórica se calculó con datos obtenidos de la Cámara Nacional Electoral, compilados por Carolina Ramos <a href="https://twitter.com/Carito_Ramos" target="_blank">https://twitter.com/Carito_Ramos</a></li>
