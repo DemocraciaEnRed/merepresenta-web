@@ -8,9 +8,13 @@
 						<h1 class="title is-3 is-size-4-touch has-text-centered has-text-left-touch has-text-white mb-6">
 							Acerca de
 						</h1>
-						<h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal ">
-							<strong>REPRESENTAR</strong> es <strong>personificar</strong>, es “actuar en nombre de”. En política, REPRESENTAR tiene que ver con exponer <strong>deseos, solidaridades, intereses</strong> y necesidades de una sociedad. En este 2021, vamos a votar <strong>representantes para el Congreso Nacional.</strong> <br class="mb-4">
-                            <strong>Las elecciones no son concursos de popularidad, se tratan de dar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero también es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. <br class="mb-4">
+						<h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal mb-4">
+							<strong>REPRESENTAR</strong> es <strong>personificar</strong>, es “actuar en nombre de”. En política, REPRESENTAR tiene que ver con exponer <strong>deseos, solidaridades, intereses</strong> y necesidades de una sociedad. En este 2021, vamos a votar <strong>representantes para el Congreso Nacional.</strong> 
+                        </h2>
+                        <h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal mb-4">
+                            <strong>Las elecciones no son concursos de popularidad, se tratan de dar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero también es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. 
+                        </h2>
+                        <h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal mb-4">
                             Porque si <strong>tus representantes van a representarte</strong>, te tienen que explicar <strong>quiénes son y qué han hecho</strong>. Si van a actuar en tu nombre, te tienen que explicar <strong>qué quieren hacer y cómo.</strong> 
 						</h2>
 					</div>
@@ -23,8 +27,10 @@
             <h1 class="title is-3 is-size-4-touch  mb-6 has-text-black">
                 ¿Quiénes somos?
             </h1>
+            <p class=" is-3 mb-4 has-text-left  has-text-black">
+                Somos organizaciones de la sociedad civil que nos unimos para crear <strong>#MeRepresenta</strong>, una plataforma simple, atractiva e interactiva donde la ciudadanía pueda informarse sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general.
+            </p>
             <p class=" is-3  has-text-left  has-text-black">
-                Somos organizaciones de la sociedad civil que nos unimos para crear <strong>#MeRepresenta</strong>, una plataforma simple, atractiva e interactiva donde la ciudadanía pueda informarse sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. <br class="mb-3">
                 <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
             </p>
             <div class="is-flex is-align-items-center py-3 is-flex-wrap-wrap is-justify-content-space-between">
@@ -109,7 +115,7 @@
             <p class="mb-4">
                 Este  sitio fue hecho por mucha gente. La gran mayoría, personas que pusieron su compromiso, profesionalismo y esfuerzo sólo a cambio de este “gracias”. 
             </p>
-            <p>
+            <p class="mb-4">
                 A Guada y Juani, del Observatorio de Redes, surcaron horizontes llenos de datos, los delimitaron, los estructuraron y los vincularon con el repositorio de <a href="https://politicosentwitter.com/" target="_blank">Politcxs en Twitter</a> ;) 
             </p>
             <p class="mb-4">
