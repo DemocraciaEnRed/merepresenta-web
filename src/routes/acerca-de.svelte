@@ -44,6 +44,9 @@
                 <img class="mx-3 my-auto" width=150 src="/logo-conocimiento-abierto.png" alt="Logo de Conocimiento Abierto">
                 <img class="mx-3 my-auto" width=150 src="/logo-eco-house.png" alt="Logo de Eco House">
                 <img class="mx-3 my-auto mx-2" width=150 src="/logo-directorio-leslativo.png" alt="Logo de Directorio Legislativo">
+                <img class="mx-3" src="/logo-fundeps.png" alt="Logo de Fundeps" width=200>
+                <img class="mx-3" src="/logo-redaccion.png" alt="Logo de REDACCIÓN" width=200>
+                <img class="mx-3" src="/logo-nuestra-mendoza.png" alt="Logo de Nuestra Mendoza" width=200>
                 <img class="mx-3" src="/logo-der-negro.svg" alt="Logo de Democracia en Red" width=200>
             </div>
         </div>
