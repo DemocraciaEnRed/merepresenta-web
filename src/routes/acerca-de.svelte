@@ -33,7 +33,7 @@
             <p class=" is-3  has-text-left  has-text-black">
                 <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
             </p>
-            <div class="is-flex is-align-items-center py-3 is-flex-wrap-wrap is-justify-content-space-between">
+            <div class="is-flex-tablet is-align-items-center py-3 is-flex-wrap-wrap has-text-centered is-justify-content-space-between ">
                 <img width=150 src="/logo-poder-ciudadano.png" class="mx-3" alt="Logo de Poder Ciudadano">
                 <img class="my-auto mx-3" width=150 src="/logo-cippec.png" alt="Logo de CIPPEC">
                 <object class="mx-3" type="image/svg+xml" data="/logo-observatorio-de-redes.svg" title="Logo de Observatorio de Redes"/>
