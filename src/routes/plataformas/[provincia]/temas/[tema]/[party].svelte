@@ -13,7 +13,6 @@
   import HeaderPP from './_header.svelte';
   export let party
   let partido = party[0];
-  //la vaca
   let tema = partido.ejes[0].ejes_id;
 </script>
 <div class="section py-5">
@@ -41,9 +40,10 @@
       <div class="column has-text-centered-touch">
         <div class="topic-content p-4">
           <h1 class="m-0 is-size-3 is-size-5-touch has-text-black has-text-weight-medium is-uppercase" > Propuestas de <span style="color:{tema.color}">{tema.name}</span> de {partido.name}</h1>
-          <div class="header-propuestas-resumen general-sans">
+          <div class="mb-3 header-propuestas-resumen general-sans">
             <p class="has-text-black mt-3">{partido.ejes[0].summary}</p>
           </div>
+          <a href="{partido.url_fuente}" target="_blank" class="is-uppercase has-text-black has-text-weight-semibold"><u>fuente oficial</u></a>
         </div>
       </div>
     </div>
