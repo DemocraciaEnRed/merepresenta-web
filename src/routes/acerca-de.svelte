@@ -1,3 +1,6 @@
+<script>
+    import {logosAcercaDe} from '$lib/common/utils';
+</script>
 <main>
     <div class="hero is-black is-halfheight tetris-background">
 		<div class="hero-body">
@@ -33,21 +36,15 @@
             <p class=" is-3  has-text-left  has-text-black">
                 <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
             </p>
-            <div class="is-flex-tablet is-align-items-center py-3 is-flex-wrap-wrap has-text-centered is-justify-content-space-between ">
-                <img width=150 src="/logo-poder-ciudadano.png" class="mx-3" alt="Logo de Poder Ciudadano">
-                <img class="my-auto mx-3" width=150 src="/logo-cippec.png" alt="Logo de CIPPEC">
-                <object class="mx-3" type="image/svg+xml" data="/logo-observatorio-de-redes.svg" title="Logo de Observatorio de Redes"/>
-                <img class="mx-3 my-auto" width=200 src="/logo-accion-colectiva.png" alt="Logo de Acción Colectiva">
-                <img class="mx-3 my-auto" width=200 src="/logo-acij.png" alt="Logo de ACIJ">
-                <img class="mx-3 my-auto" width=200 src="/logo-nuestra-cordoba.png" alt="Logo de Nuestra Córdoba">
-                <img class="mx-3 my-auto" width=150 src="/logo-eco-feminita.png" alt="Logo de Economía Feminita">
-                <img class="mx-3 my-auto" width=150 src="/logo-conocimiento-abierto.png" alt="Logo de Conocimiento Abierto">
-                <img class="mx-3 my-auto" width=150 src="/logo-eco-house.png" alt="Logo de Eco House">
-                <img class="mx-3 my-auto mx-2" width=150 src="/logo-directorio-leslativo.png" alt="Logo de Directorio Legislativo">
-                <img class="mx-3" src="/logo-fundeps.png" alt="Logo de Fundeps" width=200>
-                <img class="mx-3" src="/logo-redaccion.png" alt="Logo de REDACCIÓN" width=200>
-                <img class="mx-3" src="/logo-nuestra-mendoza.png" alt="Logo de Nuestra Mendoza" width=200>
-                <img class="mx-3" src="/logo-der-negro.svg" alt="Logo de Democracia en Red" width=200>
+            <div class="is-flex-tablet is-align-items-center py-3 is-flex-wrap-wrap has-text-centered is-justify-content-space-between is-hidden-mobile">
+                {#each logosAcercaDe as logo}
+                    <img width ={logo.type=='square'? 150: 200} class="mx-3 my-auto" src={`/${logo.src}`} alt={`Logo de ${logo.alt}`}/>
+                {/each}
+            </div>
+            <div class="py-3 mx-3 columns is-mobile is-flex-wrap-wrap is-hidden-tablet">
+                {#each logosAcercaDe as logo}
+                    <img width=auto class="column is-half my-auto" src={`/${logo.src}`} alt={`Logo de ${logo.alt}`}/>
+                {/each}
             </div>
         </div>
         <div class="container py-4 px-2">

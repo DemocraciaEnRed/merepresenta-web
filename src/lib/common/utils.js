@@ -41,6 +41,24 @@ export const ProvinciasSlugs = [
 	{		"name": "Extranjero/a",		"slug": "extranjero"	}
 ]
 
+export const logosAcercaDe =[
+ 
+  {"alt": "Poder Ciudadano",   "src":"./logos/logo-poder-ciudadano.png", "type":"horizontal"},
+  {"alt": "CIPPEC",   "src":"./logos/logo-cippec.png", "type":"horizontal"},
+  {"alt": "Observatorio de Redes",   "src":"./logos/logo-observatorio-de-redes.png", "type":"horizontal"},
+  {"alt": "Acción Colectiva",   "src":"./logos/logo-accion-colectiva.png", "type":"horizontal"},
+  {"alt": "ACIJ",   "src":"./logos/logo-acij.png", "type":"horizontal"},
+  {"alt": "Nuestra Córdoba",   "src":"./logos/logo-nuestra-cordoba.png", "type":"horizontal"},
+  {"alt": "Economía Feminita",   "src":"./logos/logo-eco-feminita.png" , "type":"square"},
+  {"alt": "Conocimiento Abierto",   "src":"./logos/logo-conocimiento-abierto.png", "type":"horizontal"},
+  {"alt": "Eco House",   "src":"./logos/logo-eco-house.png", "type":"square"},
+  {"alt": "Directorio Legislativo",   "src":"./logos/logo-directorio-leslativo.png", "type":"square"},
+  {"alt": "Fundeps",   "src":"./logos/logo-fundeps.png", "type":"horizontal"},
+  {"alt": "REDACCIÓN",   "src":"./logos/logo-redaccion.png"},
+  {"alt": "Nuestra Mendoza",   "src":"./logos/logo-nuestra-mendoza.png", "type":"square"},
+  {"alt": "Democracia en Red",   "src":"./logos/logo-der-negro.svg", "type":"horizontal"}
+]
+
 export const directusImg = 'https://content.merepresenta.info/assets/'
 
 /**
