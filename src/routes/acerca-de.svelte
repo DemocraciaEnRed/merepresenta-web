@@ -155,9 +155,6 @@
     </section>
 </main>
 <style>
-    .logo-mere{
-        filter: invert(42%) sepia(93%) saturate(0%) hue-rotate(87deg) brightness(0%) contrast(119%);
-    }
     strong{
         font-weight: 500;
     }
