@@ -10,7 +10,7 @@
         <section class="container p-4 has-text-centered">
             <div >
                 <Game  background='games/juego1.png' title="TRIVIA" subtitle="Juego de preguntas y respuestas" url={"https://trivia.merepresenta.info/"} textColor="white" />
-                <Game delay={'delay'}  background='games/juego2.png' title="COMPÁS POLÍTICO" subtitle="PRÓXIMAMENTE" url={"#"} textColor="black"/>
+                <Game delay={'delay'}  background='games/juego2.png' title="COMPÁS POLÍTICO" subtitle="¿Cuál es tu ideología?" url={"https://compaspolitico.merepresenta.info/"} textColor="black"/>
             </div>
         </section>
     </div>
