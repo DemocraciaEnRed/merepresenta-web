@@ -30,19 +30,19 @@
 		</div>
 	</div>
 </div>
-<div class="section">
+<div class="section temas">
   <div class="container mb-6">
     <div class="columns is-centered">
       <div class="column is-8">
         <h1 class="title is-2 is-size-4-touch has-text-centered has-text-black" >Ingresá por tema y enterate que proponen los partidos para cada uno</h1>
       </div>
     </div>
-    <div class="columns is-centered is-multiline is-mobile mt-6">
+    <div class="columns is-variable is-1-mobile is-centered is-multiline is-mobile mt-6">
       {#each temas as tema}
         <a class="column is-half-mobile is-one-quarter-tablet has-text-centered" href="{$page.path}/{tema.slug}">
           <div class="topic-container" style="background-color: {tema.color};">
             <img src="{directusImg}{tema.icon_file.id}" class="icon-topic"  alt="icono de {tema.name}"/>
-            <h1 class="has-background-black has-text-weight-medium is-uppercase py-3 is-size-5" style="color:{tema.color}">
+            <h1 class="has-background-black has-text-weight-medium is-uppercase py-3 is-size-5 is-size-6-mobile" style="color:{tema.color}">
               {tema.name}
             </h1>
           </div>
@@ -78,5 +78,14 @@
     height: 125px;
     /* margin-bottom: 10px; */
     margin: 30px
+  }
+  @media screen and (max-width: 768px){
+    .icon-topic{
+    width: 90px;
+    }
+    .section.temas{
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
   }
   </style>
