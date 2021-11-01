@@ -12,7 +12,16 @@
 	import { page } from "$app/stores";
 	import { directusImg, ProvinciasSlugs } from "$lib/common/utils";
 	export let temas;
+	
+  window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+	mf.src = "//cdn.mouseflow.com/projects/		498ed5ba-1b7d-4d3f-9fa5-796ff663a216.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
 </script>
+
 <svelte:head>
 	<!-- <title>Home</title> -->
 </svelte:head>
