@@ -24,7 +24,7 @@
                 
                 </div>
                 <div class="column is-12">
-                    <Game delay={'delay'} background='games/juego2.png' title="Juego de la oca" subtitle="*incluye tablero y caja para imprimir, e instrucciones de uso" url={"https://drive.google.com/drive/folders/1u26igX-aGzXn9CnU1tJ5JI35S8SUKZ1t"} textColor="black"/>
+                    <Game delay={'delay'} background='games/oca.png' title="Juego de la oca" subtitle="*incluye tablero y caja para imprimir, e instrucciones de uso" url={"https://drive.google.com/drive/folders/1u26igX-aGzXn9CnU1tJ5JI35S8SUKZ1t"} textColor="white"/>
                 </div>
             </div>
         </section>
