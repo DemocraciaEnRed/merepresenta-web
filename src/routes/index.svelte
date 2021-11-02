@@ -7,31 +7,16 @@
 	}
   </script>
 <script>
-	import Hero from '$lib/header/Hero.svelte'
 	import { loop_guard, space } from 'svelte/internal';
 	import { page } from "$app/stores";
 	import { directusImg, ProvinciasSlugs } from "$lib/common/utils";
 	export let temas;
-	
-  window._mfq = window._mfq || [];
-  (function() {
-    var mf = document.createElement("script");
-    mf.type = "text/javascript"; mf.defer = true;
-	mf.src = "//cdn.mouseflow.com/projects/		498ed5ba-1b7d-4d3f-9fa5-796ff663a216.js";
-    document.getElementsByTagName("head")[0].appendChild(mf);
-  })();
 </script>
 
 <svelte:head>
 	<!-- <title>Home</title> -->
 </svelte:head>
 <main>
-	<!-- <Hero 
-		title="una herramienta para pensar tu voto"
-		image="/logo-merepresenta.svg"
-		imgAlt="logo me representa"
-		subtitle="Conocé candidaturas, partidos, propuestas y mucho más."
-	/> -->
 	<div class="hero is-black is-halfheight tetris-background">
 		<div class="hero-body">
 			<div class="container">

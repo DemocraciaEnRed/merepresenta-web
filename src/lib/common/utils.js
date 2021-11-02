@@ -56,7 +56,8 @@ export const logosAcercaDe =[
   {"alt": "Fundeps",   "src":"./logos/logo-fundeps.png", "type":"horizontal"},
   {"alt": "REDACCIÓN",   "src":"./logos/logo-redaccion.png"},
   {"alt": "Nuestra Mendoza",   "src":"./logos/logo-nuestra-mendoza.png", "type":"square"},
-  {"alt": "Democracia en Red",   "src":"./logos/logo-der-negro.svg", "type":"horizontal"}
+  {"alt": "Democracia en Red",   "src":"./logos/logo-der-negro.svg", "type":"horizontal"},
+  {"alt": "Sistema B",   "src":"./logos/logo-sistema-b.png", "type":"square"}
 ]
 
 export const directusImg = 'https://content.merepresenta.info/assets/'
