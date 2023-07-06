@@ -1,4 +1,13 @@
 # Me representa WebApp
+
+## Setup
+
+install dependencies with `setup.sh` script:
+
+```bash
+./setup.sh
+```
+
 ## Developing
 
 install dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
