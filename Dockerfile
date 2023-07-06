@@ -1,24 +1,8 @@
-FROM mhart/alpine-node:14
+FROM nginx
 
-# install dependencies
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY src/index.html /usr/share/nginx/html/
+COPY static /usr/share/nginx/html/
 
-# Copy all local files into the image.
-COPY . .
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN npm run build
-
-###
-# Only copy over the Node pieces we need
-# ~> Saves 35MB
-###
-FROM mhart/alpine-node:slim-14
-
-WORKDIR /app
-COPY --from=0 /app .
-COPY . .
-
-EXPOSE 3000
-CMD ["node", "./build"]
+EXPOSE 80
