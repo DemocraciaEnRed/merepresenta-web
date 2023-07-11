@@ -13,8 +13,8 @@
     </section>
     <section class="container px-2 py-6 has-text-black">
         <div class="has-text-black intro-metodologia">
-            <div>
-                <h2 class="has-text-weight-semibold	 px-2 py-4 is-uppercase has-background-black has-text-white">Metodología</h2>
+            <div class="has-background-black">
+                <h2 class="has-text-weight-semibold	 px-2 py-4 is-uppercase  has-text-white">Metodología</h2>
             </div>
             <div class="has-background-white pb-5 pt-2 px-2">
                 <p class="mb-4">#MeRepresenta se propone como un sitio único que sistematiza y compila información útil para quien vote en las Elecciones Generales de 2021.</p> 
@@ -301,6 +301,16 @@
 </main>
 <style>
     .intro-metodologia{
-        border: 2px solid #000
+        border: 2px solid #000;
+        border-radius: 20px;
+        
+    }
+    .intro-metodologia > div:first-child{
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+    .intro-metodologia > div:last-child{
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 </style>

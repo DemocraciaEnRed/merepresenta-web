@@ -12,39 +12,42 @@
 	
 </script>
 <header id="the-header" class="has-background-black m-0 is-hidden-touch">
-	<div class="container py-5">
-		<img src="/logo-merepresenta.svg" class="image mx-auto p-4 mb-5" alt="">
-		<nav class="level">
+	<div class="is-flex is-justify-content-space-between py-4">
+		<img src="/logo-merepresenta.svg" width="240" class="image mx-1 p-4 " alt="">
+		<nav class="level is-flex-grow-1">
 			<p class="level-item has-text-centered" class:active={path==="/"}>
-				<a class="has-text-white" href="/">Inicio</a>
-			</p>
-			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidates')}>
-				<a class="has-text-white" href="/partidos-y-candidates/{provincia}">Partidos y candidaturas</a>
+				<a class="has-text-white link-styled py-1 px-2" href="/">Inicio</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/plataformas')}>
-				<a class="has-text-white" href="/plataformas/{provincia}">Propuestas</a>
+				<a class="has-text-white link-styled py-1 px-2" href="/plataformas/{provincia}">Propuestas</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidates')}>
+				<a class="has-text-white link-styled py-1 px-2" href="/partidos-y-candidates/{provincia}">Partidos y candidaturas</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/abc-electoral')}>
-				<a class="has-text-white" href="/abc-electoral">Abc Electoral</a>
+				<a class="has-text-white link-styled py-1 px-2" href="/abc-electoral">Abc Electoral</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/juegos')}>
-				<a class="has-text-white" href="/juegos">Juegos</a>
+				<a class="has-text-white link-styled py-1 px-2" href="/juegos">Juegos</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/metodologias')}>
-				<a class="has-text-white" href="/metodologias">Metodología</a>
+				<a class="has-text-white link-styled py-1 px-2" href="/metodologias">Metodología</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/acerca-de')}>
-				<a class="has-text-white" href="/acerca-de">Acerca de</a>
+				<a class="has-text-white link-styled py-1 px-2" href="/acerca-de">Acerca de</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/financiamiento')}>
+				<a class="has-text-white link-styled py-1 px-2" href="/financiamiento">financiamiento</a>
 			</p>
 		</nav>
 	</div>
 </header>
 <header id="mobile-header" class="has-background-black p-4 is-hidden-desktop">
-	<div class="is-flex is-flex-direction-row is-align-items-center">
-		<a href on:click={() => openNav = !openNav}><i class="fas fa-bars fa-lg fa-fw has-text-white"></i></a>
+	<div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between">
 		<a href="/">
 			<img src="/logo-merepresenta.svg" class="image mx-4" width="180" alt="">
 		</a>
+		<a href on:click={() => openNav = !openNav}><i class="fas fa-bars fa-lg fa-fw has-text-white"></i></a>
 		
 	</div>
 		
@@ -62,11 +65,11 @@
 					<li class:active={path==="/"} >
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
 					</li>
-					<li class:active={path.includes('/partidos-y-candidates')}>
-						<a href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
-					</li>
 					<li class:active={path.includes('/plataformas')}>
 						<a href="/plataformas/{provincia}" on:click={() => openNav = !openNav}>Propuestas</a>
+					</li>
+					<li class:active={path.includes('/partidos-y-candidates')}>
+						<a href="/partidos-y-candidates/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
 					</li>
 					<li class:active={path.includes('/abc-electoral')}>
 						<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>
@@ -80,6 +83,9 @@
 					<li class:active={path.includes('/acerca-de')} >
 						<a href="/acerca-de" on:click={() => openNav = !openNav}>Acerca de</a>
 					</li>
+					<li class:active={path.includes('/financiamiento')} >
+						<a href="/financiamiento" on:click={() => openNav = !openNav}>Acerca de</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -92,6 +98,13 @@
 }
 #the-header .level-item a {
 	text-transform: uppercase;
+	font-size: 0.8rem;
+	border: 2px solid transparet
+}
+#the-header .level-item a:hover{
+	border-radius: 500px;
+	border-color: #fff;
+	
 }
 #mobile-header{
 	position:sticky;

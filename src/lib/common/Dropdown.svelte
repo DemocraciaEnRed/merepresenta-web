@@ -13,12 +13,12 @@
 
 </script>
 <div class="drop my-2" style="border-color: {color};">
-  <div class="the-drop-header has-background-{backgroundHeaderColor}" on:click={()=>isOpen = !isOpen}>
+  <div class="the-drop-header {!isOpen ? 'border-radius' : ''} has-background-{backgroundHeaderColor}" on:click={()=>isOpen = !isOpen}>
     <h2 class="{fontSizeTitle}" style="color: {color}" >{@html name}</h2>
     <span style="color:{color}"><Icon icon={iconClass} /></span>
   </div>
   {#if isOpen}
-    <div class="{borderSolid} px-2 pt-2 content has-background-white pb-5" transition:slide>
+    <div class="{borderSolid} the-drop-content px-2 pt-2  content has-background-white pb-5" transition:slide>
       <slot/>
     </div>
   {/if}
@@ -31,8 +31,18 @@
     margin-top: -1px;
   }
   .the-drop-header{
-    padding: 30px 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 25px 10px;
     cursor: pointer;
+  }
+  .border-radius{
+    border-radius: 20px!important;
+    transition-delay: .3s;
+  }
+  .the-drop-content{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
   h2{
     font-weight: 500;

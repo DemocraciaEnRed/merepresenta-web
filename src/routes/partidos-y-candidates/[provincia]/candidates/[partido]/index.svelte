@@ -15,6 +15,7 @@
   import { onMount } from 'svelte';
   import { page } from "$app/stores";
   import { CandidateImg, directusImg, ProvinciasSlugs, PartyImg } from '$lib/common/utils';
+	import CandidateCard from '$lib/common/candidate-card.svelte';
   // let Carousel; // for saving Carousel component class
   // let carouselRef; // for calling methods of carousel instance
   
@@ -73,25 +74,7 @@
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Se postulan</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each candidates as candidate}
-      <div class="column is-half-mobile is-one-third-tablet is-3-desktop is-2-widescreen has-text-centered">
-        <div class="candidate-container">
-          <div class="candidate-position">
-            <span class="is-size-5 general-sans has-text-black has-text-weight-bold">{candidate.position}°</span>
-          </div>
-          <a href="{$page.path}/candidate/{candidate.id}">
-            <figure class="image is-square candidate-img" 
-            style="background-image: url({CandidateImg(candidate)})">
-          </figure>
-        </a>
-        <div class="candidate-content is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center p-3">
-          <p class="candidate-name is-size-6 has-text-weight-bold has-text-black is-uppercase general-sans has-text-weight-semibold">{candidate.name}</p>
-          <p class="has-text-black is-size-7">Candidat{candidate.genre === 'm' ? 'o': 'a' } a <br>
-            <span class="general-sans is-size-6 has-text-weight-semibold">{candidate.cargo}</span></p>
-            <a href="{$page.path}/candidate/{candidate.id}" class="button is-outlined is-fullwidth is-active has-text-black has-text-weight-semibold">VER MÁS</a>
-          </div>
-        </div>
-        
-      </div>
+      <CandidateCard candidate={candidate}/>
     {/each}
     </div>
   </div>
@@ -163,37 +146,7 @@
       border-left: 10px solid #000;
     }
   }
-  .candidate-img{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border: 1px solid black;
-    border-bottom: 0;
-    background-color: rgb(243, 243, 243);
-  }
-  .candidate-container{ 
-    position: relative;
-  }
-  .candidate-position{
-    position:absolute;
-    top: 1px;
-    left: 1px;
-    z-index: 10;
-    background-color: #FFF;
-    padding: 5px 10px;
-    border-bottom-right-radius: 5px;;
-    border-right:1px solid black;
-    border-bottom:1px solid black;
-  }
-  .candidate-content{
-    border: 1px solid black;
-    background-color: #FFF;
-    border-top: 0;
-    height: 220px;
-  }
-  .candidate-name{
-    line-height: normal;
-  }
+
   h1{
     font-weight: 400;
   }

@@ -42,6 +42,7 @@ export function getCandidates (id){
       distrito_nacional {
         id
         name
+        slug
       }
     }
   }
@@ -62,6 +63,39 @@ export function getCandidatesByParty (partyId){
       partido {
         id
         name
+      }
+      distrito_nacional {
+        id
+        name
+        slug
+      }
+    }
+  }`)
+}
+
+export function getCandidatesByCargo ({cargo,district}){
+  return(`
+  {
+    candidato(filter:{cargo:{_eq:"${cargo}"},distrito_nacional:{id:{_eq :${Number(district)}}}}){
+      name
+      cargo
+      genre
+      id
+      position
+      avatar {
+        id
+      }
+      partido {
+        id
+        name
+        logo{
+          id
+        }
+        district {
+          id
+          name
+          slug
+        }
       }
     }
   }`)

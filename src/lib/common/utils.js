@@ -364,3 +364,18 @@ export class Solver {
     return `filter: invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%);`;
   }
 }
+export const getRandomItems = (array) => {
+  var longitud = array.length;
+  var randomItems = [];
+
+  while (randomItems.length < 4) {
+    var randomIndex = Math.floor(Math.random() * longitud);
+    var randomItem = array[randomIndex];
+
+    if (!randomItems.includes(randomItem)) {
+      randomItems.push(randomItem);
+    }
+  }
+
+  return randomItems;
+}
