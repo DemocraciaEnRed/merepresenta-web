@@ -26,6 +26,9 @@
   import { CandidateImg, directusImg, ProvinciasSlugs } from "$lib/common/utils";
 	import CandidateCard from '$lib/common/candidate-card.svelte';
 	import { getRandomItems } from '$lib/common/utils';
+	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
+	import SelectParty from '$lib/common/selectParty.svelte';
+	import SelectCandidate from "$lib/common/selectCandidate.svelte";
   
   export let candidate;
   export let otherCandidates;
@@ -64,6 +67,11 @@
     </div>
   </div>
 <div class="section tetris-background">
+  <div class="is-flex is-justify-content-center is-flex-wrap-wrap select-section mb-6">
+    <SelectDistrict/>
+    <SelectParty />
+    <SelectCandidate />
+  </div>
   <div class="container">
     <About {candidate} open={true}/>
     <br>
@@ -124,7 +132,7 @@
       /* background-attachment: fixed; */
     }
 @media screen and (max-width: 1023px) {
-    .candidate-logo{
+     .candidate-logo{
       width: auto;
       max-height: 200px;
     }

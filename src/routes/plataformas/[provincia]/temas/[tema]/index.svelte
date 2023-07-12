@@ -23,7 +23,6 @@
 <script>
   import ProposalsByParty from './_party-pp.svelte'
   import HeaderPP from './_header.svelte';
-  import SelectDistrict from '$lib/common/SelectDistrict.svelte';
   export let partidos;
   export let tema;
 </script>

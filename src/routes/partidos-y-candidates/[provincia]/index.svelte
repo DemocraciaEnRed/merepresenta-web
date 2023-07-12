@@ -20,6 +20,9 @@
         <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-black" style="font-weight: 400!important;" >Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</h1>
       </div>
     </div>
+    <div class="is-flex is-justify-content-center is-flex-wrap-wrap select-section mb-6">
+      <SelectDistrict/>
+    </div>
     <div class="box has-background-black my-6 py-6">
       <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-white" style="font-weight: 500!important;" >¿Querés saber cómo votó cada partido en las últimas leyes?</h1>
       <div class="buttons is-centered">

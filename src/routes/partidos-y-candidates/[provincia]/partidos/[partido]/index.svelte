@@ -12,6 +12,8 @@
   import { directusImg, PartyImg, ProvinciasSlugs, Color, Solver, hexToRgb } from '$lib/common/utils';
   import { onMount,beforeUpdate, afterUpdate } from 'svelte';
   import Proposal from './_proposal.svelte';
+	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
+	import SelectParty from '$lib/common/selectParty.svelte';
   export let partidos;
   let partido = partidos[0]
   let svgLoad;
@@ -69,6 +71,10 @@
 </div>
 <!-- <div class="section tetris-background"> -->
   <div class="section has-white-background">
+    <div class="is-flex is-justify-content-center is-flex-wrap-wrap select-section mb-6">
+      <SelectDistrict/>
+      <SelectParty />
+    </div>
   <div class="container">
     {#if partido.ejes.length}
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Les interesa</h1>

@@ -16,12 +16,14 @@
   import { page } from "$app/stores";
   import { CandidateImg, directusImg, ProvinciasSlugs, PartyImg } from '$lib/common/utils';
 	import CandidateCard from '$lib/common/candidate-card.svelte';
+	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
+	import SelectParty from '$lib/common/selectParty.svelte';
   // let Carousel; // for saving Carousel component class
   // let carouselRef; // for calling methods of carousel instance
   
   export let candidates
   export let partido;
-
+  
   const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
   
   //Initialize carousel
@@ -70,6 +72,10 @@
   </div>
 </div>
 <div class="section tetris-background">
+  <div class="is-flex is-justify-content-center is-flex-wrap-wrap select-section mb-6">
+    <SelectDistrict/>
+    <SelectParty />
+  </div>
   <div class="container">
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Se postulan</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">

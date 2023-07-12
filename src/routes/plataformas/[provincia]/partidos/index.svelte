@@ -8,7 +8,6 @@
 </script>
 <script>
   import { page } from "$app/stores";
-  import SelectDistrict from "$lib/common/SelectDistrict.svelte";
   import { PartyImg, ProvinciasSlugs } from "$lib/common/utils";
   /**
     * @type {Party[]}
