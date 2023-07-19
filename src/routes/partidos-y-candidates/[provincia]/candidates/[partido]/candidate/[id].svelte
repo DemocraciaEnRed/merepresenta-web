@@ -5,6 +5,7 @@
     const res = await API(fetch, getCandidates(page.params.id));
     const propsResCandidate = await handleResponse(res, "candidate", "candidato_by_id")
     const res2 = await API(fetch, getCandidatesByCargo({
+      idExcept:page.params.id,
       cargo: propsResCandidate.props.candidate.cargo, 
       district:propsResCandidate.props.candidate.partido.district.id
     }))
@@ -85,7 +86,7 @@
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Conoce a los demás candidatos</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each otherCandidates as candidate}
-      <CandidateCard candidatePage candidate={candidate}/>
+      <CandidateCard createNewPath showParty candidate={candidate}/>
     {/each}
     </div>
   </div>

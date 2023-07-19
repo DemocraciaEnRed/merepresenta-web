@@ -21,7 +21,7 @@
 		let newRoute = `/partidos-y-candidates/${provincia}/candidates/${selected}`;
 		if ($page.path.includes('/partidos/')) {
 			newRoute = `/partidos-y-candidates/${provincia}/partidos/${selected}`;
-			window.location.replace(newRoute)
+			//window.location.replace(newRoute)
 		}
 		
 		goto(newRoute, { replaceState: true });

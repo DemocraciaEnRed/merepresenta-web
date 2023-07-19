@@ -3,12 +3,12 @@
 	import { CandidateImg, directusImg } from '$lib/common/utils';
 
 	export let candidate;
-	export let candidatePage;
+	export let createNewPath;
+	export let showParty;
 	let url;
-
 	const getUrlAccordingToCandidate = () => {
 		url = `${$page.path}/candidate/${candidate.id}`;
-		if (candidatePage) {
+		if (createNewPath) {
 			url = `/partidos-y-candidates/${candidate.partido.district.slug}/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
 		}
 	};
@@ -20,7 +20,7 @@
 >
 	<div class="candidate-container">
 		<div class="candidate-position">
-			{#if candidatePage}
+			{#if showParty}
 				<!-- <figure class="image is-48x48">
 				<img src="{directusImg}/{candidate.partido.logo.id}" class="is-rounded" alt="{candidate.partido.name}"/>
 
@@ -55,7 +55,7 @@
 			</p>
 
 			<a
-				href="{$page.path}/candidate/{candidate.id}"
+				href={url}
 				class="button is-outlined is-fullwidth is-active has-text-black has-text-weight-semibold"
 				>VER MÁS</a
 			>

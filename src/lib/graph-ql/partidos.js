@@ -26,6 +26,11 @@ export function getPartyById (id){
       summary
       url_web
       url_fuente
+      alianzas{
+        related_partido_id{
+          id
+        }
+      }
       district{
         id
       }
@@ -50,6 +55,49 @@ export function getPartyById (id){
     }
   }`)
 }
+
+export function getPartyByIdList (ids){
+  const idsToquery = ids.map(id => `{id:{_eq:${id.related_partido_id.id}}}`)
+  return(`
+  {
+    partido(filter:{ _or : [${idsToquery}]}){
+      id
+      name
+      url_facebook
+      url_instagram
+      url_twitter
+      url_youtube
+      summary
+      url_web
+      url_fuente
+      alianzas{
+        id
+      }
+      district{
+        id
+      }
+      logo{
+        id
+      }
+    	ejes{
+        ejes_id{
+          name
+          slug
+          color
+          icon_file{
+            id
+          }
+        }
+        summary
+        propuestas{
+          id
+          summary
+        }
+      }
+    }
+  }`)
+}
+
 export function getThemeProposalsByParty(tema, provincia){
   return(`
   {

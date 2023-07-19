@@ -38,7 +38,9 @@ export const ProvinciasSlugs = [
 	{		"name": "La Rioja",		"slug": "la-rioja"	},
 	{		"name": "Río Negro",		"slug": "rio-negro"	},
 	{		"name": "Tierra Del Fuego",		"slug": "tierra-del-fuego"	},
-	{		"name": "Extranjero/a",		"slug": "extranjero"	}
+	{		"name": "Extranjero/a",		"slug": "extranjero"	},
+	{		"name": "Nacion",		"slug": "nacion"	},
+  
 ]
 
 export const logosAcercaDe =[
@@ -367,7 +369,7 @@ export class Solver {
 export const getRandomItems = (array) => {
   var longitud = array.length;
   var randomItems = [];
-
+  if(array.length > 4)
   while (randomItems.length < 4) {
     var randomIndex = Math.floor(Math.random() * longitud);
     var randomItem = array[randomIndex];
@@ -376,6 +378,7 @@ export const getRandomItems = (array) => {
       randomItems.push(randomItem);
     }
   }
+  else randomItems = array
 
   return randomItems;
 }

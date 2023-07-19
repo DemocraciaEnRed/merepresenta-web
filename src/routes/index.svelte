@@ -61,13 +61,13 @@
 						</div>
 					</header>
 					<div class="card-image">
-						<img class="image mx-auto card-logo" src="/vote.svg" width="240" alt="" />
+						<img class="image mx-auto card-logo" src="/candidates-link.svg" width="240" alt="" />
 					</div>
 					<footer class="card-foter px-5 pb-5 pt-4">
 						<a
-							href="/abc-electoral"
+							href="/partidos-y-candidates/donde-votas"
 							class="button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
-							>ABC ELECTORAL</a
+							>CANDIDATOS Y CANDIDATAS</a
 						>
 					</footer>
 				</div>

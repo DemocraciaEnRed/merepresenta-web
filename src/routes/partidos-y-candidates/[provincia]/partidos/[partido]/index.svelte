@@ -18,6 +18,15 @@
   let partido = partidos[0]
   let svgLoad;
   let ejesColours = {}
+  
+  // this is for svg loading, necesary to paint them from here
+  onMount(() => {
+    svgLoad = true
+  })
+  afterUpdate(() => {
+    svgLoad = true
+    partido = partidos[0]
+  ejesColours = {}
   if(partido.ejes.length > 0){
     partido.ejes.forEach(eje => {
       const rgb = hexToRgb(eje.ejes_id.color);
@@ -27,12 +36,6 @@
         ejesColours[eje.ejes_id.slug] = result
     });
   }
-  // this is for svg loading, necesary to paint them from here
-  onMount(() => {
-    svgLoad = true
-  })
-  afterUpdate(() => {
-    svgLoad = true
   })
   
 </script>

@@ -1,13 +1,17 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
-  import { getCandidatesByParty } from '$lib/graph-ql/candidates';
-  import { getPartyById } from '$lib/graph-ql/partidos';
+  import { getCandidatesByParty, getCandidatesByPartyList } from '$lib/graph-ql/candidates';
+  import { getPartyById, getPartyByIdList } from '$lib/graph-ql/partidos';
   export async function load({page, fetch}){
     const resOne = await API(fetch, getCandidatesByParty(page.params.partido));
     const resTwo = await API(fetch, getPartyById(page.params.partido));
     const propsOne = await handleResponse(resOne, "candidates", "candidato");
     const propsTwo = await handleResponse(resTwo, "partidos", "partido");
+    const resThree = await API(fetch, getCandidatesByPartyList(propsTwo.props.partidos[0].alianzas))
+    const propsThree = await handleResponse(resThree, "candidates", "candidato");
+    
     propsOne.props.partido = propsTwo.props.partidos[0]
+    propsOne.props.candidatosRelacionados = propsThree.props.candidates
     return await propsOne
   }
 </script>
@@ -23,6 +27,7 @@
   
   export let candidates
   export let partido;
+  export let candidatosRelacionados
   
   const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
   
@@ -77,7 +82,13 @@
     <SelectParty />
   </div>
   <div class="container">
-    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Se postulan</h1>
+    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Candidates presidenciales</h1>
+    <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
+      {#each candidatosRelacionados as candidate}
+      <CandidateCard createNewPath showParty candidate={candidate}/>
+    {/each}
+    </div>
+    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Diputades nacionales</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each candidates as candidate}
       <CandidateCard candidate={candidate}/>
