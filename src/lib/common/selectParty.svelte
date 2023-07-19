@@ -4,16 +4,26 @@
 	import { onMount } from 'svelte';
 	import API, { handleResponse } from '$lib/apiHandler';
 	import { getPartysByDistrict } from '$lib/graph-ql/partidos';
+	export let currentparty
 
 	let partidos = [];
 	let loading = true;
-	onMount(async () => {
-		const res = await API(fetch, getPartysByDistrict($page.params.provincia));
-		const response = await handleResponse(res, 'partidos', 'partido');
-		loading = false;
-		partidos = response.props.partidos;
-	});
-	let selected = $page.params.partido;
+	let selected;
+
+	async function update() {
+
+		setTimeout(async() => {
+			const res = await API(fetch, getPartysByDistrict($page.params.provincia));
+			const response = await handleResponse(res, 'partidos', 'partido');
+			loading = false;
+			partidos = response.props.partidos;
+			selected = $page.params.partido;
+		}, 30);
+
+	}
+
+	$:currentparty, update()
+
 	function go() {
 		const provincia = $page.params.provincia;
 		const partido = $page.params.partido;

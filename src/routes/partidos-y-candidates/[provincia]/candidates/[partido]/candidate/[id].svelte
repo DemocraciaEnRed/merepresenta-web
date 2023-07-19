@@ -41,7 +41,7 @@
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
         <li ><a class="has-text-black" href="/partidos-y-candidates/donde-votas">Partidos y candidatxs</a></li>
-        <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>
+        <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>
         <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}/partidos/{candidate.partido.id}">{candidate.partido.name}</a></li>
         <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}/candidates/{$page.params.partido}">Candidatxs</a></li>
         <li class="is-active"><a href aria-current="page">{candidate.name}</a></li>
@@ -61,7 +61,7 @@
           </div>
           <div class="candidate-content">
             <h1 class="general-sans is-size-2 is-size-4-touch has-text-black has-text-weight-bold is-capitalized my-1 animate__animated animate__backInRight animate__delay-1s" >{candidate.name}</h1>
-            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" >Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {candidate.cargo.toLowerCase()} por {ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</h1>
+            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" >Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {candidate.cargo.toLowerCase()} por {ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</h1>
           </div>
         </div>
       </div>
@@ -70,8 +70,8 @@
 <div class="section tetris-background">
   <div class="is-flex is-justify-content-center is-flex-wrap-wrap select-section mb-6">
     <SelectDistrict/>
-    <SelectParty />
-    <SelectCandidate />
+    <SelectParty currentparty={$page.params.partido}/>
+    <SelectCandidate  currentCandidate={candidate.id}/>
   </div>
   <div class="container">
     <About {candidate} open={true}/>

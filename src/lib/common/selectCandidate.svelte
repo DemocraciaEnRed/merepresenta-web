@@ -1,19 +1,25 @@
 <script>
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import { onMount } from 'svelte';
 	import API, { handleResponse } from '$lib/apiHandler';
 	import { getCandidatesByParty } from '$lib/graph-ql/candidates';
-
+	export let currentCandidate
+	let selected ;
 	let candidatos = [];
 	let loading = true;
-	onMount(async () => {
+
+	async function update() {
+	setTimeout(async() => {
 		const res = await API(fetch, getCandidatesByParty($page.params.partido));
 		const response = await handleResponse(res, 'candidatos', 'candidato');
 		loading = false;
 		candidatos = response.props.candidatos;
-	});
-	let selected = $page.params.candidato;
+		selected = currentCandidate
+	}, 30);
+	}
+
+	$: currentCandidate, update()
+	
 	function go() {
 		const candidato = $page.params.id;
 		const route = $page.path;

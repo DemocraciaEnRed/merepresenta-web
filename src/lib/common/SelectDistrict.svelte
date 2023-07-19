@@ -19,7 +19,7 @@
     goto(newRoute, { replaceState: true });
   }
 </script>
-{#if !loading}
+{#if !loading && selected !== 'nacion'}
 <div class="select is-medium mx-3 is-white">
   <select bind:value={selected} on:change={go} class="has-background-grey-dark has-text-white	has-text-weight-light">
     {#each provincias as provincia}

@@ -1,18 +1,18 @@
 <script>
 	import { page } from '$app/stores';
 	import { CandidateImg, directusImg } from '$lib/common/utils';
+	import { afterUpdate } from 'svelte';
 
 	export let candidate;
 	export let createNewPath;
 	export let showParty;
-	let url;
-	const getUrlAccordingToCandidate = () => {
-		url = `${$page.path}/candidate/${candidate.id}`;
+	let url=`${$page.path}/candidate/${candidate.id}`;
+	afterUpdate(()=>{
 		if (createNewPath) {
 			url = `/partidos-y-candidates/${candidate.partido.district.slug}/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
 		}
-	};
-	getUrlAccordingToCandidate();
+
+	})
 </script>
 
 <div
