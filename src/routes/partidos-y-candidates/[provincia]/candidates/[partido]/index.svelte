@@ -7,11 +7,15 @@
     const resTwo = await API(fetch, getPartyById(page.params.partido));
     const propsOne = await handleResponse(resOne, "candidates", "candidato");
     const propsTwo = await handleResponse(resTwo, "partidos", "partido");
-    const resThree = await API(fetch, getCandidatesByPartyList(propsTwo.props.partidos[0].alianzas))
-    const propsThree = await handleResponse(resThree, "candidates", "candidato");
+    propsOne.props.candidatosRelacionados = []
+    if(propsTwo.props.partidos[0].alianzas.length > 0){
+      const resThree = await API(fetch, getCandidatesByPartyList(propsTwo.props.partidos[0].alianzas))
+      const propsThree = await handleResponse(resThree, "candidates", "candidato");
+      propsOne.props.candidatosRelacionados = propsThree.props.candidates
+
+    }
     
     propsOne.props.partido = propsTwo.props.partidos[0]
-    propsOne.props.candidatosRelacionados = propsThree.props.candidates
     return await propsOne
   }
 </script>
@@ -82,13 +86,15 @@
     <SelectParty />
   </div>
   <div class="container">
+    {#if candidatosRelacionados.length > 0}    
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Candidates presidenciales</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each candidatosRelacionados as candidate}
       <CandidateCard createNewPath showParty candidate={candidate}/>
     {/each}
     </div>
-    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Diputades nacionales</h1>
+    {/if}
+    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >{partido.district.slug === 'nacion'?'Candidates presidenciales':'Diputades nacionales'}</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each candidates as candidate}
       <CandidateCard candidate={candidate}/>

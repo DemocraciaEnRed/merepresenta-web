@@ -33,6 +33,7 @@ export function getPartyById (id){
       }
       district{
         id
+        slug
       }
       logo{
         id
