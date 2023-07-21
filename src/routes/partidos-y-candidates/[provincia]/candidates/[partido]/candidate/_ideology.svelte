@@ -12,7 +12,7 @@
     Ver Partido
   </a>
   <p class="mt-4">Conocé cómo votó su partido en las ultimas leyes</p>
-  <a href="/como-votaron" class="button is-black is-uppercase">
+  <!-- <a href="/como-votaron" class="button is-black is-uppercase">
     Ver Votaciones
-  </a>
+  </a> -->
 </div>

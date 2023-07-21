@@ -20,7 +20,7 @@
     <h1 class="is-4 has-text-centered has-text-black mb-4">Conocé las propuestas de "<span class="has-text-weight-medium">{partido.name}</span>" y conocé como votó el partido en 10 leyes</h1>
     <div class="buttons is-centered">
       <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}" class="button is-black is-outlined is-uppercase has-text-weight-semibold">Ver propuestas</a>
-      <a href="/como-votaron" class="button is-black is-outlined is-uppercase has-text-weight-semibold">Ver votaciones</a>
+      <!-- <a href="/como-votaron" class="button is-black is-outlined is-uppercase has-text-weight-semibold">Ver votaciones</a> -->
     </div>
     
   </div>

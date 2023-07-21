@@ -41,7 +41,7 @@
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
         <li ><a class="has-text-black" href="/partidos-y-candidates/donde-votas">Partidos y candidatxs</a></li>
-        <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>
+        {#if $page.params.provincia !== 'nacion'}<li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>{/if}
         <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}/partidos/{candidate.partido.id}">{candidate.partido.name}</a></li>
         <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}/candidates/{$page.params.partido}">Candidatxs</a></li>
         <li class="is-active"><a href aria-current="page">{candidate.name}</a></li>
