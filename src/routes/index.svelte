@@ -9,9 +9,9 @@
 
 <script>
 	import { loop_guard, space } from 'svelte/internal';
+	import Carrousel from '$lib/carrousel/index.svelte'
 	import { page } from '$app/stores';
 	import { directusImg, ProvinciasSlugs } from '$lib/common/utils';
-	export let temas;
 
 	let height
 </script>
@@ -66,8 +66,8 @@
 					<footer class="card-foter px-5 pb-5 pt-4">
 						<a
 							href="/partidos-y-candidates/donde-votas"
-							class="button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
-							>CANDIDATOS Y CANDIDATAS</a
+							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
+							>Candidatos y candidatas</a
 						>
 					</footer>
 				</div>
@@ -85,7 +85,7 @@
 					<footer class="card-foter px-5 pb-5 pt-4">
 						<a
 							href="/plataformas/donde-votas"
-							class="button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
+							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
 							>propuestas por listas</a
 						>
 					</footer>
@@ -109,11 +109,15 @@
 					<footer class="card-foter px-5 pb-5 pt-4">
 						<a
 							href="/juegos"
-							class="button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
+							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
 							>conoce lOS JUEGOS</a
 						>
 					</footer>
 				</div>
+			</div>
+			<div class="carrousel">
+				<h1 class="title mt-6 is-1 is-size-3-touch has-text-centered has-text-black  is-spaced">Novedades</h1>
+				<Carrousel/>
 			</div>
 		</div>
 	</div>
@@ -184,4 +188,9 @@
 		border-radius: 10px;
 		height: auto;
 	}
+	
+	.text-wrap-wrap{
+		text-wrap:wrap
+	}
+
 </style>
