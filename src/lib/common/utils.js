@@ -13,6 +13,15 @@ export const PoliciesIcons = {
   "vivienda"          : `${imgRoute}house.svg`,
 }
 
+export const cargosSlugs ={
+  'presidente':'Presidente',
+  'vice-presidente': 'Vice Presidente',
+  'diputado-nacional': 'Diputado Nacional',
+  'senador-nacional':'Senador Nacional',
+  'gobernador':'Gobernador',
+  'vice-gobernador': 'Vice Gobernador'
+}
+
 export const ProvinciasSlugs = [
 	{		"name": "Buenos Aires",		"slug": "buenos-aires"	},
 	{		"name": "CABA",		"slug": "caba"	},
@@ -366,7 +375,7 @@ export class Solver {
     return `filter: invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%);`;
   }
 }
-export const getRandomItems = (array) => {
+export const get4FirstRandomItems = (array) => {
   var longitud = array.length;
   var randomItems = [];
   if(array.length > 4)
@@ -381,4 +390,13 @@ export const getRandomItems = (array) => {
   else randomItems = array
 
   return randomItems;
+}
+
+
+export const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }

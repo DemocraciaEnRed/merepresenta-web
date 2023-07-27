@@ -20,9 +20,8 @@
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
         <li ><a href="/plataformas/donde-votas" class="has-text-black">Propuestas</a></li>
-        <li ><a href="/plataformas/{$page.params.provincia}" class="has-text-black">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>
-        <li ><a href="/plataformas/{$page.params.provincia}/temas" class="has-text-black">Por temas</a></li>
-        <li ><a href="/plataformas/{$page.params.provincia}/temas/{tema.slug}" style="color:{tema.color}" aria-current="page">{tema.name}</a></li>
+        <li ><a href="/plataformas/temas" class="has-text-black">Por temas</a></li>
+        <li ><a href="/plataformas/temas/{tema.slug}" style="color:{tema.color}" aria-current="page">{tema.name}</a></li>
         <li class="is-active"><a href class="has-text-black" aria-current="page">{partido.name}</a></li>
       </ul>
     </nav>
@@ -84,7 +83,7 @@
     <div class="container">
       <h1 class="has-text-centered title is-3 mb-6 animate__animated animate__flipInX">Conocé el resto de los partidos en {ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name} y sus propuestas</h1>
       <div class="buttons is-centered">
-        <a href="/plataformas/{$page.params.provincia}/partidos" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver propuestas</a>
+        <a href="/plataformas/partidos" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver propuestas</a>
       </div>
     </div>
   </div>

@@ -63,6 +63,11 @@ export function getCandidatesByParty (partyId){
       partido {
         id
         name
+        district {
+          id
+          name
+          slug
+        }
       }
       distrito_nacional {
         id
@@ -73,11 +78,14 @@ export function getCandidatesByParty (partyId){
   }`)
 }
 
-export function getCandidatesByPartyList (partysId){
-  const idsToquery = partysId.map(id => `{partido:{id:{_eq:${id.related_partido_id.id}}}}`)
+
+
+
+export function getCandidatesByCargoAndDistrict ({idExcept, cargo,district}){
+  const exceptId = idExcept ? `id:{_neq: ${Number(idExcept)}}`:''
   return(`
   {
-    candidato(filter:{_or:[${idsToquery}]},sort: ["position","-cargo"]){
+    candidato(filter:{cargo:{_eq:"${cargo}"},distrito_nacional:{id:{_eq :${Number(district)}}}${exceptId}}){
       name
       cargo
       genre
@@ -89,30 +97,51 @@ export function getCandidatesByPartyList (partysId){
       partido {
         id
         name
+        logo{
+          id
+        }
         district {
           id
           name
           slug
         }
-        logo{
-          id
-        }
-      }
-      distrito_nacional {
-        id
-        name
-        slug
       }
     }
   }`)
 }
 
-export function getCandidatesByCargo ({idExcept, cargo,district}){
-  
-  const exceptId = idExcept ? `id:{_neq: ${Number(idExcept)}}`:''
+export function getCandidatesByCargo (cargo){
   return(`
   {
-    candidato(filter:{cargo:{_eq:"${cargo}"},distrito_nacional:{id:{_eq :${Number(district)}}}${exceptId}}){
+    candidato(filter:{cargo:{_eq:"${cargo}"}}){
+      name
+      cargo
+      genre
+      id
+      position
+      avatar {
+        id
+      }
+      partido {
+        id
+        name
+        logo{
+          id
+        }
+        district {
+          id
+          name
+          slug
+        }
+      }
+    }
+  }`)
+}
+
+export function getCandidatesByDistrict (district){
+  return(`
+  {
+    candidato(filter:{distrito_nacional:{slug:{_eq:"${district}"}}},sort: ["cargo","position"]){
       name
       cargo
       genre

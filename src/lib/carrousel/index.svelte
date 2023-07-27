@@ -18,24 +18,32 @@
 					</button>
 				</div>
 				<div class="carrousel-item has-text-centered">
-					<img class="is-hidden-mobile" src="carrousel/abc_desk.png" alt="" />
-					<img class="is-hidden-tablet" src="carrousel/abc_mobile.png" alt="" />
+					<a target="_blank" href="/abc-electoral">
+						<img class="is-hidden-mobile" src="carrousel/abc_desk.png" alt="" />
+						<img class="is-hidden-tablet" src="carrousel/abc_mobile.png" alt="" />
+					</a>
 				</div>
 				<div class="carrousel-item has-text-centered">
 					<img class="is-hidden-mobile" src="carrousel/ambiente_desk.png" alt="" />
 					<img class="is-hidden-tablet" src="carrousel/ambiente_mobile.png" alt="" />
 				</div>
 				<div class="carrousel-item has-text-centered">
-					<img class="is-hidden-mobile" src="carrousel/compas_desk.png" alt="" />
-					<img class="is-hidden-tablet" src="carrousel/compas_mobile.png" alt="" />
+					<a target="_blank" href="https://compaspolitico.merepresenta.info/">
+						<img class="is-hidden-mobile" src="carrousel/compas_desk.png" alt="" />
+						<img class="is-hidden-tablet" src="carrousel/compas_mobile.png" alt="" />
+					</a>
 				</div>
 				<div class="carrousel-item has-text-centered">
-					<img class="is-hidden-mobile" src="carrousel/trivia_desk.png" alt="" />
-					<img class="is-hidden-tablet" src="carrousel/trivia_mobile.png" alt="" />
+					<a target="_blank" href="https://trivia.merepresenta.info/">
+						<img class="is-hidden-mobile" src="carrousel/trivia_desk.png" alt="" />
+						<img class="is-hidden-tablet" src="carrousel/trivia_mobile.png" alt="" />
+					</a>
 				</div>
 				<div class="carrousel-item has-text-centered">
-					<img class="is-hidden-mobile" src="carrousel/vof_desk.png" alt="" />
-					<img class="is-hidden-tablet" src="carrousel/vof_mobile.png" alt="" />
+					<a target="_blank" href="https://verdaderofalso.merepresenta.info/">
+						<img class="is-hidden-mobile" src="carrousel/vof_desk.png" alt="" />
+						<img class="is-hidden-tablet" src="carrousel/vof_mobile.png" alt="" />
+					</a>
 				</div>
 			</Carousel>
 		</div>

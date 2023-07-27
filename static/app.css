@@ -93,8 +93,8 @@ a, .general-sans{
 
 .white-background-desktop{
 background-image: url(white-background-desktop.png);
-  background-repeat: no-repeat;
-  background-size: ver;
+  background-repeat: repeat;
+  /* background-size: ver; */
   background-attachment: fixed;
 }
 

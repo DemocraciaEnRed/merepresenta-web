@@ -1,16 +1,16 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
-  import {getCandidates, getCandidatesByCargo} from '$lib/graph-ql/candidates';
+  import {getCandidates, getCandidatesByCargoAndDistrict} from '$lib/graph-ql/candidates';
   export async function load({fetch, page}){
     const res = await API(fetch, getCandidates(page.params.id));
     const propsResCandidate = await handleResponse(res, "candidate", "candidato_by_id")
-    const res2 = await API(fetch, getCandidatesByCargo({
+    const res2 = await API(fetch, getCandidatesByCargoAndDistrict({
       idExcept:page.params.id,
       cargo: propsResCandidate.props.candidate.cargo, 
       district:propsResCandidate.props.candidate.partido.district.id
     }))
     const otherCandidates = await handleResponse(res2, "candidates", "candidato");
-    propsResCandidate.props.otherCandidates = getRandomItems(otherCandidates.props.candidates)
+    propsResCandidate.props.otherCandidates = get4FirstRandomItems(otherCandidates.props.candidates)
     return propsResCandidate
  }
 </script>
@@ -26,14 +26,14 @@
   import Corporate from './_corporate.svelte';
   import { CandidateImg, directusImg, ProvinciasSlugs } from "$lib/common/utils";
 	import CandidateCard from '$lib/common/candidate-card.svelte';
-	import { getRandomItems } from '$lib/common/utils';
+	import { get4FirstRandomItems } from '$lib/common/utils';
 	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
 	import SelectParty from '$lib/common/selectParty.svelte';
 	import SelectCandidate from "$lib/common/selectCandidate.svelte";
   
   export let candidate;
   export let otherCandidates;
-  const partyUrl = `/partidos-y-candidates/${$page.params.provincia}/partidos/${$page.params.partido}`;
+  const partyUrl = `/partidos-y-candidates/partidos/${$page.params.partido}`;
 
 </script>
 <div class="section py-5">
@@ -41,9 +41,8 @@
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
         <li ><a class="has-text-black" href="/partidos-y-candidates/donde-votas">Partidos y candidatxs</a></li>
-        {#if $page.params.provincia !== 'nacion'}<li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>{/if}
-        <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}/partidos/{candidate.partido.id}">{candidate.partido.name}</a></li>
-        <li ><a class="has-text-black" href="/partidos-y-candidates/{$page.params.provincia}/candidates/{$page.params.partido}">Candidatxs</a></li>
+        <li ><a class="has-text-black" href="/partidos-y-candidates/partidos/{candidate.partido.id}">{candidate.partido.name}</a></li>
+        <li ><a class="has-text-black" href="/partidos-y-candidates/candidates/{$page.params.partido}">Candidatxs</a></li>
         <li class="is-active"><a href aria-current="page">{candidate.name}</a></li>
       </ul>
     </nav>
@@ -61,18 +60,14 @@
           </div>
           <div class="candidate-content">
             <h1 class="general-sans is-size-2 is-size-4-touch has-text-black has-text-weight-bold is-capitalized my-1 animate__animated animate__backInRight animate__delay-1s" >{candidate.name}</h1>
-            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" >Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {candidate.cargo.toLowerCase()} por {ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</h1>
+            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" >Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {candidate.cargo.toLowerCase()}<!--  por {ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name} --></h1>
           </div>
         </div>
       </div>
     </div>
   </div>
 <div class="section tetris-background">
-  <div class="is-flex is-justify-content-center is-flex-wrap-wrap select-section mb-6">
-    <SelectDistrict/>
-    <SelectParty currentparty={$page.params.partido}/>
-    <SelectCandidate  currentCandidate={candidate.id}/>
-  </div>
+
   <div class="container">
     <About {candidate} open={true}/>
     <br>
@@ -97,7 +92,7 @@
     <div class="container">
       <h1 class="has-text-centered title is-3 mb-6 animate__animated animate__flipInX">¿Querés conocer las propuestas del partido?</h1>
       <div class="buttons is-centered">
-        <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{candidate.partido.id}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver partido</a>
+        <a href="/partidos-y-candidates/partidos/{candidate.partido.id}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver partido</a>
       </div>
     </div>
   </div>

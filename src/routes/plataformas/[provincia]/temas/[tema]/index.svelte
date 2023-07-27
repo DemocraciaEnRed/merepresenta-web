@@ -31,8 +31,7 @@
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
         <li ><a href="/plataformas/donde-votas" class="has-text-black">Propuestas</a></li>
-        <li ><a href="/plataformas/{$page.params.provincia}" class="has-text-black">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</a></li>
-        <li ><a href="/plataformas/{$page.params.provincia}/temas" class="has-text-black">Por temas</a></li>
+        <li ><a href="/plataformas/temas" class="has-text-black">Por temas</a></li>
         <li class="is-active"><a href style="color:{tema.color}" aria-current="page">{tema.name}</a></li>
       </ul>
     </nav>
@@ -74,7 +73,7 @@
 
       {#each partidos as partido}
       <div class="column is-full-mobile is-half-tablet is-3-desktop has-text-centered">
-        <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}">
+        <a href="/partidos-y-candidates/partidos/{partido.id}">
           <figure class="image is-2by1 has-background-white party-logo" style="background-image: url({PartyImg(partido)})"></figure>
           <div class="name-partido has-background-black is-flex is-align-items-center is-justify-content-center has-text-white py-4">
             <p>{partido.name}</p>

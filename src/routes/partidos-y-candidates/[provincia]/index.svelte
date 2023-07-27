@@ -29,14 +29,14 @@
           <a href="/como-votaron" class="button is-white is-medium is-uppercase is-outlined has-text-weight-semibold animate__animated animate__pulse animate__slow animate__infinite">Ver votaciones</a>
       </div>
     </div> -->
-    <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between pt-3 px-3">
+    <!-- <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between pt-3 px-3">
       <a href="/partidos-y-candidates/donde-votas" class="button is-black is-outlined is-small  has-text-weight-medium is-uppercase is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
       <p class="general-sans has-background-black has-text-weight-semibold is-uppercase is-pulled-right is-size-4 is-size-6-touch has-text-white px-5 py-1 has-text-right">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</p>
-    </div>
+    </div> -->
     <div class="columns is-multiline is-centered is-mobile my-6">
       {#each partidos as partido}
       <div class="column is-half-mobile is-one-quarter-tablet is-3-desktop is-2-widescreen has-text-centered party ">
-        <a href="/partidos-y-candidates/{$page.params.provincia}/partidos/{partido.id}">
+        <a href="/partidos-y-candidates/partidos/{partido.id}">
           <figure class="image is-square party-logo has-background-white" style="background-image: url({PartyImg(partido)})"></figure>
           <div class="name-partido has-background-black is-flex is-align-items-center is-justify-content-center has-text-white py-4">
             <p>{partido.name}</p>

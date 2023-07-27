@@ -4,6 +4,13 @@ export function getPartysByDistrict (district){
     partido(filter:{district:{slug:{_eq:"${district}"}}}){
       id
       name
+      tipo
+      alianzas{
+        related_partido_id{
+          id
+          name
+        }
+      }
       district{
         id
       }
@@ -26,9 +33,11 @@ export function getPartyById (id){
       summary
       url_web
       url_fuente
+      tipo
       alianzas{
         related_partido_id{
           id
+          name
         }
       }
       district{
@@ -57,6 +66,18 @@ export function getPartyById (id){
   }`)
 }
 
+export function getpartyAliansazId (partyId){
+ 
+  return(`
+  {
+    partido(filter:{alianzas:{related_partido_id:{id:{_eq:${Number(partyId)}}}},district:{slug:{_eq:"nacion"}}}){
+      id
+      
+    }
+  }`)
+}
+
+
 export function getPartyByIdList (ids){
   const idsToquery = ids.map(id => `{id:{_eq:${id.related_partido_id.id}}}`)
   return(`
@@ -72,7 +93,10 @@ export function getPartyByIdList (ids){
       url_web
       url_fuente
       alianzas{
-        id
+        related_partido_id{
+          id
+          name
+        }
       }
       district{
         id
