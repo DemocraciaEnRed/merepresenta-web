@@ -24,8 +24,8 @@
 					</a>
 				</div>
 				<div class="carrousel-item has-text-centered">
-					<img class="is-hidden-mobile" src="carrousel/ambiente_desk.png" alt="" />
-					<img class="is-hidden-tablet" src="carrousel/ambiente_mobile.png" alt="" />
+					<img class="is-hidden-mobile" src="carrousel/dataset_desk.png" alt="" />
+					<img class="is-hidden-tablet" src="carrousel/dataset_mobile.png" alt="" />
 				</div>
 				<div class="carrousel-item has-text-centered">
 					<a target="_blank" href="https://compaspolitico.merepresenta.info/">
@@ -56,7 +56,7 @@
 		align-items: center;
 	}
 	.carrousel-item img {
-		width: 100%;
+		width: 90%;
 	}
 	.circle_arrow_button {
 		cursor: pointer;

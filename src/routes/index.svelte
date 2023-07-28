@@ -23,28 +23,30 @@
 	
 	<div class="hero is-black  is-halfheight tetris-background">
 		<div class="hero-body">
-			<div class="container pb-6">
-				<img src="/logo-merepresenta.svg" width="400" class="image mx-auto p-4 mb-4 mt-5 image-logo " alt="" />
-				<div class="columns is-centered is-mobile">
-					<div class="column is-7-desktop">
-						<h1
-							class="title is-5 is-size-6-touch has-text-centered has-text-left-touch has-text-white"
-						>
-							Te ayudamos a votar de manera informada.
-						</h1>
-						<h2
-							class="subtitle is-5 is-size-6-touch has-text-centered has-text-left-touch has-text-white"
-						>
-							Conocé candidaturas, partidos, plataformas electorales y mucho más.
-						</h2>
+			<div class="columns pb-6 mb-6 mx-auto">
+				<div class="column has-text-centered-touch">
+					<img src="/logo-merepresenta.svg" width="300" class="image py-4 mt-5 image-logo " alt="" />
+					<div class="title-banner">
+						<div class="">
+							<h2 class="title is-1 has-text-white py-3 is-inline-block is-uppercase">
+								El futuro <br/>
+								<span >no es un misterio</span>
+							</h2>
+						</div>
+					</div>
+					<div class="is-centered is-mobile subtitle-banner">
+						<div class="is-7-desktop ">
+							
+							<h2
+								class="subtitle is-5 is-size-6-touch has-text-white"
+							>
+							Conocé las propuestas de cada candidato para saber qué es lo que puede llegar a pasar los próximos 4 años. 
+							</h2>
+						</div>
 					</div>
 				</div>
-				<div class="is-hidden-touch">
-					<div class="has-text-centered mb-6 mt-4">
-						<h2 class="title is-1 has-text-white p-3 px-6 is-inline-block is-uppercase">
-							A vos, ¿quién te representa?
-						</h2>
-					</div>
+				<div class="column has-text-right">
+					<img src="/logoHome.png" alt="">
 				</div>
 			</div>
 		</div>
@@ -52,20 +54,20 @@
 	<div class="section" style="min-height: {height}px;">
 		<div class="is-centered card-section" bind:clientHeight={height}>
 			<div class="columns is-justify-content-center">
-				<div class="column is-one-third-desktop card card-styled mx-3">
+				<div class="column is-one-third-desktop card card-styled 1 mx-3">
 					<header class="card-header">
 						<div
-							class="card-header-title has-text-black is-uppercase has-text-weight-medium is-centered"
+							class="card-header-title title-custom-style has-text-black is-uppercase has-text-weight-medium is-centered has-background-5A81FF"
 						>
 							¿No sabés que se vota?
 						</div>
 					</header>
-					<div class="card-image">
+					<div class="card-image py-5">
 						<img class="image mx-auto card-logo" src="/candidates-link.svg" width="240" alt="" />
 					</div>
-					<footer class="card-foter px-5 pb-5 pt-4">
+					<footer class="card-foter px-5 pb-5">
 						<a
-							href="/partidos-y-candidates/donde-votas"
+							href="/partidos-y-candidates"
 							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
 							>Candidatos y candidatas</a
 						>
@@ -74,15 +76,15 @@
 				<div class="column is-one-third-desktop card card-styled mx-3">
 					<header class="card-header">
 						<div
-							class="card-header-title has-text-black is-uppercase has-text-weight-medium is-centered"
+							class="card-header-title title-custom-style has-text-black is-uppercase has-text-weight-medium is-centered has-background-E9F92A"
 						>
 							¿Qué se propone?
 						</div>
 					</header>
-					<div class="card-image">
+					<div class="card-image py-5">
 						<img class="image mx-auto card-logo" src="/proposal.svg" width="240" alt="" />
 					</div>
-					<footer class="card-foter px-5 pb-5 pt-4">
+					<footer class="card-foter px-5 pb-5">
 						<a
 							href="/plataformas/donde-votas"
 							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
@@ -93,12 +95,12 @@
 				<div class="column is-one-third-desktop card card-styled mx-3">
 					<header class="card-header">
 						<div
-							class="card-header-title has-text-black is-uppercase has-text-weight-medium is-centered"
+							class="card-header-title title-custom-style has-text-black is-uppercase has-text-weight-medium is-centered has-background-FF4817"
 						>
 							¡informate jugando!
 						</div>
 					</header>
-					<div class="card-image">
+					<div class="card-image py-5">
 						<img
 							class="image mx-auto card-logo"
 							src="/juegos.svg"
@@ -106,7 +108,7 @@
 							alt="Ícono de juegos"
 						/>
 					</div>
-					<footer class="card-foter px-5 pb-5 pt-4">
+					<footer class="card-foter px-5 pb-5">
 						<a
 							href="/juegos"
 							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
@@ -116,7 +118,7 @@
 				</div>
 			</div>
 			<div class="carrousel">
-				<h1 class="title mt-6 is-1 is-size-3-touch has-text-centered has-text-black  is-spaced">Novedades</h1>
+				<h1 class="title mt-6 is-1 is-size-3-touch has-text-centered has-text-black  is-spaced">Lo que todavía no viste</h1>
 				<Carrousel/>
 			</div>
 		</div>
@@ -134,7 +136,30 @@
 		background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 90%);
 		background-attachment: fixed;
 	}
+	.hero .hero-body .columns{
+		width: 90%;
+	}
+	.title-banner div h2 span {
+		color: #FF4817;
+	}
+	.subtitle-banner{
+		width: 65%;
+	}
 	.card-styled {
+		padding: 1rem;
+		border: 1px solid #000;
+		border-radius: 10px;
+		position: relative;
+	}
+	.card-styled::after {
+		content: '';
+		margin: auto;
+		left: 1rem;
+		right: 1rem;
+		top: 1rem;
+		bottom: 1rem;
+		position: absolute;
+		border: 1px solid #000;
 		border-radius: 10px;
 	}
 	.botton-styled {
@@ -161,15 +186,33 @@
 	}
 	.card-header {
 		box-shadow: none;
+		padding-top: 1rem;
+	}
+	.title-custom-style{
+		padding: .5rem;
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000;
+		
+	}
+	.has-background-5A81FF{
+		background-color: #5A81FF;
+	}
+	.has-background-E9F92A{
+		background-color: #E9F92A;
+	}
+	.has-background-FF4817{
+		background-color: #FF4817;
 	}
 	@media screen and (max-width: 1024px) {
 		.hero.tetris-background .hero-body {
 			background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 1) 100%);
 		}
-		/* .card-section {
-			width: 100%;
-			position: static;
-		} */
+		.subtitle-banner{
+		width: 100%;
+		}
+		.card-section {
+			width: 90%;
+		}
 		.card-section > div {
 			flex-direction: column;
 		}
@@ -177,8 +220,7 @@
 			margin-top: 16px;
 		}
 		.image-logo{
-			margin-left: 0!important;
-			padding-left: 0!important;
+			margin: auto;
 		}
 	}
 	.button {
