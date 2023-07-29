@@ -19,10 +19,10 @@
   <div class="container">
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
-        <li ><a href="/plataformas/donde-votas" class="has-text-black">Propuestas</a></li>
+        <li ><a href="/plataformas" class="has-text-black">Propuestas</a></li>
         <li ><a href="/plataformas/temas" class="has-text-black">Por temas</a></li>
         <li ><a href="/plataformas/temas/{tema.slug}" style="color:{tema.color}" aria-current="page">{tema.name}</a></li>
-        <li class="is-active"><a href class="has-text-black" aria-current="page">{partido.name}</a></li>
+        <li class="is-active"><a href class="has-text-black text-wrap-wrap" aria-current="page">{partido.name}</a></li>
       </ul>
     </nav>
   </div>

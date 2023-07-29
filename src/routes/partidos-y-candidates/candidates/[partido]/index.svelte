@@ -1,7 +1,7 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
   import {  getCandidatesByParty} from '$lib/graph-ql/candidates';
-  import { getPartyById, getPartyByIdList, getpartyAliansazId } from '$lib/graph-ql/partidos';
+  import { getPartyById, getpartyAliansazId } from '$lib/graph-ql/partidos';
   export async function load({page, fetch}){
     const resOne = await API(fetch, getCandidatesByParty(page.params.partido));
     const resTwo = await API(fetch, getPartyById(page.params.partido));
@@ -44,8 +44,8 @@
   <div class="container">
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
-        <li ><a href="/partidos-y-candidates/donde-votas" class="has-text-black">Partidos y candidatxs</a></li>
-        <li><a href="/partidos-y-candidates/partidos/{partido.id}" class="has-text-black" aria-current="page">{partido.name}</a></li>
+        <li ><a href="/partidos-y-candidates" class="has-text-black">Partidos y candidatxs</a></li>
+        <li><a href="/partidos-y-candidates/partidos/{partido.id}" class="has-text-black text-wrap-wrap" aria-current="page">{partido.name}</a></li>
         <li class="is-active"><a href class="has-text-black" aria-current="page">Candidatxs</a></li>
       </ul>
     </nav>

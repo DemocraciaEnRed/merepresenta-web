@@ -30,7 +30,7 @@
   <div class="container">
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
-        <li ><a href="/plataformas/donde-votas" class="has-text-black">Propuestas</a></li>
+        <li ><a href="/plataformas" class="has-text-black">Propuestas</a></li>
         <li ><a href="/plataformas/temas" class="has-text-black">Por temas</a></li>
         <li class="is-active"><a href style="color:{tema.color}" aria-current="page">{tema.name}</a></li>
       </ul>
@@ -66,7 +66,7 @@
   <div class="section has-white-background">
   <div class="container">
     <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between pt-3 px-3">
-      <a href="/partidos-y-candidates/donde-votas" class="button is-black is-outlined is-small  has-text-weight-medium is-uppercase is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
+      <a href="/partidos-y-candidates" class="button is-black is-outlined is-small  has-text-weight-medium is-uppercase is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
       <p class="general-sans has-background-black has-text-weight-semibold is-uppercase is-pulled-right is-size-4 is-size-6-touch has-text-white px-5 py-1 has-text-right">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</p>
     </div>
     <div class="columns is-centered is-multiline is-mobile mt-6">

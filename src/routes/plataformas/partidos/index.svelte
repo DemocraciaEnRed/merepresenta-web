@@ -2,7 +2,7 @@
    import API, { handleResponse } from '$lib/apiHandler';
   import {getPartysByDistrict} from '$lib/graph-ql/partidos.js';
   export async function load({page, fetch}){
-    const res = await API(fetch, getPartysByDistrict(page.params.provincia));
+    const res = await API(fetch, getPartysByDistrict('nacion'));
     return await handleResponse(res, "partidos", "partido");
   }
 </script>
@@ -15,36 +15,21 @@
   */
   
   export let partidos;
-  
+  let partidosPartidos = partidos.filter(partido => partido.tipo === 'partido')
 </script>
-<div class="hero is-black tetris-background">
-  <div class="back-provincias has-text-right">
-    <div class="is-clearfix pt-3 px-3">
-      <a href="/plataformas/donde-votas" class="is-white is-uppercase is-outlined is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
-      <p class="general-sans has-text-weight-bold is-uppercase is-pulled-right">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</p>
-    </div>
-  </div>
-  <div class="hero-body is-align-items-flex-start">
-    <div class="container py-5">
-			<h1 class="has-text-centered title is-2 is-size-4-touch mb-6">¿CÓMO QUERÉS CONOCER LAS PROPUESTAS?</h1>
-          <div class="buttons is-centered">
-							<a href="{$page.path.replace('/partidos','/temas')}" class="button is-white is-medium is-uppercase has-text-weight-semibold {$page.path.includes('/temas') ? null : 'is-outlined'}">Por tema</a>
-							<a href="{$page.path}" class="button is-white is-medium is-uppercase has-text-weight-semibold {$page.path.includes('/partidos') ? null : 'is-outlined'}">Por partido</a>
-          </div>
-          <div class="buttons is-centered">
-        </div>
-		</div>
-	</div>
-</div>
+
 <div class="section">
   <div class="container my-6">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <h1 class="title is-2 is-size-4-touch has-text-centered has-text-black" >¡Conocé las propuestas de los distintos partidos en <b>{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</b>!</h1>
-      </div>
+    <div class="has-text-centered has-text-black">
+      <h1 class="is-size-2 has-text-weight-medium has-text-black">
+        Propuestas Comparadas
+      </h1>
+      <h3 class="is-size-4 has-text-weight-light">
+        Explora las propuestas electorales de cada partido y sus listas
+      </h3>
     </div>
     <div class="columns is-centered is-multiline is-mobile mt-6">
-      {#each partidos as partido}
+      {#each partidosPartidos as partido}
         <div class="column is-half-mobile is-one-quarter-tablet is-2-desktop has-text-centered">
           <a href="/partidos-y-candidates/partidos/{partido.id}">
             <figure class="image is-square party-logo" style="background-image: url({PartyImg(partido)})"></figure>

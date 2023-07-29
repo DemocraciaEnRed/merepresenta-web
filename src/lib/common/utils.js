@@ -1,16 +1,14 @@
 const imgRoute = "/themes/";
 
 export const PoliciesIcons = {
-  "economia"          : `${imgRoute}money.svg`,
-  "ambiente"          : `${imgRoute}nature.svg`,
-  "salud"             : `${imgRoute}health.svg`,
-  "educacion"         : `${imgRoute}book.svg`,
-  "genero"            : `${imgRoute}gender.svg`,
-  "seguridad"         : `${imgRoute}security.svg`,
-  "empleo"            : `${imgRoute}job.svg`,
-  "justicia"          : `${imgRoute}justice.svg`,
-  "institucionalidad"        : `${imgRoute}search.svg`,
-  "vivienda"          : `${imgRoute}house.svg`,
+  "economia"          : `${imgRoute}economiaIcon.svg`,
+  "seguridad"         : `${imgRoute}seguridadIcon.svg`,
+  "educacion"         : `${imgRoute}educacionIcon.svg`,
+  "ambiente"          : `${imgRoute}ambienteIcon.svg`,
+  "salud"             : `${imgRoute}saludIcon.svg`,
+  "democracia"        : `${imgRoute}democraciaIcon.svg`,
+
+
 }
 
 export const cargosSlugs ={
@@ -20,6 +18,15 @@ export const cargosSlugs ={
   'senador-nacional':'Senador Nacional',
   'gobernador':'Gobernador',
   'vice-gobernador': 'Vice Gobernador'
+}
+
+export const cargosSlugsAbbreviated ={
+  'presidente':'Pdte',
+  'vice-presidente': 'VPdte',
+  'diputado-nacional': 'Dip. Nac.',
+  'senador-nacional':'Sen. Nac.',
+  'gobernador':'Gob.',
+  'vice-gobernador': 'Vice Gob.'
 }
 
 export const ProvinciasSlugs = [

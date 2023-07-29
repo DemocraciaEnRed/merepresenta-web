@@ -78,11 +78,10 @@ export function getpartyAliansazId (partyId){
 }
 
 
-export function getPartyByIdList (ids){
-  const idsToquery = ids.map(id => `{id:{_eq:${id.related_partido_id.id}}}`)
+export function getPartyByalianzas (partyId){
   return(`
   {
-    partido(filter:{ _or : [${idsToquery}]}){
+    partido(filter:{alianzas:{related_partido_id:{id:{_eq:${Number(partyId)}}}},district:{slug:{_eq:"nacion"}}}){
       id
       name
       url_facebook

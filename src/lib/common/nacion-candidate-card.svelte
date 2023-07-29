@@ -66,16 +66,7 @@
 	.candidate-container:first-of-type {
 		border-bottom-left-radius: 10px;
 	}
-	.candidate-position {
-		position: absolute;
-		top: 1px;
-		left: 1px;
-		z-index: 10;
-		background-color: #fff;
-	}
-	.candidate-position > img {
-		border-bottom-right-radius: 5px;
-	}
+
 	.candidate-content {
 		/* background-color: #fff; */
 		border-top: 0;

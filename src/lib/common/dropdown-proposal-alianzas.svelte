@@ -1,0 +1,122 @@
+<script>
+	import Icon from './Icon.svelte';
+	$: isOpen = false;
+	$: iconClass = isOpen ? 'fa-chevron-down' : 'fa-chevron-up';
+	export let proposal;
+	export let alianzas;
+	import { slide } from 'svelte/transition';
+	import { PoliciesIcons } from './utils';
+	export let darkMode;
+	let color = darkMode ? 'white' : 'black';
+	export let backgroundHeader;
+	let backgroundHeaderColor = backgroundHeader ? 'black' : '';
+	let borderSolid = backgroundHeader ? 'border-solid p-2' : '';
+</script>
+
+<div class="the-drop-header {!isOpen ? 'border-radius' : ''} drop" style="border-color: {color};">
+	<div
+		id="partido-{proposal.ejes_id.slug}"
+		class="proposal-header is-flex is-flex-direction-row is-align-items-center"
+		style="background-color: {proposal.ejes_id.color};"
+		on:click={() => (isOpen = !isOpen)}
+	>
+		<div class="icon-container">
+			<img
+				src={PoliciesIcons[proposal.ejes_id.slug]}
+				class="image m-3 icon-proposal"
+				alt="icono de {proposal.ejes_id.name}"
+			/>
+		</div>
+		<div
+			class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered"
+			style="width:100%; height: 100%;"
+		>
+			<div class="is-flex is-flex-direction-row is-align-items-center" style="height: 100%;">
+				<p class=" has-text-black is-inline mx-5 is-uppercase is-size-5 has-text-weight-medium">
+					{proposal.ejes_id.name}
+				</p>
+			</div>
+		</div>
+		<span class="pr-6" style="color:{color}"><Icon icon={iconClass} /></span>
+	</div>
+	{#if isOpen}
+		<div class="proposal-body summary general-sans" transition:slide>
+			<div class="">
+				<div class=" has-text-centered-touch has-text-left-desktop">
+					{#each alianzas as alianza}
+					{#each alianza.ejes as proposalAlianza}
+					{#if proposalAlianza.ejes_id.slug === proposal.ejes_id.slug}
+					<div class="alianza-proposal p-5">
+									<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">
+										Lista: {alianza.name}
+									</h1>
+									<p>{proposalAlianza.summary.replace(/(\r\n|\n|\r)/gm, ' ')}</p>
+									{#if alianza.url_fuente}
+										<p>
+											<a
+												href={alianza.url_fuente}
+												target="_blank"
+												class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
+												><u>fuente oficial</u></a
+											>
+										</p>
+									{/if}
+								</div>
+								{/if}
+							{/each}
+					{/each}
+				</div>
+			</div>
+		</div>
+	{/if}
+</div>
+
+<style>
+	.drop {
+		text-align: left;
+		/* border-top: 1px solid #000; */
+		margin-top: -1px;
+	}
+	.the-drop-header {
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		padding: 0 10px;
+		cursor: pointer;
+	}
+	.border-radius {
+		border-radius: 20px !important;
+		transition-delay: 0.3s;
+	}
+
+	.proposal-header {
+		border: 2px solid black;
+		width: 100%;
+		margin-top: 1rem;
+	}
+	.proposal-body {
+		width: 100%;
+		background-color: #fff;
+		border-bottom: 2px solid #000;
+		border-right: 2px solid #000;
+		border-left: 2px solid #000;
+		margin-bottom: 1rem;
+	}
+	.alianza-proposal:not(:last-child) {
+		border-bottom: 1px solid #000;
+	}
+	.icon-proposal {
+		width: 40px;
+		height: 40px;
+	}
+	.icon-container {
+		border-right: 2px solid #000;
+		padding: 0 20px;
+	}
+
+	.summary {
+		white-space: pre-line;
+	}
+	.source-button u {
+		text-decoration: none !important;
+	}
+</style>

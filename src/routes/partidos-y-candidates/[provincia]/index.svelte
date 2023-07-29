@@ -20,19 +20,6 @@
         <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-black" style="font-weight: 400!important;" >Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</h1>
       </div>
     </div>
-    <div class="is-flex is-justify-content-center is-flex-wrap-wrap select-section mb-6">
-      <SelectDistrict/>
-    </div>
-    <!-- <div class="box has-background-black my-6 py-6">
-      <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-white" style="font-weight: 500!important;" >¿Querés saber cómo votó cada partido en las últimas leyes?</h1>
-      <div class="buttons is-centered">
-          <a href="/como-votaron" class="button is-white is-medium is-uppercase is-outlined has-text-weight-semibold animate__animated animate__pulse animate__slow animate__infinite">Ver votaciones</a>
-      </div>
-    </div> -->
-    <!-- <div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between pt-3 px-3">
-      <a href="/partidos-y-candidates/donde-votas" class="button is-black is-outlined is-small  has-text-weight-medium is-uppercase is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
-      <p class="general-sans has-background-black has-text-weight-semibold is-uppercase is-pulled-right is-size-4 is-size-6-touch has-text-white px-5 py-1 has-text-right">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</p>
-    </div> -->
     <div class="columns is-multiline is-centered is-mobile my-6">
       {#each partidos as partido}
       <div class="column is-half-mobile is-one-quarter-tablet is-3-desktop is-2-widescreen has-text-centered party ">

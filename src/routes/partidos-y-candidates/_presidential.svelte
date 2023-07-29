@@ -15,16 +15,19 @@
 	let initWidth;
 	let dinamycParticlesToShow;
 	let loading = false;
+	let divisor = windowWidth < 760 ? 100 : 130
+
 	async function updateWindowWidth() {
-		if (dinamycParticlesToShow !== ((windowWidth + 70) / 120).toFixed()) {
+		divisor = windowWidth < 760 ? 100 : 130
+		if (dinamycParticlesToShow !== ((windowWidth) / divisor).toFixed()) {
 			loading = true;
 
-			dinamycParticlesToShow = await ((windowWidth + 70) / 120).toFixed();
+			dinamycParticlesToShow = await ((windowWidth) / divisor).toFixed();
 			loading = false;
 		}
 	}
 	onMount(() => {
-		dinamycParticlesToShow = windowWidth ? ((windowWidth + 70) / 120).toFixed() : 12;
+		dinamycParticlesToShow = windowWidth ? ((windowWidth) / divisor).toFixed() : 12;
 	});
 
 	afterUpdate(() => {

@@ -45,7 +45,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="column has-text-right">
+				<div class="column has-text-right has-text-centered-touch">
 					<img src="/logoHome.png" alt="">
 				</div>
 			</div>
@@ -68,7 +68,7 @@
 					<footer class="card-foter px-5 pb-5">
 						<a
 							href="/partidos-y-candidates"
-							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
+							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
 							>Candidatos y candidatas</a
 						>
 					</footer>
@@ -86,8 +86,8 @@
 					</div>
 					<footer class="card-foter px-5 pb-5">
 						<a
-							href="/plataformas/donde-votas"
-							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
+							href="/plataformas"
+							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
 							>propuestas por listas</a
 						>
 					</footer>
@@ -111,7 +111,7 @@
 					<footer class="card-foter px-5 pb-5">
 						<a
 							href="/juegos"
-							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 "
+							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
 							>conoce lOS JUEGOS</a
 						>
 					</footer>
@@ -202,6 +202,10 @@
 	}
 	.has-background-FF4817{
 		background-color: #FF4817;
+	}
+	.call-to-action{
+		position: relative;
+		z-index: 2;
 	}
 	@media screen and (max-width: 1024px) {
 		.hero.tetris-background .hero-body {

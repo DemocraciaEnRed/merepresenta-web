@@ -34,42 +34,33 @@
 	bind:outerWidth={initWidth}
 	on:resize={updateWindowWidth}
 />
-<div class="section tetris-background">
-	<div class="container">
-		<div class="has-text-centered has-text-black">
-			<h1 class="is-size-2 has-text-weight-medium has-text-black">Precandidatos Presidenciales</h1>
-			<h3 class="is-size-4 has-text-weight-light">
-				Explora los programa electoral de los precandidatos del partido de tu interés.
-			</h3>
-		</div>
-		<div
-			class="columns mt-6 is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2"
+
+<div
+	class="columns mt-6 is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2"
+>
+	{#if typeof window !== 'undefined' && !loading && dinamycParticlesToShow !== NaN}
+		<Carousel
+			dots={false}
+			particlesToShow={dinamycParticlesToShow}
+			infinite={false}
+			let:showPrevPage
+			let:showNextPage
 		>
-			{#if typeof window !== 'undefined' && !loading && dinamycParticlesToShow !== NaN}
-				<Carousel
-					dots={false}
-					particlesToShow={dinamycParticlesToShow}
-					infinite={false}
-					let:showPrevPage
-					let:showNextPage
-				>
-					<div slot="prev" class="arrow-wrapper">
-						<button class="circle_arrow_button" on:click={showPrevPage}>
-							<Icon icon="fa-chevron-left" />
-						</button>
-					</div>
-					<div slot="next" class="arrow-wrapper">
-						<button class="circle_arrow_button" on:click={showNextPage}>
-							<Icon icon="fa-chevron-right" />
-						</button>
-					</div>
-					{#each randomCandidates as candidate}
-						<ProposalCandidateCard {candidate} />
-					{/each}
-				</Carousel>
-			{/if}
-		</div>
-	</div>
+			<div slot="prev" class="arrow-wrapper">
+				<button class="circle_arrow_button" on:click={showPrevPage}>
+					<Icon icon="fa-chevron-left" />
+				</button>
+			</div>
+			<div slot="next" class="arrow-wrapper">
+				<button class="circle_arrow_button" on:click={showNextPage}>
+					<Icon icon="fa-chevron-right" />
+				</button>
+			</div>
+			{#each randomCandidates as candidate}
+				<ProposalCandidateCard {candidate} />
+			{/each}
+		</Carousel>
+	{/if}
 </div>
 
 <style>

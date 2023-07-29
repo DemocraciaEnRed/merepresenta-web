@@ -2,7 +2,7 @@
 	import API, { handleResponse } from '$lib/apiHandler';
 	import Dropdown from '$lib/common/Dropdown.svelte';
 	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-	import { CandidateImg } from '$lib/common/utils';
+	import { CandidateImg, cargosSlugs, cargosSlugsAbbreviated } from '$lib/common/utils';
 	import { getCandidatesByDistrict } from '$lib/graph-ql/candidates';
 	import { getPartysByDistrict } from '$lib/graph-ql/partidos';
 	let partys;
@@ -40,8 +40,8 @@
 							{#each partyList as list}
 								{#if list.alianzas.some((partyInList) => partyInList.related_partido_id.id === party.id)}
 									<div class="column is-4">
-										<div class="card has-text-white  has-background-dark is-height-100">
-											<div class=" pt-3">
+										<div class="card has-text-white is-flex is-flex-direction-column is-justify-content-space-between has-background-dark card-list-legislative">
+											<div class=" pt-6">
 												<figure class="image is-128x128 m-auto">
 													<img
 														src={candidates.filter((candidate) => candidate.partido.id === list.id)[0]
@@ -54,7 +54,7 @@
 											</div>
 											<div class="card-content ">
 												<div class="content ">
-													<div class="has-text-centered">
+													<div class="">
 														<h3 class=" has-text-white is-size-5 has-text-weight-light">
 															Lista: <strong class=" has-text-white ">{list.name}</strong>
 														</h3>
@@ -62,9 +62,9 @@
 													<br />
 													<div class="candidates-list">
 														{#each candidates as candidate}
-															{#if candidate.partido.id === list.id}
+															{#if candidate.partido.id === list.id && candidate.position <=2}
 																<p class="is-size-6">
-																	{candidate.position}º {candidate.name}
+																	{candidate.position}º {candidate.name} - {cargosSlugsAbbreviated[candidate.cargo]}
 																</p>
 															{/if}
 														{/each}
@@ -72,7 +72,7 @@
 												</div>
 											</div>
 											<div
-												class="card-footed has-background-dark is-flex is-justify-content-center py-6"
+												class="card-footed  is-flex is-justify-content-center py-6"
 											>
 												<a
 													href="/partidos-y-candidates/candidates/{list.id}"
@@ -135,15 +135,19 @@
 		width: 100%;
 		justify-content: center;
 	}
-	.is-height-100 {
+	.card-list-legislative {
+		border-radius: 30px;
 		height: 100%;
+	}
+	.card-list-legislative img{
+		border: 1px solid #000;
 	}
 	.select-district {
 		width: 100%;
 		text-align: center;
 	}
 	.candidates-list {
-		width: 70%;
+		width: 90%;
 		margin: auto;
 	}
 </style>
