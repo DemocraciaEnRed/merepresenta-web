@@ -98,7 +98,7 @@ export function PartyImg (party){
 }
 
 export function CandidateImg (candidate){
-  return candidate.avatar?.id ? `${directusImg}${candidate.avatar.id}?width=500&height=500&format=jpg&fit=cover` : 
+  return candidate.avatar?.id ? `${directusImg}${candidate.avatar.id}?width=500&height=500&format=jpg&fit=cover&quality=50` : 
   '/candidate.svg'
   //getDefaultCandidateImgByGender(candidate.genre)
 }

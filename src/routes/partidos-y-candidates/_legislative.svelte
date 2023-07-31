@@ -15,7 +15,7 @@
 		const response2 = await handleResponse(res2, 'candidates', 'candidato');
 
 		partys = response.props.partidos.filter((partido) => partido.tipo === 'partido');
-		partyList = response.props.partidos.filter((partido) => partido.alianzas.length > 0);
+		partyList = response.props.partidos.filter((partido) => partido.tipo === 'lista');
 		candidates = response2.props.candidates;
 	}
 </script>

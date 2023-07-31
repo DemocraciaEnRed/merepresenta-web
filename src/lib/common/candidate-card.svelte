@@ -4,15 +4,9 @@
 	import { afterUpdate } from 'svelte';
 
 	export let candidate;
-	export let createNewPath;
 	export let showParty;
-	let url=`${$page.path}/candidate/${candidate.id}`;
-	afterUpdate(()=>{
-		if (createNewPath) {
-			url = `/partidos-y-candidates/${candidate.partido.district.slug}/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
-		}
+	let url=`/partidos-y-candidates/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
 
-	})
 </script>
 
 <div

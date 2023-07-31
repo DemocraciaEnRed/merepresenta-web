@@ -81,7 +81,7 @@
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Conoce a los demás candidatos</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each otherCandidates as candidate}
-      <CandidateCard createNewPath showParty candidate={candidate}/>
+      <CandidateCard  showParty candidate={candidate}/>
     {/each}
     </div>
   </div>

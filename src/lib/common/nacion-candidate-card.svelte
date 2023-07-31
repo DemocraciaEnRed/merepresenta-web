@@ -60,6 +60,7 @@
 	.candidate-container {
 		border: 1px solid black;
 		position: relative;
+		background-color: #fff;
 	}
 	.candidate-container:last-of-type {
 		border-bottom-right-radius: 10px;
