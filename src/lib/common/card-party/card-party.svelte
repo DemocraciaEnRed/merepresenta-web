@@ -26,7 +26,12 @@
 </script>
 
 {#if partySelected}
-	<div class="is-flex is-flex-direction-column is-align-items-center mx-auto {district.slug === 'nacion' ? 'card-party-wrapper':'card-party-wrapper-legislative'}">
+	<div
+		class="is-flex is-flex-direction-column is-align-items-center mx-auto {district.slug ===
+		'nacion'
+			? 'card-party-wrapper'
+			: 'card-party-wrapper-legislative'}"
+	>
 		{#if district.slug === 'nacion'}
 			<div class="card card-party">
 				<header class="card-header is-align-items-center ">
@@ -57,31 +62,32 @@
 		{:else}
 			<div class="has-text-centered list-legislative-wrapper">
 				<h1 class="is-size-2 has-text-weight-medium has-text-black my-3">{partySelected.name}</h1>
-				<div class="is-flex is-flex-direction-row is-justify-content-space-between">
+				<div class="is-flex candidates">
 					<div class="legislative-list">
-						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black">diputados Nacionales</h1>
-						<div >
+						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
+							diputados Nacionales
+						</h1>
+						<div>
 							{#each partyCandidates as candidate}
 								{#if candidate.position < 3 && candidate.cargo === 'diputado-nacional'}
 									<NacionCandidateCard {candidate} noRounded />
 								{/if}
 							{/each}
-	
 						</div>
 					</div>
 					<div class="legislative-list">
-						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black">Senadores Nacionales</h1>
+						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
+							Senadores Nacionales
+						</h1>
 						<div>
 							{#each partyCandidates as candidate}
 								{#if candidate.position < 3 && candidate.cargo === 'senador-nacional'}
-									<NacionCandidateCard {candidate} noRounded/>
+									<NacionCandidateCard {candidate} noRounded />
 								{/if}
 							{/each}
-	
 						</div>
 					</div>
 				</div>
-
 			</div>
 		{/if}
 		<div class="actions is-flex is-justify-content-center my-6 is-centered">
@@ -112,7 +118,7 @@
 	.card-party-wrapper {
 		width: 50%;
 	}
-	.card-party-wrapper-legislative{
+	.card-party-wrapper-legislative {
 		width: 90%;
 	}
 	.actions {
@@ -156,17 +162,20 @@
 		position: relative;
 		overflow: hidden;
 	}
-	.list-legislative-wrapper{
+	.list-legislative-wrapper {
 		width: 80%;
 	}
-	.legislative-list{
+	.list-legislative-wrapper .candidates{
+		justify-content: space-between;
+	}
+	.legislative-list {
 		width: 40%;
 	}
 
-	.legislative-list div{
+	.legislative-list div {
 		display: flex;
 	}
-	
+
 	@media screen and (max-width: 768px) {
 		.card-party-wrapper {
 			width: 100%;
@@ -186,6 +195,17 @@
 		.image-party {
 			height: 48px;
 			width: 48px;
+		}
+		.list-legislative-wrapper .candidates {
+			text-align: center;
+			flex-direction: column;
+		}
+		.list-legislative-wrapper {
+			width: 100%;
+		}
+		.legislative-list {
+			margin-bottom: 16px;
+			width: 100%;
 		}
 	}
 </style>
