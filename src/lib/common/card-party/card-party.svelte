@@ -3,16 +3,16 @@
 	import { getCandidatesByParty } from '$lib/graph-ql/candidates';
 	import { getPartyById } from '$lib/graph-ql/partidos';
 	import { onMount } from 'svelte';
-	import { PartyImg, directusImg } from '../utils';
+	import { PartyImg } from '../utils';
 	import NacionCandidateCard from '../nacion-candidate-card.svelte';
 
 	export let partyId;
 	export let showListButton;
 	export let showProposalButton;
+	export let district;
 
 	let partySelected;
 	let partyCandidates;
-
 	onMount(async () => {
 		const res = await API(fetch, getPartyById(partyId));
 		const response = await handleResponse(res, 'partido', 'partido');
@@ -26,34 +26,64 @@
 </script>
 
 {#if partySelected}
-	<div class="is-flex is-flex-direction-column is-align-items-center card-party-wrapper">
-		<div class="card card-party">
-			<header class="card-header is-align-items-center ">
-				<div class="image-wrapper">
-					<div class="image-party is-rounded  m-2" style="background-image: url()">
-						<img src={PartyImg(partySelected)} alt="" />
+	<div class="is-flex is-flex-direction-column is-align-items-center mx-auto {district.slug === 'nacion' ? 'card-party-wrapper':'card-party-wrapper-legislative'}">
+		{#if district.slug === 'nacion'}
+			<div class="card card-party">
+				<header class="card-header is-align-items-center ">
+					<div class="image-wrapper">
+						<div class="image-party is-rounded  m-2" style="background-image: url()">
+							<img src={PartyImg(partySelected)} alt="" />
+						</div>
+					</div>
+					<div class="name-partido">
+						<p class="card-header-title pb-2 is-size-5 has-text-white has-text-weight-semibold">
+							{partySelected.name}
+						</p>
+						<p class="pl-4 pb-4 has-text-white is-size-6 has-text-weight-light">
+							{#each partySelected.alianzas as alianza}
+								{alianza.related_partido_id.name}
+							{/each}
+						</p>
+					</div>
+				</header>
+				<div
+					class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0"
+				>
+					{#each partyCandidates as candidate}
+						<NacionCandidateCard {candidate} />
+					{/each}
+				</div>
+			</div>
+		{:else}
+			<div class="has-text-centered list-legislative-wrapper">
+				<h1 class="is-size-2 has-text-weight-medium has-text-black my-3">{partySelected.name}</h1>
+				<div class="is-flex is-flex-direction-row is-justify-content-space-between">
+					<div class="legislative-list">
+						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black">diputados Nacionales</h1>
+						<div >
+							{#each partyCandidates as candidate}
+								{#if candidate.position < 3 && candidate.cargo === 'diputado-nacional'}
+									<NacionCandidateCard {candidate} noRounded />
+								{/if}
+							{/each}
+	
+						</div>
+					</div>
+					<div class="legislative-list">
+						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black">Senadores Nacionales</h1>
+						<div>
+							{#each partyCandidates as candidate}
+								{#if candidate.position < 3 && candidate.cargo === 'senador-nacional'}
+									<NacionCandidateCard {candidate} noRounded/>
+								{/if}
+							{/each}
+	
+						</div>
 					</div>
 				</div>
-				<div class="name-partido">
-					<p class="card-header-title pb-2 is-size-5 has-text-white has-text-weight-semibold">
-						{partySelected.name}
-					</p>
-					<p class="pl-4 pb-4 has-text-white is-size-6 has-text-weight-light">
-						{#each partySelected.alianzas as alianza}
-							{alianza.related_partido_id.name}
-						{/each}
-					</p>
-				</div>
-			</header>
-			<div
-				class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0
-    "
-			>
-				{#each partyCandidates as candidate}
-					<NacionCandidateCard {candidate} />
-				{/each}
+
 			</div>
-		</div>
+		{/if}
 		<div class="actions is-flex is-justify-content-center my-6 is-centered">
 			{#if showListButton}
 				<a
@@ -81,7 +111,9 @@
 
 	.card-party-wrapper {
 		width: 50%;
-		margin: auto;
+	}
+	.card-party-wrapper-legislative{
+		width: 90%;
 	}
 	.actions {
 		width: 100%;
@@ -124,8 +156,17 @@
 		position: relative;
 		overflow: hidden;
 	}
-	.image-party img {
+	.list-legislative-wrapper{
+		width: 80%;
 	}
+	.legislative-list{
+		width: 40%;
+	}
+
+	.legislative-list div{
+		display: flex;
+	}
+	
 	@media screen and (max-width: 768px) {
 		.card-party-wrapper {
 			width: 100%;

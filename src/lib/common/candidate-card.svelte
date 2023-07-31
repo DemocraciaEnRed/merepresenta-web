@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { CandidateImg, directusImg } from '$lib/common/utils';
+	import { CandidateImg, cargosSlugs, directusImg } from '$lib/common/utils';
 	import { afterUpdate } from 'svelte';
 
 	export let candidate;
@@ -51,7 +51,7 @@
 			</p>
 			<p class="has-text-black is-size-7">
 				Candidat{candidate.genre === 'm' ? 'o' : 'a'} a <br />
-				<span class="general-sans is-size-6 has-text-weight-semibold">{candidate.cargo}</span>
+				<span class="general-sans is-size-6 has-text-weight-semibold">{cargosSlugs[candidate.cargo]}</span>
 			</p>
 
 			<a

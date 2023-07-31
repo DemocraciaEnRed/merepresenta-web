@@ -76,20 +76,20 @@
   </div>
 </div>
 <div class="section tetris-background">
-  {#if partido.district.slug === 'nacion' && partido.tipo === 'partido'}
+  {#if partido.tipo === 'partido'}
   <section class="container p-2">
     <div class="has-text-centered has-text-black">
-      <img src="/pink-house.svg" alt="" />
-      <h1 class="is-size-2 has-text-weight-medium has-text-black">Precandidatos Presidenciales</h1>
+      <img src="{partido.district.slug === 'nacion' ? '/pink-house.svg' : '/deputies-chamber.svg'}" alt="" />
+      <h1 class="is-size-2 has-text-weight-medium has-text-black">{partido.district.slug === 'nacion' ? 'Precandidatos Presidenciales' : 'Precandidatos P.L.N.'}</h1>
       <h3 class="is-size-4 has-text-weight-light">
         Explora los programa electoral de los precandidatos del partido de tu interés.
       </h3>
     </div>
   </section>
   <div class="container mt-6">
-    <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
+    <div class="columns is-mobile is-multiline {partido.district.slug !== 'nacion' && 'is-flex-direction-column'}  is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each partysListId as partyId}
-        <CardParty partyId={partyId.id} showProposalButton />
+        <CardParty partyId={partyId.id} showProposalButton={partido.district === 'nacion'} district={partido.district}/>
     {/each}
     </div>
   </div>

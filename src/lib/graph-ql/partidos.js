@@ -70,7 +70,7 @@ export function getpartyAliansazId (partyId){
  
   return(`
   {
-    partido(filter:{alianzas:{related_partido_id:{id:{_eq:${Number(partyId)}}}},district:{slug:{_eq:"nacion"}}}){
+    partido(filter:{alianzas:{related_partido_id:{id:{_eq:${Number(partyId)}}}}}){
       id
       
     }

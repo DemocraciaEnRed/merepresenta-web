@@ -262,16 +262,5 @@
 			padding-bottom: 0;
 		}
 	}
-	.svg-container {
-		padding: 10px 30px;
-		background-color: #000;
-	}
-	/* .svg-container:hover{
-    background-color: #000000;
-  } */
-	.svg-container svg {
-		width: 75px;
-		height: 75px;
-		/* background-color: black; */
-	}
+
 </style>

@@ -4,13 +4,14 @@
 	import { afterUpdate } from 'svelte';
 
 	export let candidate;
+	export let noRounded
 	let url = `${$page.path}/candidate/${candidate.id}`;
 	afterUpdate(() => {
 		url = `/partidos-y-candidates/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
 	});
 </script>
 
-<div class="column is-half has-text-centered p-0 candidate-container">
+<div class="column is-half has-text-centered p-0 candidate-container {noRounded && 'force-no-rounded'}">
 	<a href={url}>
 		<figure class="image candidate-img" style="background-image: url({CandidateImg(candidate)})" />
 	</a>
@@ -30,8 +31,8 @@
 
 		<a
 			href={url}
-			class="button is-outlined is-fullwidth is-active has-text-black has-text-weight-semibold"
-			>VER MÁS</a
+			class="button  is-fullwidth is-active is-black has-text-weight-semibold"
+			>VER PERFIL</a
 		>
 	</div>
 </div>
@@ -77,6 +78,9 @@
 		text-wrap: balance;
 	}
 
+	.force-no-rounded{
+		border-radius: 0!important;
+	}
 	@media screen and (max-width: 768px) {
 		.candidate-img {
 			width: 100%;

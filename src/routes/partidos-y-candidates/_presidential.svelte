@@ -90,7 +90,7 @@
 	<section
 		class="is-flex is-justify-content-center is-flex-direction-column  px-2 pt-6 has-text-black"
 	>
-		<CardParty {partyId} showListButton showProposalButton />
+		<CardParty {partyId} showListButton showProposalButton district={{slug:'nacion'}}/>
 	</section>
 {:else}
 	<div class="fill-select pt-6">
