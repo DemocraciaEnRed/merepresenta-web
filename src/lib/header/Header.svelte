@@ -14,7 +14,7 @@
 <header id="the-header" class="has-background-black m-0 is-hidden-touch">
 	<div class="is-flex is-justify-content-space-between py-4">
 		<img src="/logo-merepresenta.svg" width="240" class="image mx-1 p-4 " alt="">
-		<nav class="level is-flex-grow-1">
+		<nav class="level mr-6">
 			<p class="level-item has-text-centered" class:active={path==="/"}>
 				<a class="has-text-white link-styled py-1 px-2" href="/">Inicio</a>
 			</p>
@@ -36,9 +36,9 @@
 			<p class="level-item has-text-centered" class:active={path.includes('/acerca-de')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/acerca-de">Acerca de</a>
 			</p>
-			<p class="level-item has-text-centered" class:active={path.includes('/financiamiento')}>
+			<!-- <p class="level-item has-text-centered" class:active={path.includes('/financiamiento')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/financiamiento">financiamiento</a>
-			</p>
+			</p> -->
 		</nav>
 	</div>
 </header>
@@ -83,9 +83,9 @@
 					<li class:active={path.includes('/acerca-de')} >
 						<a href="/acerca-de" on:click={() => openNav = !openNav}>Acerca de</a>
 					</li>
-					<li class:active={path.includes('/financiamiento')} >
-						<a href="/financiamiento" on:click={() => openNav = !openNav}>Acerca de</a>
-					</li>
+					<!-- <li class:active={path.includes('/financiamiento')} >
+						<a href="/financiamiento" on:click={() => openNav = !openNav}>financiamiento</a>
+					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -95,6 +95,9 @@
 <style>
 #the-header, #mobile-header{
 	border-bottom: 2px solid #FFF;
+}
+#the-header .level{
+	width: 70%;
 }
 #the-header .level-item a {
 	text-transform: uppercase;
