@@ -27,11 +27,11 @@
           </div>
       </div>
       {/if}
-      {#if candidate.profession}
+      {#if candidate.profesion}
       <div class="column has-text-black has-text-centered">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
             <p class="is-uppercase">Profesión</p>
-            <p class="is-uppercase has-text-weight-medium">{candidate.profession.name}</p>
+            <p class="is-uppercase has-text-weight-medium">{candidate.profesion}</p>
           </div>
       </div>
       {/if}
@@ -146,6 +146,11 @@
   .element-group p:first-child{
     margin-bottom: 10px;
   }
+  .group-content .columns .column:not(:first-child){
+    border-left: 0;
+  }
+}
+@media screen and (max-width: 768px) {
   .group-content .columns .column:not(:first-child){
     border-left: 0;
     border-top: 1px solid #CFCFCF;
