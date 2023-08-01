@@ -12,18 +12,22 @@
 	let initWidth;
 	let dinamycParticlesToShow;
 	let loading = false;
+	let dinamycParticlesToScroll;
+	let divisor = windowWidth < 760 ?4600 : 300
 	async function updateWindowWidth() {
-		if (dinamycParticlesToShow !== ((windowWidth + 70) / 300).toFixed()) {
+		if (dinamycParticlesToShow !== ((windowWidth - 70) / divisor).toFixed()) {
 			loading = true;
 
-			dinamycParticlesToShow = await ((windowWidth + 70) / 300).toFixed();
+			dinamycParticlesToShow = await ((windowWidth - 70) / divisor).toFixed();
+			dinamycParticlesToScroll = dinamycParticlesToShow
 			loading = false;
 		}
 	}
 	onMount(() => {
-		dinamycParticlesToShow = windowWidth ? ((windowWidth + 70) / 300).toFixed() : 12;
+		dinamycParticlesToShow = windowWidth ? ((windowWidth - 70) / divisor).toFixed() : 12;
+		dinamycParticlesToScroll = dinamycParticlesToShow
 	});
-
+	
 	afterUpdate(() => {
 		updateWindowWidth();
 	});
@@ -42,6 +46,7 @@
 		<Carousel
 			dots={false}
 			particlesToShow={dinamycParticlesToShow}
+			particlesToScroll={dinamycParticlesToScroll}
 			infinite={false}
 			let:showPrevPage
 			let:showNextPage

@@ -236,7 +236,7 @@
 	}
 	
 	.text-wrap-wrap{
-		text-wrap:wrap
+		white-space: normal;
 	}
 
 </style>

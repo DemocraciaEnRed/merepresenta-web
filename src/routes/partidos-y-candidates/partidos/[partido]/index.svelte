@@ -79,7 +79,7 @@
 				{#each candidates as candidate}
 					{#if partido.district.slug !== 'nacion'}
 						{#if candidate.position === 1}
-							<div class="card mx-1">
+							<div class="card mx-1 ">
 								<div class="card-image">
 									<figure class="image is-128x128">
 										<img src={CandidateImg(candidate)} alt="Placeholder image" />
@@ -93,7 +93,7 @@
 							</div>
 						{/if}
 					{:else}
-						<div class="card my-6">
+						<div class="card my-6 mx-1">
 							<div class="card-image">
 								<figure class="image is-128x128">
 									<img src={CandidateImg(candidate)} alt="Placeholder image" />

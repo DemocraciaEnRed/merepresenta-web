@@ -76,7 +76,7 @@
 	}
 	.candidate-name {
 		line-height: normal;
-		text-wrap: balance;
+		white-space: normal;
 	}
 
 	.force-no-rounded{

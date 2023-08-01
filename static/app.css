@@ -119,5 +119,5 @@ background-image: url(white-background-desktop.png);
 }
 
 .text-wrap-wrap{
-  text-wrap:wrap
+  white-space: normal;
 }

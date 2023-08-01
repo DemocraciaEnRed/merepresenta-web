@@ -70,10 +70,14 @@
 	.candidate-content {
 		background-color: #fff;
 		border-top: 0;
-		height: 120px;
+		height: 180px;
 	}
 	.candidate-name {
 		line-height: normal;
+	}
+	.candidate-footer a {
+		white-space: normal;
+		height: fit-content;
 	}
 	.candidate-footer a {
 		border-radius: 0;

@@ -1,16 +1,12 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
   import {getCandidates, getCandidatesByCargoAndDistrict} from '$lib/graph-ql/candidates';
+  import { get4FirstRandomItems } from '$lib/common/utils';
   export async function load({fetch, page}){
     const res = await API(fetch, getCandidates(page.params.id));
     const propsResCandidate = await handleResponse(res, "candidate", "candidato_by_id")
-    const res2 = await API(fetch, getCandidatesByCargoAndDistrict({
-      idExcept:page.params.id,
-      cargo: propsResCandidate.props.candidate.cargo, 
-      district:propsResCandidate.props.candidate.partido.district.id
-    }))
-    const otherCandidates = await handleResponse(res2, "candidates", "candidato");
-    propsResCandidate.props.otherCandidates = get4FirstRandomItems(otherCandidates.props.candidates)
+   
+    
     return propsResCandidate
  }
 </script>
@@ -20,19 +16,25 @@
   import Dropdown from "$lib/common/Dropdown.svelte";
   import About from "./_about.svelte";
   import Party from "./_party.svelte";
-  import Ideology from "./_ideology.svelte";
-  import Timeline from './_timeline.svelte';
-  import Twitter from "./_twitter.svelte";
-  import Corporate from './_corporate.svelte';
   import { CandidateImg, cargosSlugs } from "$lib/common/utils";
 	import CandidateCard from '$lib/common/candidate-card.svelte';
-	import { get4FirstRandomItems } from '$lib/common/utils';
-	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-	import SelectParty from '$lib/common/selectParty.svelte';
-	import SelectCandidate from "$lib/common/selectCandidate.svelte";
   
   export let candidate;
-  export let otherCandidates;
+  let otherCandidates;
+  let loading = true
+  async function update() {
+    loading = true
+		const res = await API(fetch, getCandidatesByCargoAndDistrict({
+      idExcept:candidate.id,
+      cargo: candidate.cargo, 
+      district:candidate.partido.district.id
+    }))
+		const response = await handleResponse(res, 'candidatos', 'candidato');
+		otherCandidates = get4FirstRandomItems(response.props.candidatos);
+		loading = false;
+	}
+
+	$: candidate, update()
   const partyUrl = `/partidos-y-candidates/partidos/${$page.params.partido}`;
 
 </script>
@@ -80,9 +82,16 @@
   <div class="container">
     <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >Conoce a los demás candidatos</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
-      {#each otherCandidates as candidate}
-      <CandidateCard  showParty candidate={candidate}/>
-    {/each}
+      {#if !loading}
+        {#each otherCandidates as candidate}
+          <CandidateCard  showParty candidate={candidate}/>
+        {/each}
+      {:else}
+        <div class="progres-wrapper">
+          <progress class="progress is-large is-dark" max="100">60%</progress>
+
+        </div>
+      {/if}
     </div>
   </div>
 </div>
@@ -127,6 +136,9 @@
       background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 100%); 
       /* background-attachment: fixed; */
     }
+    .progres-wrapper{
+      width: 50%;
+    }
 @media screen and (max-width: 1023px) {
      .candidate-logo{
       width: auto;
@@ -149,6 +161,9 @@
     }
     .party-text-container {
       width: 100%;
+    }
+    .progres-wrapper{
+      width: 90%;
     }
   }
 
