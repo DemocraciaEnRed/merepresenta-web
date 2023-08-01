@@ -60,9 +60,11 @@ export const ProvinciasSlugs = [
 ]
 
 export const logosAcercaDe =[
- 
+  {"alt": "Directorio Legislativo",   "src":"./logos/logo-directorio-leslativo.png", "type":"square"},
+  {"alt": "Democracia en Red",   "src":"./logos/logo-der-negro.svg", "type":"horizontal"},
   {"alt": "Poder Ciudadano",   "src":"./logos/logo-poder-ciudadano.png", "type":"horizontal"},
-  {"alt": "CIPPEC",   "src":"./logos/logo-cippec.png", "type":"horizontal"},
+ 
+  /* {"alt": "CIPPEC",   "src":"./logos/logo-cippec.png", "type":"horizontal"},
   {"alt": "Observatorio de Redes",   "src":"./logos/logo-observatorio-de-redes.png", "type":"horizontal"},
   {"alt": "Acción Colectiva",   "src":"./logos/logo-accion-colectiva.png", "type":"horizontal"},
   {"alt": "ACIJ",   "src":"./logos/logo-acij.png", "type":"horizontal"},
@@ -70,13 +72,20 @@ export const logosAcercaDe =[
   {"alt": "Economía Feminita",   "src":"./logos/logo-eco-feminita.png" , "type":"square"},
   {"alt": "Conocimiento Abierto",   "src":"./logos/logo-conocimiento-abierto.png", "type":"horizontal"},
   {"alt": "Eco House",   "src":"./logos/logo-eco-house.png", "type":"square"},
-  {"alt": "Directorio Legislativo",   "src":"./logos/logo-directorio-leslativo.png", "type":"square"},
   {"alt": "Fundeps",   "src":"./logos/logo-fundeps.png", "type":"horizontal"},
   {"alt": "REDACCIÓN",   "src":"./logos/logo-redaccion.png"},
   {"alt": "Nuestra Mendoza",   "src":"./logos/logo-nuestra-mendoza.png", "type":"square"},
-  {"alt": "Democracia en Red",   "src":"./logos/logo-der-negro.svg", "type":"horizontal"},
-  {"alt": "Sistema B",   "src":"./logos/logo-sistema-b.png", "type":"square"}
+  {"alt": "Sistema B",   "src":"./logos/logo-sistema-b.png", "type":"square"} */
 ]
+
+export const logosChicosAcercaDe =[
+  {"alt": "fundeps",   "src":"./logos/logos-chicos/logo-fundeps.png", "type":"horizontal"},
+  {"alt": "minu asociacion civil",   "src":"./logos/logos-chicos/logo-minu.png", "type":"square"},
+  {"alt": "Nuestra Mendoza",   "src":"./logos/logos-chicos/logo-nm.png", "type":"square"},
+  {"alt": "Salta transparente",   "src":"./logos/logos-chicos/logo-salta-transparente.png", "type":"horizontal"},
+ 
+]
+
 
 export const directusImg = 'https://content.merepresenta.info/assets/'
 

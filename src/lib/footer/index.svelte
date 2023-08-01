@@ -7,8 +7,7 @@
             <div class="mx-auto column is-one-quarter has-text-centered-touch is-flex-desktop is-align-items-flex-start ">
                 <div>
                     <img src="/logo-merepresenta.svg" class="mb-4 image mx-auto {backgroundColor === 'black' ? null : 'logo-mere'}" width="200" alt="Logo de Me Representa">
-                    <p class="has-text-{backgroundColor === 'black' ? 'white' : 'black'} ">Desarrollado con ❤️ por</p>
-                <img src="/logo-der-{backgroundColor === 'black' ? 'white' : 'negro'}.svg" width="100"  class="image logo-der" alt="Logo de Democracia en Red">
+                    <p class="has-text-{backgroundColor === 'black' ? 'white' : 'black'} ">Desarrollado con ❤️ por <br> Democracia en Red</p>
                 </div>
                 
             

@@ -51,9 +51,9 @@
 <section class="container p-2">
 	<div class="has-text-centered mt-6 has-text-black">
 		<img src="/pink-house.svg" alt="" />
-		<h1 class="is-size-2 has-text-weight-medium has-text-black">Precandidatos Presidenciales</h1>
+		<h1 class="is-size-2 has-text-weight-medium has-text-black">Precandidaturas Presidenciales</h1>
 		<h3 class="is-size-4 has-text-weight-light">
-			Explora los programa electoral de los precandidatos del partido de tu interés.
+			Explorá los programas electorales de las precandidaturas del partido de tu interés.
 		</h3>
 	</div>
 </section>
@@ -99,7 +99,7 @@
 				<img src="/candidate.svg" alt="" />
 			</figure>
 			<h2 class="is-size-4">
-				Hace "click" sobre un candidato y conoce la formula presidencial compelta
+				Hacé clic sobre una candidatura y conocé la fórmula completa
 			</h2>
 		</div>
 	</div>

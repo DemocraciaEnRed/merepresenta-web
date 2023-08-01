@@ -19,10 +19,10 @@
 		class="proposal-header is-flex is-flex-direction-row is-align-items-center  {!isOpen
 			? 'border-radius'
 			: 'border-top-radius'}"
-		style="background-color: {proposal.ejes_id.color};"
+		
 		on:click={() => (isOpen = !isOpen)}
 	>
-		<div class="icon-container">
+		<div class="icon-container" style="background-color: {proposal.ejes_id.color};">
 			<img
 				src={PoliciesIcons[proposal.ejes_id.slug]}
 				class="image m-3 icon-proposal"
@@ -47,7 +47,7 @@
 			<div class="">
 				<div class="my-4 has-text-centered-touch has-text-left-desktop">
 					<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">Resumen</h1>
-					<p>{proposal.summary.replace(/(\r\n|\n|\r)/gm, ' ')}</p>
+					<p>{proposal.summary}</p>
 					{#if partido.url_fuente}
 						<!-- <p>Podés leer las propuestas completas en la <a href="{policyUrl}{proposal.ejes_id.slug}/{partido.id}" class="is-uppercase has-text-black has-text-weight-semibold"><u>fuente oficial</u></a></p> -->
 						<p>

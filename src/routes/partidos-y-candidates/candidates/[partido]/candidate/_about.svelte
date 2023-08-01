@@ -1,4 +1,6 @@
 <script>
+	import Icon from '$lib/common/Icon.svelte';
+
   export let candidate;
   export let open
   import Binary from "./_binary.svelte";
@@ -33,18 +35,37 @@
           </div>
       </div>
       {/if}
-      <div class="column has-text-black has-text-centered">    
+      <!-- <div class="column has-text-black has-text-centered">    
         <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
           <p class="is-uppercase">Formacion</p>
           <p class="is-uppercase has-text-weight-medium has-text-danger">FALTA HACER</p>
         </div>
-      </div>
-      <div class="column has-text-black has-text-centered">    
+      </div> -->
+      <!-- <div class="column has-text-black has-text-centered">    
         <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
           <p class="is-uppercase">Redes sociales</p>
-          <p class="is-uppercase has-text-weight-medium has-text-danger">FALTA HACER</p>
+          <div class="is-flex">
+            {#if candidate.twitter_profile}
+            <a href="{candidate.twitter_profile}" _target="blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
+              
+            {/if}
+            {#if candidate.twitter_user}
+            <a href="{candidate.twitter_profile}" _target="blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
+              
+            {/if}
+            {#if candidate.twitter_profile}
+            <a href="{candidate.twitter_profile}" _target="blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
+              
+            {/if}
+            {#if candidate.twitter_profile}
+            <a href="{candidate.twitter_profile}" _target="blank" class="has-text-black"><Icon icon="fa-instagram-square" brand size="large"/></a>
+              
+            {/if}
+
+          </div>
+
         </div>
-      </div>
+      </div> -->
       <!-- {#if candidate.childrens != null && candidate.childrens > 0}
       <div class="column has-text-black has-text-centered">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">

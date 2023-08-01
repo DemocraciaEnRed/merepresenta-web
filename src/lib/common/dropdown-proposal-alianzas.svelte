@@ -17,10 +17,10 @@
 	<div
 		id="partido-{proposal.ejes_id.slug}"
 		class="proposal-header is-flex is-flex-direction-row is-align-items-center"
-		style="background-color: {proposal.ejes_id.color};"
+		
 		on:click={() => (isOpen = !isOpen)}
 	>
-		<div class="icon-container">
+		<div class="icon-container " style="background-color: {proposal.ejes_id.color};">
 			<img
 				src={PoliciesIcons[proposal.ejes_id.slug]}
 				class="image m-3 icon-proposal"
@@ -50,7 +50,7 @@
 									<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">
 										Lista: {alianza.name}
 									</h1>
-									<p>{proposalAlianza.summary.replace(/(\r\n|\n|\r)/gm, ' ')}</p>
+									<p>{proposalAlianza.summary}</p>
 									{#if alianza.url_fuente}
 										<p>
 											<a

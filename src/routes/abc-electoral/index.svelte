@@ -7,7 +7,7 @@
     <section class="container p-2">
       <div class="has-text-centered mt-6 has-text-white">
         <img src="/abc.svg" alt="imagen de una mano deslizando un voto en una urna" />
-        <h1 class="title has-text-white mt-3 is-uppercase">Elecciones 2021</h1>
+        <h1 class="title has-text-white mt-3 is-uppercase">Elecciones 2023</h1>
         <h2 class="title subtitle is-5 p-4 has-text-black  has-text-weight-normal ">
           <span class=" has-background-white p-2 mb-5">
             Todo lo que siempre quisiste saber sobre elecciones
@@ -21,7 +21,6 @@
     <section class="container p-2 ">
       <Dropdown name=" ¿QUÉ SON LAS PASO? ">
         <div>
-          <h2>¿Qué se vota en las elecciones de 2021?</h2>
           <img class="is-hidden-tablet" src="/abc/PASO-Mob.png" alt="Respuesta de la pregunta" />
           <img class="is-hidden-mobile" src="/abc/PASO-Desk.png" alt="Respuesta de la pregunta" />
           <h2>¿Qué significa PASO?</h2>
@@ -231,7 +230,6 @@
             Justicia Nacional Electoral tu inclusión en el Padrón ​​a través de <a
               href="www.padron.gov.ar/cne_reclamos">www.padron.gov.ar/cne_reclamos</a> o
             enviando un mail a reclamos.padron@pjn.gov.ar
-            Sin embargo, esa eventual modificación no se verá reflejado en el Padrón de 2021
           </p>
           <h2>¿Cómo y dónde votan las/os argentinas/os que residen en el exterior?</h2>
           <p>Quienes residan en el exterior no pueden votar en las PASO.</p>
@@ -353,7 +351,6 @@
             <li>Suplente o Vicepresidente/a</li>
             <li>Fiscales de mesa</li>
           </ul>
-          <img src="/abc/autoridades-de-mesa.png" alt="autoridades de mesa">
           <h2>¿A qué llamamos “Presidente/a de mesa”?</h2>
           <p>Es la máxima autoridad de la mesa. Se convocan a <strong>ciudadanas/os que son seleccionadas/os por la
               Justicia

@@ -13,16 +13,18 @@
 </script>
 <header id="the-header" class="has-background-black m-0 is-hidden-touch">
 	<div class="is-flex is-justify-content-space-between py-4">
-		<img src="/logo-merepresenta.svg" width="240" class="image mx-1 p-4 " alt="">
+		<a href="/">
+			<img src="/logo-merepresenta.svg" width="240" class="image mx-1 p-4 " alt="">
+		</a>
 		<nav class="level mr-4">
 			<p class="level-item has-text-centered" class:active={path==="/"}>
 				<a class="has-text-white link-styled py-1 px-2" href="/">Inicio</a>
 			</p>
-			<p class="level-item has-text-centered" class:active={path.includes('/plataformas')}>
-				<a class="has-text-white link-styled py-1 px-2" href="/plataformas">Propuestas</a>
-			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidates')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/partidos-y-candidates">Partidos y candidaturas</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/plataformas')}>
+				<a class="has-text-white link-styled py-1 px-2" href="/plataformas">Propuestas</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/abc-electoral')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/abc-electoral">Abc Electoral</a>
@@ -65,11 +67,11 @@
 					<li class:active={path==="/"} >
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
 					</li>
-					<li class:active={path.includes('/plataformas')}>
-						<a href="/plataformas" on:click={() => openNav = !openNav}>Propuestas</a>
-					</li>
 					<li class:active={path.includes('/partidos-y-candidates')}>
 						<a href="/partidos-y-candidates" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
+					</li>
+					<li class:active={path.includes('/plataformas')}>
+						<a href="/plataformas" on:click={() => openNav = !openNav}>Propuestas</a>
 					</li>
 					<li class:active={path.includes('/abc-electoral')}>
 						<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>

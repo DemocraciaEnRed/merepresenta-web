@@ -109,7 +109,7 @@
 					<figure class="image is-96x96 my-6">
 						<img src="/candidate.svg" alt="" />
 					</figure>
-					<h2 class="is-size-4">Elegi una provincia y conoce la formula compelta</h2>
+					<h2 class="is-size-4">Elegí un distrito y conocé la fórmula completa</h2>
 				</div>
 			</div>
 		{/if}

@@ -9,14 +9,14 @@
     <div class="hero-body p-2">
         <section class="has-text-centered container p-4 my-6">
             <h2 class="title light is-size-1  is-size-3-touch has-text-weight-normal has-text-black is-uppercase">Nuestros Juegos</h2>
-            <h2 class="subtitle light is-size-4 is-size-6-touch has-text-weight-semibold has-text-black is-uppercase mt-4">Mirá nuestros juegos online para descubrir más sobre la política argentina</h2>
+            <h2 class="subtitle light is-size-4 is-size-6-touch has-text-weight-semibold has-text-black is-uppercase mt-4">Conocé los juegos online que tenemos para vos y descubrí más sobre las política argentina</h2>
             
         </section>
         <section class="container p-4 has-text-centered">
             <div class="columns is-justify-content-center">
-                <div class="column p-0 column-styled">
+                <!-- <div class="column p-0 column-styled">
                     <Compas delay={'delay'}  background='games/juego2.png' title="Compás <br/> politico"  subtitle="¿Cuál es tu ideología?" url={"https://compaspolitico.merepresenta.info/"} textColor="black"/>
-                </div>
+                </div> -->
                 <div    class="column p-0 column-styled">
                     <Trivia  background='games/juego1.png' title="TRIVIA" subtitle="Juego de preguntas y respuestas" url={"https://trivia.merepresenta.info/"} textColor="white" />
                 </div>

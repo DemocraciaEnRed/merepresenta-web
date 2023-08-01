@@ -9,6 +9,7 @@ export function getCandidates (id){
       position
       genre
       age
+      profesion
       partido {
         id
         name
@@ -25,9 +26,6 @@ export function getCandidates (id){
       },
       cargo
       cargos_publicos
-      profession {
-        name
-      }
       childrens
       razon_social
       tipo_societario

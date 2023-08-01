@@ -59,7 +59,7 @@
 						<div
 							class="card-header-title title-custom-style has-text-black is-uppercase has-text-weight-medium is-centered has-background-5A81FF"
 						>
-							¿No sabés que se vota?
+							¿No sabés qué se vota?
 						</div>
 					</header>
 					<div class="card-image py-5">
@@ -69,7 +69,7 @@
 						<a
 							href="/partidos-y-candidates"
 							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
-							>Candidatos y candidatas</a
+							>Candidaturas</a
 						>
 					</footer>
 				</div>
