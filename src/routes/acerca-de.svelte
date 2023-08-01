@@ -15,7 +15,7 @@
 							<strong>REPRESENTAR</strong> es <strong>personificar</strong>, es “actuar en nombre de”. En política, REPRESENTAR tiene que ver con exponer <strong>deseos, solidaridades, intereses</strong> y necesidades de una sociedad. En este 2023, vamos a votar <strong> representantes para el Poder Ejecutivo Nacional, Provincial y Municipal y del Poder Legislativo en esos mismos niveles.</strong> 
                         </h2>
                         <h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal mb-4">
-                            <strong>Las elecciones no son concursos de popularidad, se tratan de dar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero también es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. 
+                            <strong>Las elecciones no son concursos de popularidad, son mecanismos para asignar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero, también, es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. 
                         </h2>
                         <h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal mb-4">
                             Porque si <strong>tus representantes van a representarte</strong>, te tienen que explicar <strong>quiénes son y qué han hecho</strong>. Si van a actuar en tu nombre, te tienen que explicar <strong>qué quieren hacer y cómo.</strong> 
@@ -31,10 +31,10 @@
                 ¿Quiénes somos?
             </h1>
             <p class=" is-3 mb-4 has-text-left  has-text-black">
-                Somos organizaciones de la sociedad civil que nos unimos para crear <strong>#MeRepresenta</strong>, una plataforma simple, atractiva e interactiva donde la ciudadanía pueda informarse sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general.
+                Somos tres organizaciones de la sociedad civil que impulsamos <strong>#MeRepresenta</strong> como servicio a la ciudadanía. Para puedas informarte sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. 
             </p>
             <p class=" is-3  has-text-left  has-text-black">
-                <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
+                <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar el voto y contribuir así a una campaña menos centrada en descalificaciones personales y más orientada a las propuestas.
             </p>
             <div class="is-flex-tablet is-align-items-center py-3 is-flex-wrap-wrap has-text-centered is-justify-content-space-between is-hidden-mobile">
                 {#each logosAcercaDe as logo}
