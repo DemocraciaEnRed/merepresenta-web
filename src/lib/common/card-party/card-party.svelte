@@ -65,7 +65,7 @@
 				<div class="is-flex candidates">
 					<div class="legislative-list">
 						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
-							diputados Nacionales
+							Diputados/as Nacionales
 						</h1>
 						<div>
 							{#each partyCandidates as candidate}
@@ -77,7 +77,7 @@
 					</div>
 					<div class="legislative-list">
 						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
-							Senadores Nacionales
+							Senadores/as Nacionales
 						</h1>
 						<div>
 							{#each partyCandidates as candidate}

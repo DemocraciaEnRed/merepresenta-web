@@ -80,9 +80,9 @@
   <section class="container p-2">
     <div class="has-text-centered has-text-black">
       <img src="{partido.district.slug === 'nacion' ? '/pink-house.svg' : '/deputies-chamber.svg'}" alt="" />
-      <h1 class="is-size-2 has-text-weight-medium has-text-black">{partido.district.slug === 'nacion' ? 'Precandidatos Presidenciales' : 'Precandidatos P.L.N.'}</h1>
+      <h1 class="is-size-2 has-text-weight-medium has-text-black">{partido.district.slug === 'nacion' ? 'Precandidaturas Presidenciales' : 'Precandidaturas P.L.N.'}</h1>
       <h3 class="is-size-4 has-text-weight-light">
-        Explora los programa electoral de los precandidatos del partido de tu interés.
+        Explorá los programas electorales de las precandidaturas del partido de tu interés.
       </h3>
     </div>
   </section>
