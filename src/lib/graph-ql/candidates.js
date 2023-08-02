@@ -9,6 +9,7 @@ export function getCandidates (id){
       position
       genre
       age
+      profesion
       partido {
         id
         name
@@ -25,15 +26,16 @@ export function getCandidates (id){
       },
       cargo
       cargos_publicos
-      profession {
-        name
-      }
       childrens
       razon_social
       tipo_societario
+      instagram_page
+      facebook_page
+      facebook_profile
       twitter_user
-      twitter_tweets
       twitter_profile
+      formacion
+      twitter_tweets
       twitter_followers
       twitter_created_at
       twitter_friends
@@ -42,6 +44,7 @@ export function getCandidates (id){
       distrito_nacional {
         id
         name
+        slug
       }
     }
   }
@@ -50,7 +53,7 @@ export function getCandidates (id){
 export function getCandidatesByParty (partyId){
   return(`
   {
-    candidato(filter:{partido:{id:{_eq:${Number(partyId)}}}},sort: ["-cargo","position"]){
+    candidato(filter:{partido:{id:{_eq:${Number(partyId)}}}},sort: ["position","-cargo"]){
       name
       cargo
       genre
@@ -62,6 +65,110 @@ export function getCandidatesByParty (partyId){
       partido {
         id
         name
+        district {
+          id
+          name
+          slug
+        }
+      }
+      distrito_nacional {
+        id
+        name
+        slug
+      }
+    }
+  }`)
+}
+
+
+
+
+export function getCandidatesByCargoAndDistrict ({idExcept, cargo,district}){
+  const exceptId = idExcept ? `id:{_neq: ${Number(idExcept)}}`:''
+  return(`
+  {
+    candidato(filter:{cargo:{_eq:"${cargo}"},distrito_nacional:{id:{_eq :${Number(district)}}}${exceptId}}){
+      name
+      cargo
+      genre
+      id
+      position
+      avatar {
+        id
+      }
+      partido {
+        id
+        name
+        logo{
+          id
+        }
+        district {
+          id
+          name
+          slug
+        }
+      }
+    }
+  }`)
+}
+
+export function getCandidatesByCargo (cargo){
+  return(`
+  {
+    candidato(filter:{cargo:{_eq:"${cargo}"}}){
+      name
+      cargo
+      genre
+      id
+      position
+      avatar {
+        id
+      }
+      partido {
+        id
+        name
+        alianzas{
+          related_partido_id{
+            id
+            name
+          }
+        }
+        logo{
+          id
+        }
+        district {
+          id
+          name
+          slug
+        }
+      }
+    }
+  }`)
+}
+
+export function getCandidatesByDistrict (district){
+  return(`
+  {
+    candidato(filter:{distrito_nacional:{slug:{_eq:"${district}"}}},sort: ["cargo","position"]){
+      name
+      cargo
+      genre
+      id
+      position
+      avatar {
+        id
+      }
+      partido {
+        id
+        name
+        logo{
+          id
+        }
+        district {
+          id
+          name
+          slug
+        }
       }
     }
   }`)

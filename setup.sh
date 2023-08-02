@@ -28,3 +28,5 @@ nvm install v14.21.3
 nvm alias default v14.21.3
 
 echo "La instalación de Node.js v14.21.3 se ha completado correctamente."
+
+npm install

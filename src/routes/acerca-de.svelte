@@ -1,5 +1,5 @@
 <script>
-    import {logosAcercaDe} from '$lib/common/utils';
+    import {logosAcercaDe, logosChicosAcercaDe} from '$lib/common/utils';
 </script>
 <main>
     <div class="hero is-black is-halfheight tetris-background">
@@ -12,10 +12,10 @@
 							Acerca de
 						</h1>
 						<h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal mb-4">
-							<strong>REPRESENTAR</strong> es <strong>personificar</strong>, es “actuar en nombre de”. En política, REPRESENTAR tiene que ver con exponer <strong>deseos, solidaridades, intereses</strong> y necesidades de una sociedad. En este 2021, vamos a votar <strong>representantes para el Congreso Nacional.</strong> 
+							<strong>REPRESENTAR</strong> es <strong>personificar</strong>, es “actuar en nombre de”. En política, REPRESENTAR tiene que ver con exponer <strong>deseos, solidaridades, intereses</strong> y necesidades de una sociedad. En este 2023, vamos a votar <strong> representantes para el Poder Ejecutivo Nacional, Provincial y Municipal y del Poder Legislativo en esos mismos niveles.</strong> 
                         </h2>
                         <h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal mb-4">
-                            <strong>Las elecciones no son concursos de popularidad, se tratan de dar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero también es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. 
+                            <strong>Las elecciones no son concursos de popularidad, son mecanismos para asignar responsabilidades.</strong> Para elegir algo tan importante son indispensables los <strong>detalles personales de las y los candidatxs,</strong> pero, también, es necesario que sus <strong>propuestas</strong> sean <strong>conocidas</strong> y que puedan ser <strong>discutidas</strong>. 
                         </h2>
                         <h2 class="is-size-5 is-3  has-text-centered has-text-left-touch has-text-white has-text-weight-normal mb-4">
                             Porque si <strong>tus representantes van a representarte</strong>, te tienen que explicar <strong>quiénes son y qué han hecho</strong>. Si van a actuar en tu nombre, te tienen que explicar <strong>qué quieren hacer y cómo.</strong> 
@@ -31,14 +31,19 @@
                 ¿Quiénes somos?
             </h1>
             <p class=" is-3 mb-4 has-text-left  has-text-black">
-                Somos organizaciones de la sociedad civil que nos unimos para crear <strong>#MeRepresenta</strong>, una plataforma simple, atractiva e interactiva donde la ciudadanía pueda informarse sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general.
+                Somos tres organizaciones de la sociedad civil que impulsamos <strong>#MeRepresenta</strong> como servicio a la ciudadanía. Para puedas informarte sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. 
             </p>
             <p class=" is-3  has-text-left  has-text-black">
-                <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar tu voto y contribuir así a una campaña menos centrada en las descalificaciones personales y más orientada a las propuestas.
+                <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar el voto y contribuir así a una campaña menos centrada en descalificaciones personales y más orientada a las propuestas.
             </p>
-            <div class="is-flex-tablet is-align-items-center py-3 is-flex-wrap-wrap has-text-centered is-justify-content-space-between is-hidden-mobile">
+
+            <h2 class="title is-3 mb-3 mt-6 has-text-black">
+                INICIATIVA DE
+
+            </h2>
+            <div class="is-flex-tablet is-align-items-center py-3 is-flex-wrap-wrap has-text-centered is-justify-content-space-evenly is-hidden-mobile">
                 {#each logosAcercaDe as logo}
-                    <img width ={logo.type=='square'? 150: 200} class="mx-3 my-auto" src={`/${logo.src}`} alt={`Logo de ${logo.alt}`}/>
+                    <img width ={logo.type=='square'? 200: 300} class="mx-3 my-auto" src={`/${logo.src}`} alt={`Logo de ${logo.alt}`}/>
                 {/each}
             </div>
             <div class="py-3 mx-3 columns is-mobile is-flex-wrap-wrap is-hidden-tablet">
@@ -48,107 +53,52 @@
             </div>
         </div>
         <div class="container py-4 px-2">
-            <h2 class="title is-3 mb-3 has-text-black">
-                Nos apoyan:
+            <h2 class="title is-4 mb-3 has-text-black">
+                COLABORAN
             </h2>
-            <div class="is-flex is-align-items-center py-3 is-flex-wrap-wrap ">
-                <object width=150 class="mx-3" type="image/svg+xml" data="/logo-avina.svg" title="Logo de Avina"/>
-                <object width=90 class="mx-3" type="image/svg+xml" data="/twitter.svg" title="Logo de Twitter"/>
+            <div class="is-flex-tablet is-align-items-center py-3 is-flex-wrap-wrap has-text-centered is-justify-content-space-evently is-hidden-mobile">
+                {#each logosChicosAcercaDe as logo}
+                    <img width ={logo.type=='square'? 100: 200} class="mx-3 my-auto" src={`/${logo.src}`} alt={`Logo de ${logo.alt}`}/>
+                {/each}
             </div>
-        </div>
-        <div class="container py-5 has-text-left px-2">
-            <h2 class="title is-3 has-text-white mb-5 has-text-black">
-                Créditos
-            </h2>
-            <p class="is-3 has-text-left has-text-black">
-                Las secciones de #MeRepresenta fueron desarrolladas, en conjunto, entre diferentes organizaciones
-            </p>
-            <p class="my-3"><strong>ABC ELECTORAL </strong>
-            </p>
-            <p class="mb-5">
-                Poder Ciudadano + CIPPEC + Democracia en Red
-            </p>
-            <p class="mb-3"><strong>CANDIDATURAS y PARTIDOS</strong>
-            </p>
-            <p class="mb-5">
-                Observatorio de Redes + Democracia en Red
-            </p>
-            <p class="mb-3">
-                <strong>PROPUESTAS</strong>
-            </p>
-            <p class="mb-5">
-                Acción Colectiva + ACIJ + Nuestra Córdoba + EcoFeminita + Conocimiento Abierto + Eco House + Democracia en Red
-            </p>
-            <p class="mb-3">
-                <strong>TRIVIA</strong></p>
-                <p class="mb-5">Directorio Legislativo + Democracia en Red</p>
-            <p class="mb-3">
-                <strong>COMPÁS POLÍTICO</strong>
-            </p>
-            <p class="mb-1">
-                Democracia en Red
-            </p>
-            <p class="mb-5">Idea: Antonio Milanese + Agustin Frizzera</p>
-            <p class="mb-3">
-                <strong>VERDADERO - FALSO ELECTORAL (próximamente)</strong>
-            </p>
-            <p class="mb-5">
-                Poder Ciudadano + Democracia en Red
-            </p>
-            <p class="mb-3">
-                <strong>JUEGO DE LA OCA en CAMPAÑA (próximamente)</strong>
-            </p>
-            <p class="mb-5">
-                Poder Ciudadano + Democracia en Red
-            </p>
-            <p class="mb-3">
-                <strong>Coordinación general del proyecto:</strong> 
-            </p>
-            <p class="mb-5">
-                Democracia en Red
-            </p>
+            <div class="py-3 mx-3 columns is-mobile is-flex-wrap-wrap is-hidden-tablet">
+                {#each logosChicosAcercaDe as logo}
+                    <img width=auto class="column is-half is-one-quarter my-auto" src={`/${logo.src}`} alt={`Logo de ${logo.alt}`}/>
+                {/each}
+            </div>
         </div>
         <div  class="container py-6 has-text-left px-2">
             <h2 class="title is-3 mb-6 has-text-black">
                 Agradecimientos
             </h2>
             <p class="mb-4">
-                Este  sitio fue hecho por mucha gente. La gran mayoría, personas que pusieron su compromiso, profesionalismo y esfuerzo sólo a cambio de este “gracias”. 
+                Este sitio fue hecho por mucha gente. La gran mayoría, personas que pusieron su compromiso, profesionalismo y esfuerzo sin pedir nada a cambio.
             </p>
             <p class="mb-4">
-                A Guada y Juani, del Observatorio de Redes, surcaron horizontes llenos de datos, los delimitaron, los estructuraron y los vincularon con el repositorio de <a href="https://politicosentwitter.com/" target="_blank">Politcxs en Twitter</a> ;) 
+                Noel Alonso Murray de <strong>Directorio Legislativo</strong> por apostar a esta nueva edición de #MeRepresenta y a todo su equipo. Consu Aranciaga de comunicación, Agus Prieto que se puso al hombro la actualización de la trivia y el ABC, a Martín Ferreiro y Rocío Zalla que trabajaron con los datos del Congreso.
             </p>
             <p class="mb-4">
-                A Karina y a Pablo, de Poder Ciudadano, por su sabiduría, su velocidad y su sentido del humor. 
+                Pablo Secchi y Alejandro Román de <strong>Poder Ciudadano</strong> por su apoyo, su presencia es indispensable.. 
 
             </p>
             <p class="mb-4">
-                A Juan y a Noel, de Directorio Legislativo, por colaborar con las preguntas de la Trivia. A Mechi y a Agus por la idea original: ¿quién dijo “nunca es tarde para refritar buenas ideas”? 
+                Al Ruso Snitcofsky que siempre nos ayuda a “desbloquear” y nos ayuda a ser mejores en dataviz.
 
             </p>
             <p class="mb-4">
-                A Gonzalo y a Manuel, de CIPPEC, por compartir su excelente material.  A Iván y a Chani, de Redacción, por el acompañamiento, porque necesitamos nuevas formas de comunicar.  A Nina, de FUNDEPS, por estar. 
+                El increíble <strong>equipo de voluntariado</strong>, especialmente a Bianca Romano, Daniela Pelozo, Facundo Toledo, Federico Arakaki, Fermin Villalvilla, Florencia Goñi, Helver Acosta Suárez, Valentina Salovich y Yasmin Mojarro.
 
             </p>
-            <p class="mb-4">Al Ruso, por sus 93 minutos, cada uno fue valioso: aprendemos de vos. A Toni, por el juego y el Compás Político: lo hicimos con las categorías que quisimos.  
+            <p class="mb-4">
+                El <strong>equipo DATA</strong> que la rompió en 2021 y convocamos para esta nueva edición: Agostina Amirante, Agustin Polzella y Camilo Parra que volvieron a participar.
             </p>
-            <p>A quienes pusieron horas editando las propuestas, Macarena y Emilse, de Nuestra Córdoba. A quienes le pusieron criterios a los diagnósticos , a Emilia (EcoFeminita), a Ornella y equipo (Acción Colectiva), a Carmen (Huésped) y a Joaco, RO !  y equipo de ACIJ, 
+            <p>
+                Martín Galanternik y Juan Busilli de <strong>MINU</strong> que junto a su equipo y personas voluntarias colaboraron con la búsqueda de datos.
             </p>
-            <p class="mb-4">A voluntarias y voluntarios: Camila Roberto, Carolina Diez, Agustin Polzella, Federico Bertero, Agostina Amirante, Camilo Parra, Facundo Bustos, Candelaria Figueredo, Melanie Gobetto, Guillermo Fernández, Ailen Diaz Testa, Nicolás Galvan, Greta Liporace, Lucas Abeldaño, Lucas Espiñeira, Lourdes Cabrera e Isabella Tubelli. Con gran esfuerzo, compromiso y dedicación ayudaron a completar las bases de datos de candidaturas, partidos y propuestas electorales. 
+            <p class="mb-4">A SocialTIC, por su confianza.
             </p>
-            <p class="mb-4">A Lucia, a Sara y a Tarick, de Avina, por la confianza y el acompañamiento en todas las etapas, por esas ideas que nos reafirman en la búsqueda de nuevas maneras de comunicar.
-
-            </p>
-            <p class="mb-4">Al equipo de Democracia en Red.</p>
-            <p class="mb-4">Si la navegación de kichicientos datos es lo más simple posible es por la cabeza de Antonella Meduri y Federico Pasutti. Si las cosas se ven bien, si el mensaje está ajustado (y aprobado) es gracias a Mauro Salerno, Agustin Rabinovich, Leomar Solorzano, Daniel Zárate, Alejandra González y Nicole Alonso. A Agus Manuele, por la magia. 
-            </p>
-            <p class="mb-4">A Mijail Cohen y Julieta García que codearon la plataforma, día y noche (está disponible en código abierto <a href="https://github.com/DemocraciaEnRed/merepresenta-web" target="_blank">acá</a> ;). Natán Szmedra, que programó la trivia, y al equipo de Maná Digital, que hicieron el Compás Político. A Alvaro Araujo, en la parte de atrás, #imprescindible. A Diego Vilardebó, por cubrirnos la espalda. A Guillermo Croppi, por ser tan crack, Guille.
-            </p>
-            <p class="mb-4">Si a quien lee le parece que hay mucha información, que ¿cuántas variables más van a agregar?, que tal está mal, que cual está bien, que vamos 85%, es porque  Luciana Vega y Valeria Lisciani coordinaron los equipos y lo DEJARON TODO. 
-            </p>
-            <p class="mb-4">A Powa ❤️ , a Flor Caffarone, por ser tan lo más. Y a Agus Frizzera, por las dudas.
-            </p>
-            <p class="mb-4">Porque sólo seremos mejores cuando seamos capaces de soñarnos mejores. 
+            <p class="mb-4">
+                Y a todo el equipo de Democracia en Red que trabajó intensamente y con mucha pasión: Vale Lisciani, Fede Bertero, Nacho Gertie, Ceci Ibarra, Pano y Tina Valdez, Guille Croppi, Fede Pasutti, Flor Caffarone, Agus Frizzera, Ale Gonzalez, Jenny Perkes y Juli Ferrando. 💜
 
             </p>
         </div>

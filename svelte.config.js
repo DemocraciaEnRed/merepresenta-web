@@ -6,7 +6,13 @@ const config = {
 		adapter: node(),
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-		hostHeader: 'X-Forwarded-Host'
+		hostHeader: 'X-Forwarded-Host',
+		vite: {
+			optimizeDeps: {
+			  include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep']
+			}
+			// plugins: []
+		  }
 	},
 };
 

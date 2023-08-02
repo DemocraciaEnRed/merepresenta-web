@@ -5,11 +5,11 @@
 
 </script>
 <div>
-    <a style="background-image:url({background})" class="{delay} has-background-white is-offset-one-quarter mx-auto p-5 column is-half background-trivia mb-6 is-flex is-flex-direction-column is-justify-content-center" href="{url}" target="_blank">
-        <h1 class="is-size-3 title is-4 has-text-black has-text-weight-bold">
-            <span class="is-uppercase has-background-success has-text-white px-1">verdadero</span>
-            <br> o <br>
-            <span class="has-background-danger is-uppercase has-text-white px-1 ">falso</span>
+    <a style="background-image:url({background})" class="{delay} has-background-white  mx-auto p-5  background-trivia  is-flex is-flex-direction-column is-justify-content-center" href="{url}" target="_blank">
+        <h1 class="is-size-2 title is-4 has-text-black has-text-weight-bold is-flex is-flex-direction-column">
+            <span class=" has-background-success has-text-white py-1">Verdadero</span>
+            <p class="my-1">ó</p>
+            <span class=" has-background-danger has-text-white py-1 ">Falso</span>
         
         </h1>
     </a>
@@ -21,6 +21,7 @@
         100%{box-shadow: none;}
     }
     a {
+    border-radius: 10px;
     animation-name: anim;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -31,10 +32,13 @@
     a{
         background-repeat: no-repeat;
         background-size: cover;
-        min-height: 200px;
+        min-height: 250px;
     }
     a{
         font-family: 'Nippo', Helvetica, Arial ,sans-serif; 
 
+    }
+    a > h1 >span{
+        margin: 10px;
     }
 </style>

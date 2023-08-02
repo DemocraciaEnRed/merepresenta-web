@@ -1,16 +1,32 @@
 const imgRoute = "/themes/";
 
 export const PoliciesIcons = {
-  "economia"          : `${imgRoute}money.svg`,
-  "ambiente"          : `${imgRoute}nature.svg`,
-  "salud"             : `${imgRoute}health.svg`,
-  "educacion"         : `${imgRoute}book.svg`,
-  "genero"            : `${imgRoute}gender.svg`,
-  "seguridad"         : `${imgRoute}security.svg`,
-  "empleo"            : `${imgRoute}job.svg`,
-  "justicia"          : `${imgRoute}justice.svg`,
-  "institucionalidad"        : `${imgRoute}search.svg`,
-  "vivienda"          : `${imgRoute}house.svg`,
+  "economia"          : `${imgRoute}economiaIcon.svg`,
+  "seguridad"         : `${imgRoute}seguridadIcon.svg`,
+  "educacion"         : `${imgRoute}educacionIcon.svg`,
+  "ambiente"          : `${imgRoute}ambienteIcon.svg`,
+  "salud"             : `${imgRoute}saludIcon.svg`,
+  "democracia"        : `${imgRoute}democraciaIcon.svg`,
+
+
+}
+
+export const cargosSlugs ={
+  'presidente':'Presidente',
+  'vice-presidente': 'Vice Presidente',
+  'diputado-nacional': 'Diputado Nacional',
+  'senador-nacional':'Senador Nacional',
+  'gobernador':'Gobernador',
+  'vice-gobernador': 'Vice Gobernador'
+}
+
+export const cargosSlugsAbbreviated ={
+  'presidente':'Pdte',
+  'vice-presidente': 'VPdte',
+  'diputado-nacional': 'Dip. Nac.',
+  'senador-nacional':'Sen. Nac.',
+  'gobernador':'Gob.',
+  'vice-gobernador': 'Vice Gob.'
 }
 
 export const ProvinciasSlugs = [
@@ -38,13 +54,17 @@ export const ProvinciasSlugs = [
 	{		"name": "La Rioja",		"slug": "la-rioja"	},
 	{		"name": "Río Negro",		"slug": "rio-negro"	},
 	{		"name": "Tierra Del Fuego",		"slug": "tierra-del-fuego"	},
-	{		"name": "Extranjero/a",		"slug": "extranjero"	}
+	{		"name": "Extranjero/a",		"slug": "extranjero"	},
+	{		"name": "Nacion",		"slug": "nacion"	},
+  
 ]
 
 export const logosAcercaDe =[
- 
+  {"alt": "Directorio Legislativo",   "src":"./logos/logo-directorio-leslativo.png", "type":"square"},
+  {"alt": "Democracia en Red",   "src":"./logos/logo-der-negro.svg", "type":"horizontal"},
   {"alt": "Poder Ciudadano",   "src":"./logos/logo-poder-ciudadano.png", "type":"horizontal"},
-  {"alt": "CIPPEC",   "src":"./logos/logo-cippec.png", "type":"horizontal"},
+ 
+  /* {"alt": "CIPPEC",   "src":"./logos/logo-cippec.png", "type":"horizontal"},
   {"alt": "Observatorio de Redes",   "src":"./logos/logo-observatorio-de-redes.png", "type":"horizontal"},
   {"alt": "Acción Colectiva",   "src":"./logos/logo-accion-colectiva.png", "type":"horizontal"},
   {"alt": "ACIJ",   "src":"./logos/logo-acij.png", "type":"horizontal"},
@@ -52,13 +72,20 @@ export const logosAcercaDe =[
   {"alt": "Economía Feminita",   "src":"./logos/logo-eco-feminita.png" , "type":"square"},
   {"alt": "Conocimiento Abierto",   "src":"./logos/logo-conocimiento-abierto.png", "type":"horizontal"},
   {"alt": "Eco House",   "src":"./logos/logo-eco-house.png", "type":"square"},
-  {"alt": "Directorio Legislativo",   "src":"./logos/logo-directorio-leslativo.png", "type":"square"},
   {"alt": "Fundeps",   "src":"./logos/logo-fundeps.png", "type":"horizontal"},
   {"alt": "REDACCIÓN",   "src":"./logos/logo-redaccion.png"},
   {"alt": "Nuestra Mendoza",   "src":"./logos/logo-nuestra-mendoza.png", "type":"square"},
-  {"alt": "Democracia en Red",   "src":"./logos/logo-der-negro.svg", "type":"horizontal"},
-  {"alt": "Sistema B",   "src":"./logos/logo-sistema-b.png", "type":"square"}
+  {"alt": "Sistema B",   "src":"./logos/logo-sistema-b.png", "type":"square"} */
 ]
+
+export const logosChicosAcercaDe =[
+  {"alt": "fundeps",   "src":"./logos/logos-chicos/logo-fundeps.png", "type":"horizontal"},
+  {"alt": "minu asociacion civil",   "src":"./logos/logos-chicos/logo-minu.png", "type":"square"},
+  {"alt": "Nuestra Mendoza",   "src":"./logos/logos-chicos/logo-nm.png", "type":"square"},
+  {"alt": "Salta transparente",   "src":"./logos/logos-chicos/logo-salta-transparente.png", "type":"horizontal"},
+ 
+]
+
 
 export const directusImg = 'https://content.merepresenta.info/assets/'
 
@@ -80,7 +107,7 @@ export function PartyImg (party){
 }
 
 export function CandidateImg (candidate){
-  return candidate.avatar?.id ? `${directusImg}${candidate.avatar.id}?width=500&height=500&format=jpg&fit=cover` : 
+  return candidate.avatar?.id ? `${directusImg}${candidate.avatar.id}?width=500&height=500&format=jpg&fit=cover&quality=50` : 
   '/candidate.svg'
   //getDefaultCandidateImgByGender(candidate.genre)
 }
@@ -363,4 +390,29 @@ export class Solver {
     }
     return `filter: invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%);`;
   }
+}
+export const get4FirstRandomItems = (array) => {
+  var longitud = array.length;
+  var randomItems = [];
+  if(array.length > 4)
+  while (randomItems.length < 4) {
+    var randomIndex = Math.floor(Math.random() * longitud);
+    var randomItem = array[randomIndex];
+
+    if (!randomItems.includes(randomItem)) {
+      randomItems.push(randomItem);
+    }
+  }
+  else randomItems = array
+
+  return randomItems;
+}
+
+
+export const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
