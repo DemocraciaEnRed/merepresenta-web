@@ -9,6 +9,7 @@
 	export let darkMode;
 	let color = darkMode ? 'white' : 'black';
 	export let backgroundHeader;
+	let showCompleteProposal = false;
 	let backgroundHeaderColor = backgroundHeader ? 'black' : '';
 	let borderSolid = backgroundHeader ? 'border-solid p-2' : '';
 </script>
@@ -19,7 +20,6 @@
 		class="proposal-header is-flex is-flex-direction-row is-align-items-center has-background-white  {!isOpen
 			? 'border-radius'
 			: 'border-top-radius'}"
-		
 		on:click={() => (isOpen = !isOpen)}
 	>
 		<div class="icon-container" style="background-color: {proposal.ejes_id.color};">
@@ -46,17 +46,34 @@
 			<!-- <div class="columns"> -->
 			<div class="">
 				<div class="my-4 has-text-centered-touch has-text-left-desktop">
-					<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">Resumen</h1>
-					<p>{proposal.summary}</p>
+					{#if !showCompleteProposal}
+						<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">Resumen</h1>
+						<p>{proposal.summary}</p>
+					{/if}
+					{#if showCompleteProposal}
+						<div class="column">
+							{#each proposal.propuestas as item, i}
+								<div class="my-4 has-text-centered-touch has-text-left-desktop">
+									<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black is-inline mr-1">
+										Propuesta {i + 1}: 
+									</h1>
+									<p class="is-inline"> {item.summary}</p>
+								</div>
+							{/each}
+						</div>
+					{/if}
+					<button	class="button is-link is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
+							on:click={() => (showCompleteProposal = !showCompleteProposal)}>
+						<u>{!showCompleteProposal ? 'propuesta completa': 'propuesta resumida'}</u>
+					</button>
 					{#if partido.url_fuente}
 						<!-- <p>Podés leer las propuestas completas en la <a href="{policyUrl}{proposal.ejes_id.slug}/{partido.id}" class="is-uppercase has-text-black has-text-weight-semibold"><u>fuente oficial</u></a></p> -->
-						<p>
-							<a
-								href={partido.url_fuente}
-								target="_blank"
-								class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
-								><u>fuente oficial</u></a
-							>
+						<p class="is-inline ml-3">
+							<a href={partido.url_fuente}
+							   target="_blank"
+							   class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button">
+								<u>fuente oficial</u>
+							</a>
 						</p>
 					{/if}
 				</div>
