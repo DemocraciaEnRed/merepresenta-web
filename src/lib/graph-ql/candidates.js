@@ -29,9 +29,13 @@ export function getCandidates (id){
       childrens
       razon_social
       tipo_societario
+      instagram_page
+      facebook_page
+      facebook_profile
       twitter_user
-      twitter_tweets
       twitter_profile
+      formacion
+      twitter_tweets
       twitter_followers
       twitter_created_at
       twitter_friends

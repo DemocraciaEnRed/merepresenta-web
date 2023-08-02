@@ -16,6 +16,7 @@
 	let dinamycParticlesToShow;
 	let loading = false;
 	let divisor = windowWidth < 760 ? 100 : 130
+	let particlesToScroll
 
 	async function updateWindowWidth() {
 		divisor = windowWidth < 760 ? 100 : 130
@@ -23,11 +24,13 @@
 			loading = true;
 
 			dinamycParticlesToShow = await ((windowWidth) / divisor).toFixed();
+			particlesToScroll = dinamycParticlesToShow /2
 			loading = false;
 		}
 	}
 	onMount(() => {
 		dinamycParticlesToShow = windowWidth ? ((windowWidth) / divisor).toFixed() : 12;
+		particlesToScroll = dinamycParticlesToShow /2
 	});
 
 	afterUpdate(() => {
@@ -63,6 +66,7 @@
 			dots={false}
 			particlesToShow={dinamycParticlesToShow}
 			infinite={false}
+			{particlesToScroll}
 			let:showPrevPage
 			let:showNextPage
 		>
@@ -78,7 +82,7 @@
 			</div>
 			{#each randomCandidates as candidate}
 				<button class="button-candidate" on:click={changeParty} data-party={candidate.partido.id}>
-					<figure class="image candidate-avatar">
+					<figure class="image mx-auto candidate-avatar">
 						<img class="is-rounded" src={CandidateImg(candidate)} alt="" />
 					</figure>
 				</button>
@@ -171,9 +175,9 @@
 		}
 		.circle_arrow_button {
 			cursor: pointer;
-			height: 25px;
-			width: 25px;
-			font-size: 1.5rem;
+			height: 40px;
+			width: 40px;
+			font-size: 1.8rem;
 		}
 	}
 </style>

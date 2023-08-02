@@ -27,7 +27,7 @@
           </div>
       </div>
       {/if}
-      {#if candidate.profesion}
+      {#if candidate.profesion && candidate.profesion !== " "}
       <div class="column has-text-black has-text-centered">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
             <p class="is-uppercase">Profesión</p>
@@ -35,37 +35,42 @@
           </div>
       </div>
       {/if}
-      <!-- <div class="column has-text-black has-text-centered">    
-        <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-          <p class="is-uppercase">Formacion</p>
-          <p class="is-uppercase has-text-weight-medium has-text-danger">FALTA HACER</p>
+      {#if candidate.formacion && candidate.formacion !== " "}
+        <div class="column has-text-black has-text-centered">    
+          <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
+            <p class="is-uppercase">Formacion</p>
+            <p class="is-uppercase has-text-weight-medium ">{candidate.formacion}</p>
+          </div>
         </div>
-      </div> -->
-      <!-- <div class="column has-text-black has-text-centered">    
+        
+      {/if}
+      {#if candidate.twitter_profile || candidate.twitter_user || candidate.facebook_page || candidate.facebook_profile || candidate.instagram_page}
+      <div class="column has-text-black has-text-centered">    
         <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
           <p class="is-uppercase">Redes sociales</p>
           <div class="is-flex">
             {#if candidate.twitter_profile}
-            <a href="{candidate.twitter_profile}" _target="blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
-              
+            <a href="{candidate.twitter_profile}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
             {/if}
-            {#if candidate.twitter_user}
-            <a href="{candidate.twitter_profile}" _target="blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
-              
+            {#if candidate.twitter_user && candidate.twitter_user !== candidate.twitter_profile}
+            <a href="{candidate.twitter_user}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
             {/if}
-            {#if candidate.twitter_profile}
-            <a href="{candidate.twitter_profile}" _target="blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
-              
+            {#if candidate.facebook_page}
+            <a href="{candidate.facebook_page}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
             {/if}
-            {#if candidate.twitter_profile}
-            <a href="{candidate.twitter_profile}" _target="blank" class="has-text-black"><Icon icon="fa-instagram-square" brand size="large"/></a>
-              
+            {#if candidate.facebook_profile}
+            <a href="{candidate.facebook_profile}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
+            {/if}
+            {#if candidate.instagram_page}
+            <a href="{candidate.instagram_page}" target="_blank" class="has-text-black"><Icon icon="fa-instagram-square" brand size="large"/></a>
             {/if}
 
           </div>
 
         </div>
-      </div> -->
+      </div>
+        
+      {/if}
       <!-- {#if candidate.childrens != null && candidate.childrens > 0}
       <div class="column has-text-black has-text-centered">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">

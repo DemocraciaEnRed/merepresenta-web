@@ -16,7 +16,7 @@
 <div class="the-drop-header {!isOpen ? 'border-radius' : ''} drop" style="border-color: {color};">
 	<div
 		id="partido-{proposal.ejes_id.slug}"
-		class="proposal-header is-flex is-flex-direction-row is-align-items-center"
+		class="proposal-header is-flex is-flex-direction-row is-align-items-center  has-background-white "
 		
 		on:click={() => (isOpen = !isOpen)}
 	>

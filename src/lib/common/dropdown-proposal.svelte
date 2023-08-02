@@ -16,7 +16,7 @@
 <div class="the-drop-header drop" style="border-color: {color};">
 	<div
 		id="partido-{proposal.ejes_id.slug}"
-		class="proposal-header is-flex is-flex-direction-row is-align-items-center  {!isOpen
+		class="proposal-header is-flex is-flex-direction-row is-align-items-center has-background-white  {!isOpen
 			? 'border-radius'
 			: 'border-top-radius'}"
 		
