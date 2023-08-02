@@ -21,8 +21,8 @@
     <section class="container p-2 ">
       <Dropdown name=" ¿QUÉ SON LAS PASO? ">
         <div>
-          <img class="is-hidden-tablet" src="/abc/PASO-Mob.png" alt="Respuesta de la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/PASO-Desk.png" alt="Respuesta de la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/PASO-Mob-01.png" alt="Respuesta de la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/PASO-Desk-01.png" alt="Respuesta de la pregunta" />
           <h2>¿Qué significa PASO?</h2>
           <p>
             Significa <strong> Primarias, Abiertas, Simultáneas y Obligatorias </strong> (PASO).
@@ -56,8 +56,8 @@
       </Dropdown>
       <Dropdown name=" ¿QUÉ SE VOTA?">
         <div>
-          <img class="is-hidden-tablet" src="/abc/Quesevota-Mob.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/Quesevota-Desk.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/Quesevota-Mob-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/Quesevota-Desk-01.png" alt="Respuesta a la pregunta" />
           <h2>¿Qué cargos se votan en las elecciones nacionales de 2023?</h2>
           <p>
             En tanto, el 13 de agosto se realizarán las Primarias, Abiertas, Simultáneas y
@@ -183,8 +183,8 @@
       </Dropdown>
       <Dropdown name="¿QUIÉNES VOTAN? ">
         <div>
-          <img class="is-hidden-tablet" src="/abc/QuienVota-Mob.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/QuienVota-Desk.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/QuienVota-Mob-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/QuienVota-Desk-01.png" alt="Respuesta a la pregunta" />
           <h2>¿Quiénes pueden votar en las elecciones?</h2>
           <p>
             Toda persona que posea <strong>nacionalidad argentina</strong> por:
@@ -258,8 +258,8 @@
       </Dropdown>
       <Dropdown name="¿QUÉ PASA SI NO VOTO?">
         <div>
-          <img class="is-hidden-tablet" src="/abc/Novoto-Mob.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/Novoto-Desk.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/Novoto-Mob-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/Novoto-Desk-01.png" alt="Respuesta a la pregunta" />
           <h2>¿Dónde puedo denunciar irregularidades?</h2>
           <p>Si no votás y no justificas tu ausencia con un motivo válido, se te incluirá en el Registro de Infractores
             y <strong>recibirás una sanción</strong>. </p>
@@ -342,8 +342,8 @@
       </Dropdown>
       <Dropdown name="¿QUIÉNES SON LAS AUTORIDADES DE MESA?">
         <div>
-          <img class="is-hidden-tablet" src="/abc/Autoridades-Mob.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/Autoridades-Desk.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/Autoridades-Mob-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/Autoridades-Desk-01.png" alt="Respuesta a la pregunta" />
           <h2>¿Quienes conforman la mesa electoral?</h2>
           <p>La mesa electoral se conforma de:</p>
           <ul>
@@ -379,8 +379,8 @@
       </Dropdown>
       <Dropdown name=" ¿CÓMO SE CLASIFICAN LOS VOTOS?">
         <div>
-          <img class="is-hidden-tablet" src="/abc/Votos-Mob.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/Votos-Desk.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/Votos-Mob-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/Votos-Desk-01.png" alt="Respuesta a la pregunta" />
           <h2>¿Cómo se clasifican los votos?</h2>
           <p>1. <span class="is-underlined">Votos Válidos</span></p>
           <ul>
@@ -525,8 +525,8 @@
       </Dropdown>
       <Dropdown name="¿CÓMO SE FINANCIAN LAS CAMPAÑAS ELECTORALES?">
         <div>
-          <img class="is-hidden-tablet" src="/abc/Financiamiento-Mob.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/Financiamiento-Desk.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/Financiamiento-Mob-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/Financiamiento-Desk-01.png" alt="Respuesta a la pregunta" />
           <h2>¿Cómo se financian las campañas electorales?</h2>
           <p>En Argentina, las campañas electorales de los partidos políticos se financian con un <strong>modelo
               mixto</strong> por el cual los partidos obtienen <strong>financiamiento público y del sector
@@ -575,8 +575,8 @@
       </Dropdown>
       <Dropdown name="¿QUÉ ES LA BOLETA ÚNICA ELECTRÓNICA?">
         <div>
-          <img class="is-hidden-tablet" src="/abc/BUE-Mob.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/BUE-Desk.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/BUE-Mob-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/BUE-Desk-01.png" alt="Respuesta a la pregunta" />
           <p>En la Ciudad Autónoma de Buenos Aires la elección local será concurrente, es decir se votará al mismo
             tiempo por categorías nacionales y locales. Para las nacionales, se votará con el sistema tradicional,
             basado en papel. Para los cargos locales (Jefa/e de Gobierno, legisladoras/es y Comunas) se utilizará la
