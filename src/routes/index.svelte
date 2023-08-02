@@ -40,7 +40,7 @@
 							<h2
 								class="subtitle is-5 is-size-6-touch has-text-white"
 							>
-							Conocé las propuestas de cada candidato para saber qué es lo que puede llegar a pasar los próximos 4 años. 
+							Conocé las propuestas de cada candidatura para saber qué es lo que puede llegar a pasar los próximos 4 años. 
 							</h2>
 						</div>
 					</div>
@@ -112,7 +112,7 @@
 						<a
 							href="/juegos"
 							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
-							>conoce lOS JUEGOS</a
+							>conocé lOS JUEGOS</a
 						>
 					</footer>
 				</div>
