@@ -24,7 +24,7 @@
 	<section class="container p-2">
 		<div class="has-text-centered  has-text-black">
 			<img src="/deputies-chamber.svg" alt="" />
-			<h3 class="is-size-3 has-text-weight-medium">P.L.N.</h3>
+			<h3 class="is-size-3 has-text-weight-medium">Poder Legislativo Nacional</h3>
 			<h1 class="is-size-2 has-text-weight-medium has-text-black">¿Dónde votas?</h1>
 		</div>
 	</section>
