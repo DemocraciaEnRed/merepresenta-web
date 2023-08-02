@@ -16,7 +16,10 @@
 
 		partys = response.props.partidos.filter((partido) => partido.tipo === 'partido');
 		partyList = response.props.partidos.filter((partido) => partido.tipo === 'lista');
-		candidates = response2.props.candidates;
+		candidates = response2.props.candidates.filter(candidate => {
+			return candidate.cargo !== 'gobernador' || candidate.cargo !== 'vice-gobernador';
+		})
+		console.log(partyList);
 	}
 </script>
 
@@ -39,6 +42,8 @@
 						<div class="columns mx-auto is-flex-wrap-wrap">
 							{#each partyList as list}
 								{#if list.alianzas.some((partyInList) => partyInList.related_partido_id.id === party.id)}
+									{#if candidates.some(candidate => candidate.partido.id === list.id)}
+										
 									<div class="column is-4">
 										<div
 											class="card has-text-white is-flex is-flex-direction-column is-justify-content-space-between has-background-dark card-list-legislative"
@@ -90,6 +95,7 @@
 											</div>
 										</div>
 									</div>
+									{/if}
 								{/if}
 							{/each}
 						</div>
