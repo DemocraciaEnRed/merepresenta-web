@@ -3,7 +3,7 @@
 	import Dropdown from '$lib/common/Dropdown.svelte';
 	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
 	import { CandidateImg, cargosSlugs, cargosSlugsAbbreviated } from '$lib/common/utils';
-	import { getCandidatesByDistrict } from '$lib/graph-ql/candidates';
+	import { getCandidatesToLegislativeSection } from '$lib/graph-ql/candidates';
 	import { getPartysByDistrict } from '$lib/graph-ql/partidos';
 	let partys;
 	let partyList;
@@ -11,15 +11,13 @@
 	async function handleSelect() {
 		const res = await API(fetch, getPartysByDistrict(this.value));
 		const response = await handleResponse(res, 'partidos', 'partido');
-		const res2 = await API(fetch, getCandidatesByDistrict(this.value));
+		const res2 = await API(fetch, getCandidatesToLegislativeSection(this.value));
 		const response2 = await handleResponse(res2, 'candidates', 'candidato');
 
 		partys = response.props.partidos.filter((partido) => partido.tipo === 'partido');
 		partyList = response.props.partidos.filter((partido) => partido.tipo === 'lista');
-		candidates = response2.props.candidates.filter(candidate => {
-			return candidate.cargo !== 'gobernador' || candidate.cargo !== 'vice-gobernador';
-		})
-		console.log(partyList);
+		candidates = response2.props.candidates
+
 	}
 </script>
 
@@ -37,77 +35,80 @@
 	<div class="dropdown-wrapper">
 		{#if partys}
 			{#each partys as party}
-				<Dropdown class="has-text-black " darkMode backgroundHeader name={party.name}>
-					<div class="is-flex is-justify-content-center is-flex-direction-column">
-						<div class="columns mx-auto is-flex-wrap-wrap">
-							{#each partyList as list}
-								{#if list.alianzas.some((partyInList) => partyInList.related_partido_id.id === party.id)}
-									{#if candidates.some(candidate => candidate.partido.id === list.id)}
-										
-									<div class="column is-4">
-										<div
-											class="card has-text-white is-flex is-flex-direction-column is-justify-content-space-between has-background-dark card-list-legislative"
-										>
-											<div class=" pt-6">
-												<figure class="image is-128x128 m-auto">
-													<img
-														src={candidates.filter(
-															(candidate) => candidate.partido.id === list.id
-														)[0]
-															? CandidateImg(
-																	candidates.filter(
-																		(candidate) => candidate.partido.id === list.id
-																	)[0]
-															  )
-															: '/candidate.svg'}
-														class="is-rounded"
-														alt="Placeholder image"
-													/>
-												</figure>
-											</div>
-											<div class="card-content ">
-												<div class="content ">
-													<div class="">
-														<h3 class=" has-text-white is-size-5 has-text-weight-light">
-															Lista: <strong class=" has-text-white ">{list.name}</strong>
-														</h3>
-													</div>
-													<br />
-													<div class="candidates-list">
-														{#each candidates as candidate}
-															{#if candidate.partido.id === list.id && candidate.position <= 2}
-																<p class="is-size-6">
-																	{candidate.position}º {candidate.name} - {cargosSlugsAbbreviated[
-																		candidate.cargo
-																	]}
-																</p>
-															{/if}
-														{/each}
-													</div>
+			{#if candidates.some(candidate => candidate.partido.alianzas[0].related_partido_id.id === party.id)}
+				
+			<Dropdown class="has-text-black " darkMode backgroundHeader name={party.name}>
+				<div class="is-flex is-justify-content-center is-flex-direction-column">
+					<div class="columns mx-auto is-flex-wrap-wrap">
+						{#each partyList as list}
+							{#if list.alianzas.some((partyInList) => partyInList.related_partido_id.id === party.id)}
+								{#if candidates.some(candidate => candidate.partido.id === list.id)}
+									
+								<div class="column is-4">
+									<div
+										class="card has-text-white is-flex is-flex-direction-column is-justify-content-space-between has-background-dark card-list-legislative"
+									>
+										<div class=" pt-6">
+											<figure class="image is-128x128 m-auto">
+												<img
+													src={candidates.filter(
+														(candidate) => candidate.partido.id === list.id
+													)[0]
+														? CandidateImg(
+																candidates.filter(
+																	(candidate) => candidate.partido.id === list.id
+																)[0]
+														  )
+														: '/candidate.svg'}
+													class="is-rounded"
+													alt="Placeholder image"
+												/>
+											</figure>
+										</div>
+										<div class="card-content ">
+											<div class="content ">
+												<div class="">
+													<h3 class=" has-text-white is-size-5 has-text-weight-light">
+														Lista: <strong class=" has-text-white ">{list.name}</strong>
+													</h3>
+												</div>
+												<br />
+												<div class="candidates-list">
+													{#each candidates as candidate}
+														{#if candidate.partido.id === list.id && candidate.position <= 2}
+															<p class="is-size-6">
+																{candidate.position}º {candidate.name} - {cargosSlugsAbbreviated[
+																	candidate.cargo
+																]}
+															</p>
+														{/if}
+													{/each}
 												</div>
 											</div>
-											<div class="card-footer is-justify-content-center py-6">
-												<a
-													href="/partidos-y-candidates/candidates/{list.id}"
-													class="button is-outlined is-rounded has-background-white has-text-black is-black"
-													>Ver Lista</a
-												>
-											</div>
+										</div>
+										<div class="card-footer is-justify-content-center py-6">
+											<a
+												href="/partidos-y-candidates/candidates/{list.id}"
+												class="button is-outlined is-rounded has-background-white has-text-black is-black"
+												>Ver Lista</a
+											>
 										</div>
 									</div>
-									{/if}
+								</div>
 								{/if}
-							{/each}
-						</div>
-						<div class="is-flex is-flex-direction-row is-justify-content-center">
-
-							<a
-								href="/partidos-y-candidates/candidates/{party.id}"
-								class=" button is-black m-3 is-rounded is-uppercase list-button">Ver Interna</a
-							>
-						</div>
+							{/if}
+						{/each}
 					</div>
-				</Dropdown>
+					<div class="is-flex is-flex-direction-row is-justify-content-center">
+
+						<a
+							href="/partidos-y-candidates/candidates/{party.id}"
+							class=" button is-black m-3 is-rounded is-uppercase list-button">Ver Interna</a
+						>
+					</div>
+				</div>
+			</Dropdown>
+			{/if}
 			{/each}
 		{:else}
 			<div class="fill-select pt-6">

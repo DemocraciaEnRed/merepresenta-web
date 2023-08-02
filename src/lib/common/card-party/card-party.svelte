@@ -63,7 +63,8 @@
 			<div class="has-text-centered list-legislative-wrapper">
 				<h1 class="is-size-2 has-text-weight-medium has-text-black my-3">{partySelected.name}</h1>
 				<div class="is-flex candidates">
-					<div class="legislative-list">
+					{#if partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')}
+					<div class="legislative-list mx-6">
 						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
 							Diputados/as Nacionales
 						</h1>
@@ -75,7 +76,9 @@
 							{/each}
 						</div>
 					</div>
-					<div class="legislative-list">
+					{/if}
+					{#if partyCandidates.some(candidate => candidate.cargo === 'senador-nacional')}
+					<div class="legislative-list mx-6">
 						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
 							Senadores/as Nacionales
 						</h1>
@@ -87,6 +90,8 @@
 							{/each}
 						</div>
 					</div>
+						
+					{/if}
 				</div>
 			</div>
 		{/if}
@@ -166,7 +171,7 @@
 		width: 80%;
 	}
 	.list-legislative-wrapper .candidates{
-		justify-content: space-between;
+		justify-content: center;
 	}
 	.legislative-list {
 		width: 40%;

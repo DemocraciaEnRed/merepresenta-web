@@ -96,7 +96,7 @@
   {:else}
 
   <div class="container">
-    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >{partido.district.slug === 'nacion'?'Candidates presidenciales':'Diputadas/os nacionales'}</h1>
+    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6" style="font-weight: 500!important;" >{partido.district.slug === 'nacion'?'Candidates presidenciales':'Poder Legislativo Nacional'}</h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each candidates as candidate}
       <CandidateCard candidate={candidate}/>
