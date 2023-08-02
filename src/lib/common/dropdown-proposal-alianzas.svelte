@@ -56,7 +56,7 @@
 										<p>{proposalAlianza.summary}</p>
 									{/if}
 									{#if showCompleteProposal.includes(alianza.id)}
-										<div class="column">
+										<div class="column p-0">
 											{#each proposalAlianza.propuestas as item, i}
 												<div class="my-4 has-text-centered-touch has-text-left-desktop">
 													<h1

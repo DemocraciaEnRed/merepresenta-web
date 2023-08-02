@@ -51,7 +51,7 @@
 						<p>{proposal.summary}</p>
 					{/if}
 					{#if showCompleteProposal}
-						<div class="column">
+						<div class="column p-0">
 							{#each proposal.propuestas as item, i}
 								<div class="my-4 has-text-centered-touch has-text-left-desktop">
 									<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black is-inline mr-1">
