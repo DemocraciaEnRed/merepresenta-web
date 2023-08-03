@@ -62,7 +62,7 @@
           </div>
           <div class="candidate-content">
             <h1 class="general-sans is-size-2 is-size-4-touch has-text-black has-text-weight-bold is-capitalized my-1 animate__animated animate__backInRight animate__delay-1s" >{candidate.name}</h1>
-            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" >Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {cargosSlugs[candidate.cargo]}<!--  por {ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name} --></h1>
+            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" >Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {cargosSlugs[candidate.cargo][candidate.genre]}<!--  por {ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name} --></h1>
           </div>
         </div>
       </div>

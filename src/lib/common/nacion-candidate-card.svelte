@@ -24,8 +24,9 @@
 			{candidate.name}
 		</p>
 		<p class="has-text-black is-size-7">
+			
 			<span class="general-sans is-size-6 has-text-weight-semibold"
-				>{cargosSlugs[candidate.cargo]}</span
+				>{cargosSlugs[candidate.cargo][candidate.genre]}</span
 			>
 		</p>
 
