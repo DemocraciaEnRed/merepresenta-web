@@ -1,39 +1,32 @@
 <script>
     import Game from './_game.svelte'
-    import VerdaderoFalso from './_verdaderofalso.svelte'
-    import Trivia from './_trivia.svelte';
-	import Compas from './_compas.svelte';
+    let height
 </script>
-<main class="r hero
-	 has-background-white">
-    <div class="hero-body p-2">
-        <section class="has-text-centered container p-4 my-6">
-            <h2 class="title light is-size-1  is-size-3-touch has-text-weight-normal has-text-black is-uppercase">Nuestros Juegos</h2>
-            <h2 class="subtitle light is-size-4 is-size-6-touch has-text-weight-semibold has-text-black is-uppercase mt-4">Conocé los juegos online que tenemos para vos y descubrí más sobre las política argentina</h2>
+<main class="r hero is-black tetris-background">
+    <div class="hero-body py-6 ">
+        <section class="has-text-centered container p-6 my-6 title-section">
+            <h2 class="title light is-size-1  is-size-3-touch has-text-weight-normal has-text-white is-uppercase">Nuestros Juegos</h2>
+            <h2 class="subtitle light is-size-4 is-size-6-touch has-text-weight-semibold has-text-white is-uppercase mt-4">Mirá nuestros juegos online para descubrir más sobre la política argentina.</h2>
             
         </section>
-        <section class="container p-4 has-text-centered">
-            <div class="columns is-justify-content-center">
-                <!-- <div class="column p-0 column-styled">
-                    <Compas delay={'delay'}  background='games/juego2.png' title="Compás <br/> politico"  subtitle="¿Cuál es tu ideología?" url={"https://compaspolitico.merepresenta.info/"} textColor="black"/>
-                </div> -->
-                <div    class="column p-0 column-styled">
-                    <Trivia  background='games/juego1.png' title="TRIVIA" subtitle="Juego de preguntas y respuestas" url={"https://trivia.merepresenta.info/"} textColor="white" />
-                </div>
-                <div class="column p-0 column-styled ">
-                    <VerdaderoFalso  background='games/verdaderofalso.png' url={"https://verdaderofalso.merepresenta.info/"} />
-                </div>
-
-            </div>
-          
-        </section>
-
-
-                
+    </div>
+    
+</main>
+<section class="container p-4 has-text-centered"  style="min-height: {height -40}px;">
+    <div class="columns is-justify-content-center card-section" bind:clientHeight={height}>
+        <div class="column p-0 column-styled">
+            <Game image="games/compas.png" url={"https://compaspolitico.merepresenta.info/"} title="Compás politico"/>
+        </div>
+        <div    class="column p-0 column-styled">
+            <Game image="games/trivia.png" url={"https://trivia.merepresenta.info/"}  title="trivia"/>
+        </div>
+        <div class="column p-0 column-styled ">
+            <Game image="games/vof.png" url={"https://verdaderofalso.merepresenta.info/"} title="verdadero o falso"/>
+        </div>
 
     </div>
- 
-</main>
+  
+</section>
 
 
 <style>
@@ -41,10 +34,40 @@ main{
     min-height: 0;
     margin-bottom: 3rem!important;
 }
+.tetris-background {
+	background-image: url('games/juego1.png');
+	background-attachment: fixed;
+	background-repeat: repeat;
+    background-size: 50vh;
+}
+.hero.tetris-background .hero-body {
+background: none;
+}
+
+
+@media screen and (max-width: 1024px){
+.title-section{
+    padding: 0!important;
+}
+  .card-section {
+	width: 90%;
+}
+.card-section > div {
+	flex-direction: column;
+}
+}
+.card-section {
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		top: -100px;
+		position: absolute;
+	}
 .column-styled{
         flex: none;
         width: 29%;
-        box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
         margin-left: 1rem;
         margin-right: 1rem;
     }
