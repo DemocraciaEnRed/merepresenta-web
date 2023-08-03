@@ -60,7 +60,7 @@
 	<div class="container">
 		<nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
 			<ul>
-				<li><a href="/partidos-y-candidates" class="has-text-black">Partidos y candidatxs</a></li>
+				<li><a href="/partidos-y-candidates" class="has-text-black">Partidos y Candidaturas</a></li>
 				<li class="is-active">
 					<a href class="has-text-black text-wrap-wrap" aria-current="page">{partido.name}</a>
 				</li>
@@ -171,13 +171,13 @@
 					class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-5"
 					style="font-weight: 500!important;"
 				>
-					¿Querés conocer a sus candidatxs?
+					¿Querés conocer sus candidaturas?
 				</h1>
 				<div class="buttons is-centered mb-6">
 					<a
 						href="/partidos-y-candidates/candidates/{partido.id}"
 						class="button is-uppercase has-text-weight-semibold is-black is-outlined is-active is-medium"
-						>ver candidatxs</a
+						>ver candidaturas</a
 					>
 				</div>
 			</div>

@@ -16,7 +16,7 @@
   <div class="container my-6">
     <div class="columns is-centered">
       <div class="column is-8">
-        <h1 class="title is-1 is-size-3-touch has-text-centered has-text-black is-uppercase is-spaced" >Partidos y candidatxs</h1>
+        <h1 class="title is-1 is-size-3-touch has-text-centered has-text-black is-uppercase is-spaced" >Partidos y Candidaturas</h1>
         <h1 class="subtitle is-4 is-size-5-touch has-text-centered has-text-black" style="font-weight: 400!important;" >Explorá las candidaturas, a qué se dedican, cuál es su trayectoria política, si fueron parte de otros partidos y mucho más!</h1>
       </div>
     </div>

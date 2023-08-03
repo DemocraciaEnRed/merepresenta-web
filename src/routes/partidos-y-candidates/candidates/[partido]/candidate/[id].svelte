@@ -42,9 +42,9 @@
   <div class="container">
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
-        <li ><a class="has-text-black" href="/partidos-y-candidates">Partidos y candidatxs</a></li>
+        <li ><a class="has-text-black" href="/partidos-y-candidates">Partidos y Candidaturas</a></li>
         <li ><a class="has-text-black text-wrap-wrap" href="/partidos-y-candidates/partidos/{candidate.partido.id}">{candidate.partido.name}</a></li>
-        <li ><a class="has-text-black" href="/partidos-y-candidates/candidates/{$page.params.partido}">Candidatxs</a></li>
+        <li ><a class="has-text-black" href="/partidos-y-candidates/candidates/{$page.params.partido}">Candidaturas</a></li>
         <li class="is-active"><a href aria-current="page" class=" text-wrap-wrap">{candidate.name}</a></li>
       </ul>
     </nav>
