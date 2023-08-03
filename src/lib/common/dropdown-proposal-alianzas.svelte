@@ -19,13 +19,15 @@
 <div class="the-drop-header {!isOpen ? 'border-radius' : ''} drop" style="border-color: {color};">
 	<button
 		id="partido-{proposal.ejes_id.slug}"
-		class="proposal-header is-flex is-flex-direction-row is-align-items-center has-background-white p-0"
+		class="proposal-header is-flex is-flex-direction-row is-align-items-center has-background-white  {!isOpen
+			? 'border-radius'
+			: 'border-top-radius'}"
 		on:click={() => (isOpen = !isOpen)}
 	>
 		<div class="icon-container" style="background-color: {proposal.ejes_id.color};">
 			<img
 				src={PoliciesIcons[proposal.ejes_id.slug]}
-				class="image m-3 icon-proposal"
+				class="image my-2 icon-proposal"
 				alt="icono de {proposal.ejes_id.name}"
 			/>
 		</div>
@@ -111,10 +113,10 @@
 		padding: 0 10px;
 		cursor: pointer;
 	}
-	.border-radius {
-		border-radius: 20px !important;
-		transition-delay: 0.3s;
+	.the-drop-header > button {
+		padding: 0;
 	}
+
 
 	.proposal-header {
 		border: 2px solid black;
@@ -134,8 +136,8 @@
 		border-bottom: 1px solid #000;
 	}
 	.icon-proposal {
-		width: 40px;
-		height: 40px;
+		width: 50px;
+		height: 50px;
 	}
 	.icon-container {
 		border-right: 2px solid #000;
@@ -147,5 +149,26 @@
 	}
 	.source-button u {
 		text-decoration: none !important;
+	}
+	
+
+	@media screen and (max-width: 1023px) {
+		.border-radius {
+			border-radius: 20px !important;
+			transition-delay: 0.3s;
+			overflow: hidden;
+		}
+		.border-top-radius {
+			border-top-left-radius: 20px !important;
+			border-top-right-radius: 20px !important;
+			overflow: hidden;
+			transition-delay: 0s;
+		}
+
+
+		.proposal-body {
+			border-bottom-left-radius: 20px !important;
+			border-bottom-right-radius: 20px !important;
+		}
 	}
 </style>
