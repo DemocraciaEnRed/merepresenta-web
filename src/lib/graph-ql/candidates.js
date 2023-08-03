@@ -16,6 +16,12 @@ export function getCandidates (id){
         logo{
           id
         }
+        alianzas{
+          related_partido_id{
+            id
+            name
+          }
+        }
         district {
           id
           name
