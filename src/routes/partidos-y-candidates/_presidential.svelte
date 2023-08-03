@@ -53,9 +53,9 @@
 />
 <section class="container p-2">
 	<div class="has-text-centered mt-6 has-text-black">
-		<img src="/pink-house.svg" alt="" />
+		<img src="/pink-house.png" class="logo-top" alt="" />
 		<h1 class="is-size-2 has-text-weight-medium has-text-black">Precandidaturas Presidenciales</h1>
-		<h3 class="is-size-4 has-text-weight-light">
+		<h3 class="is-size-4-desktop is-size-6-touch has-text-weight-light">
 			Explorá los programas electorales de las precandidaturas del partido de tu interés.
 		</h3>
 	</div>
@@ -166,6 +166,9 @@
 		border: none;
 	}
 	@media screen and (max-width: 768px) {
+		.logo-top{
+			max-width: 40%;
+		}
 		.carousel-section {
 			padding: 0 !important;
 		}

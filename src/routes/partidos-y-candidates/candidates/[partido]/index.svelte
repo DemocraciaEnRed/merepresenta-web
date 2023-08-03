@@ -79,7 +79,7 @@
   {#if partido.tipo === 'partido'}
   <section class="container p-2">
     <div class="has-text-centered has-text-black">
-      <img src="{partido.district.slug === 'nacion' ? '/pink-house.svg' : '/deputies-chamber.svg'}" alt="" />
+      <img src="{partido.district.slug === 'nacion' ? '/pink-house.png' : '/deputies-chamber.png'}" alt="" />
       <h1 class="is-size-2 has-text-weight-medium has-text-black">{partido.district.slug === 'nacion' ? 'Precandidaturas Presidenciales' : 'Precandidaturas P.L.N.'}</h1>
       <h3 class="is-size-4 has-text-weight-light">
         Explorá los programas electorales de las precandidaturas del partido de tu interés.
@@ -169,8 +169,6 @@
     }
     .party-logo-wrapper{
       border-left: 10px solid #000;
-      border-top: 1px solid #000;
-      border-right: 10px solid #000;
 
 
     }
@@ -184,13 +182,12 @@
     .party-container{
       width: 100%;
       border:1px solid #000;
-      border-top: 0px solid #000;
+      border-top: 1px solid #000;
       border-left: 0px solid #000;
-      border-right: 0px solid #000;
+      border-right: 10px solid #000;
     }
     .party-content{
       border-left: 10px solid #000;
-    border-right: 10px solid #000;
 
     }
   }
