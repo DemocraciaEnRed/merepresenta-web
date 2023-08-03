@@ -24,9 +24,9 @@
 <section class="container">
 	<section class="container p-2">
 		<div class="has-text-centered  has-text-black">
-			<img src="/deputies-chamber.svg" alt="" />
+			<img src="/deputies-chamber.png" alt="" />
 			<h3 class="is-size-3 has-text-weight-medium">Poder Legislativo Nacional</h3>
-			<h1 class="is-size-2 has-text-weight-medium has-text-black">¿Dónde votas?</h1>
+			<h1 class="is-size-2 has-text-weight-medium has-text-black">¿Dónde votás?</h1>
 		</div>
 	</section>
 	<div class="select-district mb-5">

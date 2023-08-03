@@ -14,9 +14,9 @@
 </main>
 <section class="container p-4 has-text-centered"  style="min-height: {height -40}px;">
     <div class="columns is-justify-content-center card-section" bind:clientHeight={height}>
-        <div class="column p-0 column-styled">
+        <!-- <div class="column p-0 column-styled">
             <Game image="games/compas.png" url={"https://compaspolitico.merepresenta.info/"} title="Compás politico"/>
-        </div>
+        </div> -->
         <div    class="column p-0 column-styled">
             <Game image="games/trivia.png" url={"https://trivia.merepresenta.info/"}  title="trivia"/>
         </div>

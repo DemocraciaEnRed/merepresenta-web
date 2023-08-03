@@ -13,11 +13,11 @@ export const PoliciesIcons = {
 
 export const cargosSlugs ={
   'presidente':{'m':'Presidente', 'f':'Presidenta'},
-  'vice-presidente': {'m':'Vice Presidente', 'f':'Vice Presidenta'},
+  'vice-presidente': {'m':'Vicepresidente', 'f':'Vicepresidenta'},
   'diputado-nacional': {'m':'Diputado Nacional','f':'Diputada Nacional'},
   'senador-nacional':{'m':'Senador Nacional','f':'Senadora Nacional'},
   'gobernador':{'m':'Gobernador','f':'Gobernadora'},
-  'vice-gobernador': {'m':'Vice Gobernador','f':'Vice Gobernadora'}
+  'vice-gobernador': {'m':'Vicegobernador','f':'Vicegobernadora'}
 }
 
 export const cargosSlugsAbbreviated ={

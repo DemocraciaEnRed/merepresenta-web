@@ -23,7 +23,7 @@
 			on:change
 			class="has-background-grey-dark has-text-white	has-text-weight-light"
 		>	
-			<option value="" selected disabled>Selecciona un distrito</option>
+			<option value="" selected disabled>Seleccioná un distrito</option>
 
 			{#each provincias as provincia}
 				<option value={provincia.slug}>{provincia.name}</option>

@@ -31,7 +31,7 @@
                 ¿Quiénes somos?
             </h1>
             <p class=" is-3 mb-4 has-text-left  has-text-black">
-                Somos tres organizaciones de la sociedad civil que impulsamos <strong>#MeRepresenta</strong> como servicio a la ciudadanía. Para puedas informarte sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. 
+                Somos tres organizaciones de la sociedad civil que impulsamos <strong>#MeRepresenta</strong> como servicio a la ciudadanía. Para que puedas informarte sobre candidaturas, partidos, propuestas y, también, aprender más sobre las elecciones en general. 
             </p>
             <p class=" is-3  has-text-left  has-text-black">
                 <strong>#MeRepresenta</strong> tiene como objetivo ayudarte a pensar el voto y contribuir así a una campaña menos centrada en descalificaciones personales y más orientada a las propuestas.
