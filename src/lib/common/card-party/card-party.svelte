@@ -64,7 +64,7 @@
 				<h1 class="is-size-2 has-text-weight-medium has-text-black my-3">{partySelected.name}</h1>
 				<div class="is-flex candidates">
 					{#if partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')}
-					<div class="legislative-list mx-6">
+					<div class="legislative-list">
 						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
 							Diputados/as Nacionales
 						</h1>
@@ -78,7 +78,7 @@
 					</div>
 					{/if}
 					{#if partyCandidates.some(candidate => candidate.cargo === 'senador-nacional')}
-					<div class="legislative-list mx-6">
+					<div class="legislative-list">
 						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
 							Senadores/as Nacionales
 						</h1>
@@ -174,6 +174,7 @@
 		justify-content: center;
 	}
 	.legislative-list {
+		margin: 0 3rem;
 		width: 40%;
 	}
 
@@ -184,6 +185,9 @@
 	@media screen and (max-width: 768px) {
 		.card-party-wrapper {
 			width: 100%;
+		}
+		.card-party-wrapper-legislative {
+		width: 100%;
 		}
 		.actions {
 			width: 90%;
@@ -209,6 +213,7 @@
 			width: 100%;
 		}
 		.legislative-list {
+			margin: 0;
 			margin-bottom: 16px;
 			width: 100%;
 		}
