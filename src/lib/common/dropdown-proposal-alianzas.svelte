@@ -1,14 +1,16 @@
 <script>
+	import { slide } from 'svelte/transition';
+	import { CandidateImg, PoliciesIcons } from './utils';
 	import Icon from './Icon.svelte';
-	$: isOpen = false;
-	$: iconClass = isOpen ? 'fa-chevron-down' : 'fa-chevron-up';
+	
 	export let proposal;
 	export let alianzas;
-	import { slide } from 'svelte/transition';
-	import { PoliciesIcons } from './utils';
-	export let darkMode;
-	let color = darkMode ? 'white' : 'black';
+	export let candidates
+	
 	$: showCompleteProposal = [];
+	$: isOpen = false;
+	$: iconClass = isOpen ? 'fa-chevron-down' : 'fa-chevron-up';
+	
 	const addToShowComplete = (alianzaId) => {
 		const index = showCompleteProposal.findIndex((el) => el === alianzaId);
 		if (index < 0) showCompleteProposal = [...showCompleteProposal, alianzaId];
@@ -16,7 +18,7 @@
 	};
 </script>
 
-<div class="the-drop-header {!isOpen ? 'border-radius' : ''} drop" style="border-color: {color};">
+<div class="the-drop-header {!isOpen ? 'border-radius' : ''} drop" >
 	<button
 		id="partido-{proposal.ejes_id.slug}"
 		class="proposal-header is-flex is-flex-direction-row is-align-items-center has-background-white  {!isOpen
@@ -41,7 +43,7 @@
 				</p>
 			</div>
 		</div>
-		<span class="pr-6" style="color:{color}"><Icon icon={iconClass} /></span>
+		<span class="pr-6" ><Icon icon={iconClass} /></span>
 	</button>
 	{#if isOpen}
 		<div class="proposal-body summary general-sans" transition:slide>
@@ -51,6 +53,17 @@
 						{#each alianza.ejes as proposalAlianza}
 							{#if proposalAlianza.ejes_id.slug === proposal.ejes_id.slug}
 								<div class="alianza-proposal p-5">
+									<div class="is-flex mb-2 candidates-circles">
+										{#each candidates as candidate}
+											{#if candidate.partido.id === alianza.id}
+												<figure class="image mx-3 candidate-avatar">
+													<img class="is-rounded" src={CandidateImg(candidate)} alt="" />
+												</figure>
+												
+											{/if}
+										{/each}
+
+									</div>
 									<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">
 										Lista: {alianza.name}
 									</h1>
@@ -73,13 +86,10 @@
 									{/if}
 									<button
 										class="button is-link is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
-										on:click={() => addToShowComplete(alianza.id)}
-									>
-										<u
-											>{!showCompleteProposal.includes(alianza.id)
+										on:click={() => addToShowComplete(alianza.id)}>
+										<u>{!showCompleteProposal.includes(alianza.id)
 												? 'propuesta completa'
-												: 'propuesta resumida'}</u
-										>
+												: 'propuesta resumida'}</u>
 									</button>
 									{#if alianza.url_fuente}
 										<p class="is-inline ml-2">
@@ -111,10 +121,10 @@
 		border-top-left-radius: 20px;
 		border-top-right-radius: 20px;
 		padding: 0 10px;
-		cursor: pointer;
 	}
 	.the-drop-header > button {
 		padding: 0;
+		cursor: pointer;
 	}
 
 
@@ -150,8 +160,14 @@
 	.source-button u {
 		text-decoration: none !important;
 	}
+	.candidate-avatar {
+		height: 65px;
+		width: 65px;
+	}
+	.candidate-avatar img{
+		border: 1px solid #000;
+	}
 	
-
 	@media screen and (max-width: 1023px) {
 		.border-radius {
 			border-radius: 20px !important;
@@ -170,5 +186,8 @@
 			border-bottom-left-radius: 20px !important;
 			border-bottom-right-radius: 20px !important;
 		}
+		.candidates-circles{
+				justify-content: center;
+			}
 	}
 </style>

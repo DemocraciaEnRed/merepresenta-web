@@ -56,6 +56,7 @@ export function getCandidates (id){
   }
 `)
 }
+
 export function getCandidatesByParty (partyId){
   return(`
   {
@@ -86,7 +87,36 @@ export function getCandidatesByParty (partyId){
   }`)
 }
 
-
+export function getCandidatesByPartyList (partyListId){
+  const query = partyListId.map(partyId => `{partido:{id:{_eq:${partyId}}}}`)
+  return(`
+  {
+    candidato(filter:{_or:[${query}]},sort: ["position","-cargo"]){
+      name
+      cargo
+      genre
+      id
+      position
+      avatar {
+        id
+      }
+      partido {
+        id
+        name
+        district {
+          id
+          name
+          slug
+        }
+      }
+      distrito_nacional {
+        id
+        name
+        slug
+      }
+    }
+  }`)
+}
 
 
 export function getCandidatesByCargoAndDistrict ({idExcept, cargo,district}){
