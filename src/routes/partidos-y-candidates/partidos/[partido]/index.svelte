@@ -1,11 +1,20 @@
 <script context="module">
-	import { getPartyById, getPartyByalianzas } from '$lib/graph-ql/partidos.js';
+	import { getPartyById, getPartyByalianzas, getPartysByDistrict } from '$lib/graph-ql/partidos.js';
 	import API, { handleResponse } from '$lib/apiHandler';
 	export async function load({ fetch, page }) {
 		const res = await API(fetch, getPartyById(page.params.partido));
 		const globalProps = await handleResponse(res, 'partidos', 'partido');
 		const resTwo = await API(fetch, getCandidatesByParty(page.params.partido));
 		const propsTwo = await handleResponse(resTwo, 'candidates', 'candidato');
+		const resThree = await API(
+			fetch,
+			getPartysByDistrict(globalProps.props.partidos[0].district.slug)
+		);
+		const responseThree = await handleResponse(resThree, 'partidos', 'partido');
+
+		const otherPartys = responseThree.props.partidos.filter(
+			(partido) => partido.tipo === globalProps.props.partidos[0].tipo
+		);
 		if (
 			globalProps.props.partidos[0].district.slug === 'nacion' &&
 			globalProps.props.partidos[0].tipo === 'partido'
@@ -14,14 +23,15 @@
 			const propsListAlianzas = await handleResponse(resListAlianzas, 'partidos', 'partido');
 			globalProps.props.alianzas = propsListAlianzas.props.partidos;
 		}
+		globalProps.props.otherPartys = shuffleArray(otherPartys.filter(
+			(party) => party.id !== globalProps.props.partidos[0].id
+		)).slice(0, 4);
 		globalProps.props.candidates = propsTwo.props.candidates;
 		return globalProps;
 	}
 </script>
 
 <script>
-	import { page } from '$app/stores';
-	import Icon from '$lib/common/Icon.svelte';
 	import {
 		directusImg,
 		PartyImg,
@@ -29,16 +39,21 @@
 		Color,
 		Solver,
 		hexToRgb,
-		CandidateImg
+		CandidateImg,
+
+		shuffleArray
+
 	} from '$lib/common/utils';
 	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 	import Proposal from './_proposal.svelte';
-	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-	import SelectParty from '$lib/common/selectParty.svelte';
 	import { getCandidatesByParty } from '$lib/graph-ql/candidates';
+	import PartyProposalCard from '$lib/common/card-party/party-proposal-card.svelte';
+
 	export let partidos;
 	export let candidates;
 	export let alianzas;
+	export let otherPartys;
+
 	let partido = partidos[0];
 	let svgLoad;
 
@@ -49,7 +64,6 @@
 	afterUpdate(() => {
 		svgLoad = true;
 		partido = partidos[0];
-
 	});
 </script>
 
@@ -69,17 +83,17 @@
 	</div>
 </div>
 <div class="party-container">
-	<div class="container is-fluid mx-6 ">
+	<div class="container is-fluid mx-6">
 		<div class="columns is-mobile is-multiline is-vcentered">
 			<div class="column is-12-touch is-narrow-desktop party-logo-container">
 				<img src={PartyImg(partido)} class="image mx-auto party-logo" alt="" />
 			</div>
 
-			<div class="column candidates  is-12-touch is-narrow-desktop  is-flex">
+			<div class="column candidates is-12-touch is-narrow-desktop is-flex">
 				{#each candidates as candidate}
 					{#if partido.district.slug !== 'nacion'}
 						{#if candidate.position === 1}
-							<div class="card mx-1 ">
+							<div class="card mx-1">
 								<div class="card-image">
 									<figure class="image is-128x128">
 										<img src={CandidateImg(candidate)} alt="Placeholder image" />
@@ -112,7 +126,7 @@
 			<div class="column is-12-touch is-normal-desktop has-text-centered-touch">
 				<div class="party-content p-4">
 					{#if partido.tipo === 'lista'}
-					<p>Lista:</p>
+						<p>Lista:</p>
 					{/if}
 					<h1
 						class="general-sans is-size-2 is-size-4-touch has-text-black has-text-weight-bold is-uppercase mb-4"
@@ -130,19 +144,19 @@
 <!-- <div class="section tetris-background"> -->
 <div class="section has-white-background tetris-background">
 	<div class="container">
-    <h1
-      class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6"
-      style="font-weight: 500!important;"
-    >
-      ¿Qué proponen?
-    </h1>
-			{#if partido.district.slug === 'nacion' && partido.tipo === 'partido'}
-        	<Proposal {alianzas} />
-      {:else}
-				<Proposal proposals={partido.ejes} {partido} />
-			{/if}
+		<h1
+			class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6"
+			style="font-weight: 500!important;"
+		>
+			¿Qué proponen?
+		</h1>
+		{#if partido.district.slug === 'nacion' && partido.tipo === 'partido'}
+			<Proposal {alianzas} {partido} />
+		{:else}
+			<Proposal proposals={partido.ejes} {partido} />
+		{/if}
 
-			<br />
+		<br />
 		{#if partido.url_fuente && partido.district.slug !== 'nacion'}
 			<div class="columns is-centered">
 				<div class="column is-8">
@@ -163,26 +177,35 @@
 				</div>
 			</div>
 		{/if}
-    {#if partido.district.slug !== 'nacion'}
-   
-		<div class="columns is-centered">
-			<div class="column is-8">
-				<h1
-					class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-5"
-					style="font-weight: 500!important;"
-				>
-					¿Querés conocer sus candidaturas?
-				</h1>
-				<div class="buttons is-centered mb-6">
-					<a
-						href="/partidos-y-candidates/candidates/{partido.id}"
-						class="button is-uppercase has-text-weight-semibold is-black is-outlined is-active is-medium"
-						>ver candidaturas</a
+		{#if partido.district.slug !== 'nacion'}
+			<div class="columns is-centered">
+				<div class="column is-8">
+					<h1
+						class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-5"
+						style="font-weight: 500!important;"
 					>
+						¿Querés conocer sus candidaturas?
+					</h1>
+					<div class="buttons is-centered mb-6">
+						<a
+							href="/partidos-y-candidates/candidates/{partido.id}"
+							class="button is-uppercase has-text-weight-semibold is-black is-outlined is-active is-medium"
+							>ver candidaturas</a
+						>
+					</div>
 				</div>
 			</div>
-		</div>
-    {/if}
+		{/if}
+
+			<h1 class=" is-size-2 is-size-5-touch has-text-centered has-text-black mt-5"
+				style="font-weight: 500!important;">
+				Comprá la interna de otros partidos
+			</h1>
+			<div class="columns is-centered is-multiline is-mobile mx-auto mt-4">
+				{#each otherPartys as partido}
+					<PartyProposalCard {partido} />
+				{/each}
+			</div>
 	</div>
 </div>
 
@@ -235,7 +258,7 @@
   }
   */
 	@media screen and (max-width: 1023px) {
-		.tetris-background{
+		.tetris-background {
 			padding-left: 0;
 			padding-right: 0;
 		}
@@ -249,18 +272,17 @@
 			border-top: 1px solid #000;
 			border-left: 10px solid #000;
 
-			border-right: 10px solid #000;;
+			border-right: 10px solid #000;
 		}
 		.party-container .container {
-			margin: 0!important;
-			padding: 0!important;
+			margin: 0 !important;
+			padding: 0 !important;
 		}
-		 .candidates {
+		.candidates {
 			justify-content: center;
 		}
 		.party-logo-container {
 			padding-bottom: 0;
 		}
 	}
-
 </style>

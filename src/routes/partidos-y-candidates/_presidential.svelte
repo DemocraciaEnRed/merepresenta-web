@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import CardParty from '$lib/common/card-party/card-party.svelte';
 	import { afterUpdate } from 'svelte';
+	import CandidateCircle from '$lib/common/candidate-circle.svelte';
 
 	export let candidates;
 	let randomCandidates = shuffleArray(candidates);
@@ -13,11 +14,13 @@
 	// Valor reactivo para controlar el ancho de la ventana
 	let windowWidth;
 	let initWidth;
+	let bindHeightCaorusel;
+	let heightCaorusel
 	let dinamycParticlesToShow;
 	let loading = false;
 	let divisor = windowWidth < 760 ? 100 : 130
 	let particlesToScroll
-
+	
 	async function updateWindowWidth() {
 		divisor = windowWidth < 760 ? 100 : 130
 		if (dinamycParticlesToShow !== ((windowWidth) / divisor).toFixed()) {
@@ -31,6 +34,7 @@
 	onMount(() => {
 		dinamycParticlesToShow = windowWidth ? ((windowWidth) / divisor).toFixed() : 12;
 		particlesToScroll = dinamycParticlesToShow /2
+		heightCaorusel = bindHeightCaorusel
 	});
 
 	afterUpdate(() => {
@@ -60,7 +64,7 @@
 		</h3>
 	</div>
 </section>
-<section class="container is-fluid px-6 pt-3 has-text-black carousel-section">
+<section class="container is-fluid px-6 pt-3 has-text-black carousel-section" bind:clientHeight={bindHeightCaorusel}>
 	{#if typeof window !== 'undefined' && !loading && dinamycParticlesToShow !== NaN}
 		<Carousel
 			dots={false}
@@ -70,34 +74,30 @@
 			let:showPrevPage
 			let:showNextPage
 		>
-			<div slot="prev" class="arrow-wrapper">
+			<div slot="prev" class="arrow-wrapper" style="height : {heightCaorusel+ heightCaorusel/2}px">
 				<button class="circle_arrow_button" on:click={showPrevPage}>
 					<Icon icon="fa-chevron-left" />
 				</button>
 			</div>
-			<div slot="next" class="arrow-wrapper">
+			<div slot="next" class="arrow-wrapper" style="height : {heightCaorusel+ heightCaorusel/2}px">
 				<button class="circle_arrow_button" on:click={showNextPage}>
 					<Icon icon="fa-chevron-right" />
 				</button>
 			</div>
 			{#each randomCandidates as candidate}
-				<button class="button-candidate" on:click={changeParty} data-party={candidate.partido.id}>
-					<figure class="image mx-auto candidate-avatar">
-						<img class="is-rounded" src={CandidateImg(candidate)} alt="" />
-					</figure>
-				</button>
+				<CandidateCircle {candidate} {changeParty}/>
 			{/each}
 		</Carousel>
 	{/if}
 </section>
 {#if partyId}
 	<section
-		class="is-flex is-justify-content-center is-flex-direction-column  px-2 pt-6 has-text-black"
+		class="is-flex is-justify-content-center is-flex-direction-column  px-2 pt-2 has-text-black "
 	>
 		<CardParty {partyId} showListButton showProposalButton district={{slug:'nacion'}}/>
 	</section>
 {:else}
-	<div class="fill-select pt-6">
+	<div class="fill-select pt-2">
 		<div class="skeleton-candidate">
 			<figure class="image is-96x96 my-6">
 				<img src="/candidate.svg" alt="" />
@@ -134,20 +134,6 @@
 	}
 	.skeleton-candidate h2 {
 		width: 50%;
-	}
-	.button-candidate {
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
-		position: relative;
-	}
-
-	.candidate-avatar img {
-		border: 2px solid #000;
-	}
-	.candidate-avatar {
-		height: 85px;
-		width: 85px;
 	}
 
 	.arrow-wrapper {
