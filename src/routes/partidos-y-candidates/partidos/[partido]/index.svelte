@@ -6,26 +6,23 @@
 		const globalProps = await handleResponse(res, 'partidos', 'partido');
 		const resTwo = await API(fetch, getCandidatesByParty(page.params.partido));
 		const propsTwo = await handleResponse(resTwo, 'candidates', 'candidato');
-		const resThree = await API(
-			fetch,
-			getPartysByDistrict(globalProps.props.partidos[0].district.slug)
-		);
-		const responseThree = await handleResponse(resThree, 'partidos', 'partido');
-
-		const otherPartys = responseThree.props.partidos.filter(
-			(partido) => partido.tipo === globalProps.props.partidos[0].tipo
-		);
-		if (
-			globalProps.props.partidos[0].district.slug === 'nacion' &&
-			globalProps.props.partidos[0].tipo === 'partido'
-		) {
+		const firstCandidate = propsTwo.props.candidates[0]
+		if (firstCandidate) {
+			const resThree = await API(fetch, getCandidatesByCargoAndDistrict({idExcept:firstCandidate.id, cargo:firstCandidate.cargo, district:firstCandidate.distrito_nacional.id}))
+			const propsThree = await handleResponse(resThree, 'candidates', 'candidato');
+			globalProps.props.otherProposal = shuffleArray(propsThree.props.candidates.filter((party) => party.id !== globalProps.props.partidos[0].id)).slice(0, 4);
+			
+		}
+		if (globalProps.props.partidos[0].district.slug === 'nacion' &&	globalProps.props.partidos[0].tipo === 'partido') {
 			const resListAlianzas = await API(fetch, getPartyByalianzas(page.params.partido));
 			const propsListAlianzas = await handleResponse(resListAlianzas, 'partidos', 'partido');
 			globalProps.props.alianzas = propsListAlianzas.props.partidos;
+			const resFour = await API(fetch,getPartysByDistrict(globalProps.props.partidos[0].district.slug));
+			const responseFour = await handleResponse(resFour, 'partidos', 'partido');
+			const otherProposal = responseFour.props.partidos.filter((partido) => partido.tipo === globalProps.props.partidos[0].tipo);
+			globalProps.props.otherProposal = shuffleArray(otherProposal.filter((party) => party.id !== globalProps.props.partidos[0].id)).slice(0, 4);
 		}
-		globalProps.props.otherPartys = shuffleArray(otherPartys.filter(
-			(party) => party.id !== globalProps.props.partidos[0].id
-		)).slice(0, 4);
+		
 		globalProps.props.candidates = propsTwo.props.candidates;
 		return globalProps;
 	}
@@ -46,13 +43,14 @@
 	} from '$lib/common/utils';
 	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 	import Proposal from './_proposal.svelte';
-	import { getCandidatesByParty } from '$lib/graph-ql/candidates';
+	import { getCandidatesByCargoAndDistrict, getCandidatesByParty } from '$lib/graph-ql/candidates';
 	import PartyProposalCard from '$lib/common/card-party/party-proposal-card.svelte';
+	import ProposalCandidateCard from '$lib/common/proposal-candidate-card.svelte';
 
 	export let partidos;
 	export let candidates;
 	export let alianzas;
-	export let otherPartys;
+	export let otherProposal;
 
 	let partido = partidos[0];
 	let svgLoad;
@@ -196,16 +194,24 @@
 				</div>
 			</div>
 		{/if}
-
-			<h1 class=" is-size-2 is-size-5-touch has-text-centered has-text-black mt-5"
-				style="font-weight: 500!important;">
-				Comprá la interna de otros partidos
-			</h1>
-			<div class="columns is-centered is-multiline is-mobile mx-auto mt-4">
-				{#each otherPartys as partido}
-					<PartyProposalCard {partido} />
-				{/each}
-			</div>
+		<h1 class=" is-size-2 is-size-5-touch has-text-centered has-text-black mt-5"
+			style="font-weight: 500!important;">
+			Comprá la interna de otros partidos
+		</h1>
+		<div class="columns is-centered is-multiline is-mobile mx-auto mt-4">
+			{#if alianzas}
+					{#each otherProposal as partido}
+						<PartyProposalCard {partido} />
+					{/each}
+				{:else}
+				{#if otherProposal}
+					{#each otherProposal as candidate}
+						<ProposalCandidateCard {candidate} />
+					{/each}
+					
+				{/if}
+			{/if}
+		</div>
 	</div>
 </div>
 

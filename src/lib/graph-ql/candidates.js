@@ -135,6 +135,12 @@ export function getCandidatesByCargoAndDistrict ({idExcept, cargo,district}){
       partido {
         id
         name
+        alianzas{
+          related_partido_id{
+            id
+            name
+          }
+        }
         logo{
           id
         }

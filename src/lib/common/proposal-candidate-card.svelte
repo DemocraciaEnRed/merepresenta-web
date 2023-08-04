@@ -1,7 +1,5 @@
 <script>
-	import { page } from '$app/stores';
-	import { CandidateImg, directusImg } from '$lib/common/utils';
-	import { afterUpdate } from 'svelte';
+	import { CandidateImg} from '$lib/common/utils';
 
 	export let candidate;
 </script>
