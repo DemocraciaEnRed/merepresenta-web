@@ -93,9 +93,12 @@
 						{#if candidate.position === 1}
 							<div class="card mx-1">
 								<div class="card-image">
-									<figure class="image is-128x128">
-										<img src={CandidateImg(candidate)} alt="Placeholder image" />
-									</figure>
+									<a href="/partidos-y-candidates/candidates/{candidate.partido.id}/candidate/{candidate.id}">
+										<figure class="image is-128x128">
+											<img src={CandidateImg(candidate)} alt="Placeholder image" />
+										</figure>
+									</a>
+
 								</div>
 								<div class="card-content">
 									<div class="content">
@@ -107,9 +110,11 @@
 					{:else}
 						<div class="card my-6 mx-1">
 							<div class="card-image">
-								<figure class="image is-128x128">
-									<img src={CandidateImg(candidate)} alt="Placeholder image" />
-								</figure>
+								<a href="/partidos-y-candidates/candidates/{candidate.partido.id}/candidate/{candidate.id}">
+									<figure class="image is-128x128">
+										<img src={CandidateImg(candidate)} alt="Placeholder image" />
+									</figure>
+								</a>
 							</div>
 							<div class="card-content">
 								<div class="content">
