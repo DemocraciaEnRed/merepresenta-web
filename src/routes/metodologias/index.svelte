@@ -25,7 +25,7 @@
                     <p><strong>Toda la información de #MeRepresenta es pública.</strong></p>
                     <p>Creemos en el conocimiento compartido. Es por eso que todos los datos compilados por <strong>#MeRepresenta</strong> son públicos y cualquier persona puede verlos, auditarlos y/o usarlos. </p>
                     <p>Nos ilusiona que diferentes personas puedan trabajar sobre nuestros datos para producir más información valiosa para las y los votantes.</p>
-                    <Button name="Datos" iconType="fa-file-pdf" url="https://drive.google.com/drive/u/0/folders/1nLV1ux6IkRmdHJTK1_uvqHVeBapvWPQI"/>
+                    <Button name="Datos" iconType="fa-file-pdf" url="https://drive.google.com/drive/folders/1WvjL0X8-i0F1qSJ2xs5HUy1YY2XPGmG6?usp=sharing"/>
                     <p class="mb-2">Además, el código de esta misma página también es público y accesible, de forma tal que cualquier otra organización con intenciones de replicarla en otros contextos pueda hacerlo.</p>
                     <Button name="Nuestro código" brand iconType="fa-github" url="https://github.com/DemocraciaEnRed/merepresenta-web"/>     
 
