@@ -201,7 +201,7 @@
 		{/if}
 		<h1 class=" is-size-2 is-size-5-touch has-text-centered has-text-black mt-5"
 			style="font-weight: 500!important;">
-			Comprá la interna de otros partidos
+			{alianzas ? 'Compará las propuestas de las listas de otros partidos' : 'Compará las propuestas de las demás candidaturas'}
 		</h1>
 		<div class="columns is-centered is-multiline is-mobile mx-auto mt-4">
 			{#if alianzas}
