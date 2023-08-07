@@ -38,7 +38,7 @@
       {#if candidate.formacion && candidate.formacion !== " "}
         <div class="column has-text-black has-text-centered">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-            <p class="is-uppercase">Formacion</p>
+            <p class="is-uppercase">Formación</p>
             <p class="is-uppercase has-text-weight-medium ">{candidate.formacion}</p>
           </div>
         </div>
