@@ -67,7 +67,7 @@
 					</div>
 					<footer class="card-foter px-5 pb-5">
 						<a
-							href="/partidos-y-candidates"
+							href="/partidos-y-candidaturas"
 							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
 							>Candidaturas</a
 						>

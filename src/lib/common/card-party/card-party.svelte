@@ -98,13 +98,13 @@
 		<div class="actions is-flex is-justify-content-center my-6 is-centered">
 			{#if showListButton}
 				<a
-					href="/partidos-y-candidates/candidates/{partySelected.alianzas[0].related_partido_id.id}"
+					href="/partidos-y-candidaturas/candidates/{partySelected.alianzas[0].related_partido_id.id}"
 					class=" button is-black mx-3 is-rounded is-uppercase ">Ver Interna</a
 				>
 			{/if}
 			{#if showProposalButton}
 				<a
-					href="/partidos-y-candidates/partidos/{partySelected.id}"
+					href="/partidos-y-candidaturas/partidos/{partySelected.id}"
 					class=" button is-black mx-3 is-rounded is-uppercase is-outlined has-background-white view-proposal"
 					>VER PROPUESTAS</a
 				>

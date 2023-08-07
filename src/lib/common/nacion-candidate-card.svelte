@@ -7,7 +7,7 @@
 	export let noRounded
 	let url = `${$page.path}/candidate/${candidate.id}`;
 	afterUpdate(() => {
-		url = `/partidos-y-candidates/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
+		url = `/partidos-y-candidaturas/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
 	});
 </script>
 

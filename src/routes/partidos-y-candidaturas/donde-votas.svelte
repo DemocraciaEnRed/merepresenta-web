@@ -15,10 +15,10 @@
         <h1 class="has-text-centered title is-1 mb-6 animate__animated animate__bounceInLeft">¿Dónde votás?</h1>
         <div class="buttons is-centered my-6">
           {#each provincias as provincia}
-							<a href="/partidos-y-candidates/{provincia.slug}" class="button is-white is-large is-uppercase has-text-weight-semibold px-6 is-outlined is-hidden-touch animate__animated animate__flipInY animate__delay-1s">{provincia.name}</a>
+							<a href="/partidos-y-candidaturas/{provincia.slug}" class="button is-white is-large is-uppercase has-text-weight-semibold px-6 is-outlined is-hidden-touch animate__animated animate__flipInY animate__delay-1s">{provincia.name}</a>
           {/each}
           {#each provincias as provincia}
-							<a href="/partidos-y-candidates/{provincia.slug}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined is-hidden-desktop mobile-width animate__animated animate__flipInY animate__delay-1s">{provincia.name}</a>
+							<a href="/partidos-y-candidaturas/{provincia.slug}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined is-hidden-desktop mobile-width animate__animated animate__flipInY animate__delay-1s">{provincia.name}</a>
           {/each}
         </div>
       </div>

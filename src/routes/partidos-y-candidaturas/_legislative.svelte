@@ -88,7 +88,7 @@
 										</div>
 										<div class="card-footer is-justify-content-center py-6">
 											<a
-												href="/partidos-y-candidates/candidates/{list.id}"
+												href="/partidos-y-candidaturas/candidates/{list.id}"
 												class="button is-outlined is-rounded has-background-white has-text-black is-black"
 												>Ver Lista</a
 											>
@@ -102,7 +102,7 @@
 					<div class="is-flex is-flex-direction-row is-justify-content-center">
 
 						<a
-							href="/partidos-y-candidates/candidates/{party.id}"
+							href="/partidos-y-candidaturas/candidates/{party.id}"
 							class=" button is-black m-3 is-rounded is-uppercase list-button">Ver Interna</a
 						>
 					</div>

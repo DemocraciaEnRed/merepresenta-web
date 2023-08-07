@@ -28,9 +28,9 @@
 		const provincia = $page.params.provincia;
 		const partido = $page.params.partido;
 		const route = $page.path;
-		let newRoute = `/partidos-y-candidates/${provincia}/candidates/${selected}`;
+		let newRoute = `/partidos-y-candidaturas/${provincia}/candidates/${selected}`;
 		if ($page.path.includes('/partidos/')) {
-			newRoute = `/partidos-y-candidates/${provincia}/partidos/${selected}`;
+			newRoute = `/partidos-y-candidaturas/${provincia}/partidos/${selected}`;
 			//window.location.replace(newRoute)
 		}
 		

@@ -5,7 +5,7 @@
 
 	export let candidate;
 	export let showParty;
-	let url=`/partidos-y-candidates/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
+	let url=`/partidos-y-candidaturas/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
 
 </script>
 

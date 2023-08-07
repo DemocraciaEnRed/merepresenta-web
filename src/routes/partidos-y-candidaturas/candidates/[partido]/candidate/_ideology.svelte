@@ -7,7 +7,7 @@
     Conocé las propuestas de {candidate.partido.name}
   </p>
   <a 
-    href="/partidos-y-candidates/partidos/{candidate.partido.id}" 
+    href="/partidos-y-candidaturas/partidos/{candidate.partido.id}" 
     class="button is-black mb-4 is-uppercase">
     Ver Partido
   </a>

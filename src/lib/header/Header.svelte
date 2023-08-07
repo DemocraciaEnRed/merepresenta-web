@@ -20,8 +20,8 @@
 			<p class="level-item has-text-centered" class:active={path==="/"}>
 				<a class="has-text-white link-styled py-1 px-2" href="/">Inicio</a>
 			</p>
-			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidates')}>
-				<a class="has-text-white link-styled py-1 px-2" href="/partidos-y-candidates">Partidos y candidaturas</a>
+			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidaturas')}>
+				<a class="has-text-white link-styled py-1 px-2" href="/partidos-y-candidaturas">Partidos y candidaturas</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/plataformas')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/plataformas">Propuestas</a>
@@ -67,8 +67,8 @@
 					<li class:active={path==="/"} >
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
 					</li>
-					<li class:active={path.includes('/partidos-y-candidates')}>
-						<a href="/partidos-y-candidates" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
+					<li class:active={path.includes('/partidos-y-candidaturas')}>
+						<a href="/partidos-y-candidaturas" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
 					</li>
 					<li class:active={path.includes('/plataformas')}>
 						<a href="/plataformas" on:click={() => openNav = !openNav}>Propuestas</a>

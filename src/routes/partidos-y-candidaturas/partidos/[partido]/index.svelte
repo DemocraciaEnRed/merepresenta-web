@@ -72,7 +72,7 @@
 	<div class="container">
 		<nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
 			<ul>
-				<li><a href="/partidos-y-candidates" class="has-text-black">Partidos y Candidaturas</a></li>
+				<li><a href="/partidos-y-candidaturas" class="has-text-black">Partidos y Candidaturas</a></li>
 				<li class="is-active">
 					<a href class="has-text-black text-wrap-wrap" aria-current="page">{partido.name}</a>
 				</li>
@@ -93,7 +93,7 @@
 						{#if candidate.position === 1}
 							<div class="card mx-1">
 								<div class="card-image">
-									<a href="/partidos-y-candidates/candidates/{candidate.partido.id}/candidate/{candidate.id}">
+									<a href="/partidos-y-candidaturas/candidates/{candidate.partido.id}/candidate/{candidate.id}">
 										<figure class="image is-128x128">
 											<img src={CandidateImg(candidate)} alt="Placeholder image" />
 										</figure>
@@ -110,7 +110,7 @@
 					{:else}
 						<div class="card my-6 mx-1">
 							<div class="card-image">
-								<a href="/partidos-y-candidates/candidates/{candidate.partido.id}/candidate/{candidate.id}">
+								<a href="/partidos-y-candidaturas/candidates/{candidate.partido.id}/candidate/{candidate.id}">
 									<figure class="image is-128x128">
 										<img src={CandidateImg(candidate)} alt="Placeholder image" />
 									</figure>
@@ -191,7 +191,7 @@
 					</h1>
 					<div class="buttons is-centered mb-6">
 						<a
-							href="/partidos-y-candidates/candidates/{partido.id}"
+							href="/partidos-y-candidaturas/candidates/{partido.id}"
 							class="button is-uppercase has-text-weight-semibold is-black is-outlined is-active is-medium"
 							>ver candidaturas</a
 						>

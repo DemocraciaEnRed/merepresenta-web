@@ -56,7 +56,7 @@
 									<div class="is-flex mb-2 candidates-circles">
 										{#each candidates as candidate}
 											{#if candidate.partido.id === alianza.id}
-												<a href="/partidos-y-candidates/candidates/{candidate.partido.id}/candidate/{candidate.id}">
+												<a href="/partidos-y-candidaturas/candidates/{candidate.partido.id}/candidate/{candidate.id}">
 													<figure class="image mx-3 candidate-avatar">
 														<img class="is-rounded" src={CandidateImg(candidate)} alt="" />
 													</figure>
