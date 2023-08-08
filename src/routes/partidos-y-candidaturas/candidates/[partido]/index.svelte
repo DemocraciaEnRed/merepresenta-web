@@ -24,6 +24,7 @@
 	import CardParty from '$lib/common/card-party/card-party.svelte';
 	import DropdownProposalAlianzas from '$lib/common/dropdown-proposal-alianzas.svelte';
 	import Proposal from '../../partidos/[partido]/_proposal.svelte';
+	import PartyProposalCard from '$lib/common/card-party/party-proposal-card.svelte';
   // let Carousel; // for saving Carousel component class
   // let carouselRef; // for calling methods of carousel instance
   
@@ -107,15 +108,29 @@
 </div>
 
 {#if partido.tipo === 'partido' && partido.district.slug === 'nacion'}
-<div class="container pb-6">
-  <h1
-    class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6"
-    style="font-weight: 500!important;"
-  >
-    ¿Qué proponen?
-  </h1>
-  <Proposal alianzas={partysListId} {partido}/>
-</div> 
+<div class="container">
+  <div class="pb-6">
+    <h1
+      class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6"
+      style="font-weight: 500!important;"
+    >
+      ¿Qué proponen?
+    </h1>
+    <Proposal alianzas={partysListId} {partido}/>
+
+  </div>
+  <div class="mb-6">
+    <h1 class=" is-size-2 is-size-5-touch has-text-centered has-text-black mt-5"
+          style="font-weight: 500!important;">
+          Compará las propuestas de las listas de otros partidos
+        </h1>
+        <div class="columns is-centered is-multiline is-mobile mx-auto mt-4">
+            <PartyProposalCard {partido} getQuantity={4}/>
+        </div>
+
+  </div>
+</div>
+ 
 {/if}
 <!-- <main class="white-background-desktop p-2 has-background-white has-text-centered ">
   <h1 class="title is-4 is-uppercase mt-4">

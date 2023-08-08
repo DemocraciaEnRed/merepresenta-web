@@ -8,9 +8,9 @@
 	class="column is-half-mobile is-one-third-tablet is-3-desktop is-2-widescreen has-text-centered"
 >
 	<div class="candidate-container">
-		<div class="header">
+		<div class="header is-flex is-justify-content-center is-align-content-center px-1">
 			<p
-				class="candidate-name is-size-6 has-text-weight-bold has-text-white is-uppercase general-sans has-text-weight-semibold"
+				class="candidate-name is-size-6 has-text-weight-bold has-text-white is-uppercase general-sans has-text-weight-semibold is-flex is-flex-wrap-wrap is-align-content-center"
 			>
 				{candidate.name}
 			</p>

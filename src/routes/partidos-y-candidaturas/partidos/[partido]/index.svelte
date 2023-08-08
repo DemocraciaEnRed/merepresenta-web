@@ -205,16 +205,9 @@
 		</h1>
 		<div class="columns is-centered is-multiline is-mobile mx-auto mt-4">
 			{#if alianzas}
-					{#each otherProposal as partido}
-						<PartyProposalCard {partido} />
-					{/each}
-				{:else}
-				{#if otherProposal}
-					{#each otherProposal as candidate}
-						<ProposalCandidateCard {candidate} />
-					{/each}
-					
-				{/if}
+				<PartyProposalCard {partido} getQuantity={4}/>
+			{:else}
+				<PartyProposalCard candidate={candidates[0]} {partido} getQuantity={4}/>
 			{/if}
 		</div>
 	</div>

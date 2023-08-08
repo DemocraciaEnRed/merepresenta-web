@@ -30,27 +30,7 @@
       </h3>
     </div>
     <div class="columns is-centered is-multiline is-mobile mt-6">
-      {#each partidosPartidos as partido}
-        <PartyProposalCard {partido}/>
-      {/each}
+      <PartyProposalCard typeParty="partido"/>
     </div>
   </div>
 </div>
-<style>
-  .tetris-background {
-    background-image: url("/black-background-desktop.png");
-    background-attachment: fixed;
-    /* background-size: cover; */
-    position:relative;
-    background-repeat: repeat;
-  }
-  .hero.tetris-background .hero-body{
-    background: linear-gradient(0deg, rgba(0,0,0,1) 00%, rgba(0,0,0,0.4) 100%); 
-    background-attachment: fixed;
-  }
-  .back-provincias{
-    position:absolute;
-    width: 100%;
-  }
-
-</style>
