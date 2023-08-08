@@ -16,6 +16,21 @@ export function getCandidates (id){
         logo{
           id
         }
+        ejes{
+          ejes_id{
+            name
+            slug
+            color
+            icon_file{
+              id
+            }
+          }
+          summary
+          propuestas{
+            id
+            summary
+          }
+        }
         alianzas{
           related_partido_id{
             id
@@ -138,7 +153,7 @@ export function getCandidatesByCargoAndDistrict ({idExcept, cargo,district}){
         alianzas{
           related_partido_id{
             id
-            name
+            name           
           }
         }
         logo{
