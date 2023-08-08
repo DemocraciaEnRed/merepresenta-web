@@ -66,7 +66,7 @@
           {#if partido.district.slug === 'nacion'}
           <div class="buttons is-centered is-hidden-desktop">
             <a href="/partidos-y-candidaturas/partidos/{partido.id}"
-        class="button is-uppercase has-text-weight-semibold is-black is-active">ver partido</a> 
+        class="button is-uppercase has-text-weight-semibold is-black is-active px-4">ver partido</a> 
           </div>
           <div class="buttons is-right is-hidden-touch">
             <a href="/partidos-y-candidaturas/partidos/{partido.id}"
