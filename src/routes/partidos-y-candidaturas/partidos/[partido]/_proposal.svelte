@@ -43,7 +43,7 @@
 
 	$: partido, getCanditatesInAlianzas()
 
-	let policyUrl = `/plataformas/${$page.params.provincia}/temas/`;
+	let policyUrl = `/propuestas/${$page.params.provincia}/temas/`;
 </script>
 
 {#if alianzas}

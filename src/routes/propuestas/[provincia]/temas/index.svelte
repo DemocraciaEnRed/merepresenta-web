@@ -14,7 +14,7 @@
 <div class="hero is-black tetris-background">
   <div class="back-provincias has-text-right">
     <div class="is-clearfix pt-3 px-3">
-      <a href="/plataformas" class="is-white is-uppercase is-outlined is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
+      <a href="/propuestas" class="is-white is-uppercase is-outlined is-pulled-left"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cambiar provincia</a>
       <p class="general-sans has-text-weight-bold is-uppercase is-pulled-right">{ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name}</p>
     </div>
   </div>

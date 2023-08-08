@@ -1,6 +1,6 @@
 <script>
 	import { page } from "$app/stores";
-	let nextUrl = `/plataformas/${$page.params.provincia}`
+	let nextUrl = `/propuestas/${$page.params.provincia}`
 </script>
 <div class="hero is-black is-medium tetris-background">
 	<div class="hero-body is-align-items-flex-start">

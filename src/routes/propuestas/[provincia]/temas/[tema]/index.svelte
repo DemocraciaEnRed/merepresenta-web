@@ -30,8 +30,8 @@
   <div class="container">
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
-        <li ><a href="/plataformas" class="has-text-black">Propuestas</a></li>
-        <li ><a href="/plataformas/temas" class="has-text-black">Por temas</a></li>
+        <li ><a href="/propuestas" class="has-text-black">Propuestas</a></li>
+        <li ><a href="/propuestas/temas" class="has-text-black">Por temas</a></li>
         <li class="is-active"><a href style="color:{tema.color}" aria-current="page">{tema.name}</a></li>
       </ul>
     </nav>

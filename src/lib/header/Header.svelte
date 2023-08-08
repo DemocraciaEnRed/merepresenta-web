@@ -23,8 +23,8 @@
 			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidaturas')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/partidos-y-candidaturas">Partidos y candidaturas</a>
 			</p>
-			<p class="level-item has-text-centered" class:active={path.includes('/plataformas')}>
-				<a class="has-text-white link-styled py-1 px-2" href="/plataformas">Propuestas</a>
+			<p class="level-item has-text-centered" class:active={path.includes('/propuestas')}>
+				<a class="has-text-white link-styled py-1 px-2" href="/propuestas">Propuestas</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/abc-electoral')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/abc-electoral">Abc Electoral</a>
@@ -70,8 +70,8 @@
 					<li class:active={path.includes('/partidos-y-candidaturas')}>
 						<a href="/partidos-y-candidaturas" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
 					</li>
-					<li class:active={path.includes('/plataformas')}>
-						<a href="/plataformas" on:click={() => openNav = !openNav}>Propuestas</a>
+					<li class:active={path.includes('/propuestas')}>
+						<a href="/propuestas" on:click={() => openNav = !openNav}>Propuestas</a>
 					</li>
 					<li class:active={path.includes('/abc-electoral')}>
 						<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>

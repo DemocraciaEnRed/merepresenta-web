@@ -33,8 +33,8 @@
 					<li class:active={path===`/partidos-y-candidaturas/${provincia}`}>
 						<a href="/partidos-y-candidaturas/{provincia}" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
 					</li>
-					<li class:active={path===`/plataformas/${provincia}`}>
-						<a href="/plataformas/{provincia}" on:click={() => openNav = !openNav}>Propuestas</a>
+					<li class:active={path===`/propuestas/${provincia}`}>
+						<a href="/propuestas/{provincia}" on:click={() => openNav = !openNav}>Propuestas</a>
 					</li>
 					<li class:active={path==='/abc-electoral'}>
 						<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>
@@ -70,7 +70,7 @@
 			<div class="navbar-end">
 				<a class="navbar-item" href="/">Inicio</a>
 				<a class="navbar-item" href="/partidos-y-candidaturas/{provincia}">Partidos y candidaturas</a>
-				<a class="navbar-item" href="/plataformas/{provincia}">Propuestas</a>
+				<a class="navbar-item" href="/propuestas/{provincia}">Propuestas</a>
 				<a class="navbar-item" href="/abc-electoral">Abc Electoral</a>
 				<a class="navbar-item" href="/juegos">Juegos</a>
 				<a class="navbar-item" href="/metodologias">Metodologías</a>

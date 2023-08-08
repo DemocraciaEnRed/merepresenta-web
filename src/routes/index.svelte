@@ -86,7 +86,7 @@
 					</div>
 					<footer class="card-foter px-5 pb-5">
 						<a
-							href="/plataformas"
+							href="/propuestas"
 							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
 							>propuestas por listas</a
 						>
