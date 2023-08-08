@@ -1,11 +1,11 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
   import {  getCandidatesByParty} from '$lib/graph-ql/candidates';
-  import { getPartyById, getpartyAliansazId } from '$lib/graph-ql/partidos';
+  import { getPartyById, getPartysByAlianza } from '$lib/graph-ql/partidos';
   export async function load({page, fetch}){
     const resOne = await API(fetch, getCandidatesByParty(page.params.partido));
     const resTwo = await API(fetch, getPartyById(page.params.partido));
-    const resThree = await API(fetch, getpartyAliansazId(page.params.partido))
+    const resThree = await API(fetch, getPartysByAlianza(page.params.partido))
     const propsOne = await handleResponse(resOne, "candidates", "candidato");
     const propsTwo = await handleResponse(resTwo, "partidos", "partido");
     const propsThree = await handleResponse(resThree, "partidos", "partido")
@@ -19,11 +19,11 @@
 <script>
   import { onMount } from 'svelte';
   import { page } from "$app/stores";
-  import { CandidateImg, directusImg, ProvinciasSlugs, PartyImg } from '$lib/common/utils';
+  import {  PartyImg } from '$lib/common/utils';
 	import CandidateCard from '$lib/common/candidate-card.svelte';
-	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
-	import SelectParty from '$lib/common/selectParty.svelte';
 	import CardParty from '$lib/common/card-party/card-party.svelte';
+	import DropdownProposalAlianzas from '$lib/common/dropdown-proposal-alianzas.svelte';
+	import Proposal from '../../partidos/[partido]/_proposal.svelte';
   // let Carousel; // for saving Carousel component class
   // let carouselRef; // for calling methods of carousel instance
   
@@ -106,6 +106,17 @@
   {/if}
 </div>
 
+{#if partido.tipo === 'partido' && partido.district.slug === 'nacion'}
+<div class="container pb-6">
+  <h1
+    class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6"
+    style="font-weight: 500!important;"
+  >
+    ¿Qué proponen?
+  </h1>
+  <Proposal alianzas={partysListId} {partido}/>
+</div> 
+{/if}
 <!-- <main class="white-background-desktop p-2 has-background-white has-text-centered ">
   <h1 class="title is-4 is-uppercase mt-4">
     Candidaturas de <br>{candidates[0].partido.name}
