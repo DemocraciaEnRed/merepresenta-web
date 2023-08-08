@@ -125,10 +125,10 @@
   <div class="mb-6">
     <h1 class=" is-size-2 is-size-5-touch has-text-centered has-text-black mt-5"
           style="font-weight: 500!important;">
-          Compará las propuestas de las listas de otros partidos
+          Compará la interna de otros partidos
         </h1>
         <div class="columns is-centered is-multiline is-mobile mx-auto mt-4">
-            <PartyProposalCard {partido} getQuantity={4}/>
+            <PartyProposalCard {partido} url="/partidos-y-candidaturas/candidates/" getQuantity={4}/>
         </div>
 
   </div>

@@ -10,10 +10,10 @@
 	export let showListButton;
 	export let showProposalButton;
 	export let district;
-
 	let partySelected;
 	let partyCandidates;
-	onMount(async () => {
+	const getPartyAndCandidates = async () => {
+		partySelected = null
 		const res = await API(fetch, getPartyById(partyId));
 		const response = await handleResponse(res, 'partido', 'partido');
 
@@ -22,7 +22,8 @@
 
 		partySelected = response.props.partido[0];
 		partyCandidates = response2.props.candidatos;
-	});
+	};
+	$: partyId, getPartyAndCandidates()
 </script>
 
 {#if partySelected}
@@ -112,12 +113,18 @@
 		</div>
 	</div>
 {:else}
-	<div class="fill-select" />
+	<div class="fill-select is-flex is-justify-content-center" >
+		<progress class="progress is-medium is-dark" max="100"></progress>
+	</div>
 {/if}
 
 <style>
 	.fill-select {
 		height: 575px;
+		width: 100%;
+	}
+	.fill-select .progress {
+		width: 80%;
 	}
 
 	.card-party-wrapper {

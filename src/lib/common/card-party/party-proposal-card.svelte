@@ -10,6 +10,7 @@
 	export let candidate;
   export let getQuantity;
   export let typeParty;
+  export let url = '/partidos-y-candidaturas/partidos/'
   let ProposalCards = []
 
   const getPartys = async ()=>{
@@ -73,7 +74,7 @@
           {proposal.name}
         </p>
       </div>
-      <a href="/partidos-y-candidaturas/partidos/{proposal.partido.id}">
+      <a href="{url}{proposal.partido.id}">
         <figure class="image is-square candidate-img"
             style="background-image: url({CandidateImg(proposal)})"/>
       </a>
@@ -86,7 +87,7 @@
         </p>
       </div>
       <div class="candidate-footer">
-        <a	href="/partidos-y-candidaturas/partidos/{proposal.partido.id}"
+        <a	href="{url}{proposal.partido.id}"
           class="button is-fullwidth is-black has-text-weight-semibold">VER PROPUESTAS</a	>
       </div>
     </div>
@@ -95,7 +96,7 @@
 {:else}
 {#each ProposalCards as proposal}
 <div class="column is-half-mobile is-one-quarter-tablet is-2-desktop has-text-centered">
-  <a href="/partidos-y-candidaturas/partidos/{proposal.id}">
+  <a href="{url}{proposal.id}">
     <div class="party-container">
       <figure	class="image is-square party-logo"
           style="background-image: url({PartyImg(proposal)})" />

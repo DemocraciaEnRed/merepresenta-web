@@ -10,12 +10,12 @@
 
 <script>
 	import Legislative from './_legislative.svelte';
-	import Precidential from './_presidential.svelte';
+	import Presidential from './_presidential.svelte';
 	export let candidates;
 </script>
 
 <main class="has-background-white white-background-desktop">
-	<Precidential {candidates} />
+	<Presidential {candidates} />
 	<Legislative />
 </main>
 
