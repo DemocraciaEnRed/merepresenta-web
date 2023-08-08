@@ -1,5 +1,8 @@
 <script>
-	export let backgroundColor;  
+	import UpToTop from "$lib/common/upToTop.svelte";
+
+	export let backgroundColor;
+
 </script>
 <footer class="footer has-background-{backgroundColor}">
     <div class="container">
@@ -18,6 +21,7 @@
                 </h3>
             </div>
         </div>
+        <UpToTop />
         <!-- <div class="is-flex-tablet is-justify-content-space-evenly is-align-items-center">
         </div>
         
