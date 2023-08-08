@@ -63,6 +63,7 @@
         <div class="party-content p-4">
           <h1 class="general-sans is-size-3 is-size-4-touch has-text-black has-text-weight-bold is-uppercase mb-4" >Candidaturas de {partido.name}</h1>
           <h1 class=" is-size-4 is-size-5-touch has-text-black mb-4" >¿Querés leer todo sobre el partido?</h1>
+          {#if partido.district.slug === 'nacion'}
           <div class="buttons is-centered is-hidden-desktop">
             <a href="/partidos-y-candidaturas/partidos/{partido.id}"
         class="button is-uppercase has-text-weight-semibold is-black is-active">ver partido</a> 
@@ -71,6 +72,8 @@
             <a href="/partidos-y-candidaturas/partidos/{partido.id}"
         class="button is-uppercase has-text-weight-semibold is-black is-active">ver partido</a> 
           </div>
+            
+          {/if}
         </div>
       </div>
     </div>

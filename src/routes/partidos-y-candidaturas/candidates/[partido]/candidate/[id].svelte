@@ -35,6 +35,7 @@
 	}
 
 	$: candidate, update()
+  
   const partyUrl = `/partidos-y-candidaturas/partidos/${$page.params.partido}`;
 
 </script>
@@ -95,7 +96,8 @@
     </div>
   </div>
 </div>
-
+{#if candidate.partido.ejes.length > 0}
+  
 <div class="hero is-black is-medium black-tetris-background">
   <div class="hero-body is-align-items-flex-start">
     <div class="container">
@@ -106,6 +108,7 @@
     </div>
   </div>
 </div>
+{/if}
 
 
 <style>
