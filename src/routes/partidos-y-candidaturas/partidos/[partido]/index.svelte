@@ -151,7 +151,7 @@
 			class="subtitle is-3 is-size-5-touch has-text-centered has-text-black my-6"
 			style="font-weight: 500!important;"
 		>
-			¿Qué proponen?
+			{alianzas ? '¿Qué propone cada lista?' :'¿Qué proponen?'}
 		</h1>
 		{#if partido.district.slug === 'nacion' && partido.tipo === 'partido'}
 			<Proposal {alianzas} {partido} />
