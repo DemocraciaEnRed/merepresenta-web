@@ -258,8 +258,8 @@
       </Dropdown>
       <Dropdown name="¿QUÉ PASA SI NO VOTO?">
         <div>
-          <img class="is-hidden-tablet" src="/abc/Novoto-Mob-01.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/Novoto-Desk-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/novoto-Mob.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/novoto-Desk.png" alt="Respuesta a la pregunta" />
           <h2>¿Dónde puedo denunciar irregularidades?</h2>
           <p>Si no votás y no justificas tu ausencia con un motivo válido, se te incluirá en el Registro de Infractores
             y <strong>recibirás una sanción</strong>. </p>
@@ -575,8 +575,8 @@
       </Dropdown>
       <Dropdown name="¿QUÉ ES LA BOLETA ÚNICA ELECTRÓNICA?">
         <div>
-          <img class="is-hidden-tablet" src="/abc/BUE-Mob-01.png" alt="Respuesta a la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/BUE-Desk-01.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-tablet" src="/abc/BUE-Mob.png" alt="Respuesta a la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/BUE-Desk.png" alt="Respuesta a la pregunta" />
           <p>En la Ciudad Autónoma de Buenos Aires la elección local será concurrente, es decir se votará al mismo
             tiempo por categorías nacionales y locales. Para las nacionales, se votará con el sistema tradicional,
             basado en papel. Para los cargos locales (Jefa/e de Gobierno, legisladoras/es y Comunas) se utilizará la
