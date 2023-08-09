@@ -105,7 +105,7 @@
 			{/if}
 			{#if showProposalButton}
 				<a
-					href="/partidos-y-candidaturas/partidos/{partySelected.id}"
+					href="/propuestas/partidos/{partySelected.id}"
 					class=" button is-black mx-3 is-rounded is-uppercase is-outlined has-background-white view-proposal"
 					>VER PROPUESTAS</a
 				>

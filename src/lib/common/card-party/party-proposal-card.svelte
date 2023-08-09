@@ -10,7 +10,7 @@
 	export let candidate;
   export let getQuantity;
   export let typeParty;
-  export let url = '/partidos-y-candidaturas/partidos/'
+  export let url = '/propuestas/partidos/'
   let ProposalCards = []
 
   const getPartys = async ()=>{

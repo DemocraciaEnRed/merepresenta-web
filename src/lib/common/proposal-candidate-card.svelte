@@ -15,7 +15,7 @@
 				{candidate.name}
 			</p>
 		</div>
-		<a href="/partidos-y-candidaturas/partidos/{candidate.partido.id}">
+		<a href="/propuestas/partidos/{candidate.partido.id}">
 			<figure
 				class="image is-square candidate-img"
 				style="background-image: url({CandidateImg(candidate)})"
@@ -37,7 +37,7 @@
 		</div>
 		<div class="candidate-footer">
 			<a
-				href="/partidos-y-candidaturas/partidos/{candidate.partido.id}"
+				href="/propuestas/partidos/{candidate.partido.id}"
 				class="button is-fullwidth is-black has-text-weight-semibold">VER PROPUESTAS</a
 			>
 		</div>

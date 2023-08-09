@@ -73,7 +73,7 @@
 
       {#each partidos as partido}
       <div class="column is-full-mobile is-half-tablet is-3-desktop has-text-centered">
-        <a href="/partidos-y-candidaturas/partidos/{partido.id}">
+        <a href="/propuestas/partidos/{partido.id}">
           <figure class="image is-2by1 has-background-white party-logo" style="background-image: url({PartyImg(partido)})"></figure>
           <div class="name-partido has-background-black is-flex is-align-items-center is-justify-content-center has-text-white py-4">
             <p>{partido.name}</p>

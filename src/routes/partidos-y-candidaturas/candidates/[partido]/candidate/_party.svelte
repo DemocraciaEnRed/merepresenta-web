@@ -20,7 +20,7 @@
     <h1 class="is-4 has-text-centered has-text-black mb-4">Conocé las propuestas de "<span class="has-text-weight-medium">{partido.name}</span>"</h1>
     <div class="buttons is-centered">
       {#if partido.ejes.length > 0}
-        <a href="/partidos-y-candidaturas/partidos/{partido.id}" class="button is-black is-outlined is-uppercase has-text-weight-semibold is-flex-grow-1">Ver propuestas</a>
+        <a href="/propuestas/partidos/{partido.id}" class="button is-black is-outlined is-uppercase has-text-weight-semibold is-flex-grow-1">Ver propuestas</a>
       {/if}
       <a href="/partidos-y-candidaturas/candidates/{partido.alianzas[0].related_partido_id.id}" class="button is-black is-outlined is-uppercase has-text-weight-semibold is-flex-grow-1">Ver interna</a>
 

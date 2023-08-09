@@ -36,7 +36,7 @@
 
 	$: candidate, update()
   
-  const partyUrl = `/partidos-y-candidaturas/partidos/${$page.params.partido}`;
+  const partyUrl = `/propuestas/partidos/${$page.params.partido}`;
 
 </script>
 <div class="section py-5">
@@ -44,7 +44,7 @@
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
         <li ><a class="has-text-black" href="/partidos-y-candidaturas">Partidos y Candidaturas</a></li>
-        <li ><a class="has-text-black text-wrap-wrap" href="/partidos-y-candidaturas/partidos/{candidate.partido.id}">{candidate.partido.name}</a></li>
+        <li ><a class="has-text-black text-wrap-wrap" href="/propuestas/partidos/{candidate.partido.id}">{candidate.partido.name}</a></li>
         <li ><a class="has-text-black" href="/partidos-y-candidaturas/candidates/{$page.params.partido}">Candidaturas</a></li>
         <li class="is-active"><a href aria-current="page" class=" text-wrap-wrap">{candidate.name}</a></li>
       </ul>
@@ -103,7 +103,7 @@
     <div class="container">
       <h1 class="has-text-centered title is-3 mb-6 animate__animated animate__flipInX">¿Querés conocer las propuestas del partido?</h1>
       <div class="buttons is-centered">
-        <a href="/partidos-y-candidaturas/partidos/{candidate.partido.id}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver partido</a>
+        <a href="/propuestas/partidos/{candidate.partido.id}" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver partido</a>
       </div>
     </div>
   </div>

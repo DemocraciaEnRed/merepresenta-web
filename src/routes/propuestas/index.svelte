@@ -36,7 +36,7 @@
 				</h1>
 			</div>
 			<div class="has-text-centered my-5">
-				<a href="/propuestas/partidos" class="button is-rounded is-black is-uppercase">Compará por partido</a>
+				<a href="/propuestas/comparativa" class="button is-rounded is-black is-uppercase">Compará por partido</a>
 
 			</div>
 		</div>

@@ -83,7 +83,7 @@
     <div class="container">
       <h1 class="has-text-centered title is-3 mb-6 animate__animated animate__flipInX">Conocé el resto de los partidos en {ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name} y sus propuestas</h1>
       <div class="buttons is-centered">
-        <a href="/propuestas/partidos" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver propuestas</a>
+        <a href="/propuestas/comparativa" class="button is-white is-medium is-uppercase has-text-weight-semibold px-6 is-outlined">Ver propuestas</a>
       </div>
     </div>
   </div>

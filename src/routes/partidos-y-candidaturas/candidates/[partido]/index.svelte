@@ -23,7 +23,7 @@
 	import CandidateCard from '$lib/common/candidate-card.svelte';
 	import CardParty from '$lib/common/card-party/card-party.svelte';
 	import DropdownProposalAlianzas from '$lib/common/dropdown-proposal-alianzas.svelte';
-	import Proposal from '../../partidos/[partido]/_proposal.svelte';
+	import Proposal from '../../../propuestas/partidos/[partido]/_proposal.svelte';
 	import PartyProposalCard from '$lib/common/card-party/party-proposal-card.svelte';
   // let Carousel; // for saving Carousel component class
   // let carouselRef; // for calling methods of carousel instance
@@ -31,7 +31,7 @@
   export let candidates
   export let partido;
   export let partysListId
-  const partyUrl = `/partidos-y-candidaturas/partidos/${$page.params.partido}`;
+  const partyUrl = `/propuestas/partidos/${$page.params.partido}`;
   
   //Initialize carousel
   // onMount(async () => {
@@ -46,7 +46,7 @@
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
         <li ><a href="/partidos-y-candidaturas" class="has-text-black">Partidos y candidaturas</a></li>
-        <li><a href="/partidos-y-candidaturas/partidos/{partido.id}" class="has-text-black text-wrap-wrap" aria-current="page">{partido.name}</a></li>
+        <li><a href="/propuestas/partidos/{partido.id}" class="has-text-black text-wrap-wrap" aria-current="page">{partido.name}</a></li>
         <li class="is-active"><a href class="has-text-black" aria-current="page">Candidaturas</a></li>
       </ul>
     </nav>
@@ -65,11 +65,11 @@
           <h1 class=" is-size-4 is-size-5-touch has-text-black mb-4" >¿Querés leer todo sobre el partido?</h1>
           {#if partido.district.slug === 'nacion'}
           <div class="buttons is-centered is-hidden-desktop">
-            <a href="/partidos-y-candidaturas/partidos/{partido.id}"
+            <a href="/propuestas/partidos/{partido.id}"
         class="button is-uppercase has-text-weight-semibold is-black is-active px-4">ver partido</a> 
           </div>
           <div class="buttons is-right is-hidden-touch">
-            <a href="/partidos-y-candidaturas/partidos/{partido.id}"
+            <a href="/propuestas/partidos/{partido.id}"
         class="button is-uppercase has-text-weight-semibold is-black is-active">ver partido</a> 
           </div>
             
