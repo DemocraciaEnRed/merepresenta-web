@@ -12,8 +12,8 @@
 	
 </script>
 <header id="the-header" class="has-background-black m-0 is-hidden-touch">
-	<div class="is-flex is-justify-content-space-between py-4">
-		<a href="/">
+	<div class="is-flex is-justify-content-space-between ">
+		<a href="/" class="py-4">
 			<img src="/logo-merepresenta.svg" width="240" class="image mx-1 p-4 " alt="logo de Me representa">
 		</a>
 		<nav class="level mr-4">
@@ -61,8 +61,9 @@
 				<i class="fas fa-times fa-2x my-4 mr-5 has-text-white is-clickable" on:click={() => openNav = !openNav}></i>
 			</div>
 			<div class="sidebar-menu-list is-flex is-flex-direction-column is-justify-content-start pt-6">
-				
-				<img src="/logo-merepresenta.svg" class="image mx-auto mb-5 mt-6 px-6" width="400"alt="logo de Me representa">
+				<a href="/">
+					<img src="/logo-merepresenta.svg" class="image mx-auto mb-5 mt-6 px-6" width="400"alt="logo de Me representa">
+				</a>
 				<ul class="">
 					<li class:active={path==="/"} >
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
@@ -100,11 +101,15 @@
 }
 #the-header .level{
 	width: 70%;
+	align-items: stretch;
 }
 #the-header .level-item a {
 	text-transform: uppercase;
 	font-size: 0.8rem;
-	border: 2px solid transparet
+	border: 2px solid transparet;
+	height: 100%;
+	display: flex;
+	align-items: center;
 }
 #the-header .level-item a:hover{
 	border-radius: 500px;
@@ -139,7 +144,6 @@
 
 .sidebar-menu-list li{
 	border-bottom: 1px solid white;
-	padding: 10px;
 }
 .sidebar-menu-list .active{
 	background-color: rgba(255,255,255, 0.19);
@@ -155,7 +159,10 @@
 }
 .sidebar-menu-list li a{
 	text-transform: uppercase;
+	width: 100%;
+	display: block;
 	color: white;
+	padding: 10px;
 }
 .sidebar-menu-list li a::before{
 	content: url('/inactive-link.png');
