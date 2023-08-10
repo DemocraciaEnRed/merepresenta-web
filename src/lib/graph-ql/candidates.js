@@ -181,6 +181,11 @@ export function getCandidatesByCargo (cargo){
       avatar {
         id
       }
+      distrito_nacional {
+        id
+        name
+        slug
+      }
       partido {
         id
         name
