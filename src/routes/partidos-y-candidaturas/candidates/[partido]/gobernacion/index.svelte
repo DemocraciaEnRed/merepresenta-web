@@ -62,8 +62,8 @@
         <div class="column has-text-centered-touch">
           <div class="party-content p-4">
             <h1 class="general-sans is-size-3 is-size-4-touch has-text-black has-text-weight-bold is-uppercase mb-4" >Candidaturas de {partido.name}</h1>
-            <h1 class=" is-size-4 is-size-5-touch has-text-black mb-4" >¿Querés leer todo sobre el partido?</h1>
-<!--             {#if partido.district.slug === 'nacion'}
+            <!-- <h1 class=" is-size-4 is-size-5-touch has-text-black mb-4" >¿Querés leer todo sobre el partido?</h1> -->
+            <!-- {#if partido.district.slug === 'nacion'}
             <div class="buttons is-centered is-hidden-desktop">
               <a href="/propuestas/partidos/{partido.id}"
           class="button is-uppercase has-text-weight-semibold is-black is-active px-4">ver partido</a> 
@@ -83,16 +83,16 @@
     <section class="container p-2">
       <div class="has-text-centered has-text-black">
         <!-- <img src="{partido.district.slug === 'nacion' ? '/pink-house.png' : '/deputies-chamber.png'}" alt="{partido.district.slug === 'nacion' ? 'logo de Casa Rosada' : 'logo de Camara de Diputados'}" /> -->
-        <h1 class="is-size-2 has-text-weight-medium has-text-black">Candidatos a gobernador por {ProvinciasSlugs.find(p => p.slug === partido.district.slug).name}</h1>
-        <h3 class="is-size-4 has-text-weight-light">
+        <h1 class="is-size-2 has-text-weight-medium has-text-black">Candidatura a jefe/a de gobierno por {ProvinciasSlugs.find(p => p.slug === partido.district.slug).name}</h1>
+        <!-- <h3 class="is-size-4 has-text-weight-light">
           Explorá los programas electorales de las precandidaturas del partido de tu interés.
-        </h3>
+        </h3> -->
       </div>
     </section>
     <div class="container mt-6">
       <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
         {#each candidates as candidate}
-        <GobernorCandidateCard {candidate} size="is-4-desktop is-7-tablet is-11-mobile"/>
+        <GobernorCandidateCard {candidate} size="is-3-desktop is-7-tablet is-11-mobile"/>
         {/each}
       </div>
     </div>

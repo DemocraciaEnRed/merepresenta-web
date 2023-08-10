@@ -16,7 +16,7 @@ export const cargosSlugs ={
   'vice-presidente': {'m':'Vicepresidente', 'f':'Vicepresidenta'},
   'diputado-nacional': {'m':'Diputado Nacional','f':'Diputada Nacional'},
   'senador-nacional':{'m':'Senador Nacional','f':'Senadora Nacional'},
-  'gobernador':{'m':'Gobernador','f':'Gobernadora'},
+  'gobernador':{'m':'Jefe de gobierno','f':'Jefa de gobierno'},
   'vice-gobernador': {'m':'Vicegobernador','f':'Vicegobernadora'}
 }
 

@@ -39,5 +39,6 @@ function handleOnScroll() {
         right: 24px;
         position: fixed;
         cursor: pointer;
+        z-index: 9999999;
     }
 </style>

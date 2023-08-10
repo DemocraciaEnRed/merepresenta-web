@@ -37,11 +37,11 @@
 			<p class="candidate-name is-size-6 has-text-weight-bold has-text-black is-uppercase general-sans has-text-weight-semibold has-text-centered">
 				{candidate.name}
 			</p>
-			<p class="has-text-black is-size-7">
+			<!-- <p class="has-text-black is-size-7">
 				Candidat{candidate.genre === 'm' ? 'o' : 'a'} a <br />
 				
 				<span class="general-sans is-size-6 has-text-weight-semibold has-text-centered">{cargosSlugs[candidate.cargo][candidate.genre]}</span>
-			</p>
+			</p> -->
 
 			<a href={url} class="button is-outlined is-fullwidth is-active has-text-black has-text-weight-semibold">VER MÁS</a
 			>
@@ -113,7 +113,7 @@
 		border: 1px solid black;
 		background-color: #fff;
 		border-top: 0;
-		height: 220px;
+		height: 125px;
 	}
 	.candidate-name {
 		line-height: normal;

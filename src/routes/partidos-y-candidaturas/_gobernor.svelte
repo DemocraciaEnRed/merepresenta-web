@@ -80,7 +80,7 @@
         </div>
         {#if candidatesOnDistrict}
         {#if typeof window !== 'undefined' && !loading && dinamycParticlesToShow !== NaN}
-        <div class="carousel-wrapper">
+        <div class="carousel-wrapper mt-3">
 
             <Carousel
                 dots={false}

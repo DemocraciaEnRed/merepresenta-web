@@ -75,6 +75,16 @@
                 <p>En lo que se refiere a la segunda tarea, ¿dónde están las propuestas?, establecer criterios de pertinencia fue más difícil. </p>
                 <p>Como fuente principal utilizamos las plataformas electorales de los sitios web oficiales de las candidaturas.</p>
                 <p>Si no se encontraron propuestas en la web oficial (o no hay web oficial), utilizamos como fuente las plataformas electorales presentadas frente a la <a href="https://www.electoral.gob.ar/nuevo/index.php">Cámara Nacional Electoral</a>, que están disponibles haciendo click <a href="https://www.electoral.gob.ar/nuevo/paginas/propuestas2021/">aquí</a>. Como son únicas para cada partido o frente (no distingue entre listas dentro de ese partido o frente), en esos casos no será posible comparar las propuestas de las distintas precandidaturas de la interna</p>
+                <p>En lo que se refiere a la segunda tarea, ¿dónde están las propuestas?, establecer criterios de pertinencia fue más difícil. <br>
+                    Como fuente principal utilizamos las plataformas electorales de los sitios web oficiales de las candidaturas.
+                </p>
+                <p>Si no se encontraron propuestas en la web oficial de la persona que se candidatea (o no hay web oficial) utilizamos como fuente las plataformas electorales presentadas frente a la Cámara Nacional Electoral, que están disponibles haciendo click aquí. Como en muchos casos son únicas para cada partido o frente (no distingue entre listas dentro de ese partido o frente), en esos casos no será posible comparar las propuestas de las distintas precandidaturas de la interna. </p>
+                <p class="mb-0">En algunos casos, al no contar con propuestas oficiales escritas en su sitio web buscamos fuentes alternativas, manteniendo un criterio metodológico para definir qué puede tomarse en cuenta como propuesta y qué no. Utilizamos como fuente los últimos videos subidos en sus canales de Youtube oficiales con las siguiente prioridades y requisitos:</p>
+                 <ul class="mt-0">
+                    <li>que el candidato o candidata esté hablando directamente de sus propuestas (una entrevista, spot publicitario, conferencia, discurso, etc)</li>
+                    <li>que el video sea de 2023 </li>
+                    <li>en caso de tomar entrevistas, que estas sean a más de un medio de comunicación.</li>
+                </ul>
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE ABC ELECTORAL">
             <div>
