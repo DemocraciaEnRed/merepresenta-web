@@ -36,17 +36,20 @@
 			/>
 		</a>
 		<div
-			class="candidate-content is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center p-3"
+			class="candidate-content is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center p-3 {candidate.cargo === 'gobernador' && 'gobernor-content'}"
 		>
 			<p
 				class="candidate-name is-size-6 has-text-weight-bold has-text-black is-uppercase general-sans has-text-weight-semibold"
 			>
 				{candidate.name}
 			</p>
+			{#if candidate.cargo !== 'gobernador'}
 			<p class="has-text-black is-size-7">
 				Candidat{candidate.genre === 'm' ? 'o' : 'a'} a <br />
 				<span class="general-sans is-size-6 has-text-weight-semibold">{cargosSlugs[candidate.cargo][candidate.genre]}</span>
 			</p>
+			
+			{/if}
 
 			<a
 				href={url}
@@ -87,6 +90,10 @@
 		background-color: #fff;
 		border-top: 0;
 		height: 220px;
+	}
+	.gobernor-content{
+		height: 125px!important;
+
 	}
 	.candidate-name {
 		line-height: normal;
