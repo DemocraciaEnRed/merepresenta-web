@@ -38,12 +38,12 @@
 			style="width:100%; height: 100%;"
 		>
 			<div class="is-flex is-flex-direction-row is-align-items-center" style="height: 100%;">
-				<p class=" has-text-black is-inline mx-5 is-uppercase is-size-5 has-text-weight-medium">
+				<p class=" has-text-black is-inline mx-5 is-uppercase is-size-5 is-size-6-touch has-text-weight-medium">
 					{proposal.ejes_id.name}
 				</p>
 			</div>
 		</div>
-		<span class="pr-6" ><Icon icon={iconClass} /></span>
+		<span class="dropdown-icon" ><Icon icon={iconClass} /></span>
 	</button>
 	{#if isOpen}
 		<div class="proposal-body summary general-sans" transition:slide>
@@ -86,23 +86,24 @@
 											{/each}
 										</div>
 									{/if}
-									<button
-										class="button is-link is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
-										on:click={() => addToShowComplete(alianza.id)}>
-										<u>{!showCompleteProposal.includes(alianza.id)
-												? 'propuesta completa'
-												: 'propuesta resumida'}</u>
-									</button>
-									{#if alianza.url_fuente}
-										<p class="is-inline ml-2">
-											<a
-												href={alianza.url_fuente}
-												target="_blank"
-												class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
-												><u>fuente oficial</u></a
-											>
-										</p>
-									{/if}
+									<div class="action-proposal">
+										<button
+											class="button is-link is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
+											on:click={() => addToShowComplete(alianza.id)}>
+											<u>{!showCompleteProposal.includes(alianza.id)
+													? 'propuesta completa'
+													: 'propuesta resumida'}</u>
+										</button>
+										{#if alianza.url_fuente}
+												<a
+													href={alianza.url_fuente}
+													target="_blank"
+													class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
+													><u>fuente oficial</u></a
+												>
+										{/if}
+
+									</div>
 								</div>
 							{/if}
 						{/each}
@@ -162,12 +163,18 @@
 	.source-button u {
 		text-decoration: none !important;
 	}
+	.source-button:not(:first-child) {
+		margin-left: 1rem;
+	}
 	.candidate-avatar {
 		height: 65px;
 		width: 65px;
 	}
 	.candidate-avatar img{
 		border: 1px solid #000;
+	}
+	.dropdown-icon{
+		padding-right: 3rem;
 	}
 	
 	@media screen and (max-width: 1023px) {
@@ -182,6 +189,12 @@
 			overflow: hidden;
 			transition-delay: 0s;
 		}
+		.dropdown-icon{
+			padding-right: .5rem;
+		}
+		.source-button:last-of-type {
+			margin-left: 0;
+		}
 
 
 		.proposal-body {
@@ -191,5 +204,14 @@
 		.candidates-circles{
 				justify-content: center;
 			}
+		.action-proposal{
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+		.action-proposal .source-button{
+			width: 90%;
+		}
 	}
 </style>

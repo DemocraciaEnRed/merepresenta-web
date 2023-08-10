@@ -34,12 +34,12 @@
 			style="width:100%; height: 100%;"
 		>
 			<div class="is-flex is-flex-direction-row is-align-items-center" style="height: 100%;">
-				<p class=" has-text-black is-inline mx-5 is-uppercase is-size-5 has-text-weight-medium">
+				<p class=" has-text-black is-inline mx-5 is-uppercase is-size-5 is-size-6-touch has-text-weight-medium">
 					{proposal.ejes_id.name}
 				</p>
 			</div>
 		</div>
-		<span class="pr-6" style="color:{color}"><Icon icon={iconClass} /></span>
+		<span class="dropdown-icon" style="color:{color}"><Icon icon={iconClass} /></span>
 	</div>
 	{#if isOpen}
 		<div class="proposal-body summary general-sans p-5" transition:slide>
@@ -62,20 +62,20 @@
 							{/each}
 						</div>
 					{/if}
-					<button	class="button is-link is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
-							on:click={() => (showCompleteProposal = !showCompleteProposal)}>
-						<u>{!showCompleteProposal ? 'propuesta completa': 'propuesta resumida'}</u>
-					</button>
-					{#if partido.url_fuente}
-						<!-- <p>Podés leer las propuestas completas en la <a href="{policyUrl}{proposal.ejes_id.slug}/{partido.id}" class="is-uppercase has-text-black has-text-weight-semibold"><u>fuente oficial</u></a></p> -->
-						<p class="is-inline ml-3">
-							<a href={partido.url_fuente}
-							   target="_blank"
-							   class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button">
-								<u>fuente oficial</u>
-							</a>
-						</p>
-					{/if}
+					<div class="action-proposal">
+						<button	class="button is-link is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
+								on:click={() => (showCompleteProposal = !showCompleteProposal)}>
+							<u>{!showCompleteProposal ? 'propuesta completa': 'propuesta resumida'}</u>
+						</button>
+						{#if partido.url_fuente}
+								<a href={partido.url_fuente}
+								   target="_blank"
+								   class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button">
+									<u>fuente oficial</u>
+								</a>
+						{/if}
+
+					</div>
 				</div>
 			</div>
 		</div>
@@ -123,6 +123,12 @@
 	.source-button u {
 		text-decoration: none !important;
 	}
+	.source-button:not(:first-child) {
+		margin-left: 1rem;
+	}
+	.dropdown-icon{
+		padding-right: 3rem;
+	}
 	@media screen and (max-width: 1023px) {
 		.border-radius {
 			border-radius: 20px !important;
@@ -136,9 +142,26 @@
 			transition-delay: 0s;
 		}
 
+		.dropdown-icon{
+			padding-right: .5rem;
+		}
 		.proposal-body {
 			border-bottom-left-radius: 20px !important;
 			border-bottom-right-radius: 20px !important;
+		}
+		.source-button:last-of-type {
+			margin-left: 0;
+		}
+
+
+		.action-proposal{
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+		.action-proposal .source-button{
+			width: 90%;
 		}
 	}
 </style>

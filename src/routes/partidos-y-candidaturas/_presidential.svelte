@@ -57,7 +57,7 @@
 />
 <section class="container p-2">
 	<div class="has-text-centered mt-6 has-text-black">
-		<img src="/pink-house.png" class="logo-top" alt="" />
+		<img src="/pink-house.png" class="logo-top" alt="casa rosada" />
 		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black">Precandidaturas Presidenciales</h1>
 		<h3 class="is-size-4-desktop is-size-6-touch has-text-weight-light">
 			Explorá los programas electorales de las precandidaturas del partido de tu interés.
@@ -100,7 +100,7 @@
 	<div class="fill-select pt-2">
 		<div class="skeleton-candidate">
 			<figure class="image is-96x96 my-6">
-				<img src="/candidate.svg" alt="" />
+				<img src="/candidate.svg" alt="silueta de candidato" />
 			</figure>
 			<h2 class="is-size-4">
 				Hacé clic sobre una candidatura y conocé la fórmula completa
