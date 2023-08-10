@@ -40,9 +40,3 @@
   </div>
 </div>
 
- <!-- {#each laws as law}
-  <div class="column is-4">
-    <h1 class="title is-4">{law.title.toUpperCase()} ({law.year})</h1>
-    <img src="{directusImg}{law.infografia.id}" class="image" width="500" alt="">
-  </div>
-{/each} -->

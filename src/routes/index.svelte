@@ -25,7 +25,7 @@
 		<div class="hero-body">
 			<div class="columns pb-6 mb-6 mx-auto">
 				<div class="column has-text-centered-touch">
-					<img src="/logo-merepresenta.svg" width="300" class="image py-4 mt-5 image-logo " alt="" />
+					<img src="/logo-merepresenta.svg" width="300" class="image py-4 mt-5 image-logo " alt="logo de Me representa" />
 					<div class="title-banner">
 						<div class="">
 							<h2 class="title is-1 has-text-white py-3 is-inline-block is-uppercase">
@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				<div class="column has-text-right has-text-centered-touch">
-					<img src="/logoHome.png" alt="">
+					<img src="/logoHome.png" alt="logo elijo saber">
 				</div>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 						</div>
 					</header>
 					<div class="card-image py-5">
-						<img class="image mx-auto card-logo" src="/candidates-link.svg" width="240" alt="" />
+						<img class="image mx-auto card-logo" src="/candidates-link.svg" width="240" alt="candidaturas" />
 					</div>
 					<footer class="card-foter px-5 pb-5">
 						<a
@@ -82,7 +82,7 @@
 						</div>
 					</header>
 					<div class="card-image py-5">
-						<img class="image mx-auto card-logo" src="/proposal.svg" width="240" alt="" />
+						<img class="image mx-auto card-logo" src="/proposal.svg" width="240" alt="propuestas" />
 					</div>
 					<footer class="card-foter px-5 pb-5">
 						<a

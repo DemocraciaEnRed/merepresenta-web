@@ -58,7 +58,7 @@
 											{#if candidate.partido.id === alianza.id}
 												<a href="/partidos-y-candidaturas/candidates/{candidate.partido.id}/candidate/{candidate.id}">
 													<figure class="image mx-3 candidate-avatar">
-														<img class="is-rounded" src={CandidateImg(candidate)} alt="" />
+														<img class="is-rounded" src={CandidateImg(candidate)} alt="{candidate.name}" />
 													</figure>
 												</a>
 												

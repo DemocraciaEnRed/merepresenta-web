@@ -6,21 +6,12 @@
 		const globalProps = await handleResponse(res, 'partidos', 'partido');
 		const resTwo = await API(fetch, getCandidatesByParty(page.params.partido));
 		const propsTwo = await handleResponse(resTwo, 'candidates', 'candidato');
-		const firstCandidate = propsTwo.props.candidates[0]
-		if (firstCandidate) {
-			const resThree = await API(fetch, getCandidatesByCargoAndDistrict({idExcept:firstCandidate.id, cargo:firstCandidate.cargo, district:firstCandidate.distrito_nacional.id}))
-			const propsThree = await handleResponse(resThree, 'candidates', 'candidato');
-			globalProps.props.otherProposal = shuffleArray(propsThree.props.candidates.filter((party) => party.id !== globalProps.props.partidos[0].id)).slice(0, 4);
-			
-		}
+	
 		if (globalProps.props.partidos[0].district.slug === 'nacion' &&	globalProps.props.partidos[0].tipo === 'partido') {
 			const resListAlianzas = await API(fetch, getPartyByalianzas(page.params.partido));
 			const propsListAlianzas = await handleResponse(resListAlianzas, 'partidos', 'partido');
 			globalProps.props.alianzas = propsListAlianzas.props.partidos;
-			const resFour = await API(fetch,getPartysByDistrict(globalProps.props.partidos[0].district.slug));
-			const responseFour = await handleResponse(resFour, 'partidos', 'partido');
-			const otherProposal = responseFour.props.partidos.filter((partido) => partido.tipo === globalProps.props.partidos[0].tipo);
-			globalProps.props.otherProposal = shuffleArray(otherProposal.filter((party) => party.id !== globalProps.props.partidos[0].id)).slice(0, 4);
+			
 		}
 		
 		globalProps.props.candidates = propsTwo.props.candidates;
@@ -30,12 +21,7 @@
 
 <script>
 	import {
-		directusImg,
 		PartyImg,
-		ProvinciasSlugs,
-		Color,
-		Solver,
-		hexToRgb,
 		CandidateImg,
 
 		shuffleArray
@@ -45,12 +31,10 @@
 	import Proposal from './_proposal.svelte';
 	import { getCandidatesByCargoAndDistrict, getCandidatesByParty } from '$lib/graph-ql/candidates';
 	import PartyProposalCard from '$lib/common/card-party/party-proposal-card.svelte';
-	import ProposalCandidateCard from '$lib/common/proposal-candidate-card.svelte';
 
 	export let partidos;
 	export let candidates;
 	export let alianzas;
-	export let otherProposal;
 
 	let partido = partidos[0];
 	let svgLoad;
@@ -84,7 +68,7 @@
 	<div class="container is-fluid mx-6">
 		<div class="columns is-mobile is-multiline is-vcentered">
 			<div class="column is-12-touch is-narrow-desktop party-logo-container">
-				<img src={PartyImg(partido)} class="image mx-auto party-logo" alt="" />
+				<img src={PartyImg(partido)} class="image mx-auto party-logo" alt="logo de {partido.name}" />
 			</div>
 
 			<div class="column candidates is-12-touch is-narrow-desktop is-flex">
@@ -95,7 +79,7 @@
 								<div class="card-image">
 									<a href="/partidos-y-candidaturas/candidates/{candidate.partido.id}/candidate/{candidate.id}">
 										<figure class="image is-128x128">
-											<img src={CandidateImg(candidate)} alt="Placeholder image" />
+											<img src={CandidateImg(candidate)} alt="{candidate.name}" />
 										</figure>
 									</a>
 
@@ -112,7 +96,7 @@
 							<div class="card-image">
 								<a href="/partidos-y-candidaturas/candidates/{candidate.partido.id}/candidate/{candidate.id}">
 									<figure class="image is-128x128">
-										<img src={CandidateImg(candidate)} alt="Placeholder image" />
+										<img src={CandidateImg(candidate)} alt="{candidate.name}" />
 									</figure>
 								</a>
 							</div>

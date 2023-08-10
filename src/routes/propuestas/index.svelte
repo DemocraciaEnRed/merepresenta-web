@@ -42,3 +42,10 @@
 		</div>
 	</div>
 </main>
+<style>
+	@media screen and (max-width:768px){
+		.section{
+			padding: 3rem .5rem;
+		}
+	}
+</style>

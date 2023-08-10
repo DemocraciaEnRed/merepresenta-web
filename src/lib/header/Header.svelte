@@ -14,7 +14,7 @@
 <header id="the-header" class="has-background-black m-0 is-hidden-touch">
 	<div class="is-flex is-justify-content-space-between py-4">
 		<a href="/">
-			<img src="/logo-merepresenta.svg" width="240" class="image mx-1 p-4 " alt="">
+			<img src="/logo-merepresenta.svg" width="240" class="image mx-1 p-4 " alt="logo de Me representa">
 		</a>
 		<nav class="level mr-4">
 			<p class="level-item has-text-centered" class:active={path==="/"}>
@@ -47,7 +47,7 @@
 <header id="mobile-header" class="has-background-black p-4 is-hidden-desktop">
 	<div class="is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between">
 		<a href="/">
-			<img src="/logo-merepresenta.svg" class="image mx-4" width="180" alt="">
+			<img src="/logo-merepresenta.svg" class="image mx-4" width="180" alt="logo de Me representa">
 		</a>
 		<a href on:click={() => openNav = !openNav}><i class="fas fa-bars fa-lg fa-fw has-text-white"></i></a>
 		
@@ -62,7 +62,7 @@
 			</div>
 			<div class="sidebar-menu-list is-flex is-flex-direction-column is-justify-content-start pt-6">
 				
-				<img src="/logo-merepresenta.svg" class="image mx-auto mb-5 mt-6 px-6" width="400"alt="">
+				<img src="/logo-merepresenta.svg" class="image mx-auto mb-5 mt-6 px-6" width="400"alt="logo de Me representa">
 				<ul class="">
 					<li class:active={path==="/"} >
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>

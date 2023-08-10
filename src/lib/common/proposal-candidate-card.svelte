@@ -80,4 +80,9 @@
 	.candidate-footer a {
 		border-radius: 0;
 	}
+	@media screen and (max-width:758px){
+		.column{
+			padding: .2rem;
+		}
+	}
 </style>

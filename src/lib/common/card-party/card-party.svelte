@@ -38,7 +38,7 @@
 				<header class="card-header is-align-items-center ">
 					<div class="image-wrapper">
 						<div class="image-party is-rounded  m-2" style="background-image: url()">
-							<img src={PartyImg(partySelected)} alt="" />
+							<img src={PartyImg(partySelected)} alt="{partySelected.name}" />
 						</div>
 					</div>
 					<div class="name-partido">

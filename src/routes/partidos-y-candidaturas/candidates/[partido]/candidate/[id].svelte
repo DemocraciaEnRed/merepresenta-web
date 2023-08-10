@@ -55,7 +55,7 @@
     <div class="container">
       <div class="columns is-mobile is-multiline is-vcentered">
         <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
-          <img src={CandidateImg(candidate)} class="image mx-auto my-2 candidate-logo" alt="">
+          <img src={CandidateImg(candidate)} class="image mx-auto my-2 candidate-logo" alt="foto de {candidate.name}">
         </div>
         <div class="column is-12-touch is-normal-desktop has-text-centered-touch">
           <div class="has-background-black party-text-container is-inline-block animate__animated animate__backInRight">

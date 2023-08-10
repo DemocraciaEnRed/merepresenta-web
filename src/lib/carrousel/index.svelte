@@ -19,33 +19,33 @@
 				</div>
 				<div class="carrousel-item has-text-centered">
 					<a target="_blank" href="/abc-electoral">
-						<img class="is-hidden-mobile" src="carrousel/abc_desk.png" alt="" />
-						<img class="is-hidden-tablet" src="carrousel/abc_mobile.png" alt="" />
+						<img class="is-hidden-mobile" src="carrousel/abc_desk.png" alt="abc electoral" />
+						<img class="is-hidden-tablet" src="carrousel/abc_mobile.png" alt="abc electoral" />
 					</a>
 				</div>
 				<div class="carrousel-item has-text-centered">
 					<a target="_blank" href="https://drive.google.com/drive/folders/1WvjL0X8-i0F1qSJ2xs5HUy1YY2XPGmG6?usp=sharing">
-					<img class="is-hidden-mobile" src="carrousel/dataset_desk.png" alt="" />
-					<img class="is-hidden-tablet" src="carrousel/dataset_mobile.png" alt="" />
+					<img class="is-hidden-mobile" src="carrousel/dataset_desk.png" alt="dataset" />
+					<img class="is-hidden-tablet" src="carrousel/dataset_mobile.png" alt="dataset" />
 				</a>
 
 				</div>
 				<!-- <div class="carrousel-item has-text-centered">
 					<a target="_blank" href="https://compaspolitico.merepresenta.info/">
-						<img class="is-hidden-mobile" src="carrousel/compas_desk.png" alt="" />
-						<img class="is-hidden-tablet" src="carrousel/compas_mobile.png" alt="" />
+						<img class="is-hidden-mobile" src="carrousel/compas_desk.png" alt="compas politico" />
+						<img class="is-hidden-tablet" src="carrousel/compas_mobile.png" alt="compas politico" />
 					</a>
 				</div> -->
 				<div class="carrousel-item has-text-centered">
 					<a target="_blank" href="https://trivia.merepresenta.info/">
-						<img class="is-hidden-mobile" src="carrousel/trivia_desk.png" alt="" />
-						<img class="is-hidden-tablet" src="carrousel/trivia_mobile.png" alt="" />
+						<img class="is-hidden-mobile" src="carrousel/trivia_desk.png" alt="trivia" />
+						<img class="is-hidden-tablet" src="carrousel/trivia_mobile.png" alt="trivia" />
 					</a>
 				</div>
 				<div class="carrousel-item has-text-centered">
 					<a target="_blank" href="https://verdaderofalso.merepresenta.info/">
-						<img class="is-hidden-mobile" src="carrousel/vof_desk.png" alt="" />
-						<img class="is-hidden-tablet" src="carrousel/vof_mobile.png" alt="" />
+						<img class="is-hidden-mobile" src="carrousel/vof_desk.png" alt="verdadero o falso" />
+						<img class="is-hidden-tablet" src="carrousel/vof_mobile.png" alt="verdadero o falso" />
 					</a>
 				</div>
 			</Carousel>

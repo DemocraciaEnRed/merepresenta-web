@@ -58,7 +58,7 @@
 <section class="container p-2">
 	<div class="has-text-centered mt-6 has-text-black">
 		<img src="/pink-house.png" class="logo-top" alt="" />
-		<h1 class="is-size-2 has-text-weight-medium has-text-black">Precandidaturas Presidenciales</h1>
+		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black">Precandidaturas Presidenciales</h1>
 		<h3 class="is-size-4-desktop is-size-6-touch has-text-weight-light">
 			Explorá los programas electorales de las precandidaturas del partido de tu interés.
 		</h3>
@@ -121,12 +121,14 @@
 		background-color: #d9d9d980;
 		border: 3px dashed #9f9f9f;
 		border-radius: 10px;
-		height: 90%;
+		min-height: 90%;
 		width: 60%;
 		display: flex;
+		padding: 16px;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 		color: #00000071;
 	}
 	.skeleton-candidate figure img {
@@ -161,6 +163,12 @@
 		.candidate-avatar {
 			height: 65px;
 			width: 65px;
+		}
+		.skeleton-candidate {
+			width: 90%;
+		}
+		.skeleton-candidate h2 {
+		width: 100%;
 		}
 		.circle_arrow_button {
 			cursor: pointer;

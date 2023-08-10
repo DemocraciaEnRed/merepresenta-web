@@ -57,7 +57,7 @@
 
     <div class="columns is-vcentered party-info">
       <div class="column is-4 party-logo-wrapper">
-        <img src={PartyImg(partido)} class="image mx-auto party-logo" alt="">
+        <img src={PartyImg(partido)} class="image mx-auto party-logo" alt="logo de {partido.name}">
       </div>
       <div class="column has-text-centered-touch">
         <div class="party-content p-4">
@@ -83,7 +83,7 @@
   {#if partido.tipo === 'partido'}
   <section class="container p-2">
     <div class="has-text-centered has-text-black">
-      <img src="{partido.district.slug === 'nacion' ? '/pink-house.png' : '/deputies-chamber.png'}" alt="" />
+      <img src="{partido.district.slug === 'nacion' ? '/pink-house.png' : '/deputies-chamber.png'}" alt="{partido.district.slug === 'nacion' ? 'logo de Casa Rosada' : 'logo de camara de diputados'}" />
       <h1 class="is-size-2 has-text-weight-medium has-text-black">{partido.district.slug === 'nacion' ? 'Precandidaturas Presidenciales' : 'Precandidaturas P.L.N.'}</h1>
       <h3 class="is-size-4 has-text-weight-light">
         Explorá los programas electorales de las precandidaturas del partido de tu interés.

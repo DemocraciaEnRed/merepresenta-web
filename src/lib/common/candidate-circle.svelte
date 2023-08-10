@@ -9,7 +9,7 @@
 	<span class="tag is-light candidate-name" >{candidate.name}</span>
 	<button class="button-candidate" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2})" >
 		<figure class="image mx-auto candidate-avatar">
-			<img class="is-rounded" src={CandidateImg(candidate)} alt="" />
+			<img class="is-rounded" src={CandidateImg(candidate)} alt="{candidate.name}" />
 		</figure>
 	</button>
 

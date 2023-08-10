@@ -24,7 +24,7 @@
 <section class="container">
 	<section class="container p-2">
 		<div class="has-text-centered  has-text-black">
-			<img src="/deputies-chamber.png" alt="" />
+			<img src="/deputies-chamber.png" alt="camara de diputados" />
 			<h3 class="is-size-3 has-text-weight-medium">Poder Legislativo Nacional</h3>
 			<h1 class="is-size-2 has-text-weight-medium has-text-black">¿Dónde votás?</h1>
 		</div>
@@ -114,7 +114,7 @@
 			<div class="fill-select pt-6">
 				<div class="skeleton-candidate">
 					<figure class="image is-96x96 my-6">
-						<img src="/candidate.svg" alt="" />
+						<img src="/candidate.svg" alt="candidatos" />
 					</figure>
 					<h2 class="is-size-4">Elegí un distrito y conocé la fórmula completa</h2>
 				</div>
@@ -135,9 +135,10 @@
 		background-color: #d9d9d980;
 		border: 3px dashed #9f9f9f;
 		border-radius: 10px;
-		height: 90%;
+		min-height: 90%;
 		width: 60%;
 		display: flex;
+		padding: 16px;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -180,5 +181,13 @@
 	}
 	.list-button{
 		padding: .5rem 6rem;
+	}
+	@media screen and (max-width:768px){
+		.skeleton-candidate {
+			width: 90%;
+		}
+		.skeleton-candidate h2 {
+			width: 100%;
+		}
 	}
 </style>

@@ -251,7 +251,7 @@
             Tiene que ser <strong>el que figura en el Padrón o una versión posterior, es decir, uno más nuevo</strong>.
           </p>
           <p>Los documentos habilitantes para votar son:</p>
-          <img src="/abc/documentos-validos.jpg" alt="">
+          <img src="/abc/documentos-validos.jpg" alt="documentos validos">
           <p>Nota: El <strong class="is-underlined"><span class="is-italic">DNI tarjeta</span> es válido para
               votar</strong> aunque contenga la leyenda “no válido para votar” (sí, es así)</p>
         </div>
@@ -413,8 +413,8 @@
                   En ese caso, se considerará <strong>"voto en blanco"</strong> solo para dicha categoría.</li>
               </ul>
               <div class="columns">
-                <div class="column"> <img src="/abc/voto-blanco-1.jpg" alt=""></div>
-                <div class="column"> <img src="/abc/voto-blanco-2.jpg" alt=""></div>
+                <div class="column"> <img src="/abc/voto-blanco-1.jpg" alt="votos en blanco"></div>
+                <div class="column"> <img src="/abc/voto-blanco-2.jpg" alt="votos en blanco"></div>
               </div>
               <div class=" has-text-grey has-text-centered is-size-7 mb-5">
                 *Información válida para el año 2023
@@ -438,8 +438,8 @@
                   de tachaduras, agregados o sustituciones. </li>
               </ul>
               <div class="columns">
-                <div class="column"> <img src="/abc/voto-nulo-1.jpg" alt=""></div>
-                <div class="column"> <img src="/abc/voto-nulo-2.jpg" alt=""></div>
+                <div class="column"> <img src="/abc/voto-nulo-1.jpg" alt="votos nulos"></div>
+                <div class="column"> <img src="/abc/voto-nulo-2.jpg" alt="votos nulos"></div>
               </div>
               <div class=" has-text-grey has-text-centered is-size-7 mb-5">
                 *Información válida para el año 2023
@@ -454,7 +454,7 @@
                   la Justicia Nacional Electoral para que ésta decida sobre su validez o nulidad.</li>
               </ul>
               <div class="columns">
-                <div class="column is-half-desktop mx-auto"> <img src="/abc/voto-impugnado.jpg" alt=""></div>
+                <div class="column is-half-desktop mx-auto"> <img src="/abc/voto-impugnado.jpg" alt="voto impugnado"></div>
               </div>
               <div class=" has-text-grey has-text-centered is-size-7 mb-5">
                 *Información válida para el año 2023
@@ -473,7 +473,7 @@
                   competencia electoral o a la Junta Electoral Nacional respectivamente.</li>
               </ul>
               <div class="columns">
-                <div class="column is-half-desktop mx-auto"> <img src="/abc/voto-recurrido.jpg" alt=""></div>
+                <div class="column is-half-desktop mx-auto"> <img src="/abc/voto-recurrido.jpg" alt="voto recurrido"></div>
               </div>
             </li>
           </ul>
