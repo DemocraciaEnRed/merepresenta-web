@@ -1,5 +1,6 @@
 <script>
   export let partido;
+  export let candidate
   export let open
   import Binary from "./_binary.svelte";
   import { slide } from 'svelte/transition';
@@ -22,7 +23,7 @@
       {#if partido.ejes.length > 0}
         <a href="/propuestas/partidos/{partido.id}" class="button is-black is-outlined is-uppercase has-text-weight-semibold is-flex-grow-1">Ver propuestas</a>
       {/if}
-      <a href="/partidos-y-candidaturas/candidates/{partido.alianzas[0].related_partido_id.id}" class="button is-black is-outlined is-uppercase has-text-weight-semibold is-flex-grow-1">Ver interna</a>
+      <a href="/partidos-y-candidaturas/candidates/{partido.alianzas[0].related_partido_id.id}{candidate.cargo==='gobernador'?'/gobernacion':''}" class="button is-black is-outlined is-uppercase has-text-weight-semibold is-flex-grow-1">Ver interna</a>
 
       <!-- <a href="/como-votaron" class="button is-black is-outlined is-uppercase has-text-weight-semibold">Ver votaciones</a> -->
     </div>

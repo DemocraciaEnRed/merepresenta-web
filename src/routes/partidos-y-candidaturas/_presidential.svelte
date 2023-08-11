@@ -100,7 +100,7 @@
 	<div class="fill-select pt-2">
 		<div class="skeleton-candidate">
 			<figure class="image is-96x96 my-6">
-				<img src="/candidate.svg" alt="silueta de candidato" />
+				<img src="/candidate.svg" alt="silueta de candidato" style="filter: opacity(0.5);"/>
 			</figure>
 			<h2 class="is-size-4">
 				Hacé clic sobre una candidatura y conocé la fórmula completa
@@ -131,9 +131,7 @@
 		text-align: center;
 		color: #00000071;
 	}
-	.skeleton-candidate figure img {
-		filter: opacity(0.5);
-	}
+
 	.skeleton-candidate h2 {
 		width: 50%;
 	}
@@ -159,10 +157,6 @@
 		}
 		.carousel-section {
 			padding: 0 !important;
-		}
-		.candidate-avatar {
-			height: 65px;
-			width: 65px;
 		}
 		.skeleton-candidate {
 			width: 90%;

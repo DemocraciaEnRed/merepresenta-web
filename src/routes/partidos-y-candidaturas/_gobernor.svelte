@@ -138,9 +138,7 @@
         padding-left: 3rem;
         padding-right: 3rem;
     }
-    .name-partido{
-        white-space:break-spaces;
-    }
+
     @media screen and (max-width:768px){
         .districts-buttons button{
         width: 80%;

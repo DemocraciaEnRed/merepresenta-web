@@ -21,7 +21,7 @@
 	}
 </script>
 
-<section class="container">
+<section class="">
 	<section class="container p-2">
 		<div class="has-text-centered  has-text-black">
 			<img src="/deputies-chamber.png" alt="camara de diputados" />
@@ -32,95 +32,98 @@
 	<div class="select-district mb-5">
 		<SelectDistrict on:change={handleSelect} />
 	</div>
-	<div class="dropdown-wrapper">
+	<div class="wrapper">
 		{#if partys}
-			{#each partys as party}
-			{#if candidates.some(candidate => candidate.partido.alianzas[0].related_partido_id.id === party.id)}
+			<div class="dropdown-wrapper">
 				
-			<Dropdown class="has-text-black " darkMode backgroundHeader name={party.name}>
-				<div class="is-flex is-justify-content-center is-flex-direction-column">
-					<div class="columns mx-auto is-flex-wrap-wrap">
-						{#each partyList as list}
-							{#if list.alianzas.some((partyInList) => partyInList.related_partido_id.id === party.id)}
-								{#if candidates.some(candidate => candidate.partido.id === list.id)}
-									
-								<div class="column is-4">
-									<div
-										class="card has-text-white is-flex is-flex-direction-column is-justify-content-space-between has-background-dark card-list-legislative"
-									>
-										<div class=" pt-6">
-											<figure class="image is-128x128 m-auto">
-												<img
-													src={candidates.filter(
-														(candidate) => candidate.partido.id === list.id
-													)[0]
-														? CandidateImg(
-																candidates.filter(
-																	(candidate) => candidate.partido.id === list.id
-																)[0]
-														  )
-														: '/candidate.svg'}
-													class="is-rounded"
-													alt="Placeholder image"
-												/>
-											</figure>
-										</div>
-										<div class="card-content ">
-											<div class="content ">
-												<div class="">
-													<h3 class=" has-text-white is-size-5 has-text-weight-light">
-														Lista: <strong class=" has-text-white ">{list.name}</strong>
-													</h3>
-												</div>
-												<br />
-												<div class="candidates-list">
-													{#each candidates as candidate}
-														{#if candidate.partido.id === list.id && candidate.position <= 2}
-															<p class="is-size-6">
-																{candidate.position}º {candidate.name} - {cargosSlugsAbbreviated[
-																	candidate.cargo
-																]}
-															</p>
-														{/if}
-													{/each}
+				{#each partys as party}
+				{#if candidates.some(candidate => candidate.partido.alianzas[0].related_partido_id.id === party.id)}
+					
+				<Dropdown class="has-text-black " darkMode backgroundHeader name={party.name}>
+					<div class="is-flex is-justify-content-center is-flex-direction-column">
+						<div class="columns mx-auto is-flex-wrap-wrap">
+							{#each partyList as list}
+								{#if list.alianzas.some((partyInList) => partyInList.related_partido_id.id === party.id)}
+									{#if candidates.some(candidate => candidate.partido.id === list.id)}
+										
+									<div class="column is-4">
+										<div
+											class="card has-text-white is-flex is-flex-direction-column is-justify-content-space-between has-background-dark card-list-legislative"
+										>
+											<div class=" pt-6">
+												<figure class="image is-128x128 m-auto">
+													<img
+														src={candidates.filter(
+															(candidate) => candidate.partido.id === list.id
+														)[0]
+															? CandidateImg(
+																	candidates.filter(
+																		(candidate) => candidate.partido.id === list.id
+																	)[0]
+															  )
+															: '/candidate.svg'}
+														class="is-rounded"
+														alt="Placeholder image"
+													/>
+												</figure>
+											</div>
+											<div class="card-content ">
+												<div class="content ">
+													<div class="">
+														<h3 class=" has-text-white is-size-5 has-text-weight-light">
+															Lista: <strong class=" has-text-white ">{list.name}</strong>
+														</h3>
+													</div>
+													<br />
+													<div class="candidates-list">
+														{#each candidates as candidate}
+															{#if candidate.partido.id === list.id && candidate.position <= 2}
+																<p class="is-size-6">
+																	{candidate.position}º {candidate.name} - {cargosSlugsAbbreviated[
+																		candidate.cargo
+																	]}
+																</p>
+															{/if}
+														{/each}
+													</div>
 												</div>
 											</div>
-										</div>
-										<div class="card-footer is-justify-content-center py-6">
-											<a
-												href="/partidos-y-candidaturas/candidates/{list.id}"
-												class="button is-outlined is-rounded has-background-white has-text-black is-black"
-												>Ver Lista</a
-											>
+											<div class="card-footer is-justify-content-center py-6">
+												<a
+													href="/partidos-y-candidaturas/candidates/{list.id}"
+													class="button is-outlined is-rounded has-background-white has-text-black is-black"
+													>Ver Lista</a
+												>
+											</div>
 										</div>
 									</div>
-								</div>
+									{/if}
 								{/if}
-							{/if}
-						{/each}
+							{/each}
+						</div>
+						<div class="is-flex is-flex-direction-row is-justify-content-center">
+	
+							<a
+								href="/partidos-y-candidaturas/candidates/{party.id}"
+								class=" button is-black m-3 is-rounded is-uppercase list-button">Ver Interna</a
+							>
+						</div>
 					</div>
-					<div class="is-flex is-flex-direction-row is-justify-content-center">
-
-						<a
-							href="/partidos-y-candidaturas/candidates/{party.id}"
-							class=" button is-black m-3 is-rounded is-uppercase list-button">Ver Interna</a
-						>
-					</div>
-				</div>
-			</Dropdown>
-			{/if}
-			{/each}
-		{:else}
-			<div class="fill-select pt-6">
-				<div class="skeleton-candidate">
-					<figure class="image is-96x96 my-6">
-						<img src="/candidate.svg" alt="candidatos" />
-					</figure>
-					<h2 class="is-size-4">Elegí un distrito y conocé la fórmula completa</h2>
-				</div>
+				</Dropdown>
+				{/if}
+				{/each}
 			</div>
-		{/if}
-	</div>
+			{:else}
+				<div class="fill-select pt-6">
+					<div class="skeleton-candidate">
+						<figure class="image is-96x96 my-6">
+							<img src="/candidate.svg" alt="candidatos"  style="filter: opacity(0.5);"/>
+						</figure>
+						<h2 class="is-size-4">Elegí un distrito y conocé la fórmula completa</h2>
+					</div>
+				</div>
+			{/if}
+		</div>
 </section>
 
 <style>
@@ -144,15 +147,13 @@
 		align-items: center;
 		color: #00000071;
 	}
-	.skeleton-candidate figure img {
-		filter: opacity(0.5);
-	}
+
 	.skeleton-candidate h2 {
 		width: 50%;
 	}
 	.dropdown-wrapper {
+		width: 80%;
 		margin: auto;
-		width: 90%;
 	}
 	.columns {
 		width: 100%;

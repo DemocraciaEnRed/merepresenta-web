@@ -11,19 +11,19 @@
 	});
 </script>
 
-<div class="column is-half has-text-centered p-0 candidate-container {noRounded && 'force-no-rounded'}">
+<div class="column is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column {noRounded && 'force-no-rounded'}">
 	<a href={url}>
 		<figure class="image candidate-img" style="background-image: url({CandidateImg(candidate)})" />
 	</a>
 	<div
-		class="candidate-content is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center p-3"
+		class="candidate-content is-flex is-flex-direction-column is-justify-content-flex-end is-align-items-center p-3"
 	>
 		<p
 			class="candidate-name is-size-6 has-text-weight-bold has-text-black is-uppercase general-sans has-text-weight-semibold"
 		>
 			{candidate.name}
 		</p>
-		<p class="has-text-black is-size-7">
+		<p class="has-text-black is-size-7 my-2">
 			
 			<span class="general-sans is-size-6 has-text-weight-semibold"
 				>{cargosSlugs[candidate.cargo][candidate.genre]}</span
@@ -73,11 +73,14 @@
 	.candidate-content {
 		/* background-color: #fff; */
 		border-top: 0;
-		height: 180px;
+		flex: 1;
 	}
 	.candidate-name {
 		line-height: normal;
 		white-space: normal;
+		flex: 1;
+		display: flex;
+		align-items: center;
 	}
 
 	.force-no-rounded{
@@ -88,7 +91,6 @@
 			width: 100%;
 			margin-top: 0;
 			border: none;
-			border-bottom: 1px solid #000;
 		}
 	}
 </style>

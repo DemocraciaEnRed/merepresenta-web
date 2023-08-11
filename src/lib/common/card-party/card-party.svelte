@@ -34,7 +34,7 @@
 			: 'card-party-wrapper-legislative'}"
 	>
 		{#if district.slug === 'nacion'}
-			<div class="card card-party">
+			<div class="card card-party is-flex is-flex-direction-column">
 				<header class="card-header is-align-items-center ">
 					<div class="image-wrapper">
 						<div class="image-party is-rounded  m-2" style="background-image: url()">
@@ -42,10 +42,10 @@
 						</div>
 					</div>
 					<div class="name-partido">
-						<p class="card-header-title pb-2 is-size-5 has-text-white has-text-weight-semibold">
+						<p class="card-header-title pb-2 is-size-5 has-text-white has-text-weight-semibold pl-0">
 							{partySelected.name}
 						</p>
-						<p class="pl-4 pb-4 has-text-white is-size-6 has-text-weight-light">
+						<p class=" pb-4 has-text-white is-size-6 has-text-weight-light pl-0">
 							{#each partySelected.alianzas as alianza}
 								{alianza.related_partido_id.name}
 							{/each}
@@ -61,52 +61,54 @@
 				</div>
 			</div>
 		{:else}
-			<div class="has-text-centered list-legislative-wrapper">
-				<h1 class="is-size-2 has-text-weight-medium has-text-black my-3">{partySelected.name}</h1>
-				<div class="is-flex candidates">
-					{#if partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')}
-					<div class="legislative-list">
-						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
-							Diputados/as Nacionales
-						</h1>
-						<div>
-							{#each partyCandidates as candidate}
-								{#if candidate.position < 3 && candidate.cargo === 'diputado-nacional'}
-									<NacionCandidateCard {candidate} noRounded />
-								{/if}
-							{/each}
-						</div>
+		{#if partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')||partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')} 
+		<div class="has-text-centered list-legislative-wrapper">
+			<h1 class="is-size-2 has-text-weight-medium has-text-black my-3">{partySelected.name}</h1>
+			<div class="is-flex candidates">
+				{#if partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')}
+				<div class="legislative-list">
+					<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
+						Diputados/as Nacionales
+					</h1>
+					<div>
+						{#each partyCandidates as candidate}
+							{#if candidate.position < 3 && candidate.cargo === 'diputado-nacional'}
+								<NacionCandidateCard {candidate} noRounded />
+							{/if}
+						{/each}
 					</div>
-					{/if}
-					{#if partyCandidates.some(candidate => candidate.cargo === 'senador-nacional')}
-					<div class="legislative-list">
-						<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
-							Senadores/as Nacionales
-						</h1>
-						<div>
-							{#each partyCandidates as candidate}
-								{#if candidate.position < 3 && candidate.cargo === 'senador-nacional'}
-									<NacionCandidateCard {candidate} noRounded />
-								{/if}
-							{/each}
-						</div>
-					</div>
-						
-					{/if}
 				</div>
+				{/if}
+				{#if partyCandidates.some(candidate => candidate.cargo === 'senador-nacional')}
+				<div class="legislative-list">
+					<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
+						Senadores/as Nacionales
+					</h1>
+					<div>
+						{#each partyCandidates as candidate}
+							{#if candidate.position < 3 && candidate.cargo === 'senador-nacional'}
+								<NacionCandidateCard {candidate} noRounded />
+							{/if}
+						{/each}
+					</div>
+				</div>
+					
+				{/if}
 			</div>
+		</div>
+		{/if}
 		{/if}
 		<div class="actions is-flex is-justify-content-center my-6 is-centered">
 			{#if showListButton}
 				<a
 					href="/partidos-y-candidaturas/candidates/{partySelected.alianzas[0].related_partido_id.id}"
-					class=" button is-black mx-3 is-rounded is-uppercase ">Ver Interna</a
+					class=" button is-black is-rounded is-uppercase ">Ver Interna</a
 				>
 			{/if}
 			{#if showProposalButton}
 				<a
 					href="/propuestas/partidos/{partySelected.id}"
-					class=" button is-black mx-3 is-rounded is-uppercase is-outlined has-background-white view-proposal"
+					class=" button is-black is-rounded is-uppercase is-outlined has-background-white view-proposal"
 					>VER PROPUESTAS</a
 				>
 			{/if}
@@ -135,6 +137,7 @@
 	}
 	.actions {
 		width: 100%;
+		gap: 16px;
 		margin: auto;
 	}
 	.actions a {
@@ -151,6 +154,7 @@
 	}
 	.card-party {
 		width: 70%;
+		flex: 1;
 	}
 	.card-party .card-header {
 		background-color: #252525;
@@ -158,7 +162,6 @@
 		border-top-right-radius: 10px;
 	}
 	.image-wrapper {
-		width: 20%;
 		padding: 8px;
 	}
 
@@ -188,7 +191,9 @@
 	.legislative-list div {
 		display: flex;
 	}
-
+	.card-content{
+		flex: 1;
+	}
 	@media screen and (max-width: 768px) {
 		.card-party-wrapper {
 			width: 100%;

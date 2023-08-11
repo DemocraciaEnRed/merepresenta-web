@@ -1,6 +1,5 @@
 <script>
     export let showOnPx = 150;
-    export let showUpToTop
     let hidden = true;
 
 function goTop() {
@@ -27,7 +26,7 @@ function handleOnScroll() {
 <svelte:window on:scroll={handleOnScroll} />
 <button class="up-to-top" style="display: {!hidden ? 'block':'none'};" on:click={goTop}>
     <figure class="image is-64x64">
-        <img class="is-rounded" src="/upToTop.svg">
+        <img class="is-rounded" src="/upToTop.svg" alt=" boton upToTop">
       </figure>
 </button>
 
