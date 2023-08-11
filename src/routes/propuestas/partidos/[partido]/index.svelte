@@ -84,7 +84,7 @@
 									</a>
 
 								</div>
-								<div class="card-content">
+								<div class="card-content has-text-centered py-5 px-1">
 									<div class="content">
 										<p class="title is-7">{candidate.name}</p>
 									</div>
@@ -100,7 +100,7 @@
 									</figure>
 								</a>
 							</div>
-							<div class="card-content">
+							<div class="card-content has-text-centered py-5 px-1 has-text-centered">
 								<div class="content">
 									<p class="title is-7">{candidate.name}</p>
 								</div>
@@ -211,12 +211,18 @@
 		border-left: 10px solid #000;
 		border-right: 10px solid #000;
 	}
+	.party-container .container .columns {
+			margin: 0 !important;
+		}
 	.party-logo {
 		width: 300px;
 	}
 	.candidates .card {
 		width: min-content;
 		border: 2px solid #000;
+		display: flex;
+		flex-direction: column;
+
 	}
 	/* .partido-img{
     height: 200px;

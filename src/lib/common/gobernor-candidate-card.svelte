@@ -54,9 +54,13 @@
 			{/if}
 			{#if showProposalButton}
 				{#if proposalDisbled}
-				<a  disabled
+				<div class="disabled-link">
+					<a  disabled
 					class=" button is-gray mx-auto is-rounded is-uppercase is-outlined has-background-white view-proposal"
-					>VER PROPUESTAS</a>
+						>VER PROPUESTAS</a>
+
+						<span class="tag is-dark is-large disclaimer">No hay propuestas</span>	
+				</div>
 				{:else}
 				<a  href="/propuestas/partidos/{candidate.partido.id}"
 					class=" button is-black mx-auto is-rounded is-uppercase is-outlined has-background-white view-proposal"
@@ -120,6 +124,22 @@
 	}
 	.card-actions a{
 		width: 90%;
+	}
+	.disabled-link{
+		position: relative;
+	}
+
+	.disclaimer{
+		display: none;
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		z-index: 999;
+		transform: translate(-50%, 0%);
+	}
+
+	.disabled-link:hover > .disclaimer{
+		display: block;
 	}
 
 </style>

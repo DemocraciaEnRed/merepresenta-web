@@ -2,6 +2,7 @@
 	import { CandidateImg} from '$lib/common/utils';
 
 	export let candidate;
+	export let proposalDisabled=false
 </script>
 
 <div
@@ -36,10 +37,19 @@
 			</p>
 		</div>
 		<div class="candidate-footer">
+			{#if proposalDisabled}
+			<a
+				href="/propuestas/partidos/{candidate.partido.id}"
+				disabled
+				class="button is-fullwidth is-black has-text-weight-semibold">VER PROPUESTAS</a
+			>
+			{:else}
 			<a
 				href="/propuestas/partidos/{candidate.partido.id}"
 				class="button is-fullwidth is-black has-text-weight-semibold">VER PROPUESTAS</a
 			>
+			
+			{/if}
 		</div>
 	</div>
 </div>
