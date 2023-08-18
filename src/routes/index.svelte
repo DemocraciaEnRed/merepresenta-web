@@ -13,6 +13,7 @@
 	import { page } from '$app/stores';
 	import { directusImg, ProvinciasSlugs } from '$lib/common/utils';
 
+	import FlourishCard from '$lib/common/flourish-card.svelte';
 	let height
 </script>
 
@@ -121,6 +122,11 @@
 				<h1 class="title mt-6 is-1 is-size-3-touch has-text-centered has-text-black  is-spaced">Lo que todavía no viste</h1>
 				<Carrousel/>
 			</div>
+			<div class="section p-0 mt-5">
+				<FlourishCard/>
+
+			</div>
+			
 		</div>
 	</div>
 </main>
@@ -207,6 +213,7 @@
 		position: relative;
 		z-index: 2;
 	}
+	
 	@media screen and (max-width: 1024px) {
 		.hero.tetris-background .hero-body {
 			background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 1) 100%);

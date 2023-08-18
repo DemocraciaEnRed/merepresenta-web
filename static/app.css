@@ -121,3 +121,7 @@ background-image: url(white-background-desktop.png);
 .text-wrap-wrap{
   white-space: normal;
 }
+
+.flourish-credit{
+  display: none;
+}

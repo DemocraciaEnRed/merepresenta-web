@@ -1,6 +1,16 @@
 <script>
 	import Icon from '$lib/common/Icon.svelte';
+	import { shuffleArray } from '$lib/common/utils';
 	import Carousel from 'svelte-carousel';
+
+
+	const pasoPartyResult= shuffleArray([
+		{name:'fi',id:369},
+		{name:'hacemos',id:372},
+		{name:'juntos',id:374},
+		{name:'union',id:394},
+		{name:'lla',id:375},
+	])
 </script>
 
 <div class="carrousel-wrapper mt-6">
@@ -18,6 +28,19 @@
 					</button>
 				</div>
 				<div class="carrousel-item has-text-centered">
+						<img class="is-hidden-mobile" src="carrousel/post-paso/general.png" alt="abc electoral" />
+						<img class="is-hidden-tablet" src="carrousel/post-paso/generalMob.png" alt="abc electoral" />
+				</div>
+				{#each pasoPartyResult as party }
+				<div class="carrousel-item has-text-centered">
+					<a target="_blank" href="/propuestas/partidos/{party.id}">
+						<img class="is-hidden-mobile" src="carrousel/post-paso/{party.name}Desk.png" alt="abc electoral" />
+						<img class="is-hidden-tablet" src="carrousel/post-paso/{party.name}Mob.png" alt="abc electoral" />
+					</a>
+				</div>
+					
+				{/each}
+				<!-- <div class="carrousel-item has-text-centered">
 					<a target="_blank" href="/abc-electoral">
 						<img class="is-hidden-mobile" src="carrousel/abc_desk.png" alt="abc electoral" />
 						<img class="is-hidden-tablet" src="carrousel/abc_mobile.png" alt="abc electoral" />
@@ -30,12 +53,12 @@
 				</a>
 
 				</div>
-				<!-- <div class="carrousel-item has-text-centered">
+				<div class="carrousel-item has-text-centered">
 					<a target="_blank" href="https://compaspolitico.merepresenta.info/">
 						<img class="is-hidden-mobile" src="carrousel/compas_desk.png" alt="compas politico" />
 						<img class="is-hidden-tablet" src="carrousel/compas_mobile.png" alt="compas politico" />
 					</a>
-				</div> -->
+				</div>
 				<div class="carrousel-item has-text-centered">
 					<a target="_blank" href="https://trivia.merepresenta.info/">
 						<img class="is-hidden-mobile" src="carrousel/trivia_desk.png" alt="trivia" />
@@ -47,7 +70,7 @@
 						<img class="is-hidden-mobile" src="carrousel/vof_desk.png" alt="verdadero o falso" />
 						<img class="is-hidden-tablet" src="carrousel/vof_mobile.png" alt="verdadero o falso" />
 					</a>
-				</div>
+				</div> -->
 			</Carousel>
 		</div>
 	{/if}
