@@ -3,11 +3,12 @@
 
 	export let candidate
 	export let changeParty
+	export let partyId
 </script>
 
 <div class="is-relative candidate-wrapper" on:click={changeParty} data-party={candidate.partido.id}>
 	<span class="tag is-light candidate-name" >{candidate.name}</span>
-	<button class="button-candidate" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2})" >
+	<button class="button-candidate" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2}); {partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}" >
 		<figure class="image mx-auto candidate-avatar">
 			<img class="is-rounded" src={CandidateImg(candidate)} alt="{candidate.name}" />
 		</figure>

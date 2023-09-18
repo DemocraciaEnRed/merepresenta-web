@@ -12,6 +12,7 @@
 	export let district;
 	let partySelected;
 	let partyCandidates;
+	export let verticalTitle
 	const getPartyAndCandidates = async () => {
 		partySelected = null
 		const res = await API(fetch, getPartyById(partyId));
@@ -34,14 +35,14 @@
 			: 'card-party-wrapper-legislative'}"
 	>
 		{#if district.slug === 'nacion'}
-			<div class="card card-party is-flex is-flex-direction-column">
-				<header class="card-header is-align-items-center ">
-					<div class="image-wrapper">
+			<div class="card card-party is-flex ">
+				<div class="card-header is-align-items-center is-justify-content-center">
+					<!-- <div class="image-wrapper">
 						<div class="image-party is-rounded  m-2" style="background-image: url()">
 							<img src={PartyImg(partySelected)} alt="{partySelected.name}" />
 						</div>
-					</div>
-					<div class="name-partido">
+					</div> -->
+					<!-- <div class="name-partido">
 						<p class="card-header-title pb-2 is-size-5 has-text-white has-text-weight-semibold pl-0">
 							{partySelected.name}
 						</p>
@@ -50,8 +51,11 @@
 								{alianza.related_partido_id.name}
 							{/each}
 						</p>
+					</div> -->
+					<div class="is-uppercase has-text-white has-text-vertical verticalTitle">
+						{verticalTitle}
 					</div>
-				</header>
+				</div>
 				<div
 					class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0"
 				>
@@ -130,7 +134,7 @@
 	}
 
 	.card-party-wrapper {
-		width: 50%;
+		width: 80%;
 	}
 	.card-party-wrapper-legislative {
 		width: 90%;
@@ -153,29 +157,15 @@
 		color: #000;
 	}
 	.card-party {
-		width: 70%;
+		width: 80%;
 		flex: 1;
 	}
 	.card-party .card-header {
 		background-color: #252525;
 		border-top-left-radius: 10px;
-		border-top-right-radius: 10px;
-	}
-	.image-wrapper {
-		padding: 8px;
-	}
-
-	.image-party {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: rgb(255, 255, 255);
-		border-radius: 50%;
-		z-index: 10;
-		width: 68px;
-		height: 68px;
-		position: relative;
-		overflow: hidden;
+		border-bottom-left-radius: 10px;
+		border-top-right-radius: 0;
+		width: 2em;
 	}
 	.list-legislative-wrapper {
 		width: 80%;
@@ -194,6 +184,13 @@
 	.card-content{
 		flex: 1;
 	}
+
+	.has-text-vertical{
+  -webkit-transform: rotate(-90deg); 
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
 	@media screen and (max-width: 768px) {
 		.card-party-wrapper {
 			width: 100%;
@@ -211,11 +208,17 @@
 		}
 
 		.card-party {
-			width: 90%;
+			width: 100%;
+			flex-direction: column;
 		}
-		.image-party {
-			height: 48px;
-			width: 48px;
+		.card-party .card-header {
+			border-bottom-left-radius: 0;
+			border-top-right-radius: 10px;
+			width: auto
+		}
+		.has-text-vertical{
+			padding: 8px 0;
+			transform: none;
 		}
 		.list-legislative-wrapper .candidates {
 			text-align: center;

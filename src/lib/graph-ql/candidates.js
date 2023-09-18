@@ -10,6 +10,8 @@ export function getCandidates (id){
       genre
       age
       profesion
+      resumen_experiencia
+      resumen_educacion
       partido {
         id
         name
@@ -81,6 +83,19 @@ export function getCandidatesByParty (partyId){
       genre
       id
       position
+      age
+      profesion
+      instagram_page
+      facebook_page
+      facebook_profile
+      twitter_user
+      twitter_profile
+      formacion
+      twitter_tweets
+      twitter_followers
+      twitter_created_at
+      twitter_friends
+      twitter_verified
       avatar {
         id
       }

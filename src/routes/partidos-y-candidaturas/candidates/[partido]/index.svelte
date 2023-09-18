@@ -93,7 +93,7 @@
   <div class="container mt-6">
     <div class="columns is-mobile is-multiline {partido.district.slug !== 'nacion' && 'is-flex-direction-column'}  is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#each partysListId as partyId}
-        <CardParty partyId={partyId.id} showProposalButton={partido.district === 'nacion'} district={partido.district}/>
+        <CardParty partyId={partyId.id} verticalTitle="presidenciales" showProposalButton={partido.district === 'nacion'} district={partido.district}/>
     {/each}
     </div>
   </div>

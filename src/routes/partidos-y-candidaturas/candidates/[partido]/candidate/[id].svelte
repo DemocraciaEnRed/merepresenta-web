@@ -77,7 +77,7 @@
   <div class="container">
     <About {candidate} open={true}/>
     <br>
-    <Party partido={candidate.partido} {candidate} open={true}/>
+    <Party partido={candidate.partido} open={true}/>
     
   </div>
 </div>

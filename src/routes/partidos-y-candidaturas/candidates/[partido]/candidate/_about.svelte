@@ -1,104 +1,132 @@
 <script>
 	import Icon from '$lib/common/Icon.svelte';
+	import { CandidateImg, cargosSlugs } from '$lib/common/utils';
 
   export let candidate;
-  export let open
   import Binary from "./_binary.svelte";
   import { slide } from 'svelte/transition';
-  let isOpen = open
+  console.log(candidate.resumen_educacion);
 </script>
 <div class="box is-rounded">
   <div class="group-header is-flex is-flex-direction-row is-align-items-center is-top-rounded" >
     <div class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered">
-        <p class=" is-size-5 has-text-black is-inline has-text-weight-bold" >Sobre el candidato/a</p>
+        <p class=" is-size-5 has-text-black is-inline has-text-weight-bold" >Curriculum del candidato/a</p>
     </div>
-    <!-- <div class="icon-container">
-      <i class="fas {open ? 'fa-angle-double-up' : 'fa-angle-double-down'} has-text-black fa-lg fa-fw"></i>
-    </div> -->
+
   </div>
-  {#if open}
   <div class="group-content is-bottom-rounded" transition:slide>
-    <div class="columns is-vcentered">
-      {#if candidate.age}
-      <div class="column has-text-black">    
-          <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-            <p class="is-uppercase">EDAD</p>
-            <p class="is-uppercase has-text-weight-medium">{candidate.age} años</p>
+    <div class="columns is-align-content-stretch">
+      <div class="column is-one-third candidate-perfil">
+        <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
+          <img src={CandidateImg(candidate)} class="image mx-auto my-2 candidate-logo" alt="foto de {candidate.name}">
+        </div>
+        <div class=" has-text-black mb-3">    
+          <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
+            <p class=" has-text-weight-bold is-size-4">{candidate.name}</p>
+            <p class="has-text-weight-light">Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {cargosSlugs[candidate.cargo][candidate.genre]}</p>
           </div>
       </div>
-      {/if}
+
       {#if candidate.profesion && candidate.profesion !== " "}
-      <div class="column has-text-black has-text-centered">    
-          <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-            <p class="is-uppercase">Profesión</p>
-            <p class="is-uppercase has-text-weight-medium">{candidate.profesion}</p>
+      <div class=" has-text-black mb-3">    
+          <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
+            <p class=" has-text-weight-medium">Profesión / Ocupación</p>
+            <p class="is-lowercase is-capitalized">{candidate.profesion}</p>
           </div>
       </div>
       {/if}
-      {#if candidate.formacion && candidate.formacion !== " "}
-        <div class="column has-text-black has-text-centered">    
-          <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-            <p class="is-uppercase">Formación</p>
-            <p class="is-uppercase has-text-weight-medium ">{candidate.formacion}</p>
+        {#if candidate.age}
+        <div class=" has-text-black mb-3">    
+            <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
+              <p class="has-text-weight-medium">Edad</p>
+              <p class="">{candidate.age} años</p>
+            </div>
+        </div>
+        {/if}
+        <!-- {#if candidate.formacion && candidate.formacion !== " "}
+          <div class=" has-text-black mb-3">    
+            <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
+              <p class="has-text-weight-medium">Formación</p>
+              <p class="">{candidate.formacion}</p>
+            </div>
+          </div>
+          
+        {/if} -->
+        {#if candidate.twitter_profile || candidate.twitter_user || candidate.facebook_page || candidate.facebook_profile || candidate.instagram_page}
+        <div class=" has-text-black">    
+          <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
+            <p class="has-text-weight-medium">Redes sociales</p>
+            <div class="is-flex">
+              {#if candidate.twitter_profile}
+              <a href="{candidate.twitter_profile}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
+              {/if}
+              {#if candidate.twitter_user && candidate.twitter_user !== candidate.twitter_profile}
+              <a href="{candidate.twitter_user}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
+              {/if}
+              {#if candidate.facebook_page}
+              <a href="{candidate.facebook_page}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
+              {/if}
+              {#if candidate.facebook_profile}
+              <a href="{candidate.facebook_profile}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
+              {/if}
+              {#if candidate.instagram_page}
+              <a href="{candidate.instagram_page}" target="_blank" class="has-text-black"><Icon icon="fa-instagram-square" brand size="large"/></a>
+              {/if}
+  
+            </div>
+  
           </div>
         </div>
-        
-      {/if}
-      {#if candidate.twitter_profile || candidate.twitter_user || candidate.facebook_page || candidate.facebook_profile || candidate.instagram_page}
-      <div class="column has-text-black has-text-centered">    
-        <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-          <p class="is-uppercase">Redes sociales</p>
-          <div class="is-flex">
-            {#if candidate.twitter_profile}
-            <a href="{candidate.twitter_profile}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
-            {/if}
-            {#if candidate.twitter_user && candidate.twitter_user !== candidate.twitter_profile}
-            <a href="{candidate.twitter_user}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
-            {/if}
-            {#if candidate.facebook_page}
-            <a href="{candidate.facebook_page}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
-            {/if}
-            {#if candidate.facebook_profile}
-            <a href="{candidate.facebook_profile}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
-            {/if}
-            {#if candidate.instagram_page}
-            <a href="{candidate.instagram_page}" target="_blank" class="has-text-black"><Icon icon="fa-instagram-square" brand size="large"/></a>
-            {/if}
-
+          
+        {/if}
+      </div>
+      <div class="column">
+        {#if candidate.resumen_experiencia}
+        <div class=" has-text-black">    
+          <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
+            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-briefcase"/> Experiencia</p>
+            <p class="is-size-6 pl-4 pt-4 has-text-weight-light">{@html candidate.resumen_experiencia}</p>
           </div>
-
         </div>
-      </div>
-        
-      {/if}
-      <!-- {#if candidate.childrens != null && candidate.childrens > 0}
-      <div class="column has-text-black has-text-centered">    
-          <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-            <p class="is-uppercase">Hijos</p>
-            <p class="is-uppercase has-text-weight-medium">{candidate.childrens} Hijxs</p>
+          
+        {/if}
+        {#if candidate.resumen_educacion}
+          
+        <div class=" has-text-black mt-5">    
+          <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
+            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-scroll"/> Educacion</p>
+            <p class="is-size-6 pl-4 pt-4 has-text-weight-light">{@html candidate.resumen_educacion}</p>
           </div>
+        </div>
+        {/if}
       </div>
-      {/if}
-      {#if candidate.cargos_publicos != null}
-      <div class="column has-text-black has-text-centered">    
-          <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-            <p class="is-uppercase">¿Tuvo cargos?</p>
-            <Binary value={candidate.cargos_publicos}/>
-          </div>
-      </div>
-      {/if}
-      {#if candidate.otros_partidos != null}
-      <div class="column has-text-black has-text-centered">    
-          <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
-            <p class="is-uppercase is-size-7">¿Estuvo en varios partidos?</p>
-            <Binary value={candidate.otros_partidos}/>
-          </div>
-      </div>
-      {/if} -->
-      <!-- <div class="column"></div> -->
     </div>
+    <!-- {#if candidate.childrens != null && candidate.childrens > 0}
+    <div class="column has-text-black has-text-centered">    
+        <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
+          <p class="is-uppercase">Hijos</p>
+          <p class="is-uppercase has-text-weight-medium">{candidate.childrens} Hijxs</p>
+        </div>
+    </div>
+    {/if}
+    {#if candidate.cargos_publicos != null}
+    <div class="column has-text-black has-text-centered">    
+        <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
+          <p class="is-uppercase">¿Tuvo cargos?</p>
+          <Binary value={candidate.cargos_publicos}/>
+        </div>
+    </div>
+    {/if}
+    {#if candidate.otros_partidos != null}
+    <div class="column has-text-black has-text-centered">    
+        <div class="is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center element-group">
+          <p class="is-uppercase is-size-7">¿Estuvo en varios partidos?</p>
+          <Binary value={candidate.otros_partidos}/>
+        </div>
+    </div>
+    {/if} -->
+    <!-- <div class="column"></div> -->
   </div>
-  {/if}
 </div>
 <style> 
 .box{
@@ -119,7 +147,6 @@
   border-bottom: 1px solid #CFCFCF;
 }
 .element-group{
-  height: 90px;
   margin: 0 20px;
 }
 .group-content .columns .column:not(:first-child){
@@ -137,11 +164,25 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-@media screen and (max-width: 1023px) {
-  .element-group{
+.candidate-perfil{
+  height: 100%;
+}
+.candidate-logo{
+    border-radius: 50%;
+    width: 170px;
+  }
+  @media screen and (max-width: 1023px) {
+    .candidate-logo{
+          width: auto;
+          max-height: 200px;
+        }
+    .element-group{
     height: auto;
     margin: 0 20px;
   }
+  .candidate-logo-container{
+      padding-bottom: 0;
+    }
   .group-content{
     padding: 1rem 1rem;
     background-color: #FFF;

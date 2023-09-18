@@ -7,6 +7,7 @@
 	import CardParty from '$lib/common/card-party/card-party.svelte';
 	import { afterUpdate } from 'svelte';
 	import CandidateCircle from '$lib/common/candidate-circle.svelte';
+	import BannerParty from '$lib/common/banner-party.svelte';
 
 	export let candidates;
 	let randomCandidates = shuffleArray(candidates);
@@ -58,13 +59,13 @@
 <section class="container p-2">
 	<div class="has-text-centered mt-6 has-text-black">
 		<img src="/pink-house.png" class="logo-top" alt="casa rosada" />
-		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black">Precandidaturas Presidenciales</h1>
+		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black">PARTIDOS Y CANDIDATURAS</h1>
 		<h3 class="is-size-4-desktop is-size-6-touch has-text-weight-light">
-			Explorá los programas electorales de las precandidaturas del partido de tu interés.
+			Conocé la formula completa del partido de tu interes
 		</h3>
 	</div>
 </section>
-<section class="container is-fluid px-6 pt-3 has-text-black carousel-section" bind:clientHeight={bindHeightCaorusel}>
+<section class="container is-fluid px-6 pt-3 mb-3 has-text-black carousel-section" bind:clientHeight={bindHeightCaorusel}>
 	{#if typeof window !== 'undefined' && !loading && dinamycParticlesToShow !== NaN}
 		<Carousel
 			dots={false}
@@ -85,16 +86,23 @@
 				</button>
 			</div>
 			{#each randomCandidates as candidate}
-				<CandidateCircle {candidate} {changeParty}/>
+				<CandidateCircle {partyId} {candidate} {changeParty}/>
 			{/each}
 		</Carousel>
 	{/if}
 </section>
 {#if partyId}
+
+	<section
+		class="is-flex is-justify-content-center is-flex-direction-column has-text-black mb-6 "
+	>
+		<BannerParty {partyId} />
+	</section>
+
 	<section
 		class="is-flex is-justify-content-center is-flex-direction-column  px-2 pt-2 has-text-black "
 	>
-		<CardParty {partyId} showListButton showProposalButton district={{slug:'nacion'}}/>
+		<CardParty {partyId} verticalTitle="presidenciales" showListButton showProposalButton district={{slug:'nacion'}}/>
 	</section>
 {:else}
 	<div class="fill-select pt-2">
