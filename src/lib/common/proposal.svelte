@@ -9,6 +9,7 @@
 	export let proposals;
 	export let partido;
 	export let alianzas;
+	export let allOpen
 
 	let candidates
 
@@ -53,7 +54,7 @@
 {:else}
 	{#each proposals as proposal}
 		<div class="container p-2">
-			<DropdownProposal {proposal} {partido} />
+			<DropdownProposal {proposal} {partido} open={allOpen} />
 		</div>
 	{/each}
 {/if}

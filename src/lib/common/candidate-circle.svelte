@@ -1,23 +1,25 @@
 <script>
-	import { CandidateImg } from "./utils";
+	import { CandidateImg } from './utils';
 
-	export let candidate
-	export let changeParty
-	export let partyId
+	export let candidate;
+	export let changeParty;
+	export let partyId;
 </script>
 
 <div class="is-relative candidate-wrapper" on:click={changeParty} data-party={candidate.partido.id}>
-	<span class="tag is-light candidate-name" >{candidate.name}</span>
-	<button class="button-candidate" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2}); {partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}" >
+	<button
+		class="button-candidate"
+		style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido
+			.color2}); {partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}"
+	>
 		<figure class="image mx-auto candidate-avatar">
-			<img class="is-rounded" src={CandidateImg(candidate)} alt="{candidate.name}" />
+			<img class="is-rounded" src={CandidateImg(candidate)} alt={candidate.name} />
 		</figure>
 	</button>
-
+	<span class="tag candidate-name">{candidate.partido.name}</span>
 </div>
 
 <style>
-
 	.button-candidate {
 		padding: 4px;
 		border-radius: 999px;
@@ -29,46 +31,34 @@
 		width: 90px;
 	}
 
-	.candidate-wrapper{
+	.candidate-wrapper {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-direction: column;
 	}
-	.candidate-wrapper:hover > span{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+
 	.candidate-name {
-		border: 1px solid #000;
-		border-radius: 5px;
-		cursor: pointer;
-		display: none;
 		text-align: center;
-		position: absolute;
-		top: 0;
-		height: fit-content;
-		z-index: 10;
-		padding: 4px 8px;
-	}
-	.candidate-wrapper:first-of-type > .candidate-name{
-		left: 60%;
-	}
-	.candidate-wrapper:last-of-type > .candidate-name{
-		left: -60%;
+		background-color: transparent;
+		padding-top: 4px;
+		width: 50%;
+		flex: 1;
+		white-space: pre-wrap;
+		/* display: flex;
+		flex-direction: column;
+		justify-content: start; */
 	}
 	
+
 	@media screen and (max-width: 768px) {
-	.candidate-name {
-		top: auto;
-		bottom: 0;
-
+		.candidate-name {
+			top: auto;
+			bottom: 0;
+		}
+		.button-candidate {
+			height: 70px;
+			width: 70px;
+		}
 	}
-	.button-candidate {
-		height: 70px;
-		width: 70px;
-	}
-
-	}
-
 </style>

@@ -8,111 +8,74 @@
 	import { afterUpdate } from 'svelte';
 	import CandidateCircle from '$lib/common/candidate-circle.svelte';
 	import BannerParty from '$lib/common/banner-party.svelte';
+	import Proposal from '../../lib/common/proposal.svelte';
+	import API, { handleResponse } from '$lib/apiHandler';
+	import { getPartyById } from '$lib/graph-ql/partidos';
+	import CandidateCircleCarousel from '$lib/common/candidate-circle-carousel.svelte';
 
 	export let candidates;
 	let randomCandidates = shuffleArray(candidates);
 
 	// Valor reactivo para controlar el ancho de la ventana
-	let windowWidth;
-	let initWidth;
-	let bindHeightCaorusel;
-	let heightCaorusel
-	let dinamycParticlesToShow;
-	let loading = false;
-	let divisor = windowWidth < 760 ? 100 : 130
-	let particlesToScroll
 	
-	async function updateWindowWidth() {
-		divisor = windowWidth < 760 ? 100 : 130
-		if (dinamycParticlesToShow !== ((windowWidth) / divisor).toFixed()) {
-			loading = true;
-
-			dinamycParticlesToShow = await ((windowWidth) / divisor).toFixed();
-			particlesToScroll = dinamycParticlesToShow /2
-			loading = false;
-		}
-	}
-	onMount(() => {
-		dinamycParticlesToShow = windowWidth ? ((windowWidth) / divisor).toFixed() : 12;
-		particlesToScroll = dinamycParticlesToShow /2
-		heightCaorusel = bindHeightCaorusel
-	});
-
-	afterUpdate(() => {
-		updateWindowWidth();
-	});
 
 	let partyId;
-	let loadingParty = false;
+	let partySelected;
 
 	async function changeParty() {
 		partyId = undefined;
+		partySelected = null;
 		partyId = await this.dataset.party;
+		const res = await API(fetch, getPartyById(partyId));
+		const response = await handleResponse(res, 'partido', 'partido');
+
+		partySelected = response.props.partido[0];
 	}
 </script>
 
-<svelte:window
-	bind:innerWidth={windowWidth}
-	bind:outerWidth={initWidth}
-	on:resize={updateWindowWidth}
-/>
 <section class="container p-2">
 	<div class="has-text-centered mt-6 has-text-black">
 		<img src="/pink-house.png" class="logo-top" alt="casa rosada" />
-		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black">PARTIDOS Y CANDIDATURAS</h1>
+		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black">
+			PARTIDOS Y CANDIDATURAS
+		</h1>
 		<h3 class="is-size-4-desktop is-size-6-touch has-text-weight-light">
 			Conocé la formula completa del partido de tu interes
 		</h3>
 	</div>
 </section>
-<section class="container is-fluid px-6 pt-3 mb-3 has-text-black carousel-section" bind:clientHeight={bindHeightCaorusel}>
-	{#if typeof window !== 'undefined' && !loading && dinamycParticlesToShow !== NaN}
-		<Carousel
-			dots={false}
-			particlesToShow={dinamycParticlesToShow}
-			infinite={false}
-			{particlesToScroll}
-			let:showPrevPage
-			let:showNextPage
-		>
-			<div slot="prev" class="arrow-wrapper" style="height : {heightCaorusel+ heightCaorusel/2}px">
-				<button class="circle_arrow_button" on:click={showPrevPage}>
-					<Icon icon="fa-chevron-left" />
-				</button>
-			</div>
-			<div slot="next" class="arrow-wrapper" style="height : {heightCaorusel+ heightCaorusel/2}px">
-				<button class="circle_arrow_button" on:click={showNextPage}>
-					<Icon icon="fa-chevron-right" />
-				</button>
-			</div>
-			{#each randomCandidates as candidate}
-				<CandidateCircle {partyId} {candidate} {changeParty}/>
-			{/each}
-		</Carousel>
-	{/if}
-</section>
-{#if partyId}
+<section
+	class="container px-6 pt-3 mb-3 has-text-black carousel-section is-max-desktop"
 
-	<section
-		class="is-flex is-justify-content-center is-flex-direction-column has-text-black mb-6 "
-	>
-		<BannerParty {partyId} />
+>
+	<CandidateCircleCarousel {candidates} {changeParty} />
+</section>
+{#if partySelected}
+	<section class="is-flex is-justify-content-center is-flex-direction-column has-text-black mb-6">
+		<BannerParty {partySelected} />
 	</section>
 
 	<section
-		class="is-flex is-justify-content-center is-flex-direction-column  px-2 pt-2 has-text-black "
+		class="is-flex is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black"
 	>
-		<CardParty {partyId} verticalTitle="presidenciales" showListButton showProposalButton district={{slug:'nacion'}}/>
+		<CardParty
+			{partySelected}
+			verticalTitle="presidenciales"
+			showListButton
+			showProposalButton
+			district={{ slug: 'nacion' }}
+		/>
+	</section>
+	<section class="container">
+		<Proposal proposals={partySelected.ejes} partido={partySelected} allOpen />
 	</section>
 {:else}
 	<div class="fill-select pt-2">
 		<div class="skeleton-candidate">
 			<figure class="image is-96x96 my-6">
-				<img src="/candidate.svg" alt="silueta de candidato" style="filter: opacity(0.5);"/>
+				<img src="/candidate.svg" alt="silueta de candidato" style="filter: opacity(0.5);" />
 			</figure>
-			<h2 class="is-size-4">
-				Hacé clic sobre una candidatura y conocé la fórmula completa
-			</h2>
+			<h2 class="is-size-4">Elegí una candidatura para conocer su formula y sus propuestas</h2>
 		</div>
 	</div>
 {/if}
@@ -144,23 +107,8 @@
 		width: 50%;
 	}
 
-	.arrow-wrapper {
-		display: flex;
-		align-items: center;
-	}
-	.circle_arrow_button {
-		cursor: pointer;
-		width: 50px;
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: transparent;
-		font-size: 3rem;
-		border: none;
-	}
 	@media screen and (max-width: 768px) {
-		.logo-top{
+		.logo-top {
 			max-width: 40%;
 		}
 		.carousel-section {
@@ -170,13 +118,7 @@
 			width: 90%;
 		}
 		.skeleton-candidate h2 {
-		width: 100%;
-		}
-		.circle_arrow_button {
-			cursor: pointer;
-			height: 40px;
-			width: 40px;
-			font-size: 1.8rem;
+			width: 100%;
 		}
 	}
 </style>

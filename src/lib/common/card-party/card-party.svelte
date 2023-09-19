@@ -6,25 +6,22 @@
 	import { PartyImg } from '../utils';
 	import NacionCandidateCard from '../nacion-candidate-card.svelte';
 
-	export let partyId;
 	export let showListButton;
 	export let showProposalButton;
 	export let district;
-	let partySelected;
+	export let partySelected;
 	let partyCandidates;
 	export let verticalTitle
-	const getPartyAndCandidates = async () => {
-		partySelected = null
-		const res = await API(fetch, getPartyById(partyId));
-		const response = await handleResponse(res, 'partido', 'partido');
-
-		const res2 = await API(fetch, getCandidatesByParty(partyId));
-		const response2 = await handleResponse(res2, 'candidatos', 'candidato');
-
-		partySelected = response.props.partido[0];
-		partyCandidates = response2.props.candidatos;
+	const getCandidates = async () => {
+		if (partySelected) {
+			const res2 = await API(fetch, getCandidatesByParty(partySelected.id));
+			const response2 = await handleResponse(res2, 'candidatos', 'candidato');
+	
+			partyCandidates = response2.props.candidatos;
+			
+		}
 	};
-	$: partyId, getPartyAndCandidates()
+	$: partySelected, getCandidates()
 </script>
 
 {#if partySelected}
@@ -59,9 +56,12 @@
 				<div
 					class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0"
 				>
+				{#if partyCandidates}
 					{#each partyCandidates as candidate}
 						<NacionCandidateCard {candidate} />
 					{/each}
+					
+				{/if}
 				</div>
 			</div>
 		{:else}
@@ -102,7 +102,7 @@
 		</div>
 		{/if}
 		{/if}
-		<div class="actions is-flex is-justify-content-center my-6 is-centered">
+		<!-- <div class="actions is-flex is-justify-content-center my-6 is-centered">
 			{#if showListButton}
 				<a
 					href="/partidos-y-candidaturas/candidates/{partySelected.alianzas[0].related_partido_id.id}"
@@ -116,7 +116,7 @@
 					>VER PROPUESTAS</a
 				>
 			{/if}
-		</div>
+		</div> -->
 	</div>
 {:else}
 	<div class="fill-select is-flex is-justify-content-center" >

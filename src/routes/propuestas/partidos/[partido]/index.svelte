@@ -28,7 +28,7 @@
 
 	} from '$lib/common/utils';
 	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
-	import Proposal from './_proposal.svelte';
+	import Proposal from '../../../../lib/common/proposal.svelte';
 	import { getCandidatesByCargoAndDistrict, getCandidatesByParty } from '$lib/graph-ql/candidates';
 	import PartyProposalCard from '$lib/common/card-party/party-proposal-card.svelte';
 

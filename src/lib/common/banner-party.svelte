@@ -3,17 +3,7 @@
 	import { getPartyById } from '$lib/graph-ql/partidos';
 	import { PartyImg } from './utils';
 
-	export let partyId;
-	let partySelected;
-	const getPartyAndCandidates = async () => {
-		partySelected = null
-		const res = await API(fetch, getPartyById(partyId));
-		const response = await handleResponse(res, 'partido', 'partido');
-
-        console.log(response.props.partido[0]);
-		partySelected = response.props.partido[0];
-	};
-	$: partyId, getPartyAndCandidates()
+	export let partySelected;
 </script>
 
 {#if partySelected}

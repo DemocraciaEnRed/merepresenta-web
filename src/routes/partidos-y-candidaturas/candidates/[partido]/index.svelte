@@ -23,7 +23,7 @@
 	import CandidateCard from '$lib/common/candidate-card.svelte';
 	import CardParty from '$lib/common/card-party/card-party.svelte';
 	import DropdownProposalAlianzas from '$lib/common/dropdown-proposal-alianzas.svelte';
-	import Proposal from '../../../propuestas/partidos/[partido]/_proposal.svelte';
+	import Proposal from '../../../../lib/common/proposal.svelte';
 	import PartyProposalCard from '$lib/common/card-party/party-proposal-card.svelte';
   // let Carousel; // for saving Carousel component class
   // let carouselRef; // for calling methods of carousel instance

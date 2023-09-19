@@ -17,8 +17,8 @@
 
 <main class="has-background-white white-background-desktop">
 	<Presidential {candidates} />
-	<Legislative />
-	<Gobernor />
+	<!-- <Legislative />
+	<Gobernor /> -->
 </main>
 
 <style>

@@ -1,25 +1,25 @@
 <script>
 	import Icon from './Icon.svelte';
-	$: isOpen = false;
+	export let open
+	$: isOpen = open || false;
 	$: iconClass = isOpen ? 'fa-chevron-down' : 'fa-chevron-up';
 	export let proposal;
 	export let partido;
 	import { slide } from 'svelte/transition';
 	import { PoliciesIcons } from './utils';
-	export let darkMode;
-	let color = darkMode ? 'white' : 'black';
 	export let backgroundHeader;
 	let showCompleteProposal = false;
 	let backgroundHeaderColor = backgroundHeader ? 'black' : '';
 	let borderSolid = backgroundHeader ? 'border-solid p-2' : '';
 </script>
 
-<div class="the-drop-header drop" style="border-color: {color};">
+<div class="box the-drop-header drop" >
 	<div
 		id="partido-{proposal.ejes_id.slug}"
-		class="proposal-header is-flex is-flex-direction-row is-align-items-center has-background-white  {!isOpen
+		class="proposal-header is-flex is-flex-direction-row is-align-items-center {!isOpen
 			? 'border-radius'
 			: 'border-top-radius'}"
+			style="background-color: {proposal.ejes_id.color};"
 		on:click={() => (isOpen = !isOpen)}
 	>
 		<div class="icon-container" style="background-color: {proposal.ejes_id.color};">
@@ -30,16 +30,16 @@
 			/>
 		</div>
 		<div
-			class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered"
+			class="is-flex-grow-1 is-flex  is-align-items-center "
 			style="width:100%; height: 100%;"
 		>
 			<div class="is-flex is-flex-direction-row is-align-items-center" style="height: 100%;">
-				<p class=" has-text-black is-inline mx-5 is-uppercase is-size-5 is-size-6-touch has-text-weight-medium">
+				<p class=" has-text-black is-inline mx-5 is-uppercase is-size-5 is-size-6-touch has-text-weight-bold">
 					{proposal.ejes_id.name}
 				</p>
 			</div>
 		</div>
-		<span class="dropdown-icon" style="color:{color}"><Icon icon={iconClass} /></span>
+		<span class="dropdown-icon"><Icon icon={iconClass} /></span>
 	</div>
 	{#if isOpen}
 		<div class="proposal-body summary general-sans p-5" transition:slide>
@@ -89,31 +89,27 @@
 		margin-top: -1px;
 	}
 	.the-drop-header {
-		border-top-left-radius: 20px;
-		border-top-right-radius: 20px;
-		padding: 0 10px;
+		border-radius: 20px;
+		padding: 0;
 		cursor: pointer;
 	}
 
 	.proposal-header {
-		border: 2px solid black;
 		width: 100%;
 		margin-top: 1rem;
 	}
 	.proposal-body {
 		width: 100%;
 		background-color: #fff;
-		border-bottom: 2px solid #000;
-		border-right: 2px solid #000;
-		border-left: 2px solid #000;
 		margin-bottom: 1rem;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
 	}
 	.icon-proposal {
 		width: 50px;
 		height: 50px;
 	}
 	.icon-container {
-		border-right: 2px solid #000;
 		padding: 0 20px;
 	}
 
@@ -129,18 +125,18 @@
 	.dropdown-icon{
 		padding-right: 3rem;
 	}
+	.border-radius {
+		border-radius: 20px !important;
+		transition-delay: 0.3s;
+		overflow: hidden;
+	}
+	.border-top-radius {
+		border-top-left-radius: 20px !important;
+		border-top-right-radius: 20px !important;
+		overflow: hidden;
+		transition-delay: 0s;
+	}
 	@media screen and (max-width: 1023px) {
-		.border-radius {
-			border-radius: 20px !important;
-			transition-delay: 0.3s;
-			overflow: hidden;
-		}
-		.border-top-radius {
-			border-top-left-radius: 20px !important;
-			border-top-right-radius: 20px !important;
-			overflow: hidden;
-			transition-delay: 0s;
-		}
 
 		.dropdown-icon{
 			padding-right: .5rem;
