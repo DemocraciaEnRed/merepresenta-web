@@ -53,7 +53,7 @@
 						{#if proposalParty.ejes_id.slug === eje.slug}
 							<div class="alianza-proposal is-flex p-5">
 								<div
-									class="is-flex is-flex-direction-column is-align-items-center is-justify-content-space-between has-text-centered px-3 candidates-circles"
+									class="is-flex is-align-items-center is-justify-content-space-between has-text-centered px-3 candidates-circles"
 								>
 									{#each candidates as candidate}
 										{#if candidate.partido.id === party.id}
@@ -74,7 +74,7 @@
 													/>
 												</figure>
 											</a>
-											<p class="nippo-font is-size-7 has-text-weight-medium has-text-black w-50">
+											<p class="nippo-font is-size-7 has-text-weight-medium has-text-black w-50 is-hidden-mobile">
 												{candidate.partido.name}
 											</p>
 										{/if}
@@ -162,6 +162,7 @@
 	}
 	.candidates-circles {
 		width: 20%;
+        flex-direction: column;
 	}
 	.candidate-name {
 		width: min-content;
@@ -171,7 +172,7 @@
 		border-bottom: 1px solid #747474;
 	}
 	.icon-proposal {
-		width: 50px;
+        width: 50px;
 		height: 50px;
 	}
 	.icon-container {
@@ -191,8 +192,8 @@
 		margin-left: 1rem;
 	}
 	.candidate-avatar {
-		height: 65px;
-		width: 65px;
+		height: 75px;
+		width: 75px;
 	}
 	.candidate-avatar img {
 		border: 1px solid #000;
@@ -217,7 +218,7 @@
 			padding-right: 0.5rem;
 		}
 		.source-button:last-of-type {
-			margin-left: 0;
+            margin-left: 0;
 		}
 
 		.proposal-body {
@@ -225,6 +226,8 @@
 			border-bottom-right-radius: 20px !important;
 		}
 		.candidates-circles {
+            flex-direction: row-reverse;
+            padding-bottom: 1rem;
 			justify-content: center;
 		}
 		.action-proposal {
@@ -236,5 +239,14 @@
 		.action-proposal .source-button {
 			width: 90%;
 		}
+        .candidates-circles {
+		width: 100%;
+	    }
+        .proposals{
+            width: 100%;
+        }   
+        .alianza-proposal{
+        flex-direction: column;       
+        }
 	}
 </style>

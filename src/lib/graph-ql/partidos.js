@@ -11,6 +11,7 @@ export function getPartysByDistrict (district){
           name
         }
       }
+      url_fuente
       ejes{
         ejes_id{
           name
