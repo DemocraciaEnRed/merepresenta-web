@@ -11,6 +11,21 @@ export function getPartysByDistrict (district){
           name
         }
       }
+      ejes{
+        ejes_id{
+          name
+          slug
+          color
+          icon_file{
+            id
+          }
+        }
+        summary
+        propuestas{
+          id
+          summary
+        }
+      }
       district{
         id
       }

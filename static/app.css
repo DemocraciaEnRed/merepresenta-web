@@ -126,3 +126,24 @@ background-image: url(white-background-desktop.png);
   display: none;
 }
 
+hr{
+  background-color: #707070;
+  height: 1px;
+}
+
+.nippo-font{
+  font-family: 'Nippo', Helvetica, Arial ,sans-serif; 
+}
+
+.w-25 {
+  width: 25% !important;
+}
+.w-50 {
+  width: 50% !important;
+}
+.w-75 {
+  width: 75% !important;
+}
+.w-100 {
+  width: 100% !important;
+}
