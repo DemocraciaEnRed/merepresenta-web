@@ -4,7 +4,7 @@
 	export let backgroundColor;
 
 </script>
-<footer class="footer has-background-{backgroundColor}">
+<footer class="mt-6 footer has-background-{backgroundColor}">
     <div class="container">
         <div class="columns invert-mobile">
             <div class="mx-auto column is-one-quarter has-text-centered-touch is-flex-desktop is-align-items-flex-start ">

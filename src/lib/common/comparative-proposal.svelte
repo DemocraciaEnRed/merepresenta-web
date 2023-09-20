@@ -2,11 +2,13 @@
 	import { slide } from 'svelte/transition';
 	import { CandidateImg, PoliciesIcons } from './utils';
 	import Icon from './Icon.svelte';
+	import CandidateCircle from './candidate-circle.svelte';
 
 	export let eje;
 	export let partysToCompare;
 	export let candidates;
 
+    let screenSize;
 	$: showCompleteProposal = [];
 	$: isOpen = false;
 	$: iconClass = isOpen ? 'fa-chevron-down' : 'fa-chevron-up';
@@ -18,6 +20,7 @@
 	};
 </script>
 
+<svelte:window bind:innerWidth={screenSize} />
 <div class="box the-drop-header {!isOpen ? 'border-radius' : ''} drop">
 	<button
 		id="partido-{eje.slug}"
@@ -53,7 +56,7 @@
 						{#if proposalParty.ejes_id.slug === eje.slug}
 							<div class="alianza-proposal is-flex p-5">
 								<div
-									class="is-flex is-align-items-center is-justify-content-space-between has-text-centered px-3 candidates-circles"
+									class="is-flex is-align-items-center is-justify-content-center has-text-centered px-3 candidates-circles"
 								>
 									{#each candidates as candidate}
 										{#if candidate.partido.id === party.id}
@@ -62,7 +65,8 @@
 											>
 												{candidate.name}
 											</p>
-											<a
+                                            <CandidateCircle partyId={candidate.partido.id} {candidate} showPartyName={screenSize > 960}  />
+											<!-- <a
 												href="/partidos-y-candidaturas/candidates/{candidate.partido
 													.id}/candidate/{candidate.id}"
 											>
@@ -73,10 +77,8 @@
 														alt={candidate.name}
 													/>
 												</figure>
-											</a>
-											<p class="nippo-font is-size-7 has-text-weight-medium has-text-black w-50 is-hidden-mobile">
-												{candidate.partido.name}
-											</p>
+											</a> -->
+											
 										{/if}
 									{/each}
 								</div>
@@ -213,7 +215,7 @@
 		overflow: hidden;
 		transition-delay: 0s;
 	}
-	@media screen and (max-width: 1023px) {
+	@media screen and (max-width: 960px) {
 		.dropdown-icon {
 			padding-right: 0.5rem;
 		}
@@ -236,6 +238,9 @@
 			flex-direction: column;
 			align-items: center;
 		}
+        .candidate-name {
+		    margin-left: 1rem;
+	    }
 		.action-proposal .source-button {
 			width: 90%;
 		}

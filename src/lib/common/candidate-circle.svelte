@@ -1,9 +1,11 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { CandidateImg } from './utils';
 
 	export let candidate;
-	export let changeParty;
 	export let partyId;
+	export let showPartyName = true
+	export let changeParty =()=> goto(`/partidos-y-candidaturas/candidates/${partyId}/candidate/${candidate.id}`)
 </script>
 
 <div class="is-relative candidate-wrapper" on:click={changeParty} data-party={candidate.partido.id}>
@@ -16,7 +18,10 @@
 			<img class="is-rounded" src={CandidateImg(candidate)} alt={candidate.name} />
 		</figure>
 	</button>
-	<span class="tag candidate-name">{candidate.partido.name}</span>
+	{#if showPartyName}
+		<span class="tag candidate-name">{candidate.partido.name}</span>
+		
+	{/if}
 </div>
 
 <style>
