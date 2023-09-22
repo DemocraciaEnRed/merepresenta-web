@@ -3,7 +3,6 @@
 	import { CandidateImg, cargosSlugs } from '$lib/common/utils';
 
   export let candidate;
-  console.log(candidate);
   import Binary from "./_binary.svelte";
   import { slide } from 'svelte/transition';
 </script>

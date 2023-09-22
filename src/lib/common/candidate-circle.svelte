@@ -3,7 +3,6 @@
 	import { CandidateImg } from './utils';
 
 	export let candidate;
-	console.log(candidate.partido);
 	export let imageSize = '100px'
 	export let partyId;
 	export let showPartyName = true
