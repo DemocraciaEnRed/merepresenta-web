@@ -74,7 +74,7 @@
 						</button>
 						{/if}
 							{#if partyOpen.includes(party.id)}
-							<div class="party-proposal is-flex py-5 pl-5">
+							<div class="party-proposal is-flex py-5">
 								<div
 									class="is-flex is-align-items-center is-justify-content-center has-text-centered px-3 candidates-circles"
 								>
@@ -187,6 +187,9 @@
 		align-items: center;
 		padding-left: 3rem;
 	}
+	.party-proposal{
+		padding-left: 1.5rem;
+	}
 	.party-proposal:not(:last-child) {
 		border-bottom: 1px solid #747474;
 	}
@@ -297,6 +300,7 @@
             width: 100%;
         }   
         .party-proposal{
+			padding-left: 0;
         flex-direction: column;       
         }
 	}
