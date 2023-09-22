@@ -10,13 +10,21 @@
 
     let screenSize;
 	$: showCompleteProposal = [];
+	$: partyOpen = [];
 	$: isOpen = false;
 	$: iconClass = isOpen ? 'fa-chevron-down' : 'fa-chevron-up';
 
-	const addToShowComplete = (alianzaId) => {
-		const index = showCompleteProposal.findIndex((el) => el === alianzaId);
-		if (index < 0) showCompleteProposal = [...showCompleteProposal, alianzaId];
-		else showCompleteProposal = showCompleteProposal.filter((el) => el !== alianzaId);
+	const handlePartyOpen = (partyId)=>{ 
+		const index = partyOpen.findIndex((el) => el === partyId);
+		if (index < 0) partyOpen = [...partyOpen, partyId];
+		else partyOpen = partyOpen.filter((el) => el !== partyId);
+
+	}
+
+	const addToShowComplete = (partyId) => {
+		const index = showCompleteProposal.findIndex((el) => el === partyId);
+		if (index < 0) showCompleteProposal = [...showCompleteProposal, partyId];
+		else showCompleteProposal = showCompleteProposal.filter((el) => el !== partyId);
 	};
 </script>
 
@@ -54,7 +62,19 @@
 				{#each partysToCompare as party}
 					{#each party.ejes as proposalParty}
 						{#if proposalParty.ejes_id.slug === eje.slug}
-							<div class="alianza-proposal is-flex p-5">
+						{#if !partyOpen.includes(party.id)}
+						<button class="proposal-body-header  py-3 w-100 " on:click={handlePartyOpen(party.id)}>
+							<div class="is-flex is-align-items-center pl-6">
+							<CandidateCircle partyId={party.id} candidate={candidates.find(candidate => candidate.partido.id === party.id)} showPartyName={false} imageSize='80px' /> 
+								<p class="nippo-font candidate-name is-size-5 has-text-weight-bold has-text-black pl-6">
+									{candidates.find(candidate => candidate.partido.id === party.id).name}
+								</p>
+						</div>
+						<span class="dropdown-icon"><Icon icon={iconClass} size='large' /></span>
+						</button>
+						{/if}
+							{#if partyOpen.includes(party.id)}
+							<div class="party-proposal is-flex py-5 pl-5">
 								<div
 									class="is-flex is-align-items-center is-justify-content-center has-text-centered px-3 candidates-circles"
 								>
@@ -66,24 +86,10 @@
 												{candidate.name}
 											</p>
                                             <CandidateCircle partyId={candidate.partido.id} {candidate} showPartyName={screenSize > 960}  />
-											<!-- <a
-												href="/partidos-y-candidaturas/candidates/{candidate.partido
-													.id}/candidate/{candidate.id}"
-											>
-												<figure class="image mx-3 candidate-avatar">
-													<img
-														class="is-rounded"
-														src={CandidateImg(candidate)}
-														alt={candidate.name}
-													/>
-												</figure>
-											</a> -->
-											
 										{/if}
 									{/each}
 								</div>
 								<div class="proposals">
-									
 									{#if !showCompleteProposal.includes(party.id)}
 										<p>{proposalParty.summary}</p>
 									{/if}
@@ -122,7 +128,10 @@
 										{/if}
 									</div>
 								</div>
+								<span class="dropdown-icon is-clickable" on:click={handlePartyOpen(party.id)}><Icon icon='fa-chevron-up' size='large' /></span>
+
 							</div>
+							{/if}
 						{/if}
 					{/each}
 				{/each}
@@ -168,7 +177,7 @@
 		width: min-content;
 		display: table-caption;
 	}
-	.alianza-proposal:not(:last-child) {
+	.party-proposal:not(:last-child) {
 		border-bottom: 1px solid #747474;
 	}
 	.icon-proposal {
@@ -192,6 +201,15 @@
 	}
 	.source-button:not(:first-child) {
 		margin-left: 1rem;
+	}
+	.proposal-body-header{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: #fff;
+		border: none;
+		cursor: pointer;
+		border-bottom: 1px solid #747474;
 	}
 	.candidate-avatar {
 		height: 75px;
@@ -255,7 +273,7 @@
         .proposals{
             width: 100%;
         }   
-        .alianza-proposal{
+        .party-proposal{
         flex-direction: column;       
         }
 	}
