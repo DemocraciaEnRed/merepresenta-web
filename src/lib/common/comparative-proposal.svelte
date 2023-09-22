@@ -63,10 +63,10 @@
 					{#each party.ejes as proposalParty}
 						{#if proposalParty.ejes_id.slug === eje.slug}
 						{#if !partyOpen.includes(party.id)}
-						<button class="proposal-body-header  py-3 w-100 " on:click={handlePartyOpen(party.id)}>
-							<div class="is-flex is-align-items-center pl-6">
+						<button class="proposal-body-header  py-3 pr-0 w-100 " on:click={handlePartyOpen(party.id)}>
+							<div class="candidate-proposal-header">
 							<CandidateCircle partyId={party.id} candidate={candidates.find(candidate => candidate.partido.id === party.id)} showPartyName={false} imageSize='80px' /> 
-								<p class="nippo-font candidate-name is-size-5 has-text-weight-bold has-text-black pl-6">
+								<p class="nippo-font candidate-name-header-proposal is-size-5 has-text-weight-bold has-text-black">
 									{candidates.find(candidate => candidate.partido.id === party.id).name}
 								</p>
 						</div>
@@ -177,6 +177,16 @@
 		width: min-content;
 		display: table-caption;
 	}
+	.candidate-name-header-proposal{
+		width: min-content;
+		display: table-caption;
+		padding-left: 3rem;
+	}
+	.candidate-proposal-header{
+		display: flex;
+		align-items: center;
+		padding-left: 3rem;
+	}
 	.party-proposal:not(:last-child) {
 		border-bottom: 1px solid #747474;
 	}
@@ -206,9 +216,11 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: #fff;
+		background-color: transparent;
 		border: none;
 		cursor: pointer;
+	}
+	.proposal-body-header:not(:last-child){
 		border-bottom: 1px solid #747474;
 	}
 	.candidate-avatar {
@@ -264,6 +276,14 @@
         .candidate-name {
 		    margin-left: 1rem;
 	    }
+		.candidate-name-header-proposal{
+		    margin-left: 1rem;
+		
+			padding-left: 0;
+		}
+		.candidate-proposal-header{
+			padding-left: 1rem;
+		}
 		.action-proposal .source-button {
 			width: 90%;
 		}
