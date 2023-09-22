@@ -19,41 +19,6 @@
   </div>
   <div>
     <section class="container p-2 ">
-      <Dropdown name=" ¿QUÉ SON LAS PASO? ">
-        <div>
-          <img class="is-hidden-tablet" src="/abc/PASO-Mob-01.png" alt="Respuesta de la pregunta" />
-          <img class="is-hidden-mobile" src="/abc/PASO-Desk-01.png" alt="Respuesta de la pregunta" />
-          <h2>¿Qué significa PASO?</h2>
-          <p>
-            Significa <strong> Primarias, Abiertas, Simultáneas y Obligatorias </strong> (PASO).
-            <br />
-            Son <strong> Primarias </strong> porque son una elección al interior de los partidos,
-            para definir candidaturas, no cargos. En las PASO no se elige quiénes serán presidente,
-            diputados o senadores, sino quiénes serán los candidatos a dichos cargos. <br />
-            Son <strong> Abiertas </strong> porque toda la ciudadanía puede votar en el frente
-            electoral o partido político que quiera sin necesidad de estar afiliada a ese partido.
-            <br />
-            Son <strong> Simultáneas </strong> porque se realiza la elección de candidaturas al
-            mismo tiempo. <br />
-            Y son <strong> Obligatorias </strong> porque todas las personas en el Padrón tienen el
-            deber de votar. <br />
-          </p>
-
-          <h2>¿Cuándo surgen las PASO?</h2>
-          <p>
-            Se crearon en 2009 y la primera vez que se llevaron a cabo para cargos nacionales fue en
-            las elecciones del 2011.
-          </p>
-          <h2>¿Qué se vota en las PASO del 13 de agosto?</h2>
-          <p>
-            El 13 de agosto se votan las precandidaturas que cada partido político presenta para
-            competir en las elecciones generales para presidente y vice, diputados y senadores
-            nacionales. Aquella lista que obtenga la mayoría de los votos dentro de cada partido
-            político se convertirá en la fórmula que competirá en las elecciones generales de
-            Octubre.
-          </p>
-        </div>
-      </Dropdown>
       <Dropdown name=" ¿QUÉ SE VOTA?">
         <div>
           <img class="is-hidden-tablet" src="/abc/Quesevota-Mob-01.png" alt="Respuesta a la pregunta" />
@@ -610,6 +575,41 @@
             democracia y tecnología consideramos que la Boleta Única Electrónica es una apuesta arriesgada y
             extravagante y que lo que corresponde para asegurar la confianza y participación ciudadana plena, es
             promover procesos electorales simples, descentralizados y basados en papel. </p>
+        </div>
+      </Dropdown>
+      <Dropdown name=" ¿QUÉ SON LAS PASO? ">
+        <div>
+          <img class="is-hidden-tablet" src="/abc/PASO-Mob-01.png" alt="Respuesta de la pregunta" />
+          <img class="is-hidden-mobile" src="/abc/PASO-Desk-01.png" alt="Respuesta de la pregunta" />
+          <h2>¿Qué significa PASO?</h2>
+          <p>
+            Significa <strong> Primarias, Abiertas, Simultáneas y Obligatorias </strong> (PASO).
+            <br />
+            Son <strong> Primarias </strong> porque son una elección al interior de los partidos,
+            para definir candidaturas, no cargos. En las PASO no se elige quiénes serán presidente,
+            diputados o senadores, sino quiénes serán los candidatos a dichos cargos. <br />
+            Son <strong> Abiertas </strong> porque toda la ciudadanía puede votar en el frente
+            electoral o partido político que quiera sin necesidad de estar afiliada a ese partido.
+            <br />
+            Son <strong> Simultáneas </strong> porque se realiza la elección de candidaturas al
+            mismo tiempo. <br />
+            Y son <strong> Obligatorias </strong> porque todas las personas en el Padrón tienen el
+            deber de votar. <br />
+          </p>
+
+          <h2>¿Cuándo surgen las PASO?</h2>
+          <p>
+            Se crearon en 2009 y la primera vez que se llevaron a cabo para cargos nacionales fue en
+            las elecciones del 2011.
+          </p>
+          <h2>¿Qué se vota en las PASO del 13 de agosto?</h2>
+          <p>
+            El 13 de agosto se votan las precandidaturas que cada partido político presenta para
+            competir en las elecciones generales para presidente y vice, diputados y senadores
+            nacionales. Aquella lista que obtenga la mayoría de los votos dentro de cada partido
+            político se convertirá en la fórmula que competirá en las elecciones generales de
+            Octubre.
+          </p>
         </div>
       </Dropdown>
       <section class="mt-6">
