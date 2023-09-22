@@ -29,7 +29,7 @@
 		<div class="icon-container" style="background-color: {proposal.ejes_id.color};">
 			<img
 				src={PoliciesIcons[proposal.ejes_id.slug]}
-				class="image my-2 icon-proposal"
+				class="image icon-proposal"
 				alt="icono de {proposal.ejes_id.name}"
 			/>
 		</div>
@@ -151,6 +151,8 @@
 	.icon-proposal {
 		width: 50px;
 		height: 50px;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
 	}
 	.icon-container {
 		border-right: 2px solid #000;
@@ -178,6 +180,11 @@
 	}
 	
 	@media screen and (max-width: 1023px) {
+
+		.icon-proposal {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 		.border-radius {
 			border-radius: 20px !important;
 			transition-delay: 0.3s;

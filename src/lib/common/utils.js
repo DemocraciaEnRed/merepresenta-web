@@ -1,12 +1,14 @@
 const imgRoute = "/themes/";
 
 export const PoliciesIcons = {
-  "economia"          : `${imgRoute}economiaIcon.svg`,
-  "seguridad"         : `${imgRoute}seguridadIcon.svg`,
-  "educacion"         : `${imgRoute}educacionIcon.svg`,
-  "ambiente"          : `${imgRoute}ambienteIcon.svg`,
-  "salud"             : `${imgRoute}saludIcon.svg`,
-  "democracia"        : `${imgRoute}democraciaIcon.svg`,
+  "economia"              : `${imgRoute}economiaIcon.svg`,
+  "seguridad"             : `${imgRoute}seguridadIcon.svg`,
+  "educacion"             : `${imgRoute}educacionIcon.svg`,
+  "ambiente"              : `${imgRoute}ambienteIcon.svg`,
+  "salud"                 : `${imgRoute}saludIcon.svg`,
+  "democracia"            : `${imgRoute}democraciaIcon.svg`,
+  "empleo"                : `${imgRoute}empleoIcon.svg`,
+  "vivienda-y-transporte" : `${imgRoute}viviendaIcon.svg`,
 
 
 }
