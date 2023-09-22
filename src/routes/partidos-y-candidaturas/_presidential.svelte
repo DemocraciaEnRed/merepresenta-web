@@ -24,8 +24,6 @@
 	let partySelected;
 
 	async function changeParty() {
-		partyId = undefined;
-		partySelected = null;
 		partyId = await this.dataset.party;
 		const res = await API(fetch, getPartyById(partyId));
 		const response = await handleResponse(res, 'partido', 'partido');

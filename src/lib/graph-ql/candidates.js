@@ -11,10 +11,11 @@ export function getCandidates (id){
       age
       profesion
       resumen_experiencia
-      resumen_educacion
       partido {
         id
         name
+        color1
+        color2
         logo{
           id
         }
@@ -101,6 +102,8 @@ export function getCandidatesByParty (partyId){
       }
       partido {
         id
+        color1
+        color2
         name
         district {
           id

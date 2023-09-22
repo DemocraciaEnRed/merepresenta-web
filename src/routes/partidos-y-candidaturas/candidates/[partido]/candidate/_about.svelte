@@ -3,9 +3,9 @@
 	import { CandidateImg, cargosSlugs } from '$lib/common/utils';
 
   export let candidate;
+  console.log(candidate);
   import Binary from "./_binary.svelte";
   import { slide } from 'svelte/transition';
-  console.log(candidate.resumen_educacion);
 </script>
 <div class="box is-rounded">
   <div class="group-header is-flex is-flex-direction-row is-align-items-center is-top-rounded" >
@@ -18,12 +18,15 @@
     <div class="columns is-align-content-stretch">
       <div class="column is-one-third candidate-perfil">
         <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
-          <img src={CandidateImg(candidate)} class="image mx-auto my-2 candidate-logo" alt="foto de {candidate.name}">
+          <div class="border-img  mx-auto" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2})"
+        >
+        <img src={CandidateImg(candidate)} class="image candidate-logo" alt="foto de {candidate.name}">
+      </div>
         </div>
         <div class=" has-text-black mb-3">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
             <p class=" has-text-weight-bold is-size-4">{candidate.name}</p>
-            <p class="has-text-weight-light">Candidat{candidate.genre === 'm' ? 'o': 'a' } por la {candidate.position}° posición en el cargo de {cargosSlugs[candidate.cargo][candidate.genre]}</p>
+            <p class="has-text-weight-light">Candidat{candidate.genre === 'm' ? 'o': 'a' } a {cargosSlugs[candidate.cargo][candidate.genre]}</p>
           </div>
       </div>
 
@@ -90,12 +93,12 @@
         </div>
           
         {/if}
-        {#if candidate.resumen_educacion}
+        {#if candidate.formacion}
           
         <div class=" has-text-black mt-5">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
-            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-scroll"/> Educacion</p>
-            <p class="is-size-6 pl-4 pt-4 has-text-weight-light">{@html candidate.resumen_educacion}</p>
+            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-scroll"/> Ultimo grado de estudios alcanzado</p>
+            <p class="is-size-6 pl-4 pt-4 has-text-weight-light">{candidate.formacion}</p>
           </div>
         </div>
         {/if}
@@ -129,6 +132,16 @@
   </div>
 </div>
 <style> 
+.border-img{
+  padding: 5px;
+		border-radius: 999px;
+		border: none;
+		overflow: hidden;
+		cursor: pointer;
+		position: relative;
+		height: 170px;
+		width: 170px;
+}
 .box{
   border: 1px solid #CFCFCF;
   border-bottom: 0;

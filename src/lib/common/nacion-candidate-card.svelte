@@ -3,6 +3,7 @@
 	import { CandidateImg, cargosSlugs, directusImg } from '$lib/common/utils';
 	import { afterUpdate } from 'svelte';
 	import Icon from './Icon.svelte';
+	import CandidateCircle from './candidate-circle.svelte';
 
 	export let candidate;
 	export let noRounded
@@ -23,12 +24,12 @@
 				>{cargosSlugs[candidate.cargo][candidate.genre]}</span
 			>
 		</p>
-	<a href={url} class="my-3">
+	<CandidateCircle candidate={candidate}  />
+	<!-- <a href={url} class="my-3">
 		<figure class="image is-96x96 m-auto">
 			<img class="is-rounded" src={CandidateImg(candidate)} alt={candidate.name}>
 		  </figure>
-		<!-- <figure class="image candidate-img" style="background-image: url({CandidateImg(candidate)})" /> -->
-	</a>
+	</a> -->
 		
 	</div>
 	<div class="candidate-content">

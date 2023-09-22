@@ -3,6 +3,8 @@
 	import { CandidateImg } from './utils';
 
 	export let candidate;
+	console.log(candidate.partido);
+	export let imageSize = '100px'
 	export let partyId;
 	export let showPartyName = true
 	export let handleSelectParty =()=> goto(`/partidos-y-candidaturas/candidates/${partyId}/candidate/${candidate.id}`)
@@ -12,7 +14,7 @@
 	<button
 		class="button-candidate"
 		style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido
-			.color2}); {partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}"
+			.color2}); height:{imageSize}; width:{imageSize}; {partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}"
 	>
 		<figure class="image mx-auto candidate-avatar">
 			<img class="is-rounded" src={CandidateImg(candidate)} alt={candidate.name} />

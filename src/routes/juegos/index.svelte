@@ -13,15 +13,21 @@
     
 </main>
 <section class="container p-4 has-text-centered"  style="min-height: {height -40}px;">
-    <div class="columns is-justify-content-center card-section" bind:clientHeight={height}>
-        <!-- <div class="column p-0 column-styled">
+    <div class="columns is-flex-wrap-wrap is-justify-content-center card-section" bind:clientHeight={height}>
+        <div class="column p-0 pb-2 column-styled">
             <Game image="games/compas.png" url={"https://compaspolitico.merepresenta.info/"} title="Compás politico"/>
-        </div> -->
-        <div    class="column p-0 column-styled">
+        </div>
+        <div    class="column p-0 pb-2 column-styled">
             <Game image="games/trivia.png" url={"https://trivia.merepresenta.info/"}  title="trivia"/>
         </div>
-        <div class="column p-0 column-styled ">
+        <div class="column p-0 pb-2 column-styled ">
             <Game image="games/vof.png" url={"https://verdaderofalso.merepresenta.info/"} title="verdadero o falso"/>
+        </div>
+        <div class="column p-0 pb-2 column-styled ">
+            <Game image="games/espectrometro.png" url={"https://espectrometro.merepresenta.info/"} title="espectrometro"/>
+        </div>
+        <div class="column p-0 pb-2 column-styled ">
+            <Game image="games/quiendijo.png" url={"https://quiendijo.merepresenta.info/"} title="quiendijo"/>
         </div>
 
     </div>
