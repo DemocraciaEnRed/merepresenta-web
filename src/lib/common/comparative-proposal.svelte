@@ -200,6 +200,9 @@
 		padding: 0 20px;
 	}
     .proposals{
+		display: flex;
+   		flex-direction: column;
+    	justify-content: center;
         width: 80%;
     }
 
