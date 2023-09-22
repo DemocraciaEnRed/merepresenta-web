@@ -33,7 +33,7 @@
 		<div class="icon-container" style="background-color: {eje.color};">
 			<img
 				src={PoliciesIcons[eje.slug]}
-				class="image my-2 icon-proposal"
+				class="image icon-proposal"
 				alt="icono de {eje.name}"
 			/>
 		</div>
@@ -83,9 +83,7 @@
 									{/each}
 								</div>
 								<div class="proposals">
-									<h1 class="has-text-weight-bold is-uppercase mb-2 has-text-black">
-										Lista: {party.name}
-									</h1>
+									
 									{#if !showCompleteProposal.includes(party.id)}
 										<p>{proposalParty.summary}</p>
 									{/if}
@@ -105,7 +103,7 @@
 									{/if}
 									<div class="action-proposal">
 										<button
-											class="button is-link is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
+											class="button is-black is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
 											on:click={() => addToShowComplete(party.id)}
 										>
 											<u
@@ -118,7 +116,7 @@
 											<a
 												href={party.url_fuente}
 												target="_blank"
-												class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
+												class="button is-black is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
 												><u>fuente oficial</u></a
 											>
 										{/if}

@@ -5,58 +5,35 @@
 	import Icon from './Icon.svelte';
 
 	export let candidate;
-	export let showParty;
+	export let size = "is-half-mobile is-one-third-tablet is-3-desktop is-3-widescreen"
 	let url=`/partidos-y-candidaturas/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
 
 </script>
 
 <div
-	class="column is-half-mobile is-one-third-tablet is-3-desktop is-3-widescreen has-text-centered"
+	class="column {size} has-text-centered"
 >
 	<div class="candidate-container">
-		<!-- <div class="candidate-position">
-			{#if showParty}
-				<figure class="image is-48x48">
-				<img src="{directusImg}/{candidate.partido.logo.id}" class="is-rounded" alt="{candidate.partido.name}"/>
-
-			</figure> 
-				 <img
-					src="{directusImg}/{candidate.partido.logo.id}"
-					class="image is-48x48"
-					alt={candidate.partido.name}
-				/> 
-			{/if}
-			<span class="is-size-5 general-sans  has-text-weight-bold"
-				>{candidate.position}°</span
-			
-		</div> -->
 		<a href={url}>
 			<figure
 				class="candidate-img image"
 				style="background-image: url({CandidateImg(candidate)})"
 			/>
 		</a>
-		<div
-			class="candidate-content is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center p-3 {candidate.cargo === 'gobernador' && 'gobernor-content'}"
-		>
-			<p
-				class="candidate-name is-size-6 has-text-weight-bold  is-uppercase general-sans has-text-weight-semibold"
-			>
+		<div class="candidate-content is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center p-3 {candidate.cargo === 'gobernador' && 'gobernor-content'}">
+			<p class="candidate-name is-size-6 has-text-weight-bold  is-uppercase general-sans has-text-weight-semibold flex">
 				{candidate.name}
 			</p>
 			{#if candidate.cargo !== 'gobernador'}
-			<p class=" is-size-6 has-text-weight-light">
+			<p class=" is-size-6 has-text-weight-light pb-4">
 				Candidat{candidate.genre === 'm' ? 'o' : 'a'} a <br />
 				<span class="general-sans is-size-6 has-text-weight-light">{cargosSlugs[candidate.cargo][candidate.genre]}</span>
-			</p>
-			
+			</p>	
 			{/if}
-
-			<a
-				href={url}
-				class="button is-fullwidth is-active  has-text-weight-semibold is-rounded pr-5"
-				>Ver perfil</a
-			>
+			<a href={url}
+			   class="button is-fullwidth is-active  has-text-weight-semibold is-rounded pr-5">
+			   Ver perfil
+			</a>
 		</div>
 	</div>
 </div>
@@ -100,7 +77,7 @@
 
 	}
 	.candidate-name {
-
+		flex: 1;
 		line-height: normal;
 	}
 </style>

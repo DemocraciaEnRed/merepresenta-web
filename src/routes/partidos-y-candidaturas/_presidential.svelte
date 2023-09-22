@@ -12,6 +12,7 @@
 	import API, { handleResponse } from '$lib/apiHandler';
 	import { getPartyById } from '$lib/graph-ql/partidos';
 	import CandidateCircleCarousel from '$lib/common/candidate-circle-carousel.svelte';
+	import SkeletonSelect from '$lib/common/skeleton-select.svelte';
 
 	export let candidates;
 	let randomCandidates = shuffleArray(candidates);
@@ -40,12 +41,12 @@
 			PARTIDOS Y CANDIDATURAS
 		</h1>
 		<h3 class="is-size-4-desktop is-size-6-touch has-text-weight-light">
-			Conocé la formula completa del partido de tu interes
+			Conocé la fórmula completa del partido de tu interés
 		</h3>
 	</div>
 </section>
 <section
-	class="container px-6 pt-3 mb-3 has-text-black carousel-section is-max-desktop"
+	class="container px-6 pt-3 mb-6 has-text-black carousel-section is-max-desktop"
 
 >
 	<CandidateCircleCarousel {candidates} {changeParty} />
@@ -56,7 +57,7 @@
 	</section>
 
 	<section
-		class="is-flex is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black"
+		class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black"
 	>
 		<CardParty
 			{partySelected}
@@ -67,44 +68,16 @@
 		/>
 	</section>
 	<section class="container">
-		<Proposal proposals={partySelected.ejes} partido={partySelected} allOpen />
+		<Proposal proposals={partySelected.ejes} partido={partySelected} />
 	</section>
 {:else}
-	<div class="fill-select pt-2">
-		<div class="skeleton-candidate">
-			<figure class="image is-96x96 my-6">
-				<img src="/candidate.svg" alt="silueta de candidato" style="filter: opacity(0.5);" />
-			</figure>
-			<h2 class="is-size-4">Elegí una candidatura para conocer su formula y sus propuestas</h2>
-		</div>
-	</div>
+	<SkeletonSelect img="/candidate.svg" text="Elegí una candidatura para conocer su fórmula y sus propuestas" />
+
 {/if}
 
 <style>
-	.fill-select {
-		width: 100%;
-		height: 575px;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-	}
-	.skeleton-candidate {
-		background-color: #d9d9d980;
-		border: 3px dashed #9f9f9f;
-		border-radius: 10px;
-		min-height: 90%;
-		width: 60%;
-		display: flex;
-		padding: 16px;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		color: #00000071;
-	}
-
-	.skeleton-candidate h2 {
-		width: 50%;
+	.logo-top {
+		height: 3.5rem;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -113,12 +86,6 @@
 		}
 		.carousel-section {
 			padding: 0 !important;
-		}
-		.skeleton-candidate {
-			width: 90%;
-		}
-		.skeleton-candidate h2 {
-			width: 100%;
 		}
 	}
 </style>

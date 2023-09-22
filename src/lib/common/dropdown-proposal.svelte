@@ -63,14 +63,14 @@
 						</div>
 					{/if}
 					<div class="action-proposal">
-						<button	class="button is-link is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
+						<button	class="button is-black is-rounded is-uppercase has-text-weight-semibold mt-4 source-button"
 								on:click={() => (showCompleteProposal = !showCompleteProposal)}>
 							<u>{!showCompleteProposal ? 'propuesta completa': 'propuesta resumida'}</u>
 						</button>
 						{#if partido.url_fuente}
 								<a href={partido.url_fuente}
 								   target="_blank"
-								   class="button is-link is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button">
+								   class="button is-black is-outlined is-rounded is-uppercase has-text-weight-semibold mt-4 source-button">
 									<u>fuente oficial</u>
 								</a>
 						{/if}

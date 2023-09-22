@@ -15,7 +15,7 @@
 	export let candidates;
 </script>
 
-<main class="has-background-white white-background-desktop">
+<main class="pb-6 has-background-white white-background-desktop">
 	<Presidential {candidates} />
 	<!-- <Legislative />
 	<Gobernor /> -->

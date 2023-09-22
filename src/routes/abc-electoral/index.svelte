@@ -2,7 +2,7 @@
   import Dropdown from '$lib/common/Dropdown.svelte';
 </script>
 
-<main class="hero has-background-white white-background-desktop">
+<main class="pb-6 hero has-background-white white-background-desktop">
   <div class="section has-background-black has-text-centered">
     <section class="container p-2">
       <div class="has-text-centered mt-6 has-text-white">
@@ -612,7 +612,7 @@
             promover procesos electorales simples, descentralizados y basados en papel. </p>
         </div>
       </Dropdown>
-      <section class="my-6">
+      <section class="mt-6">
         <h3 class="mt-6 mb-3 has-text-black">Fuentes</h3>
         <ul class="ml-3  has-text-black">
           <li class="has-text-black">

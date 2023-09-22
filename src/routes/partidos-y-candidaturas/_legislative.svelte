@@ -2,6 +2,7 @@
 	import API, { handleResponse } from '$lib/apiHandler';
 	import Dropdown from '$lib/common/Dropdown.svelte';
 	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
+	import SkeletonSelect from '$lib/common/skeleton-select.svelte';
 	import { CandidateImg, cargosSlugs, cargosSlugsAbbreviated } from '$lib/common/utils';
 	import { getCandidatesToLegislativeSection } from '$lib/graph-ql/candidates';
 	import { getPartysByDistrict } from '$lib/graph-ql/partidos';
@@ -114,43 +115,12 @@
 				{/each}
 			</div>
 			{:else}
-				<div class="fill-select pt-6">
-					<div class="skeleton-candidate">
-						<figure class="image is-96x96 my-6">
-							<img src="/candidate.svg" alt="candidatos"  style="filter: opacity(0.5);"/>
-						</figure>
-						<h2 class="is-size-4">Elegí un distrito y conocé la fórmula completa</h2>
-					</div>
-				</div>
+				<SkeletonSelect img="/candidate.svg" text="Elegí un distrito y conocé la fórmula completa" />
 			{/if}
 		</div>
 </section>
 
 <style>
-	.fill-select {
-		width: 100%;
-		height: 575px;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-	}
-	.skeleton-candidate {
-		background-color: #d9d9d980;
-		border: 3px dashed #9f9f9f;
-		border-radius: 10px;
-		min-height: 90%;
-		width: 60%;
-		display: flex;
-		padding: 16px;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		color: #00000071;
-	}
-
-	.skeleton-candidate h2 {
-		width: 50%;
-	}
 	.dropdown-wrapper {
 		width: 80%;
 		margin: auto;
@@ -182,13 +152,5 @@
 	}
 	.list-button{
 		padding: .5rem 6rem;
-	}
-	@media screen and (max-width:768px){
-		.skeleton-candidate {
-			width: 90%;
-		}
-		.skeleton-candidate h2 {
-			width: 100%;
-		}
 	}
 </style>

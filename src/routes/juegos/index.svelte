@@ -35,13 +35,13 @@ main{
     margin-bottom: 3rem!important;
 }
 .tetris-background {
-	background-image: url('games/juego1.png');
+	background-image: url('/black-background-desktop.png');
 	background-attachment: fixed;
 	background-repeat: repeat;
-    background-size: 50vh;
 }
 .hero.tetris-background .hero-body {
-background: none;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 90%);
+    background-attachment: fixed;
 }
 
 

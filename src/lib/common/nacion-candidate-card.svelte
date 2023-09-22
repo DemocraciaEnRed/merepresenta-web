@@ -10,8 +10,10 @@
 	afterUpdate(() => {
 		url = `/partidos-y-candidaturas/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
 	});
+	let screenSize
 </script>
 
+<svelte:window bind:innerWidth={screenSize} />
 <div class="column is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column {noRounded && 'force-no-rounded'}">
 
 	<div class="candidate-header p-3 has-text-centered">
@@ -48,19 +50,19 @@
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
             <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
               {#if candidate.twitter_profile}
-              <a href="{candidate.twitter_profile}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
+              <a href="{candidate.twitter_profile}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size={screenSize > 768 ? 'large':'medium'}/></a>
               {/if}
               {#if candidate.twitter_user && candidate.twitter_user !== candidate.twitter_profile}
-              <a href="{candidate.twitter_user}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size="large"/></a>
+              <a href="{candidate.twitter_user}" target="_blank" class="has-text-black"><Icon icon="fa-twitter-square" brand size={screenSize > 768 ? 'large':'medium'}/></a>
               {/if}
               {#if candidate.facebook_page}
-              <a href="{candidate.facebook_page}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
+              <a href="{candidate.facebook_page}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size={screenSize > 768 ? 'large':'medium'}/></a>
               {/if}
               {#if candidate.facebook_profile}
-              <a href="{candidate.facebook_profile}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size="large"/></a>
+              <a href="{candidate.facebook_profile}" target="_blank" class="has-text-black"><Icon icon="fa-facebook-square" brand size={screenSize > 768 ? 'large':'medium'}/></a>
               {/if}
               {#if candidate.instagram_page}
-              <a href="{candidate.instagram_page}" target="_blank" class="has-text-black"><Icon icon="fa-instagram-square" brand size="large"/></a>
+              <a href="{candidate.instagram_page}" target="_blank" class="has-text-black"><Icon icon="fa-instagram-square" brand size={screenSize > 768 ? 'large':'medium'}/></a>
               {/if}
   
             </div>

@@ -27,13 +27,14 @@
 <script>
 	import CandidateCard from "$lib/common/candidate-card.svelte";
 	import ComparativeProposal from "$lib/common/comparative-proposal.svelte";
+	import SkeletonSelect from "$lib/common/skeleton-select.svelte";
 	import { getThemes } from '$lib/graph-ql/themes';
 
 	export let candidates;
 	export let themes
 	let partysToCompare
 
-	let comparative = false;
+	let comparative = true;
 	
 	let partyId;
 	let partySelected;
@@ -104,7 +105,7 @@
 	bind:outerWidth={initWidth}
 	on:resize={updateWindowWidth}
 /> -->
-<main class="has-background-white white-background-desktop">
+<main class="pb-6 has-background-white white-background-desktop">
 	<div class="section tetris-background">
 		<div class="container">
 			<div class="has-text-centered has-text-black">
@@ -113,20 +114,16 @@
 					Conocé las diferencias entre las propuestas de las candidaturas de cada partido
 				</h3>
 			</div>
-			<div class="districts-buttons is-flex is-justify-content-center is-flex-wrap-wrap">
+			<div class="type-button-group mt-5 is-flex is-justify-content-center ">
 				<button
-					class="button {comparative && 'is-outlined'} is-black is-rounded is-uppercase mx-6"
-					on:click={() => {
-						comparative = false;
-					}}
+					class="button {comparative && 'is-outlined'} is-black is-rounded is-uppercase button-type"
+					on:click={() => {comparative = false;}}
 				>
 					Por partido
 				</button>
 				<button
-					class="button {!comparative && 'is-outlined'} is-black is-rounded is-uppercase mx-6"
-					on:click={() => {
-						comparative = true;
-					}}
+					class="button {!comparative && 'is-outlined'} is-black is-rounded is-uppercase button-type"
+					on:click={() => {comparative = true;}}
 				>
 					Comparativa
 				</button>
@@ -143,29 +140,35 @@
 				<section class="container">
 					<div class="is-flex is-justify-content-center">
 						{#each candidatesSelected as candidate }
-							<CandidateCard {candidate} />
+							<CandidateCard {candidate} size="is-two-fifths-mobile is-one-third-tablet is-2-desktop is-2-widescreen"/>
 						{/each}
 
 					</div>
 
 					<Proposal proposals={partySelected.ejes} partido={partySelected} allOpen />
+					<div class="box is-box-rounded">
+						<div class="group-header is-flex is-flex-direction-row is-align-items-center is-top-rounded" >
+						  <div class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered">
+							  <p class=" has-text-black is-inline has-text-weight-medium" >¿Querés saber en qué se diferencia cada candidatura?</p>
+						  </div>
+	
+						</div>
+						<div class="group-content is-bottom-rounded" >
+						  <h1 class="is-4 has-text-centered has-text-black mb-4">Enfrentá las candidaturas y conocé sus diferencias</h1>
+						  <div class="buttons is-centered">
+							  <button on:click={() => {comparative = true}} class="button is-black is-outlined is-rounded is-uppercase has-text-weight-semibold px-6">COMPARÁ CANDIDATURAS</button>
+						  </div>
+						  
+						</div>
+					  </div>
 				</section>
 			{:else}
-				<div class="fill-select pt-2">
-					<div class="skeleton-candidate">
-						<figure class="image is-96x96 my-6">
-							<img src="/candidate.svg" alt="silueta de candidato" style="filter: opacity(0.5);" />
-						</figure>
-						<h2 class="is-size-4">
-							Elegí una candidatura para conocer sus propuestas
-						</h2>
-					</div>
-				</div>
+			<SkeletonSelect img="/candidate.svg" text="Elegí una candidatura para conocer sus propuestas" />
 			{/if}
 		</div>
 	{:else}
 	{#if partysToCompare}
-	<section class="container">
+	<section class="container p-2">
 		{#each themes as eje}
 					<ComparativeProposal {eje} {partysToCompare} {candidates}/>
 		
@@ -223,26 +226,13 @@
 				</div>
 			{/if}
 			{#if candidatesOnDistrict === undefined}
-				<div class="fill-select pt-6">
-					<div class="skeleton-candidate">
-						<figure class="image is-96x96 my-6">
-							<img src="/candidate.svg" alt="candidatos" style="filter: opacity(0.5);" />
-						</figure>
-						<h2 class="is-size-4">Elegí un distrito</h2>
-					</div>
-				</div>
+				<SkeletonSelect img="/candidate.svg" text="Elegí un distrito" />
 			{/if}
 		</div>
 	</div> -->
 </main>
 
 <style>
-	@media screen and (max-width: 768px) {
-		.section {
-			padding: 3rem 0.5rem;
-		}
-	}
-	
 	/* .arrow-wrapper {
 		display: flex;
 		align-items: center;
@@ -262,6 +252,46 @@
 		padding-left: 3rem;
 		padding-right: 3rem;
 	} */
+
+	.box{
+  border: 1px solid #CFCFCF;
+  border-bottom: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.is-top-rounded{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.is-box-rounded{
+    border-radius: 10px;
+  }
+.is-bottom-rounded{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.group-header{
+  background-color: #FFF;
+  padding: 1rem;
+  border-bottom: 1px solid #CFCFCF;
+}
+.group-content{
+  padding: 2rem 1rem;
+  background-color: #FFF;
+  /* border-top: 1px solid #CFCFCF;; */
+  border-bottom: 1px solid #CFCFCF;
+}
+.group-content .buttons{
+  width: 50%;
+  margin: auto;
+}
+
+
+	.button-type{
+		margin: 0 3rem;
+		font-size: 1.3rem;
+	}
 	.fill-select {
 		width: 100%;
 		height: 483px;
@@ -269,34 +299,33 @@
 		display: flex;
 		justify-content: center;
 	}
-	.skeleton-candidate {
-		background-color: #d9d9d980;
-		border: 3px dashed #9f9f9f;
-		border-radius: 10px;
-		min-height: 60%;
-		width: 60%;
-		display: flex;
-		padding: 16px;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		color: #00000071;
-	}
 
-	.skeleton-candidate h2 {
-		width: 50%;
-	}
 
 	@media screen and (max-width: 768px) {
+		.section {
+			padding: 3rem 0.5rem;
+		}
+
+		.group-content .buttons{
+		  width: 90%;
+		  margin: auto;
+		}
+		.type-button-group{
+			border: 1px solid #0a0a0a;
+			border-radius: 9999px;
+			padding: 2px;
+		}
 		.fill-select {
 			height: 518px;
 		}
-		.skeleton-candidate {
-			width: 90%;
+
+		.button-type{
+			margin: 0;
+			width: 50%;
+			border: none;
+			font-size: 1rem;
 		}
-		.skeleton-candidate h2 {
-			width: 100%;
-		}
+
 
 		/* .carousel-wrapper {
 			padding-left: 0;

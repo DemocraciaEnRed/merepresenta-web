@@ -4,4 +4,4 @@
 </script>
 <Header logoVisible={!true}/>
 <slot />
-<Footer backgroundColor='white'/>
+<Footer backgroundColor='black'/>

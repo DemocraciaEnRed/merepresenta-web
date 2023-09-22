@@ -1,12 +1,9 @@
 <script>
 	import Icon from '$lib/common/Icon.svelte';
-
 	import Carousel from 'svelte-carousel/src/components/Carousel/Carousel.svelte';
 	import { onMount } from 'svelte';
 	import { afterUpdate } from 'svelte';
 	import CandidateCircle from '$lib/common/candidate-circle.svelte';
-	import API, { handleResponse } from '$lib/apiHandler';
-	import { getPartyById } from '$lib/graph-ql/partidos';
 	import { shuffleArray } from './utils';
 
 	export let candidates;
@@ -20,30 +17,36 @@
 	let heightCaorusel;
 	let dinamycParticlesToShow;
 	let loading = false;
-	let divisor = windowWidth < 760 ? 100 : 130;
+	let divisor = windowWidth < 760 ? 140 : 130;
 	let particlesToScroll;
 
 	async function updateWindowWidth() {
-		divisor = windowWidth < 760 ? 100 : 130;
+		divisor = windowWidth < 760 ? 140 : 130;
 		if (dinamycParticlesToShow !== (windowWidth / divisor).toFixed()) {
 			loading = true;
 
 			dinamycParticlesToShow = await (windowWidth / divisor).toFixed();
-			particlesToScroll = dinamycParticlesToShow / 2;
+			particlesToScroll = dinamycParticlesToShow / 1;
 			loading = false;
 		}
 	}
 	onMount(() => {
 		dinamycParticlesToShow = windowWidth ? (windowWidth / divisor).toFixed() : 12;
-		particlesToScroll = dinamycParticlesToShow / 2;
+		particlesToScroll = dinamycParticlesToShow / 1;
 		heightCaorusel = bindHeightCaorusel;
 	});
 
 	afterUpdate(() => {
 		updateWindowWidth();
 	});
-
 	let partyId;
+
+	function handleSelectParty(){
+		partyId = this.dataset.party
+		changeParty.bind(this)()
+	}
+
+
 </script>
 
 <svelte:window
@@ -80,7 +83,7 @@
 			</button>
 		</div>
 		{#each randomCandidates as candidate}
-			<CandidateCircle {partyId} {candidate} {changeParty} />
+			<CandidateCircle {partyId} {candidate} {handleSelectParty} />
 		{/each}
 	</Carousel>
 {/if}

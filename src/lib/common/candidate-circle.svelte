@@ -5,10 +5,10 @@
 	export let candidate;
 	export let partyId;
 	export let showPartyName = true
-	export let changeParty =()=> goto(`/partidos-y-candidaturas/candidates/${partyId}/candidate/${candidate.id}`)
+	export let handleSelectParty =()=> goto(`/partidos-y-candidaturas/candidates/${partyId}/candidate/${candidate.id}`)
 </script>
 
-<div class="is-relative candidate-wrapper" on:click={changeParty} data-party={candidate.partido.id}>
+<div class="is-relative candidate-wrapper" on:click={handleSelectParty} data-party={candidate.partido.id}>
 	<button
 		class="button-candidate"
 		style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido
@@ -19,21 +19,21 @@
 		</figure>
 	</button>
 	{#if showPartyName}
-		<span class="tag candidate-name">{candidate.partido.name}</span>
+		<span class="tag candidate-name has-text-weight-semibold" style="{partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}">{candidate.partido.name}</span>
 		
 	{/if}
 </div>
 
 <style>
 	.button-candidate {
-		padding: 4px;
+		padding: 5px;
 		border-radius: 999px;
 		border: none;
 		overflow: hidden;
 		cursor: pointer;
 		position: relative;
-		height: 90px;
-		width: 90px;
+		height: 100px;
+		width: 100px;
 	}
 
 	.candidate-wrapper {
@@ -47,7 +47,8 @@
 		text-align: center;
 		background-color: transparent;
 		padding-top: 4px;
-		width: 50%;
+		width: 80%;
+		font-size: 0.85rem;
 		flex: 1;
 		white-space: pre-wrap;
 		/* display: flex;
@@ -62,8 +63,8 @@
 			bottom: 0;
 		}
 		.button-candidate {
-			height: 70px;
-			width: 70px;
+			height: 80px;
+			width: 80px;
 		}
 	}
 </style>

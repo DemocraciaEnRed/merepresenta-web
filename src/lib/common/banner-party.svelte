@@ -30,13 +30,15 @@
 
 
   .party-container{
+    background-color: #fff;
     border:1px solid #000;
     border-left: 10px solid #000;
     border-right: 10px solid #000;
   }
   .party-logo{
-    width: 300px;
+    max-height: 7rem;
   }
+  
   .party-info{
    width: 100%;
   }
@@ -46,7 +48,7 @@
   @media screen and (max-width: 1023px) {
     .party-logo{
       width: auto;
-      max-height: 200px;
+      max-height: 6rem;
       
       
     }
