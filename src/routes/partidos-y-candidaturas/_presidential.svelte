@@ -85,7 +85,7 @@
 		class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black is-align-items-center"
 	>
 	<h1 class="is-size-4 is-size-3-mobile has-text-weight-medium has-text-black has-text-centered">
-		¿Queres conoces el resto de la formula?
+		¿Querés conocer el resto de la fórmula?
 	</h1>
 	<SelectDistrict on:change={handleSelectDistrict}/>
 
