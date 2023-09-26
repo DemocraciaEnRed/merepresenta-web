@@ -87,7 +87,7 @@
         <div class=" has-text-black">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
             <p class="has-text-weight-bold is-size-5"><Icon icon="fa-briefcase"/> Experiencia</p>
-            <p class="is-size-6 pl-4 pt-4 has-text-weight-light">{@html candidate.resumen_experiencia}</p>
+            <p class="is-size-6 pl-4 pt-4 has-text-weight-light">{@html candidate.resumen_experiencia.replace(/\n/g, '<br />')}</p>
           </div>
         </div>
           
