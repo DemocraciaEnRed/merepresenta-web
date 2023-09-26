@@ -121,7 +121,7 @@ export function getCandidatesByParty (partyId){
 }
 
 export function getCandidatesByPartyList (partyListId){
-  const query = partyListId.map(partyId => `{partido:{id:{_eq:${partyId}}}}`)
+  const query = partyListId.length >= 1 && partyListId.map(partyId => `{partido:{id:{_eq:${partyId}}}}`)
   return(`
   {
     candidato(filter:{_or:[${query}]},sort: ["position","-cargo"]){
@@ -130,12 +130,16 @@ export function getCandidatesByPartyList (partyListId){
       genre
       id
       position
+      age
+      profesion
       avatar {
         id
       }
       partido {
         id
         name
+        color1
+        color2
         district {
           id
           name

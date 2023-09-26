@@ -10,9 +10,12 @@
 	import BannerParty from '$lib/common/banner-party.svelte';
 	import Proposal from '../../lib/common/proposal.svelte';
 	import API, { handleResponse } from '$lib/apiHandler';
-	import { getPartyById } from '$lib/graph-ql/partidos';
+	import { getPartyById, getPartysByAlianza, getPartysByDistrict } from '$lib/graph-ql/partidos';
 	import CandidateCircleCarousel from '$lib/common/candidate-circle-carousel.svelte';
 	import SkeletonSelect from '$lib/common/skeleton-select.svelte';
+	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
+	import CardCandidatesGroup from '$lib/common/card-party/card-candidates-group.svelte';
+	import { getCandidatesByPartyList } from '$lib/graph-ql/candidates';
 
 	export let candidates;
 	let randomCandidates = shuffleArray(candidates);
@@ -22,13 +25,26 @@
 
 	let partyId;
 	let partySelected;
+	let candidatesDistrict
 
 	async function changeParty() {
+		partySelected = null
+		candidatesDistrict = null
+
 		partyId = await this.dataset.party;
 		const res = await API(fetch, getPartyById(partyId));
 		const response = await handleResponse(res, 'partido', 'partido');
 
 		partySelected = response.props.partido[0];
+	}
+	async function handleSelectDistrict(event) {
+		candidatesDistrict = null
+		const res = await API(fetch, getPartysByDistrict(event.target.value));
+		const response = await handleResponse(res, 'partidos', 'partido');
+		const partysId = response.props.partidos.filter(partido => partido.alianzas.some((partyInList) => partyInList.related_partido_id.id === partySelected.alianzas[0].related_partido_id.id))
+		const resCandidates = await API(fetch, getCandidatesByPartyList(partysId.map(party => party.id)));
+		const responseCandidates = await handleResponse(resCandidates, 'candidatos', 'candidato');
+		candidatesDistrict = responseCandidates.props.candidatos
 	}
 </script>
 
@@ -65,6 +81,24 @@
 			district={{ slug: 'nacion' }}
 		/>
 	</section>
+	<section
+		class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black is-align-items-center"
+	>
+	<h1 class="is-size-4 is-size-3-mobile has-text-weight-medium has-text-black has-text-centered">
+		¿Queres conoces el resto de la formula?
+	</h1>
+	<SelectDistrict on:change={handleSelectDistrict}/>
+
+	
+</section>
+	{#if candidatesDistrict}
+		{#if candidatesDistrict.some(candidate => candidate.cargo === 'senador-nacional')}
+			<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'senador-nacional')} verticalTitle="P.L. Senadores" />
+		{/if}
+		{#if candidatesDistrict.some(candidate => candidate.cargo === 'diputado-nacional')}
+			<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'diputado-nacional')} verticalTitle="P.L. Diputados" />
+		{/if}
+	{/if}
 	<section class="container">
 		<Proposal proposals={partySelected.ejes} partido={partySelected} />
 	</section>

@@ -18,13 +18,12 @@
 			const response2 = await handleResponse(res2, 'candidatos', 'candidato');
 	
 			partyCandidates = response2.props.candidatos;
-			
 		}
 	};
 	$: partySelected, getCandidates()
 </script>
 
-{#if partySelected}
+{#if partySelected && partyCandidates}
 	<div
 		class="is-flex is-flex-direction-column is-align-items-center mx-auto {district.slug ===
 		'nacion'
@@ -58,7 +57,10 @@
 				>
 				{#if partyCandidates}
 					{#each partyCandidates as candidate}
+					<div class="column is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
 						<NacionCandidateCard {candidate} />
+
+					</div>
 					{/each}
 					
 				{/if}
@@ -66,40 +68,44 @@
 			</div>
 		{:else}
 		{#if partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')||partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')} 
-		<div class="has-text-centered list-legislative-wrapper">
-			<h1 class="is-size-2 has-text-weight-medium has-text-black my-3">{partySelected.name}</h1>
-			<div class="is-flex candidates">
-				{#if partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')}
-				<div class="legislative-list">
-					<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
-						Diputados/as Nacionales
-					</h1>
-					<div>
-						{#each partyCandidates as candidate}
-							{#if candidate.position < 3 && candidate.cargo === 'diputado-nacional'}
-								<NacionCandidateCard {candidate} noRounded />
-							{/if}
-						{/each}
+			{#if partyCandidates.some(candidate => candidate.cargo === 'senador-nacional')}
+			<div class="card card-party my-1 is-flex">
+				<div class="card-header is-align-items-center is-justify-content-center">
+					<div class="is-uppercase has-text-white has-text-vertical verticalTitle">
+						P.L. Senadores
 					</div>
 				</div>
-				{/if}
-				{#if partyCandidates.some(candidate => candidate.cargo === 'senador-nacional')}
-				<div class="legislative-list">
-					<h1 class="is-size-4 has-text-centered has-text-weight-medium has-text-black is-hidden-touch">
-						Senadores/as Nacionales
-					</h1>
-					<div>
-						{#each partyCandidates as candidate}
-							{#if candidate.position < 3 && candidate.cargo === 'senador-nacional'}
-								<NacionCandidateCard {candidate} noRounded />
-							{/if}
-						{/each}
-					</div>
+				<div class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0">
+					{#each partyCandidates as candidate}
+						{#if  candidate.cargo === 'senador-nacional'}
+						<div class="column is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
+
+							<NacionCandidateCard {candidate} />
+						</div>
+						{/if}
+					{/each}
 				</div>
-					
-				{/if}
 			</div>
-		</div>
+			{/if}
+			{#if partyCandidates.some(candidate => candidate.cargo === 'diputado-nacional')}
+			<div class="card card-party my-1 is-flex">
+				<div class="card-header is-align-items-center is-justify-content-center">
+					<div class="is-uppercase has-text-white has-text-vertical verticalTitle">
+						P.L. Diputados
+					</div>
+				</div>
+				<div class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0">
+					{#each partyCandidates as candidate}
+						{#if candidate.cargo === 'diputado-nacional'}
+						<div class="column is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
+							<NacionCandidateCard {candidate} />
+
+						</div>	
+						{/if}
+					{/each}
+				</div>
+			</div>
+			{/if}
 		{/if}
 		{/if}
 		<!-- <div class="actions is-flex is-justify-content-center my-6 is-centered">
@@ -139,47 +145,17 @@
 	.card-party-wrapper-legislative {
 		width: 90%;
 	}
-	.actions {
-		width: 100%;
-		gap: 16px;
-		margin: auto;
-	}
-	.actions a {
-		width: 50%;
-		font-weight: 500;
-		padding: 1.4rem;
-		/* flex: 1 1 0px; */
-	}
-	.actions a:last-of-type:hover {
-		color: #000;
-	}
-	.view-proposal:focus {
-		color: #000;
-	}
+
 	.card-party {
 		width: 80%;
 		flex: 1;
 	}
 	.card-party .card-header {
-		background-color: #252525;
+		background-color: #242A38;
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
 		border-top-right-radius: 0;
 		width: 2em;
-	}
-	.list-legislative-wrapper {
-		width: 80%;
-	}
-	.list-legislative-wrapper .candidates{
-		justify-content: center;
-	}
-	.legislative-list {
-		margin: 0 3rem;
-		width: 40%;
-	}
-
-	.legislative-list div {
-		display: flex;
 	}
 	.card-content{
 		flex: 1;
@@ -191,6 +167,50 @@
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
+.candidate-container {
+		position: relative;
+	}
+	.candidate-container:last-of-type {
+		border-bottom-right-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+	.candidate-container:not(:last-of-type):after {
+	content: "";
+	background: #C4C4C4;
+	position: absolute;
+	bottom: 25%;
+	right: 0;
+	height: 50%;
+	width: 1px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.candidate-container{
+			border: 1px solid #000;
+			
+		}
+		.candidate-container:last-of-type {
+			border-left: none;
+		}
+		.candidate-container:nth-of-type(odd):after {
+			content: none;
+			background: #C4C4C4;
+			position: absolute;
+			bottom: 25%;
+			right: 0;
+			height: 50%;
+			width: 1px;
+			}
+		.candidate-container:last-of-type {
+		border-right: 1px solid black;
+		border-bottom-right-radius: 10px;
+		border-top-right-radius: 0;
+		}
+		.candidate-container:first-of-type {
+		border-bottom-left-radius: 10px;
+		}
+	}
+
 	@media screen and (max-width: 768px) {
 		.card-party-wrapper {
 			width: 100%;
@@ -198,14 +218,14 @@
 		.card-party-wrapper-legislative {
 		width: 100%;
 		}
-		.actions {
+		/* .actions {
 			width: 90%;
 			flex-direction: column;
 		}
 		.actions a {
 			margin-bottom: 8px;
 			width: 100%;
-		}
+		} */
 
 		.card-party {
 			width: 100%;
@@ -220,17 +240,6 @@
 			padding: 8px 0;
 			transform: none;
 		}
-		.list-legislative-wrapper .candidates {
-			text-align: center;
-			flex-direction: column;
-		}
-		.list-legislative-wrapper {
-			width: 100%;
-		}
-		.legislative-list {
-			margin: 0;
-			margin-bottom: 16px;
-			width: 100%;
-		}
+
 	}
 </style>

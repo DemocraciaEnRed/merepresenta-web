@@ -29,6 +29,7 @@ export function getPartysByDistrict (district){
       }
       district{
         id
+        slug
       }
       logo{
         id
