@@ -12,7 +12,7 @@
 		{name:'trivia',link:'https://trivia.merepresenta.info/'},
 		{name:'vof',link:'https://verdaderofalso.merepresenta.info/'},
 		{name:'quiendijo',link:'https://quiendijo.merepresenta.info/'},
-		{name:'espectrometro',link:'https://espectrometro.merepresenta.info/'},
+		{name:'espectrometro',link:'https://dequelado.merepresenta.info/'},
 
 
 	]
