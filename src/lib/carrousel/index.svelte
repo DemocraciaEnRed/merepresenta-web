@@ -8,7 +8,7 @@
 		{name:'pasoresult',link:''},
 		{name:'abc',link:'/abc-electoral'},
 		{name:'dataset',link:'https://drive.google.com/drive/folders/1WvjL0X8-i0F1qSJ2xs5HUy1YY2XPGmG6?usp=sharing'},
-		{name:'compas',link:'https://compaspolitico.merepresenta.info/'},
+		//{name:'compas',link:'https://compaspolitico.merepresenta.info/'},
 		{name:'trivia',link:'https://trivia.merepresenta.info/'},
 		{name:'vof',link:'https://verdaderofalso.merepresenta.info/'},
 		{name:'quiendijo',link:'https://quiendijo.merepresenta.info/'},
