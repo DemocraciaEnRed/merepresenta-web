@@ -39,7 +39,7 @@
   const partyUrl = `/propuestas/partidos/${$page.params.partido}`;
 
 </script>
-<div class="section py-5">
+<div class="section py-5 is-hidden-mobile">
   <div class="container">
     <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
       <ul>
@@ -53,13 +53,11 @@
 </div>
 <div class="candidate-container">
     <div class="container">
-      <div class="columns py-2 is-mobile is-multiline is-vcentered">
-        <!-- <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
-          <img src={CandidateImg(candidate)} class="image mx-auto my-2 candidate-logo" alt="foto de {candidate.name}">
-        </div> -->
-        <div class="column is-12-touch is-normal-desktop has-text-centered">
+      <div class=" is-mobile is-multiline is-vcentered">
+
+        <div class=" has-text-centered overflow-hidden">
           <div class="has-background-black party-text-container is-inline-block animate__animated animate__backInRight">
-            <h1 class="general-sans is-size-4 has-text-white px-5    is-uppercase" >{candidate.partido.name}</h1>
+            <h1 class="general-sans is-size-4 has-text-white px-5  is-uppercase" >{candidate.partido.name}</h1>
           </div>
           <div class="candidate-content">
             <h1 class="general-sans is-size-2 is-size-4-touch has-text-black has-text-weight-bold is-capitalized my-1 animate__animated animate__backInRight animate__delay-1s" >{candidate.name}</h1>
@@ -115,6 +113,7 @@
     border:1px solid #000;
     border-left: 10px solid #000;
     border-right: 10px solid #000;
+    overflow: hidden;
   }
   .candidate-logo{
     border-radius: 50%;

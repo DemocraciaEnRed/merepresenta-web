@@ -284,7 +284,7 @@
 	    }
 		.candidate-name-header-proposal{
 		    margin-left: 1rem;
-		
+			text-align: left;
 			padding-left: 0;
 		}
 		.candidate-proposal-header{

@@ -61,6 +61,7 @@
 	@media screen and (max-width: 768px) {
 		.candidate-name {
 			top: auto;
+			width: 95%;
 			bottom: 0;
 		}
 		.button-candidate {

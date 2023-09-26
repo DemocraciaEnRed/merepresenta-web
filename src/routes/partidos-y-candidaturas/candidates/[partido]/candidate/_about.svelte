@@ -9,7 +9,7 @@
 <div class="box is-rounded">
   <div class="group-header is-flex is-flex-direction-row is-align-items-center is-top-rounded" >
     <div class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered">
-        <p class=" is-size-5 has-text-black is-inline has-text-weight-bold" >Curriculum del candidato/a</p>
+        <p class=" is-size-5 has-text-black is-inline has-text-weight-bold" >Cv del candidato/a</p>
     </div>
 
   </div>
@@ -86,8 +86,8 @@
         {#if candidate.resumen_experiencia}
         <div class=" has-text-black">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
-            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-briefcase"/> Experiencia</p>
-            <p class="is-size-6 pl-4 pt-4 has-text-weight-light">{@html candidate.resumen_experiencia.replace(/\n/g, '<br />')}</p>
+            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-briefcase"/>Experiencia en Cargos Público. </p>
+            <p class="is-size-6 resume pt-4 has-text-weight-light">{@html candidate.resumen_experiencia.replace(/\n/g, '<br />')}</p>
           </div>
         </div>
           
@@ -96,8 +96,8 @@
           
         <div class=" has-text-black mt-5">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
-            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-scroll"/> Ultimo grado de estudios alcanzado</p>
-            <p class="is-size-6 pl-4 pt-4 has-text-weight-light">{candidate.formacion}</p>
+            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-scroll"/> Último grado de estudios alcanzado</p>
+            <p class="is-size-6 resume pt-4 has-text-weight-light">{candidate.formacion}</p>
           </div>
         </div>
         {/if}
@@ -140,6 +140,9 @@
 		position: relative;
 		height: 170px;
 		width: 170px;
+}
+.resume{
+  padding-left: 1rem;
 }
 .box{
   border: 1px solid #CFCFCF;
@@ -195,6 +198,9 @@
   .candidate-logo-container{
       padding-bottom: 0;
     }
+    .resume{
+    padding-left: 0;
+  }
   .group-content{
     padding: 1rem 1rem;
     background-color: #FFF;

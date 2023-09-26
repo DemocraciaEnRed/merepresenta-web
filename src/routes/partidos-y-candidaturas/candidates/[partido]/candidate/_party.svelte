@@ -4,18 +4,25 @@
   import Binary from "./_binary.svelte";
   import { slide } from 'svelte/transition';
   import { page } from '$app/stores';
+	import { PartyImg } from "$lib/common/utils";
   let isOpen = open
 </script>
 <div class="box is-rounded">
   <div class="group-header is-flex is-flex-direction-row is-align-items-center is-top-rounded" >
     <div class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered">
-        <p class=" has-text-black is-inline has-text-weight-medium" >Sobre el partido</p>
+      <p class=" has-text-black is-inline has-text-weight-medium" >Sobre el partido</p>
     </div>
     <!-- <div class="icon-container">
       <i class="fas {isOpen ? 'fa-angle-double-up' : 'fa-angle-double-down'} has-text-black fa-lg fa-fw"></i>
     </div> -->
   </div>
   {#if isOpen}
+  <div class="is-flex is-justify-content-center is-align-items-center">
+    <figure class="image is-128x128 is-flex is-align-items-center">
+      <img class="is-rounded" src={PartyImg(partido)} alt="logo del partido">
+    </figure>
+
+  </div>
   <div class="group-content is-bottom-rounded" transition:slide>
     <h1 class="is-4 has-text-centered has-text-black mb-4">Conocé las propuestas de "<span class="has-text-weight-medium">{partido.name}</span>"</h1>
     <div class="buttons is-centered">

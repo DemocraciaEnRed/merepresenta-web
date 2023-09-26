@@ -19,7 +19,7 @@
 		const responseTwo = await handleResponse(resTwo, 'candidates', 'candidato');
 		
 		candidates.props.gobernorCandidates = responseTwo.props.candidates; */
-		props.props.themes = propsThemes.props.temas
+		props.props.themes = propsThemes.props.temas.filter(tema => tema.slug !== 'vivienda-y-transporte' ).filter(tema => tema.slug !== 'empleo' )
 		return props;
 	}
 </script>
@@ -145,7 +145,7 @@
 
 					</div>
 
-					<Proposal proposals={partySelected.ejes} partido={partySelected} allOpen />
+					<Proposal proposals={partySelected.ejes} partido={partySelected} />
 					<div class="box is-box-rounded">
 						<div class="group-header is-flex is-flex-direction-row is-align-items-center is-top-rounded" >
 						  <div class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered">
