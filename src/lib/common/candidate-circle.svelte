@@ -64,6 +64,10 @@
 			bottom: 0;
 		}
 		.button-candidate {
+		height: 80px!important;
+		width: 80px!important;
+	}
+		.button-candidate {
 			height: 80px;
 			width: 80px;
 		}
