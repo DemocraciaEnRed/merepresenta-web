@@ -6,7 +6,7 @@
 
 	export let candidate;
 	export let size = "is-half-mobile is-one-third-tablet is-3-desktop is-3-widescreen"
-	let url=`/partidos-y-candidaturas/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
+	let url=`/partidos-y-candidaturas/candidates/candidate/${candidate.id}`;
 
 </script>
 

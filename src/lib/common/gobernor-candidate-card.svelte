@@ -8,7 +8,7 @@
 	export let showListButton 
 	export let showProposalButton
 	export let proposalDisbled
-	let url=`/partidos-y-candidaturas/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
+	let url=`/partidos-y-candidaturas/candidates/candidate/${candidate.id}`;
 
 </script>
 

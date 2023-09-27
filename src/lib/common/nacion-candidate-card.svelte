@@ -7,9 +7,9 @@
 
 	export let candidate;
 	export let noProfetion = false
-	let url = `${$page.path}/candidate/${candidate.id}`;
+	let url = `/candidate/${candidate.id}`;
 	afterUpdate(() => {
-		url = `/partidos-y-candidaturas/candidates/${candidate.partido.id}/candidate/${candidate.id}`;
+		url = `/partidos-y-candidaturas/candidates/candidate/${candidate.id}`;
 	});
 	let screenSize
 </script>

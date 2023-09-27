@@ -115,37 +115,15 @@
     border-right: 10px solid #000;
     overflow: hidden;
   }
-  .candidate-logo{
-    border-radius: 50%;
-    width: 170px;
+  .progres-wrapper{
+    width: 50%;
   }
-  .black-tetris-background {
-      background-image: url("/black-background-desktop.png");
-      background-attachment: fixed;
-      /* background-size: cover; */
-      background-repeat: repeat;
-    }
-    .hero.black-tetris-background .hero-body{
-      background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 100%); 
-      /* background-attachment: fixed; */
-    }
-    .progres-wrapper{
-      width: 50%;
-    }
 @media screen and (max-width: 1023px) {
-     .candidate-logo{
-      width: auto;
-      max-height: 200px;
-    }
     .candidate-container{
       border:1px solid #000;
       border-top: 0px solid #000;
       border-left: 0px solid #000;
       border-right: 0px solid #000;
-    }
-    .candidate-logo-container{
-      border-top: 1px solid #000;
-      padding-bottom: 0;
     }
     .candidate-content{
       border-top: 1px solid #000;

@@ -6,7 +6,7 @@
 	export let imageSize = '100px'
 	export let partyId;
 	export let showPartyName = true
-	export let handleSelectParty =()=> goto(`/partidos-y-candidaturas/candidates/${partyId}/candidate/${candidate.id}`)
+	export let handleSelectParty =()=> goto(`/partidos-y-candidaturas/candidates/candidate/${candidate.id}`)
 </script>
 
 <div class="is-relative candidate-wrapper" on:click={handleSelectParty} data-party={candidate.partido.id}>
