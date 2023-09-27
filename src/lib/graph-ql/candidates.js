@@ -200,6 +200,18 @@ export function getCandidatesByCargo (cargo){
       genre
       id
       position
+      resumen_experiencia
+      instagram_page
+      facebook_page
+      facebook_profile
+      twitter_user
+      twitter_profile
+      formacion
+      twitter_tweets
+      twitter_followers
+      twitter_created_at
+      twitter_friends
+      twitter_verified
       avatar {
         id
       }

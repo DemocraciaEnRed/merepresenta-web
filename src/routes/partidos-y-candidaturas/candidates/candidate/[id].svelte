@@ -97,6 +97,7 @@
     </div>
   </div>
 </div>
+<a class="button is-black comparative-button has-text-weight-medium" href="/partidos-y-candidaturas/candidates/comparativa">Compará Candidaturas</a>
 
 
 
@@ -117,6 +118,19 @@
   }
   .progres-wrapper{
     width: 50%;
+  }
+  .comparative-button{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    height: fit-content;   
+    padding: 16px 8px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
   }
 @media screen and (max-width: 1023px) {
     .candidate-container{
