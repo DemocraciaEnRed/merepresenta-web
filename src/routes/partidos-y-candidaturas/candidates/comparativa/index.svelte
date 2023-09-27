@@ -4,7 +4,6 @@
 	export async function load({ fetch }) {
 		const res = await API(fetch, getCandidatesByCargo('presidente'));
 		const candidates = await handleResponse(res, 'candidates', 'candidato');
-		console.log(candidates);
 		return candidates;
 	}
 </script>
