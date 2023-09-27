@@ -121,28 +121,28 @@
               <div class=" has-text-black mb-3">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
                     <p class=" has-text-weight-bold is-size-5 is-uppercase">edad:</p>
-                    <p class="has-text-weight-light">{candidate1.partido.name}</p>
+                    <p class="has-text-weight-light">{candidate1.age} AÑOS</p>
                   </div>
                 </div>
                 <br/>
-                <div class=" has-text-black mb-3">    
+               <!--  <div class=" has-text-black mb-3">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
                     <p class=" has-text-weight-bold is-size-5 is-uppercase">Lugar de Nacimiento:</p>
-                    <p class="has-text-weight-light">{candidate1.partido.name}</p>
+                    <p class="has-text-weight-light">{candidate1.distrito_nacional.name}</p>
                   </div>
                 </div>
-                <br/>
+                <br/> -->
                 <div class=" has-text-black mb-3">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
                     <p class=" has-text-weight-bold is-size-5 is-uppercase">ultimo grado de estudios:</p>
-                    <p class="has-text-weight-light">{candidate1.partido.name}</p>
+                    <p class="has-text-weight-light">{candidate1.formacion}</p>
                   </div>
                 </div>
                 <br/>
                 <div class=" has-text-black mb-3">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
                     <p class=" has-text-weight-bold is-size-5 is-uppercase">Profesión:</p>
-                    <p class="has-text-weight-light">{candidate1.partido.name}</p>
+                    <p class="has-text-weight-light">{candidate1.profesion}</p>
                   </div>
                 </div>
                 <br/>
@@ -153,28 +153,28 @@
               <div class=" has-text-black mb-3">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
                     <p class=" has-text-weight-bold is-size-5 is-uppercase">edad:</p>
-                    <p class="has-text-weight-light">{candidate2.partido.name}</p>
+                    <p class="has-text-weight-light">{candidate2.age} AÑOS</p>
                   </div>
                 </div>
                 <br/>
-                <div class=" has-text-black mb-3">    
+               <!--  <div class=" has-text-black mb-3">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
                     <p class=" has-text-weight-bold is-size-5 is-uppercase">Lugar de Nacimiento:</p>
-                    <p class="has-text-weight-light">{candidate2.partido.name}</p>
+                    <p class="has-text-weight-light">{candidate2.distrito_nacional.name}</p>
                   </div>
                 </div>
-                <br/>
+                <br/> -->
                 <div class=" has-text-black mb-3">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
                     <p class=" has-text-weight-bold is-size-5 is-uppercase">ultimo grado de estudios:</p>
-                    <p class="has-text-weight-light">{candidate2.partido.name}</p>
+                    <p class="has-text-weight-light">{candidate2.formacion}</p>
                   </div>
                 </div>
                 <br/>
                 <div class=" has-text-black mb-3">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
                     <p class=" has-text-weight-bold is-size-5 is-uppercase">Profesión:</p>
-                    <p class="has-text-weight-light">{candidate2.partido.name}</p>
+                    <p class="has-text-weight-light">{candidate2.profesion}</p>
                   </div>
                 </div>
                 <br/>
@@ -185,18 +185,18 @@
             <td class="info">Recorrido politico</td>
             <td>
               {#if candidate1}
-                <div class=" has-text-black">    
+                <div class=" has-text-black my-5">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
-                    <p class="is-size-6 resume pt-4 has-text-weight-light">{@html candidate1.resumen_experiencia}</p>
+                    <p class="is-size-6 resume has-text-weight-light">{@html candidate1.resumen_experiencia}</p>
                   </div>
                 </div>
               {/if}
           </td>
             <td>
               {#if candidate2}
-                <div class=" has-text-black">    
+                <div class=" has-text-black my-5">    
                   <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
-                    <p class="is-size-6 resume pt-4 has-text-weight-light">{@html candidate2.resumen_experiencia}</p>
+                    <p class="is-size-6 resume has-text-weight-light">{@html candidate2.resumen_experiencia}</p>
                   </div>
                 </div>
               {/if}

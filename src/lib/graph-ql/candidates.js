@@ -200,6 +200,8 @@ export function getCandidatesByCargo (cargo){
       genre
       id
       position
+      age
+      profesion
       resumen_experiencia
       instagram_page
       facebook_page
