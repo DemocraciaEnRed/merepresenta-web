@@ -20,16 +20,14 @@
 				style="background-image: url({CandidateImg(candidate)})"
 			/>
 		</a>
-		<div class="candidate-content is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center p-3 {candidate.cargo === 'gobernador' && 'gobernor-content'}">
+		<div class="candidate-content is-flex is-flex-direction-column is-justify-content-space-between is-align-items-center p-3 }">
 			<p class="candidate-name is-size-6 has-text-weight-bold  is-uppercase general-sans has-text-weight-semibold flex">
 				{candidate.name}
 			</p>
-			{#if candidate.cargo !== 'gobernador'}
 			<p class=" is-size-6 has-text-weight-light pb-4">
 				Candidat{candidate.genre === 'm' ? 'o' : 'a'} a <br />
 				<span class="general-sans is-size-6 has-text-weight-light">{cargosSlugs[candidate.cargo][candidate.genre]}</span>
 			</p>	
-			{/if}
 			<a href={url}
 			   class="button is-fullwidth is-active  has-text-weight-semibold is-rounded pr-5">
 			   Ver perfil
@@ -63,9 +61,6 @@
 		top: 1px;
 		left: 1px;
 		z-index: 10;
-		border-bottom-right-radius: 5px;
-	}
-	.candidate-position > img {
 		border-bottom-right-radius: 5px;
 	}
 	.candidate-content {

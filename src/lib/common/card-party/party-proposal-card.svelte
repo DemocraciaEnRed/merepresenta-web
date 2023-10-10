@@ -39,7 +39,7 @@
         ProposalCards = shuffleArray(props.props.candidates)
         if (getQuantity) ProposalCards = ProposalCards.slice(0, getQuantity);
       }else{
-        const res = await API(fetch, getCandidatesByCargoAndDistrict({idExcept:candidate.id, cargo:candidate.cargo, district:candidate.distrito_nacional.id}))
+        const res = await API(fetch, getCandidatesByCargoAndDistrict({idExcept:candidate.id, cargo:candidate.cargo, district:candidate.distrito_nacional.slug}))
         const props = await handleResponse(res, 'candidates', 'candidato');
         ProposalCards = shuffleArray(props.props.candidates.filter((party) => party.id !== partido.id))
         if (getQuantity) ProposalCards = ProposalCards.slice(0, getQuantity);

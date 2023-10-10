@@ -6,7 +6,7 @@
 </script>
 
 {#if candidates}
-	<div class="is-flex my-1 is-flex-direction-column is-align-items-center mx-auto">
+	<div class="is-flex my-3 is-flex-direction-column is-align-items-center mx-auto">
 		<div class="card card-party is-flex">
 			<div class="card-header is-align-items-center is-justify-content-center">
 				<div class="is-uppercase has-text-white has-text-vertical verticalTitle">

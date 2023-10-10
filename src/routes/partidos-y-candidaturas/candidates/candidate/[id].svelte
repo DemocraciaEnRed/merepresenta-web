@@ -27,7 +27,7 @@
 		const res = await API(fetch, getCandidatesByCargoAndDistrict({
       idExcept:candidate.id,
       cargo: candidate.cargo, 
-      district:candidate.partido.district.id
+      district:candidate.partido.district.slug
     }))
 		const response = await handleResponse(res, 'candidatos', 'candidato');
 		otherCandidates = get4FirstRandomItems(response.props.candidatos);

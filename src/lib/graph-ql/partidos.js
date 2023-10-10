@@ -105,6 +105,7 @@ export function getPartysByAlianza (partyId){
       }
       district{
         id
+        slug
       }
       logo{
         id
@@ -129,7 +130,7 @@ export function getPartysByAlianza (partyId){
 }
 
 
-export function getPartyByalianzas (partyId){
+export function getPartyByalianzasNacion (partyId){
   return(`
   {
     partido(filter:{alianzas:{related_partido_id:{id:{_eq:${Number(partyId)}}}},district:{slug:{_eq:"nacion"}}}){

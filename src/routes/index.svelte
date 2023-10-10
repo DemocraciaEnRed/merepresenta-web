@@ -8,10 +8,7 @@
 </script>
 
 <script>
-	import { loop_guard, space } from 'svelte/internal';
 	import Carrousel from '$lib/carrousel/index.svelte'
-	import { page } from '$app/stores';
-	import { directusImg, ProvinciasSlugs } from '$lib/common/utils';
 
 	import FlourishCard from '$lib/common/flourish-card.svelte';
 	let height
@@ -113,7 +110,7 @@
 						<a
 							href="/juegos"
 							class="text-wrap-wrap button is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
-							>conocé lOS JUEGOS</a
+							>conocé los juegos</a
 						>
 					</footer>
 				</div>

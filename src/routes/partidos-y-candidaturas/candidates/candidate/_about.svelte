@@ -15,7 +15,7 @@
   </div>
   <div class="group-content is-bottom-rounded" transition:slide>
     <div class="columns is-align-content-stretch">
-      <div class="column is-one-third candidate-perfil">
+      <div class="column {!candidate.resumen_experiencia && !candidate.formacion ? 'is-flex is-justify-content-space-evenly is-align-items-center ':'is-one-third'} candidate-perfil">
         <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
           <div class="border-img  mx-auto" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2})"
         >
@@ -82,6 +82,7 @@
           
         {/if}
       </div>
+      {#if candidate.resumen_experiencia || candidate.formacion}
       <div class="column">
         {#if candidate.resumen_experiencia}
         <div class=" has-text-black">    
@@ -102,6 +103,7 @@
         </div>
         {/if}
       </div>
+      {/if}
     </div>
     <!-- {#if candidate.childrens != null && candidate.childrens > 0}
     <div class="column has-text-black has-text-centered">    

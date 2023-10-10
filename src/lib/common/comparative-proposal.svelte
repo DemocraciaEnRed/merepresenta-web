@@ -229,13 +229,6 @@
 	.proposal-body-header:not(:last-child){
 		border-bottom: 1px solid #747474;
 	}
-	.candidate-avatar {
-		height: 75px;
-		width: 75px;
-	}
-	.candidate-avatar img {
-		border: 1px solid #000;
-	}
 	.dropdown-icon {
 		padding-right: 3rem;
 	}

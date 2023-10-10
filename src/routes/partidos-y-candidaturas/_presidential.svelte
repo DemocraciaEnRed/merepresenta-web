@@ -92,6 +92,9 @@
 	
 </section>
 	{#if candidatesDistrict}
+		{#if candidatesDistrict.some(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')}
+			<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')} verticalTitle="Poder Ejecutivo Local" />
+		{/if}
 		{#if candidatesDistrict.some(candidate => candidate.cargo === 'senador-nacional')}
 			<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'senador-nacional')} verticalTitle="P.L. Senadores" />
 		{/if}

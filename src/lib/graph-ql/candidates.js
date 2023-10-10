@@ -43,6 +43,7 @@ export function getCandidates (id){
         district {
           id
           name
+          slug
         }
       }
       avatar {
@@ -160,7 +161,7 @@ export function getCandidatesByCargoAndDistrict ({idExcept, cargo,district}){
   const exceptId = idExcept ? `id:{_neq: ${Number(idExcept)}}`:''
   return(`
   {
-    candidato(filter:{cargo:{_eq:"${cargo}"},distrito_nacional:{id:{_eq :${Number(district)}}}${exceptId}}){
+    candidato(filter:{cargo:{_eq:"${cargo}"},distrito_nacional:{slug:{_eq :"${district}"}}${exceptId}}){
       name
       cargo
       genre

@@ -1,5 +1,5 @@
 <script context="module">
-	import { getPartyById, getPartyByalianzas, getPartysByDistrict } from '$lib/graph-ql/partidos.js';
+	import { getPartyById, getPartyByalianzasNacion, getPartysByDistrict } from '$lib/graph-ql/partidos.js';
 	import API, { handleResponse } from '$lib/apiHandler';
 	export async function load({ fetch, page }) {
 		const res = await API(fetch, getPartyById(page.params.partido));
@@ -8,7 +8,7 @@
 		const propsTwo = await handleResponse(resTwo, 'candidates', 'candidato');
 	
 		if (globalProps.props.partidos[0].district.slug === 'nacion' &&	globalProps.props.partidos[0].tipo === 'partido') {
-			const resListAlianzas = await API(fetch, getPartyByalianzas(page.params.partido));
+			const resListAlianzas = await API(fetch, getPartyByalianzasNacion(page.params.partido));
 			const propsListAlianzas = await handleResponse(resListAlianzas, 'partidos', 'partido');
 			globalProps.props.alianzas = propsListAlianzas.props.partidos;
 			
@@ -29,7 +29,7 @@
 	} from '$lib/common/utils';
 	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 	import Proposal from '../../../../lib/common/proposal.svelte';
-	import { getCandidatesByCargoAndDistrict, getCandidatesByParty } from '$lib/graph-ql/candidates';
+	import { getCandidatesByParty } from '$lib/graph-ql/candidates';
 	import PartyProposalCard from '$lib/common/card-party/party-proposal-card.svelte';
 
 	export let partidos;

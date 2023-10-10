@@ -31,6 +31,13 @@ export const cargosSlugsAbbreviated ={
   'vice-gobernador': 'Vice Gob.'
 }
 
+export const typeProposaldistrict = [
+  {name:'presidenciales', slug:'nacion'},
+  {name:'caba', slug:'caba'},
+  {name:'pba', slug:'buenos-aires'}
+]
+
+
 export const ProvinciasSlugs = [
 	{		"name": "Buenos Aires",		"slug": "buenos-aires"	},
 	{		"name": "CABA",		"slug": "caba"	},
