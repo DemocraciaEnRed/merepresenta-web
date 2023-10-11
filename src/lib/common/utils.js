@@ -19,7 +19,7 @@ export const cargosSlugs ={
   'diputado-nacional': {'m':'Diputado Nacional','f':'Diputada Nacional'},
   'senador-nacional':{'m':'Senador Nacional','f':'Senadora Nacional'},
   'gobernador':{'m':'Jefe de gobierno','f':'Jefa de gobierno'},
-  'vice-gobernador': {'m':'Vicegobernador','f':'Vicegobernadora'}
+  'vice-gobernador': {'m':'Vicejefe de gobierno','f':'Vicejefa de gobierno'}
 }
 
 export const cargosSlugsAbbreviated ={

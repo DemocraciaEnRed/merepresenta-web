@@ -57,6 +57,7 @@
 	}
 
 	async function changeParty() {
+		partySelected = null
 		partyId = await this.dataset.party;
 		const res = await API(fetch, getPartyById(partyId));
 		const response = await handleResponse(res, 'partido', 'partido');
@@ -65,6 +66,8 @@
 
 		partySelected = response.props.partido[0];
 		candidatesSelected = responseTwo.props.candidates;
+		partysToCompare = null;
+		proposalType = 'nacion'
 	}
 
 	async function handleProposalType(event) {
@@ -77,9 +80,11 @@
 				filteredThemes = themes.filter((tema) => tema.slug !== 'vivienda-y-transporte')
 				const resParty = await API(fetch, getPartysByDistrict('nacion'));
 				const propsParty = await handleResponse(resParty, 'partidos', 'partido');
-				
-				partysToCompare = await propsParty.props.partidos.filter((party) => party.tipo === 'lista');
-				candidatesForType = candidates
+				setTimeout(() => {
+					partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista');
+					candidatesForType = candidates
+					
+				}, 1000);
 			}else {
 				filteredThemes = proposalType === 'caba' ? themes.filter((tema) => tema.slug !== 'empleo'): themes.filter((tema) => tema.slug !== 'empleo').filter((tema) => tema.slug !== 'vivienda-y-transporte')
 				const res = await API(fetch, getCandidatesByCargoAndDistrict({cargo:'gobernador',district:proposalType}));
@@ -87,10 +92,15 @@
 				const resParty = await API(fetch, getPartysByDistrict(proposalType));
 				const propsParty = await handleResponse(resParty, 'partidos', 'partido');
 				
-				partysToCompare = await propsParty.props.partidos.filter((party) => party.tipo === 'lista');
-				candidatesForType = responseCandidates.props.candidates
+				setTimeout(() => {
+					partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista');
+					candidatesForType = responseCandidates.props.candidates
+					
+				}, 1000);
+
 			}
 		}else{
+			partySelected =null
 			if (proposalType === 'nacion') {
 				const res = await API(fetch, getPartyById(partyId));
 				const response = await handleResponse(res, 'partido', 'partido');
@@ -99,6 +109,8 @@
 
 				partySelected = response.props.partido[0];
 				candidatesSelected = responseTwo.props.candidates;
+					
+
 			}else{
 				const res1 = await API(fetch, getPartyById(partyId));
 				const response1 = await handleResponse(res1, 'partido', 'partido');
