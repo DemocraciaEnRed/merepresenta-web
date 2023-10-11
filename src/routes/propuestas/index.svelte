@@ -201,7 +201,7 @@
 			</section>
 			{#if partySelected}
 				<hr class="w-75 mx-auto" />
-				<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center">
+				<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center w-75 mx-auto">
 					{#each typeProposaldistrict as district}
 						<button
 							id={district.slug}
@@ -262,7 +262,7 @@
 	{:else if partysToCompare}
 		<section class="container p-2">
 			<h1 class="is-size-4 is-size-3-mobile mb-3 has-text-weight-medium has-text-black has-text-centered">Tipo de propuesta</h1>
-			<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center">
+			<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center w-75 mx-auto">
 				{#each typeProposaldistrict as district}
 					<button
 						id={district.slug}
