@@ -41,7 +41,7 @@
 								{/each}
 							</div>
 						</div>
-						<footer class="card-footer has-background-black disabled-link">
+						<footer class="card-footer has-background-dark disabled-link">
 							<a  class="card-footer-item is-uppercase has-text-white">pba</a>
 							<span class="tag is-dark is-large disclaimer">No hay propuestas para este distrito</span>
 						</footer>
