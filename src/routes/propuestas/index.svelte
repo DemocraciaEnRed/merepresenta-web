@@ -75,6 +75,7 @@
 	}
 
 	async function handleProposalType(event) {
+		if (proposalType === event.target.id) return
 		let partyIfFail = partySelected
 		partysToCompare = null;
 		proposalType = event.target.id;
@@ -347,7 +348,7 @@
 	}
 	.button-type-proposal {
 		font-size: 1rem;
-		flex: 1;
+		width: 80%;
 	}
 	.fill-select {
 		width: 100%;
