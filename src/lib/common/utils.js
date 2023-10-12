@@ -32,8 +32,8 @@ export const cargosSlugsAbbreviated ={
 }
 
 export const typeProposaldistrict = [
-  {name:'caba', slug:'caba'},
   {name:'presidenciales', slug:'nacion'},
+  {name:'caba', slug:'caba'},
   {name:'pba', slug:'buenos-aires'}
 ]
 

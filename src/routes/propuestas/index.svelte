@@ -178,7 +178,7 @@
 			<hr class="w-75 mx-auto" />
 			<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center w-75 mx-auto">
 				{#each typeProposaldistrict as district}
-				<div class="{district.slug === 'buenos-aires' ? 'disabled-link':''}">
+				<div class="{district.slug === 'buenos-aires' ? 'disabled-link':''} district-button">
 
 					<button
 						id={district.slug}
@@ -255,7 +255,7 @@
 			<h1 class="is-size-4 is-size-3-mobile mb-3 has-text-weight-medium has-text-black has-text-centered">Tipo de propuesta</h1>
 			<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center w-75 mx-auto">
 				{#each typeProposaldistrict as district}
-				<div class="{district.slug === 'buenos-aires' ? 'disabled-link':''}">
+				<div class="{district.slug === 'buenos-aires' ? 'disabled-link':''} district-button">
 					<button
 						id={district.slug}
 						class="button {proposalType !== district.slug &&
@@ -290,7 +290,7 @@
 	.disclaimer{
 		display: none;
 		position: absolute;
-		bottom: 100%;
+		bottom: -100%;
 		left: 50%;
 		text-align: center;
 		width: 100%;
@@ -304,7 +304,10 @@
 	.disabled-link:hover > .disclaimer{
 		display: block;
 	}
-
+	.district-button{
+		width: 25%;
+		text-align: center;
+	}
 	.box {
 		border: 1px solid #cfcfcf;
 		border-bottom: 0;
@@ -343,7 +346,6 @@
 		font-size: 1.3rem;
 	}
 	.button-type-proposal {
-		margin: 0 3rem;
 		font-size: 1rem;
 		flex: 1;
 	}
@@ -356,6 +358,10 @@
 	}
 
 	@media screen and (max-width: 768px) {
+		.district-button{
+		width: 100%;
+
+		}	
 		.section {
 			padding: 3rem 0.5rem;
 		}
@@ -380,7 +386,6 @@
 			font-size: 1rem;
 		}
 		.button-type-proposal{
-			margin: 0 2rem;
 			width: 50%;
 			flex: 1;
 		}
