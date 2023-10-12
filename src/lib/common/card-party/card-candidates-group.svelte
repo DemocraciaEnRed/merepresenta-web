@@ -1,20 +1,21 @@
 <script>
 	import NacionCandidateCard from '../nacion-candidate-card.svelte';
-
+	export let wrap = false
+	export let fullWidth = false
 	export let candidates;
 	export let verticalTitle;
 </script>
 
 {#if candidates}
-	<div class="is-flex my-3 is-flex-direction-column is-align-items-center mx-auto">
-		<div class="card card-party is-flex">
+	<div class="is-flex {wrap ? 'my-0':'my3'} is-flex-direction-column is-align-items-center mx-auto {fullWidth ? 'is-fullwidth':''}">
+		<div class="card card-party is-flex {wrap ? 'is-wrap my-0':''}">
 			<div class="card-header is-align-items-center is-justify-content-center">
 				<div class="is-uppercase has-text-white has-text-vertical verticalTitle">
 					{verticalTitle}
 				</div>
 			</div>
 			<div
-				class="card-content p-0 is-mobile is-flex m-0"
+				class="card-content p-0 is-mobile is-flex m-0 "
 			>
 				{#if candidates}
 					{#each candidates as candidate}
@@ -38,6 +39,13 @@
 	.candidate-container {
 		position: relative;
 		min-width: 25%;
+		flex: 1;
+	}
+	.is-fullwidth{
+		width: 100%;
+	}
+	.is-fullwidth .card-party{
+		width: 100%;
 	}
 
 	.candidate-container:not(:last-of-type):after {
@@ -70,6 +78,7 @@
 	}
 	.card-content {
 		overflow: auto;
+		flex: 1;
 	}
 
 	.has-text-vertical {
@@ -81,11 +90,24 @@
 	.verticalTitle {
 		white-space: nowrap;
 	}
+	.is-fullwidth .card-party{
+			max-width: 100%;
+		}
 	.card-header{border-radius: 0;}
 
 	@media screen and (max-width: 768px) {
 		.candidate-container {
 			min-width: 50%;
+		}
+		.is-fullwidth .card-party{
+			max-width: 100%;
+		}
+		.is-wrap .card-content{
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.is-fullwidth .candidate-container{
+			min-width: 100%;
 		}
 		.candidate-container:last-of-type {
 			border-left: none;

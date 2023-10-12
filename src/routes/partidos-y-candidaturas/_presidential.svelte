@@ -15,9 +15,10 @@
 	import SkeletonSelect from '$lib/common/skeleton-select.svelte';
 	import SelectDistrict from '$lib/common/SelectDistrict.svelte';
 	import CardCandidatesGroup from '$lib/common/card-party/card-candidates-group.svelte';
-	import { getCandidatesByPartyList } from '$lib/graph-ql/candidates';
+	import { getCandidatesByParty, getCandidatesByPartyList } from '$lib/graph-ql/candidates';
 
 	export let candidates;
+	export let presidential = false
 	let randomCandidates = shuffleArray(candidates);
 
 	// Valor reactivo para controlar el ancho de la ventana
@@ -34,7 +35,12 @@
 		partyId = await this.dataset.party;
 		const res = await API(fetch, getPartyById(partyId));
 		const response = await handleResponse(res, 'partido', 'partido');
-
+		if (!presidential) {
+			const resCandidates = await API(fetch, getCandidatesByParty(partyId));
+			const responseCandidates = await handleResponse(resCandidates, 'candidatos', 'candidato');
+			
+			candidatesDistrict = responseCandidates.props.candidatos
+		}
 		partySelected = response.props.partido[0];
 	}
 	async function handleSelectDistrict(event) {
@@ -73,6 +79,7 @@
 	<section
 		class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black"
 	>
+	{#if presidential}
 		<CardParty
 			{partySelected}
 			verticalTitle="presidenciales"
@@ -80,27 +87,47 @@
 			showProposalButton
 			district={{ slug: 'nacion' }}
 		/>
-	</section>
-	<section
-		class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black is-align-items-center"
-	>
-	<h1 class="is-size-4 is-size-3-mobile has-text-weight-medium has-text-black has-text-centered">
-		¿Querés conocer el resto de la fórmula?
-	</h1>
-	<SelectDistrict on:change={handleSelectDistrict}/>
+	{:else}
+	<div class="w-50 mx-auto">
+		<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')} verticalTitle="gobernadores" wrap fullWidth/>
 
-	
-</section>
-	{#if candidatesDistrict}
-		{#if candidatesDistrict.some(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')}
-			<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')} verticalTitle="Poder Ejecutivo Local" />
-		{/if}
-		{#if candidatesDistrict.some(candidate => candidate.cargo === 'senador-nacional')}
-			<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'senador-nacional')} verticalTitle="P.L. Senadores" />
-		{/if}
-		{#if candidatesDistrict.some(candidate => candidate.cargo === 'diputado-nacional')}
-			<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'diputado-nacional')} verticalTitle="P.L. Diputados" />
-		{/if}
+	</div>
+
+
+	{/if}
+	</section>
+	{#if presidential}
+		<section
+			class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black is-align-items-center"
+		>
+		<h1 class="is-size-4 is-size-3-mobile has-text-weight-medium has-text-black has-text-centered">
+			¿Querés conocer el resto de la fórmula?
+		</h1>
+		<SelectDistrict on:change={handleSelectDistrict}/>
+
+		
+		</section>
+		
+			{#if candidatesDistrict}
+				{#if candidatesDistrict.some(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')}
+					<div class="my-3">
+						<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')} verticalTitle="Poder Ejecutivo Local" />
+
+					</div>
+				{/if}
+				{#if candidatesDistrict.some(candidate => candidate.cargo === 'senador-nacional')}
+					<div class="my-3">
+						<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'senador-nacional')} verticalTitle="P.L. Senadores" />
+
+					</div>
+				{/if}
+				{#if candidatesDistrict.some(candidate => candidate.cargo === 'diputado-nacional')}
+					<div class="my-3">
+						<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'diputado-nacional')} verticalTitle="P.L. Diputados" />
+
+					</div>
+				{/if}
+			{/if}
 	{/if}
 	<section class="container">
 		<Proposal proposals={partySelected.ejes} partido={partySelected} />
