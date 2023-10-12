@@ -20,7 +20,7 @@
 </script>
 <main  class="pb-6 has-background-white white-background-desktop">
 
-  <Presidential {candidates} logo='/logo-caba.png' title='PARTIDOS Y CANDIDATURAS {district.name}' subtitle='Conocé la fórmula completa del partido de tu interés'/>
+  <Presidential {candidates} noProposal={district.slug==='buenos-aires'} logo='/logo-{district.slug}.png' title='PARTIDOS Y CANDIDATURAS {district.name}' subtitle='Conocé la fórmula completa del partido de tu interés'/>
   <GobLegislative/>
 </main>
 

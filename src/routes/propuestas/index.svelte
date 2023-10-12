@@ -178,14 +178,21 @@
 			<hr class="w-75 mx-auto" />
 			<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center w-75 mx-auto">
 				{#each typeProposaldistrict as district}
+				<div class="{district.slug === 'buenos-aires' ? 'disabled-link':''}">
+
 					<button
 						id={district.slug}
 						class="button {proposalType !== district.slug &&
 							'is-outlined'} my-1 is-black is-rounded is-uppercase button-type-proposal"
 						on:click={handleProposalType}
+						disabled={district.slug === 'buenos-aires'}
 					>
 						{district.name}
 					</button>
+					{#if district.slug === 'buenos-aires'}
+					<span class="tag is-dark is-large disclaimer">No hay propuestas para este distrito</span>
+					{/if}
+				</div>
 				{/each}
 			</div>
 				
@@ -248,14 +255,20 @@
 			<h1 class="is-size-4 is-size-3-mobile mb-3 has-text-weight-medium has-text-black has-text-centered">Tipo de propuesta</h1>
 			<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center w-75 mx-auto">
 				{#each typeProposaldistrict as district}
+				<div class="{district.slug === 'buenos-aires' ? 'disabled-link':''}">
 					<button
 						id={district.slug}
 						class="button {proposalType !== district.slug &&
 							'is-outlined'} my-1 is-black is-rounded is-uppercase button-type-proposal"
 						on:click={handleProposalType}
+						disabled={district.slug === 'buenos-aires'}
 					>
 						{district.name}
 					</button>
+					{#if district.slug === 'buenos-aires'}
+					<span class="tag is-dark is-large disclaimer">No hay propuestas para este distrito</span>
+					{/if}
+				</div>
 				{/each}
 			</div>
 			{#each filteredThemes as eje}
@@ -270,7 +283,27 @@
 </main>
 
 <style>
+	.disabled-link{
+		position: relative;
+	}
 
+	.disclaimer{
+		display: none;
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		text-align: center;
+		width: 100%;
+		height: fit-content;
+		white-space: break-spaces;
+		font-size: 1rem;
+		z-index: 999;
+		transform: translate(-50%, 0%);
+	}
+
+	.disabled-link:hover > .disclaimer{
+		display: block;
+	}
 
 	.box {
 		border: 1px solid #cfcfcf;

@@ -20,6 +20,7 @@
 	export let logo
 	export let title
 	export let subtitle
+	export let noProposal = false
 
 	export let candidates;
 	export let presidential = false
@@ -60,7 +61,7 @@
 
 <section class="container p-2">
 	<div class="has-text-centered mt-6 has-text-black">
-		<img src="{logo}" class="logo-top" alt="casa rosada" />
+		<img src="{logo}" class="logo-top" alt="logo" />
 		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black is-uppercase">
 			{title}
 		</h1>
@@ -134,7 +135,13 @@
 			{/if}
 	{/if}
 	<section class="container">
-		<Proposal proposals={partySelected.ejes} partido={partySelected} />
+		{#if !noProposal}
+			<Proposal proposals={partySelected.ejes} partido={partySelected} />
+		{:else}
+		<h3 class="is-size-4 has-text-weight-light has-text-centered my-4">
+			No hay propuestas de este partido para este distrito
+		</h3>
+		{/if}
 	</section>
 {:else}
 	<SkeletonSelect img="/candidate.svg" text="Elegí una candidatura para conocer su fórmula y sus propuestas" />

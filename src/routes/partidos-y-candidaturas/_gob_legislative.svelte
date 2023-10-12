@@ -41,9 +41,8 @@
 								{/each}
 							</div>
 						</div>
-						<footer class="card-footer has-background-dark disabled-link">
-							<a  class="card-footer-item is-uppercase has-text-white">pba</a>
-							<span class="tag is-dark is-large disclaimer">No hay propuestas para este distrito</span>
+						<footer class="card-footer has-background-black">
+							<a href="/partidos-y-candidaturas/{gobernors.filter((gob) => gob.distrito_nacional.slug === 'buenos-aires')[0].distrito_nacional.slug}" class="card-footer-item is-uppercase has-text-white">pba</a>
 						</footer>
 					</div>
 				</div>
@@ -78,7 +77,7 @@
 						</header>
 						<div class="card-content px-0 pb-0">
 							<div class="content p-3">
-								Conocé las candidaturas a Jefes/as de Gobiernp de CABA, junto con sus propuestas
+								Conocé las candidaturas a Jefes/as de Gobierno de CABA, junto con sus propuestas
 							</div>
 							<div class="is-flex">
 								{#each gobernors.filter((gob) => gob.distrito_nacional.slug === 'caba') as gob}
@@ -102,27 +101,6 @@
 <style>
 	.legislative-card {
 		height: 100%;
-	}
-	.disabled-link{
-		position: relative;
-	}
-
-	.disclaimer{
-		display: none;
-		position: absolute;
-		bottom: 100%;
-		left: 50%;
-		text-align: center;
-		width: 80%;
-		height: fit-content;
-		white-space: break-spaces;
-		font-size: 1rem;
-		z-index: 999;
-		transform: translate(-50%, 0%);
-	}
-
-	.disabled-link:hover > .disclaimer{
-		display: block;
 	}
 	.image-gob {
 		width: 25%;
