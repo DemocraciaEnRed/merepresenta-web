@@ -17,6 +17,10 @@
 	import CardCandidatesGroup from '$lib/common/card-party/card-candidates-group.svelte';
 	import { getCandidatesByParty, getCandidatesByPartyList } from '$lib/graph-ql/candidates';
 
+	export let logo
+	export let title
+	export let subtitle
+
 	export let candidates;
 	export let presidential = false
 	let randomCandidates = shuffleArray(candidates);
@@ -56,12 +60,12 @@
 
 <section class="container p-2">
 	<div class="has-text-centered mt-6 has-text-black">
-		<img src="/pink-house.png" class="logo-top" alt="casa rosada" />
-		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black">
-			PARTIDOS Y CANDIDATURAS
+		<img src="{logo}" class="logo-top" alt="casa rosada" />
+		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black is-uppercase">
+			{title}
 		</h1>
 		<h3 class="is-size-4-desktop is-size-6-touch has-text-weight-light">
-			Conocé la fórmula completa del partido de tu interés
+			{subtitle}
 		</h3>
 	</div>
 </section>

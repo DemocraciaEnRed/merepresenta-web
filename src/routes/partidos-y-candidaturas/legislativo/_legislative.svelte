@@ -41,8 +41,17 @@
 					
 				<Dropdown class="has-text-black " darkMode backgroundHeader name={party.name}>
 						
-						<div class="is-flex is-flex-direction-row is-justify-content-center">
-							<CardCandidatesGroup candidates={candidates.filter(candidate => candidate.partido.id=== party.id)} verticalTitle="Poder Ejecutivo Local" wrap fullWidth/>
+						<div class="is-flex is-flex-direction-column is-justify-content-center">
+							{#if candidates.filter(candidate => candidate.partido.id === party.id).some(candidate => candidate.cargo === 'diputado-nacional')}
+								<div class="my-2">
+									<CardCandidatesGroup candidates={candidates.filter(candidate => candidate.partido.id=== party.id).filter(candidate => candidate.cargo === 'diputado-nacional')} verticalTitle="Diputados/as" wrap fullWidth/>
+								</div>
+							{/if}
+							{#if candidates.filter(candidate => candidate.partido.id === party.id).some(candidate => candidate.cargo === 'senador-nacional')}
+								<div class="my-2">
+									<CardCandidatesGroup candidates={candidates.filter(candidate => candidate.partido.id=== party.id).filter(candidate => candidate.cargo === 'senador-nacional')} verticalTitle="senadores/as" wrap fullWidth/>
+								</div>
+							{/if}
 						</div>
 				</Dropdown>
 				{/each}

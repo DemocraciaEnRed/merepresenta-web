@@ -1,67 +1,29 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
-	import { getCandidatesByCargo, getCandidatesByCargoAndDistrict } from '$lib/graph-ql/candidates';
+	import { getCandidatesByCargoAndDistrict } from '$lib/graph-ql/candidates';
+	import { getDistricts } from '$lib/graph-ql/distritos';
 	export async function load({ page, fetch }) {
 		const res = await API(fetch, getCandidatesByCargoAndDistrict({cargo:'gobernador',district:page.params.provincia}));
-		const candidates = await handleResponse(res, 'candidates', 'candidato');
-
-		return candidates;
+		const response = await handleResponse(res, 'candidates', 'candidato');
+    	const res2 = await API(fetch, getDistricts());
+		const response2 = await handleResponse(res2, 'provincias', 'distritos');
+    	response.props.district = response2.props.provincias.find(provincia => provincia.slug === page.params.provincia) 
+		return response;
 	}
 </script>
 <script>
 	import GobLegislative from "../_gob_legislative.svelte";
-import Presidential from "../_presidential.svelte";
-
+  import Presidential from "../_presidential.svelte";
+  
+  export let district
 	export let candidates;
 </script>
 <main  class="pb-6 has-background-white white-background-desktop">
 
-  <Presidential {candidates}/>
+  <Presidential {candidates} logo='/logo-caba.png' title='PARTIDOS Y CANDIDATURAS {district.name}' subtitle='Conocé la fórmula completa del partido de tu interés'/>
   <GobLegislative/>
 </main>
 
 <style>
-.tetris-background{
-  background-image: url('/white-background-desktop.png');
-  background-size: auto;
-  background-attachment: fixed;
-}
-.party-logo{
-    /* height: 150px; */
-    width: 100%;
-    /* margin: 0 auto; */
-    border: 1px solid black;
-    border-bottom: 0;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.name-partido{
-  text-transform: uppercase;
-  padding: 2px 10px;
-  height: 100px;
-  line-height: normal;
-  font-weight: 500;
-}
-/* .party-logo{
-  height: 150px;
-  width: 100%;
-  margin: 0 auto;
-  border: 1px solid;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: #fff;
-}
-h2{
-  text-align: center;
-  background-color: black;
-  color: white
-}
-section{
-  margin-top: 50px;
-}
-h1{
-  font-weight: 300;
-} */
+
 </style>

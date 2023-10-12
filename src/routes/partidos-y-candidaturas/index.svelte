@@ -18,7 +18,7 @@
 </script>
 
 <main class="pb-6 has-background-white white-background-desktop">
-	<Presidential {candidates} presidential />
+	<Presidential {candidates} presidential logo='/pink-house.png' title='PARTIDOS Y CANDIDATURAS' subtitle='Conocé la fórmula completa del partido de tu interés'/>
 	<GobLegislative/>
 	<!-- <Legislative />
 	<Gobernor /> -->

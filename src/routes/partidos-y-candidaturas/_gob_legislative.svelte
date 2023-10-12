@@ -41,8 +41,9 @@
 								{/each}
 							</div>
 						</div>
-						<footer class="card-footer has-background-black">
-							<a href="/partidos-y-candidaturas/{gobernors.filter((gob) => gob.distrito_nacional.slug === 'buenos-aires')[0].distrito_nacional.slug}" class="card-footer-item is-uppercase has-text-white">pba</a>
+						<footer class="card-footer has-background-black disabled-link">
+							<a  class="card-footer-item is-uppercase has-text-white">pba</a>
+							<span class="tag is-dark is-large disclaimer">No hay propuestas para este distrito</span>
 						</footer>
 					</div>
 				</div>
@@ -55,7 +56,8 @@
 								PODER LEGISLATIVo
 							</p>
 						</header>
-						<div class="card-content">
+						<img src="/deputies-chamber.png" alt="" class="mx-auto" style="height: auto; max-width:50%">
+						<div class="card-content pt-1">
 							<div class="content">
 								Conocé las candidaturas de P.L. que no pertenecen a ninguna lista, explóralas por
 								distrito
@@ -72,7 +74,7 @@
 				<div class="column">
 					<div class="card legislative-card">
 						<header class="card-header">
-							<p class="card-header-title is-justify-content-center is-uppercase">CABA</p>
+							<p class="card-header-title is-justify-content-center is-uppercase">Ciudad de Buenos Aires</p>
 						</header>
 						<div class="card-content px-0 pb-0">
 							<div class="content p-3">
@@ -100,6 +102,27 @@
 <style>
 	.legislative-card {
 		height: 100%;
+	}
+	.disabled-link{
+		position: relative;
+	}
+
+	.disclaimer{
+		display: none;
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		text-align: center;
+		width: 80%;
+		height: fit-content;
+		white-space: break-spaces;
+		font-size: 1rem;
+		z-index: 999;
+		transform: translate(-50%, 0%);
+	}
+
+	.disabled-link:hover > .disclaimer{
+		display: block;
 	}
 	.image-gob {
 		width: 25%;
