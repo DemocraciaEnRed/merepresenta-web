@@ -30,6 +30,7 @@
 	import SkeletonSelect from '$lib/common/skeleton-select.svelte';
 	import { typeProposaldistrict } from '$lib/common/utils';
 	import { getThemes } from '$lib/graph-ql/themes';
+	import MereSpinner from '$lib/common/mereSpinner.svelte';
 
 	export let candidates;
 	export let themes;
@@ -277,7 +278,7 @@
 			{/each}
 		</section>
 	{:else}
-		<progress class="progress is-large is-dark w-75 m-auto" max="100" />
+		<MereSpinner />
 	{/if}
 
 

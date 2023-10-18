@@ -18,6 +18,7 @@
   import Party from "./_party.svelte";
   import { CandidateImg, cargosSlugs } from "$lib/common/utils";
 	import CandidateCard from '$lib/common/candidate-card.svelte';
+	import MereSpinner from "$lib/common/mereSpinner.svelte";
   
   export let candidate;
   let otherCandidates;
@@ -89,10 +90,7 @@
           <CandidateCard  showParty candidate={candidate}/>
         {/each}
       {:else}
-        <div class="progres-wrapper">
-          <progress class="progress is-large is-dark" max="100">60%</progress>
-
-        </div>
+        <MereSpinner height="300px" />
       {/if}
     </div>
   </div>
@@ -115,9 +113,6 @@
     border-left: 10px solid #000;
     border-right: 10px solid #000;
     overflow: hidden;
-  }
-  .progres-wrapper{
-    width: 50%;
   }
   .comparative-button{
     position: fixed;
@@ -147,9 +142,7 @@
     .party-text-container {
       width: 100%;
     }
-    .progres-wrapper{
-      width: 90%;
-    }
+
   }
 
 </style>

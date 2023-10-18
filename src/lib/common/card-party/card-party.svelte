@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 	import { PartyImg } from '../utils';
 	import NacionCandidateCard from '../nacion-candidate-card.svelte';
+	import MereSpinner from '../mereSpinner.svelte';
 
 	export let showListButton;
 	export let showProposalButton;
@@ -125,19 +126,11 @@
 		</div> -->
 	</div>
 {:else}
-	<div class="fill-select is-flex is-justify-content-center" >
-		<progress class="progress is-medium is-dark" max="100"></progress>
-	</div>
+	<MereSpinner height="500px"/>
 {/if}
 
 <style>
-	.fill-select {
-		height: 575px;
-		width: 100%;
-	}
-	.fill-select .progress {
-		width: 80%;
-	}
+	
 
 	.card-party-wrapper {
 		width: 80%;

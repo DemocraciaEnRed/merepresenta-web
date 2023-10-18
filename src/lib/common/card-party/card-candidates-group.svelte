@@ -102,10 +102,10 @@
 		.is-fullwidth .card-party{
 			max-width: 100%;
 		}
-		.is-wrap .card-content{
+		/* .is-wrap .card-content{
 			flex-wrap: wrap;
 			justify-content: center;
-		}
+		} */
 		.is-fullwidth .candidate-container{
 			min-width: 100%;
 		}

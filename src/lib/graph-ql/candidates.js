@@ -250,7 +250,7 @@ export function getCandidatesByCargo (cargo){
 export function getCandidatesToLegislativeSection (district){
   return(`
   {
-    candidato(filter:{_and:[{cargo:{_neq:"gobernador"}}, {cargo:{_neq:"vice-gobernador"}},{ _or:[{position:{_eq:1}},{position:{_eq:2}}]}],distrito_nacional:{slug:{_eq:"${district}"}}},sort: ["cargo","position"],limit:2000){
+    candidato(filter:{_and:[{cargo:{_neq:"gobernador"}}, {cargo:{_neq:"vice-gobernador"}}],distrito_nacional:{slug:{_eq:"${district}"}}},sort: ["cargo","position"],limit:2000){
       name
       cargo
       genre
