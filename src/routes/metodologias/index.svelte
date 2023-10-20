@@ -19,6 +19,7 @@
             <div class="has-background-white pb-5 pt-2 px-2">
                 <p class="mb-4"><strong>#MeRepresenta</strong> se propone como un sitio único que <strong>sistematiza y compila información útil para quien vote en las Elecciones de 2023</strong>. </p> 
                 <p class="mb-4">La plataforma permite acceder a datos de las candidaturas, de los partidos y de sus propuestas electorales. A ello sumamos, como complemento, una sección con información general sobre las Elecciones en Argentina y otra sección, con juegos, para proponer un acercamiento distinto a los datos.</p>
+                <p class="mb-4">Para el desarrollo de cada una de las secciones seguimos una metodología de trabajo orientada hacia un resultado que fuera riguroso y, a la vez, que ofreciera la información de forma sencilla y atractiva.</p>
                 <p class="mb-4">En esta segunda edición, actualizamos la metodología tomando aprendizajes de la primera implementación en 2021. Como siempre, trabajamos con información de distinta índole, de distintas fuentes y buscamos que, aún así, mantenga coherencia. Todo un desafío.</p>
                 <p class="mb-4">En esta sección, contamos cómo lo hicimos.</p>
                 <div class="info-metodology">
@@ -39,14 +40,25 @@
                 <p>El trabajo combinó técnicas automatizadas con trabajo artesanal. A partir de información publicada por la Cámara Nacional Electoral (<a href="https://www.electoral.gob.ar/nuevo/paginas/btn/elecc2023.php">CNE</a>) pudimos conseguir la base de datos con información de todas las personas que se presentan a las PASO (ver <a href="https://drive.google.com/drive/folders/1WvjL0X8-i0F1qSJ2xs5HUy1YY2XPGmG6?usp=sharing">aquí</a>). </p>
                 <p>Como fuente de información utilizamos bases de datos propias elaboradas para #MeRepresenta 2021 y las bases de elaboración propia de Directorio Legislativo.</p>
                 <p>La última capa de información fue aportada por trabajo humano. Y nos enfocamos no solo en los datos de la candidatura (posición, lista, alianza partidaria) sino que también buscamos su edad, redes sociales (Twitter, Instagram y Facebook), profesión y último grado de estudios. </p>
-                <p>Para la elección general, cuando las candidaturas estén formalmente definidas, nos proponemos agregar su recorrido político. </p>
+                <p>Para la elección general, cuando las candidaturas estén formalmente definidas, nos proponemos agregar su recorrido político.</p>
             </div>
         </Dropdown>
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE PROPUESTAS">
             <div>
-                <p>Para analizar las propuestas de los partidos, priorizamos las propuestas de las candidaturas al Poder Ejecutivo Nacional. El desafío en esta sección fue doble: a la tarea enciclopédica de organizar un enorme caudal de información se sumó la de establecer criterios: “¿dónde están las propuestas?” </p>
+                <p>Para analizar las propuestas de los partidos, priorizamos las propuestas de las candidaturas al <strong>Poder Ejecutivo Nacional</strong>. El desafío en esta sección fue doble: a la tarea enciclopédica de organizar un enorme caudal de información se sumó la de establecer criterios: “¿dónde están las propuestas?” </p>
+                <p>Para la primera tarea, nos encontramos frente a la dificultad de establecer criterios de pertinencia.</p>
+                <p>Como fuente principal utilizamos <strong>las plataformas electorales de los sitios web oficiales</strong> de las candidaturas.</p>
 
-                <p>Para la primera tarea, una vez definida la fuente, encuadramos las propuestas electorales de los partidos que compiten en las PASO en 6 EJES TEMÁTICOS:</p>
+                <p>Si no se encontraron propuestas en la web oficial de la persona que se candidatea (o no hay web oficial) utilizamos como fuente <strong>las plataformas electorales presentadas frente a la <a href="https://www.electoral.gob.ar/nuevo/index.php">Cámara Nacional Electoral</a></strong>, que están disponibles haciendo click <a href="https://www.electoral.gob.ar/nuevo/paginas/plataformas2021/">aquí</a>. En muchos casos hay una propuesta para cada partido o frente (no distingue entre listas dentro de ese partido o frente), en esos casos no será posible comparar las propuestas de las distintas precandidaturas de la interna. </p>
+                <p>En algunos casos al no contar con propuestas oficiales escritas en su sitio web buscamos fuentes alternativas manteniendo un criterio metodológico para definir qué puede tomarse en cuenta como propuesta y qué no. Utilizamos como fuente <strong>los últimos videos subidos en sus canales de Youtube oficiales</strong> con los siguiente prioridades y requisitos: </p>
+
+                <ul>
+                    <li>que el candidato o candidata esté hablando directamente de sus propuestas (una entrevista, spot publicitario, conferencia, discurso),</li>
+                    <li>que el video sea de 2023.</li>
+                    <li>elegimos entrevistas a más de un medio de comunicación.</li>
+                </ul>
+
+                <p>Para la segunda tarea, la de <strong>organizar la información</strong>, encuadramos las propuestas electorales de los partidos que compiten en las PASO en <strong>6 EJES TEMÁTICOS:</strong></p>
                 <ul>
                     <li>Economía</li>
                     <li>Democracia</li>
@@ -55,9 +67,9 @@
                     <li>Ambiente</li>
                     <li>Seguridad</li>
                 </ul>
-                <p>La presentación de las propuestas se pensó en 2 niveles para facilitar la navegación de quien visite el sitio. Así, están estructuradas en dos partes: un “resumen”, en forma de punteo, con los “titulares” de las propuestas. Adicionalmente, aquellas personas interesadas en profundizar en el desarrollo de las propuestas pueden acceder a más información en un segundo nivel. </p>
+                <p>La presentación de las propuestas se pensó en 2 niveles para facilitar la navegación de quien visite el sitio. Así, están estructuradas en dos partes: un <strong>“resumen”</strong>, en forma de punteo, con los “titulares” de las propuestas. Adicionalmente, aquellas personas interesadas en profundizar en el desarrollo de las propuestas pueden acceder a más información en un segundo nivel. </p>
                 <p>Para la estandarización se aplicaron criterios de estilo para equilibrar el respeto por la voz original del partido y, a la vez, disponer en pantalla una cantidad razonable de caracteres:<br>
-                Tanto el resumen como la descripción están en infinitivo. Por ejemplo: no es “realización de loquesea” sino “realizar loquesea”.</p>
+                    Tanto el resumen como la descripción están en infinitivo. Por ejemplo: no es “realización de loquesea” sino “realizar loquesea”. </p>
                 <p>Además, en las formulaciones buscamos la expresión directa:</p>
                 <p>no es... <br>
                     <i>"Se propone impulsar una Ley de Seguridad con el objetivo de articular las fuerzas de seguridad para prevenir y reprimir los delitos que se manifiestan de manera regular en los tejidos urbanos." </i></p>
@@ -66,19 +78,15 @@
                 
                 <p>En este ejemplo, los caracteres son la mitad, y la voz está intacta.</p>
                 <p>Con el mismo objetivo de reducir la extensión de los textos, muchos casos aparecen depurados de otras consideraciones políticas que pueden resultar relevantes: </p>
-                <p>sí… <br><i>la "integración paritaria en todos los cargos, especialmente en los referidos a la dirección, conducción y planificación estratégica."</i></p>
+                <p>así… <br><i>la "integración paritaria en todos los cargos, especialmente en los referidos a la dirección, conducción y planificación estratégica."</i></p>
                 <p>quedó sustituída por <br><i>“integración paritaria en todos los cargos”</i></p>
                 <p>Donde dice… <br><i>“La educación inclusiva y de calidad debe estar en la base del desarrollo social y productivo de San Luis y, como tal, debe ser un eje fundamental de la conciencia social. La educación es la principal herramienta de superación personal y progreso colectivo, de formación de ciudadanía, de bienestar presente y futuro y de libertad.”</i></p>
                 <p>se adaptó: <br><i>“Educación inclusiva y de calidad”</i></p>
                 <p>En los casos en donde los partidos presentaban más de cinco propuestas por eje temático, se realizó un corte editorial seleccionando las cinco propuestas con más desarrollo.</p>
                 En cualquier caso, dentro de cada EJE, de cada partido, quien visita <strong>#MeRepresenta</strong> tendrá a disposición un enlace directo a la fuente oficial correspondiente para tomar contacto con la voz directa de cada partido y el total de las propuestas presentadas.</div>
-                <p>En lo que se refiere a la segunda tarea, ¿dónde están las propuestas?, establecer criterios de pertinencia fue más difícil. </p>
-                <p>Como fuente principal utilizamos las plataformas electorales de los sitios web oficiales de las candidaturas.</p>
-                <p>Si no se encontraron propuestas en la web oficial (o no hay web oficial), utilizamos como fuente las plataformas electorales presentadas frente a la <a href="https://www.electoral.gob.ar/nuevo/index.php">Cámara Nacional Electoral</a>, que están disponibles haciendo click <a href="https://www.electoral.gob.ar/nuevo/paginas/propuestas2021/">aquí</a>. Como son únicas para cada partido o frente (no distingue entre listas dentro de ese partido o frente), en esos casos no será posible comparar las propuestas de las distintas precandidaturas de la interna</p>
-                <p>En lo que se refiere a la segunda tarea, ¿dónde están las propuestas?, establecer criterios de pertinencia fue más difícil. <br>
-                    Como fuente principal utilizamos las plataformas electorales de los sitios web oficiales de las candidaturas.
-                </p>
-                <p>Si no se encontraron propuestas en la web oficial de la persona que se candidatea (o no hay web oficial) utilizamos como fuente las plataformas electorales presentadas frente a la Cámara Nacional Electoral, que están disponibles haciendo click aquí. Como en muchos casos son únicas para cada partido o frente (no distingue entre listas dentro de ese partido o frente), en esos casos no será posible comparar las propuestas de las distintas precandidaturas de la interna. </p>
+                <p>En lo que se refiere a la segunda tarea, <strong>¿dónde están las propuestas?</strong>, establecer criterios de pertinencia fue más difícil. </p>
+                <p>Como fuente principal utilizamos <strong>las plataformas electorales de los sitios web oficiales</strong> de las candidaturas.</p>
+                <p>Si no se encontraron propuestas en la web oficial de la persona que se candidatea (o no hay web oficial) utilizamos como fuente <strong>las plataformas electorales presentadas frente a la <a href="https://www.electoral.gob.ar/nuevo/index.php">Cámara Nacional Electoral</a></strong>, que están disponibles haciendo click <a href="https://www.electoral.gob.ar/nuevo/paginas/plataformas2021/">aquí</a>. Como en muchos casos son únicas para cada partido o frente (no distingue entre listas dentro de ese partido o frente), en esos casos no será posible comparar las propuestas de las distintas precandidaturas de la interna.</p>
                 <p class="mb-0">En algunos casos, al no contar con propuestas oficiales escritas en su sitio web buscamos fuentes alternativas, manteniendo un criterio metodológico para definir qué puede tomarse en cuenta como propuesta y qué no. Utilizamos como fuente los últimos videos subidos en sus canales de Youtube oficiales con las siguiente prioridades y requisitos:</p>
                  <ul class="mt-0">
                     <li>que el candidato o candidata esté hablando directamente de sus propuestas (una entrevista, spot publicitario, conferencia, discurso, etc)</li>
@@ -89,7 +97,7 @@
         <Dropdown class="has-text-black" darkMode backgroundHeader name="DATOS DE ABC ELECTORAL">
             <div>
                 <p>Esta sección está formulada en base a preguntas frecuentes, búsquedas populares en Google, preguntas formuladas en redes sociales.</p>
-                <p>Las fuentes utilizadas para elaborar las respuestas de la sección son</p>
+                <p>Las fuentes utilizadas para elaborar las respuestas de la sección son:</p>
                 <ul>
                     <li>Cámara Nacional Electoral - <a href="https://www.electoral.gob.ar/nuevo/index.php">electoral.gob.ar</a></li>
                     <li>Dirección Nacional Electoral - <a href="https://www.argentina.gob.ar/interior/dine">argentina.gob.ar/dine</a></li>
@@ -108,8 +116,7 @@
                 <Dropdown class="has-text-black" fontSizeTitle="is-size-5" name="Compás Político">
                     <div>
                         <p><span class="is-underlined">Desarrollo</span>: <i>Antonio Milanese + Democracia en Red</i></p>
-                        <p>El compás político es un juego basado en el <a href="https://www.politicalcompass.org/" target="_blank">Political Compass</a>, un test que te “encuadra” ideológicamente en base a pocas preguntas. Entre otra de nuestras referencias, principales se encuentra el <a href="https://www.theguardian.com/world/ng-interactive/2018/nov/21/how-populist-are-you-quiz?s=08" target="_blank">How Populist Are You?</a> (¿Cuán Populista Sos?) publicado por The Guardian en 2018. También, consultamos el <a href="https://www.idrlabs.com/es/coordenadas-politicas/prueba.php" target="_blank">Test de Coordenadas Políticas desarrollado por IDRLabs. </a>
-                        </p>
+                        <p>El compás político es un juego basado en el <a href="https://www.politicalcompass.org/" target="_blank">Political Compass</a>, un test que te “encuadra” ideológicamente en base a pocas preguntas. Entre otra de nuestras referencias principales, se encuentra el <a href="https://www.theguardian.com/world/ng-interactive/2018/nov/21/how-populist-are-you-quiz?s=08" target="_blank">How Populist Are You?</a> (¿Cuán Populista Sos?) publicado por The Guardian en 2018. También, consultamos el <a href="https://www.idrlabs.com/es/coordenadas-politicas/prueba.php" target="_blank">Test de Coordenadas Políticas </a> desarrollado por IDRLabs.</p>
                         <p>Tomamos estos conocidos quizzes y los adaptamos al contexto y al vocabulario político argentino. </p>
                         <p>Así, los ejes de los resultados son:
                         </p>
@@ -132,40 +139,24 @@
                             <li>Muy en desacuerdo (-3)
                             </li>
                         </ul>
-                        <p>En este esquema cada pregunta promedia el puntaje en un solo eje. Todas las preguntas tienen el mismo peso y no están ponderadas. 
-                        </p>
-                        <h2 class="is-size-5">Cuestionario
-                        </h2>
-                        <p>El juego tiene 20 preguntas en total. 
-                        </p>
-                        <p>10 corresponden al “Eje Y” y 10 corresponden al “Eje X”.  
-                        </p>
-                        <h2 class="is-size-5">Eje Y - Liberalismo // Populismo
-                        </h2>
-                        <p>En este test, el eje “liberalismo-populismo” se usa como medida de la posición de quien realiza el test en materia política, donde el “liberalismo” se asocia a la defensa de las libertades individuales y al respeto por los procedimientos institucionales, mientras que el “populismo” se asocia a la defensa del colectivo social (un asunto distinto a la suma de los deseos individuales) y a la confianza en un liderazgo político fuerte para lograrlo.    
-                        </p>
-                        <h2 class="is-size-5">10 preguntas.
-                        </h2>
+                        <p>En este esquema cada pregunta promedia el puntaje en un solo eje. Todas las preguntas tienen el mismo peso y no están ponderadas.</p>
+                        <h2 class="is-size-5">Cuestionario</h2>
+                        <p>El juego tiene 20 preguntas en total. </p>
+                        <p>10 corresponden al “Eje Y” y 10 corresponden al “Eje X”. </p>
+                        <h2 class="is-size-5">Eje Y - Liberalismo // Populismo </h2>
+                        <p>En este test, el eje “liberalismo-populismo” se usa como medida de la posición de quien realiza el test en materia política, donde el “liberalismo” se asocia a la defensa de las libertades individuales y al respeto por los procedimientos institucionales, mientras que el “populismo” se asocia a la defensa del colectivo social (un asunto distinto a la suma de los deseos individuales) y a la confianza en un liderazgo político fuerte para lograrlo. </p>
+                        <h2 class="is-size-5">10 preguntas.</h2>
                         <ol>
-                            <li>Los políticos deben estar cerca de la gente, escuchar y entender sus necesidades para darle lo que necesita. +1
-                            </li>
-                            <li>Si tuviera que elegir, diría que lo individual es más importante que lo colectivo. -1
-                            </li>
-                            <li>Si tenemos un gobierno fallido, no importa el plazo constitucional: hay que sacarlo cuanto antes. +1
-                            </li>
-                            <li>En política, para algo existen las reglas de juego. Nunca es aceptable que los procedimientos se dejen de lado: siempre hay que respetar las instituciones. -1
-                            </li>
-                            <li>Es importante educar a nuestros niños en las tradiciones y limitar la influencia de productos culturales y tradiciones extranjeras. +1
-                            </li>
-                            <li>Las decisiones políticas se toman más de acuerdo a los intereses de unos pocos poderosos que pensando en las necesidades de la gente. +1
-                            </li>
-                            <li>Muchas veces, conocer el pensamiento político de alguien permite saber si es una buena o mala persona. +1
-                            </li>
-                            <li>Si tuviera que elegir, prefiero un liderazgo político “correcto” técnicamente, aburrido pero que administre bien, antes que uno que nos conmueva con nuevos sueños. -1
-                            </li>
+                            <li>Los políticos deben estar cerca de la gente, escuchar y entender sus necesidades para darle lo que necesita. +1</li>
+                            <li>Si tuviera que elegir, diría que lo individual es más importante que lo colectivo. -1</li>
+                            <li>Si tenemos un gobierno fallido, no importa el plazo constitucional: hay que sacarlo cuanto antes. +1</li>
+                            <li>En política, para algo existen las reglas de juego. Nunca es aceptable que los procedimientos se dejen de lado: siempre hay que respetar las instituciones. -1</li>
+                            <li>Es importante educar a nuestros niños en las tradiciones y limitar la influencia de productos culturales y tradiciones extranjeras. +1</li>
+                            <li>Las decisiones políticas se toman más de acuerdo a los intereses de unos pocos poderosos que pensando en las necesidades de la gente. +1</li>
+                            <li>Muchas veces, conocer el pensamiento político de alguien permite saber si es una buena o mala persona. +1</li>
+                            <li>Si tuviera que elegir, prefiero un liderazgo político “correcto” técnicamente, aburrido pero que administre bien, antes que uno que nos conmueva con nuevos sueños. -1</li>
                             <li>El primer gol de Maradona a los ingleses (“la mano de Dios”) fue legítimo. +1</li>
-                            <li>En Democracia, hay libertad de expresión y yo puedo decir lo que quiera, siempre. -1
-                            </li>
+                            <li>En Democracia, hay libertad de expresión y yo puedo decir lo que quiera, siempre. -1</li>
                         </ol>
                         <h2 class="is-size-5">Eje X -  Izquierda // Derecha </h2>
                         <p>En este test, el eje “izquierda-derecha” se usa como medida de la posición de quien realiza el test, sobre todo, en materia económica, donde la “izquierda” favorece la intervención del Estado y la regulación económica sobre el mercado, mientras que la “derecha” favorece la libertad económica y el "dejar hacer". 
