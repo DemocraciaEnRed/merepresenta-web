@@ -5,7 +5,8 @@
 
 
 	const carouselItems= [
-		{name:'pasoresult',link:''},
+		//{name:'pasoresult',link:''},
+		{name:'generalesresult',link:''},
 		{name:'abc',link:'/abc-electoral'},
 		{name:'dataset',link:'https://drive.google.com/drive/folders/1WvjL0X8-i0F1qSJ2xs5HUy1YY2XPGmG6?usp=sharing'},
 		{name:'compas',link:'https://compaspolitico.merepresenta.info/'},
