@@ -200,7 +200,6 @@
 		</div>
 	{:else if partysToCompare}
 		<section class="container p-2">
-			<h1 class="is-size-4 is-size-3-mobile mb-3 has-text-weight-medium has-text-black has-text-centered">Tipo de propuesta</h1>
 			
 			{#each filteredThemes as eje}
 				<ComparativeProposal {eje} {partysToCompare} candidates={candidatesForType} />
