@@ -34,9 +34,9 @@
 	let candidatesDistrict
 
 	async function changeParty() {
+		if (partyId === this.dataset.party) return
 		partySelected = null
 		candidatesDistrict = null
-
 		partyId = await this.dataset.party;
 		const res = await API(fetch, getPartyById(partyId));
 		const response = await handleResponse(res, 'partido', 'partido');
@@ -47,15 +47,6 @@
 			candidatesDistrict = responseCandidates.props.candidatos
 		}
 		partySelected = response.props.partido[0];
-	}
-	async function handleSelectDistrict(event) {
-		candidatesDistrict = null
-		const res = await API(fetch, getPartysByDistrict(event.target.value));
-		const response = await handleResponse(res, 'partidos', 'partido');
-		const partysId = response.props.partidos.filter(partido => partido.alianzas.some((partyInList) => partyInList.related_partido_id.id === partySelected.alianzas[0].related_partido_id.id))
-		const resCandidates = await API(fetch, getCandidatesByPartyList(partysId.map(party => party.id)));
-		const responseCandidates = await handleResponse(resCandidates, 'candidatos', 'candidato');
-		candidatesDistrict = responseCandidates.props.candidatos
 	}
 </script>
 
@@ -100,48 +91,6 @@
 
 
 	{/if}
-	</section>
-	{#if presidential}
-		<section
-			class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black is-align-items-center"
-		>
-		<h1 class="is-size-4 is-size-3-mobile has-text-weight-medium has-text-black has-text-centered">
-			¿Querés conocer el resto de la fórmula?
-		</h1>
-		<SelectDistrict on:change={handleSelectDistrict}/>
-
-		
-		</section>
-		
-			{#if candidatesDistrict}
-				{#if candidatesDistrict.some(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')}
-					<div class="my-3">
-						<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')} verticalTitle="Poder Ejecutivo Local" />
-
-					</div>
-				{/if}
-				{#if candidatesDistrict.some(candidate => candidate.cargo === 'senador-nacional')}
-					<div class="my-3">
-						<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'senador-nacional')} verticalTitle="P.L. Senadores" />
-
-					</div>
-				{/if}
-				{#if candidatesDistrict.some(candidate => candidate.cargo === 'diputado-nacional')}
-					<div class="my-3">
-						<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'diputado-nacional')} verticalTitle="P.L. Diputados" />
-
-					</div>
-				{/if}
-			{/if}
-	{/if}
-	<section class="container">
-		{#if !noProposal}
-			<Proposal proposals={partySelected.ejes} partido={partySelected} />
-		{:else}
-		<h3 class="is-size-4 has-text-weight-light has-text-centered my-4">
-			No hay propuestas de este partido para este distrito
-		</h3>
-		{/if}
 	</section>
 {:else}
 	<SkeletonSelect img="/candidate.svg" text="Elegí una candidatura para conocer su fórmula y sus propuestas" />

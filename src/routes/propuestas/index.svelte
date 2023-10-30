@@ -15,10 +15,8 @@
 		const props = await handleResponse(res, 'candidates', 'candidato');
 		const resThemes = await API(fetch, getThemes());
 		const propsThemes = await handleResponse(resThemes, 'temas', 'ejes');
-		/* const resTwo = await API(fetch, getCandidatesByCargo('gobernador'));
-		const responseTwo = await handleResponse(resTwo, 'candidates', 'candidato');
+		props.props.candidates = props.props.candidates.filter(candidate => candidate.partido.id === '22' || candidate.partido.id === '23') 
 		
-		candidates.props.gobernorCandidates = responseTwo.props.candidates; */
 		props.props.themes = propsThemes.props.temas
 		return props;
 	}
@@ -54,7 +52,7 @@
 			const resParty = await API(fetch, getPartysByDistrict('nacion'));
 			const propsParty = await handleResponse(resParty, 'partidos', 'partido');
 
-			partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista');
+			partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista').filter(partido => partido.id === '22' || partido.id === '23');
 		}
 		proposalType = 'nacion'
 	}
@@ -82,31 +80,17 @@
 		proposalType = event.target.id;
 		if (comparative) {
 			filteredThemes = themes
-			if (proposalType === 'nacion') {
 				filteredThemes = themes.filter((tema) => tema.slug !== 'vivienda-y-transporte')
 				const resParty = await API(fetch, getPartysByDistrict('nacion'));
 				const propsParty = await handleResponse(resParty, 'partidos', 'partido');
 				setTimeout(() => {
-					partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista');
+					partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista').filter(partido => partido.id === '22' || partido.id === '23') ;
+					console.log(partysToCompare);
 					candidatesForType = candidates
 					
 				}, 1000);
-			}else {
-				filteredThemes = proposalType === 'caba' ? themes.filter((tema) => tema.slug !== 'empleo'): themes.filter((tema) => tema.slug !== 'empleo').filter((tema) => tema.slug !== 'vivienda-y-transporte')
-				const res = await API(fetch, getCandidatesByCargoAndDistrict({cargo:'gobernador',district:proposalType}));
-				const responseCandidates = await handleResponse(res, 'candidates', 'candidato');
-				const resParty = await API(fetch, getPartysByDistrict(proposalType));
-				const propsParty = await handleResponse(resParty, 'partidos', 'partido');
-				setTimeout(() => {
-					partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista');
-					candidatesForType = responseCandidates.props.candidates
-					
-				}, 1000);
-
-			}
 		}else{
 			partySelected =null
-			if (proposalType === 'nacion') {
 				const res = await API(fetch, getPartyById(partyId));
 				const response = await handleResponse(res, 'partido', 'partido');
 				const resTwo = await API(fetch, getCandidatesByParty(partyId));
@@ -116,25 +100,6 @@
 				candidatesSelected = responseTwo.props.candidates;
 				noProposal=false
 
-			}else{
-				const res1 = await API(fetch, getPartyById(partyId));
-				const response1 = await handleResponse(res1, 'partido', 'partido');
-				const res2 = await API(fetch, getPartysByAlianza(response1.props.partido[0].alianzas[0].related_partido_id.id));
-				const response2 = await handleResponse(res2, 'partido', 'partido');
-				try{
-					partySelected = response2.props.partido.find(party => party.district.slug === proposalType)
-					const resTwo = await API(fetch, getCandidatesByParty(partySelected.id));
-					const responseTwo = await handleResponse(resTwo, 'candidates', 'candidato');
-		
-					candidatesSelected = responseTwo.props.candidates.filter(candidate => candidate.cargo.includes('gobernador'));
-					noProposal=false
-
-				}catch{
-					partySelected= partyIfFail
-					noProposal=true
-				}
-
-			}
 		}
 	}
 
@@ -178,25 +143,6 @@
 			</section>
 			{#if !loading}
 			<hr class="w-75 mx-auto" />
-			<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center w-75 mx-auto">
-				{#each typeProposaldistrict as district}
-				<div class="{district.slug === 'buenos-aires' ? 'disabled-link':''} district-button">
-
-					<button
-						id={district.slug}
-						class="button {proposalType !== district.slug &&
-							'is-outlined'} my-1 is-black is-rounded is-uppercase button-type-proposal"
-						on:click={handleProposalType}
-						disabled={district.slug === 'buenos-aires'}
-					>
-						{district.name}
-					</button>
-					{#if district.slug === 'buenos-aires'}
-					<span class="tag is-dark is-large disclaimer">No hay propuestas para este distrito</span>
-					{/if}
-				</div>
-				{/each}
-			</div>
 				
 			{/if}
 			{#if partySelected}
@@ -255,24 +201,7 @@
 	{:else if partysToCompare}
 		<section class="container p-2">
 			<h1 class="is-size-4 is-size-3-mobile mb-3 has-text-weight-medium has-text-black has-text-centered">Tipo de propuesta</h1>
-			<div class="mb-5 is-flex is-flex-wrap-wrap is-justify-content-center w-75 mx-auto">
-				{#each typeProposaldistrict as district}
-				<div class="{district.slug === 'buenos-aires' ? 'disabled-link':''} district-button">
-					<button
-						id={district.slug}
-						class="button {proposalType !== district.slug &&
-							'is-outlined'} my-1 is-black is-rounded is-uppercase button-type-proposal"
-						on:click={handleProposalType}
-						disabled={district.slug === 'buenos-aires'}
-					>
-						{district.name}
-					</button>
-					{#if district.slug === 'buenos-aires'}
-					<span class="tag is-dark is-large disclaimer">No hay propuestas para este distrito</span>
-					{/if}
-				</div>
-				{/each}
-			</div>
+			
 			{#each filteredThemes as eje}
 				<ComparativeProposal {eje} {partysToCompare} candidates={candidatesForType} />
 			{/each}

@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { afterUpdate } from 'svelte';
 	import CandidateCircle from '$lib/common/candidate-circle.svelte';
+	import CandidateAvatarSelect from '$lib/common/candidate-avatar-select.svelte'
 	import { shuffleArray } from './utils';
 
 	export let candidates;
@@ -11,34 +12,9 @@
 	let randomCandidates = shuffleArray(candidates);
 
 	// Valor reactivo para controlar el ancho de la ventana
-	let windowWidth;
-	let initWidth;
-	let bindHeightCaorusel;
-	let heightCaorusel;
-	let dinamycParticlesToShow;
-	let loading = false;
-	let divisor = windowWidth < 760 ? 140 : 130;
-	let particlesToScroll;
-
-	async function updateWindowWidth() {
-		divisor = windowWidth < 760 ? 140 : 130;
-		if (dinamycParticlesToShow !== (windowWidth / divisor).toFixed()) {
-			loading = true;
-
-			dinamycParticlesToShow = await (windowWidth / divisor).toFixed();
-			particlesToScroll = dinamycParticlesToShow / 1;
-			loading = false;
-		}
-	}
-	onMount(() => {
-		dinamycParticlesToShow = windowWidth ? (windowWidth / divisor).toFixed() : 12;
-		particlesToScroll = dinamycParticlesToShow / 1;
-		heightCaorusel = bindHeightCaorusel;
-	});
-
-	afterUpdate(() => {
-		updateWindowWidth();
-	});
+	
+	
+	
 	let partyId;
 
 	function handleSelectParty(){
@@ -49,44 +25,13 @@
 
 </script>
 
-<svelte:window
-	bind:innerWidth={windowWidth}
-	bind:outerWidth={initWidth}
-	on:resize={updateWindowWidth}
-/>
+<div class="is-flex is-justify-content-space-evenly">
+	{#each randomCandidates as candidate}
+		<CandidateAvatarSelect {partyId} {candidate} {handleSelectParty} />
+		<!-- <CandidateCircle {partyId} {candidate} {handleSelectParty} /> -->
+	{/each}
 
-{#if typeof window !== 'undefined' && !loading && dinamycParticlesToShow !== NaN}
-	<Carousel
-		dots={false}
-		particlesToShow={dinamycParticlesToShow}
-		infinite={false}
-		{particlesToScroll}
-		let:showPrevPage
-		let:showNextPage
-	>
-		<div
-			slot="prev"
-			class="arrow-wrapper is-hidden-tablet"
-			style="height : {heightCaorusel + heightCaorusel / 2}px"
-		>
-			<button class="circle_arrow_button" on:click={showPrevPage}>
-				<Icon icon="fa-chevron-left" />
-			</button>
-		</div>
-		<div
-			slot="next"
-			class="arrow-wrapper is-hidden-tablet"
-			style="height : {heightCaorusel + heightCaorusel / 2}px"
-		>
-			<button class="circle_arrow_button" on:click={showNextPage}>
-				<Icon icon="fa-chevron-right" />
-			</button>
-		</div>
-		{#each randomCandidates as candidate}
-			<CandidateCircle {partyId} {candidate} {handleSelectParty} />
-		{/each}
-	</Carousel>
-{/if}
+</div>
 
 <style>
 	.arrow-wrapper {

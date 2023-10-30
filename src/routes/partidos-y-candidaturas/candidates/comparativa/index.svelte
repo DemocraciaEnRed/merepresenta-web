@@ -13,8 +13,9 @@
 	import { cargosSlugs } from '$lib/common/utils';
 	import Icon from '$lib/common/Icon.svelte';
 	export let candidates;
-	let candidate1 = null;
-	let candidate2 = null;
+	console.log(candidates);
+	let candidate1 = candidates.find(candidate => candidate.partido.id === '23');
+	let candidate2 = candidates.find(candidate => candidate.partido.id === '22');
 </script>
 
 <main class="pb-6 has-background-white white-background-desktop">
@@ -58,7 +59,7 @@
 							>
 								<option value={null} disabled selected>elegi una candidatura</option>
 								{#each candidates as candidate}
-									<option value={candidate} disabled={candidate2 === candidate}>{candidate.name}</option>
+									<option value={candidate} disabled={true}>{candidate.name}</option>
 								{/each}
 							</select>
 						</div>
@@ -72,7 +73,7 @@
 							>
 								<option value={null} disabled selected>elegi una candidatura</option>
 								{#each candidates as candidate}
-									<option value={candidate} disabled={candidate1 === candidate}>{candidate.name}</option>
+									<option value={candidate} disabled={true}>{candidate.name}</option>
 								{/each}
 							</select>
 						</div>
@@ -345,7 +346,7 @@
 							>
 								<option value={null} disabled selected>elegi una candidatura</option>
 								{#each candidates as candidate}
-									<option value={candidate} disabled={candidate2 === candidate}>{candidate.name}</option>
+									<option value={candidate} disabled={true}>{candidate.name}</option>
 								{/each}
 							</select>
 						</div>
@@ -358,7 +359,7 @@
 							>
 								<option value={null} disabled selected>elegi una candidatura</option>
 								{#each candidates as candidate}
-									<option value={candidate} disabled={candidate1 === candidate}>{candidate.name}</option>
+									<option value={candidate} disabled={true}>{candidate.name}</option>
 								{/each}
 							</select>
 						</div>
