@@ -4,7 +4,7 @@
 	export async function load({ fetch }) {
 		const res = await API(fetch, getCandidatesByCargo('presidente'));
 		const candidates = await handleResponse(res, 'candidates', 'candidato');
-		candidates.props.candidates = candidates.props.candidates.filter(candidate => candidate.partido.id === '22' || candidate.partido.id === '23') 
+		candidates.props.candidates = candidates.props.candidates.filter(candidate => candidate.partido.elecciones_generales) 
 		return candidates;
 	}
 </script>

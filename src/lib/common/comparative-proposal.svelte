@@ -32,7 +32,7 @@
 <div class="box the-drop-header {!isOpen ? 'border-radius' : ''} drop">
 	<button
 		id="partido-{eje.slug}"
-		class="proposal-header is-flex is-flex-direction-row is-align-items-center {!isOpen
+		class="proposal-header is-flex  is-align-items-center {!isOpen
 			? 'border-radius'
 			: 'border-top-radius'}"
 		style="background-color: {eje.color};"
@@ -45,53 +45,41 @@
 				alt="icono de {eje.name}"
 			/>
 		</div>
-		<div class="is-flex-grow-1 is-flex is-align-items-center" style="width:100%; height: 100%;">
-			<div class="is-flex is-flex-direction-row is-align-items-center" style="height: 100%;">
+		<div class="is-flex-grow-1 is-flex is-align-items-center" >
 				<p
 					class=" has-text-black is-inline mx-5 is-uppercase is-size-5 is-size-6-touch has-text-weight-bold"
 				>
 					{eje.name}
 				</p>
-			</div>
 		</div>
 		<span class="dropdown-icon"><Icon icon={iconClass} /></span>
 	</button>
 	{#if isOpen}
 		<div class="proposal-body summary general-sans" transition:slide>
-			<div class=" has-text-centered-touch has-text-left-desktop">
+			<div class=" has-text-centered-touch has-text-left-desktop proposal-group">
 				{#each partysToCompare as party}
 					{#each party.ejes as proposalParty}
 						{#if proposalParty.ejes_id.slug === eje.slug}
-						{#if !partyOpen.includes(party.id)}
-						<button class="proposal-body-header  py-3 pr-0 w-100 " on:click={handlePartyOpen(party.id)}>
-							<div class="candidate-proposal-header">
-							<CandidateCircle partyId={party.id} candidate={candidates.find(candidate => candidate.partido.id === party.id)} showPartyName={false} imageSize='80px' /> 
-								<p class="nippo-font candidate-name-header-proposal is-size-5 has-text-weight-bold has-text-black">
-									{candidates.find(candidate => candidate.partido.id === party.id).name}
-								</p>
-						</div>
-						<span class="dropdown-icon"><Icon icon={iconClass} size='large' /></span>
-						</button>
-						{/if}
-							{#if partyOpen.includes(party.id)}
-							<div class="party-proposal is-flex py-5">
+						
+							<div class="party-proposal is-flex is-flex-direction-column is-align-items-center is-justify-content-space-between py-5">
 								<div
-									class="is-flex is-align-items-center is-justify-content-center has-text-centered px-3 candidates-circles"
+									class="is-flex is-align-items-center is-justify-content-center has-text-centered px-3 candidates-circles pb-4"
 								>
 									{#each candidates as candidate}
 										{#if candidate.partido.id === party.id}
-											<p
-												class="nippo-font candidate-name is-size-5 has-text-weight-bold has-text-black"
-											>
-												{candidate.name}
-											</p>
-                                            <CandidateCircle partyId={candidate.partido.id} {candidate} showPartyName={screenSize > 960}  />
+											
+                                            <CandidateCircle partyId={candidate.partido.id} {candidate}  imageSize='70px' />
 										{/if}
 									{/each}
 								</div>
-								<div class="proposals">
+								<div class="proposals has-text-left">
 									{#if !showCompleteProposal.includes(party.id)}
-										<p>{proposalParty.summary}</p>
+									<!-- <p>{proposalParty.summary.split('.')}</p> -->
+										<ol>{#each proposalParty.summary.split('\n') as item}
+											<li>
+												{item}
+											</li>
+										{/each}</ol>
 									{/if}
 									{#if showCompleteProposal.includes(party.id)}
 										<div class="column p-0">
@@ -128,11 +116,9 @@
 										{/if}
 									</div>
 								</div>
-								<span class="dropdown-icon is-clickable" on:click={handlePartyOpen(party.id)}><Icon icon='fa-chevron-up' size='large' /></span>
 
 							</div>
 							{/if}
-						{/if}
 					{/each}
 				{/each}
 			</div>
@@ -149,10 +135,30 @@
 	.the-drop-header {
 		border-radius: 20px;
 		padding: 0;
+		
 	}
 	.the-drop-header > button {
 		padding: 0;
 		cursor: pointer;
+	}
+	.header-open{
+		display:flex;
+	}
+	.header-open > button{
+		flex-direction: column-reverse!important;
+		width: fit-content;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+		overflow: hidden;
+	}
+	.header-open > button > div {
+		width: 2em;
+	}
+	.header-open > button > span{
+		display: none;
+	}
+	.header-open > button > div > p {
+		transform: rotate(-90deg);
 	}
 
 	.proposal-header {
@@ -170,28 +176,18 @@
 		border-bottom-right-radius: 20px;
 	}
 	.candidates-circles {
-		width: 20%;
         flex-direction: column;
 	}
-	.candidate-name {
-		width: min-content;
-		display: table-caption;
-	}
-	.candidate-name-header-proposal{
-		width: min-content;
-		display: table-caption;
-		padding-left: 3rem;
-	}
-	.candidate-proposal-header{
+	
+	.proposal-group{
 		display: flex;
-		align-items: center;
-		padding-left: 3rem;
 	}
 	.party-proposal{
-		padding-left: 1.5rem;
+		padding: 0 .5rem;
+		width: 50%;
 	}
 	.party-proposal:not(:last-child) {
-		border-bottom: 1px solid #747474;
+		border-right: 1px solid #747474;
 	}
 	.icon-proposal {
         width: 50px;
@@ -203,11 +199,16 @@
 		padding: 0 20px;
 	}
     .proposals{
+		flex: 1;
 		display: flex;
    		flex-direction: column;
-    	justify-content: center;
-        width: 80%;
+    	justify-content: space-between;
+		padding: 16px;
     }
+	.proposals ol {
+		list-style-position: inside;
+		margin-bottom: 8px;
+	}
 
 	.summary {
 		white-space: pre-line;
@@ -256,6 +257,9 @@
 		.source-button:last-of-type {
             margin-left: 0;
 		}
+		.proposal-group{
+			flex-direction: column;
+		}
 
 		.proposal-body {
 			border-bottom-left-radius: 20px !important;
@@ -271,6 +275,7 @@
 			justify-content: center;
 			flex-direction: column;
 			align-items: center;
+			
 		}
         .candidate-name {
 		    margin-left: 1rem;
@@ -294,7 +299,12 @@
         }   
         .party-proposal{
 			padding-left: 0;
-        flex-direction: column;       
+			width: 100%;
+        	flex-direction: column;       
         }
+		.party-proposal:not(:last-child) {
+			border-right: none;
+			border-bottom: 1px solid #747474;
+		}
 	}
 </style>

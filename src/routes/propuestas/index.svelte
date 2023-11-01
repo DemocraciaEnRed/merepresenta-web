@@ -26,7 +26,7 @@
 	import CandidateCard from '$lib/common/candidate-card.svelte';
 	import ComparativeProposal from '$lib/common/comparative-proposal.svelte';
 	import SkeletonSelect from '$lib/common/skeleton-select.svelte';
-	import { typeProposaldistrict } from '$lib/common/utils';
+	import { PoliciesIcons } from '$lib/common/utils';
 	import { getThemes } from '$lib/graph-ql/themes';
 	import MereSpinner from '$lib/common/mereSpinner.svelte';
 
@@ -52,7 +52,7 @@
 			const resParty = await API(fetch, getPartysByDistrict('nacion'));
 			const propsParty = await handleResponse(resParty, 'partidos', 'partido');
 
-			partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista').filter(partido => partido.id === '22' || partido.id === '23');
+			partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista').filter(partido => partido.elecciones_generales);
 		}
 		proposalType = 'nacion'
 	}
@@ -84,7 +84,7 @@
 				const resParty = await API(fetch, getPartysByDistrict('nacion'));
 				const propsParty = await handleResponse(resParty, 'partidos', 'partido');
 				setTimeout(() => {
-					partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista').filter(partido => partido.id === '22' || partido.id === '23') ;
+					partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista').filter(partido => partido.elecciones_generales) ;
 					console.log(partysToCompare);
 					candidatesForType = candidates
 					
@@ -200,7 +200,24 @@
 		</div>
 	{:else if partysToCompare}
 		<section class="container p-2">
-			
+			<div class="is-flex is-justify-content-center mb-5 is-hidden-mobile">
+				<h1 class="is-4  has-text-centered has-text-black has-text-weight-semibold my-1">
+					tematicas:
+				</h1>
+				<div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+					{#each filteredThemes as eje}
+					<div class="is-flex is-align-items-center tag-eje px-3 m-1 has-background-white" >
+						<img
+						src={PoliciesIcons[eje.slug]}
+						alt="icono de {eje.name}"
+						width="25"
+					/>
+						<span >{eje.name}</span>
+					</div>
+					{/each}
+
+				</div>
+			</div>
 			{#each filteredThemes as eje}
 				<ComparativeProposal {eje} {partysToCompare} candidates={candidatesForType} />
 			{/each}
@@ -215,6 +232,12 @@
 <style>
 	.disabled-link{
 		position: relative;
+	}
+	.tag-eje{
+		width: fit-content;
+		border-radius: 999px;
+		border: 1px solid #000;
+
 	}
 
 	.disclaimer{

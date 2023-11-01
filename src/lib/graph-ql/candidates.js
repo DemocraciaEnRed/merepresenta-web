@@ -228,6 +228,7 @@ export function getCandidatesByCargo (cargo){
         name
         color1
         color2
+        elecciones_generales
         alianzas{
           related_partido_id{
             id

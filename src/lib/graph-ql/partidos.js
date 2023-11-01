@@ -5,6 +5,7 @@ export function getPartysByDistrict (district){
       id
       name
       tipo
+      elecciones_generales
       alianzas{
         related_partido_id{
           id

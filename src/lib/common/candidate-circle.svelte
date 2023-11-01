@@ -20,7 +20,7 @@
 		</figure>
 	</button>
 	{#if showPartyName}
-		<span class="tag candidate-name has-text-weight-semibold" style="{partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}">{candidate.partido.name}</span>
+		<span class="tag candidate-name has-text-weight-semibold" style="{partyId && partyId !== candidate.partido.id ? 'filter: opacity(0.5);':''}">{candidate.partido.name}</span>
 		
 	{/if}
 </div>
@@ -33,6 +33,7 @@
 		overflow: hidden;
 		cursor: pointer;
 		position: relative;
+		margin: 0 24px;
 		height: 100px;
 		width: 100px;
 	}
@@ -42,19 +43,18 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		width: min-content;
 	}
 
 	.candidate-name {
 		text-align: center;
 		background-color: transparent;
+		padding: 0;
 		padding-top: 4px;
-		width: 80%;
 		font-size: 0.85rem;
 		flex: 1;
 		white-space: pre-wrap;
-		/* display: flex;
-		flex-direction: column;
-		justify-content: start; */
+		
 	}
 	
 
