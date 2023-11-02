@@ -148,18 +148,16 @@
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
 		border-top-right-radius: 0;
-		width: 2em;
 	}
 	.card-content{
 		flex: 1;
 	}
 
 	.has-text-vertical{
-  -webkit-transform: rotate(-90deg); 
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
+		transform: rotate(180deg);
+    	writing-mode: tb;
+		padding: 0 4px;
+	}
 .candidate-container {
 		position: relative;
 	}
@@ -232,6 +230,7 @@
 		.has-text-vertical{
 			padding: 8px 0;
 			transform: none;
+			writing-mode: initial;
 		}
 
 	}

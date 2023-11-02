@@ -11,14 +11,11 @@
     let screenSize;
 	$: showCompleteProposal = [];
 	$: partyOpen = [];
-	$: isOpen = false;
+	$: isOpen = screenSize > 768;
 	$: iconClass = isOpen ? 'fa-chevron-down' : 'fa-chevron-up';
 
-	const handlePartyOpen = (partyId)=>{ 
-		const index = partyOpen.findIndex((el) => el === partyId);
-		if (index < 0) partyOpen = [...partyOpen, partyId];
-		else partyOpen = partyOpen.filter((el) => el !== partyId);
-
+	const handleOpen = ()=>{ 
+		if(screenSize < 768) isOpen = !isOpen
 	}
 
 	const addToShowComplete = (partyId) => {
@@ -29,14 +26,14 @@
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
-<div class="box the-drop-header {!isOpen ? 'border-radius' : ''} drop">
+<div class="box the-drop-header {!isOpen ? 'border-radius' : 'header-open'} drop" id={eje.slug}>
 	<button
 		id="partido-{eje.slug}"
 		class="proposal-header is-flex  is-align-items-center {!isOpen
 			? 'border-radius'
 			: 'border-top-radius'}"
 		style="background-color: {eje.color};"
-		on:click={() => (isOpen = !isOpen)}
+		on:click={handleOpen}
 	>
 		<div class="icon-container" style="background-color: {eje.color};">
 			<img
@@ -45,14 +42,18 @@
 				alt="icono de {eje.name}"
 			/>
 		</div>
-		<div class="is-flex-grow-1 is-flex is-align-items-center" >
+		<div class="eje-name-wrapper is-flex-grow-1 is-flex is-align-items-center" >
 				<p
 					class=" has-text-black is-inline mx-5 is-uppercase is-size-5 is-size-6-touch has-text-weight-bold"
 				>
 					{eje.name}
 				</p>
 		</div>
-		<span class="dropdown-icon"><Icon icon={iconClass} /></span>
+		<span class="dropdown-icon">
+			{#if screenSize < 768}
+				<Icon icon={iconClass} />
+			{/if}
+		</span>
 	</button>
 	{#if isOpen}
 		<div class="proposal-body summary general-sans" transition:slide>
@@ -141,25 +142,7 @@
 		padding: 0;
 		cursor: pointer;
 	}
-	.header-open{
-		display:flex;
-	}
-	.header-open > button{
-		flex-direction: column-reverse!important;
-		width: fit-content;
-		border-top-left-radius: 20px;
-		border-bottom-left-radius: 20px;
-		overflow: hidden;
-	}
-	.header-open > button > div {
-		width: 2em;
-	}
-	.header-open > button > span{
-		display: none;
-	}
-	.header-open > button > div > p {
-		transform: rotate(-90deg);
-	}
+	
 
 	.proposal-header {
 		width: 100%;
@@ -181,6 +164,7 @@
 	
 	.proposal-group{
 		display: flex;
+		height: 100%;
 	}
 	.party-proposal{
 		padding: 0 .5rem;
@@ -244,6 +228,61 @@
 		border-top-right-radius: 20px !important;
 		overflow: hidden;
 		transition-delay: 0s;
+	}
+	@media screen and (min-width: 960px) {
+		.header-open{
+		display:flex;
+		margin-bottom: 0;
+	}
+	.header-open .proposal-body{
+		margin-bottom: 0;
+		border-bottom-left-radius: 0;
+	}
+	.header-open > button{
+		cursor: initial;
+		flex-direction: column-reverse!important;
+		width: fit-content;
+		border-top-right-radius: 0!important;
+		overflow: hidden;
+	}
+	.header-open:not(:first-of-type) > button{
+		border-top-left-radius: 0!important;
+
+	}
+	.header-open:last-of-type > button{
+		border-bottom-left-radius: 20px;
+
+	}
+	.header-open:first-of-type > .proposal-body{
+		border-top-right-radius: 20px;
+
+	}
+	.header-open:not(:last-of-type) > .proposal-body{
+		border-bottom-right-radius: 0;
+
+	}
+	
+	.header-open:not(:first-child) > .proposal-body > .proposal-group > .party-proposal > .candidates-circles {
+		display: none!important;
+	}
+	.header-open > button > .dropdown-icon {
+		height: calc(56px + .5rem);
+	}
+	.header-open > button > .icon-container {
+		padding: 16px 8px;
+	}
+	.header-open > button > .icon-container > img {
+		width: 40px;
+		height: 40px;
+	}
+	.header-open > button > .eje-name-wrapper {
+		width: 2em;
+		justify-content: center;
+	}
+	.header-open > button > .eje-name-wrapper > p {
+		transform: rotate(180deg);
+		writing-mode: tb;
+	}
 	}
 	@media screen and (max-width: 960px) {
 

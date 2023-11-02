@@ -206,21 +206,24 @@
 				</h1>
 				<div class="is-flex is-flex-wrap-wrap is-justify-content-center">
 					{#each filteredThemes as eje}
-					<div class="is-flex is-align-items-center tag-eje px-3 m-1 has-background-white" >
+					<a class="is-flex is-align-items-center tag-eje px-3 m-1 has-background-white" href={'#'+eje.slug} >
 						<img
 						src={PoliciesIcons[eje.slug]}
 						alt="icono de {eje.name}"
 						width="25"
 					/>
-						<span >{eje.name}</span>
-					</div>
+						<span class="has-text-black">{eje.name}</span>
+					</a>
 					{/each}
 
 				</div>
 			</div>
-			{#each filteredThemes as eje}
-				<ComparativeProposal {eje} {partysToCompare} candidates={candidatesForType} />
-			{/each}
+			<div class="comparative-wrapper">
+				{#each filteredThemes as eje}
+					<ComparativeProposal {eje} {partysToCompare} candidates={candidatesForType} />
+				{/each}
+
+			</div>
 		</section>
 	{:else}
 		<MereSpinner />
@@ -230,9 +233,6 @@
 </main>
 
 <style>
-	.disabled-link{
-		position: relative;
-	}
 	.tag-eje{
 		width: fit-content;
 		border-radius: 999px;
@@ -254,9 +254,6 @@
 		transform: translate(-50%, 0%);
 	}
 
-	.disabled-link:hover > .disclaimer{
-		display: block;
-	}
 	.district-button{
 		width: 25%;
 		text-align: center;

@@ -9,7 +9,7 @@
 	export let handleSelectParty =()=> goto(`/partidos-y-candidaturas/candidates/candidate/${candidate.id}`)
 </script>
 
-<div class="is-relative candidate-wrapper" on:click={handleSelectParty} data-party={candidate.partido.id}>
+<div class="is-relative candidate-wrapper mx-auto" on:click={handleSelectParty} data-party={candidate.partido.id}>
 	<button
 		class="button-candidate"
 		style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido
