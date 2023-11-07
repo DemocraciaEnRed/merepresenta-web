@@ -17,7 +17,7 @@
 		const propsThemes = await handleResponse(resThemes, 'temas', 'ejes');
 		props.props.candidates = props.props.candidates.filter(candidate => candidate.partido.elecciones_generales) 
 		
-		props.props.themes = propsThemes.props.temas
+		props.props.themes = propsThemes.props.temas.filter(theme => theme.slug !== 'empleo')
 		return props;
 	}
 </script>
