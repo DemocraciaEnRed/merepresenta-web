@@ -15,7 +15,7 @@
 		const props = await handleResponse(res, 'candidates', 'candidato');
 		const resThemes = await API(fetch, getThemes());
 		const propsThemes = await handleResponse(resThemes, 'temas', 'ejes');
-		props.props.candidates = props.props.candidates.filter(candidate => candidate.partido.id === '22' || candidate.partido.id === '23') 
+		props.props.candidates = props.props.candidates.filter(candidate => candidate.partido.elecciones_generales) 
 		
 		props.props.themes = propsThemes.props.temas
 		return props;

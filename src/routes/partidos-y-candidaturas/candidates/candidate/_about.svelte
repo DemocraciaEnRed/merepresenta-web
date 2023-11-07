@@ -97,7 +97,7 @@
           
         <div class=" has-text-black mt-5">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
-            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-scroll"/> Último grado de estudios alcanzado</p>
+            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-scroll"/>Educación</p>
             <p class="is-size-6 resume pt-4 has-text-weight-light">{candidate.formacion}</p>
           </div>
         </div>

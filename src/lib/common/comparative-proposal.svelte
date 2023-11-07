@@ -62,7 +62,7 @@
 					{#each party.ejes as proposalParty}
 						{#if proposalParty.ejes_id.slug === eje.slug}
 						
-							<div class="party-proposal is-flex is-flex-direction-column is-align-items-center is-justify-content-space-between py-5">
+							<div class="party-proposal is-flex is-flex-direction-column is-justify-content-space-between py-5">
 								<div
 									class="is-flex is-align-items-center is-justify-content-center has-text-centered px-3 candidates-circles pb-4"
 								>

@@ -3,26 +3,29 @@
 	import { CandidateImg } from './utils';
 
 	export let candidate;
-	export let imageSize = '100px'
+	export let widthSize = '300'
 	export let partyId;
 	export let showPartyName = true
+	export let extraClasses
 	export let handleSelectParty =()=> goto(`/partidos-y-candidaturas/candidates/candidate/${candidate.id}`)
 	let divWidth
 </script>
 
-<div class="is-relative candidate-wrapper" on:click={handleSelectParty} data-party={candidate.partido.id} style={`height: calc(${divWidth}px *1.5)`} bind:offsetWidth={divWidth}>
+<div class="is-relative candidate-wrapper {extraClasses}" on:click={handleSelectParty} data-party={candidate.partido.id} style={`height: calc(${divWidth}px *1.5)`} bind:offsetWidth={divWidth}>
 	<button
 		class="button-candidate"
 		style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido
-			.color2}); {partyId && partyId !== candidate.partido.id ? 'filter: opacity(0.5);':''}"
+			.color2}); {partyId && partyId !== candidate.partido.id ? 'filter: opacity(0.5);':''}; {widthSize ? 'width:'+widthSize+'px':''}"
 	    >   
-    <div class="info-candidate">
-		<figure class="image mx-auto candidate-avatar">
-			<img src={CandidateImg(candidate)} alt={candidate.name} />
-		</figure>
-		<span class="tag candidate-name has-text-weight-semibold has-background-black has-text-white p-5 w-100" style="{partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}">{candidate.partido.name}</span>
-
-    </div>
+		
+		<div class="info-candidate">
+			<figure class="image mx-auto candidate-avatar">
+				<img src={CandidateImg(candidate)} alt={candidate.name} />
+			</figure>
+			{#if showPartyName}
+			<span class="tag candidate-name has-text-weight-semibold has-background-black has-text-white p-5 w-100" style="{partyId && partyId !== candidate.partido.id && 'filter: opacity(0.5);'}">{candidate.partido.name}</span>
+			{/if}
+		</div>
 	</button>
 </div>
 
