@@ -69,7 +69,7 @@
 									{#each candidates as candidate}
 										{#if candidate.partido.id === party.id}
 											
-                                            <CandidateCircle partyId={candidate.partido.id} {candidate}  imageSize='70px' />
+                                            <CandidateCircle partyId={candidate.partido.id} {candidate}  imageSize='110px' />
 										{/if}
 									{/each}
 								</div>
