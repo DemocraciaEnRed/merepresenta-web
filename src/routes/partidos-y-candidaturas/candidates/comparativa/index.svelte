@@ -13,9 +13,9 @@
 	import { cargosSlugs } from '$lib/common/utils';
 	import Icon from '$lib/common/Icon.svelte';
 	export let candidates;
-	console.log(candidates);
-	let candidate1 = candidates.find(candidate => candidate.partido.id === '23');
-	let candidate2 = candidates.find(candidate => candidate.partido.id === '22');
+	
+	let candidate1 = candidates.filter(candidate => candidate.partido.elecciones_generales)[1];
+	let candidate2 = candidates.filter(candidate => candidate.partido.elecciones_generales)[0];
 </script>
 
 <main class="pb-6 has-background-white white-background-desktop">
