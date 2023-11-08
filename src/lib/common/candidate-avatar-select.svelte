@@ -59,7 +59,7 @@
         left: 0;
 		text-align: center;
 		background-color: transparent;
-		font-size: 0.85rem;
+		font-size: 1rem;
 		flex: 1;
 		white-space: pre-wrap;
 
@@ -76,6 +76,7 @@
 			bottom: 0;
 			padding: 5% 10%!important;
 			height: auto;
+			font-size: .85rem;
 		}
 		.button-candidate {
 			width: 100%!important;
