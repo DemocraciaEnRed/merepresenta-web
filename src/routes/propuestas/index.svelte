@@ -79,7 +79,7 @@
 </script>
 
 <main class="pb-6 has-background-white white-background-desktop">
-	<div class="section tetris-background">
+	<div class="section tetris-background pb-0">
 		<div class="container">
 			<div class="has-text-centered has-text-black">
 				<h1 class="is-size-2 has-text-weight-medium has-text-black">Propuestas</h1>
@@ -171,7 +171,7 @@
 			{/if}
 		</div>
 	{:else if partysToCompare}
-		<section class="container p-2">
+		<section class="container p-2 pt-6">
 			<div class="is-flex is-justify-content-center mb-5 is-hidden-mobile">
 				<h1 class="is-4  has-text-centered has-text-black has-text-weight-semibold my-1 is-flex is-align-items-center">
 					temáticas:
