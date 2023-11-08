@@ -44,9 +44,9 @@
 	let partySelected;
 	let candidatesSelected;
 
-	$: comparative, cambio('cambio');
+	$: comparative, cambio();
 
-	async function cambio(params) {
+	async function cambio() {
 		partysToCompare = null;
 		if (comparative) {
 			const resParty = await API(fetch, getPartysByDistrict('nacion'));
@@ -73,35 +73,7 @@
 		noProposal=false
 	}
 
-	async function handleProposalType(event) {
-		if (proposalType === event.target.id) return
-		let partyIfFail = partySelected
-		partysToCompare = null;
-		proposalType = event.target.id;
-		if (comparative) {
-			filteredThemes = themes
-				filteredThemes = themes.filter((tema) => tema.slug !== 'vivienda-y-transporte')
-				const resParty = await API(fetch, getPartysByDistrict('nacion'));
-				const propsParty = await handleResponse(resParty, 'partidos', 'partido');
-				setTimeout(() => {
-					partysToCompare = propsParty.props.partidos.filter((party) => party.tipo === 'lista').filter(partido => partido.elecciones_generales) ;
-					console.log(partysToCompare);
-					candidatesForType = candidates
-					
-				}, 1000);
-		}else{
-			partySelected =null
-				const res = await API(fetch, getPartyById(partyId));
-				const response = await handleResponse(res, 'partido', 'partido');
-				const resTwo = await API(fetch, getCandidatesByParty(partyId));
-				const responseTwo = await handleResponse(resTwo, 'candidates', 'candidato');
-
-				partySelected = response.props.partido[0];
-				candidatesSelected = responseTwo.props.candidates;
-				noProposal=false
-
-		}
-	}
+	
 
 
 </script>
@@ -201,12 +173,12 @@
 	{:else if partysToCompare}
 		<section class="container p-2">
 			<div class="is-flex is-justify-content-center mb-5 is-hidden-mobile">
-				<h1 class="is-4  has-text-centered has-text-black has-text-weight-semibold my-1">
-					tematicas:
+				<h1 class="is-4  has-text-centered has-text-black has-text-weight-semibold my-1 is-flex is-align-items-center">
+					temáticas:
 				</h1>
 				<div class="is-flex is-flex-wrap-wrap is-justify-content-center">
 					{#each filteredThemes as eje}
-					<a class="is-flex is-align-items-center tag-eje px-3 m-1 has-background-white" href={'#'+eje.slug} >
+					<a class="is-flex is-align-items-center tag-eje px-3 py-2 m-1 has-background-white" href={'#'+eje.slug} >
 						<img
 						src={PoliciesIcons[eje.slug]}
 						alt="icono de {eje.name}"
