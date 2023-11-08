@@ -65,7 +65,7 @@
 	}
 	.candidate-content {
 		border-top: 0;
-		height: 220px;
+		height: 190px;
 	}
 	.gobernor-content{
 		height: 125px!important;
