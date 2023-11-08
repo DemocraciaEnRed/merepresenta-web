@@ -50,7 +50,7 @@
 	}
 </script>
 
-<section class="container p-2">
+<section class="container pt-2 ">
 	<div class="has-text-centered mt-6 has-text-black">
 		<img src="{logo}" class="logo-top" alt="logo" />
 		<h1 class="is-size-2 is-size-3-mobile has-text-weight-medium has-text-black is-uppercase">
@@ -62,7 +62,7 @@
 	</div>
 </section>
 <section
-	class="container px-6 pt-3 mb-6 has-text-black carousel-section is-max-desktop"
+	class="container px-6 has-text-black carousel-section is-max-desktop"
 
 >
 	<CandidateCircleCarousel {candidates} {changeParty} />
@@ -108,6 +108,7 @@
 		}
 		.carousel-section {
 			padding: 0 !important;
+			margin: 1.5rem 0;
 		}
 	}
 </style>
