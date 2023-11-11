@@ -62,7 +62,7 @@
 
 <section class="">
 	<section class="container p-2">
-		<div class="has-text-centered has-text-black">
+		<div class="mt-6 has-text-centered has-text-black">
 			<img src="/deputies-chamber.png" alt="camara de diputados" />
 			<h1 class="is-size-2 has-text-weight-medium">
 				¿Quiénes ocuparán bancas a partir de diciembre?
