@@ -125,7 +125,7 @@
 			{/if}
 			{#if candidatesSelected.length > 0}
 				<h1 class="is-size-4 has-text-weight-medium has-text-centered has-text-black my-6">
-					¿Quiénes son los diputados/as que ingresan a la Cámara?
+					¿Quiénes son los {!senator_chamber ?'senadores/as':'diputados/as' } que ingresan a la Cámara?
 				</h1>
 				<div class="is-flex is-justify-content-center is-flex-wrap-wrap w-75 mx-auto">
 					{#each candidatesSelected as candidate }
