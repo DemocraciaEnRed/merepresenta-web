@@ -73,7 +73,7 @@
 	</section>
 
 	<section
-		class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black"
+		class="is-flex mb-5 is-justify-content-center is-flex-direction-column px-2 pt-2 has-text-black mb-6"
 	>
 	{#if presidential}
 		<CardParty
@@ -88,18 +88,74 @@
 		<CardCandidatesGroup candidates={candidatesDistrict.filter(candidate => candidate.cargo === 'gobernador' || candidate.cargo === 'vice-gobernador')} verticalTitle="gobernadores" wrap fullWidth/>
 
 	</div>
-
-
 	{/if}
-	</section>
-{:else}
+</section>
+<hr class="w-75 mx-auto">
+	{:else}
 	<SkeletonSelect img="/candidate.svg" text="Elegí una candidatura para conocer su fórmula y sus propuestas" />
-
-{/if}
+	
+	{/if}
+	<div class="box is-box-rounded mt-6 w-75 mx-auto">
+		<div
+			class="group-header is-flex is-flex-direction-row is-align-items-center is-top-rounded"
+		>
+			<div
+				class="is-flex-grow-1 is-flex is-flex-direction-column is-align-items-center has-text-centered"
+			>
+				<p class=" has-text-black is-inline has-text-weight-medium">
+					¿Cómo queda la cámara de diputados tras las generales?
+				</p>
+			</div>
+		</div>
+		<div class="group-content is-bottom-rounded">
+			<h1 class="is-4 has-text-centered has-text-black mb-6 mx-6">
+				Conocé el detalle de la composición de las cámaras, y quienes entran efectivamente por cada partido.
+				Además te damos algunos datos de la composición final de cada partido.
+			</h1>
+			<div class="buttons is-centered">
+				<a href="/legislativo"
+					class="button is-black is-rounded is-uppercase has-text-weight-semibold px-6 w-100"
+					>PODER LEGISLATIVO</a>
+			</div>
+		</div>
+	</div>
 
 <style>
 	.logo-top {
 		height: 3.5rem;
+	}
+
+	.box {
+		border: 1px solid #cfcfcf;
+		border-bottom: 0;
+		padding: 0;
+		border-radius: 0;
+	}
+
+	.is-top-rounded {
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+	.is-box-rounded {
+		border-radius: 10px;
+	}
+	.is-bottom-rounded {
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	.group-header {
+		background-color: #fff;
+		padding: 1rem;
+		border-bottom: 1px solid #cfcfcf;
+	}
+	.group-content {
+		padding: 2rem 1rem;
+		background-color: #fff;
+		border-bottom: 1px solid #cfcfcf;
+	}
+	.group-content .buttons {
+		width: 50%;
+		margin: auto;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -110,5 +166,10 @@
 			padding: 0 !important;
 			margin: 1.5rem 0;
 		}
+		.group-content .buttons {
+			width: 90%;
+			margin: auto;
+		}
 	}
+
 </style>
