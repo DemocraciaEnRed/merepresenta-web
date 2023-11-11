@@ -457,10 +457,46 @@
           </p>
         </div>
       </Dropdown>
+      <Dropdown name=" ¿COMO ES EL PROCESO DE ESCRUTINIO">
+        <div>
+          <h2>Elecciones paso a paso:</h2>
+          <ol>
+            <li> Cierra la mesa.</li>
+            <li>Autoridades de mesa realizan el escrutinio con presencia de los fiscales partidarios.</li>
+            <li>Se controla que la cantidad de sobres coincida con la cantidad de gente que emitió su voto.</li>
+            <li>Después de contar todos los votos se completan tren documentos firmados por las
+              autoridades de mesa y los fiscales partidarios:
+              <ul>
+                <li>Acta de escrutinio </li>
+                <li>Certificado de escrutinio </li>
+                <li>Telegrama </li>
+              </ul>
+              <p>Telegramas: Se usan para el escrutinio provisorio (el que se conoce el mismo día) y no tiene
+              ninguna validez legal. Los mismos se le dan al Correo para que los traslade o mande
+              virtualmente al Centro de Cómputos. Nunca se cuentan el 100% de las mesas por posibles
+              errores de confección, datos incompletos, etc.</p>
+              <p>Certificado de escrutinio: Se pone dentro de la urna junto a los sobres y las boletas
+              contabilizadas y se cierra con una faja de seguridad.</p>
+              <p>Acta de escrutinio: Se le da, junto a otra documentación, al personal del Correo Argentino
+              para que lo lleve al lugar designado por la Justicia Electoral en cada distrito, donde se hará el
+              escrutinio definitivo, único con validez legal.</p>
+            </li>
+            <li>Escrutinio definitivo: Este proceso se hace por la totalidad de las mesas, a diferencia de
+              los telegramas que no cubren la totalidad. Se realiza con el Acta de escrutinio donde se
+              subsanan posibles errores, se definen reclamos y votos recurridos y se cargan en un
+              sistema informático. En caso de dudas (falta de acta o que no coincidan con los
+              telegramas) se puede abrir la urna para comparar con el certificado de escrutinio.
+              <ul><li>Dentro de este escrutinio se suman también (que no fueron contemplados en
+                el provisorio) los votos del personal del Comando Electoral, los privados de
+                libertad y los radicados en el exterior."</li></ul>
+            </li>
+          </ol>
+        </div>
+      </Dropdown>
       <Dropdown name="¿QUÉ ES EL VOTO ACCESIBLE? ">
         <div>
           <h2>¿Qué es el voto accesible? </h2>
-          <p>Si tenés alguna <strong>condición física que te dificulte la emisión del voto</strong> podés solicitar el
+          <p>Si tenés alguna <strong>condición física que te dificolte la emisión del voto</strong> podés solicitar el
             voto asistido por la/el Presidenta/e de mesa o una persona de tu confianza.</p>
           <p>Si tenés movilidad reducida, podés pedirle a la/el Presidenta/e de la mesa donde tengas que votar, el
             traslado de la urna al Cuarto Oscuro Accesible (COA), que es un espacio de fácil acceso y cercano al ingreso
