@@ -235,6 +235,24 @@
 
                     </div>
                 </Dropdown>
+                <Dropdown class="has-text-black" fontSizeTitle="is-size-5" name="¿Quién dijo?">
+                    <div>
+                       
+                        <p>Un juego de preguntas de múltiple opción, en el cual te vamos a preguntar  sobre propuestas de los distintos/as candidatos/as a la presidencia y vas a tener que adivinar quién lo dijo.
+                        </p>
+                        <p>Las mismas serán en torno a las temáticas de las propuestas: Ambiente, Economía, Educación, Empleo, Democracia, Salud y Seguridad.</p>
+                        <Button name="ir a jugar" url="https://quiendijo.merepresenta.info/" icon="fa-arrow-up"/>
+
+                    </div>
+                </Dropdown>
+                <Dropdown class="has-text-black" fontSizeTitle="is-size-5" name="¿De qué lado están? ">
+                    <div>
+                       
+                        <p>Un juego sencillo para que posiciones a los aspirantes a la presidencia en un eje de izquierda a derecha. Ordenalos de la forma que vos pienses que están ideológicamente más a la izquierda y en el extremo opuesto quienes consideres que se encuentren más a la derecha (pero no te olvides del centro). Compará tu resultado con la tendencia del resto de los jugadores y compartilo en redes sociales</p>
+                        <Button name="ir a jugar" url="https://dequelado.merepresenta.info/" icon="fa-arrow-up"/>
+
+                    </div>
+                </Dropdown>
             </div>
         </Dropdown>
        
