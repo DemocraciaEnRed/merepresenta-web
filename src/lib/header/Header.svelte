@@ -20,11 +20,14 @@
 			<p class="level-item has-text-centered" class:active={path==="/"}>
 				<a class="has-text-white link-styled py-1 px-2" href="/">Inicio</a>
 			</p>
-			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidaturas')}>
-				<a class="has-text-white link-styled py-1 px-2" href="/partidos-y-candidaturas">Partidos y candidaturas</a>
+			<p class="level-item has-text-centered" class:active={path.includes('/legislativo')}>
+				<a class="has-text-white link-styled py-1 px-2" href="/legislativo">Poder Legislativo</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/propuestas')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/propuestas">Propuestas</a>
+			</p>
+			<p class="level-item has-text-centered" class:active={path.includes('/partidos-y-candidaturas')}>
+				<a class="has-text-white link-styled py-1 px-2" href="/partidos-y-candidaturas">candidaturas</a>
 			</p>
 			<p class="level-item has-text-centered" class:active={path.includes('/abc-electoral')}>
 				<a class="has-text-white link-styled py-1 px-2" href="/abc-electoral">Abc Electoral</a>
