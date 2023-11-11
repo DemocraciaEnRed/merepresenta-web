@@ -54,11 +54,11 @@
 					</div>
 				</div>
 				<div
-					class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0"
+					class="card-content p-0 columns is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0"
 				>
 				{#if partyCandidates}
 					{#each partyCandidates as candidate}
-					<div class="column is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
+					<div class="column is-full-mobile is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
 						<NacionCandidateCard {candidate} />
 
 					</div>
@@ -76,10 +76,10 @@
 						P.L. Senadores
 					</div>
 				</div>
-				<div class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0">
+				<div class="card-content p-0 columns is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0">
 					{#each partyCandidates as candidate}
 						{#if  candidate.cargo === 'senador-nacional'}
-						<div class="column is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
+						<div class="column is-full-mobile is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
 
 							<NacionCandidateCard {candidate} />
 						</div>
@@ -95,10 +95,10 @@
 						P.L. Diputados
 					</div>
 				</div>
-				<div class="card-content p-0 columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0">
+				<div class="card-content p-0 columns is-multiline is-justify-content-center is-flex is-flex-wrap-wrap m-0">
 					{#each partyCandidates as candidate}
 						{#if candidate.cargo === 'diputado-nacional'}
-						<div class="column is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
+						<div class="column is-full-mobile is-half has-text-centered p-0 candidate-container is-flex is-flex-direction-column ">
 							<NacionCandidateCard {candidate} />
 
 						</div>	
@@ -177,23 +177,26 @@
 
 	@media screen and (max-width: 768px) {
 		.candidate-container{
-			border: 1px solid #000;
 			
+		}
+		.card-content{
+			flex-direction: column;
 		}
 		.candidate-container:last-of-type {
 			border-left: none;
 		}
-		.candidate-container:nth-of-type(odd):after {
-			content: none;
+		.candidate-container:not(:last-of-type):after {
+			content: '';
 			background: #C4C4C4;
 			position: absolute;
-			bottom: 25%;
+			bottom: 0;
 			right: 0;
-			height: 50%;
-			width: 1px;
+			left: 25%;
+			right: 25%;
+			height: 1px;
+			width: 50%;
 			}
 		.candidate-container:last-of-type {
-		border-right: 1px solid black;
 		border-bottom-right-radius: 10px;
 		border-top-right-radius: 0;
 		}
