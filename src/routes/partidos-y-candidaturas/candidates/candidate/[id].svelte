@@ -1,7 +1,7 @@
 <script context="module">
   import API, { handleResponse } from '$lib/apiHandler';
-  import {getCandidates, getCandidatesByCargoAndDistrict} from '$lib/graph-ql/candidates';
-  import { get4FirstRandomItems } from '$lib/common/utils';
+  import {getCandidates, getCandidatesByCargo, getCandidatesByCargoAndDistrict} from '$lib/graph-ql/candidates';
+  import { ProvinciasSlugs, get4FirstRandomItems } from '$lib/common/utils';
   export async function load({fetch, page}){
     const res = await API(fetch, getCandidates(page.params.id));
     const propsResCandidate = await handleResponse(res, "candidate", "candidato_by_id")
@@ -25,13 +25,10 @@
   let loading = true
   async function update() {
     loading = true
-		const res = await API(fetch, getCandidatesByCargoAndDistrict({
-      idExcept:candidate.id,
-      cargo: candidate.cargo, 
-      district:candidate.partido.district.slug
-    }))
+		const res = await API(fetch, getCandidatesByCargo(candidate.cargo))
 		const response = await handleResponse(res, 'candidatos', 'candidato');
-		otherCandidates = get4FirstRandomItems(response.props.candidatos);
+    response.props.candidatos = response.props.candidatos.filter(cand => cand.id !== candidate.id)
+		otherCandidates = get4FirstRandomItems(response.props.candidatos.filter(cand => cand.partido.alianzas[0].related_partido_id.id === candidate.partido.alianzas[0].related_partido_id.id));
 		loading = false;
 	}
 
@@ -64,7 +61,7 @@
             <h1 class="general-sans is-size-2 is-size-4-touch has-text-black has-text-weight-bold is-capitalized my-1 animate__animated animate__backInRight animate__delay-1s" >{candidate.name}</h1>
             {#if candidate.cargo !== 'gobernador'}
               
-            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" >Candidat{candidate.genre === 'm' ? 'o': 'a' } a {cargosSlugs[candidate.cargo][candidate.genre]}<!--  por {ProvinciasSlugs.find(p => p.slug === $page.params.provincia) && ProvinciasSlugs.find(p => p.slug === $page.params.provincia).name} --></h1>
+            <h1 class=" is-size-4 is-size-5-touch has-text-black my-1 animate__animated animate__backInRight animate__delay-2s" ><strong>{cargosSlugs[candidate.cargo][candidate.genre]} </strong> por el distrito de <strong>{ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug) && ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug).name} </strong> </h1>
             {/if}
           </div>
         </div>

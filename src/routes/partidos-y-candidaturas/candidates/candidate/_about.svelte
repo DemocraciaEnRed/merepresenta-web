@@ -1,6 +1,6 @@
 <script>
 	import Icon from '$lib/common/Icon.svelte';
-	import { CandidateImg, cargosSlugs } from '$lib/common/utils';
+	import { CandidateImg, ProvinciasSlugs, cargosSlugs } from '$lib/common/utils';
 
   export let candidate;
   import Binary from "./_binary.svelte";
@@ -15,7 +15,7 @@
   </div>
   <div class="group-content is-bottom-rounded" transition:slide>
     <div class="columns is-align-content-stretch">
-      <div class="column {!candidate.resumen_experiencia && !candidate.formacion ? 'is-flex is-justify-content-space-evenly is-align-items-center ':'is-one-third'} candidate-perfil">
+      <div class="column {!candidate.resumen_experiencia || !candidate.formacion ? 'is-flex is-justify-content-space-evenly ':'is-one-third'} candidate-perfil">
         <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
           <div class="border-img  mx-auto" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2})"
         >
@@ -26,6 +26,12 @@
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
             <p class=" has-text-weight-bold is-size-4">{candidate.name}</p>
             <p class="has-text-weight-light">Candidat{candidate.genre === 'm' ? 'o': 'a' } a {cargosSlugs[candidate.cargo][candidate.genre]}</p>
+          {#if ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug) && candidate.cargo !== 'presidente'}
+            <br>
+            <p class=" has-text-weight-bold is-size-4">Asume como {cargosSlugs[candidate.cargo][candidate.genre]} de</p>
+              <p class="has-text-weight-light">{ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug).name}</p>
+            
+          {/if}
           </div>
       </div>
 
@@ -82,7 +88,7 @@
           
         {/if}
       </div>
-      {#if candidate.resumen_experiencia || candidate.formacion}
+      {#if candidate.resumen_experiencia && candidate.formacion}
       <div class="column">
         {#if candidate.resumen_experiencia}
         <div class=" has-text-black">    

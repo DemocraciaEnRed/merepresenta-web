@@ -36,20 +36,14 @@
 					/>
 					<div class="title-banner">
 						<div class="">
-							<h2 class="title is-1 has-text-white py-3 is-inline-block is-uppercase">
-								El futuro <br />
-								<span>no es un misterio</span>
+							<h2 class="title is-1 has-text-white py-3 is-inline-block is-uppercase ">
+								<span>HAY Balotaje </span>
+								<br />
+								Elegí el futuro qúe querés
 							</h2>
 						</div>
 					</div>
-					<div class="is-centered is-mobile subtitle-banner">
-						<div class="is-7-desktop">
-							<h2 class="subtitle is-5 is-size-6-touch has-text-white">
-								Conocé las propuestas de cada candidatura para saber qué es lo que puede llegar a
-								pasar los próximos 4 años.
-							</h2>
-						</div>
-					</div>
+					
 				</div>
 				<div class="column has-text-right has-text-centered-touch">
 					<img src="/logoHome.png" alt="logo elijo saber" />
@@ -110,7 +104,7 @@
 						>
 					</div>
 				</div>
-				<div class="box candidate-box has-background-white mt-5 width-80">
+				<div class="box candidate-box has-background-white mt-5 width-80 ">
 					<div class="text-title is-flex is-flex-direction-column is-justify-content-space-between">
 						<h1
 							class="is-size-1 is-size-1-tablet is-size-3-mobile has-text-weight-bold has-text-black is-uppercase"
@@ -250,6 +244,9 @@
 	.title-banner div h2 span {
 		color: #ff4817;
 	}
+	.title-banner div h2 {
+		font-weight: 900!important;
+	}
 	.subtitle-banner {
 		width: 65%;
 	}
@@ -316,6 +313,7 @@
 		justify-content: space-between;
 		position: relative;
 		z-index: 1;
+		padding: 1rem 2.5rem;
 	}
 
 	.call-to-action {
@@ -332,6 +330,7 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			padding: .75rem .75rem;
 		}
 		.hero.tetris-background .hero-body {
 			background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 1) 100%);
