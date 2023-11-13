@@ -109,10 +109,10 @@
 						<h1
 							class="is-size-1 is-size-1-tablet is-size-3-mobile has-text-weight-bold has-text-black is-uppercase"
 						>
-							Quiénes <br />
-							quedaron en <br />
-							el poder <br />
-							ejecutivo
+						Quiénes <br>
+						quedaron en <br>
+						el poder <br>
+						Legislativo
 						</h1>
 
 						<div class=" pb-5 is-hidden-touch">
