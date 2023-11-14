@@ -28,7 +28,7 @@
 		const res = await API(fetch, getCandidatesByCargo(candidate.cargo))
 		const response = await handleResponse(res, 'candidatos', 'candidato');
     response.props.candidatos = response.props.candidatos.filter(cand => cand.id !== candidate.id)
-		otherCandidates = get4FirstRandomItems(response.props.candidatos.filter(cand => cand.partido.alianzas[0].related_partido_id.id === candidate.partido.alianzas[0].related_partido_id.id));
+    otherCandidates = candidate.cargo === 'presidente' ? response.props.candidatos.filter(candidate => candidate.partido.elecciones_generales) : get4FirstRandomItems(response.props.candidatos.filter(cand => cand.partido.alianzas[0].related_partido_id.id === candidate.partido.alianzas[0].related_partido_id.id));
 		loading = false;
 	}
 
@@ -72,15 +72,21 @@
 
   <div class="container">
     <About {candidate} open={true}/>
-    <br>
-    <Party partido={candidate.partido} open={true}/>
+    <!-- <br>
+    <Party partido={candidate.partido} open={true}/> -->
     
   </div>
 </div>
-
+{#if otherCandidates && otherCandidates.length > 0}
 <div class="section tetris-background">
   <div class="container">
-    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black mb-6" style="font-weight: 500!important;" >Conocé las demás candidaturas</h1>
+    <h1 class="subtitle is-3 is-size-5-touch has-text-centered has-text-black mb-6" style="font-weight: 500!important;" >
+      {#if candidate.cargo === 'presidente'}
+        Conocé las demás candidaturas
+      {:else}
+      Conocé otros  {candidate.cargo === 'diputado-nacional' ? 'diputados y diputadas' : 'senadores y senadoras'} electas
+      {/if}
+    </h1>
     <div class="columns is-mobile is-multiline is-justify-content-center is-flex is-flex-wrap-wrap p-2">
       {#if !loading}
         {#each otherCandidates as candidate}
@@ -92,6 +98,7 @@
     </div>
   </div>
 </div>
+{/if}
 <a class="button is-black comparative-button has-text-weight-medium" href="/partidos-y-candidaturas/candidates/comparativa">Compará Candidaturas</a>
 
 

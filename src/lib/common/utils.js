@@ -64,7 +64,7 @@ export const ProvinciasSlugs = [
 	{		"name": "Río Negro",		"slug": "rio-negro"	},
 	{		"name": "Tierra Del Fuego",		"slug": "tierra-del-fuego"	},
 	{		"name": "Extranjero/a",		"slug": "extranjero"	},
-	{		"name": "Nacion",		"slug": "nacion"	},
+	{		"name": "Nación",		"slug": "nacion"	},
   
 ]
 

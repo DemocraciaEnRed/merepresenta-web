@@ -246,7 +246,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="info">Mas info</td>
+						<td class="info">Más info</td>
 						<td>
 							{#if candidate1}
 								<div class=" has-text-black">
@@ -557,7 +557,7 @@
 						<td>
 							<div class="card">
 								<div class="card-header">
-									<p class="card-header-title is-justify-content-center">Mas info</p>
+									<p class="card-header-title is-justify-content-center">Más info</p>
 								</div>
 								<div class="card-content">
 									{#if candidate1}

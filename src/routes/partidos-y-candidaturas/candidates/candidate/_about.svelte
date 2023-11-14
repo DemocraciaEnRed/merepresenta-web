@@ -15,7 +15,7 @@
   </div>
   <div class="group-content is-bottom-rounded" transition:slide>
     <div class="columns is-align-content-stretch">
-      <div class="column {!candidate.resumen_experiencia || !candidate.formacion ? 'is-flex is-justify-content-space-evenly ':'is-one-third'} candidate-perfil">
+      <div class="column {!candidate.resumen_experiencia || !candidate.formacion ? 'is-flex is-justify-content-space-evenly is-flex-wrap-wrap ':'is-one-third'} candidate-perfil">
         <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
           <div class="border-img  mx-auto" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2})"
         >
@@ -93,7 +93,7 @@
         {#if candidate.resumen_experiencia}
         <div class=" has-text-black">    
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
-            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-briefcase"/>Experiencia en Cargos Público. </p>
+            <p class="has-text-weight-bold is-size-5"><Icon icon="fa-briefcase"/>Experiencia en Cargos Públicos. </p>
             <p class="is-size-6 resume pt-4 has-text-weight-light">{@html candidate.resumen_experiencia.replace(/\n/g, '<br />')}</p>
           </div>
         </div>

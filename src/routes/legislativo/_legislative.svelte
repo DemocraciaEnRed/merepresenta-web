@@ -117,7 +117,7 @@
 					<div class="is-flex is-justify-content-center is-flex-wrap-wrap">
 						{#each images as image}
 							<img src="/data-card/{partySelected.alianzas[0].related_partido_id.id}/{image}.png"
-								alt="{image}" on:error={errorImage}/>
+								alt="{image}" class="card-data" on:error={errorImage}/>
 						{/each}
 					</div>
 					<hr class="w-75 mx-auto">
@@ -142,7 +142,7 @@
 			{/if}
 			{/if}
 			<h1 class="is-size-4 has-text-weight-medium has-text-centered has-text-black my-6">
-				Como queda la camara posterior a las elecciones generales
+				¿Cómo queda la cámara posterior a las elecciones generales?
 			</h1>
 			<div class="flourish-wrapper">
 				<FlourishDiputies flourishEmbedCode='{senator_chamber?'15509044':'15508986'}'/>
@@ -185,6 +185,9 @@
 	.candidate-group{
 		width: 50%;
 	}
+	.card-data{
+		width: 20%;
+	}
 	@media screen and (max-width: 1024px) {
 		.flourish-wrapper{
 			width: 80%;
@@ -193,6 +196,9 @@
 	@media screen and (max-width: 768px) {
 		.candidate-group{
 			width: 100%;
+		}
+		.card-data{
+		width: 60%;
 		}
 		.type-button-group {
 			border: 1px solid #0a0a0a;

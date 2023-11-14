@@ -71,11 +71,14 @@
 					<li class:active={path==="/"} >
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
 					</li>
-					<li class:active={path.includes('/partidos-y-candidaturas')}>
-						<a href="/partidos-y-candidaturas" on:click={() => openNav = !openNav}>Partidos y candidaturas</a>
+					<li class:active={path.includes('/propuestas')}>
+						<a href="/propuestas" on:click={() => openNav = !openNav}>Poder Legislativo</a>
 					</li>
 					<li class:active={path.includes('/propuestas')}>
 						<a href="/propuestas" on:click={() => openNav = !openNav}>Propuestas</a>
+					</li>
+					<li class:active={path.includes('/partidos-y-candidaturas')}>
+						<a href="/partidos-y-candidaturas" on:click={() => openNav = !openNav}>candidaturas</a>
 					</li>
 					<li class:active={path.includes('/abc-electoral')}>
 						<a href="/abc-electoral" on:click={() => openNav = !openNav}>Abc Electoral</a>

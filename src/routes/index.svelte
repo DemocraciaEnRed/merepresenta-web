@@ -36,7 +36,7 @@
 					/>
 					<div class="title-banner">
 						<div class="">
-							<h2 class="title is-1 has-text-white py-3 is-inline-block is-uppercase ">
+							<h2 class="title is-1 is-size-2-touch has-text-white py-3 is-inline-block is-uppercase ">
 								<span>HAY Balotaje </span>
 								<br />
 								Elegí el futuro qúe querés
@@ -127,7 +127,7 @@
 					</div>
 					<div class="pt-5 is-hidden-desktop">
 						<a
-							class="button is-size-6 w-100 mx-auto is-black is-rounded mb-4 is-uppercase"
+							class="button is-size-6 is-size-7-mobile w-100 mx-auto is-black is-rounded mb-4 is-uppercase"
 							href="/legislativo">CONOCÉ LA composición FINAL</a
 						>
 					</div>
@@ -160,7 +160,7 @@
 							<a
 								href="/partidos-y-candidaturas"
 								class="text-wrap-wrap button button-link is-black botton-styled is-uppercase has-text-weight-semibold px-3 call-to-action"
-								>Propuestas compradas</a
+								>Propuestas comparadas</a
 							>
 						</footer>
 					</div>
@@ -408,6 +408,15 @@
 		.candidate-sobre-position {
 			height: 250px;
 		}
+		.hero .hero-body {
+			padding: 1.5rem .5rem;
+		}
+		.hero .hero-body .columns{
+			width: 100%;
+		}
+		.hero .hero-body .column {
+			padding: 0;
+		}
 	}
 	.image-diputies-chamber {
 		width: 50%;
@@ -424,7 +433,7 @@
 		content: '';
 		border: 4px solid #000;
 		background-color: #5a81ff;
-		width: 100vw;
+		width: 100%;
 		height: 300px;
 		position: absolute;
 		bottom: 0;

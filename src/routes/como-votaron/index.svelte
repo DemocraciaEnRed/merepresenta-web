@@ -30,7 +30,7 @@
         <img src="{directusImg}{law.infografia.id}" class="image is-hidden-desktop mx-auto" width="500" alt={`(${law.year}) ${law.title.toUpperCase()}`}>
         <img src="{directusImg}{law.infografia_large}" class="image is-hidden-touch mx-auto" alt={`(${law.year}) ${law.title.toUpperCase()}`}>
         <div class="section has-text-centered">
-          <p class="">Para mas información, podes ver la fuente de los datos</p>
+          <p class="">Para más información, podes ver la fuente de los datos</p>
           <div class="buttons is-centered">
             <a href={law.url} target="_blank" class="button is-black has-text-weight-semibold is-uppercase">Link a fuente</a>
           </div>

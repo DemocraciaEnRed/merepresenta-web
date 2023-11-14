@@ -195,7 +195,7 @@ export function getCandidatesByCargoAndDistrict ({idExcept, cargo,district}){
 export function getCandidatesByCargo (cargo){
   return(`
   {
-    candidato(filter:{cargo:{_eq:"${cargo}"}}){
+    candidato(filter:{cargo:{_eq:"${cargo}"}},limit:-1){
       name
       cargo
       genre

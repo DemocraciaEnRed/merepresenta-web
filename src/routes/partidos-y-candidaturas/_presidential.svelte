@@ -109,7 +109,7 @@
 		</div>
 		<div class="group-content is-bottom-rounded">
 			<h1 class="is-4 has-text-centered has-text-black mb-6 mx-6">
-				Conocé el detalle de la composición de las cámaras, y quienes entran efectivamente por cada partido.
+				Conocé el detalle de la composición de las cámaras y quienes entran efectivamente por cada partido.
 				Además te damos algunos datos de la composición final de cada partido.
 			</h1>
 			<div class="buttons is-centered">

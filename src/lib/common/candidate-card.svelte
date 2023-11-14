@@ -5,7 +5,7 @@
 	import Icon from './Icon.svelte';
 
 	export let candidate;
-	export let size = "is-half-mobile is-one-third-tablet is-3-desktop is-3-widescreen"
+	export let size = "is-full-mobile is-one-third-tablet is-3-desktop is-3-widescreen"
 	let url=`/partidos-y-candidaturas/candidates/candidate/${candidate.id}`;
 
 </script>
@@ -25,8 +25,15 @@
 				{candidate.name}
 			</p>
 			<p class=" is-size-6 has-text-weight-light pb-4">
-				Candidat{candidate.genre === 'm' ? 'o' : 'a'} a <br />
+				{#if candidate.cargo === 'presidente' }
+				Candidat{candidate.genre === 'm' ? 'o' : 'a'} a
+				<br />
 				<span class="general-sans is-size-6 has-text-weight-light">{cargosSlugs[candidate.cargo][candidate.genre]}</span>
+				{:else}
+
+				{cargosSlugs[candidate.cargo][candidate.genre]} elect{candidate.genre === 'm' ? 'o' : 'a'}
+				{/if }
+				
 			</p>	
 			<a href={url}
 			   class="button is-fullwidth is-active  has-text-weight-semibold is-rounded pr-5">
