@@ -39,7 +39,7 @@
 							<h2 class="title is-1 is-size-2-touch has-text-white py-3 is-inline-block is-uppercase ">
 								<span>HAY Balotaje </span>
 								<br />
-								Elegí el futuro qúe querés
+								Elegí el futuro que querés
 							</h2>
 						</div>
 					</div>
@@ -136,7 +136,7 @@
 			</div>
 
 			<div class="is-flex is-flex-direction-column width-80">
-				<h1 class="mb-5 is-size-2 has-text-black has-text-weight-bold has-text-centered">
+				<h1 class="mb-5 is-size-2 is-size-3-touch has-text-black has-text-weight-bold has-text-centered">
 					No te pierdas el resto de nuestro contenido
 				</h1>
 				<div class="columns is-justify-content-center">
