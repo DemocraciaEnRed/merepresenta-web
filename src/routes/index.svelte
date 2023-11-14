@@ -390,6 +390,10 @@
 		border-radius: 20px;
 		overflow: hidden;
 	}
+	.width-80 .columns{
+		margin-left: 0;
+		margin-right: 0;
+	}
 	@media screen and (max-width: 1024px) {
 		.text-title {
 			text-align: center;

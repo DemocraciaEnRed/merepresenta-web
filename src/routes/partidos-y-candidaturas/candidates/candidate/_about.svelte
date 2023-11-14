@@ -15,7 +15,7 @@
   </div>
   <div class="group-content is-bottom-rounded" transition:slide>
     <div class="columns is-align-content-stretch">
-      <div class="column {!candidate.resumen_experiencia || !candidate.formacion ? 'is-flex is-justify-content-space-evenly is-flex-wrap-wrap ':'is-one-third'} candidate-perfil">
+      <div class="column {!candidate.resumen_experiencia || !candidate.formacion ? 'is-flex is-justify-content-space-evenly is-flex-wrap-wrap':'is-one-third'}  candidate-perfil">
         <div class="column is-12-touch is-narrow-desktop candidate-logo-container">
           <div class="border-img  mx-auto" style="background: linear-gradient(45deg,{candidate.partido.color1},{candidate.partido.color2})"
         >
@@ -28,7 +28,7 @@
             <p class="has-text-weight-light">Candidat{candidate.genre === 'm' ? 'o': 'a' } a {cargosSlugs[candidate.cargo][candidate.genre]}</p>
           {#if ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug) && candidate.cargo !== 'presidente'}
             <br>
-            <p class=" has-text-weight-bold is-size-4">Asume como {cargosSlugs[candidate.cargo][candidate.genre]} de</p>
+            <p class=" has-text-weight-bold is-size-4 is-size-6-touch">Asume como {cargosSlugs[candidate.cargo][candidate.genre]} de</p>
               <p class="has-text-weight-light">{ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug).name}</p>
             
           {/if}
@@ -223,6 +223,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .candidate-perfil{
+    flex-direction: column;
+  }
   .group-content .columns .column:not(:first-child){
     border-left: 0;
     border-top: 1px solid #CFCFCF;

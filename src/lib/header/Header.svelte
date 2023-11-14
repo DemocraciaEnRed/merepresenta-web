@@ -71,8 +71,8 @@
 					<li class:active={path==="/"} >
 						<a href="/" on:click={() => openNav = !openNav}>Inicio</a>
 					</li>
-					<li class:active={path.includes('/propuestas')}>
-						<a href="/propuestas" on:click={() => openNav = !openNav}>Poder Legislativo</a>
+					<li class:active={path.includes('/legislativo')}>
+						<a href="/legislativo" on:click={() => openNav = !openNav}>Poder Legislativo</a>
 					</li>
 					<li class:active={path.includes('/propuestas')}>
 						<a href="/propuestas" on:click={() => openNav = !openNav}>Propuestas</a>
