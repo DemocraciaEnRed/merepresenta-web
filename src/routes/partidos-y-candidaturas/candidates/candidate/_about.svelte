@@ -26,7 +26,7 @@
           <div class="is-flex is-flex-direction-column is-justify-content-space-between element-group">
             <p class=" has-text-weight-bold is-size-4">{candidate.name}</p>
             <p class="has-text-weight-light">Candidat{candidate.genre === 'm' ? 'o': 'a' } a {cargosSlugs[candidate.cargo][candidate.genre]}</p>
-          {#if ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug) && candidate.cargo !== 'presidente'}
+          {#if ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug) && !candidate.cargo.includes('presidente')}
             <br>
             <p class=" has-text-weight-bold is-size-4 is-size-6-touch">Asume como {cargosSlugs[candidate.cargo][candidate.genre]} de</p>
               <p class="has-text-weight-light">{ProvinciasSlugs.find(p => p.slug === candidate.distrito_nacional.slug).name}</p>

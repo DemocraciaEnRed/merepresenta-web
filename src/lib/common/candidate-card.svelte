@@ -25,7 +25,7 @@
 				{candidate.name}
 			</p>
 			<p class=" is-size-6 has-text-weight-light pb-4">
-				{#if candidate.cargo === 'presidente' }
+				{#if candidate.cargo.includes('presidente') }
 				Candidat{candidate.genre === 'm' ? 'o' : 'a'} a
 				<br />
 				<span class="general-sans is-size-6 has-text-weight-light">{cargosSlugs[candidate.cargo][candidate.genre]}</span>
